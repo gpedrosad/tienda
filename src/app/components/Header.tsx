@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Header() {
@@ -11,17 +12,19 @@ export default function Header() {
   return (
     <header className="bg-black text-white py-4 relative">
       <div className="container mx-auto px-4 flex justify-center items-center">
-        {/* Centered Logo */}
-        <Image 
-          src="/logonegro.png" 
-          alt="Logo MiEmpresa" 
-          width={100} 
-          height={100} 
-        />
+        {/* Clickable Logo */}
+        <Link href="/">
+          <Image 
+            src="/logonegro.png" 
+            alt="Logo MiEmpresa" 
+            width={100} 
+            height={100} 
+          />
+        </Link>
       </div>
 
-      {/* Hamburger Icon - Always Visible */}
-      <div className="absolute right-4 top-4">
+      {/* Hamburger Icon - Right Centered */}
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
         <button onClick={toggleMenu} className="text-white focus:outline-none">
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
