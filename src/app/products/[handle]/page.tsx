@@ -3,6 +3,8 @@ import ProductDetails from "@/app/components/ProductDetails"; // Componente clie
 import Footer from "@/app/components/Footer"; // Componente cliente para el footer
 import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
+
+
 const PRODUCT_QUERY = `
   query Product($handle: String!) {
     productByHandle(handle: $handle) {
