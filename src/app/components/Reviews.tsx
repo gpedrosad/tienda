@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { MdVerified } from 'react-icons/md';
 
 interface Review {
   id: number;
@@ -62,6 +63,14 @@ const Reviews = () => {
       <h2 className="text-3xl font-bold text-center mb-8">
         Opiniones de nuestros clientes
       </h2>
+      
+      {/* Texto e ícono de verificación */}
+      <div className="flex items-center justify-center mb-8">
+        <MdVerified className="text-black mr-2 w-8 h-8" />
+        <span className="text-black">
+          Solo compras concretadas pueden comentar.
+        </span>
+      </div>
       
       <div className="grid grid-cols-6 gap-6">
         {reviews.map((review, index) => (
