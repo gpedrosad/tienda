@@ -1,34 +1,40 @@
 "use client";
 
-import { FaCheckCircle, FaLeaf, FaCogs, FaShieldAlt } from "react-icons/fa";
+import { FaCogs, FaChair, FaShieldAlt, FaHandshake } from "react-icons/fa";
 
 export default function KeyBenefits() {
   const benefits = [
     {
-      icon: <FaLeaf className="text-green-500 text-3xl" />,
-      title: "Materiales sostenibles",
-      description: "Fabricadas con madera certificada y respetuosa con el medio ambiente.",
+      icon: <FaCogs className="text-gray-800 text-3xl" />,
+      title: "Artesanía de excelencia",
+      description:
+        "Cada mesa es elaborada meticulosamente, fusionando diseño moderno con toques artesanales para un acabado impecable.",
     },
     {
-      icon: <FaCogs className="text-blue-500 text-3xl" />,
-      title: "Diseño funcional",
-      description: "Pensadas para combinar estilo y practicidad en cualquier espacio.",
+      icon: <FaChair className="text-gray-800 text-3xl" />,
+      title: "Ergonomía superior",
+      description:
+        "Diseñada para brindar máxima comodidad y funcionalidad, perfecta para reuniones y momentos de relax.",
     },
     {
-      icon: <FaShieldAlt className="text-yellow-500 text-3xl" />,
-      title: "Durabilidad garantizada",
-      description: "Resistentes al uso diario con garantía de 5 años.",
+      icon: <FaShieldAlt className="text-gray-800 text-3xl" />,
+      title: "Fácil mantenimiento",
+      description:
+        "Acabados resistentes a manchas y arañazos, garantizando una apariencia impecable con mínimo esfuerzo.",
     },
     {
-      icon: <FaCheckCircle className="text-purple-500 text-3xl" />,
-      title: "Montaje fácil",
-      description: "Incluyen manual y herramientas para una instalación rápida y sencilla.",
+      icon: <FaHandshake className="text-gray-800 text-3xl" />,
+      title: "Garantía de satisfacción",
+      description:
+        "Respaldamos cada mesa con una garantía integral, asegurando tu inversión y tranquilidad.",
     },
   ];
 
   return (
     <section className="bg-gray-100 p-8 rounded-lg mt-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Por qué elegir nuestras mesas</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">
+        Por qué invertir en una mesa de calidad
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {benefits.map((benefit, index) => (
           <div

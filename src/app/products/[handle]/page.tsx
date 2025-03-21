@@ -74,8 +74,8 @@ export default async function ProductPage({ params }: { params: { handle: string
       <ProductDetails product={product} /> {/* Pasamos el producto al componente */}
       <Reviews />
       <KeyBenefits/>
-      <Reel videoUrls={["https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4", "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4", "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4"]} />
       <GuaranteeAndReturn/>
+      <Reel videoUrls={["https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4", "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4", "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4"]} />
       <Footer /> {/* Agregamos el Footer */}
     </div>
   );

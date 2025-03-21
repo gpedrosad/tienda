@@ -6,17 +6,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import CheckoutButton from "@/app/components/CheckoutButton";
-import { useState } from "react"; // Nuevo import
+import { useState } from "react";
 
 export default function ProductDetails({ product }: { product: any }) {
   // Obtener información del primer variant
   const variant = product.variants.edges[0]?.node;
   const basePrice = variant?.priceV2?.amount ? Math.round(Number(variant.priceV2.amount)) : 0;
   
-  // Nuevo estado para los addons
+  // Estado para los addons
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   
-  // Nuevo estado para los variantes seleccionados
+  // Estado para los variantes seleccionados
   const [selectedVariants, setSelectedVariants] = useState<{[key: string]: string}>({});
 
   // Definición de addons disponibles
@@ -52,6 +52,11 @@ export default function ProductDetails({ product }: { product: any }) {
     return basePrice + addonsTotal;
   };
 
+  // Función para formatear el precio con separadores de miles (puntos)
+  const formatPrice = (price: number) => {
+    return `$${price.toLocaleString("es-ES", { maximumFractionDigits: 0 })}`;
+  };
+
   // Función para manejar la selección de addons
   const handleAddonToggle = (addonId: string) => {
     setSelectedAddons(prev => 
@@ -84,11 +89,11 @@ export default function ProductDetails({ product }: { product: any }) {
         {/* Carrusel de imágenes */}
         <div>
           <Swiper
-            modules={[Pagination]} // Asegúrate de que el módulo esté bien configurado
+            modules={[Pagination]}
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
-            pagination={{ clickable: true }} // Activa los puntos de navegación
+            pagination={{ clickable: true }}
           >
             {product.images.edges.map((image: any, index: number) => (
               <SwiperSlide key={index}>
@@ -104,12 +109,12 @@ export default function ProductDetails({ product }: { product: any }) {
 
         {/* Detalles del producto */}
         <div>
-          {/* Precio actualizado */}
-          <div className="text-2xl font-bold text-green-600 mb-2">
-            ${calculateTotalPrice()}
+          {/* Precio actualizado con mayor énfasis visual */}
+          <div className="text-3xl font-bold text-green-600 mb-2">
+            {formatPrice(calculateTotalPrice())}
           </div>
 
-          {/* Nueva sección de addons con selección de color */}
+          {/* Sección de addons */}
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-4 border-b pb-2">Complementos disponibles</h3>
             <div className="space-y-6">
@@ -131,7 +136,7 @@ export default function ProductDetails({ product }: { product: any }) {
                         <p className="text-gray-600 text-sm">{addon.description}</p>
                       </div>
                       <div className="text-green-600 font-semibold">
-                        +${addon.price}
+                        +{formatPrice(addon.price)}
                       </div>
                     </div>
 
@@ -171,13 +176,10 @@ export default function ProductDetails({ product }: { product: any }) {
                               `}
                             >
                               <div className="aspect-square relative">
-                                {/* Color del barniz */}
                                 <div className={`
                                   absolute inset-0 ${variant.colorClass}
                                   transition-opacity duration-200
                                 `}></div>
-                                
-                                {/* Efecto de hover y nombre */}
                                 <div className={`
                                   absolute inset-0 flex items-center justify-center
                                   bg-black bg-opacity-0 group-hover:bg-opacity-30
