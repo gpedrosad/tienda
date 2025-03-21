@@ -3,6 +3,9 @@ import ProductDetails from "@/app/components/ProductDetails"; // Componente clie
 import Footer from "@/app/components/Footer"; // Componente cliente para el footer
 import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
+import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
+import Reel from "@/app/components/Reel";
+
 
 
 const PRODUCT_QUERY = `
@@ -71,6 +74,8 @@ export default async function ProductPage({ params }: { params: { handle: string
       <ProductDetails product={product} /> {/* Pasamos el producto al componente */}
       <Reviews />
       <KeyBenefits/>
+      <GuaranteeAndReturn/>
+      <Reel videoUrl="https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4" />
       <Footer /> {/* Agregamos el Footer */}
     </div>
   );
