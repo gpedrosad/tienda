@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules"; // Importación desde "swiper/modules"
 import "swiper/css";
 import "swiper/css/pagination";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-import CheckoutButton from "@/app/components/CheckoutButton";
 import { useState } from "react";
+import CheckoutButton from "@/app/components/CheckoutButton";
+import Rating from "@/app/components/Rating"; // Ajusta la ruta según tu estructura de carpetas
 
 export default function ProductDetails({ product }: { product: any }) {
   // Obtener información del primer variant
@@ -75,39 +75,42 @@ export default function ProductDetails({ product }: { product: any }) {
   };
 
   return (
-    <div className="min-h-screen p-8">
-      {/* Label destacado */}
-      <div className="text-sm bg-yellow-400 text-black font-bold uppercase tracking-wide px-4 py-2 inline-block rounded mb-4">
-        Más Vendido
+    <>
+      {/* Carrusel de imágenes a ancho completo sin altura fija */}
+      <div className="w-full">
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          pagination={{ clickable: true }}
+        >
+          {product.images.edges.map((image: any, index: number) => (
+            <SwiperSlide key={index}>
+              <img
+                src={image.node.src}
+                alt={`Slide ${index}`}
+                className="w-full h-auto object-contain"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
-      {/* Título del producto */}
-      <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-
-      {/* Contenido del producto */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Carrusel de imágenes */}
-        <div>
-          <Swiper
-            modules={[Pagination]}
-            spaceBetween={20}
-            slidesPerView={1}
-            loop={true}
-            pagination={{ clickable: true }}
-          >
-            {product.images.edges.map((image: any, index: number) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={image.node.src}
-                  alt={`Slide ${index}`}
-                  className="w-full h-auto mb-4 rounded-lg"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      {/* Contenedor de detalles con padding */}
+      <div className="p-8">
+        {/* Label destacado */}
+        <div className="text-sm bg-yellow-400 text-black font-bold uppercase tracking-wide px-4 py-2 inline-block rounded mb-4">
+          Más Vendido
         </div>
 
-        {/* Detalles del producto */}
+        {/* Contenedor del título y valoraciones */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
+          <h1 className="text-3xl font-bold">{product.title}</h1>
+          <Rating rating={4.5} reviewCount={213} />
+        </div>
+
+        {/* Sección de detalles (precio, addons, descripción, etc.) */}
         <div>
           {/* Precio actualizado con mayor énfasis visual */}
           <div className="text-3xl font-bold text-green-600 mb-2">
@@ -210,18 +213,6 @@ export default function ProductDetails({ product }: { product: any }) {
             </div>
           </div>
 
-          {/* Valoraciones */}
-          <div className="flex items-center space-x-2 mb-4">
-            <div className="flex text-yellow-500">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
-            </div>
-            <span className="text-gray-500 text-sm">(213 valoraciones)</span>
-          </div>
-
           {/* Descripción del producto */}
           <div
             className="prose mb-8"
@@ -238,6 +229,6 @@ export default function ProductDetails({ product }: { product: any }) {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
