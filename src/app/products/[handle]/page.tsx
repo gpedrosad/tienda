@@ -85,6 +85,7 @@ export default async function ProductPage({ params }: { params: { handle: string
       <Reviews />
       <KeyBenefits />
       <GuaranteeAndReturn />
+      <RecommendedProductsCarousel />
       <Reel
         videoUrls={[
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
@@ -92,7 +93,6 @@ export default async function ProductPage({ params }: { params: { handle: string
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
         ]}
       />
-      <RecommendedProductsCarousel />
       <Footer />
     </div>
   );

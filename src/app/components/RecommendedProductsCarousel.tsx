@@ -61,6 +61,7 @@ export default function RecommendedProductsCarousel() {
       </h2>
       <div className="relative pb-10">
         <Swiper
+          loop={true}
           modules={[Pagination]}
           spaceBetween={16}
           slidesPerView={1}
