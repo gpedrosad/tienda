@@ -7,24 +7,38 @@ import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
 import Reel from "@/app/components/Reel";
 import Accordion from "@/app/components/Accordion";
 
-
+// Consulta GraphQL actualizada
+// Agregamos "options { name values }" y "selectedOptions { name value }" en cada variante
 const PRODUCT_QUERY = `
   query Product($handle: String!) {
     productByHandle(handle: $handle) {
       id
       title
       descriptionHtml
-      variants(first: 1) {
+
+      # Para construir la lógica de selección
+      options {
+        name
+        values
+      }
+
+      variants(first: 10) {
         edges {
           node {
             id
+            title
             priceV2 {
               amount
               currencyCode
             }
+            selectedOptions {
+              name
+              value
+            }
           }
         }
       }
+
       images(first: 5) {
         edges {
           node {
@@ -69,16 +83,35 @@ export default async function ProductPage({ params }: { params: { handle: string
     );
   }
 
+  // Render de la página de producto
   return (
     <div>
-      <ProductDetails product={product} /> {/* Pasamos el producto al componente */}
-      <Accordion/>
+      {/* Pasamos el objeto "product" al componente cliente "ProductDetails" */}
+      <ProductDetails product={product} />
+
+      {/* Acordeón con información adicional */}
+      <Accordion />
+
+      {/* Reseñas */}
       <Reviews />
 
-      <KeyBenefits/>
-      <GuaranteeAndReturn/>
-      <Reel videoUrls={["https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4", "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4", "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4"]} />
-      <Footer /> {/* Agregamos el Footer */}
+      {/* Beneficios clave */}
+      <KeyBenefits />
+
+      {/* Garantía y devoluciones */}
+      <GuaranteeAndReturn />
+
+      {/* Reel de videos */}
+      <Reel
+        videoUrls={[
+          "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
+          "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4",
+          "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
+        ]}
+      />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
