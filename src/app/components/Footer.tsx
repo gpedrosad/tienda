@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -53,17 +53,17 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
                 Email:{' '}
-                <a href="mailto:info@miempresa.com" className="hover:text-gray-100 transition-colors">
-                  info@miempresa.com
+                <a href="mailto:hola@ideamadera.cl" className="hover:text-gray-100 transition-colors">
+                  hola@ideamadera.cl
                 </a>
               </li>
               <li>
                 Teléfono:{' '}
-                <a href="tel:+1234567890" className="hover:text-gray-100 transition-colors">
-                  +1 234 567 890
+                <a href="https://wa.me/56995497838" className="hover:text-gray-100 transition-colors">
+                  +569 95497838
                 </a>
               </li>
-              <li>Dirección: Av. Principal 123, Ciudad, País</li>
+              <li>Dirección: Boyén Sector 01, Chillán, Chile</li>
             </ul>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Síguenos</h3>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/ideamadera.cl"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -80,23 +80,24 @@ export default function Footer() {
               >
                 <FaFacebookF />
               </a>
+             
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="text-gray-300 hover:text-white transition-colors text-xl"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://instagram.com"
+                href="https://instagram.com/ideamadera.cl"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="text-gray-300 hover:text-white transition-colors text-xl"
               >
                 <FaInstagram />
+              </a>
+              <a
+                href="https://wa.me/56995497838"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="text-gray-300 hover:text-white transition-colors text-xl"
+              >
+              <FaWhatsapp />
               </a>
             </div>
           </div>
@@ -105,12 +106,12 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Acerca de</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Somos una empresa comprometida con la excelencia y la innovación, buscando siempre ofrecer lo mejor a nuestros clientes.
+              Somos una empresa dedicada a la venta de productos desarrollados en madera, con un enfoque en la calidad y el diseño hace 31 años.
             </p>
           </div>
         </div>
         <div className="mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-xs">
-          © 2024 MiEmpresa. Todos los derechos reservados.
+          © 2025 Idea Madera. Todos los derechos reservados.
         </div>
       </div>
     </footer>
