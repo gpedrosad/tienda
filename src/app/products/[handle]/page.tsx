@@ -1,27 +1,23 @@
 import { shopifyFetch } from "@/lib/shopify";
-import ProductDetails from "@/app/components/ProductDetails"; // Componente cliente para los detalles del producto
-import Footer from "@/app/components/Footer"; // Componente cliente para el footer
+import ProductDetails from "@/app/components/ProductDetails";
+import RecommendedProductsCarousel from "@/app/components/RecommendedProductsCarousel";
+import Footer from "@/app/components/Footer";
 import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
 import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
 import Reel from "@/app/components/Reel";
 import Accordion from "@/app/components/Accordion";
 
-// Consulta GraphQL actualizada
-// Agregamos "options { name values }" y "selectedOptions { name value }" en cada variante
 const PRODUCT_QUERY = `
   query Product($handle: String!) {
     productByHandle(handle: $handle) {
       id
       title
       descriptionHtml
-
-      # Para construir la lógica de selección
       options {
         name
         values
       }
-
       variants(first: 10) {
         edges {
           node {
@@ -38,7 +34,6 @@ const PRODUCT_QUERY = `
           }
         }
       }
-
       images(first: 5) {
         edges {
           node {
@@ -83,25 +78,13 @@ export default async function ProductPage({ params }: { params: { handle: string
     );
   }
 
-  // Render de la página de producto
   return (
     <div>
-      {/* Pasamos el objeto "product" al componente cliente "ProductDetails" */}
       <ProductDetails product={product} />
-
-      {/* Acordeón con información adicional */}
       <Accordion />
-
-      {/* Reseñas */}
       <Reviews />
-
-      {/* Beneficios clave */}
       <KeyBenefits />
-
-      {/* Garantía y devoluciones */}
       <GuaranteeAndReturn />
-
-      {/* Reel de videos */}
       <Reel
         videoUrls={[
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
@@ -109,8 +92,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
         ]}
       />
-
-      {/* Footer */}
+      <RecommendedProductsCarousel />
       <Footer />
     </div>
   );

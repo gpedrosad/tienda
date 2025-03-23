@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import Rating from "@/app/components/Rating"; // Ajusta la ruta según tu estructura de carpetas
-import { AiOutlineCreditCard } from "react-icons/ai"; // Icono de tarjeta de crédito
+import Rating from "@/app/components/Rating"; // Ajusta la ruta según tu estructura
+import { AiOutlineCreditCard } from "react-icons/ai";
 
 export default function ProductDetails({ product }: { product: any }) {
   const { options = [], variants = { edges: [] }, images } = product;
@@ -46,6 +46,7 @@ export default function ProductDetails({ product }: { product: any }) {
   const formatPrice = (price: number) => {
     return `$${price.toLocaleString("es-ES", { maximumFractionDigits: 0 })}`;
   };
+
   const calculateInstallments = (total: number) => {
     return Math.round(total / 6);
   };
@@ -113,7 +114,7 @@ export default function ProductDetails({ product }: { product: any }) {
 
   return (
     <div className="flex flex-col md:flex-row">
-      {/* Columna de la imagen: los cambios (padding y flex) se aplican solo en desktop */}
+      {/* Columna de la imagen */}
       <div className="w-full md:w-1/2 md:p-8 md:flex md:items-center md:justify-center">
         {renderImages()}
       </div>
@@ -134,7 +135,7 @@ export default function ProductDetails({ product }: { product: any }) {
         </div>
 
         <div className="flex items-center text-sm text-gray-600 mb-4">
-          6 cuotas sin interés de {formatPrice(calculateInstallments(basePrice))}
+          6 cuotas sin interés de {formatPrice(Math.round(basePrice / 6))}
           <AiOutlineCreditCard className="ml-2" size={20} />
         </div>
 
