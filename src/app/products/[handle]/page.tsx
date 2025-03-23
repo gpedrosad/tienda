@@ -5,7 +5,7 @@ import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
 import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
 import Reel from "@/app/components/Reel";
-
+import Accordion from "@/app/components/Accordion";
 
 
 const PRODUCT_QUERY = `
@@ -72,7 +72,9 @@ export default async function ProductPage({ params }: { params: { handle: string
   return (
     <div>
       <ProductDetails product={product} /> {/* Pasamos el producto al componente */}
+      <Accordion/>
       <Reviews />
+
       <KeyBenefits/>
       <GuaranteeAndReturn/>
       <Reel videoUrls={["https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4", "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4", "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4"]} />
