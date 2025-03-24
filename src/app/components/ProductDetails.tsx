@@ -1,4 +1,3 @@
-// app/components/ProductDetails.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,6 +21,10 @@ const client = Client.buildClient({
 export default function ProductDetails({ product }: { product: any }) {
   const { options = [], variants = { edges: [] }, images } = product;
   const { setCart } = useCart();
+
+  // Se determina si se deben mostrar las opciones:
+  // Si hay más de una variante o más de una opción, se muestra la UI de variantes.
+  const showOptions = variants.edges.length > 1 || options.length > 1;
 
   const initialOptionsState: Record<string, string> = {};
   options.forEach((opt: any) => {
@@ -90,10 +93,10 @@ export default function ProductDetails({ product }: { product: any }) {
                 <button
                   key={val}
                   onClick={() => handleOptionChange(optionName, val)}
-                  className={`px-3 py-1 rounded-full border text-sm ${
+                  className={`px-4 py-2 rounded-full border text-sm font-semibold transition-colors ${
                     isActive
                       ? "border-black bg-black text-white"
-                      : "border-gray-300 text-black"
+                      : "border-gray-300 text-black hover:bg-gray-100"
                   }`}
                 >
                   {val}
@@ -178,7 +181,7 @@ export default function ProductDetails({ product }: { product: any }) {
         <div className="w-full md:w-1/2 md:p-8 md:flex md:items-center md:justify-center">
           {renderImages()}
         </div>
-        <div className="w-full md:w-1/2 p-8">
+        <div className="w-full md:w-1/2 p-6">
           <div className="text-sm bg-yellow-400 text-black font-bold uppercase tracking-wide px-4 py-2 inline-block rounded mb-4">
             Más Vendido
           </div>
@@ -193,27 +196,29 @@ export default function ProductDetails({ product }: { product: any }) {
             6 cuotas sin interés de {formatPrice(Math.round(basePrice / 6))}
             <AiOutlineCreditCard className="ml-2" size={20} />
           </div>
-          {renderOptions()}
-          <div
-            className="prose mb-8"
-            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-          />
-          <div className="flex gap-4">
+          {/* Solo se muestran las opciones si existen más de una variante o opción */}
+          {showOptions && renderOptions()}
+          {/* Botones antes de la descripción */}
+          <div className="flex flex-col gap-4 md:flex-row mb-6">
             <button
               onClick={handleAddToCart}
               disabled={!selectedVariant}
-              className="flex-1 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
+              className="w-full md:flex-1 px-6 py-3 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 transition-colors text-lg font-bold"
             >
               Agregar al carrito
             </button>
             <button
               onClick={handleBuyNow}
               disabled={!selectedVariant}
-              className="flex-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+              className="w-full md:flex-1 px-6 py-3 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-colors text-lg font-bold"
             >
               Comprar
             </button>
           </div>
+          <div
+            className="prose mb-8"
+            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+          />
         </div>
       </div>
       <CartSideBar />
