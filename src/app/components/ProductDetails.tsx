@@ -87,36 +87,37 @@ export default function ProductDetails({ product }: { product: any }) {
   };
 
   // -------------------------------------------------------------------
-  // NUEVO: Estado para controlar el Swiper principal y poder desplazarlo
-  // al hacer clic en las miniaturas
+  // Estado para controlar el Swiper principal y poder desplazarlo al hacer clic en las miniaturas
   const [mainSwiper, setMainSwiper] = useState<any>(null);
 
   // Renderiza el slider principal + miniaturas
   const renderImages = () => {
     if (!images || !images.edges) return null;
     return (
-      <div>
-        {/* Slider principal */}
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop
-          pagination={{ clickable: true }}
-          onSwiper={(swiper) => setMainSwiper(swiper)}
-        >
-          {images.edges.map((imageEdge: any, index: number) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={imageEdge.node.src}
-                alt={`Slide ${index}`}
-                width={800}
-                height={600}
-                className="object-cover w-full h-auto"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="flex flex-col items-center mb-4">
+        {/* Contenedor responsivo para el slider */}
+        <div className="w-full max-w-full md:max-w-[400px] lg:max-w-[500px] mx-auto">
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop
+            pagination={{ clickable: true }}
+            onSwiper={(swiper) => setMainSwiper(swiper)}
+          >
+            {images.edges.map((imageEdge: any, index: number) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={imageEdge.node.src}
+                  alt={`Slide ${index}`}
+                  width={600}           // Se ajusta el ancho base para desktop
+                  height={375}          // Altura proporcional para mantener la relación
+                  className="object-cover w-full h-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         {/* Miniaturas */}
         <div className="mt-4 flex gap-2 justify-center flex-wrap">
