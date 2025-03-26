@@ -29,6 +29,35 @@ const PRODUCTS_QUERY = `
   }
 `;
 
+// Componente HeroBanner: sobrio, con fondo y llamada a la acción
+function HeroBanner() {
+  return (
+    <section className="relative bg-gray-100 overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src="/hero-background.jpg"
+          alt="Fondo decorativo"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-4 py-20 text-center">
+        <h1 className="text-5xl font-bold mb-4 text-gray-800">
+          Bienvenido a Nuestra Tienda
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Descubre productos exclusivos con diseño elegante y calidad excepcional.
+        </p>
+        <a
+          href="#productos"
+          className="inline-block bg-gray-800 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition-colors"
+        >
+          Explorar Colección
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export default async function Home() {
   let products = [];
 
@@ -46,6 +75,7 @@ export default async function Home() {
 
   return (
     <>
+      <HeroBanner />
       {/* Sección de productos */}
       <ProductsSection products={products} />
 

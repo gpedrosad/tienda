@@ -1,13 +1,10 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { CartProvider } from "@/app/context/CartContext";
 import Header from "@/app/components/Header";
+import CartSideBar from "@/app/components/CartSideBar";
 import Footer from "@/app/components/Footer";
-
-
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,7 +19,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Idea Madera",
-  description: "Idea Madera es una empresa chilena dedicada a la fabricación de muebles de madera con un enfoque en la calidad y el diseño.",
+  description:
+    "Idea Madera es una empresa chilena dedicada a la fabricación de muebles de madera con un enfoque en la calidad y el diseño.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -31,9 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <CartProvider>
           <Header />
-          {children}
+          {/* CartSidebar global, accesible en todas las páginas */}
+          <CartSideBar />
+          <main>{children}</main>
+          <Footer />
         </CartProvider>
-        <Footer />
       </body>
     </html>
   );

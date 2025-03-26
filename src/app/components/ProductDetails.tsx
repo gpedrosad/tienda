@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,7 +9,7 @@ import "swiper/css/pagination";
 
 import Image from "next/image";
 import Rating from "@/app/components/Rating";
-import { AiOutlineCreditCard } from "react-icons/ai";
+import { AiOutlineCreditCard, AiOutlineArrowLeft } from "react-icons/ai";
 import Client from "shopify-buy";
 import CartSideBar from "@/app/components/CartSideBar";
 import { useCart } from "@/app/context/CartContext";
@@ -23,6 +24,7 @@ const client = Client.buildClient({
 export default function ProductDetails({ product }: { product: any }) {
   const { options = [], variants = { edges: [] }, images } = product;
   const { setCart } = useCart();
+  const router = useRouter();
 
   // Determina si se deben mostrar opciones de variantes
   const showOptions = variants.edges.length > 1 || options.length > 1;
@@ -86,6 +88,11 @@ export default function ProductDetails({ product }: { product: any }) {
     }));
   };
 
+  // Manejador para volver a la página anterior
+  const handleGoBack = () => {
+    router.back();
+  };
+
   // -------------------------------------------------------------------
   // Estado para controlar el Swiper principal y poder desplazarlo al hacer clic en las miniaturas
   const [mainSwiper, setMainSwiper] = useState<any>(null);
@@ -94,7 +101,16 @@ export default function ProductDetails({ product }: { product: any }) {
   const renderImages = () => {
     if (!images || !images.edges) return null;
     return (
-      <div className="flex flex-col items-center mb-4">
+      <div className="relative flex flex-col items-center mb-4">
+        {/* Ícono de volver */}
+        <button 
+          onClick={handleGoBack}
+          className="absolute top-4 left-4 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+          aria-label="Volver"
+        >
+          <AiOutlineArrowLeft size={24} />
+        </button>
+
         {/* Contenedor responsivo para el slider */}
         <div className="w-full max-w-full md:max-w-[400px] lg:max-w-[500px] mx-auto">
           <Swiper
@@ -110,8 +126,8 @@ export default function ProductDetails({ product }: { product: any }) {
                 <Image
                   src={imageEdge.node.src}
                   alt={`Slide ${index}`}
-                  width={600}           // Se ajusta el ancho base para desktop
-                  height={375}          // Altura proporcional para mantener la relación
+                  width={600}
+                  height={375}
                   className="object-cover w-full h-auto"
                 />
               </SwiperSlide>
@@ -230,7 +246,13 @@ export default function ProductDetails({ product }: { product: any }) {
           {/* Título + badge + Rating */}
           <div className="mb-4">
             <div className="flex items-center space-x-2">
-              <h1 className="text-3xl font-bold">{product.title}</h1>
+              <h1
+                className={`font-bold ${
+                  product.title.length > 20 ? "text-2xl" : "text-3xl"
+                }`}
+              >
+                {product.title}
+              </h1>
               <span className="bg-yellow-400 text-black text-xs font-bold uppercase px-2 py-1 rounded">
                 Más Vendido
               </span>
