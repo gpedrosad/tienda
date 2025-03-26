@@ -1,6 +1,5 @@
-// app/components/CartSidebar.tsx
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Client from "shopify-buy";
 import {
   AiOutlinePlus,
@@ -8,9 +7,9 @@ import {
   AiOutlineDelete,
   AiOutlineClose,
 } from "react-icons/ai";
-import { useCart } from "@/app/context/CartContext";
+import { useCart, CartItem } from "@/app/context/CartContext";
 
-// Build Shopify client (use a stable API version)
+// Build Shopify client (usa una versión estable de la API)
 const client = Client.buildClient({
   domain: "ideamadera.myshopify.com",
   storefrontAccessToken: "e7bfcafb70411824e2d9e65b3d837e02",
@@ -24,15 +23,18 @@ export default function CartSidebar() {
 
   const handleMouseDown = () => setIsResizing(true);
 
-  const handleMouseMove = (e: MouseEvent) => {
+  // Usamos useCallback para memoizar la función y poder incluirla en las dependencias
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!isResizing) return;
     const newWidth = window.innerWidth - e.clientX;
     if (newWidth >= 240 && newWidth <= 500) {
       setSidebarWidth(newWidth);
     }
-  };
+  }, [isResizing]);
 
-  const handleMouseUp = () => setIsResizing(false);
+  const handleMouseUp = useCallback(() => {
+    setIsResizing(false);
+  }, []);
 
   useEffect(() => {
     if (isResizing) {
@@ -46,9 +48,9 @@ export default function CartSidebar() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isResizing]);
+  }, [isResizing, handleMouseMove, handleMouseUp]);
 
-  // Update the quantity of a line item in the cart
+  // Actualiza la cantidad de un ítem en el carrito
   const updateLineItemQuantity = async (lineItemId: string, newQuantity: number) => {
     if (!cart) return;
     try {
@@ -61,7 +63,7 @@ export default function CartSidebar() {
     }
   };
 
-  // Remove a line item from the cart
+  // Remueve un ítem del carrito
   const removeLineItem = async (lineItemId: string) => {
     if (!cart) return;
     try {
@@ -74,7 +76,7 @@ export default function CartSidebar() {
     }
   };
 
-  // Format price (with rounding and thousands separators)
+  // Formatea el precio
   const formatPrice = (amount: number) => {
     return `$${Math.round(amount).toLocaleString("es-ES", {
       minimumFractionDigits: 0,
@@ -86,10 +88,7 @@ export default function CartSidebar() {
 
   return (
     // Overlay que cierra el sidebar al hacer click fuera
-    <div 
-      className="fixed inset-0 z-50 flex"
-      onClick={toggleCart}
-    >
+    <div className="fixed inset-0 z-50 flex" onClick={toggleCart}>
       {/* Fondo semi-transparente */}
       <div className="fixed inset-0 bg-black opacity-50 transition-opacity duration-300" />
 
@@ -97,9 +96,9 @@ export default function CartSidebar() {
       <div
         className="relative ml-auto bg-white border-l border-gray-200 shadow-2xl overflow-auto transition-transform duration-300 transform"
         style={{ width: sidebarWidth }}
-        onClick={(e) => e.stopPropagation()} // Evita que los clicks dentro no cierren el sidebar
+        onClick={(e) => e.stopPropagation()} // Evita que los clicks dentro cierren el sidebar
       >
-        {/* Close Sidebar Button */}
+        {/* Botón para cerrar el sidebar */}
         <div className="flex justify-end p-4">
           <button
             onClick={toggleCart}
@@ -113,7 +112,7 @@ export default function CartSidebar() {
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">Tu Carrito</h2>
           {cart && cart.lineItems && cart.lineItems.length > 0 ? (
             <ul className="space-y-4">
-              {cart.lineItems.map((item: any) => (
+              {cart.lineItems.map((item: CartItem) => (
                 <li key={item.id} className="border-b pb-4 flex items-center">
                   {item.variant?.image?.src && (
                     <img
@@ -125,7 +124,7 @@ export default function CartSidebar() {
                   <div className="flex-1">
                     <p className="font-medium text-gray-700">{item.title}</p>
                     <div className="flex items-center mt-2">
-                      {/* Decrement or Remove */}
+                      {/* Decrementar o remover ítem */}
                       <button
                         onClick={() => {
                           if (item.quantity > 1) {
@@ -139,7 +138,7 @@ export default function CartSidebar() {
                         <AiOutlineMinus size={18} />
                       </button>
                       <span className="mx-2">{item.quantity}</span>
-                      {/* Increment */}
+                      {/* Incrementar ítem */}
                       <button
                         onClick={() => updateLineItemQuantity(item.id, item.quantity + 1)}
                         className="text-gray-600 hover:text-gray-800 focus:outline-none"
@@ -179,7 +178,7 @@ export default function CartSidebar() {
             )}
           </div>
         )}
-        {/* Handle to resize sidebar */}
+        {/* Handle para redimensionar el sidebar */}
         <div
           onMouseDown={handleMouseDown}
           className="absolute left-0 top-0 h-full w-3 cursor-ew-resize bg-gray-100 hover:bg-gray-200"
