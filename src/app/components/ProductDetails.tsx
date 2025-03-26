@@ -23,7 +23,7 @@ const client = Client.buildClient({
 
 export default function ProductDetails({ product }: { product: any }) {
   const { options = [], variants = { edges: [] }, images } = product;
-  const { setCart } = useCart();
+  const { setCart, toggleCart } = useCart();
   const router = useRouter();
 
   // Determina si se deben mostrar opciones de variantes
@@ -158,7 +158,7 @@ export default function ProductDetails({ product }: { product: any }) {
   };
   // -------------------------------------------------------------------
 
-  // Agregar producto al carrito
+  // Agregar producto al carrito y abrir el sidebar sin alert
   const handleAddToCart = async () => {
     if (!selectedVariant) return;
     try {
@@ -178,7 +178,8 @@ export default function ProductDetails({ product }: { product: any }) {
       ];
       checkout = await client.checkout.addLineItems(checkout.id, lineItemsToAdd);
       setCart(checkout);
-      alert("Producto agregado al carrito");
+      // En lugar de alert, abre el CartSidebar
+      toggleCart();
     } catch (error) {
       console.error("Error al agregar al carrito:", error);
     }
@@ -299,7 +300,7 @@ export default function ProductDetails({ product }: { product: any }) {
         </div>
       </div>
 
-      {/* Barra lateral del carrito */}
+      {/* Se mantiene el CartSideBar si se usa de forma local, pero recuerda que también puede estar global */}
       <CartSideBar />
     </>
   );
