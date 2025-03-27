@@ -1,7 +1,8 @@
 const domain = "ideamadera.myshopify.com"; // Cambia al dominio de tu tienda
 const storefrontAccessToken = "e7bfcafb70411824e2d9e65b3d837e02"; // Tu token de acceso
 
-export async function shopifyFetch(query: string, variables = {}) {
+// Se utiliza un tipo genérico para tipar la respuesta
+export async function shopifyFetch<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
   try {
     const response = await fetch(`https://${domain}/api/2023-10/graphql.json`, {
       method: "POST",
@@ -31,7 +32,36 @@ export async function shopifyFetch(query: string, variables = {}) {
   }
 }
 
-export async function getProductsOnSale() {
+// Definición de tipos para la respuesta de productos en oferta
+interface ProductOnSale {
+  id: string;
+  title: string;
+  description: string;
+  handle: string;
+  priceRange: {
+    minVariantPrice: {
+      amount: string;
+    };
+  };
+  compareAtPriceRange: {
+    minVariantPrice: {
+      amount: string;
+    };
+  };
+  featuredImage: {
+    url: string;
+  };
+}
+
+interface GetProductsOnSaleResponse {
+  products: {
+    edges: {
+      node: ProductOnSale;
+    }[];
+  };
+}
+
+export async function getProductsOnSale(): Promise<ProductOnSale[]> {
   const query = `
     {
       products(first: 20, query: "compare_at_price:>0") {
@@ -60,6 +90,6 @@ export async function getProductsOnSale() {
     }
   `;
 
-  const response = await shopifyFetch(query);
-  return response.products.edges.map((edge: any) => edge.node);
+  const response = await shopifyFetch<GetProductsOnSaleResponse>(query);
+  return response.products.edges.map(edge => edge.node);
 }

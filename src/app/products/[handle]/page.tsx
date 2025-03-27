@@ -44,6 +44,57 @@ const PRODUCT_QUERY = `
   }
 `;
 
+interface ProductOption {
+  name: string;
+  values: string[];
+}
+
+interface SelectedOption {
+  name: string;
+  value: string;
+}
+
+interface PriceV2 {
+  amount: string;
+  currencyCode: string;
+}
+
+interface VariantNode {
+  id: string;
+  title: string;
+  priceV2: PriceV2;
+  selectedOptions: SelectedOption[];
+}
+
+interface VariantEdge {
+  node: VariantNode;
+}
+
+interface ImageNode {
+  src: string;
+}
+
+interface ImageEdge {
+  node: ImageNode;
+}
+
+interface Product {
+  id: string;
+  title: string;
+  descriptionHtml: string;
+  options: ProductOption[];
+  variants: {
+    edges: VariantEdge[];
+  };
+  images: {
+    edges: ImageEdge[];
+  };
+}
+
+interface ProductQueryResponse {
+  productByHandle: Product | null;
+}
+
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   const { handle } = params;
 
@@ -57,10 +108,10 @@ export default async function ProductPage({ params }: { params: { handle: string
     );
   }
 
-  let product;
+  let product: Product | null = null;
 
   try {
-    const data = await shopifyFetch(PRODUCT_QUERY, { handle });
+    const data = await shopifyFetch<ProductQueryResponse>(PRODUCT_QUERY, { handle });
     product = data.productByHandle;
   } catch (error) {
     console.error("Error al obtener los detalles del producto:", error);

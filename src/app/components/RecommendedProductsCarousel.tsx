@@ -7,41 +7,41 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import { shopifyFetch } from "@/lib/shopify";
 
-const RECOMMENDED_PRODUCTS_QUERY = `
-  query RecommendedProducts {
-    products(first: 10) {
-      edges {
-        node {
-          id
-          title
-          handle
-          images(first: 1) {
-            edges {
-              node {
-                src
-              }
-            }
-          }
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+interface RecommendedProduct {
+  id: string;
+  title: string;
+  handle: string;
+  images: {
+    edges: {
+      node: {
+        src: string;
+      };
+    }[];
+  };
+  priceRange: {
+    minVariantPrice: {
+      amount: string;
+      currencyCode: string;
+    };
+  };
+}
+
+interface RecommendedProductsResponse {
+  products: {
+    edges: {
+      node: RecommendedProduct;
+    }[];
+  };
+}
 
 export default function RecommendedProductsCarousel() {
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<RecommendedProduct[]>([]);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const data = await shopifyFetch(RECOMMENDED_PRODUCTS_QUERY);
-        const fetchedProducts = data.products.edges.map((edge: any) => edge.node);
+        const data = await shopifyFetch<RecommendedProductsResponse>(RECOMMENDED_PRODUCTS_QUERY);
+        const fetchedProducts = data.products.edges.map(edge => edge.node);
         setProducts(fetchedProducts);
       } catch (error) {
         console.error("Error fetching recommended products", error);
@@ -96,7 +96,7 @@ export default function RecommendedProductsCarousel() {
                     </h3>
                     {product.priceRange?.minVariantPrice?.amount && (
                       <p className="mt-auto text-xl font-bold text-gray-900">
-                        {formatPrice(product.priceRange.minVariantPrice.amount)}
+                        {formatPrice(Number(product.priceRange.minVariantPrice.amount))}
                       </p>
                     )}
                   </div>
@@ -128,3 +128,30 @@ export default function RecommendedProductsCarousel() {
     </section>
   );
 }
+
+const RECOMMENDED_PRODUCTS_QUERY = `
+  query RecommendedProducts {
+    products(first: 10) {
+      edges {
+        node {
+          id
+          title
+          handle
+          images(first: 1) {
+            edges {
+              node {
+                src
+              }
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
+    }
+  }
+`;
