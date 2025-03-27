@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperInstance } from "swiper";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,6 +15,49 @@ import Client from "shopify-buy";
 import CartSideBar from "@/app/components/CartSideBar";
 import { useCart } from "@/app/context/CartContext";
 
+// Tipos para Shopify
+interface ProductOption {
+  name: string;
+  values: string[];
+}
+
+interface SelectedOption {
+  name: string;
+  value: string;
+}
+
+interface ShopifyVariant {
+  id: string;
+  priceV2: {
+    amount: string;
+  };
+  selectedOptions: SelectedOption[];
+}
+
+interface VariantEdge {
+  node: ShopifyVariant;
+}
+
+interface ShopifyImageNode {
+  src: string;
+}
+
+interface ImageEdge {
+  node: ShopifyImageNode;
+}
+
+export interface ShopifyProduct {
+  title: string;
+  options: ProductOption[];
+  variants: {
+    edges: VariantEdge[];
+  };
+  images: {
+    edges: ImageEdge[];
+  };
+  descriptionHtml: string;
+}
+
 // Configura el cliente de Shopify
 const client = Client.buildClient({
   domain: "ideamadera.myshopify.com",
@@ -21,8 +65,8 @@ const client = Client.buildClient({
   apiVersion: "2024-01",
 });
 
-export default function ProductDetails({ product }: { product: any }) {
-  const { options = [], variants = { edges: [] }, images } = product;
+export default function ProductDetails({ product }: { product: ShopifyProduct }) {
+  const { options = [], variants, images } = product;
   const { setCart, toggleCart } = useCart();
   const router = useRouter();
 
@@ -31,32 +75,32 @@ export default function ProductDetails({ product }: { product: any }) {
 
   // Estado inicial de opciones (ej. color, talla)
   const initialOptionsState: Record<string, string> = {};
-  options.forEach((opt: any) => {
+  options.forEach((opt: ProductOption) => {
     if (opt.values?.length) {
       initialOptionsState[opt.name] = opt.values[0];
     }
   });
-  const [selectedOptionsState, setSelectedOptionsState] = useState(initialOptionsState);
+  const [selectedOptionsState, setSelectedOptionsState] = useState<Record<string, string>>(initialOptionsState);
 
   // Encuentra la variante que coincide con las opciones seleccionadas
-  const findMatchingVariant = () => {
+  const findMatchingVariant = useCallback((): ShopifyVariant | null => {
     for (const edge of variants.edges) {
       const variant = edge.node;
-      const match = variant.selectedOptions.every((selOpt: any) => {
+      const match = variant.selectedOptions.every((selOpt: SelectedOption) => {
         return selectedOptionsState[selOpt.name] === selOpt.value;
       });
       if (match) return variant;
     }
     return null;
-  };
+  }, [selectedOptionsState, variants.edges]);
 
-  const [selectedVariant, setSelectedVariant] = useState(findMatchingVariant());
+  const [selectedVariant, setSelectedVariant] = useState<ShopifyVariant | null>(findMatchingVariant());
 
   // Actualiza variante seleccionada cuando cambian las opciones
   useEffect(() => {
     const matchingVariant = findMatchingVariant();
     setSelectedVariant(matchingVariant);
-  }, [selectedOptionsState]);
+  }, [selectedOptionsState, findMatchingVariant]);
 
   // Carga el checkout existente para mantener el carrito
   useEffect(() => {
@@ -95,7 +139,7 @@ export default function ProductDetails({ product }: { product: any }) {
 
   // -------------------------------------------------------------------
   // Estado para controlar el Swiper principal y poder desplazarlo al hacer clic en las miniaturas
-  const [mainSwiper, setMainSwiper] = useState<any>(null);
+  const [mainSwiper, setMainSwiper] = useState<SwiperInstance | null>(null);
 
   // Renderiza el slider principal + miniaturas
   const renderImages = () => {
@@ -121,7 +165,7 @@ export default function ProductDetails({ product }: { product: any }) {
             pagination={{ clickable: true }}
             onSwiper={(swiper) => setMainSwiper(swiper)}
           >
-            {images.edges.map((imageEdge: any, index: number) => (
+            {images.edges.map((imageEdge: ImageEdge, index: number) => (
               <SwiperSlide key={index}>
                 <Image
                   src={imageEdge.node.src}
@@ -137,7 +181,7 @@ export default function ProductDetails({ product }: { product: any }) {
 
         {/* Miniaturas */}
         <div className="mt-4 flex gap-2 justify-center flex-wrap">
-          {images.edges.map((thumbEdge: any, thumbIndex: number) => (
+          {images.edges.map((thumbEdge: ImageEdge, thumbIndex: number) => (
             <Image
               key={thumbIndex}
               src={thumbEdge.node.src}
@@ -162,7 +206,7 @@ export default function ProductDetails({ product }: { product: any }) {
   const handleAddToCart = async () => {
     if (!selectedVariant) return;
     try {
-      let checkoutId = localStorage.getItem("checkoutId");
+      const checkoutId = localStorage.getItem("checkoutId");
       let checkout;
       if (!checkoutId) {
         checkout = await client.checkout.create();
@@ -205,7 +249,7 @@ export default function ProductDetails({ product }: { product: any }) {
 
   // Renderiza las opciones (si hay más de una)
   const renderOptions = () => {
-    return options.map((opt: any) => {
+    return options.map((opt: ProductOption) => {
       const optionName = opt.name;
       const values = opt.values || [];
       return (

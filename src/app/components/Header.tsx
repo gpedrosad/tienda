@@ -46,24 +46,24 @@ export default function Header() {
         <nav className="bg-black absolute left-0 right-0 top-full z-10">
           <ul className="flex flex-col items-center space-y-4 py-4">
             <li>
-              <a href="/" className="hover:text-gray-300 transition-colors">
+              <Link href="/" className="hover:text-gray-300 transition-colors">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-gray-300 transition-colors">
+              <Link href="/about" className="hover:text-gray-300 transition-colors">
                 Nosotros
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/products" className="hover:text-gray-300 transition-colors">
+              <Link href="/products" className="hover:text-gray-300 transition-colors">
                 Productos
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-gray-300 transition-colors">
+              <Link href="/contact" className="hover:text-gray-300 transition-colors">
                 Contacto
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

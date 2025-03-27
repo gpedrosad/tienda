@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
@@ -25,24 +26,24 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Navegación</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/about" className="text-gray-300 hover:text-gray-100 transition-colors">
+                <Link href="/about" className="text-gray-300 hover:text-gray-100 transition-colors">
                   Sobre nosotros
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/products" className="text-gray-300 hover:text-gray-100 transition-colors">
+                <Link href="/products" className="text-gray-300 hover:text-gray-100 transition-colors">
                   Productos
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="text-gray-300 hover:text-gray-100 transition-colors">
+                <Link href="/blog" className="text-gray-300 hover:text-gray-100 transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-gray-100 transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-gray-100 transition-colors">
                   Contacto
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,7 +81,6 @@ export default function Footer() {
               >
                 <FaFacebookF />
               </a>
-             
               <a
                 href="https://instagram.com/ideamadera.cl"
                 target="_blank"
@@ -97,7 +97,7 @@ export default function Footer() {
                 aria-label="WhatsApp"
                 className="text-gray-300 hover:text-white transition-colors text-xl"
               >
-              <FaWhatsapp />
+                <FaWhatsapp />
               </a>
             </div>
           </div>
