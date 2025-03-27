@@ -1,7 +1,6 @@
 import { shopifyFetch } from "@/lib/shopify";
 import ProductDetails from "@/app/components/ProductDetails";
 import RecommendedProductsCarousel from "@/app/components/RecommendedProductsCarousel";
-import Footer from "@/app/components/Footer";
 import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
 import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
@@ -51,7 +50,9 @@ export default async function ProductPage({ params }: { params: { handle: string
   if (!handle) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-red-500">Ruta inválida: Falta el parámetro "handle".</h1>
+        <h1 className="text-red-500">
+          Ruta inválida: Falta el parámetro &quot;handle&quot;.
+        </h1>
       </div>
     );
   }

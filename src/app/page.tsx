@@ -1,7 +1,35 @@
+import Image from "next/image";
 import { shopifyFetch } from "../lib/shopify";
 import FAQ from "./components/FAQ";
 import FabricaVideo from "./components/FabricaVideo";
 import ProductsSection from "./components/ProductSection";
+
+// Definición de tipos para la respuesta de Shopify
+interface ShopifyProductImage {
+  src: string;
+}
+
+interface ShopifyProductEdge {
+  node: {
+    id: string;
+    title: string;
+    handle: string;
+    images: {
+      edges: { node: ShopifyProductImage }[];
+    };
+    priceRange: {
+      minVariantPrice: {
+        amount: string;
+      };
+    };
+  };
+}
+
+interface ProductsData {
+  products: {
+    edges: ShopifyProductEdge[];
+  };
+}
 
 const PRODUCTS_QUERY = `
   {
@@ -34,10 +62,11 @@ function HeroBanner() {
   return (
     <section className="relative bg-gray-100 overflow-hidden">
       <div className="absolute inset-0 opacity-20">
-        <img
+        <Image
           src="/hero-background.jpg"
           alt="Fondo decorativo"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 py-20 text-center">
@@ -62,8 +91,8 @@ export default async function Home() {
   let products = [];
 
   try {
-    const data = await shopifyFetch(PRODUCTS_QUERY);
-    products = data.products.edges.map((edge: any) => edge.node);
+    const data = (await shopifyFetch(PRODUCTS_QUERY)) as ProductsData;
+    products = data.products.edges.map((edge: ShopifyProductEdge) => edge.node);
   } catch (error) {
     console.error("Error al obtener los productos:", error);
     return (

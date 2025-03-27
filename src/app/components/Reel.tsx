@@ -18,7 +18,7 @@ export default function ReelSlider({ videoUrls }: ReelSliderProps) {
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
-    videoRefs.current.forEach((video, index) => {
+    videoRefs.current.forEach((video) => {
       if (!video) return;
 
       const observer = new IntersectionObserver(
