@@ -1,3 +1,5 @@
+// app/products/[handle]/page.tsx
+
 import { shopifyFetch } from "@/lib/shopify";
 import ProductDetails from "@/app/components/ProductDetails";
 import RecommendedProductsCarousel from "@/app/components/RecommendedProductsCarousel";
@@ -44,7 +46,7 @@ const PRODUCT_QUERY = `
   }
 `;
 
-// Interfaces para tipar la respuesta
+// Tipado de la respuesta y del producto
 interface ProductOption {
   name: string;
   values: string[];
@@ -96,9 +98,11 @@ interface ProductQueryResponse {
   productByHandle: Product | null;
 }
 
-// Definimos las props del Page, SIN incluir searchParams si no se utiliza
+// Definimos las props del Page para recibir "params.handle" en lugar de "searchParams"
 interface ProductPageProps {
-  params: { handle: string };
+  params: {
+    handle: string;
+  };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
@@ -108,7 +112,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <h1 className="text-red-500">
-          Ruta inválida: Falta el parámetro &quot;handle&quot;.
+          Ruta inválida: Falta el parámetro &quot;handle&quot; en params.
         </h1>
       </div>
     );
