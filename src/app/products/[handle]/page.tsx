@@ -44,6 +44,7 @@ const PRODUCT_QUERY = `
   }
 `;
 
+// Definición de interfaces para tipar la respuesta
 interface ProductOption {
   name: string;
   values: string[];
@@ -95,7 +96,13 @@ interface ProductQueryResponse {
   productByHandle: Product | null;
 }
 
-export default async function ProductPage({ params }: { params: { handle: string } }) {
+// Definimos las props del Page, incluyendo searchParams
+interface ProductPageProps {
+  params: { handle: string };
+  searchParams: { [key: string]: string | string[] };
+}
+
+export default async function ProductPage({ params, searchParams }: ProductPageProps) {
   const { handle } = params;
 
   if (!handle) {
