@@ -96,14 +96,12 @@ interface ProductQueryResponse {
   productByHandle: Product | null;
 }
 
-// Definimos las props del Page, incluyendo searchParams
+// Definimos las props del Page, SIN incluir searchParams si no se utiliza
 interface ProductPageProps {
   params: { handle: string };
-  searchParams: { [key: string]: string | string[] };
 }
 
-export default async function ProductPage({ params, searchParams: _searchParams }: ProductPageProps) {
-  // No es necesario awaitear params, ya que ya se entregan de forma síncrona.
+export default async function ProductPage({ params }: ProductPageProps) {
   const { handle } = params;
 
   if (!handle) {
