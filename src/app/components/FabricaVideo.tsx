@@ -1,33 +1,33 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 
 const FabricaVideo = React.memo(() => {
-  const videoContainerRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const videoContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observerInstance) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
-            observerInstance.unobserve(entry.target)
+            setIsVisible(true);
+            observerInstance.unobserve(entry.target);
           }
-        })
+        });
       },
       { threshold: 0.5 }
-    )
+    );
 
     if (videoContainerRef.current) {
-      observer.observe(videoContainerRef.current)
+      observer.observe(videoContainerRef.current);
     }
 
     return () => {
       if (videoContainerRef.current) {
-        observer.unobserve(videoContainerRef.current)
+        observer.unobserve(videoContainerRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <section className="w-full m-0 p-0">
@@ -73,7 +73,9 @@ const FabricaVideo = React.memo(() => {
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export default FabricaVideo
+FabricaVideo.displayName = "FabricaVideo";
+
+export default FabricaVideo;
