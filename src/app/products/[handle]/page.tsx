@@ -103,6 +103,9 @@ interface ProductPageProps {
 }
 
 export default async function ProductPage({ params, searchParams: _searchParams }: ProductPageProps) {
+  // Marcar la variable _searchParams como utilizada para evitar error de unused variable
+  void _searchParams;
+
   // Envolver params en una promesa para poder "await"
   const { handle } = await Promise.resolve(params);
 
