@@ -44,7 +44,7 @@ const PRODUCT_QUERY = `
   }
 `;
 
-// Definición de interfaces para tipar la respuesta
+// Interfaces para tipar la respuesta
 interface ProductOption {
   name: string;
   values: string[];
@@ -103,7 +103,8 @@ interface ProductPageProps {
 }
 
 export default async function ProductPage({ params, searchParams: _searchParams }: ProductPageProps) {
-  const { handle } = params;
+  // Envolver params en una promesa para poder "await"
+  const { handle } = await Promise.resolve(params);
 
   if (!handle) {
     return (
