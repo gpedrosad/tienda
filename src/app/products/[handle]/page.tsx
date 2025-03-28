@@ -102,7 +102,7 @@ interface ProductPageProps {
   searchParams: { [key: string]: string | string[] };
 }
 
-export default async function ProductPage({ params, searchParams }: ProductPageProps) {
+export default async function ProductPage({ params, searchParams: _searchParams }: ProductPageProps) {
   const { handle } = params;
 
   if (!handle) {
