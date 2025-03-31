@@ -197,8 +197,6 @@ export default async function Home() {
   );
 }
 
-const domain = "ideamadera.myshopify.com"; // Cambia al dominio de tu tienda
-const storefrontAccessToken = "e7bfcafb70411824e2d9e65b3d837e02"; // Tu token de acceso
 
 // Definición de tipos para la respuesta de productos en oferta
 interface ProductOnSale {
