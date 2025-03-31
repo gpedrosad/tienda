@@ -60,8 +60,8 @@ export interface ShopifyProduct {
 
 // Configura el cliente de Shopify
 const client = Client.buildClient({
-  domain: "ideamadera.myshopify.com",
-  storefrontAccessToken: "e7bfcafb70411824e2d9e65b3d837e02",
+  domain: process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN || "",
+  storefrontAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN || "",
   apiVersion: "2024-01",
 });
 
