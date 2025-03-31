@@ -1,4 +1,4 @@
-// app/products/[handle]/page.tsx
+export const dynamic = "force-dynamic";
 
 import { shopifyFetch } from "@/lib/shopify";
 import ProductDetails from "@/app/components/ProductDetails";
@@ -98,15 +98,14 @@ interface ProductQueryResponse {
   productByHandle: Product | null;
 }
 
-// Definimos las props del Page para recibir "params.handle" en lugar de "searchParams"
 interface ProductPageProps {
   params: {
     handle: string;
   };
 }
-
 export default async function ProductPage({ params }: ProductPageProps) {
-  const { handle } = params;
+  // Desestructuramos después de await:
+  const { handle } = await params;
 
   if (!handle) {
     return (
