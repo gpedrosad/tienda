@@ -173,6 +173,9 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
                   width={600}
                   height={375}
                   className="object-cover w-full h-auto"
+                  // Mejora de LCP: el primer slide se carga con prioridad
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
               </SwiperSlide>
             ))}
