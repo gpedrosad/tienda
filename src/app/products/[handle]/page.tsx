@@ -1,4 +1,7 @@
-export const dynamic = "force-dynamic";
+// src/app/products/[handle]/page.tsx
+
+// Indica, si quieres, que sea dinámica (opcional, depende de tu caso)
+// export const dynamic = "force-dynamic";
 
 import { shopifyFetch } from "@/lib/shopify";
 import ProductDetails from "@/app/components/ProductDetails";
@@ -46,7 +49,7 @@ const PRODUCT_QUERY = `
   }
 `;
 
-// Tipado de la respuesta y del producto
+// Tipos de producto (puedes dejarlos como estaban).
 interface ProductOption {
   name: string;
   values: string[];
@@ -98,13 +101,15 @@ interface ProductQueryResponse {
   productByHandle: Product | null;
 }
 
+// ¡OJO AQUÍ! `params` pasa a ser un Promise si lo vas a await-ar
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     handle: string;
-  };
+  }>;
 }
+
 export default async function ProductPage({ params }: ProductPageProps) {
-  // Desestructuramos después de await:
+  // Destructuramos tras el await
   const { handle } = await params;
 
   if (!handle) {
