@@ -60,20 +60,22 @@ export interface ShopifyProduct {
 
 // Configura el cliente de Shopify
 const client = Client.buildClient({
-  domain: "ideamadera.myshopify.com",
-  storefrontAccessToken: "e7bfcafb70411824e2d9e65b3d837e02",
+  domain: process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN || "",
+  storefrontAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN || "",
   apiVersion: "2024-01",
 });
 
 export default function ProductDetails({ product }: { product: ShopifyProduct }) {
+  // 🔍 Verificar si las variables de entorno están presentes en el cliente
+  console.log("🟡 NEXT_PUBLIC_SHOPIFY_DOMAIN:", process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN);
+  console.log("🟡 NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN:", process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
+
   const { options = [], variants, images } = product;
   const { setCart, toggleCart } = useCart();
   const router = useRouter();
 
-  // Determina si se deben mostrar opciones de variantes
   const showOptions = variants.edges.length > 1 || options.length > 1;
 
-  // Estado inicial de opciones (ej. color, talla)
   const initialOptionsState: Record<string, string> = {};
   options.forEach((opt: ProductOption) => {
     if (opt.values?.length) {
@@ -82,7 +84,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
   });
   const [selectedOptionsState, setSelectedOptionsState] = useState<Record<string, string>>(initialOptionsState);
 
-  // Encuentra la variante que coincide con las opciones seleccionadas
   const findMatchingVariant = useCallback((): ShopifyVariant | null => {
     for (const edge of variants.edges) {
       const variant = edge.node;
@@ -96,13 +97,11 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
 
   const [selectedVariant, setSelectedVariant] = useState<ShopifyVariant | null>(findMatchingVariant());
 
-  // Actualiza variante seleccionada cuando cambian las opciones
   useEffect(() => {
     const matchingVariant = findMatchingVariant();
     setSelectedVariant(matchingVariant);
   }, [selectedOptionsState, findMatchingVariant]);
 
-  // Carga el checkout existente para mantener el carrito
   useEffect(() => {
     const fetchCheckout = async () => {
       const checkoutId = localStorage.getItem("checkoutId");
@@ -114,17 +113,14 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
     fetchCheckout();
   }, [setCart]);
 
-  // Calcula el precio base de la variante seleccionada
   const basePrice = selectedVariant?.priceV2?.amount
     ? Math.round(Number(selectedVariant.priceV2.amount))
     : 0;
 
-  // Helper para formatear precios
   const formatPrice = (price: number) => {
     return `$${price.toLocaleString("es-ES", { maximumFractionDigits: 0 })}`;
   };
 
-  // Manejador para cambiar opciones (ej. color, talla)
   const handleOptionChange = (optionName: string, value: string) => {
     setSelectedOptionsState((prev) => ({
       ...prev,
@@ -132,21 +128,16 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
     }));
   };
 
-  // Manejador para volver a la página anterior
   const handleGoBack = () => {
     router.back();
   };
 
-  // -------------------------------------------------------------------
-  // Estado para controlar el Swiper principal y poder desplazarlo al hacer clic en las miniaturas
   const [mainSwiper, setMainSwiper] = useState<SwiperInstance | null>(null);
 
-  // Renderiza el slider principal + miniaturas
   const renderImages = () => {
     if (!images || !images.edges) return null;
     return (
       <div className="relative flex flex-col items-center mb-4">
-        {/* Ícono de volver */}
         <button 
           onClick={handleGoBack}
           className="absolute top-4 left-4 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
@@ -154,8 +145,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
         >
           <AiOutlineArrowLeft size={24} />
         </button>
-
-        {/* Contenedor responsivo para el slider */}
         <div className="w-full max-w-full md:max-w-[400px] lg:max-w-[500px] mx-auto">
           <Swiper
             modules={[Pagination]}
@@ -173,7 +162,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
                   width={600}
                   height={375}
                   className="object-cover w-full h-auto"
-                  // Mejora de LCP: el primer slide se carga con prioridad
                   priority={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
@@ -181,8 +169,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
             ))}
           </Swiper>
         </div>
-
-        {/* Miniaturas */}
         <div className="mt-4 flex gap-2 justify-center flex-wrap">
           {images.edges.map((thumbEdge: ImageEdge, thumbIndex: number) => (
             <Image
@@ -203,9 +189,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       </div>
     );
   };
-  // -------------------------------------------------------------------
 
-  // Agregar producto al carrito y abrir el sidebar sin alert
   const handleAddToCart = async () => {
     if (!selectedVariant) return;
     try {
@@ -225,14 +209,12 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       ];
       checkout = await client.checkout.addLineItems(checkout.id, lineItemsToAdd);
       setCart(checkout);
-      // En lugar de alert, abre el CartSidebar
       toggleCart();
     } catch (error) {
       console.error("Error al agregar al carrito:", error);
     }
   };
 
-  // Comprar ahora
   const handleBuyNow = async () => {
     if (!selectedVariant) return;
     try {
@@ -250,7 +232,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
     }
   };
 
-  // Renderiza las opciones (si hay más de una)
   const renderOptions = () => {
     return options.map((opt: ProductOption) => {
       const optionName = opt.name;
@@ -284,21 +265,14 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
   return (
     <>
       <div className="flex flex-col md:flex-row">
-        {/* Sección de imágenes */}
         <div className="w-full md:w-1/2 md:p-8 md:flex md:items-center md:justify-center">
           {renderImages()}
         </div>
 
-        {/* Sección de detalles */}
         <div className="w-full md:w-1/2 p-6">
-          {/* Título + badge + Rating */}
           <div className="mb-4">
             <div className="flex items-center space-x-2">
-              <h1
-                className={`font-bold ${
-                  product.title.length > 20 ? "text-2xl" : "text-3xl"
-                }`}
-              >
+              <h1 className={`font-bold ${product.title.length > 20 ? "text-2xl" : "text-3xl"}`}>
                 {product.title}
               </h1>
               <span className="bg-yellow-400 text-black text-xs font-bold uppercase px-2 py-1 rounded">
@@ -318,10 +292,8 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
             <AiOutlineCreditCard className="ml-2" size={20} />
           </div>
 
-          {/* Opciones de variantes (talla, color, etc.) */}
           {showOptions && renderOptions()}
 
-          {/* Botones de acción */}
           <div className="flex flex-col gap-4 md:flex-row mt-8 mb-8">
             <button
               onClick={handleAddToCart}
@@ -339,7 +311,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
             </button>
           </div>
 
-          {/* Descripción del producto */}
           <div
             className="prose mb-8"
             dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
@@ -347,7 +318,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
         </div>
       </div>
 
-      {/* Se mantiene el CartSideBar si se usa de forma local, pero recuerda que también puede estar global */}
       <CartSideBar />
     </>
   );
