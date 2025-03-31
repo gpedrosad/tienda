@@ -62,34 +62,60 @@ const COLLECTION_PRODUCTS_QUERY = `
   }
 `;
 
-interface PageProps {
-  params: { handle: string };
+// Al igual que en products, params se espera como Promise
+interface CollectionPageProps {
+  params: Promise<{
+    handle: string;
+  }>;
 }
 
-export default async function CollectionPage({ params }: PageProps) {
-  const { handle } = params;
-  const data = await shopifyFetch<CollectionProductsData>(COLLECTION_PRODUCTS_QUERY, { handle });
-  
-  if (!data.collectionByHandle) {
-    return <div className="max-w-7xl mx-auto p-8">Colección no encontrada</div>;
+export default async function CollectionPage({ params }: CollectionPageProps) {
+  // Desestructuramos tras el await para obtener el parámetro handle
+  const { handle } = await params;
+
+  if (!handle) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-red-500">
+          Ruta inválida: Falta el parámetro "handle" en params.
+        </h1>
+      </div>
+    );
   }
-  
-  const collection = data.collectionByHandle;
+
+  let collectionData: CollectionProductsData | null = null;
+
+  try {
+    collectionData = await shopifyFetch<CollectionProductsData>(COLLECTION_PRODUCTS_QUERY, { handle });
+  } catch (error) {
+    console.error("Error al obtener la colección:", error);
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-red-500">Error al cargar la colección</h1>
+      </div>
+    );
+  }
+
+  if (!collectionData || !collectionData.collectionByHandle) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-red-500">Colección no encontrada</h1>
+      </div>
+    );
+  }
+
+  const collection = collectionData.collectionByHandle;
   const products = collection.products.edges.map(edge => edge.node);
 
   // Función para formatear precios: sin decimales y con separador de miles.
-  const formatPrice = (price: string) => {
-    return Number(price).toLocaleString("es-CL", {
-      maximumFractionDigits: 0,
-    });
-  };
+  const formatPrice = (price: string) =>
+    Number(price).toLocaleString("es-CL", { maximumFractionDigits: 0 });
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Botón para volver */}
       <div className="mb-8">
         <Link href="/" className="flex items-center text-black hover:underline">
-          {/* Ícono inline de flecha izquierda */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 mr-2"
@@ -102,8 +128,9 @@ export default async function CollectionPage({ params }: PageProps) {
           Volver
         </Link>
       </div>
-      
+
       <h1 className="text-4xl font-bold mb-8">{collection.title}</h1>
+
       {products.length === 0 ? (
         <p>No se encontraron productos en esta colección.</p>
       ) : (
@@ -120,11 +147,13 @@ export default async function CollectionPage({ params }: PageProps) {
                   alt={product.title}
                   width={300}
                   height={200}
-                  className="object-cover rounded-md "
+                  className="object-cover rounded-md"
                 />
               )}
               <h2 className="mt-4 text-xl font-semibold">{product.title}</h2>
-              <p className="text-lg font-medium">${formatPrice(product.priceRange.minVariantPrice.amount)}</p>
+              <p className="text-lg font-medium">
+                ${formatPrice(product.priceRange.minVariantPrice.amount)}
+              </p>
             </Link>
           ))}
         </div>
