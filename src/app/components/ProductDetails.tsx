@@ -32,7 +32,6 @@ interface ShopifyVariant {
     amount: string;
   };
   selectedOptions: SelectedOption[];
-  availableForSale?: boolean; // Propiedad para stock
 }
 
 interface VariantEdge {
@@ -208,7 +207,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
 
   // Agregar producto al carrito y abrir el sidebar sin alert
   const handleAddToCart = async () => {
-    if (!selectedVariant || !selectedVariant.availableForSale) return;
+    if (!selectedVariant) return;
     try {
       const checkoutId = localStorage.getItem("checkoutId");
       let checkout;
@@ -235,7 +234,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
 
   // Comprar ahora
   const handleBuyNow = async () => {
-    if (!selectedVariant || !selectedVariant.availableForSale) return;
+    if (!selectedVariant) return;
     try {
       const checkout = await client.checkout.create();
       const lineItemsToAdd = [
@@ -282,9 +281,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
     });
   };
 
-  // Determina si la variante seleccionada tiene stock disponible
-  const isAvailable = selectedVariant?.availableForSale;
-
   return (
     <>
       <div className="flex flex-col md:flex-row">
@@ -329,32 +325,19 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
           <div className="flex flex-col gap-4 md:flex-row mt-8 mb-8">
             <button
               onClick={handleAddToCart}
-              disabled={!selectedVariant || !isAvailable}
-              className={`w-full md:flex-1 px-6 py-3 border rounded-lg shadow-lg transition-colors text-lg font-bold ${
-                selectedVariant && isAvailable
-                  ? "bg-white text-black border-black hover:bg-gray-100"
-                  : "bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed"
-              }`}
+              disabled={!selectedVariant}
+              className="w-full md:flex-1 px-6 py-3 bg-white text-black border border-black rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-lg font-bold"
             >
               Agregar al carrito
             </button>
             <button
               onClick={handleBuyNow}
-              disabled={!selectedVariant || !isAvailable}
-              className={`w-full md:flex-1 px-6 py-3 rounded-lg shadow-lg transition-colors text-lg font-bold ${
-                selectedVariant && isAvailable
-                  ? "bg-green-600 text-white hover:bg-green-700"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
+              disabled={!selectedVariant}
+              className="w-full md:flex-1 px-6 py-3 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-colors text-lg font-bold"
             >
               Comprar
             </button>
           </div>
-
-          {/* Mensaje de stock agotado */}
-          {selectedVariant && !isAvailable && (
-            <p className="text-red-600 font-semibold">Producto sin stock</p>
-          )}
 
           {/* Descripción del producto */}
           <div
