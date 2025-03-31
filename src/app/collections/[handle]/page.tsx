@@ -77,7 +77,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <h1 className="text-red-500">
-          Ruta inválida: Falta el parámetro 'handle' en params.
+          Ruta inválida: Falta el parámetro &apos;handle&apos; en params.
         </h1>
       </div>
     );
