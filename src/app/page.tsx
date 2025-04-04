@@ -171,7 +171,7 @@ export default async function Home() {
     console.error("Error al obtener los productos:", error);
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-red-500">Error al cargar productos</h1>
+        <h1 className="text-red-500">Error al cargar productos de Shopify</h1>
       </div>
     );
   }
