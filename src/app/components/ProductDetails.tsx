@@ -301,12 +301,14 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
               >
                 {product.title}
               </h1>
-              <span className="bg-yellow-400 text-black text-xs font-bold uppercase px-2 py-1 rounded">
-                Más Vendido
-              </span>
+              {product.title.length > 20 && (
+                <span className="bg-yellow-400 text-black text-xs font-bold uppercase px-2 py-1 rounded">
+                  Más Vendido
+                </span>
+              )}
             </div>
             <div className="mt-2">
-              <Rating rating={4.5} reviewCount={213} />
+              <Rating rating={4.5} reviewCount={Math.round(product.title.length * .75)} />
             </div>
           </div>
 
