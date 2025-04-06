@@ -5,7 +5,7 @@ import FAQ from "@/app/components/FAQ";
 import FabricaVideo from "@/app/components/FabricaVideo";
 import ProductsSection from "@/app/components/ProductSection";
 
-// Definición de tipos para la respuesta de Shopify (Productos)
+// Tipos para los productos de Shopify
 interface ShopifyProductImage {
   src: string;
 }
@@ -28,13 +28,22 @@ interface ShopifyProductEdge {
 
 interface ProductsData {
   products: {
+    pageInfo: {
+      hasNextPage: boolean;
+      endCursor: string | null;
+    };
     edges: ShopifyProductEdge[];
   };
 }
 
-const PRODUCTS_QUERY = `
-  {
-    products(first: 100) {
+// Query que incluye la paginación (se traen 100 productos por consulta)
+const PRODUCTS_PAGINATION_QUERY = `
+  query getProducts($cursor: String) {
+    products(first: 100, after: $cursor) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       edges {
         node {
           id
@@ -58,7 +67,24 @@ const PRODUCTS_QUERY = `
   }
 `;
 
-// Definición de tipos para la respuesta de Shopify (Colecciones)
+// Función que recorre la paginación para obtener todos los productos
+async function getAllProducts() {
+  let products: ShopifyProductEdge["node"][] = [];
+  let hasNextPage = true;
+  let cursor: string | null = null;
+
+  while (hasNextPage) {
+    const variables = { cursor };
+    const data = (await shopifyFetch(PRODUCTS_PAGINATION_QUERY, variables)) as ProductsData;
+    const fetchedProducts = data.products.edges.map(edge => edge.node);
+    products = products.concat(fetchedProducts);
+    hasNextPage = data.products.pageInfo.hasNextPage;
+    cursor = data.products.pageInfo.endCursor;
+  }
+  return products;
+}
+
+// Tipos para las colecciones de Shopify
 interface ShopifyCollectionEdge {
   node: {
     id: string;
@@ -158,15 +184,13 @@ function CollectionsSection({
   );
 }
 
+// Componente principal Home que utiliza las funciones anteriores
 export default async function Home() {
   let products = [];
   let collections: ShopifyCollectionEdge["node"][] = [];
 
   try {
-    const dataProducts = (await shopifyFetch(PRODUCTS_QUERY)) as ProductsData;
-    products = dataProducts.products.edges.map(
-      (edge: ShopifyProductEdge) => edge.node
-    );
+    products = await getAllProducts();
   } catch (error) {
     console.error("Error al obtener los productos:", error);
     return (
