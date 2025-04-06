@@ -193,7 +193,7 @@ const reviews: Review[] = [
 ];
 
 const ReviewStars = () => {
-  // Siempre se muestran 5 estrellas llenas
+  // Se muestran 5 estrellas llenas
   return (
     <div className="flex items-center">
       {[...Array(5)].map((_, index) => (
@@ -237,9 +237,11 @@ const Reviews = () => {
               </div>
             )}
             <div className="p-4 flex flex-col flex-1">
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">{review.author}</p>
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex flex-col">
+                  <p className="text-sm font-semibold text-gray-900 whitespace-nowrap">
+                    {review.author}
+                  </p>
                   <div className="flex items-center">
                     <AiFillCheckCircle className="text-blue-500 mr-1" />
                     <span className="text-xs text-gray-500">Verificada</span>
@@ -247,8 +249,8 @@ const Reviews = () => {
                   <span className="text-xs text-gray-500">
                     {new Date(review.date).toLocaleDateString()}
                   </span>
+                  <ReviewStars />
                 </div>
-                <ReviewStars />
               </div>
               <p className="text-sm text-gray-700 mb-2">{review.content}</p>
             </div>
@@ -260,7 +262,9 @@ const Reviews = () => {
       {visibleReviews < reviews.length && (
         <div className="flex justify-center mt-8">
           <button
-            onClick={() => setVisibleReviews((prev) => Math.min(prev + reviewsPerLoad, reviews.length))}
+            onClick={() =>
+              setVisibleReviews((prev) => Math.min(prev + reviewsPerLoad, reviews.length))
+            }
             className="px-4 py-2 bg-black text-white rounded hover:bg-black/80"
           >
             Mostrar más reseñas
