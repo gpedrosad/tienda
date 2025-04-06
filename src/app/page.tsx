@@ -104,7 +104,7 @@ interface CollectionsData {
 
 const COLLECTIONS_QUERY = `
   {
-    collections(first: 10) {
+    collections(first: 15) {
       edges {
         node {
           id
