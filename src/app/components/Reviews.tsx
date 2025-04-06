@@ -48,7 +48,7 @@ const reviews: Review[] = [
   },
   {
     id: 5,
-    rating: 4,
+    rating: 5,
     author: "Luis Fernández",
     date: "2024-03-11",
     content: "Producto de buena calidad, cumple con lo prometido.",
