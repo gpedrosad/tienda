@@ -1,21 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
 import Script from "next/script";
 import { CartProvider } from "@/app/context/CartContext";
 import Header from "@/app/components/Header";
 import CartSideBar from "@/app/components/CartSideBar";
 import Footer from "@/app/components/Footer";
-import { initFacebookPixel } from "@/lib/pixel";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    initFacebookPixel(); // Solo el Pixel por navegador
-  }, []);
-
   return (
     <>
-      {/* Script para Pixel de Facebook */}
+      {/* Pixel Script manual */}
       <Script
         id="fb-pixel-script"
         strategy="afterInteractive"
