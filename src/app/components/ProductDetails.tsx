@@ -14,6 +14,7 @@ import { AiOutlineCreditCard, AiOutlineArrowLeft } from "react-icons/ai";
 import Client from "shopify-buy";
 import CartSideBar from "@/app/components/CartSideBar";
 import { useCart } from "@/app/context/CartContext";
+import { enviarEventoCAPI } from "@/lib/capi";
 
 // Tipos para Shopify
 interface ProductOption {
@@ -173,7 +174,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
                   width={600}
                   height={375}
                   className="object-cover w-full h-auto"
-                  // Mejora de LCP: el primer slide se carga con prioridad
                   priority={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
@@ -225,8 +225,19 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       ];
       checkout = await client.checkout.addLineItems(checkout.id, lineItemsToAdd);
       setCart(checkout);
-      // En lugar de alert, abre el CartSidebar
+      // Abre el CartSideBar en lugar de alertar
       toggleCart();
+
+      // Enviar evento AddToCart a Facebook con datos adicionales
+      // Se envía el precio, el nombre del producto, el ID de la variante y se indica que es un producto.
+      enviarEventoCAPI({
+        event_name: "AddToCart",
+        value: Number(selectedVariant.priceV2.amount),
+        currency: "CLP",
+        content_name: product.title,
+        content_ids: [selectedVariant.id],
+        content_type: "product",
+      });
     } catch (error) {
       console.error("Error al agregar al carrito:", error);
     }
@@ -291,14 +302,10 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
 
         {/* Sección de detalles */}
         <div className="w-full md:w-1/2 p-6">
-          {/* Título + badge + Rating */}
+          {/* Título, badge y Rating */}
           <div className="mb-4">
             <div className="flex items-center space-x-2">
-              <h1
-                className={`font-bold ${
-                  product.title.length > 20 ? "text-2xl" : "text-3xl"
-                }`}
-              >
+              <h1 className={`font-bold ${product.title.length > 20 ? "text-2xl" : "text-3xl"}`}>
                 {product.title}
               </h1>
               {product.title.length > 20 && (
@@ -308,7 +315,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
               )}
             </div>
             <div className="mt-2">
-              <Rating rating={4.5} reviewCount={Math.round(product.title.length * .75)} />
+              <Rating rating={4.5} reviewCount={Math.round(product.title.length * 0.75)} />
             </div>
           </div>
 
@@ -320,7 +327,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
             <AiOutlineCreditCard className="ml-2" size={20} />
           </div>
 
-          {/* Opciones de variantes (talla, color, etc.) */}
+          {/* Opciones de variantes */}
           {showOptions && renderOptions()}
 
           {/* Botones de acción */}
@@ -349,7 +356,6 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
         </div>
       </div>
 
-      {/* Se mantiene el CartSideBar si se usa de forma local, pero recuerda que también puede estar global */}
       <CartSideBar />
     </>
   );
