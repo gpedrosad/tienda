@@ -7,7 +7,7 @@ interface CapiEventParams {
   value?: number;
   currency?: string;
   content_name?: string;
-  content_ids?: string[];  // Array de IDs (aunque sea de un solo producto, se envía en un array)
+  content_ids?: string[];
   content_type?: string;
 }
 
@@ -32,9 +32,9 @@ export const enviarEventoCAPI = async ({
       fbc,
       value,
       currency,
-      content_name,   // Enviamos el nombre del producto
-      content_ids,    // Enviamos el(s) ID(s)
-      content_type,   // Enviamos el tipo, p. ej. "product"
+      content_name,
+      content_ids,
+      content_type,
     }),
   });
 };

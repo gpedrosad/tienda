@@ -1,7 +1,8 @@
-// src/lib/pixel.ts
+"use client";
+
 import ReactPixel from "react-facebook-pixel";
 
-const PIXEL_ID = "1591255851691449";
+const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "1591255851691449";
 
 const options = {
   autoConfig: true,

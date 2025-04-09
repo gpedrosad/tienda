@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Declaramos una interfaz para el cuerpo de la petición (opcional, pero recomendada)
+// Declaramos una interfaz para el cuerpo de la petición.
 interface CapiRequestBody {
   event_name: string;
   event_source_url: string;
@@ -13,7 +13,7 @@ interface CapiRequestBody {
   content_type?: string;
 }
 
-// Interfaz para user_data que se enviará a Facebook
+// Interfaz para los datos del usuario
 interface UserData {
   client_ip_address: string | null;
   client_user_agent: string | null;
@@ -26,7 +26,6 @@ const ACCESS_TOKEN = process.env.NEXT_FACEBOOK_ACCESS_TOKEN!;
 
 export async function POST(req: NextRequest) {
   const body = (await req.json()) as CapiRequestBody;
-
   const {
     event_name,
     event_source_url,
@@ -41,7 +40,6 @@ export async function POST(req: NextRequest) {
 
   const event_time = Math.floor(Date.now() / 1000);
 
-  // Usamos la interfaz UserData en lugar de any
   const user_data: UserData = {
     client_ip_address: req.headers.get("x-forwarded-for"),
     client_user_agent: req.headers.get("user-agent"),
@@ -75,9 +73,7 @@ export async function POST(req: NextRequest) {
       `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       }
     );
