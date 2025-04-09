@@ -228,10 +228,17 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       // Abre el CartSideBar en lugar de alertar
       toggleCart();
 
-      // Enviar evento AddToCart a Facebook con datos adicionales
-      // Se envía el precio, el nombre del producto, el ID de la variante y se indica que es un producto.
+      // Opcional: log para confirmar envío de evento personalizado
+      console.log("Enviando CustomAddToCart:", {
+        value: Number(selectedVariant.priceV2.amount),
+        content_name: product.title,
+        content_ids: [selectedVariant.id],
+        content_type: "product",
+      });
+
+      // Enviar evento CustomAddToCart a Facebook con datos adicionales
       enviarEventoCAPI({
-        event_name: "AddToCart",
+        event_name: "CustomAddToCart", // Evento personalizado
         value: Number(selectedVariant.priceV2.amount),
         currency: "CLP",
         content_name: product.title,
