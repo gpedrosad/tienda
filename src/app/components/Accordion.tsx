@@ -19,7 +19,7 @@ export default function Accordion() {
     },
     {
       title: "TIEMPO DE FABRICACIÓN",
-      content: "10 días hábiles."
+      content: "15 días hábiles."
     },
     {
       title: "CONTACTO",

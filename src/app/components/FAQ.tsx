@@ -7,7 +7,7 @@ const questions = [
     id: 1,
     title: "¿Cuánto tarda el envío?",
     answer:
-      "El envío usualmente tarda entre 3 y 7 días hábiles, dependiendo de la ubicación y la disponibilidad del producto. Además, recibirás un número de seguimiento para estar al tanto de la entrega.",
+      "El envío usualmente tarda 15 días hábiles, dependiendo de la ubicación y la disponibilidad del producto. Además, recibirás un número de seguimiento para estar al tanto de la entrega.",
   },
   {
     id: 2,
