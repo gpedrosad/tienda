@@ -6,27 +6,31 @@ interface WhatsappButtonProps {
   productTitle: string;
 }
 
+interface DataLayerEvent {
+  event: string;
+  product: string;
+}
+
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
   const handleWhatsappClick = () => {
     if (typeof window !== "undefined") {
-        const win = window as unknown as { dataLayer: any[] };
-        
+      // Define 'win' como una versión tipada de window con una propiedad opcional dataLayer
+      const win = window as { dataLayer?: DataLayerEvent[] };
+
       // Inicializa dataLayer si no existe
       if (!win.dataLayer) {
         win.dataLayer = [];
       }
 
-      // Enviar evento al dataLayer
+      // Empuja el evento al dataLayer
       win.dataLayer.push({
         event: "whatsapp_conversion",
         product: productTitle,
       });
     }
 
-    // Abrir WhatsApp
-    const url = `https://wa.me/56995497838?text=Hola, quiero comprar el producto ${encodeURIComponent(
-      productTitle
-    )}`;
+    // Construye la URL para abrir WhatsApp con el mensaje preconfigurado
+    const url = `https://wa.me/56995497838?text=Hola, quiero comprar el producto ${encodeURIComponent(productTitle)}`;
     window.open(url, "_blank");
   };
 
