@@ -1,63 +1,103 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+// Declaramos una interfaz para el cuerpo de la petición.
+interface CapiRequestBody {
+  event_name: string;
+  event_source_url: string;
+  fbp?: string;
+  fbc?: string;
+  value?: number;
+  currency?: string;
+  content_name?: string;
+  content_ids?: string[];
+  content_type?: string;
+}
+
+// Interfaz para los datos del usuario
+interface UserData {
+  client_ip_address: string | null;
+  client_user_agent: string | null;
+  fbp?: string;
+  fbc?: string;
+}
+
+const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID!;
+const ACCESS_TOKEN = process.env.NEXT_FACEBOOK_ACCESS_TOKEN!;
+
+export async function POST(req: NextRequest) {
+  // Obtenemos el cuerpo de la petición
+  const body = (await req.json()) as CapiRequestBody;
+  const {
+    event_name,
+    event_source_url,
+    fbp,
+    fbc,
+    value,
+    currency = "CLP",
+    content_name,
+    content_ids,
+    content_type,
+  } = body;
+
+  const event_time = Math.floor(Date.now() / 1000);
+
+  // Extraemos la información del request para los datos del usuario
+  const user_data: UserData = {
+    client_ip_address: req.headers.get("x-forwarded-for"),
+    client_user_agent: req.headers.get("user-agent"),
+  };
+
+  // Agregamos fbp y fbc si están presentes en el cuerpo de la petición
+  if (fbp) {
+    user_data.fbp = fbp;
+  }
+  if (fbc) {
+    user_data.fbc = fbc;
+  }
+
+  // Armamos el payload para la Conversion API de Facebook
+  const payload = {
+    data: [
+      {
+        event_name,
+        event_time,
+        event_source_url,
+        action_source: "website",
+        user_data,
+        custom_data: {
+          value,
+          currency,
+          content_name,
+          content_ids,
+          content_type,
+        },
+      },
+    ],
+    access_token: ACCESS_TOKEN,
+  };
+
   try {
-    const { product } = await request.json();
+    const response = await fetch(
+      `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }
+    );
+    const data = await response.json();
 
-    // Obtenemos los datos del request para user_data
-    // Aseguramos un fallback en caso de que alguna cabecera no esté presente
-    const client_ip_address = request.headers.get("x-forwarded-for") || "0.0.0.0";
-    const client_user_agent = request.headers.get("user-agent") || "unknown";
-
-    // Puedes agregar fbp y fbc si los tenés disponibles (por ejemplo, pasados desde el cliente)
-    // const fbp = request.headers.get("fbp") || "";
-    // const fbc = request.headers.get("fbc") || "";
-
-    // Armamos el payload para enviar a la Conversion API de Facebook
-    const payload = {
-      event_name: "MensajeWhatsApp", // Nombre de la conversión
-      event_time: Math.floor(Date.now() / 1000), // Tiempo actual en segundos
-      event_source_url: "", // Opcional: agrega la URL de origen si es relevante
-      action_source: "website",
-      user_data: {
-        client_ip_address, 
-        client_user_agent,
-        // Si tienes estos parámetros, descomenta y agrega:
-        // fbp, 
-        // fbc,
-      },
-      custom_data: {
-        product, // Información adicional (por ejemplo, nombre del producto)
-      },
-    };
-
-    // Obtenemos el ID del Pixel y el Access Token de las variables de entorno
-    const fbPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
-    const accessToken = process.env.NEXT_FACEBOOK_ACCESS_TOKEN;
-
-    if (!fbPixelId || !accessToken) {
-      console.error("Falta configurar el Pixel ID o Access Token en las variables de entorno.");
-      return NextResponse.error();
+    if (!response.ok) {
+      console.error("Error CAPI:", data);
+      return NextResponse.json({ success: false, error: data }, { status: 500 });
     }
-
-    // Endpoint de la Facebook Conversion API (ajustar versión si es necesario)
-    const fbEndpoint = `https://graph.facebook.com/v16.0/${fbPixelId}/events?access_token=${accessToken}`;
-
-    console.log("Payload enviado a Facebook:", JSON.stringify({ data: [payload] }, null, 2));
-
-    const response = await fetch(fbEndpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ data: [payload] }),
-    });
-
-    const fbResponse = await response.json();
-    console.log("Facebook API Response:", fbResponse);
-    return NextResponse.json(fbResponse);
-  } catch (error) {
-    console.error("Error en la API de Facebook:", error);
-    return NextResponse.error();
+    return NextResponse.json({ success: true, data });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error CAPI:", error.message);
+      return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    }
+    console.error("Error CAPI:", error);
+    return NextResponse.json({ success: false, error: "Unknown error" }, { status: 500 });
   }
 }
