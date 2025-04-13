@@ -17,8 +17,8 @@ interface CapiRequestBody {
 interface UserData {
   client_ip_address: string | null;
   client_user_agent: string | null;
-  fbp?: string;
-  fbc?: string;
+  fbp: string;
+  fbc: string;
 }
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID!;
@@ -41,19 +41,13 @@ export async function POST(req: NextRequest) {
 
   const event_time = Math.floor(Date.now() / 1000);
 
-  // Extraemos la información del request para los datos del usuario
+  // Extraemos la información del request para los datos del usuario y establecemos defaults para fbp y fbc
   const user_data: UserData = {
     client_ip_address: req.headers.get("x-forwarded-for"),
     client_user_agent: req.headers.get("user-agent"),
+    fbp: fbp || "",
+    fbc: fbc || "",
   };
-
-  // Agregamos fbp y fbc si están presentes en el cuerpo de la petición
-  if (fbp) {
-    user_data.fbp = fbp;
-  }
-  if (fbc) {
-    user_data.fbc = fbc;
-  }
 
   // Armamos el payload para la Conversion API de Facebook
   const payload = {
