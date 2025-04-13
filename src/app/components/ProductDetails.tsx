@@ -341,6 +341,7 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
           <div className="flex flex-col gap-4 md:flex-row mt-8 mb-8">
             <button
               onClick={handleAddToCart}
+              data-fb-disable-auto-event-tracking="true"
               disabled={!selectedVariant}
               className="w-full md:flex-1 px-6 py-3 bg-white text-black border border-black rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-lg font-bold"
             >
