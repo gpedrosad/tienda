@@ -12,24 +12,36 @@ interface DataLayerEvent {
 }
 
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
-  const handleWhatsappClick = () => {
+  const handleWhatsappClick = async () => {
     if (typeof window !== "undefined") {
-      // Define 'win' como una versión tipada de window con una propiedad opcional dataLayer
+      // Aseguramos que el dataLayer exista
       const win = window as { dataLayer?: DataLayerEvent[] };
 
-      // Inicializa dataLayer si no existe
       if (!win.dataLayer) {
         win.dataLayer = [];
       }
 
-      // Empuja el evento al dataLayer
+      // Disparamos el evento para GTM
       win.dataLayer.push({
         event: "whatsapp_conversion",
         product: productTitle,
       });
     }
 
-    // Construye la URL para abrir WhatsApp con el mensaje preconfigurado
+    // Llamada a la API interna para enviar el evento a Facebook Conversion API
+    try {
+      await fetch("/api/facebook-whatsapp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ product: productTitle }),
+      });
+    } catch (error) {
+      console.error("Error enviando conversión a Facebook:", error);
+    }
+
+    // Abre WhatsApp con el mensaje preconfigurado
     const url = `https://wa.me/56995497838?text=Hola, quiero comprar el producto ${encodeURIComponent(productTitle)}`;
     window.open(url, "_blank");
   };
