@@ -35,7 +35,12 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ product: productTitle }),
+        // Se envían los campos requeridos: event_name, event_source_url y product
+        body: JSON.stringify({
+          event_name: "MensajeWhatsApp", // nombre del evento que usa la API
+          event_source_url: window.location.href, // URL actual (opcional pero útil)
+          product: productTitle,
+        }),
       });
     } catch (error) {
       console.error("Error enviando conversión a Facebook:", error);
