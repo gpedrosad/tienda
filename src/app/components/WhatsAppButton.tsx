@@ -49,6 +49,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
   return (
     <div className="flex justify-center my-4">
       <button
+        data-fb-disable-auto-event-tracking="true"
         onClick={handleWhatsappClick}
         className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
       >
