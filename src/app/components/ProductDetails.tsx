@@ -228,7 +228,28 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       // Abre el CartSideBar en lugar de alertar
       toggleCart();
 
-      // Opcional: log para confirmar envío de evento personalizado
+      // Envío del evento a Google Tag Manager
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: "addToCart",
+          ecommerce: {
+            currencyCode: "CLP",
+            add: {
+              products: [
+                {
+                  id: selectedVariant.id,
+                  name: product.title,
+                  price: selectedVariant.priceV2.amount,
+                  quantity: 1,
+                },
+              ],
+            },
+          },
+        });
+        console.log("Evento GTM (addToCart) enviado");
+      }
+
+      // Opcional: log para confirmar envío de evento personalizado a Facebook
       console.log("Enviando CustomAddToCart:", {
         value: Number(selectedVariant.priceV2.amount),
         content_name: product.title,
