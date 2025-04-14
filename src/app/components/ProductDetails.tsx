@@ -16,6 +16,27 @@ import CartSideBar from "@/app/components/CartSideBar";
 import { useCart } from "@/app/context/CartContext";
 import { enviarEventoCAPI } from "@/lib/capi";
 
+// Declaración para definir el tipo que se empujará a dataLayer
+interface GTMDataLayerEvent {
+  event: string;
+  ecommerce: {
+    currencyCode: string;
+    add: {
+      products: {
+        id: string;
+        name: string;
+        price: string;
+        quantity: number;
+      }[];
+    };
+  };
+}
+
+// Para que TypeScript reconozca window.dataLayer, definimos la siguiente interfaz:
+interface WindowWithDataLayer extends Window {
+  dataLayer?: GTMDataLayerEvent[];
+}
+
 // Tipos para Shopify
 interface ProductOption {
   name: string;
@@ -229,8 +250,12 @@ export default function ProductDetails({ product }: { product: ShopifyProduct })
       toggleCart();
 
       // Envío del evento a Google Tag Manager
-      if (typeof window !== "undefined" && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (typeof window !== "undefined") {
+        const win = window as WindowWithDataLayer;
+        if (!win.dataLayer) {
+          win.dataLayer = [];
+        }
+        win.dataLayer.push({
           event: "addToCart",
           ecommerce: {
             currencyCode: "CLP",
