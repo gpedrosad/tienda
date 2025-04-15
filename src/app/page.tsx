@@ -1,7 +1,5 @@
 // pages/index.tsx
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { shopifyFetch } from "@/lib/shopify";
 import FAQ from "@/app/components/FAQ";
 import FabricaVideo from "@/app/components/FabricaVideo";
