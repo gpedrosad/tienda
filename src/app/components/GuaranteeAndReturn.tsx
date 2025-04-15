@@ -5,7 +5,7 @@ import { FaShieldAlt, FaUndoAlt } from 'react-icons/fa';
 export default function GuaranteeAndReturn() {
   return (
     <section className="bg-gray-50 py-16 px-8 md:px-16 rounded-xl shadow-sm max-w-5xl mx-auto my-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12 font-poppins">
         Garantía y Devoluciones
       </h2>
 

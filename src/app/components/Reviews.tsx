@@ -216,7 +216,7 @@ const Reviews = () => {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
       {/* Encabezado */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold mb-2">Opiniones de nuestros clientes</h2>
+        <h2 className="text-3xl font-bold mb-2 font-poppins">Opiniones de nuestros clientes</h2>
       </div>
 
       {/* Grid de reseñas: 2 columnas en mobile, 3 en desktop */}

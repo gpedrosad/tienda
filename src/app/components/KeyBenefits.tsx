@@ -32,7 +32,7 @@ export default function KeyBenefits() {
 
   return (
     <section className="bg-gray-100 p-8 rounded-lg mt-8">
-      <h2 className="text-2xl font-bold text-center mb-6">
+      <h2 className="text-2xl font-bold text-center mb-6 font-poppins">
         Por qué invertir en una mesa de calidad
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
