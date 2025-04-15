@@ -105,7 +105,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   }
 
   const collection = collectionData.collectionByHandle;
-  const products = collection.products.edges.map(edge => edge.node);
+  const products = collection.products.edges.map((edge) => edge.node);
 
   // Función para formatear precios: sin decimales y con separador de miles.
   const formatPrice = (price: string) =>
@@ -129,29 +129,31 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         </Link>
       </div>
 
-      <h1 className="text-4xl font-bold mb-8">{collection.title}</h1>
+      <h1 className="text-4xl font-bold mb-8 text-left md:text-center mt-10 mb-10 font-poppins">{collection.title}</h1>
 
       {products.length === 0 ? (
         <p>No se encontraron productos en esta colección.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map(product => (
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
             <Link
               key={product.id}
               href={`/products/${product.handle}`}
-              className="block border rounded-md p-4 hover:shadow-lg transition-shadow cursor-pointer items-center justify-center"
+              className="flex flex-col items-center border rounded-md p-4 hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer bg-white"
             >
               {product.images.edges[0]?.node.src && (
-                <Image
-                  src={product.images.edges[0].node.src}
-                  alt={product.title}
-                  width={300}
-                  height={200}
-                  className="object-cover rounded-md"
-                />
+                <div className="w-full h-48 relative mb-4">
+                  <Image
+                    src={product.images.edges[0].node.src}
+                    alt={product.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md"
+                  />
+                </div>
               )}
-              <h2 className="mt-4 text-xl font-semibold">{product.title}</h2>
-              <p className="text-lg font-medium">
+              <h2 className="text-xl font-semibold text-center">{product.title}</h2>
+              <p className="text-lg font-medium text-gray-700 mt-2">
                 ${formatPrice(product.priceRange.minVariantPrice.amount)}
               </p>
             </Link>

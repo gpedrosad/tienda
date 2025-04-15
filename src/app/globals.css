@@ -12,10 +12,11 @@
   --foreground: #171717;
 }
 
+/* Forzamos a que, incluso en modo oscuro, se usen los estilos del modo claro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff !important;
+    --foreground: #171717 !important;
   }
 }
 
@@ -23,4 +24,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
 }

@@ -34,8 +34,13 @@ interface ProductsSectionProps {
 
 export default function ProductsSection({ products }: ProductsSectionProps) {
   return (
-    <div className="min-h-screen p-8 grid gap-8">
-      <h1 className="text-2xl font-bold">Nuestros productos</h1>
+    <div className="min-h-screen p-8 grid gap-4">
+      <h1 className="text-4xl font-bold text-left md:text-center" style={{ fontFamily: "Poppins, sans-serif" }}>
+      Productos</h1>
+      <p className="text-gray-600 mb-4 text-left md:text-center" style={{ fontFamily: "Poppins, sans-serif" }}>
+      Descubre nuestros productos de madera, diseñados para tu hogar y tu estilo.
+      </p>
+
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => {
           // Formatea el precio

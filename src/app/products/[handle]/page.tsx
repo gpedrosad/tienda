@@ -12,6 +12,9 @@ import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
 import Reel from "@/app/components/Reel";
 import Accordion from "@/app/components/Accordion";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
+
+
+
 const PRODUCT_QUERY = `
   query Product($handle: String!) {
     productByHandle(handle: $handle) {

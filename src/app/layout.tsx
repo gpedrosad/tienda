@@ -2,12 +2,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ClientLayout from "@/app/components/ClientLayout"; // 👈 Nuevo componente cliente
+import ClientLayout from "@/app/components/ClientLayout"; // Componente que maneja la estructura de cliente
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-
+// Cargar fuentes locales
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -43,6 +43,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             })(window,document,'script','dataLayer','GTM-K452JXZZ');
           `}
         </Script>
+        {/* Mover la etiqueta <link> al interior del <head> */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
@@ -54,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        {/* Se elimina cualquier lógica o clase que habilite modo oscuro */}
         <ClientLayout>{children}</ClientLayout>
         <SpeedInsights />
         <Analytics />
