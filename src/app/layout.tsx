@@ -21,6 +21,11 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Idea Madera",
+  icons: {
+    icon: "/logonegro.png",
+  },
+
+
   description:
     "Idea Madera es una empresa chilena dedicada a la fabricación de muebles de madera con un enfoque en la calidad y el diseño.",
 };
