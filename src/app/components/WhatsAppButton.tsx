@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback } from "react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
 interface WhatsappButtonProps {
@@ -12,54 +13,47 @@ interface DataLayerEvent {
 }
 
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
-  const handleWhatsappClick = async () => {
+  const handleWhatsappClick = useCallback(async () => {
+    // GTM DataLayer event
     if (typeof window !== "undefined") {
-      // Aseguramos que el dataLayer exista
       const win = window as { dataLayer?: DataLayerEvent[] };
-
-      if (!win.dataLayer) {
-        win.dataLayer = [];
-      }
-
-      // Disparamos el evento para GTM
-      win.dataLayer.push({
-        event: "whatsapp_conversion",
-        product: productTitle,
-      });
+      win.dataLayer = win.dataLayer ?? [];
+      win.dataLayer.push({ event: "whatsapp_conversion", product: productTitle });
     }
 
-    // Llamada a la API interna para enviar el evento a Facebook Conversion API
+    // Facebook Conversion API call
     try {
       await fetch("/api/facebook-whatsapp", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // Se envían los campos requeridos: event_name, event_source_url y product
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          event_name: "MensajeWhatsApp", // nombre del evento que usa la API
-          event_source_url: window.location.href, // URL actual (opcional pero útil)
+          event_name: "MensajeWhatsApp",
+          event_source_url: window.location.href,
           product: productTitle,
         }),
       });
-    } catch (error) {
-      console.error("Error enviando conversión a Facebook:", error);
+    } catch (err) {
+      console.error("Error enviando conversión a Facebook:", err);
     }
 
-    // Abre WhatsApp con el mensaje preconfigurado
-    const url = `https://wa.me/56995497838?text=Hola, quiero comprar el producto ${encodeURIComponent(productTitle)}`;
+    // Abrir WhatsApp con mensaje
+    const phone = "56995497838";
+    const text = `Hola, quiero comprar el producto ${encodeURIComponent(
+      productTitle
+    )}`;
+    const url = `https://wa.me/${phone}?text=${text}`;
     window.open(url, "_blank");
-  };
+  }, [productTitle]);
 
   return (
-    <div className="flex justify-center my-4">
+    <div className="flex justify-center mb-5">
       <button
-        data-fb-disable-auto-event-tracking="true"
         onClick={handleWhatsappClick}
-        className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+        data-fb-disable-auto-event-tracking="true"
+        className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-lg font-semibold py-3 px-6 rounded-xl shadow-lg animate-pulse transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300"
       >
-        <AiOutlineWhatsApp size={24} />
-        Comprar por Whatsapp
+        <AiOutlineWhatsApp size={26} />
+        Enviar mensaje a WhatsApp
       </button>
     </div>
   );

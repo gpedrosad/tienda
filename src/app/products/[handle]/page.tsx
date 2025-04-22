@@ -151,7 +151,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <div>
       <ProductDetails product={product} />
       <Accordion />
-      <WhatsAppButton productTitle={product.title} />
       <Reviews />
       <KeyBenefits />
       <GuaranteeAndReturn />
@@ -162,7 +161,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
           "https://cdn.shopify.com/videos/c/o/v/ba1785080929409aa92d8c9162b3c4c4.mp4",
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
         ]}
+
       />
+       {/* Botón de WhatsApp fijo en la parte inferior */}
+       <div className="fixed bottom-0 left-0 w-full z-50 p-4 bg-white shadow-lg">
+        <div className="max-w-2xl mx-auto">
+          <WhatsAppButton productTitle={product.title} />
+        </div>
+      </div>
     </div>
   );
 }
