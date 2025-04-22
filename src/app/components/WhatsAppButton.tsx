@@ -38,7 +38,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
 
     // Abrir WhatsApp con mensaje
     const phone = "56995497838";
-    const text = `Hola, quiero comprar el producto ${encodeURIComponent(
+    const text = `Hola, quiero me interesa el producto ${encodeURIComponent(
       productTitle
     )}`;
     const url = `https://wa.me/${phone}?text=${text}`;
