@@ -164,7 +164,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       />
        {/* Botón de WhatsApp fijo en la parte inferior */}
-       <div className="fixed bottom-0 left-0 w-full z-50 p-4 bg-white shadow-lg">
+       <div className="fixed bottom-0 left-0 w-full z-50 p-4 bg-transparent shadow-lg">
         <div className="max-w-2xl mx-auto">
           <WhatsAppButton productTitle={product.title} />
         </div>
