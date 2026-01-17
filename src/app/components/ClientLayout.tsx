@@ -1,9 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { CartProvider } from "@/app/context/CartContext";
 import Header from "@/app/components/Header";
-import CartSideBar from "@/app/components/CartSideBar";
 import Footer from "@/app/components/Footer";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -37,12 +35,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         />
       </noscript>
 
-      <CartProvider>
-        <Header />
-        <CartSideBar />
-        <main>{children}</main>
-        <Footer />
-      </CartProvider>
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }

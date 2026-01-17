@@ -3,13 +3,10 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useCart } from "@/app/context/CartContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { cartCount, toggleCart } = useCart();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -48,17 +45,8 @@ export default function Header() {
           />
         </Link>
 
-        <button
-          onClick={toggleCart}
-          className="relative text-white focus:outline-none"
-        >
-          <AiOutlineShoppingCart size={28} />
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-              {cartCount}
-            </span>
-          )}
-        </button>
+        {/* Espacio para mantener el layout centrado */}
+        <div className="w-7"></div>
       </div>
 
       {isMenuOpen && (
@@ -72,11 +60,6 @@ export default function Header() {
                 Inicio
               </Link>
             </li>
-            {/* <li>
-              <Link href="/products" onClick={closeMenu} className="hover:text-gray-300 transition-colors">
-                Todos
-              </Link>
-            </li> */}
             <li>
               <Link href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, quiero más información sobre sus productos" onClick={closeMenu} className="hover:text-gray-300 transition-colors">
                 Contacto
