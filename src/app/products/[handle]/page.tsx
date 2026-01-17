@@ -1,8 +1,6 @@
 // src/app/products/[handle]/page.tsx
 
-import KeyBenefits from "@/app/components/KeyBenefits";
 import Reviews from "@/app/components/Reviews";
-import GuaranteeAndReturn from "@/app/components/GuaranteeAndReturn";
 import Reel from "@/app/components/Reel";
 import Accordion from "@/app/components/Accordion";
 import Link from "next/link";
@@ -46,8 +44,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <Accordion />
       <Reviews />
-      <KeyBenefits />
-      <GuaranteeAndReturn />
       <Reel
         videoUrls={[
           "https://cdn.shopify.com/videos/c/o/v/66fb5ba10a134e148c473ce5119f34e1.mp4",
