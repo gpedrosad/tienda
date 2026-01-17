@@ -48,34 +48,40 @@ const FAQItem = ({ question }: { question: typeof questions[0] }) => {
   }, [isOpen]);
 
   return (
-    <div className="border border-gray-200 rounded-lg bg-white shadow hover:shadow-md transition-shadow duration-200">
+    <div className="border-b border-neutral-200 bg-white transition-colors duration-300 hover:bg-neutral-50/50">
       <button
-        className="w-full flex items-center justify-between px-5 py-4 text-lg font-medium text-gray-700 focus:outline-none"
+        className="w-full flex items-center justify-between py-5 md:py-6 text-left focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{question.title}</span>
-        <svg
-          className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <span className="text-base md:text-lg font-light text-neutral-900 tracking-tight pr-8 group-hover:text-neutral-600 transition-colors duration-300">
+          {question.title}
+        </span>
+        <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-500 ${
+          isOpen ? "rotate-180" : ""
+        }`}>
+          <svg
+            className="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
       </button>
       <div
-        className="overflow-hidden transition-all duration-300"
+        className="overflow-hidden transition-all duration-500 ease-in-out"
         style={{ maxHeight: isOpen ? maxHeight : 0 }}
       >
-        <div ref={contentRef} className="px-5 pb-4 text-gray-600">
-          {question.answer}
+        <div ref={contentRef} className="pb-6 pr-12">
+          <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed">
+            {question.answer}
+          </p>
         </div>
       </div>
     </div>
@@ -84,14 +90,37 @@ const FAQItem = ({ question }: { question: typeof questions[0] }) => {
 
 const FAQ = () => {
   return (
-    <section className="max-w-2xl mx-auto py-12 px-4">
-      <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">
-        Preguntas Frecuentes
-      </h2>
-      <div className="space-y-6">
+    <section className="max-w-3xl mx-auto py-16 md:py-20 lg:py-24 px-5 md:px-12 lg:px-20">
+      {/* Encabezado minimalista */}
+      <div className="mb-12 md:mb-16 space-y-3">
+        <p className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
+          Preguntas frecuentes
+        </p>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-neutral-900 tracking-tight">
+          ¿Tienes dudas?
+        </h2>
+      </div>
+
+      {/* Lista de preguntas sin espaciado entre items */}
+      <div className="border-t border-neutral-200">
         {questions.map((q) => (
           <FAQItem key={q.id} question={q} />
         ))}
+      </div>
+
+      {/* CTA adicional */}
+      <div className="mt-12 md:mt-16 text-center">
+        <p className="text-sm md:text-base text-neutral-600 font-light mb-4">
+          ¿No encuentras lo que buscas?
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, tengo una consulta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-sm md:text-base text-neutral-900 font-normal border-b border-neutral-900 hover:text-neutral-600 hover:border-neutral-600 transition-colors duration-300 pb-0.5"
+        >
+          Contáctanos directamente
+        </a>
       </div>
     </section>
   );

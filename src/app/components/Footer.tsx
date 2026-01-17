@@ -7,111 +7,142 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="container mx-auto px-6">
-        {/* Centered Logo and Company Name */}
-        <div className="flex flex-col items-center mb-10">
-          <Image 
-            src="/logonegro.png" 
-            alt="Logo MiEmpresa" 
-            width={120} 
-            height={120} 
-            className="mb-3" 
-          />
-        </div>
-        {/* Grid Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Navigation */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Navegación</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-gray-100 transition-colors">
-                  Sobre nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-gray-300 hover:text-gray-100 transition-colors">
-                  Productos
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-300 hover:text-gray-100 transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-gray-100 transition-colors">
-                  Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-neutral-900 text-white border-t border-neutral-800">
+      <div className="container mx-auto px-5 md:px-12 lg:px-20">
+        {/* Contenido principal del footer */}
+        <div className="py-12 md:py-16 lg:py-20">
+          {/* Grid layout minimalista */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
+            
+            {/* Logo y descripción - Ocupa más espacio en desktop */}
+            <div className="lg:col-span-5 space-y-6">
+              <Link href="/" className="inline-block">
+                <Image 
+                  src="/logonegro.png" 
+                  alt="Idea Madera" 
+                  width={100} 
+                  height={100} 
+                  className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-90 hover:opacity-100 transition-opacity" 
+                />
+              </Link>
+              <div className="space-y-3 max-w-sm">
+                <p className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
+                  Artesanía en madera
+                </p>
+                <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
+                  31 años creando productos de madera con dedicación, calidad y diseño excepcional.
+                </p>
+              </div>
+            </div>
 
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contacto</h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
-              <li>
-                Email:{' '}
-                <a href="mailto:hola@ideamadera.cl" className="hover:text-gray-100 transition-colors">
-                  hola@ideamadera.cl
-                </a>
-              </li>
-              <li>
-                Teléfono:{' '}
-                <a href="https://wa.me/56995497838" className="hover:text-gray-100 transition-colors">
-                  +569 95497838
-                </a>
-              </li>
-              <li>Dirección: Boyén Sector 01, Chillán, Chile</li>
-            </ul>
-          </div>
+            {/* Navegación rápida */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
+                Navegación
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link 
+                    href="/" 
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Inicio
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/collections/todos-los-productos" 
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Productos
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, quiero más información sobre sus productos" 
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Contacto
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Social Media */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Síguenos</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/ideamadera.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-gray-300 hover:text-white transition-colors text-xl"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://instagram.com/ideamadera.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-gray-300 hover:text-white transition-colors text-xl"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://wa.me/56995497838"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="text-gray-300 hover:text-white transition-colors text-xl"
-              >
-                <FaWhatsapp />
-              </a>
+            {/* Contacto */}
+            <div className="lg:col-span-3">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
+                Contacto
+              </h3>
+              <ul className="space-y-3 text-sm md:text-base text-neutral-400 font-light">
+                <li>
+                  <a 
+                    href="mailto:hola@ideamadera.cl" 
+                    className="hover:text-white transition-colors duration-300 block"
+                  >
+                    hola@ideamadera.cl
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://wa.me/56995497838" 
+                    className="hover:text-white transition-colors duration-300 block"
+                  >
+                    +569 9549 7838
+                  </a>
+                </li>
+                <li className="pt-1">
+                  <span className="text-neutral-500">
+                    Boyén Sector 01<br />
+                    Chillán, Chile
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Redes sociales */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
+                Síguenos
+              </h3>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.facebook.com/ideamadera.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                >
+                  <FaFacebookF size={16} />
+                </a>
+                <a
+                  href="https://instagram.com/ideamadera.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                >
+                  <FaInstagram size={16} />
+                </a>
+                <a
+                  href="https://wa.me/56995497838"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                >
+                  <FaWhatsapp size={16} />
+                </a>
+              </div>
             </div>
           </div>
-
-          {/* Additional Section (Optional) */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Acerca de</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Somos una empresa dedicada a la venta de productos desarrollados en madera, con un enfoque en la calidad y el diseño hace 31 años.
-            </p>
-          </div>
         </div>
-        <div className="mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-xs">
-          © 2025 Idea Madera. Todos los derechos reservados.
+
+        {/* Copyright - Línea divisoria sutil */}
+        <div className="border-t border-neutral-800 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
+            <p>© 2025 Idea Madera. Todos los derechos reservados.</p>
+            <p className="tracking-wide">Hecho con dedicación en Chile</p>
+          </div>
         </div>
       </div>
     </footer>
