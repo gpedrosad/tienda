@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { AiFillStar, AiFillCheckCircle, AiOutlineClose } from 'react-icons/ai';
+import { AiFillStar, AiOutlineClose } from 'react-icons/ai';
 
 interface Review {
   id: number;
@@ -192,108 +192,160 @@ const reviews: Review[] = [
   },
 ];
 
-const ReviewStars = () => {
-  // Se muestran 5 estrellas llenas
+const ReviewStars = ({ rating }: { rating: number }) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-0.5">
       {[...Array(5)].map((_, index) => (
-        <AiFillStar key={index} className="text-yellow-400 text-sm mr-1" />
+        <AiFillStar 
+          key={index} 
+          className={`text-[10px] ${index < rating ? 'text-neutral-900' : 'text-neutral-200'}`}
+        />
       ))}
     </div>
   );
 };
 
 const Reviews = () => {
-  // Cantidad de reseñas que se muestran inicialmente y que se agregan en cada clic
-  const reviewsPerLoad = 10;
+  // 2 filas siempre: 4 reseñas (2x2 en mobile, 2x4 en desktop mostrando solo 4)
+  const reviewsPerLoad = 4;
   const [visibleReviews, setVisibleReviews] = useState(reviewsPerLoad);
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   // Reseñas actualmente visibles
   const currentReviews = reviews.slice(0, visibleReviews);
 
-  return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-      {/* Encabezado */}
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-2 font-poppins">Opiniones de nuestros clientes</h2>
-      </div>
+  // Calcular promedio de rating
+  const averageRating = (reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length).toFixed(1);
 
-      {/* Grid de reseñas: 2 columnas en mobile, 3 en desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-        {currentReviews.map((review) => (
-          <div key={review.id} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-            {review.image && (
-              <div
-                className="relative w-full h-56 cursor-pointer"
-                onClick={() => setModalImage(review.image!)}
-              >
-                <Image
-                  src={review.image}
-                  alt={`Producto reseñado por ${review.author}`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            )}
-            <div className="p-4 flex flex-col flex-1">
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex flex-col">
-                  <p className="text-sm font-semibold text-gray-900 whitespace-nowrap">
-                    {review.author}
-                  </p>
-                  <div className="flex items-center">
-                    <AiFillCheckCircle className="text-blue-500 mr-1" />
-                    <span className="text-xs text-gray-500">Verificada</span>
-                  </div>
-                  <span className="text-xs text-gray-500">
-                    {new Date(review.date).toLocaleDateString()}
-                  </span>
-                  <ReviewStars />
-                </div>
-              </div>
-              <p className="text-sm text-gray-700 mb-2">{review.content}</p>
+  return (
+    <div className="w-full bg-neutral-50/30 py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+        {/* Encabezado compacto */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-6 mb-6 md:mb-8">
+          <h2 className="text-xl md:text-3xl font-light text-neutral-900 tracking-tight">
+            Opiniones verificadas
+          </h2>
+          
+          {/* Rating promedio compacto */}
+          <div className="flex items-center gap-2">
+            <span className="text-2xl md:text-3xl font-light text-neutral-900 tracking-tight">
+              {averageRating}
+            </span>
+            <div className="flex flex-col">
+              <ReviewStars rating={5} />
+              <span className="text-[10px] md:text-xs font-light text-neutral-500 mt-0.5">
+                {reviews.length} opiniones
+              </span>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Botón "Mostrar más reseñas" */}
-      {visibleReviews < reviews.length && (
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={() =>
-              setVisibleReviews((prev) => Math.min(prev + reviewsPerLoad, reviews.length))
-            }
-            className="px-4 py-2 bg-black text-white rounded hover:bg-black/80"
-          >
-            Mostrar más reseñas
-          </button>
         </div>
-      )}
+
+        {/* Grid compacto: 2 columnas siempre (2 filas) */}
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
+          {currentReviews.map((review) => (
+            <div 
+              key={review.id} 
+              className="group bg-white border border-neutral-200/60 hover:border-neutral-300 overflow-hidden flex flex-col transition-all duration-300"
+            >
+              {/* Imagen del producto - más compacta */}
+              {review.image && (
+                <div
+                  className="relative w-full aspect-square bg-neutral-50 cursor-pointer overflow-hidden"
+                  onClick={() => setModalImage(review.image!)}
+                >
+                  <Image
+                    src={review.image}
+                    alt={`Reseña de ${review.author}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+                </div>
+              )}
+              
+              {/* Contenido compacto */}
+              <div className="p-3 md:p-4 flex flex-col gap-2 flex-1">
+                {/* Header minimalista */}
+                <div className="flex items-start justify-between gap-1">
+                  <p className="text-xs md:text-sm font-light text-neutral-900 tracking-tight truncate flex-1">
+                    {review.author}
+                  </p>
+                  <ReviewStars rating={review.rating} />
+                </div>
+
+                {/* Comentario compacto */}
+                <p className="text-xs md:text-sm font-light text-neutral-600 leading-relaxed line-clamp-3">
+                  {review.content}
+                </p>
+
+                {/* Badge verificado minimalista */}
+                <div className="mt-auto pt-2 border-t border-neutral-100">
+                  <span className="inline-flex items-center gap-1 text-[10px] md:text-xs font-light text-neutral-500">
+                    <svg 
+                      className="w-2.5 h-2.5 md:w-3 md:h-3 text-neutral-600" 
+                      fill="currentColor" 
+                      viewBox="0 0 20 20"
+                    >
+                      <path 
+                        fillRule="evenodd" 
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" 
+                        clipRule="evenodd" 
+                      />
+                    </svg>
+                    Verificada
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Botón compacto */}
+        {visibleReviews < reviews.length && (
+          <div className="flex justify-center mt-6 md:mt-8">
+            <button
+              onClick={() =>
+                setVisibleReviews((prev) => Math.min(prev + reviewsPerLoad, reviews.length))
+              }
+              className="w-full md:w-auto px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white font-light text-xs md:text-sm tracking-wide transition-all duration-300 active:scale-[0.98]"
+            >
+              Ver más ({reviews.length - visibleReviews})
+            </button>
+          </div>
+        )}
+      </div>
 
       {/* Modal para imagen ampliada */}
       {modalImage && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setModalImage(null)}
         >
           <div
-            className="relative w-11/12 md:w-3/4 max-w-sm md:max-w-lg max-h-[90vh] rounded-lg overflow-hidden"
+            className="relative w-full max-w-4xl max-h-[90vh] bg-white overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={modalImage}
-              alt="Imagen ampliada"
-              width={800}
-              height={800}
-              className="object-contain"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={modalImage}
+                alt="Imagen ampliada"
+                width={1200}
+                height={1200}
+                className="object-contain w-full h-full"
+                priority
+              />
+            </div>
+            
+            {/* Botón de cerrar minimalista */}
             <button
               onClick={() => setModalImage(null)}
-              className="absolute top-0 right-0 p-2 text-white"
+              className="absolute top-3 right-3 md:top-4 md:right-4 p-2 bg-white/95 hover:bg-white text-neutral-900 backdrop-blur-sm transition-all duration-200 active:scale-95 group/close"
+              aria-label="Cerrar"
             >
-              <AiOutlineClose size={24} />
+              <AiOutlineClose 
+                size={18} 
+                className="group-hover/close:rotate-90 transition-transform duration-300" 
+              />
             </button>
           </div>
         </div>

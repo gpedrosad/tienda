@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Product } from "@/data/products";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
@@ -20,9 +21,11 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-lg border border-neutral-200/60 hover:border-neutral-300">
-      {/* Imagen del producto */}
-      <div className="relative w-full aspect-[4/3] bg-neutral-50 overflow-hidden">
+    <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-lg border border-neutral-200/60 hover:border-neutral-300 relative flex flex-col h-full">
+      {/* Link envolvente para toda la tarjeta */}
+      <Link href={`/products/${product.handle || product.id}`} className="block flex-grow">
+        {/* Imagen del producto */}
+        <div className="relative w-full aspect-[4/3] bg-neutral-50 overflow-hidden">
         {product.imageUrl ? (
           <img
             src={product.imageUrl}
@@ -49,35 +52,38 @@ export default function ProductCard({ product }: ProductCardProps) {
         
         {/* Overlay sutil al hacer hover */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
-      </div>
-
-      {/* Información del producto */}
-      <div className="p-4 md:p-5 space-y-3">
-        {/* Categoría minimalista */}
-        <div className="flex items-center justify-between">
-          <span className="text-[10px] md:text-xs font-light tracking-[0.15em] uppercase text-neutral-500">
-            {product.category}
-          </span>
         </div>
 
-        {/* Nombre del producto */}
-        <h3 className="text-base md:text-lg font-normal text-neutral-900 line-clamp-2 leading-snug tracking-tight min-h-[2.5rem]">
-          {product.name}
-        </h3>
+        {/* Información del producto */}
+        <div className="p-4 md:p-5 space-y-3">
+          {/* Categoría minimalista */}
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] md:text-xs font-light tracking-[0.15em] uppercase text-neutral-500">
+              {product.category}
+            </span>
+          </div>
 
-        {/* Precio elegante */}
-        <div className="pt-0.5">
-          <p className="text-xl md:text-2xl font-light text-neutral-900 tracking-tight">
-            {formatPrice(product.price)}
-          </p>
+          {/* Nombre del producto */}
+          <h3 className="text-base md:text-lg font-normal text-neutral-900 line-clamp-2 leading-snug tracking-tight min-h-[2.5rem]">
+            {product.name}
+          </h3>
+
+          {/* Precio elegante */}
+          <div className="pt-0.5">
+            <p className="text-xl md:text-2xl font-light text-neutral-900 tracking-tight">
+              {formatPrice(product.price)}
+            </p>
+          </div>
         </div>
+      </Link>
 
-        {/* Botón de WhatsApp minimalista */}
+      {/* Botón de WhatsApp minimalista - fuera del Link para evitar conflictos */}
+      <div className="px-4 md:px-5 pb-4 md:pb-5 mt-auto">
         <a
           href={getWhatsAppUrl(product.name)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-all duration-300 group/button mt-3"
+          className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-all duration-300 group/button relative z-10"
         >
           <span>Consultar</span>
           <AiOutlineWhatsApp 

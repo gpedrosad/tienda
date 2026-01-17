@@ -37,6 +37,7 @@ export interface Product {
   price: number;
   category: string;
   imageUrl?: string;
+  handle?: string; // URL-friendly identifier para las páginas de producto
 }
 
 export const products: Product[] = [
