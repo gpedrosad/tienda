@@ -2,12 +2,24 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const isSolidHeader = isScrolled || !isHomePage;
+  const headerBackgroundClass = isSolidHeader
+    ? isHomePage
+      ? "bg-white/95 backdrop-blur-md shadow-sm"
+      : "bg-black/90 backdrop-blur-md shadow-sm"
+    : "bg-transparent";
+  const headerControlColorClass =
+    isSolidHeader && !isHomePage ? "text-white" : "text-neutral-900";
+  const isDarkInternalHeader = isSolidHeader && !isHomePage && !isMenuOpen;
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -54,11 +66,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBackgroundClass}`}
     >
       <div className="container mx-auto px-5 md:px-12 lg:px-20">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -66,7 +74,7 @@ export default function Header() {
           <button
             onClick={toggleMenu}
             className={`relative z-50 p-2 -ml-2 focus:outline-none transition-colors duration-300 ${
-              isScrolled ? "text-neutral-900" : "text-white"
+              isSolidHeader ? headerControlColorClass : "text-white"
             } ${isMenuOpen ? "text-neutral-900" : ""}`}
             aria-label="Menú"
           >
@@ -87,7 +95,9 @@ export default function Header() {
               alt="Idea Madera"
               width={80}
               height={80}
-              className="w-20 h-20 md:w-24 md:h-24 object-contain"
+              className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
+                isDarkInternalHeader ? "brightness-0 invert" : ""
+              }`}
               priority
             />
           </Link>

@@ -26,6 +26,7 @@ El catálogo se encuentra en: **`src/data/products.ts`**
   name: "Nombre del Producto",
   price: 369000,
   category: "Mesas",
+  description: "Descripción breve del producto", // Opcional
   imageUrl: "/images/producto.jpg" // Opcional
 },
 ```
@@ -40,6 +41,7 @@ El catálogo se encuentra en: **`src/data/products.ts`**
   name: "Mesa de Centro Moderna",
   price: 450000,
   category: "Mesas",
+  description: "Mesa compacta de madera maciza para living o sala de estar.",
   imageUrl: "/images/mesa-centro-moderna.jpg"
 },
 ```
@@ -51,6 +53,7 @@ El catálogo se encuentra en: **`src/data/products.ts`**
    - `name`: Nombre del producto
    - `price`: Precio (sin puntos ni comas)
    - `category`: Categoría
+   - `description`: Descripción del producto (opcional)
    - `imageUrl`: URL de la imagen (opcional)
 3. Guarda el archivo
 

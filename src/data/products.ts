@@ -13,6 +13,7 @@
  *   name: "Nombre del Producto",
  *   price: 99990,
  *   category: "Mesas" | "Sillas" | "Veladores" | "Racks" | "Repisas" | "Percheros" | "Bancas" | "Sitiales" | "Escritorios" | "Futon",
+ *   description: "Descripción breve del producto", // Opcional
  *   imageUrl: "/ruta/a/imagen.jpg" // Opcional
  * },
  * 
@@ -36,6 +37,7 @@ export interface Product {
   name: string;
   price: number;
   category: string;
+  description?: string;
   imageUrl?: string;
   handle?: string; // URL-friendly identifier para las páginas de producto
 }
@@ -130,6 +132,9 @@ export const products: Product[] = [
     name: "Silla Milán Lenga",
     price: 199000,
     category: "Sillas",
+    description:
+      "Silla de madera de lenga con diseño contemporáneo, pensada para acompañar comedores y espacios de estar con una línea limpia y resistente para uso diario.",
+    imageUrl: "/images/sillamilan/1sillamilan.jpg",
   },
   {
     id: "perchero-madera-verona",
