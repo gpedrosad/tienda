@@ -140,6 +140,15 @@ export default function Header() {
             </li>
             <li className="overflow-hidden">
               <Link
+                href="/peldanos-a-medida"
+                onClick={closeMenu}
+                className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"
+              >
+                Peldaños a medida
+              </Link>
+            </li>
+            <li className="overflow-hidden">
+              <Link
                 href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, quiero más información sobre sus productos"
                 onClick={closeMenu}
                 className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"

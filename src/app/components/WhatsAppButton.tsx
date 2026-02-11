@@ -5,6 +5,8 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 
 interface WhatsappButtonProps {
   productTitle: string;
+  buttonLabel?: string;
+  prefilledMessage?: string;
 }
 
 interface DataLayerEvent {
@@ -12,7 +14,11 @@ interface DataLayerEvent {
   product: string;
 }
 
-const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
+const WhatsappButton: React.FC<WhatsappButtonProps> = ({
+  productTitle,
+  buttonLabel = "Cotizar por WhatsApp",
+  prefilledMessage,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -50,10 +56,12 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
 
     // Abrir WhatsApp con mensaje
     const phone = "56995497838";
-    const text = encodeURIComponent(`Hola, quiero cotizar el producto ${productTitle}`);
+    const text = encodeURIComponent(
+      prefilledMessage ?? `Hola, quiero cotizar el producto ${productTitle}`
+    );
     const url = `https://wa.me/${phone}?text=${text}`;
     window.open(url, "_blank");
-  }, [productTitle]);
+  }, [prefilledMessage, productTitle]);
 
   return (
     <div
@@ -64,14 +72,14 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ productTitle }) => {
       }`}
     >
       <div className="mx-auto w-full max-w-md">
-      <button
-        onClick={handleWhatsappClick}
-        data-fb-disable-auto-event-tracking="true"
-        className="w-full flex items-center justify-center gap-2.5 rounded-full border border-neutral-700 bg-neutral-900/95 px-5 py-3 text-sm md:text-base font-medium tracking-wide text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
-      >
-        <AiOutlineWhatsApp size={22} className="text-emerald-400" />
-        Cotizar por WhatsApp
-      </button>
+        <button
+          onClick={handleWhatsappClick}
+          data-fb-disable-auto-event-tracking="true"
+          className="w-full flex items-center justify-center gap-2.5 rounded-full border border-neutral-700 bg-neutral-900/95 px-5 py-3 text-sm md:text-base font-medium tracking-wide text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+        >
+          <AiOutlineWhatsApp size={22} className="text-emerald-400" />
+          {buttonLabel}
+        </button>
       </div>
     </div>
   );
