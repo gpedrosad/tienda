@@ -14,7 +14,16 @@
  *   price: 99990,
  *   category: "Mesas" | "Sillas" | "Veladores" | "Racks" | "Repisas" | "Percheros" | "Bancas" | "Sitiales" | "Escritorios" | "Futon",
  *   description: "Descripción breve del producto", // Opcional
- *   imageUrl: "/ruta/a/imagen.jpg" // Opcional
+ *   imageUrl: "/ruta/a/imagen.jpg", // Opcional
+ *   handle: "producto-unico-id", // Opcional, URL amigable si difiere del id
+ *   shortPitch: "Resumen comercial breve", // Opcional, 1-2 líneas para PDP
+ *   features: ["Madera seleccionada", "Terminación resistente"], // Opcional
+ *   dimensions: { width: "120 cm", depth: "60 cm", height: "45 cm" }, // Opcional
+ *   material: "Madera de lenga", // Opcional
+ *   finish: "Barniz natural", // Opcional
+ *   productionDays: 15, // Opcional, días hábiles de fabricación
+ *   inStock: true, // Opcional
+ *   stockNote: "Fabricación a pedido" // Opcional
  * },
  * 
  * CÓMO EDITAR UN PRODUCTO:
@@ -30,6 +39,7 @@
  * - El id debe ser único y sin espacios (usa guiones)
  * - La categoría ayuda a filtrar productos (puedes agregar más categorías si lo necesitas)
  * - imageUrl es opcional - si no lo agregas, se mostrará un placeholder
+ * - Los campos de ficha técnica son opcionales; la PDP solo muestra datos disponibles
  */
 
 export interface Product {
@@ -40,6 +50,14 @@ export interface Product {
   description?: string;
   imageUrl?: string;
   handle?: string; // URL-friendly identifier para las páginas de producto
+  shortPitch?: string;
+  features?: string[];
+  dimensions?: { width?: string; depth?: string; height?: string; diameter?: string };
+  material?: string;
+  finish?: string;
+  productionDays?: number;
+  inStock?: boolean;
+  stockNote?: string;
 }
 
 export const products: Product[] = [
@@ -126,6 +144,7 @@ export const products: Product[] = [
     name: "Mesa de comedor Tripode redonda",
     price: 729900,
     category: "Mesas",
+    imageUrl: "/images/1MESATRIPODEREDONDAMADERA.jpg",
   },
   {
     id: "silla-milan-lenga",
@@ -153,6 +172,7 @@ export const products: Product[] = [
     name: "Banca Griega",
     price: 279000,
     category: "Bancas",
+    imageUrl: "/images/1BANCAGRIEGA.jpg",
   },
   {
     id: "banca-griega-negra",
@@ -177,24 +197,35 @@ export const products: Product[] = [
     name: "Banca Capri",
     price: 259000,
     category: "Bancas",
+    imageUrl: "/images/1BANCACAPRI.jpg",
+  },
+  {
+    id: "banca-capri-negra",
+    name: "Banca Capri Negra",
+    price: 259000,
+    category: "Bancas",
+    imageUrl: "/images/1BANCACAPRINEGRA.jpg",
   },
   {
     id: "mesa-centro-ferrara",
     name: "Mesa Centro Ferrara",
     price: 379000,
     category: "Mesas",
+    imageUrl: "/images/1MESAFERRARACENTRO.jpg",
   },
   {
     id: "mesa-centro-roma",
     name: "Mesa Centro Roma",
     price: 359990,
     category: "Mesas",
+    imageUrl: "/images/1MESACENTROROMA.jpg",
   },
   {
     id: "mesa-frida-redonda",
     name: "Mesa Frida Redonda",
     price: 699990,
     category: "Mesas",
+    imageUrl: "/images/1MESAFRIDAREDONDA.jpg",
   },
   {
     id: "velador-cubo",
@@ -207,12 +238,21 @@ export const products: Product[] = [
     name: "Arrimo Griego",
     price: 289000,
     category: "Mesas",
+    imageUrl: "/images/1ARRMINOGRIEGO.jpg",
   },
   {
     id: "mesa-tripode-redonda-negra",
     name: "Mesa Tripode Redonda Negra",
     price: 820000,
     category: "Mesas",
+    imageUrl: "/images/1MESAROMAREDONDAPATASNEGRAS.jpg",
+  },
+  {
+    id: "mesa-tripode-ratona",
+    name: "Mesa Tripode Ratona",
+    price: 399990,
+    category: "Mesas",
+    imageUrl: "/images/1MESATRIPODERATONA.jpg",
   },
   {
     id: "mesa-comedor-tripode-negra",

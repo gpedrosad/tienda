@@ -1,6 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/data/products";
+import { buildProductWhatsAppMessage, buildWhatsAppUrl, getDefaultOrigin, formatCLP } from "@/lib/whatsapp";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
 interface ProductCardProps {
@@ -8,17 +10,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  // Formatear precio en formato chileno
-  const formatPrice = (price: number) => {
-    return `$${price.toLocaleString("es-CL")}`;
-  };
-
-  // Generar URL de WhatsApp
-  const getWhatsAppUrl = (productName: string) => {
-    const message = `Hola, me interesa consultar por: ${productName}`;
-    const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/56995497838?text=${encodedMessage}`;
-  };
+  const whatsappUrl = buildWhatsAppUrl(buildProductWhatsAppMessage(product, getDefaultOrigin()));
 
   return (
     <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-lg border border-neutral-200/60 hover:border-neutral-300 relative flex flex-col h-full">
@@ -27,10 +19,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Imagen del producto */}
         <div className="relative w-full aspect-[4/3] bg-neutral-50 overflow-hidden">
         {product.imageUrl ? (
-          <img
+          <Image
             src={product.imageUrl}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-neutral-300">
@@ -68,10 +62,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h3>
 
-          {/* Precio elegante */}
-          <div className="pt-0.5">
-            <p className="text-xl md:text-2xl font-light text-neutral-900 tracking-tight">
-              {formatPrice(product.price)}
+            {/* Precio elegante */}
+            <div className="pt-0.5">
+              <p className="text-xl md:text-2xl font-light text-neutral-900 tracking-tight">
+              {formatCLP(product.price)}
             </p>
           </div>
         </div>
@@ -80,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Botón de WhatsApp minimalista - fuera del Link para evitar conflictos */}
       <div className="px-4 md:px-5 pb-4 md:pb-5 mt-auto">
         <a
-          href={getWhatsAppUrl(product.name)}
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-all duration-300 group/button relative z-10"

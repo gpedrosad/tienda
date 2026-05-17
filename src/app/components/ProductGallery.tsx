@@ -114,7 +114,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
         </div>
       </div>
 
-      <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+      <div className="hidden overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:block">
         <div className="flex gap-2.5 md:gap-3 min-w-max">
           {images.map((imageSrc, index) => {
             const isActive = index === activeIndex;
