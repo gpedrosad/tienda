@@ -13,6 +13,7 @@ interface WhatsappButtonProps {
   imageUrl?: string;
   buttonLabel?: string;
   prefilledMessage?: string;
+  alwaysVisible?: boolean;
 }
 
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({
@@ -23,11 +24,17 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   imageUrl,
   buttonLabel = "Cotizar por WhatsApp",
   prefilledMessage,
+  alwaysVisible = false,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(alwaysVisible);
   const displayPrice = priceLabel ?? (typeof productPrice === "number" ? formatCLP(productPrice) : undefined);
 
   useEffect(() => {
+    if (alwaysVisible) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       setIsVisible(window.scrollY > 80);
     };
@@ -35,7 +42,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [alwaysVisible]);
 
   const handleWhatsappClick = useCallback(() => {
     void trackWhatsAppClick({

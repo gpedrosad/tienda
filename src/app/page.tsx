@@ -6,8 +6,14 @@ import FabricaVideo from "@/app/components/FabricaVideo";
 import HeroBanner from "@/app/components/HeroBanner";
 import ProductCard from "@/app/components/ProductCard";
 import Reveal from "@/app/components/Reveal";
+import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts, sortProductsForCatalog } from "@/lib/catalog";
+import { buildGeneralWhatsAppMessage } from "@/lib/whatsapp";
+
+const homeWhatsAppMessage = buildGeneralWhatsAppMessage("inicio de Idea Madera", [
+  "Estoy revisando el catálogo y quiero orientación para elegir un producto.",
+]);
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,7 +53,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="pb-28 md:pb-32">
       <HeroBanner />
 
       <section id="catalogo" className="max-w-7xl mx-auto scroll-mt-24 px-4 py-12">
@@ -129,6 +135,14 @@ export default function Home() {
 
       <FabricaVideo />
       <FAQ />
-    </>
+
+      <WhatsAppButton
+        productTitle="Idea Madera"
+        priceLabel="Atención directa · cotiza por WhatsApp"
+        buttonLabel="Consultar por WhatsApp"
+        prefilledMessage={homeWhatsAppMessage}
+        alwaysVisible
+      />
+    </div>
   );
 }
