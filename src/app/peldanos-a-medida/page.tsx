@@ -3,13 +3,19 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const pageTitle = "Peldaños a Medida en Madera | Cotiza por WhatsApp | Idea Madera";
 const pageDescription =
   "Fabricamos peldaños a medida en madera para escaleras y proyectos personalizados. Atención a empresas y particulares con envíos a todo Chile. Cotiza por WhatsApp.";
 const canonicalPath = "/peldanos-a-medida";
-const whatsappMessage = "Hola, quiero cotizar peldaños a medida para mi proyecto.";
-const whatsappHref = `https://wa.me/56995497838?text=${encodeURIComponent(whatsappMessage)}`;
+const whatsappMessage = [
+  "Hola Idea Madera",
+  "Vengo desde la página de peldaños a medida.",
+  "Quiero cotizar peldaños para mi proyecto.",
+  "Puedo enviar cantidad, largo, ancho, espesor, comuna y foto/plano de referencia.",
+].join("\n");
+const whatsappHref = buildWhatsAppUrl(whatsappMessage);
 
 const faqItems = [
   {

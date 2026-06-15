@@ -44,6 +44,15 @@ export function buildProductWhatsAppMessage(product: Product, origin = getDefaul
   ].join("\n");
 }
 
+export function buildGeneralWhatsAppMessage(context: string, extraLines: string[] = []) {
+  return [
+    "Hola Idea Madera",
+    `Vengo desde: ${context}`,
+    ...extraLines,
+    "Me gustaría recibir orientación para cotizar.",
+  ].join("\n");
+}
+
 export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 }

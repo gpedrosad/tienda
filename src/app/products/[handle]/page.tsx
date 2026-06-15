@@ -9,6 +9,7 @@ import SocialProof from "@/app/components/SocialProof";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import WhatsAppInlineCTA from "@/app/components/WhatsAppInlineCTA";
 import { products, type Product } from "@/data/products";
+import { hasProductImage } from "@/lib/catalog";
 import {
   buildProductWhatsAppMessage,
   DEFAULT_SITE_URL,
@@ -24,13 +25,46 @@ interface ProductPageProps {
 }
 
 const productImagesById: Record<string, string[]> = {
+  "mesa-nordica": [
+    "/images/mesa-nordica-1.jpg",
+    "/images/mesa-nordica-2.jpg",
+    "/images/mesa-nordica-3.jpg",
+    "/images/mesa-nordica-4.jpg",
+    "/images/mesa-nordica-5.jpg",
+  ],
+  "silla-kentucky": [
+    "/images/silla-kentucky-1.jpg",
+    "/images/silla-kentucky-2.jpg",
+    "/images/silla-kentucky-3.jpg",
+    "/images/silla-kentucky-4.jpg",
+  ],
+  "mesa-comedor-tripode": [
+    "/images/mesa-tripode-1.jpg",
+    "/images/mesa-tripode-2.jpg",
+    "/images/mesa-tripode-3.jpg",
+    "/images/mesa-tripode-4.jpg",
+    "/images/mesa-tripode-5.jpg",
+    "/images/mesa-tripode-6.jpg",
+    "/images/mesa-tripode-7.jpg",
+    "/images/mesa-tripode-8.jpg",
+    "/images/mesa-tripode-9.jpg",
+    "/images/mesa-tripode-10.jpg",
+    "/images/mesa-tripode-11.jpg",
+  ],
   "silla-milan-lenga": [
-    "/images/sillamilan/1sillamilan.jpg",
-    "/images/sillamilan/2sillamilan.jpg",
-    "/images/sillamilan/3sillamilan.jpg",
-    "/images/sillamilan/4sillamilan.jpg",
-    "/images/sillamilan/5sillamilan.jpg",
-    "/images/sillamilan/6sillamilan.jpg",
+    "/images/silla-milan-lenga-main.jpg",
+  ],
+  "perchero-madera-verona": [
+    "/images/perchero-verona-1.jpg",
+    "/images/perchero-verona-2.png",
+    "/images/perchero-verona-3.png",
+    "/images/perchero-verona-4.jpg",
+    "/images/perchero-verona-5.jpg",
+  ],
+  "mesa-comedor-redonda-ferrara": [
+    "/images/mesa-ferrara-redonda-3.jpg",
+    "/images/mesa-ferrara-redonda-2.jpg",
+    "/images/mesa-ferrara-redonda-4.jpg",
   ],
   "arrimo-griego": ["/images/1ARRMINOGRIEGO.jpg", "/images/2ARRMINOGRIEGO.jpg"],
   "mesa-centro-roma": [
@@ -67,6 +101,31 @@ const productImagesById: Record<string, string[]> = {
     "/images/1MESATRIPODEREDONDAMADERA.jpg",
     "/images/2MESATRIPODEREDONDAMADERA.jpg",
     "/images/3MESATRIPODEREDONDAMADERA.jpg",
+  ],
+  "mesa-comedor-tripode-negra": [
+    "/images/mesa-tripode-negra-2.jpg",
+    "/images/mesa-tripode-negra-3.jpg",
+    "/images/mesa-tripode-negra-4.jpg",
+    "/images/mesa-tripode-negra-5.jpg",
+  ],
+  "mesa-comedor-roma-negra": ["/images/mesa-roma-negra-main.jpg"],
+  "mesa-comedor-roma-natural": [
+    "/images/mesa-comedor-roma-madera-main.jpg",
+    "/images/mesa-roma-madera-2.png",
+  ],
+  "mesa-comedor-cantabria": [
+    "/images/mesa-comedor-madera-modelo-cantabria-main.jpg",
+    "/images/mesa-cantabria-2.jpg",
+    "/images/mesa-cantabria-3.jpg",
+    "/images/mesa-cantabria-4.jpg",
+    "/images/mesa-cantabria-5.jpg",
+    "/images/mesa-cantabria-6.jpg",
+  ],
+  "mesa-comedor-redonda-novara": [
+    "/images/mesa-comedor-redonda-modelo-novara-main.jpg",
+    "/images/mesa-novara-2.jpg",
+    "/images/mesa-novara-3.jpg",
+    "/images/mesa-novara-4.jpg",
   ],
 };
 
@@ -158,7 +217,7 @@ async function getRequestOrigin() {
 export function generateStaticParams() {
   const handles = new Set<string>();
 
-  products.forEach((product) => {
+  products.filter(hasProductImage).forEach((product) => {
     handles.add(product.id);
     if (product.handle) handles.add(product.handle);
   });
@@ -170,7 +229,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const { handle } = await params;
   const product = findProduct(handle);
 
-  if (!product) {
+  if (!product || !hasProductImage(product)) {
     return {
       title: `Producto ${handle} | Idea Madera`,
       description: "Producto del catálogo de Idea Madera.",
@@ -219,7 +278,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const { handle } = await params;
   const product = findProduct(handle);
 
-  if (!product) {
+  if (!product || !hasProductImage(product)) {
     return (
       <main className="bg-white text-neutral-900">
         <div className="mx-auto flex min-h-[60vh] max-w-4xl flex-col justify-center px-4 pt-24">
@@ -348,7 +407,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                   <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 md:mt-4 md:text-sm">
                     <AiOutlineStar className="text-[#25D366]" size={17} />
-                    <span>4.9 · basado en clientes verificados</span>
+                    <span>Fabricación propia · atención directa por WhatsApp</span>
                   </div>
 
                   <p className="mt-4 text-3xl md:mt-6 md:text-4xl font-light tracking-tight text-neutral-900">

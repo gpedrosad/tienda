@@ -4,6 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const contactUrl = buildWhatsAppUrl(
+  buildGeneralWhatsAppMessage("menú principal", [
+    "Quiero revisar opciones de muebles, medidas y despacho.",
+  ])
+);
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,11 +138,20 @@ export default function Header() {
             </li>
             <li className="overflow-hidden">
               <Link
-                href="/collections/todos-los-productos"
+                href="/#catalogo"
                 onClick={closeMenu}
                 className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"
               >
                 Productos
+              </Link>
+            </li>
+            <li className="overflow-hidden">
+              <Link
+                href="/ofertas"
+                onClick={closeMenu}
+                className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"
+              >
+                Destacados
               </Link>
             </li>
             <li className="overflow-hidden">
@@ -149,7 +165,7 @@ export default function Header() {
             </li>
             <li className="overflow-hidden">
               <Link
-                href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, quiero más información sobre sus productos"
+                href={contactUrl}
                 onClick={closeMenu}
                 className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"
               >

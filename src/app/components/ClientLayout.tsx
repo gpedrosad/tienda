@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -28,6 +29,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       />
       <noscript>
         <img
+          alt=""
           height="1"
           width="1"
           style={{ display: "none" }}

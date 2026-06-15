@@ -105,19 +105,19 @@ Puedes usar URLs completas: `imageUrl: "https://ejemplo.com/imagen.jpg"`
 
 Cada producto tiene un botón que abre WhatsApp con el mensaje:
 ```
-Consulta por [Nombre del Producto]
+Hola Idea Madera
+Me interesa cotizar: [Nombre del Producto]
+Precio referencia: [Precio]
+Link: [URL del producto]
+Ref: [ID del producto]
 ```
 
 El número configurado es: **+56 9 9549 7838**
 
-Para cambiar el número, edita la función `getWhatsAppUrl` en `src/app/page.tsx`:
+Para cambiar el número o el formato del mensaje, edita `src/lib/whatsapp.ts`:
 
 ```typescript
-const getWhatsAppUrl = (productName: string) => {
-  const message = `Consulta por ${productName}`;
-  const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/56995497838?text=${encodedMessage}`; // Cambia este número
-};
+export const WHATSAPP_PHONE = "56995497838";
 ```
 
 ## 🎨 Personalización
@@ -146,8 +146,8 @@ Puedes cambiar:
 ## 📊 Estado Actual del Catálogo
 
 - **Total de productos**: 56
-- **Categorías**: 10
-- **Productos con imagen**: 0 (todos usan placeholder por defecto)
+- **Categorías**: 11
+- **Productos con imagen**: 30
 
 ## 🚀 Próximos Pasos Sugeridos
 

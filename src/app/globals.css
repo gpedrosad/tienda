@@ -10,6 +10,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Forzamos a que, incluso en modo oscuro, se usen los estilos del modo claro */
@@ -27,5 +30,151 @@ body {
 }
 
 .font-poppins {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+/* ── Motion system (home) ─────────────────────────────────────── */
+
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(0.35rem);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-scroll {
+  from {
+    opacity: 0.88;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes product-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes count-fade {
+  from {
+    opacity: 0.4;
+    transform: translateY(-0.15rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bg-image {
+    animation: hero-ken-burns 22s var(--ease-out-quart) forwards;
+    will-change: transform;
+  }
+
+  .hero-enter {
+    animation: hero-enter 750ms var(--ease-out-expo) both;
+  }
+
+  .hero-enter-1 {
+    animation-delay: 120ms;
+  }
+
+  .hero-enter-2 {
+    animation-delay: 240ms;
+  }
+
+  .hero-enter-3 {
+    animation-delay: 360ms;
+  }
+
+  .hero-enter-4 {
+    animation-delay: 480ms;
+  }
+
+  .scroll-hint-dot {
+    animation: scroll-hint 2.2s var(--ease-out-quart) infinite;
+  }
+
+  .reveal-on-scroll.is-revealed {
+    animation: reveal-scroll 650ms var(--ease-out-expo) var(--reveal-delay, 0ms);
+  }
+
+  .product-enter {
+    animation: product-enter 480ms var(--ease-out-quart) calc(var(--i, 0) * 45ms) both;
+  }
+
+  .count-animate {
+    animation: count-fade 280ms var(--ease-out-quart);
+  }
+
+  .filter-pill {
+    transition:
+      background-color 200ms var(--ease-out-quart),
+      color 200ms var(--ease-out-quart),
+      transform 150ms var(--ease-out-quart),
+      box-shadow 200ms var(--ease-out-quart);
+  }
+
+  .filter-pill:active {
+    transform: scale(0.97);
+  }
+
+  .search-input {
+    transition:
+      border-color 200ms var(--ease-out-quart),
+      box-shadow 200ms var(--ease-out-quart);
+  }
+
+  .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

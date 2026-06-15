@@ -1,5 +1,6 @@
 import ProductCard from "@/app/components/ProductCard";
 import { products } from "@/data/products";
+import { getVisibleProducts } from "@/lib/catalog";
 
 interface RelatedProductsProps {
   currentProductId: string;
@@ -23,7 +24,7 @@ export default function RelatedProducts({
   category,
   limit = 4,
 }: RelatedProductsProps) {
-  const relatedProducts = products
+  const relatedProducts = getVisibleProducts(products)
     .filter((product) => product.category === category && product.id !== currentProductId)
     .sort((first, second) => seededScore(currentProductId, first.id) - seededScore(currentProductId, second.id))
     .slice(0, limit);

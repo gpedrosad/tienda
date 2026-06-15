@@ -4,6 +4,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
+
+const footerContactUrl = buildWhatsAppUrl(
+  buildGeneralWhatsAppMessage('footer del sitio', [
+    'Quiero consultar por disponibilidad, medidas y despacho.',
+  ])
+);
 
 export default function Footer() {
   return (
@@ -51,7 +58,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="/collections/todos-los-productos" 
+                    href="/#catalogo" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
                     Productos
@@ -59,7 +66,15 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="https://api.whatsapp.com/send?phone=56995497838&text=Hola, quiero más información sobre sus productos" 
+                    href="/ofertas" 
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Destacados
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href={footerContactUrl} 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
                     Contacto
@@ -84,7 +99,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="https://wa.me/56995497838" 
+                    href={footerContactUrl} 
                     className="hover:text-white transition-colors duration-300 block"
                   >
                     +569 9549 7838
@@ -124,7 +139,7 @@ export default function Footer() {
                   <FaInstagram size={16} />
                 </a>
                 <a
-                  href="https://wa.me/56995497838"
+                  href={footerContactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -140,7 +155,7 @@ export default function Footer() {
         {/* Copyright - Línea divisoria sutil */}
         <div className="border-t border-neutral-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
-            <p>© 2025 Idea Madera. Todos los derechos reservados.</p>
+            <p>© 2026 Idea Madera. Todos los derechos reservados.</p>
             <p className="tracking-wide">Hecho con dedicación en Chile</p>
           </div>
         </div>

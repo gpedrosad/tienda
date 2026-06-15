@@ -1,5 +1,6 @@
 // components/ProductsSection.tsx
 
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProductImageNode {
@@ -35,9 +36,9 @@ interface ProductsSectionProps {
 export default function ProductsSection({ products }: ProductsSectionProps) {
   return (
     <div className="min-h-screen p-8 grid gap-4">
-      <h1 className="text-4xl font-bold text-left md:text-center" style={{ fontFamily: "Poppins, sans-serif" }}>
+      <h1 className="text-4xl font-bold text-left md:text-center font-poppins">
       Productos</h1>
-      <p className="text-gray-600 mb-4 text-left md:text-center" style={{ fontFamily: "Poppins, sans-serif" }}>
+      <p className="text-gray-600 mb-4 text-left md:text-center">
       Descubre nuestros productos de madera, diseñados para tu hogar y tu estilo.
       </p>
 
@@ -58,10 +59,12 @@ export default function ProductsSection({ products }: ProductsSectionProps) {
               href={`/products/${product.handle}`}
               className="border rounded-lg p-0 sm:p-4 flex flex-col items-center hover:shadow-lg transition cursor-pointer"
             >
-              <img
-                src={product.images?.edges?.[0]?.node?.src || "/placeholder.png"}
+              <Image
+                src={product.images?.edges?.[0]?.node?.src || "/logonegro.png"}
                 alt={product.title}
-                className="w-full h-auto"
+                width={640}
+                height={480}
+                className="h-auto w-full"
               />
               <h2 className={`text-sm sm:text-lg font-semibold mt-4 ${isLongName ? "px-4" : ""}`}>
                 {product.title}

@@ -1,4 +1,4 @@
-import { AiOutlineCheckCircle, AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineCheckCircle, AiOutlineHome, AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
 
 interface SocialProofProps {
   partners?: string[];
@@ -16,6 +16,11 @@ const proofHighlights = [
     icon: AiOutlineCheckCircle,
   },
   {
+    title: "Taller en Chillán",
+    description: "Equipo familiar con oficio en madera y atención directa desde la Región de Ñuble.",
+    icon: AiOutlineHome,
+  },
+  {
     title: "Envío a todo Chile",
     description: "Coordinamos el despacho según comuna o región para que la compra llegue bien.",
     icon: AiOutlineStar,
@@ -29,19 +34,19 @@ export default function SocialProof({ partners }: SocialProofProps) {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-              Prueba social
+              Confianza
             </p>
             <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
-              Clientes que ya confiaron en nosotros
+              Compra con atención directa
             </h2>
           </div>
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-neutral-800 shadow-sm">
             <span className="text-[#25D366]">★</span>
-            <span>4.9 · 200+ clientes en Chile</span>
+            <span>31 años de oficio en madera</span>
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-4">
           {proofHighlights.map((item) => {
             const Icon = item.icon;
 

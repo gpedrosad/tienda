@@ -1,4 +1,4 @@
-"use client"; // Asegura que Swiper se ejecute en el cliente
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -8,8 +8,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// Define el tipo para las colecciones
-export interface ShopifyCollection {
+export interface CatalogCollection {
   id: string;
   title: string;
   handle: string;
@@ -19,15 +18,14 @@ export interface ShopifyCollection {
 }
 
 interface CollectionsSectionProps {
-  collections: ShopifyCollection[];
+  collections: CatalogCollection[];
 }
 
 export default function CollectionsSection({ collections }: CollectionsSectionProps) {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
       <h2
-        className="text-4xl font-bold mb-4 text-left md:text-center"
-        style={{ fontFamily: "Poppins, sans-serif" }}
+        className="mb-4 text-left text-4xl font-bold md:text-center font-poppins"
       >
         Colecciones
       </h2>

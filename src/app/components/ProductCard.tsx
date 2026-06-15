@@ -11,6 +11,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const whatsappUrl = buildWhatsAppUrl(buildProductWhatsAppMessage(product, getDefaultOrigin()));
+  const hasProductImage = Boolean(product.imageUrl);
 
   return (
     <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-lg border border-neutral-200/60 hover:border-neutral-300 relative flex flex-col h-full">
@@ -18,18 +19,18 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`/products/${product.handle || product.id}`} className="block flex-grow">
         {/* Imagen del producto */}
         <div className="relative w-full aspect-[4/3] bg-neutral-50 overflow-hidden">
-        {product.imageUrl ? (
+        {hasProductImage ? (
           <Image
-            src={product.imageUrl}
+            src={product.imageUrl!}
             alt={product.name}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-neutral-300">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-neutral-100 px-5 text-center text-neutral-400">
             <svg
-              className="w-16 h-16"
+              className="h-12 w-12"
               fill="none"
               stroke="currentColor"
               strokeWidth={1}
@@ -41,6 +42,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
+            <p className="mt-3 text-xs uppercase tracking-[0.18em]">Foto por confirmar</p>
+            <p className="mt-1 text-xs text-neutral-500">Pídela por WhatsApp</p>
           </div>
         )}
         
@@ -77,9 +80,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-all duration-300 group/button relative z-10"
+          className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-colors duration-200 group/button relative z-10 active:scale-[0.98]"
+          style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
         >
-          <span>Consultar</span>
+          <span>{hasProductImage ? "Consultar" : "Pedir foto"}</span>
           <AiOutlineWhatsApp 
             size={18} 
             className="group-hover/button:scale-110 transition-transform duration-300" 
