@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/app/components/JsonLd";
 import ProductCard from "@/app/components/ProductCard";
 import { products } from "@/data/products";
 import {
@@ -10,6 +11,13 @@ import {
   slugifyCategory,
   sortProductsForCatalog,
 } from "@/lib/catalog";
+import {
+  buildBreadcrumbSchema,
+  buildItemListSchema,
+  buildOpenGraphDefaults,
+  buildTwitterDefaults,
+} from "@/lib/seo";
+import { getProductPath } from "@/lib/whatsapp";
 
 interface CollectionPageProps {
   params: Promise<{
@@ -55,24 +63,30 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
 
   if (!collection) {
     return {
-      title: "Colección | Idea Madera",
+      title: "Colección no encontrada",
       description: "Catálogo de productos de Idea Madera.",
+      robots: { index: false, follow: true },
     };
   }
 
+  const ogDefaults = buildOpenGraphDefaults();
+
   return {
-    title: `${collection.title} | Idea Madera`,
+    title: collection.title,
     description: collection.description,
     alternates: {
       canonical: `/collections/${handle}`,
     },
     openGraph: {
-      title: `${collection.title} | Idea Madera`,
+      ...ogDefaults,
+      title: collection.title,
       description: collection.description,
       url: `/collections/${handle}`,
-      siteName: "Idea Madera",
-      locale: "es_CL",
-      type: "website",
+    },
+    twitter: {
+      ...buildTwitterDefaults(),
+      title: collection.title,
+      description: collection.description,
     },
   };
 }
@@ -83,8 +97,28 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
 
   if (!collection) notFound();
 
+  const collectionPath = `/collections/${handle}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbSchema([
+        { name: "Inicio", path: "/" },
+        { name: collection.title, path: collectionPath },
+      ]),
+      buildItemListSchema(
+        collection.title,
+        collection.products.map((product) => ({
+          name: product.name,
+          url: getProductPath(product),
+        })),
+      ),
+    ],
+  };
+
   return (
-    <main className="bg-white text-neutral-900">
+    <>
+      <JsonLd data={structuredData} />
+      <main className="bg-white text-neutral-900">
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
           <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
@@ -155,5 +189,6 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         </div>
       </section>
     </main>
+    </>
   );
 }

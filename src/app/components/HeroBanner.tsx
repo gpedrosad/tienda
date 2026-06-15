@@ -15,7 +15,7 @@ function HeroBanner() {
       <div className="absolute inset-0">
         <Image
           src="https://cdn.shopify.com/s/files/1/0401/9994/6389/files/IMG_20201102_112309.jpg?v=1614299603"
-          alt="Fondo decorativo"
+          alt="Muebles de madera artesanales fabricados por Idea Madera en Chile"
           fill
           priority
           className="hero-bg-image object-cover object-center"

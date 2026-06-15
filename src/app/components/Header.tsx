@@ -5,6 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
+import {
+  ALL_PRODUCTS_COLLECTION_PATH,
+  collectionNavLinks,
+} from "@/lib/navigation";
 
 const contactUrl = buildWhatsAppUrl(
   buildGeneralWhatsAppMessage("menú principal", [
@@ -138,12 +142,30 @@ export default function Header() {
             </li>
             <li className="overflow-hidden">
               <Link
-                href="/#catalogo"
+                href={ALL_PRODUCTS_COLLECTION_PATH}
                 onClick={closeMenu}
                 className="block text-3xl md:text-5xl font-light text-neutral-900 hover:text-neutral-600 transition-all duration-300 tracking-tight"
               >
                 Productos
               </Link>
+            </li>
+            <li className="overflow-hidden pt-2">
+              <p className="mb-4 text-center text-xs uppercase tracking-[0.18em] text-neutral-400">
+                Colecciones
+              </p>
+              <ul className="flex max-h-48 flex-wrap justify-center gap-x-4 gap-y-2 overflow-y-auto px-4">
+                {collectionNavLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={closeMenu}
+                      className="text-sm font-light text-neutral-600 transition-colors hover:text-neutral-900"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
             <li className="overflow-hidden">
               <Link

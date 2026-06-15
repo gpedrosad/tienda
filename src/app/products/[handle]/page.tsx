@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AiOutlineCheckCircle, AiOutlinePhone, AiOutlineStar } from "react-icons/ai";
 import Accordion from "@/app/components/Accordion";
@@ -8,8 +9,13 @@ import RelatedProducts from "@/app/components/RelatedProducts";
 import SocialProof from "@/app/components/SocialProof";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import WhatsAppInlineCTA from "@/app/components/WhatsAppInlineCTA";
+import JsonLd from "@/app/components/JsonLd";
 import { products, type Product } from "@/data/products";
-import { hasProductImage } from "@/lib/catalog";
+import { hasProductImage, slugifyCategory } from "@/lib/catalog";
+import {
+  buildBreadcrumbSchema,
+  buildFaqPageSchema,
+} from "@/lib/seo";
 import {
   buildProductWhatsAppMessage,
   DEFAULT_SITE_URL,
@@ -231,8 +237,12 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   if (!product || !hasProductImage(product)) {
     return {
-      title: `Producto ${handle} | Idea Madera`,
+      title: "Producto no encontrado",
       description: "Producto del catálogo de Idea Madera.",
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 
@@ -242,13 +252,13 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const canonicalPath = getProductPath(product);
 
   return {
-    title: `${product.name} | Idea Madera`,
+    title: product.name,
     description,
     alternates: {
       canonical: canonicalPath,
     },
     openGraph: {
-      title: `${product.name} | Idea Madera`,
+      title: product.name,
       description,
       url: canonicalPath,
       siteName: "Idea Madera",
@@ -267,7 +277,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | Idea Madera`,
+      title: product.name,
       description,
       ...(primaryImage ? { images: [primaryImage] } : {}),
     },
@@ -279,31 +289,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = findProduct(handle);
 
   if (!product || !hasProductImage(product)) {
-    return (
-      <main className="bg-white text-neutral-900">
-        <div className="mx-auto flex min-h-[60vh] max-w-4xl flex-col justify-center px-4 pt-24">
-          <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
-            <Link href="/" className="hover:text-neutral-900">
-              Inicio
-            </Link>
-            <span className="mx-1.5">/</span>
-            <span>Producto no encontrado</span>
-          </nav>
-          <h1 className="mt-6 text-4xl font-light tracking-tight text-neutral-900">
-            No encontramos este producto
-          </h1>
-          <p className="mt-4 max-w-xl text-neutral-600">
-            Puede que el enlace haya cambiado. Puedes volver al catálogo y buscar una alternativa.
-          </p>
-          <Link
-            href="/"
-            className="mt-8 inline-flex w-fit rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white hover:bg-neutral-800"
-          >
-            Volver al catálogo
-          </Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const origin = await getRequestOrigin();
@@ -326,8 +312,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const shouldShowDetails = productFeatures.length > 0 || specRows.length > 0;
   const availability = product.inStock === false ? "https://schema.org/PreOrder" : "https://schema.org/InStock";
 
+  const categoryHandle = slugifyCategory(product.category);
+  const categoryPath = `/collections/${categoryHandle}`;
+
   const productSchema = {
-    "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     image: absolutePrimaryImage ? [absolutePrimaryImage] : undefined,
@@ -347,6 +335,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
     },
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      productSchema,
+      buildBreadcrumbSchema([
+        { name: "Inicio", path: "/" },
+        { name: product.category, path: categoryPath },
+        { name: product.name, path: productPath },
+      ]),
+      buildFaqPageSchema(productFaqItems),
+    ],
+  };
+
   const trustItems = [
     "Envíos a todo Chile",
     `Fabricación ${productionDays} días hábiles`,
@@ -356,10 +357,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
+      <JsonLd data={structuredData} />
 
       <main className="bg-white text-neutral-900">
         <section className="border-b border-neutral-200 bg-gradient-to-b from-neutral-100 to-white">
@@ -373,10 +371,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </li>
                 <li>/</li>
                 <li>
-                  <Link
-                    href={`/?cat=${encodeURIComponent(product.category)}`}
-                    className="hover:text-neutral-900"
-                  >
+                  <Link href={categoryPath} className="hover:text-neutral-900">
                     {product.category}
                   </Link>
                 </li>

@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
+import {
+  ALL_PRODUCTS_COLLECTION_PATH,
+  collectionNavLinks,
+} from '@/lib/navigation';
 
 const footerContactUrl = buildWhatsAppUrl(
   buildGeneralWhatsAppMessage('footer del sitio', [
@@ -22,7 +26,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
             
             {/* Logo y descripción - Ocupa más espacio en desktop */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-4 space-y-6">
               <Link href="/" className="inline-block">
                 <Image 
                   src="/logonegro.png" 
@@ -58,7 +62,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="/#catalogo" 
+                    href={ALL_PRODUCTS_COLLECTION_PATH}
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
                     Productos
@@ -74,6 +78,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
+                    href="/peldanos-a-medida" 
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Peldaños a medida
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     href={footerContactUrl} 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
@@ -83,8 +95,27 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Colecciones */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
+                Colecciones
+              </h3>
+              <ul className="space-y-3">
+                {collectionNavLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Contacto */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-2">
               <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
                 Contacto
               </h3>

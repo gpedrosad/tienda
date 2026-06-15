@@ -3,6 +3,7 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
+import { absoluteUrl } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const pageTitle = "Peldaños a Medida en Madera | Cotiza por WhatsApp | Idea Madera";
@@ -60,7 +61,7 @@ const schemaGraph = {
       provider: {
         "@type": "Organization",
         name: "Idea Madera",
-        url: canonicalPath,
+        url: absoluteUrl("/"),
       },
       areaServed: {
         "@type": "Country",
@@ -95,13 +96,13 @@ const schemaGraph = {
           "@type": "ListItem",
           position: 1,
           name: "Inicio",
-          item: "/",
+          item: absoluteUrl("/"),
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Peldaños a medida",
-          item: canonicalPath,
+          item: absoluteUrl(canonicalPath),
         },
       ],
     },
@@ -109,7 +110,9 @@ const schemaGraph = {
 };
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: {
+    absolute: pageTitle,
+  },
   description: pageDescription,
   alternates: {
     canonical: canonicalPath,

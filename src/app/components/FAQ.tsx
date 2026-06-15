@@ -3,47 +3,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import Reveal from "@/app/components/Reveal";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
-
-const questions = [
-  {
-    id: 1,
-    title: "¿Cuánto tarda el envío?",
-    answer:
-      "El envío usualmente tarda 15 días hábiles, dependiendo de la ubicación y la disponibilidad del producto. Además, recibirás un número de seguimiento para estar al tanto de la entrega.",
-  },
-  {
-    id: 2,
-    title: "¿Se puede pagar en cuotas?",
-    answer:
-      "Sí, ofrecemos diversas opciones de pago, incluyendo la posibilidad de abonar en cuotas mediante tarjetas de crédito y otros métodos de financiamiento.",
-  },
-  {
-    id: 3,
-    title: "¿Qué garantía tienen los muebles?",
-    answer:
-      "Nuestros muebles cuentan con una garantía de 12 meses contra defectos de fabricación. Si presentás algún inconveniente, te asistiremos para resolverlo a la brevedad.",
-  },
-  {
-    id: 4,
-    title: "¿Puedo pedir medidas especiales?",
-    answer:
-      "Claro, realizamos muebles a medida. Comunicate con nuestro equipo para asesorarte y coordinar las especificaciones de tu pedido personalizado.",
-  },
-  {
-    id: 5,
-    title: "¿Qué pasa si llega dañado?",
-    answer:
-      "En caso de recibir un mueble dañado, te pedimos que nos contactes de inmediato para gestionar el reemplazo o la reparación, conforme a nuestras políticas de garantía.",
-  },
-];
+import { homeFaqItems } from "@/lib/seo";
 
 const faqWhatsAppUrl = buildWhatsAppUrl(
-  buildGeneralWhatsAppMessage('preguntas frecuentes', [
-    'Tengo una duda antes de cotizar un producto.',
-  ])
+  buildGeneralWhatsAppMessage("preguntas frecuentes", [
+    "Tengo una duda antes de cotizar un producto.",
+  ]),
 );
 
-const FAQItem = ({ question }: { question: typeof questions[0] }) => {
+const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -62,7 +30,7 @@ const FAQItem = ({ question }: { question: typeof questions[0] }) => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-base md:text-lg font-light text-neutral-900 tracking-tight pr-8 group-hover:text-neutral-600 transition-colors duration-300">
-          {question.title}
+          {question.question}
         </span>
         <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${
           isOpen ? "rotate-180" : ""
@@ -116,8 +84,8 @@ const FAQ = () => {
 
       {/* Lista de preguntas sin espaciado entre items */}
       <div className="border-t border-neutral-200">
-        {questions.map((q) => (
-          <FAQItem key={q.id} question={q} />
+        {homeFaqItems.map((item, index) => (
+          <FAQItem key={`${item.question}-${index}`} question={item} />
         ))}
       </div>
 

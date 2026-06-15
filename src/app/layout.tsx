@@ -1,13 +1,19 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ClientLayout from "@/app/components/ClientLayout"; // Componente que maneja la estructura de cliente
+import ClientLayout from "@/app/components/ClientLayout";
+import JsonLd from "@/app/components/JsonLd";
+import {
+  buildOpenGraphDefaults,
+  buildOrganizationSchema,
+  buildTwitterDefaults,
+  buildWebSiteSchema,
+  HOME_DESCRIPTION,
+  SITE_NAME,
+} from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-// Cargar fuentes locales
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,14 +27,30 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ideamadera.cl"),
-  title: "Idea Madera",
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: HOME_DESCRIPTION,
   icons: {
     icon: "/logonegro.png",
   },
-
-
-  description:
-    "Idea Madera es una empresa chilena dedicada a la fabricación de muebles de madera con un enfoque en la calidad y el diseño.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: buildOpenGraphDefaults(),
+  twitter: buildTwitterDefaults(),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -60,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        {/* Se elimina cualquier lógica o clase que habilite modo oscuro */}
+        <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
         <ClientLayout>{children}</ClientLayout>
         <SpeedInsights />
         <Analytics />
