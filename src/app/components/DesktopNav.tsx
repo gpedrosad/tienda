@@ -23,7 +23,6 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const collectionsRef = useRef<HTMLDivElement>(null);
 
-  const isSolidHeader = isScrolled || !isHomePage;
   const isTransparentHomeHeader = isHomePage && !isScrolled;
   const textColor = isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900";
   const hoverColor = isTransparentHomeHeader || (!isHomePage) ? "hover:text-neutral-300" : "hover:text-neutral-600";
@@ -64,7 +63,7 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
 
   return (
     <nav className="hidden lg:flex items-center h-full">
-      <ul className="flex items-center gap-0.5 h-full max-w-[calc(50vw-100px)] xl:max-w-[calc(50vw-130px)]">
+      <ul className="flex items-center gap-0.5 h-full">
         {navItems.map((item) => (
           <li key={item.label} className="relative h-full flex items-center">
             {item.hasDropdown ? (

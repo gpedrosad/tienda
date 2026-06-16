@@ -22,11 +22,9 @@ export default function Header() {
       : "bg-black/90 backdrop-blur-md shadow-sm"
     : "bg-transparent";
 
-  const headerControlColorClass =
-    isSolidHeader && !isHomePage ? "text-white" : "text-neutral-900";
-
   const isDarkInternalHeader = isSolidHeader && !isHomePage && !isMenuOpen;
   const isTransparentHomeHeader = isHomePage && !isScrolled;
+  const headerTextColor = isTransparentHomeHeader || !isHomePage ? "text-white" : "text-neutral-900";
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -65,18 +63,16 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBackgroundClass}`}
       >
-        <div className="container mx-auto px-5 md:px-12 lg:px-20">
-          <div className="flex justify-between items-center h-16 md:h-20">
-            <div className="flex items-center">
+        <div className="mx-auto px-5 md:px-12 lg:px-20">
+          <div className="grid grid-cols-3 items-center h-16 md:h-20">
+            <div className="flex items-center justify-start">
               <DesktopNav
                 isScrolled={isScrolled}
                 isHomePage={isHomePage}
               />
               <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className={`lg:hidden p-2 -ml-2 focus:outline-none transition-colors duration-300 ${
-                  isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900"
-                } ${isMenuOpen ? "text-neutral-900" : ""}`}
+                className={`lg:hidden p-2 -ml-2 focus:outline-none transition-colors duration-300 ${headerTextColor} ${isMenuOpen ? "text-neutral-900" : ""}`}
                 aria-label="Menú"
               >
                 {isMenuOpen ? (
@@ -87,28 +83,25 @@ export default function Header() {
               </button>
             </div>
 
-            <Link
-              href="/"
-              className="absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 hover:opacity-80"
-            >
-              <Image
-                src="/logonegro.png"
-                alt="Idea Madera"
-                width={80}
-                height={80}
-                className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
-                  isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
-                }`}
-                priority
-              />
-            </Link>
+            <div className="flex items-center justify-center">
+              <Link href="/" className="transition-opacity duration-300 hover:opacity-80">
+                <Image
+                  src="/logonegro.png"
+                  alt="Idea Madera"
+                  width={80}
+                  height={80}
+                  className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
+                    isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
+                  }`}
+                  priority
+                />
+              </Link>
+            </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center justify-end">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className={`p-2 focus:outline-none transition-colors duration-300 ${
-                  isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900"
-                }`}
+                className={`p-2 focus:outline-none transition-colors duration-300 ${headerTextColor}`}
                 aria-label="Buscar"
               >
                 <FaSearch size={18} />
