@@ -64,7 +64,7 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
 
   return (
     <nav className="hidden lg:flex items-center h-full">
-      <ul className="flex items-center gap-1 h-full">
+      <ul className="flex items-center gap-0.5 h-full max-w-[calc(50vw-100px)] xl:max-w-[calc(50vw-130px)]">
         {navItems.map((item) => (
           <li key={item.label} className="relative h-full flex items-center">
             {item.hasDropdown ? (
@@ -75,7 +75,7 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
+                  className={`flex items-center gap-1 px-2 py-2 text-xs font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
                 >
                   {item.label}
                   <FaChevronDown
@@ -92,13 +92,13 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-white rounded-lg shadow-lg border border-neutral-100 p-4 min-w-56">
-                    <ul className="flex flex-col gap-1">
+                  <div className="bg-white rounded-lg shadow-lg border border-neutral-100 p-3 min-w-48">
+                    <ul className="flex flex-col gap-0.5">
                       {collectionNavLinks.map((link) => (
                         <li key={link.href}>
                           <Link
                             href={link.href}
-                            className={`block px-3 py-2 text-sm font-light text-neutral-600 rounded-md transition-colors duration-200 hover:bg-neutral-50 hover:text-neutral-900 ${
+                            className={`block px-3 py-1.5 text-xs font-light text-neutral-600 rounded-md transition-colors duration-200 hover:bg-neutral-50 hover:text-neutral-900 ${
                               isActive(link.href) ? "bg-neutral-50 text-neutral-900" : ""
                             }`}
                           >
@@ -115,18 +115,18 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                 href={item.href!}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-3 py-2 text-sm font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
+                className={`px-2 py-2 text-xs font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
               >
                 {item.label}
               </a>
             ) : (
               <Link
                 href={item.href!}
-                className={`relative px-3 py-2 text-sm font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
+                className={`relative px-2 py-2 text-xs font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
               >
                 {item.label}
                 {isActive(item.href!) && (
-                  <span className={`absolute bottom-0 left-3 right-3 h-0.5 ${activeIndicator} rounded-full`} />
+                  <span className={`absolute bottom-0 left-2 right-2 h-0.5 ${activeIndicator} rounded-full`} />
                 )}
               </Link>
             )}
