@@ -168,6 +168,63 @@ body {
   }
 }
 
+@keyframes nav-dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-menu-item-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes search-modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nav-dropdown-enter {
+  animation: nav-dropdown-enter 200ms var(--ease-out-quart) both;
+}
+
+.mobile-menu-item-enter {
+  animation: mobile-menu-item-enter 400ms var(--ease-out-expo) both;
+}
+
+.search-modal-enter {
+  animation: search-modal-enter 300ms var(--ease-out-expo) both;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+nav a:focus-visible,
+nav button:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

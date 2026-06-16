@@ -60,6 +60,10 @@ export interface Product {
   stockNote?: string;
 }
 
+export function getAllProducts(): Product[] {
+  return products;
+}
+
 export const products: Product[] = [
   {
     id: "mesa-nordica",
