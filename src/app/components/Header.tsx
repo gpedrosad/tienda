@@ -26,6 +26,7 @@ export default function Header() {
     isSolidHeader && !isHomePage ? "text-white" : "text-neutral-900";
 
   const isDarkInternalHeader = isSolidHeader && !isHomePage && !isMenuOpen;
+  const isTransparentHomeHeader = isHomePage && !isScrolled;
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -74,7 +75,7 @@ export default function Header() {
               <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
                 className={`lg:hidden p-2 -ml-2 focus:outline-none transition-colors duration-300 ${
-                  isSolidHeader ? headerControlColorClass : "text-white"
+                  isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900"
                 } ${isMenuOpen ? "text-neutral-900" : ""}`}
                 aria-label="Menú"
               >
@@ -96,7 +97,7 @@ export default function Header() {
                 width={80}
                 height={80}
                 className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
-                  isDarkInternalHeader ? "brightness-0 invert" : ""
+                  isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
                 }`}
                 priority
               />
@@ -106,7 +107,7 @@ export default function Header() {
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className={`p-2 focus:outline-none transition-colors duration-300 ${
-                  isSolidHeader ? headerControlColorClass : "text-white"
+                  isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900"
                 }`}
                 aria-label="Buscar"
               >

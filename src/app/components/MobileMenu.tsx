@@ -78,14 +78,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-30 transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-[51] transition-opacity duration-500 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
       />
 
       <div
-        className={`fixed inset-0 bg-white z-40 lg:hidden transition-all duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-white z-[55] lg:hidden transition-all duration-500 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
@@ -93,7 +93,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <button
             ref={firstFocusableRef}
             onClick={onClose}
-            className="absolute top-5 right-5 z-50 p-2 text-neutral-900 focus:outline-none"
+            className="absolute top-5 right-5 z-[60] p-2 text-neutral-900 focus:outline-none"
             aria-label="Cerrar menú"
           >
             <FaTimes size={22} />

@@ -24,9 +24,10 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
   const collectionsRef = useRef<HTMLDivElement>(null);
 
   const isSolidHeader = isScrolled || !isHomePage;
-  const textColor = isSolidHeader && !isHomePage ? "text-white" : "text-neutral-900";
-  const hoverColor = isSolidHeader && !isHomePage ? "hover:text-neutral-300" : "hover:text-neutral-600";
-  const activeIndicator = isSolidHeader && !isHomePage ? "bg-white" : "bg-neutral-900";
+  const isTransparentHomeHeader = isHomePage && !isScrolled;
+  const textColor = isTransparentHomeHeader || (!isHomePage) ? "text-white" : "text-neutral-900";
+  const hoverColor = isTransparentHomeHeader || (!isHomePage) ? "hover:text-neutral-300" : "hover:text-neutral-600";
+  const activeIndicator = isTransparentHomeHeader || (!isHomePage) ? "bg-white" : "bg-neutral-900";
 
   const isActive = (href: string) => pathname === href;
 
