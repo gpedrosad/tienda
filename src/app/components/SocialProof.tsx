@@ -1,4 +1,8 @@
 import { AiOutlineCheckCircle, AiOutlineHome, AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import {
+  PRODUCT_AGGREGATE_RATING,
+  productReviewSnippets,
+} from "@/lib/seo";
 
 interface SocialProofProps {
   partners?: string[];
@@ -42,7 +46,9 @@ export default function SocialProof({ partners }: SocialProofProps) {
           </div>
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-neutral-800 shadow-sm">
             <span className="text-[#25D366]">★</span>
-            <span>31 años de oficio en madera</span>
+            <span>
+              {PRODUCT_AGGREGATE_RATING.ratingValue} · {PRODUCT_AGGREGATE_RATING.reviewCount}+ clientes en Chile
+            </span>
           </div>
         </div>
 
@@ -62,6 +68,25 @@ export default function SocialProof({ partners }: SocialProofProps) {
               </article>
             );
           })}
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {productReviewSnippets.map((review) => (
+            <figure
+              key={review.authorName}
+              className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm"
+            >
+              <div className="flex items-center gap-1 text-[#25D366]" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <span key={index}>★</span>
+                ))}
+              </div>
+              <blockquote className="mt-3 text-sm leading-relaxed text-neutral-700">
+                “{review.reviewBody}”
+              </blockquote>
+              <figcaption className="mt-3 text-xs text-neutral-500">{review.authorName}</figcaption>
+            </figure>
+          ))}
         </div>
 
         {partners && partners.length > 0 && (

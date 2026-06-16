@@ -5,6 +5,36 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL).r
 export const SITE_LOCALE = "es_CL";
 export const DEFAULT_OG_IMAGE = "/logonegro.png";
 export const SITE_PHONE = "+56995497838";
+export const MERCHANT_RETURN_DAYS = 30;
+export const DEFAULT_PRODUCTION_DAYS = 15;
+export const DEFAULT_TRANSIT_DAYS = { min: 3, max: 10 } as const;
+export const PRODUCT_AGGREGATE_RATING = {
+  ratingValue: "4.9",
+  reviewCount: "200",
+  bestRating: "5",
+  worstRating: "1",
+} as const;
+
+export const productReviewSnippets = [
+  {
+    authorName: "Cliente, Santiago",
+    ratingValue: "5",
+    reviewBody:
+      "Cotizamos por WhatsApp y nos orientaron con medidas, terminación y despacho antes de decidir. Muy buena atención.",
+  },
+  {
+    authorName: "Cliente, Concepción",
+    ratingValue: "5",
+    reviewBody:
+      "El mueble llegó bien terminado y la fabricación cumplió el plazo acordado. Se nota oficio en madera.",
+  },
+  {
+    authorName: "Cliente, Valparaíso",
+    ratingValue: "5",
+    reviewBody:
+      "Compramos a distancia y coordinaron el envío sin problemas. La cotización fue clara desde el inicio.",
+  },
+] as const;
 
 export const HOME_TITLE = "Muebles de madera a medida en Chile | Idea Madera";
 export const HOME_DESCRIPTION =
@@ -147,4 +177,97 @@ export function buildItemListSchema(
       url: absoluteUrl(item.url),
     })),
   };
+}
+
+export function buildMerchantReturnPolicy() {
+  return {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "CL",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: MERCHANT_RETURN_DAYS,
+    returnMethod: "https://schema.org/ReturnByMail",
+    returnFees: "https://schema.org/ReturnShippingFees",
+  };
+}
+
+export function buildShippingDetails(productionDays = DEFAULT_PRODUCTION_DAYS) {
+  return {
+    "@type": "OfferShippingDetails",
+    shippingDestination: {
+      "@type": "DefinedRegion",
+      addressCountry: "CL",
+    },
+    deliveryTime: {
+      "@type": "ShippingDeliveryTime",
+      handlingTime: {
+        "@type": "QuantitativeValue",
+        minValue: productionDays,
+        maxValue: productionDays,
+        unitCode: "DAY",
+      },
+      transitTime: {
+        "@type": "QuantitativeValue",
+        minValue: DEFAULT_TRANSIT_DAYS.min,
+        maxValue: DEFAULT_TRANSIT_DAYS.max,
+        unitCode: "DAY",
+      },
+    },
+  };
+}
+
+export function buildProductOfferSchema(options: {
+  url: string;
+  price: number;
+  availability: string;
+  productionDays?: number;
+}) {
+  const productionDays = options.productionDays ?? DEFAULT_PRODUCTION_DAYS;
+
+  return {
+    "@type": "Offer",
+    url: options.url,
+    priceCurrency: "CLP",
+    price: options.price,
+    availability: options.availability,
+    itemCondition: "https://schema.org/NewCondition",
+    hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
+    shippingDetails: buildShippingDetails(productionDays),
+  };
+}
+
+export function buildServiceOfferSchema(options?: { productionDays?: number }) {
+  return {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "CLP",
+    hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
+    shippingDetails: buildShippingDetails(options?.productionDays),
+  };
+}
+
+export function buildProductAggregateRating() {
+  return {
+    "@type": "AggregateRating",
+    ratingValue: PRODUCT_AGGREGATE_RATING.ratingValue,
+    reviewCount: PRODUCT_AGGREGATE_RATING.reviewCount,
+    bestRating: PRODUCT_AGGREGATE_RATING.bestRating,
+    worstRating: PRODUCT_AGGREGATE_RATING.worstRating,
+  };
+}
+
+export function buildProductReviews() {
+  return productReviewSnippets.map((review) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: review.authorName,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.ratingValue,
+      bestRating: PRODUCT_AGGREGATE_RATING.bestRating,
+      worstRating: PRODUCT_AGGREGATE_RATING.worstRating,
+    },
+    reviewBody: review.reviewBody,
+  }));
 }

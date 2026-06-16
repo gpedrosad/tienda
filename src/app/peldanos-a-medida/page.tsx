@@ -3,7 +3,7 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, buildServiceOfferSchema } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const pageTitle = "Peldaños a Medida en Madera | Cotiza por WhatsApp | Idea Madera";
@@ -72,11 +72,7 @@ const schemaGraph = {
         { "@type": "Audience", audienceType: "Particulares" },
         { "@type": "Audience", audienceType: "Empresas" },
       ],
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        priceCurrency: "CLP",
-      },
+      offers: buildServiceOfferSchema(),
     },
     {
       "@type": "FAQPage",
