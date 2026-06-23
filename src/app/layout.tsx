@@ -26,7 +26,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ideamadera.cl"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ideamadera.cl"),
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,

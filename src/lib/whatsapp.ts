@@ -1,7 +1,7 @@
 import type { Product } from "@/data/products";
 
 export const WHATSAPP_PHONE = "56995497838";
-export const DEFAULT_SITE_URL = "https://ideamadera.cl";
+export const DEFAULT_SITE_URL = "https://www.ideamadera.cl";
 
 export interface WhatsAppTrackingPayload {
   productTitle: string;

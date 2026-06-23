@@ -228,8 +228,7 @@ export function generateStaticParams() {
   const handles = new Set<string>();
 
   products.filter(hasProductImage).forEach((product) => {
-    handles.add(product.id);
-    if (product.handle) handles.add(product.handle);
+    handles.add(getProductId(product));
   });
 
   return Array.from(handles).map((handle) => ({ handle }));
