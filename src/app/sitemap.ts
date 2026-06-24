@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts } from "@/lib/catalog";
+import { serviceLandingPaths } from "@/lib/service-landings";
 import { SITE_URL } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
@@ -23,12 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${SITE_URL}/peldanos-a-medida`,
+    ...serviceLandingPaths.map((path) => ({
+      url: `${SITE_URL}${path}`,
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.9,
-    },
+    })),
   ];
 
   const collectionPages: MetadataRoute.Sitemap = [

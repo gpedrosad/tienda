@@ -77,6 +77,22 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/cubiertas-a-medida"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Cubiertas a medida
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/puertas-a-medida"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Puertas a medida
+                  </Link>
+                </li>
+                <li>
                   <Link 
                     href="/peldanos-a-medida" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
@@ -85,8 +101,16 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/quienes-somos"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Quiénes somos
+                  </Link>
+                </li>
+                <li>
                   <Link 
-                    href={footerContactUrl} 
+                    href="/contacto" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
                     Contacto

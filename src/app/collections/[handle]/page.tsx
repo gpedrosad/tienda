@@ -12,10 +12,15 @@ import {
   sortProductsForCatalog,
 } from "@/lib/catalog";
 import {
+  ALL_PRODUCTS_HANDLE,
+  getCollectionSeo,
+} from "@/lib/collection-seo";
+import {
   buildBreadcrumbSchema,
   buildItemListSchema,
   buildOpenGraphDefaults,
   buildTwitterDefaults,
+  SITE_NAME,
 } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
@@ -25,15 +30,13 @@ interface CollectionPageProps {
   }>;
 }
 
-const ALL_PRODUCTS_HANDLE = "todos-los-productos";
-
 function getCollection(handle: string) {
   const visibleProducts = getVisibleProducts(products);
 
   if (handle === ALL_PRODUCTS_HANDLE) {
+    const seo = getCollectionSeo(handle);
     return {
-      title: "Todos los productos",
-      description: "Explora muebles de madera, piezas a medida y productos disponibles para cotizar.",
+      ...seo,
       products: sortProductsForCatalog(visibleProducts),
     };
   }
@@ -41,9 +44,10 @@ function getCollection(handle: string) {
   const category = getCategoryByHandle(handle);
   if (!category) return null;
 
+  const seo = getCollectionSeo(handle, category);
+
   return {
-    title: category,
-    description: `Productos de ${category.toLowerCase()} fabricados por Idea Madera para cotizar por WhatsApp.`,
+    ...seo,
     products: sortProductsForCatalog(
       visibleProducts.filter((product) => product.category === category),
     ),
@@ -70,22 +74,23 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
   }
 
   const ogDefaults = buildOpenGraphDefaults();
+  const fullTitle = `${collection.metadataTitle} | ${SITE_NAME}`;
 
   return {
-    title: collection.title,
+    title: collection.metadataTitle,
     description: collection.description,
     alternates: {
       canonical: `/collections/${handle}`,
     },
     openGraph: {
       ...ogDefaults,
-      title: collection.title,
+      title: fullTitle,
       description: collection.description,
       url: `/collections/${handle}`,
     },
     twitter: {
       ...buildTwitterDefaults(),
-      title: collection.title,
+      title: fullTitle,
       description: collection.description,
     },
   };
@@ -103,10 +108,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     "@graph": [
       buildBreadcrumbSchema([
         { name: "Inicio", path: "/" },
-        { name: collection.title, path: collectionPath },
+        { name: collection.h1, path: collectionPath },
       ]),
       buildItemListSchema(
-        collection.title,
+        `${collection.metadataTitle} | ${SITE_NAME}`,
         collection.products.map((product) => ({
           name: product.name,
           url: getProductPath(product),
@@ -126,7 +131,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               Inicio
             </Link>
             <span className="mx-1.5">/</span>
-            <span>{collection.title}</span>
+            <span>{collection.h1}</span>
           </nav>
 
           <div className="mt-6 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
@@ -135,7 +140,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 Catálogo Idea Madera
               </p>
               <h1 className="mt-3 text-4xl font-light tracking-tight md:text-6xl">
-                {collection.title}
+                {collection.h1}
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
                 {collection.description}

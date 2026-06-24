@@ -19,7 +19,9 @@ import {
   buildProductOfferSchema,
   buildProductReviews,
   PRODUCT_AGGREGATE_RATING,
+  SITE_NAME,
 } from "@/lib/seo";
+import { getProductSeo } from "@/lib/product-seo";
 import {
   buildProductWhatsAppMessage,
   DEFAULT_SITE_URL,
@@ -251,20 +253,22 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   const productId = getProductId(product);
   const primaryImage = productImagesById[productId]?.[0] ?? product.imageUrl;
-  const description = getShortPitch(product) || getProductDescription(product);
+  const shortPitch = getShortPitch(product);
+  const { metadataTitle, description } = getProductSeo(product, shortPitch);
   const canonicalPath = getProductPath(product);
+  const fullTitle = `${metadataTitle} | ${SITE_NAME}`;
 
   return {
-    title: product.name,
+    title: metadataTitle,
     description,
     alternates: {
       canonical: canonicalPath,
     },
     openGraph: {
-      title: product.name,
+      title: fullTitle,
       description,
       url: canonicalPath,
-      siteName: "Idea Madera",
+      siteName: SITE_NAME,
       locale: "es_CL",
       type: "website",
       ...(primaryImage
@@ -280,7 +284,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: product.name,
+      title: fullTitle,
       description,
       ...(primaryImage ? { images: [primaryImage] } : {}),
     },
