@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AiOutlineCheckCircle, AiOutlinePhone, AiOutlineStar } from "react-icons/ai";
@@ -20,11 +19,11 @@ import {
   buildProductReviews,
   PRODUCT_AGGREGATE_RATING,
   SITE_NAME,
+  SITE_URL,
 } from "@/lib/seo";
 import { getProductSeo } from "@/lib/product-seo";
 import {
   buildProductWhatsAppMessage,
-  DEFAULT_SITE_URL,
   formatCLP,
   getProductPath,
   WHATSAPP_PHONE,
@@ -214,18 +213,6 @@ function getSpecRows(product: Product) {
   return rows.filter((row): row is { label: string; value: string } => Boolean(row.value));
 }
 
-async function getRequestOrigin() {
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
-  }
-
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
-  const proto = requestHeaders.get("x-forwarded-proto") ?? "https";
-
-  return host ? `${proto}://${host}` : DEFAULT_SITE_URL;
-}
-
 export function generateStaticParams() {
   const handles = new Set<string>();
 
@@ -299,7 +286,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const origin = await getRequestOrigin();
+  const origin = SITE_URL;
   const productId = getProductId(product);
   const productPath = getProductPath(product);
   const canonicalUrl = `${origin}${productPath}`;

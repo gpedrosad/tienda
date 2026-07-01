@@ -36,9 +36,9 @@ export const productReviewSnippets = [
   },
 ] as const;
 
-export const HOME_TITLE = "Muebles de madera a medida en Chile | Idea Madera";
+export const HOME_TITLE = "Muebles de Madera en Chillán y Chile | Idea Madera";
 export const HOME_DESCRIPTION =
-  "Fabricamos muebles de madera con diseño elegante y calidad excepcional. Mesas, sillas, bancas y piezas a medida con envío a todo Chile. Cotiza por WhatsApp.";
+  "Muebles de madera fabricados en Chillán y enviados a todo Chile: mesas, sillas, bancas y piezas a medida con diseño cuidado. Cotiza por WhatsApp.";
 
 export const homeFaqItems = [
   {

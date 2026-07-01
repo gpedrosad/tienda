@@ -10,6 +10,7 @@ import {
   buildWebSiteSchema,
   HOME_DESCRIPTION,
   SITE_NAME,
+  SITE_URL,
 } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
@@ -26,7 +27,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ideamadera.cl"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,

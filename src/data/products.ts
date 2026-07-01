@@ -58,6 +58,8 @@ export interface Product {
   productionDays?: number;
   inStock?: boolean;
   stockNote?: string;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export function getAllProducts(): Product[] {
@@ -84,6 +86,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o a elección",
     productionDays: 15,
+    seoTitle: "Mesa Nórdica de Madera Maciza para Comedor",
+    seoDescription:
+      "Mesa nórdica de madera maciza para comedor de 4 a 6 personas. Diseño escandinavo y terminación natural. Cotiza medidas y despacho por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -447,6 +452,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa de Centro Roma en Madera Maciza para Living",
+    seoDescription:
+      "Mesa de centro Roma en madera maciza para living. Tamaño intermedio, líneas contemporáneas y terminación artesanal. Cotiza por WhatsApp con envío a Chile.",
   },
   {
     id: "mesa-frida-redonda",
@@ -547,6 +555,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Ratona Trípode de Madera Maciza para Living",
+    seoDescription:
+      "Mesa ratona trípode de madera maciza para living. Formato bajo, patas inclinadas y terminación prolija. Cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "mesa-comedor-tripode-negra",

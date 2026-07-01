@@ -81,6 +81,10 @@ function nameAlreadyDescriptive(name: string) {
 }
 
 export function buildProductMetadataTitle(product: Product): string {
+  if (product.seoTitle) {
+    return product.seoTitle;
+  }
+
   const name = product.name;
 
   if (nameAlreadyDescriptive(name)) {
@@ -134,6 +138,10 @@ export function buildProductMetadataTitle(product: Product): string {
 }
 
 export function buildProductMetadataDescription(product: Product, shortPitch: string): string {
+  if (product.seoDescription) {
+    return product.seoDescription;
+  }
+
   const base = shortPitch.trim();
   const priceHint = `Desde ${formatCLP(product.price)}.`;
   const cta = " Cotiza por WhatsApp con envío a todo Chile.";

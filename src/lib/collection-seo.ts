@@ -11,13 +11,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     h1: "Todos los productos",
     metadataTitle: "Catálogo de Muebles de Madera en Chile",
     description:
-      "Explora mesas, sillas, bancas, veladores y muebles de madera fabricados en Chile. Revisa precios referenciales y cotiza por WhatsApp con envío a todo el país.",
+      "Catálogo de muebles de madera en Chile: mesas, sillas, bancas, veladores, percheros y futones con envío a todo el país. Cotiza por WhatsApp.",
   },
   mesas: {
     h1: "Mesas de comedor",
     metadataTitle: "Mesas de Comedor en Madera a Medida",
     description:
-      "Mesas de comedor personalizadas en madera maciza para 4, 6 y 8 personas. Diseños redondos, rectangulares y trípode. Fabricación chilena con cotización por WhatsApp y envío a todo Chile.",
+      "Mesas de comedor personalizadas en madera maciza para 4, 6 y 8 personas. Diseños redondos, rectangulares y trípode. Cotiza por WhatsApp con envío a todo Chile.",
   },
   sillas: {
     h1: "Sillas de comedor",

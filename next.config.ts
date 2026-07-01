@@ -111,6 +111,41 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blogs/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/policies/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/search",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/products/new",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/collections/new",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/collections/best-sellers",
+        destination: "/collections/todos-los-productos",
+        permanent: true,
+      },
+      {
         source: "/cart",
         destination: "/",
         permanent: true,
