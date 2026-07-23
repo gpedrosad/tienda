@@ -62,6 +62,22 @@ const nextConfig: NextConfig = {
         destination: "/collections/todos-los-productos",
         permanent: true,
       },
+      // Productos legacy Shopify / handles rotos
+      {
+        source: "/products/mesa-madera",
+        destination: "/collections/mesas",
+        permanent: true,
+      },
+      {
+        source: "/products/futon-madera-modelo-noruega",
+        destination: "/products/futon-noruega",
+        permanent: true,
+      },
+      {
+        source: "/products/g800065l",
+        destination: "/collections/todos-los-productos",
+        permanent: true,
+      },
       // Páginas Shopify → nuevas landings
       {
         source: "/pages/cubiertas",
@@ -97,6 +113,36 @@ const nextConfig: NextConfig = {
       {
         source: "/cubiertas",
         destination: "/cubiertas-a-medida",
+        permanent: true,
+      },
+      {
+        source: "/molduras",
+        destination: "/molduras-a-medida",
+        permanent: true,
+      },
+      {
+        source: "/pages/molduras",
+        destination: "/molduras-a-medida",
+        permanent: true,
+      },
+      {
+        source: "/muebles-chillan-chile",
+        destination: "/muebles-chillan",
+        permanent: true,
+      },
+      {
+        source: "/pages/muebles-chillan",
+        destination: "/muebles-chillan",
+        permanent: true,
+      },
+      {
+        source: "/cocinas-chillan",
+        destination: "/muebles-de-cocina-chillan",
+        permanent: true,
+      },
+      {
+        source: "/muebles-cocina-chillan",
+        destination: "/muebles-de-cocina-chillan",
         permanent: true,
       },
       {

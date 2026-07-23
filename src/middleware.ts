@@ -1,40 +1,41 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const CANONICAL_HOST = "www.ideamadera.cl";
-const PREVIEW_HOSTS = new Set(["localhost", "127.0.0.1", "0.0.0.0"]);
-
-function isPreviewHost(hostname: string) {
-  if (PREVIEW_HOSTS.has(hostname)) return true;
-  if (hostname.endsWith(".localhost")) return true;
-  if (/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?::[0-9]+)?$/.test(hostname)) return true;
-  if (hostname.endsWith(".vercel.app")) return true;
-  return false;
-}
-
+/**
+ * Limpia parámetros de paginación/legacy que generan URLs indexables ruidosas.
+ * Canonical de colecciones ya apunta a la ruta limpia; este redirect acelera la consolidación.
+ */
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  const host = request.headers.get("x-forwarded-host") ?? request.nextUrl.hostname;
-  const hostname = host.split(":")[0]?.toLowerCase() ?? "";
+  const { pathname, searchParams } = request.nextUrl;
 
-  if (!hostname || isPreviewHost(hostname)) {
-    return NextResponse.next();
+  if (pathname.startsWith("/collections/") && searchParams.has("page")) {
+    const page = searchParams.get("page");
+    if (!page || page === "1") {
+      const cleanUrl = request.nextUrl.clone();
+      cleanUrl.searchParams.delete("page");
+      return NextResponse.redirect(cleanUrl, 308);
+    }
   }
 
-  if (hostname !== CANONICAL_HOST) {
-    url.host = CANONICAL_HOST;
-    url.protocol = "https:";
-    url.port = "";
-    return NextResponse.redirect(url, 308);
-  }
-
-  if (request.nextUrl.protocol !== "https:") {
-    url.protocol = "https:";
-    return NextResponse.redirect(url, 308);
+  // Parámetros de recomendaciones Shopify que aún aparecen en GSC
+  const shopifyParams = [
+    "pr_prod_strat",
+    "pr_rec_id",
+    "pr_rec_pid",
+    "pr_ref_pid",
+    "pr_seq",
+  ];
+  if (pathname.startsWith("/products/") && shopifyParams.some((param) => searchParams.has(param))) {
+    const cleanUrl = request.nextUrl.clone();
+    for (const param of shopifyParams) {
+      cleanUrl.searchParams.delete(param);
+    }
+    return NextResponse.redirect(cleanUrl, 308);
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/((?!_next/|api/|favicon.ico|robots.txt|sitemap.xml).*)"],
+  matcher: ["/collections/:path*", "/products/:path*"],
 };

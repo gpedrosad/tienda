@@ -73,7 +73,8 @@ export const products: Product[] = [
     price: 369000,
     category: "Mesas",
     imageUrl: "/images/mesa-nordica-1.jpg",
-    shortPitch: "Mesa de comedor nórdica en madera maciza, ideal para espacios modernos con calidez natural.",
+    shortPitch:
+      "Mesa nórdica de madera maciza para comedor: diseño escandinavo, calidez natural y fabricación en Chile.",
     description:
       "La Mesa Nórdica de Idea Madera combina líneas limpias y madera seleccionada para comedores y espacios de reunión. Su diseño escandinavo aporta luminosidad y una base sólida para el uso diario. Fabricada en Chile con terminaciones cuidadas y opción de cotizar medidas personalizadas.",
     features: [
@@ -86,9 +87,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o a elección",
     productionDays: 15,
-    seoTitle: "Mesa Nórdica de Madera Maciza para Comedor",
+    seoTitle: "Mesa Nórdica de Madera Maciza | Comedor Chile",
     seoDescription:
-      "Mesa nórdica de madera maciza para comedor de 4 a 6 personas. Diseño escandinavo y terminación natural. Cotiza medidas y despacho por WhatsApp.",
+      "Mesa nórdica de madera maciza para comedor (desde $369.000). Diseño escandinavo, medidas a cotizar y envío a todo Chile. Escribe por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -115,7 +116,8 @@ export const products: Product[] = [
     price: 279000,
     category: "Sillas",
     imageUrl: "/images/silla-kentucky-1.jpg",
-    shortPitch: "Silla de madera con respaldo ergonómico, pensada para comedor y uso prolongado.",
+    shortPitch:
+      "Silla Kentucky de madera para comedor: respaldo ergonómico, estructura resistente y terminación artesanal.",
     description:
       "La Silla Kentucky destaca por su respaldo cómodo y construcción robusta en madera. Funciona bien en comedores, escritorios o espacios de trabajo en casa. Su perfil clásico se integra con mesas modernas y tradicionales. Cotiza por WhatsApp para confirmar terminación y cantidad.",
     features: [
@@ -127,6 +129,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o negro",
     productionDays: 15,
+    seoTitle: "Silla Kentucky de Madera para Comedor",
+    seoDescription:
+      "Silla Kentucky de madera maciza para comedor (desde $279.000). Respaldo cómodo, fabricada en Chile. Cotiza cantidad y terminación por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode",
@@ -439,7 +444,8 @@ export const products: Product[] = [
     price: 359990,
     category: "Mesas",
     imageUrl: "/images/mesa-centro-roma-main.jpg",
-    shortPitch: "Mesa de centro en madera con proporciones equilibradas para living y sala de estar.",
+    shortPitch:
+      "Mesa de centro Roma en madera maciza: tamaño ideal para living, líneas contemporáneas y terminación prolija.",
     description:
       "La Mesa Centro Roma eleva la sala de estar con madera maciza y líneas contemporáneas. Su tamaño intermedio permite apoyar decoración, café o controles sin invadir el espacio. Es una pieza funcional con acabado cuidado, pensada para durar en el uso diario.",
     features: [
@@ -452,9 +458,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa de Centro Roma en Madera Maciza para Living",
+    seoTitle: "Mesa de Centro Roma de Madera Maciza",
     seoDescription:
-      "Mesa de centro Roma en madera maciza para living. Tamaño intermedio, líneas contemporáneas y terminación artesanal. Cotiza por WhatsApp con envío a Chile.",
+      "Mesa de centro Roma de madera maciza para living (desde $359.990). Formato intermedio, terminación artesanal y envío a Chile. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-frida-redonda",
@@ -542,7 +548,8 @@ export const products: Product[] = [
     price: 399990,
     category: "Mesas",
     imageUrl: "/images/1MESATRIPODERATONA.jpg",
-    shortPitch: "Mesa ratona con patas trípode en madera, baja y versátil para living o sala de estar.",
+    shortPitch:
+      "Mesa ratona de madera maciza con patas trípode: formato bajo para living, ideal frente al sofá.",
     description:
       "La Mesa Trípode Ratona adapta el diseño icónico de patas inclinadas a un formato bajo ideal para living. Perfecta frente al sofá para apoyar bandejas, libros o decoración. Madera maciza con la calidad de terminación Idea Madera.",
     features: [
@@ -555,9 +562,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Ratona Trípode de Madera Maciza para Living",
+    seoTitle: "Mesa Ratona de Madera Maciza | Trípode Living",
     seoDescription:
-      "Mesa ratona trípode de madera maciza para living. Formato bajo, patas inclinadas y terminación prolija. Cotiza por WhatsApp con envío a todo Chile.",
+      "Mesa ratona de madera maciza con patas trípode (desde $399.990). Baja, resistente y para living. Cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "mesa-comedor-tripode-negra",

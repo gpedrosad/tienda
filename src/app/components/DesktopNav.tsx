@@ -58,6 +58,7 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
     { label: "Colecciones", href: null, hasDropdown: true },
     { label: "Destacados", href: "/ofertas" },
     { label: "Peldaños a medida", href: "/peldanos-a-medida" },
+    { label: "Molduras a medida", href: "/molduras-a-medida" },
     { label: "Contacto", href: contactUrl, external: true },
   ];
 

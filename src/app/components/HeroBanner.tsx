@@ -15,7 +15,7 @@ function HeroBanner() {
       <div className="absolute inset-0">
         <Image
           src="https://cdn.shopify.com/s/files/1/0401/9994/6389/files/IMG_20201102_112309.jpg?v=1614299603"
-          alt="Muebles de madera artesanales fabricados por Idea Madera en Chile"
+          alt="Muebles de madera artesanales fabricados por Idea Madera en Chillán, Chile"
           fill
           priority
           className="hero-bg-image object-cover object-center"
@@ -27,17 +27,15 @@ function HeroBanner() {
       <div className="relative z-10 flex flex-col items-start justify-end h-full min-h-[85vh] md:min-h-[90vh] px-5 pb-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20">
         <div className="max-w-2xl space-y-4 md:space-y-6">
           <p className="hero-enter hero-enter-1 text-xs md:text-sm tracking-[0.2em] uppercase text-neutral-300 font-light">
-            Artesanía en madera
+            Fabricado en Chillán · Envío a todo Chile
           </p>
 
           <h1 className="hero-enter hero-enter-2 text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-white tracking-[-0.03em] text-balance">
-            Diseño elegante,
-            <br />
-            <span className="font-normal">calidad excepcional</span>
+            Idea Madera
           </h1>
 
           <p className="hero-enter hero-enter-3 text-sm md:text-base lg:text-lg text-neutral-200 font-light leading-relaxed max-w-xl text-pretty">
-            Productos exclusivos elaborados con dedicación y precisión para espacios que inspiran.
+            Muebles de madera a medida con diseño cuidado: mesas, sillas y piezas artesanales para tu hogar.
           </p>
 
           <div className="hero-enter hero-enter-4 pt-4 md:pt-6">

@@ -248,6 +248,25 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     ? "opacity-100"
                     : "-translate-y-4 opacity-0"
                 }`}
+                style={{ transitionDelay: isOpen && !prefersReducedMotion ? "550ms" : "0ms" }}
+              >
+                <Link
+                  href="/molduras-a-medida"
+                  onClick={onClose}
+                  className="block text-3xl md:text-4xl font-light text-neutral-900 hover:text-neutral-600 transition-colors duration-300 tracking-tight"
+                >
+                  Molduras a medida
+                </Link>
+              </li>
+
+              <li
+                className={`w-full text-center transition-all duration-500 ${
+                  isOpen && !prefersReducedMotion
+                    ? "translate-y-0 opacity-100"
+                    : prefersReducedMotion
+                    ? "opacity-100"
+                    : "-translate-y-4 opacity-0"
+                }`}
                 style={{ transitionDelay: isOpen && !prefersReducedMotion ? "600ms" : "0ms" }}
               >
                 <Link

@@ -14,10 +14,7 @@ import { hasProductImage, slugifyCategory } from "@/lib/catalog";
 import {
   buildBreadcrumbSchema,
   buildFaqPageSchema,
-  buildProductAggregateRating,
   buildProductOfferSchema,
-  buildProductReviews,
-  PRODUCT_AGGREGATE_RATING,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/seo";
@@ -325,8 +322,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
       availability,
       productionDays,
     }),
-    aggregateRating: buildProductAggregateRating(),
-    review: buildProductReviews(),
   };
 
   const structuredData = {
@@ -396,10 +391,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
                   <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 md:mt-4 md:text-sm">
                     <AiOutlineStar className="text-[#25D366]" size={17} />
-                    <span>
-                      {PRODUCT_AGGREGATE_RATING.ratingValue} ·{" "}
-                      {PRODUCT_AGGREGATE_RATING.reviewCount}+ clientes en Chile
-                    </span>
+                    <span>Fabricación en Chillán · Envío a todo Chile</span>
                   </div>
 
                   <p className="mt-4 text-3xl md:mt-6 md:text-4xl font-light tracking-tight text-neutral-900">

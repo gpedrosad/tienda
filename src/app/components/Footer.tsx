@@ -93,6 +93,30 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/muebles-chillan"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Muebles Chillán
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/muebles-de-cocina-chillan"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Muebles de cocina
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/molduras-a-medida"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Molduras a medida
+                  </Link>
+                </li>
+                <li>
                   <Link 
                     href="/peldanos-a-medida" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"

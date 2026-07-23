@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gsc:auth": "node --env-file=.env.local scripts/gsc-report.mjs --auth",
+    "gsc:report": "node --env-file=.env.local scripts/gsc-report.mjs",
+    "gsc:report:md": "node --env-file=.env.local scripts/gsc-report-md.mjs",
+    "gsc:sitemap": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs",
+    "gsc:sitemap:auth": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs --auth"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "cookies-next": "^5.1.0",
+    "googleapis": "^171.4.0",
     "isomorphic-fetch": "^3.0.0",
     "next": "^15.5.19",
     "react": "^19.0.0",

@@ -280,7 +280,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
   pageTitle: "Cubiertas de Madera a Medida | Mesones y Tablones | Idea Madera",
   pageDescription:
-    "Fabricamos cubiertas y tablones de madera a medida para barras, mesones, quinchos y proyectos comerciales. Lenga austral y pino premium. Cotiza por WhatsApp con envío a todo Chile.",
+    "Fabricamos cubiertas y tablones de madera a medida en Chillán para barras, mesones, quinchos y proyectos comerciales. Lenga austral y pino premium. Cotiza por WhatsApp con envío a todo Chile.",
   keywords: [
     "cubiertas de madera a medida",
     "mesones de madera",
@@ -288,12 +288,13 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     "cubiertas para quincho",
     "mesones para restaurant",
     "cubiertas madera chile",
+    "cubiertas madera chillan",
   ],
   eyebrow: "Cubiertas de madera a medida",
   h1: "Cubiertas y tablones de madera a tu medida",
   heroParagraph:
-    "Desarrollamos cubiertas y tablones terminados en medidas personalizadas para hogares, restaurantes, quinchos y salones de eventos. Trabajamos madera nativa seca en cámara —lenga austral y pino premium— con fabricación artesanal y asesoría directa por WhatsApp.",
-  badges: ["Lenga austral y pino premium", "Envíos a todo Chile"],
+    "Desarrollamos cubiertas y tablones terminados en medidas personalizadas desde nuestro taller en Chillán, para hogares, restaurantes, quinchos y salones de eventos. Trabajamos madera nativa seca en cámara —lenga austral y pino premium— con fabricación artesanal y asesoría directa por WhatsApp.",
+  badges: ["Taller en Chillán", "Lenga austral y pino premium", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar cubiertas por WhatsApp",
   whatsappProductTitle: "Cubiertas a medida",
   whatsappLines: [
@@ -383,23 +384,141 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   serviceType: "Fabricación de cubiertas y tablones de madera",
 };
 
+export const moldurasLandingConfig: ServiceLandingConfig = {
+  canonicalPath: "/molduras-a-medida",
+  pageTitle: "Molduras de Madera a Medida | Chile | Idea Madera",
+  pageDescription:
+    "Fabricamos molduras de madera a medida en Chillán para muros, techos, puertas y proyectos de terminación. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
+  keywords: [
+    "molduras de madera a medida",
+    "molduras madera chile",
+    "molduras a medida chillan",
+    "molduras para muro",
+    "molduras para techo",
+    "perfiles de madera a medida",
+    "cotizar molduras madera",
+  ],
+  eyebrow: "Molduras de madera a medida",
+  h1: "Molduras de madera a medida para tu proyecto",
+  heroParagraph:
+    "Fabricamos molduras y perfiles de madera a medida desde nuestro taller en Chillán. Ideales para muros, techos, vanos, puertas y terminaciones interiores. Trabajamos según tus medidas, estilo y tipo de madera, con cotización clara por WhatsApp y envío a todo Chile.",
+  badges: ["Taller en Chillán", "Perfiles a medida", "Envíos a todo Chile"],
+  whatsappButtonLabel: "Cotizar molduras por WhatsApp",
+  whatsappProductTitle: "Molduras a medida",
+  whatsappLines: [
+    "Vengo desde la página de molduras a medida.",
+    "Quiero cotizar molduras de madera para mi proyecto.",
+    "Puedo enviar largo, perfil/referencia, cantidad, comuna y foto o croquis.",
+  ],
+  heroHighlights: [
+    {
+      title: "Medidas y perfiles exactos",
+      description: "Fabricamos según largo, sección y diseño que necesites.",
+    },
+    {
+      title: "Terminación prolija",
+      description: "Acabados listos para pintar, barnizar o instalar según el proyecto.",
+    },
+    {
+      title: "Hogar y obra",
+      description: "Atendemos particulares, arquitectos, constructoras y diseñadores.",
+    },
+  ],
+  sectionTitle: "Molduras de madera para cada terminación",
+  sectionParagraph:
+    "Las molduras definen el detalle de un espacio: cornisas, guardapolvos, marcos, zócalos y perfiles decorativos. En Idea Madera fabricamos molduras de madera a medida para que el acabado coincida con tu arquitectura, no al revés. También resolvemos pedidos por metro lineal o por tramos cortados a largo.",
+  featureCards: [
+    {
+      title: "Muros y zócalos",
+      description: "Guardapolvos, zócalos y molduras de muro para remates limpios y duraderos.",
+    },
+    {
+      title: "Techos y cornisas",
+      description: "Perfiles para encuentro muro-cielo, cornisas y detalles de altura.",
+    },
+    {
+      title: "Marcos y vanos",
+      description: "Molduras para puertas, ventanas y terminaciones de vanos a medida.",
+    },
+  ],
+  stepsTitle: "Cómo cotizar tus molduras a medida",
+  steps: [
+    {
+      title: "Envía medidas y referencia",
+      description: "Comparte largo, sección o perfil, cantidad y una foto o croquis del detalle.",
+    },
+    {
+      title: "Definimos madera y acabado",
+      description: "Te orientamos en madera y terminación según uso interior y estilo del proyecto.",
+    },
+    {
+      title: "Recibes cotización y plazos",
+      description: "Te respondemos por WhatsApp con precio referencial, fabricación y opciones de despacho.",
+    },
+  ],
+  bottomHighlights: [
+    {
+      title: "Fabricación en Chillán",
+      description: "Producción propia con control de calidad en cada perfil y tramo.",
+    },
+    {
+      title: "Envíos a todo Chile",
+      description: "Coordinamos despacho según comuna o región al momento de cotizar.",
+    },
+  ],
+  faqItems: [
+    {
+      question: "¿Fabrican molduras de madera a medida?",
+      answer:
+        "Sí. Fabricamos molduras y perfiles según las medidas, sección y diseño de tu proyecto, desde Chillán con envío a todo Chile.",
+    },
+    {
+      question: "¿Qué tipo de molduras hacen?",
+      answer:
+        "Trabajamos molduras para muros, zócalos, techos, cornisas, marcos de vanos y perfiles decorativos personalizados según referencia o croquis.",
+    },
+    {
+      question: "¿Qué información necesitan para cotizar?",
+      answer:
+        "Idealmente largo, sección o perfil, cantidad, comuna y una foto o croquis. Si no tienes el perfil exacto, te ayudamos a definir una opción.",
+    },
+    {
+      question: "¿Hacen molduras para obras y particulares?",
+      answer:
+        "Sí. Atendemos particulares, arquitectos, diseñadores y constructoras con pedidos unitarios o por metro lineal.",
+    },
+    {
+      question: "¿Envían molduras a todo Chile?",
+      answer:
+        "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones y tiempos según tu ubicación.",
+    },
+  ],
+  ctaTitle: "Cotiza hoy tus molduras de madera",
+  ctaParagraph:
+    "Escríbenos por WhatsApp con medidas y una referencia visual. Mientras más detalle compartas, más precisa será la cotización.",
+  ctaBullets: sharedCtaBullets,
+  schemaType: "Service",
+  serviceName: "Molduras de madera a medida",
+  serviceType: "Fabricación de molduras y perfiles de madera",
+};
+
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
   pageTitle: "Puertas de Madera a Medida | Personalizadas | Idea Madera",
   pageDescription:
-    "Fabricamos puertas de madera personalizadas a medida para hogares y negocios. Diseño, durabilidad y madera nativa seca en cámara. Cotiza por WhatsApp con envío a todo Chile.",
+    "Fabricamos puertas de madera personalizadas a medida en Chillán para hogares y negocios. Diseño, durabilidad y madera nativa seca en cámara. Cotiza por WhatsApp con envío a todo Chile.",
   keywords: [
     "puertas de madera a medida",
     "puertas personalizadas madera",
     "puertas madera chile",
-    "puertas a medida",
+    "puertas a medida chillan",
     "cotizar puertas madera",
   ],
   eyebrow: "Puertas de madera a medida",
   h1: "Puertas de madera personalizadas a medida",
   heroParagraph:
-    "Fabricamos puertas a medida según tus especificaciones exactas, para que se adapten perfectamente a tu hogar o negocio. Más de 30 años trabajando maderas nobles del sur de Chile con diseño personalizado, durabilidad y terminaciones prolijas.",
-  badges: ["Diseño personalizado", "Envíos a todo Chile"],
+    "Fabricamos puertas a medida según tus especificaciones exactas desde Chillán, para que se adapten perfectamente a tu hogar o negocio. Más de 30 años trabajando maderas nobles del sur de Chile con diseño personalizado, durabilidad y terminaciones prolijas.",
+  badges: ["Taller en Chillán", "Diseño personalizado", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar puertas por WhatsApp",
   whatsappProductTitle: "Puertas a medida",
   whatsappLines: [
@@ -498,19 +617,20 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/quienes-somos",
   pageTitle: "¿Quiénes Somos? | Muebles de Madera en Chile | Idea Madera",
   pageDescription:
-    "Idea Madera es una empresa familiar chilena desde 2001. Diseñamos y fabricamos muebles de madera con venta directa, calidad artesanal y envíos a todo Chile. Conoce nuestra historia.",
+    "Idea Madera es una empresa familiar de Chillán desde 2001. Diseñamos y fabricamos muebles de madera con venta directa, calidad artesanal y envíos a todo Chile. Conoce nuestra historia.",
   keywords: [
     "idea madera",
-    "muebles madera chile",
-    "fabrica muebles madera",
+    "muebles madera chillan",
+    "muebles de madera en chillán",
+    "fabrica muebles madera chile",
     "muebles artesanales chile",
     "empresa familiar muebles",
   ],
-  eyebrow: "Nuestra historia",
-  h1: "Diseñamos muebles de madera pensados para durar",
+  eyebrow: "Taller en Chillán",
+  h1: "Muebles de madera fabricados en Chillán",
   heroParagraph:
-    "Somos una empresa familiar que desde 2001 crea muebles de madera con diseño cuidadoso, construcción de calidad y venta directa. Involucrados en todo el proceso —desde el desarrollo del producto hasta la experiencia del cliente— eliminamos intermediarios para ofrecer piezas duraderas a precios accesibles.",
-  badges: ["Desde 2001", "Venta directa", "Envíos a todo Chile"],
+    "Somos una empresa familiar de Chillán que desde 2001 crea muebles de madera con diseño cuidadoso, construcción de calidad y venta directa. Involucrados en todo el proceso —desde el desarrollo del producto hasta la experiencia del cliente— eliminamos intermediarios para ofrecer piezas duraderas a precios accesibles, con envío a todo Chile.",
+  badges: ["Taller en Chillán", "Desde 2001", "Envíos a todo Chile"],
   whatsappButtonLabel: "Hablar con Idea Madera",
   whatsappProductTitle: "Quiénes somos",
   whatsappLines: [
@@ -580,7 +700,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Venden solo productos de catálogo?",
       answer:
-        "No. Además del catálogo, fabricamos piezas a medida como cubiertas, puertas, peldaños y proyectos personalizados.",
+        "No. Además del catálogo, fabricamos piezas a medida como cubiertas, puertas, peldaños, molduras y proyectos personalizados.",
     },
     {
       question: "¿Hacen envíos a todo Chile?",
@@ -701,10 +821,255 @@ export const contactoLandingConfig: ServiceLandingConfig = {
   },
 };
 
+export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
+  canonicalPath: "/muebles-de-cocina-chillan",
+  pageTitle: "Muebles de Cocina en Chillán | Madera a Medida | Idea Madera",
+  pageDescription:
+    "Muebles de cocina en madera a medida en Chillán: mesones, cubiertas, islas y terminaciones. Fabricación local Idea Madera con cotización por WhatsApp y envío a todo Chile.",
+  keywords: [
+    "muebles de cocina chillan",
+    "muebles de cocina en chillán",
+    "cocina madera chillan",
+    "mesones cocina madera",
+    "cubiertas cocina chillan",
+    "muebles cocina a medida chile",
+  ],
+  eyebrow: "Muebles de cocina · Chillán",
+  h1: "Muebles de cocina en madera a medida en Chillán",
+  heroParagraph:
+    "Diseñamos y fabricamos muebles de cocina en madera desde nuestro taller en Chillán: mesones, cubiertas, islas y piezas a medida para cocinas nuevas o remodelaciones. Te orientamos por WhatsApp con medidas, madera y terminación, con despacho a todo Chile.",
+  badges: ["Taller en Chillán", "Cocinas a medida", "Envíos a todo Chile"],
+  whatsappButtonLabel: "Cotizar cocina por WhatsApp",
+  whatsappProductTitle: "Muebles de cocina Chillán",
+  whatsappLines: [
+    "Vengo desde la página de muebles de cocina en Chillán.",
+    "Quiero cotizar muebles o mesones de cocina en madera.",
+    "Puedo enviar medidas, plano o foto, comuna y tipo de terminación.",
+  ],
+  heroHighlights: [
+    {
+      title: "Fabricación local",
+      description: "Producción en Chillán con control de calidad en cada pieza.",
+    },
+    {
+      title: "A medida de tu cocina",
+      description: "Mesones, cubiertas e islas según tu espacio y estilo.",
+    },
+    {
+      title: "Asesoría directa",
+      description: "Cotización clara por WhatsApp para particulares y obras.",
+    },
+  ],
+  sectionTitle: "Cocinas en madera con oficio chillanejo",
+  sectionParagraph:
+    "Si buscas muebles de cocina en Chillán con madera real y terminación prolija, trabajamos contigo desde la medida hasta el despacho. Combinamos catálogo y fabricación a pedido para mesones, cubiertas de barra, islas y complementos que resisten el uso diario.",
+  featureCards: [
+    {
+      title: "Mesones y cubiertas",
+      description: "Superficies de trabajo en madera seca en cámara, a medida de tu cocina o isla.",
+    },
+    {
+      title: "Islas y barras",
+      description: "Piezas centrales para cocinar, desayunar o recibir, con terminación artesanal.",
+    },
+    {
+      title: "Remodelación y obra nueva",
+      description: "Adaptamos medidas y acabados a proyectos de casa, departamento o local.",
+    },
+  ],
+  stepsTitle: "Cómo cotizar tus muebles de cocina",
+  steps: [
+    {
+      title: "Cuéntanos el espacio",
+      description: "Envía medidas, fotos o plano de la cocina y qué piezas necesitas.",
+    },
+    {
+      title: "Definimos madera y diseño",
+      description: "Te proponemos opciones de madera, formato y terminación según uso.",
+    },
+    {
+      title: "Recibes cotización",
+      description: "Te enviamos propuesta por WhatsApp con plazos de fabricación y despacho.",
+    },
+  ],
+  bottomHighlights: [
+    {
+      title: "Chillán y todo Chile",
+      description: "Atención local en Chillán y envíos coordinados al resto del país.",
+    },
+    {
+      title: "Madera para uso diario",
+      description: "Selección y secado en cámara para mayor estabilidad en cocina.",
+    },
+  ],
+  faqItems: [
+    {
+      question: "¿Hacen muebles de cocina en Chillán?",
+      answer:
+        "Sí. Fabricamos en Chillán muebles y piezas de cocina en madera a medida, con cotización por WhatsApp.",
+    },
+    {
+      question: "¿Qué fabrican para cocinas?",
+      answer:
+        "Mesones, cubiertas, islas, barras y piezas personalizadas según las medidas y el estilo de tu cocina.",
+    },
+    {
+      question: "¿Puedo pedir solo la cubierta o el mesón?",
+      answer:
+        "Sí. Puedes cotizar una pieza puntual o un conjunto. Indica medidas y uso para una propuesta precisa.",
+    },
+    {
+      question: "¿Envían fuera de Chillán?",
+      answer:
+        "Sí. Además de atender Chillán, coordinamos envíos a todo Chile según comuna o región.",
+    },
+    {
+      question: "¿Cómo cotizo?",
+      answer:
+        "Escríbenos por WhatsApp con medidas, fotos o plano, comuna y el tipo de mueble de cocina que necesitas.",
+    },
+  ],
+  ctaTitle: "Cotiza tus muebles de cocina en Chillán",
+  ctaParagraph:
+    "Cuéntanos tu cocina por WhatsApp. Con medidas y una foto podemos orientarte más rápido.",
+  ctaBullets: [
+    "Taller en Chillán.",
+    "Piezas a medida y catálogo.",
+    "Envíos a todo Chile.",
+  ],
+  schemaType: "Service",
+  serviceName: "Muebles de cocina en madera a medida en Chillán",
+  serviceType: "Fabricación de muebles de cocina en madera",
+};
+
+export const mueblesChillanLandingConfig: ServiceLandingConfig = {
+  canonicalPath: "/muebles-chillan",
+  pageTitle: "Muebles Chillán | Madera a Medida | Idea Madera",
+  pageDescription:
+    "Muebles en Chillán fabricados en madera: mesas, sillas, bancas y piezas a medida. Taller Idea Madera con cotización por WhatsApp y envío a todo Chile.",
+  keywords: [
+    "muebles chillan",
+    "muebles en chillán",
+    "muebles de madera chillan",
+    "muebles a medida chillan",
+    "fabrica muebles chillan",
+    "muebles madera chillán chile",
+  ],
+  eyebrow: "Muebles en Chillán",
+  h1: "Muebles de madera en Chillán",
+  heroParagraph:
+    "Idea Madera fabrica muebles de madera en Chillán con diseño cuidado y venta directa: mesas, sillas, bancas, veladores y piezas a medida. Cotiza por WhatsApp y recibe orientación en medidas, terminación y despacho a todo Chile.",
+  badges: ["Fábrica en Chillán", "Desde 2001", "Envíos a todo Chile"],
+  whatsappButtonLabel: "Cotizar muebles por WhatsApp",
+  whatsappProductTitle: "Muebles Chillán",
+  whatsappLines: [
+    "Vengo desde la página de muebles Chillán.",
+    "Quiero cotizar muebles de madera.",
+    "Puedo indicar producto, medidas, comuna y fotos de referencia.",
+  ],
+  heroHighlights: [
+    {
+      title: "Hecho en Chillán",
+      description: "Taller propio con fabricación artesanal y maquinaria especializada.",
+    },
+    {
+      title: "Catálogo + a medida",
+      description: "Elige del catálogo o pide medidas especiales según tu espacio.",
+    },
+    {
+      title: "Atención directa",
+      description: "Sin intermediarios: cotización clara por WhatsApp.",
+    },
+  ],
+  sectionTitle: "Muebles Chillán para cada espacio del hogar",
+  sectionParagraph:
+    "Si buscas muebles en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, muebles de living y proyectos a medida. Trabajamos para hogares de Ñuble y enviamos al resto de Chile.",
+  featureCards: [
+    {
+      title: "Comedor",
+      description: "Mesas y sillas de madera para 4, 6 u 8 personas, con opción a medida.",
+    },
+    {
+      title: "Living y dormitorio",
+      description: "Mesas de centro, bancas, veladores y piezas que suman calidez.",
+    },
+    {
+      title: "Proyectos especiales",
+      description: "Cubiertas, puertas, peldaños, molduras y muebles a pedido.",
+    },
+  ],
+  stepsTitle: "Cómo comprar muebles en Chillán con Idea Madera",
+  steps: [
+    {
+      title: "Revisa el catálogo o cuéntanos tu idea",
+      description: "Explora productos online o escribe por WhatsApp con lo que necesitas.",
+    },
+    {
+      title: "Confirmamos medidas y terminación",
+      description: "Te ayudamos a elegir madera, tamaño y acabado según tu espacio.",
+    },
+    {
+      title: "Fabricamos y despachamos",
+      description: "Producción en Chillán y coordinación de envío a tu comuna.",
+    },
+  ],
+  bottomHighlights: [
+    {
+      title: "Empresa familiar de Chillán",
+      description: "Más de 20 años fabricando muebles de madera con venta directa.",
+    },
+    {
+      title: "Envío nacional",
+      description: "Atendemos Chillán y despachamos a todo Chile.",
+    },
+  ],
+  faqItems: [
+    {
+      question: "¿Dónde fabrican los muebles?",
+      answer:
+        "Fabricamos en Chillán, Chile, con taller propio y control de calidad en cada pieza.",
+    },
+    {
+      question: "¿Puedo comprar muebles en Chillán sin ir al taller?",
+      answer:
+        "Sí. Cotizas por WhatsApp, confirmamos medidas y terminación, y coordinamos fabricación y despacho.",
+    },
+    {
+      question: "¿Qué tipo de muebles venden?",
+      answer:
+        "Mesas, sillas, bancas, veladores, sitiales y piezas a medida. También cubiertas, puertas, peldaños y molduras.",
+    },
+    {
+      question: "¿Hacen muebles a medida en Chillán?",
+      answer:
+        "Sí. Además del catálogo, fabricamos según medidas y especificaciones de tu proyecto.",
+    },
+    {
+      question: "¿Envían fuera de Chillán?",
+      answer:
+        "Sí. Realizamos envíos a todo Chile. Te indicamos opciones al cotizar.",
+    },
+  ],
+  ctaTitle: "Cotiza tus muebles en Chillán",
+  ctaParagraph:
+    "Escríbenos por WhatsApp y te orientamos con catálogo o fabricación a medida.",
+  ctaBullets: [
+    "Taller en Chillán.",
+    "Catálogo y piezas a medida.",
+    "Envíos a todo Chile.",
+  ],
+  schemaType: "Service",
+  serviceName: "Muebles de madera en Chillán",
+  serviceType: "Fabricación y venta de muebles de madera",
+};
+
 export const serviceLandingPaths = [
   peldanosLandingConfig.canonicalPath,
   cubiertasLandingConfig.canonicalPath,
+  moldurasLandingConfig.canonicalPath,
   puertasLandingConfig.canonicalPath,
+  mueblesCocinaChillanLandingConfig.canonicalPath,
+  mueblesChillanLandingConfig.canonicalPath,
   quienesSomosLandingConfig.canonicalPath,
   contactoLandingConfig.canonicalPath,
 ] as const;
