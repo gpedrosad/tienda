@@ -10,6 +10,7 @@ Leer **solo** el archivo de la tarea. No cargar informes GSC largos salvo métri
 | Qué se cambió y cuándo | [CHANGELOG.md](./CHANGELOG.md) |
 | Reevaluar post-intervención | [EVAL.md](./EVAL.md) |
 | Backlog / qué hacer después | [NEXT.md](./NEXT.md) |
+| Plan aumentar CTR | [CTR-PLAN.md](./CTR-PLAN.md) |
 | Setup OAuth GSC (detalle) | [../../docs/gsc-conexion.md](../../docs/gsc-conexion.md) |
 
 Docs pesados (evitar en contexto salvo pedido):

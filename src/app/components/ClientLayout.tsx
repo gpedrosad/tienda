@@ -2,13 +2,20 @@
 
 /* eslint-disable @next/next/no-img-element */
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
+const STANDALONE_PATHS = ["/kit-pergola"];
+
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isStandalone = STANDALONE_PATHS.some(
+    (path) => pathname === path || pathname.startsWith(`${path}/`),
+  );
+
   return (
     <>
-      {/* Pixel Script manual */}
       <Script
         id="fb-pixel-script"
         strategy="afterInteractive"
@@ -37,9 +44,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         />
       </noscript>
 
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      {isStandalone ? (
+        <main>{children}</main>
+      ) : (
+        <>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </>
+      )}
     </>
   );
 }

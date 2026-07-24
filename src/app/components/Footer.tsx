@@ -117,6 +117,14 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href="/kit-pergola"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Kit pérgola
+                  </Link>
+                </li>
+                <li>
                   <Link 
                     href="/peldanos-a-medida" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"

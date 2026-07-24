@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
+    {
+      url: `${SITE_URL}/kit-pergola`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ];
 
   const collectionPages: MetadataRoute.Sitemap = [
