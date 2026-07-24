@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importa estilos específicos de Swiper */
-@import "swiper/css"; /* Estilo base de Swiper */
-@import "swiper/css/navigation"; /* Si usas navegación */
-@import "swiper/css/pagination"; /* Si usas paginación */
-
 :root {
   --background: #ffffff;
   --foreground: #171717;

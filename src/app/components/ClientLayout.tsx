@@ -18,7 +18,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <>
       <Script
         id="fb-pixel-script"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)

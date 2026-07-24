@@ -18,8 +18,10 @@ function HeroBanner() {
           alt="Muebles de madera artesanales fabricados por Idea Madera en Chillán, Chile"
           fill
           priority
+          fetchPriority="high"
+          sizes="100vw"
           className="hero-bg-image object-cover object-center"
-          quality={90}
+          quality={70}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>

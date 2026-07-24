@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "cdn.shopify.com",
       },
     ],
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2678400,
+  },
+  experimental: {
+    optimizePackageImports: ["react-icons"],
   },
   async redirects() {
     return [
