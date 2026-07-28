@@ -7,8 +7,8 @@ import {
   absoluteUrl,
   buildBreadcrumbSchema,
   buildFaqPageSchema,
+  buildServiceOfferSchema,
   SITE_NAME,
-  SITE_PHONE,
 } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -164,58 +164,28 @@ export const metadata: Metadata = {
   },
 };
 
-const productSchema = {
+// Cotización por WhatsApp: no usar Product (Google exige price en offers).
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Kit de uniones metálicas para pérgola modular — 1 módulo sobre suelo",
+  serviceType: "Kit de uniones metálicas para pérgola",
   description: pageDescription,
   image: [absoluteUrl(heroImage), absoluteUrl(systemImage)],
-  sku: "KIT-PERGOLA-1M-SUELO",
-  category: "Kit para pérgola",
-  brand: {
-    "@type": "Brand",
+  provider: {
+    "@type": "Organization",
     name: SITE_NAME,
+    url: absoluteUrl("/"),
   },
-  material: "Acero / metal",
-  additionalProperty: [
-    {
-      "@type": "PropertyValue",
-      name: "Medida de madera compatible",
-      value: "3×3 pulgadas (75×75 mm)",
-    },
-    {
-      "@type": "PropertyValue",
-      name: "Módulos",
-      value: "1 módulo (combinable)",
-    },
-    {
-      "@type": "PropertyValue",
-      name: "Instalación",
-      value: "Sobre suelo",
-    },
-    {
-      "@type": "PropertyValue",
-      name: "Incluye maderas",
-      value: "No",
-    },
+  areaServed: {
+    "@type": "Country",
+    name: "Chile",
+  },
+  audience: [
+    { "@type": "Audience", audienceType: "Particulares" },
+    { "@type": "Audience", audienceType: "Empresas" },
   ],
-  offers: {
-    "@type": "Offer",
-    url: absoluteUrl(canonicalPath),
-    availability: "https://schema.org/InStock",
-    priceCurrency: "CLP",
-    itemCondition: "https://schema.org/NewCondition",
-    areaServed: {
-      "@type": "Country",
-      name: "Chile",
-    },
-    seller: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      telephone: SITE_PHONE,
-      url: absoluteUrl("/"),
-    },
-  },
+  offers: buildServiceOfferSchema(),
 };
 
 const howToSchema = {
@@ -262,7 +232,7 @@ const webPageSchema = {
 
 const structuredData = [
   webPageSchema,
-  productSchema,
+  serviceSchema,
   howToSchema,
   buildBreadcrumbSchema([
     { name: "Inicio", path: "/" },

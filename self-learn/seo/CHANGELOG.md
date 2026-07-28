@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-07-28
+
+- **GSC Product snippets:** `/kit-pergola` — JSON-LD `Product` sin `price` → `Service` (cotización WhatsApp). Cierra error crítico «price / priceSpecification.price en offers».
+
 ## 2026-07-23
 
 - **Landing molduras:** `/molduras-a-medida` (config + page + footer/nav + redirects `/molduras`, `/pages/molduras`).
