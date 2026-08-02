@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-08-02
+
+- **CTR + CWV:** titles/metas reforzados en mesa nórdica, mesa ratona, colecciones clave y landings Chillán/servicio; GTM + Facebook Pixel pasan a carga diferida por interacción o espera.
+
 ## 2026-07-28
 
 - **GSC Product snippets:** `/kit-pergola` — JSON-LD `Product` sin `price` → `Service` (cotización WhatsApp). Cierra error crítico «price / priceSpecification.price en offers».

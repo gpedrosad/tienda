@@ -278,9 +278,9 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  pageTitle: "Cubiertas de Madera a Medida | Mesones y Tablones | Idea Madera",
+  pageTitle: "Cubiertas de Madera a Medida | Quinchos y Mesones | Idea Madera",
   pageDescription:
-    "Fabricamos cubiertas y tablones de madera a medida en Chillán para barras, mesones, quinchos y proyectos comerciales. Lenga austral y pino premium. Cotiza por WhatsApp con envío a todo Chile.",
+    "Cotiza cubiertas de madera a medida en Chillán para quinchos, barras, mesones y proyectos comerciales. Lenga austral, pino premium y envío a todo Chile.",
   keywords: [
     "cubiertas de madera a medida",
     "mesones de madera",
@@ -504,9 +504,9 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  pageTitle: "Puertas de Madera a Medida | Personalizadas | Idea Madera",
+  pageTitle: "Puertas de Madera a Medida | Cotiza en Chile | Idea Madera",
   pageDescription:
-    "Fabricamos puertas de madera personalizadas a medida en Chillán para hogares y negocios. Diseño, durabilidad y madera nativa seca en cámara. Cotiza por WhatsApp con envío a todo Chile.",
+    "Cotiza puertas de madera a medida en Chillán para hogares y negocios. Diseño personalizado, madera nativa seca en cámara y envío a todo Chile.",
   keywords: [
     "puertas de madera a medida",
     "puertas personalizadas madera",
@@ -823,9 +823,9 @@ export const contactoLandingConfig: ServiceLandingConfig = {
 
 export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-de-cocina-chillan",
-  pageTitle: "Muebles de Cocina en Chillán | Madera a Medida | Idea Madera",
+  pageTitle: "Muebles de Cocina en Chillán a Medida | Idea Madera",
   pageDescription:
-    "Muebles de cocina en madera a medida en Chillán: mesones, cubiertas, islas y terminaciones. Fabricación local Idea Madera con cotización por WhatsApp y envío a todo Chile.",
+    "Cotiza muebles de cocina en Chillán: mesones, cubiertas, islas y terminaciones en madera a medida. Fabricación local y envío a todo Chile.",
   keywords: [
     "muebles de cocina chillan",
     "muebles de cocina en chillán",
@@ -944,9 +944,9 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-chillan",
-  pageTitle: "Muebles Chillán | Madera a Medida | Idea Madera",
+  pageTitle: "Muebles en Chillán | Fábrica de Madera a Medida | Idea Madera",
   pageDescription:
-    "Muebles en Chillán fabricados en madera: mesas, sillas, bancas y piezas a medida. Taller Idea Madera con cotización por WhatsApp y envío a todo Chile.",
+    "Fábrica y mueblería en Chillán para muebles de madera: mesas, sillas, bancas y piezas a medida. Cotiza por WhatsApp con envío a todo Chile.",
   keywords: [
     "muebles chillan",
     "muebles en chillán",

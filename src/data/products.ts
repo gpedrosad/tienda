@@ -87,9 +87,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o a elección",
     productionDays: 15,
-    seoTitle: "Mesa Nórdica de Madera Maciza | Comedor Chile",
+    seoTitle: "Mesa Nórdica de Comedor | Madera Maciza Chile",
     seoDescription:
-      "Mesa nórdica de madera maciza para comedor (desde $369.000). Diseño escandinavo, medidas a cotizar y envío a todo Chile. Escribe por WhatsApp.",
+      "Mesa nórdica de comedor en madera maciza desde $369.000. Diseño escandinavo, fabricación chilena y cotización rápida por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -562,9 +562,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Ratona de Madera Maciza | Trípode Living",
+    seoTitle: "Mesa Ratona Trípode de Madera | Living Chile",
     seoDescription:
-      "Mesa ratona de madera maciza con patas trípode (desde $399.990). Baja, resistente y para living. Cotiza por WhatsApp con envío a todo Chile.",
+      "Mesa ratona trípode de madera maciza desde $399.990. Formato bajo para living, resistente y con envío a todo Chile. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode-negra",
