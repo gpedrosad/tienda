@@ -177,6 +177,22 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </section>
         )}
 
+        {config.relatedLinks && config.relatedLinks.length > 0 && (
+          <section className="border-t border-neutral-200 bg-neutral-50">
+            <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
+              <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {config.relatedLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
+                    <p className="text-sm font-medium text-neutral-900">{link.title}</p>
+                    <p className="mt-1 text-xs text-neutral-600">{link.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">Preguntas frecuentes</h2>
           <div className="mt-8 border-t border-neutral-200">

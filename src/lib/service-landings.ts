@@ -7,6 +7,8 @@ export type LandingStep = { title: string; description: string };
 export type LandingFaq = { question: string; answer: string };
 export type LandingStat = { value: string; label: string };
 
+export type LandingRelatedLink = { href: string; title: string; description: string };
+
 export type ServiceLandingConfig = {
   canonicalPath: string;
   pageTitle: string;
@@ -26,6 +28,7 @@ export type ServiceLandingConfig = {
   stepsTitle: string;
   steps: LandingStep[];
   bottomHighlights?: LandingHighlight[];
+  relatedLinks?: LandingRelatedLink[];
   faqItems: LandingFaq[];
   ctaTitle: string;
   ctaParagraph: string;
@@ -1063,6 +1066,188 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   serviceType: "Fabricación y venta de muebles de madera",
 };
 
+export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
+  canonicalPath: "/muebles-a-medida",
+  pageTitle: "Muebles a Medida en Madera | Fabricación Chile | Idea Madera",
+  pageDescription:
+    "Fabricamos muebles de madera a medida en Chile: cubiertas, puertas, peldaños, molduras y muebles de cocina. Cotiza tu proyecto por WhatsApp con envío a todo Chile.",
+  keywords: [
+    "muebles a medida",
+    "muebles de madera a medida",
+    "muebles a medida chile",
+    "madera a medida",
+    "fabricacion muebles madera",
+    "muebles personalizados madera",
+  ],
+  eyebrow: "Fabricación a medida en madera",
+  h1: "Muebles de madera a medida para tu proyecto",
+  heroParagraph:
+    "En Idea Madera fabricamos piezas de madera a medida desde nuestro taller en Chillán: cubiertas y mesones, puertas, peldaños para escaleras, molduras y muebles de cocina. Cada proyecto parte de tus medidas y especificaciones, con asesoría directa por WhatsApp y envío a todo Chile.",
+  badges: ["Taller en Chillán", "Fabricación a medida", "Envíos a todo Chile"],
+  whatsappButtonLabel: "Cotizar proyecto a medida",
+  whatsappProductTitle: "Muebles a medida",
+  whatsappLines: [
+    "Vengo desde la página de muebles a medida.",
+    "Quiero cotizar un proyecto personalizado en madera.",
+    "Puedo enviar medidas, referencia visual y comuna.",
+  ],
+  heroHighlights: [
+    {
+      title: "Medidas exactas",
+      description: "Cada pieza se fabrica según las dimensiones de tu proyecto.",
+    },
+    {
+      title: "Madera seleccionada",
+      description: "Lenga austral y pino premium seco en cámara.",
+    },
+    {
+      title: "Asesoría directa",
+      description: "Cotización clara por WhatsApp para particulares y obras.",
+    },
+  ],
+  sectionTitle: "Todo lo que fabricamos a medida",
+  sectionParagraph:
+    "Desde peldaños para una escalera hasta el mesón de un quincho, trabajamos madera según tus especificaciones. Cada línea de producto a medida tiene su propia página con detalle y cotización directa.",
+  featureCards: [
+    {
+      title: "Cubiertas y mesones",
+      description:
+        "Tablones y cubiertas para barras, quinchos, restaurantes y cocinas. Lenga austral y pino premium a medida.",
+    },
+    {
+      title: "Puertas de madera",
+      description:
+        "Puertas personalizadas para hogares y negocios. Diseño, madera y terminación a tu elección.",
+    },
+    {
+      title: "Peldaños para escaleras",
+      description:
+        "Peldaños a medida en largo, ancho y espesor para escaleras nuevas o remodelaciones.",
+    },
+    {
+      title: "Molduras y perfiles",
+      description:
+        "Molduras para muros, techos, marcos y vanos con perfil personalizado según referencia.",
+    },
+    {
+      title: "Muebles de cocina",
+      description:
+        "Mesones, cubiertas, islas y piezas de cocina en madera desde nuestro taller en Chillán.",
+    },
+    {
+      title: "Proyectos especiales",
+      description:
+        "Si tu idea no encaja en una categoría, cuéntanos por WhatsApp y evaluamos la fabricación.",
+    },
+  ],
+  stepsTitle: "Cómo cotizar tu proyecto a medida",
+  steps: [
+    {
+      title: "Cuéntanos tu idea",
+      description:
+        "Escríbenos por WhatsApp con medidas, tipo de pieza, uso, comuna y una foto o croquis de referencia.",
+    },
+    {
+      title: "Definimos madera y diseño",
+      description:
+        "Te orientamos en madera, terminación y formato según el uso y estilo de tu proyecto.",
+    },
+    {
+      title: "Recibes cotización y plazos",
+      description:
+        "Te enviamos propuesta clara con precio referencial, tiempo de fabricación y opciones de despacho.",
+    },
+  ],
+  bottomHighlights: [
+    {
+      title: "Más de 30 años de experiencia",
+      description:
+        "Equipo artesanal con maquinaria especializada para cumplir especificaciones técnicas de cada cliente.",
+    },
+    {
+      title: "Envíos a todo Chile",
+      description:
+        "Fabricamos en Chillán y coordinamos despacho según tu comuna o región al momento de cotizar.",
+    },
+  ],
+  faqItems: [
+    {
+      question: "¿Qué tipos de muebles fabrican a medida?",
+      answer:
+        "Fabricamos cubiertas y mesones, puertas, peldaños, molduras, muebles de cocina y proyectos especiales en madera según tus medidas.",
+    },
+    {
+      question: "¿Qué información necesitan para cotizar?",
+      answer:
+        "Idealmente medidas, tipo de pieza, uso, comuna y una foto o croquis de referencia. Si no tienes todo definido, te ayudamos a precisar.",
+    },
+    {
+      question: "¿Atienden proyectos para empresas y particulares?",
+      answer:
+        "Sí. Trabajamos con clientes particulares, arquitectos, diseñadores, constructoras y locales comerciales.",
+    },
+    {
+      question: "¿Cuánto demora la fabricación?",
+      answer:
+        "Los plazos dependen del tipo de pieza, cantidad y complejidad. Te confirmamos tiempo estimado al cotizar.",
+    },
+    {
+      question: "¿Envían a todo Chile?",
+      answer:
+        "Sí. Fabricamos en Chillán y coordinamos envíos a todo Chile. Al cotizar te indicamos opciones según tu ubicación.",
+    },
+    {
+      question: "¿Puedo ver los otros servicios en detalle?",
+      answer:
+        "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida, molduras a medida y muebles de cocina en Chillán.",
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/cubiertas-a-medida",
+      title: "Cubiertas y mesones",
+      description: "Tablones y cubiertas de madera para quinchos, barras y cocinas.",
+    },
+    {
+      href: "/puertas-a-medida",
+      title: "Puertas de madera",
+      description: "Puertas personalizadas para hogares y negocios.",
+    },
+    {
+      href: "/peldanos-a-medida",
+      title: "Peldaños para escaleras",
+      description: "Peldaños a medida en largo, ancho y espesor.",
+    },
+    {
+      href: "/molduras-a-medida",
+      title: "Molduras y perfiles",
+      description: "Molduras de madera personalizadas para muros y techos.",
+    },
+    {
+      href: "/muebles-de-cocina-chillan",
+      title: "Muebles de cocina",
+      description: "Mesones, islas y piezas de cocina en madera.",
+    },
+    {
+      href: "/comedores-nordicos",
+      title: "Comedores nórdicos",
+      description: "Mesas, sillas y bancas de estilo escandinavo.",
+    },
+  ],
+  ctaTitle: "Cotiza hoy tu proyecto a medida",
+  ctaParagraph:
+    "Escríbenos por WhatsApp con tu idea, medidas y una referencia visual. Te respondemos con una propuesta clara.",
+  ctaBullets: sharedCtaBullets,
+  schemaType: "Service",
+  serviceName: "Muebles de madera a medida",
+  serviceType: "Fabricación de muebles de madera a medida",
+  stats: [
+    { value: "30+", label: "Años de experiencia" },
+    { value: "3.200+", label: "Proyectos realizados" },
+    { value: "Todo Chile", label: "Cobertura de envío" },
+  ],
+};
+
 export const serviceLandingPaths = [
   peldanosLandingConfig.canonicalPath,
   cubiertasLandingConfig.canonicalPath,
@@ -1070,6 +1255,7 @@ export const serviceLandingPaths = [
   puertasLandingConfig.canonicalPath,
   mueblesCocinaChillanLandingConfig.canonicalPath,
   mueblesChillanLandingConfig.canonicalPath,
+  mueblesAMedidaLandingConfig.canonicalPath,
   quienesSomosLandingConfig.canonicalPath,
   contactoLandingConfig.canonicalPath,
 ] as const;

@@ -97,15 +97,47 @@ export function buildTwitterDefaults() {
 export function buildOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "FurnitureStore",
+    "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl(DEFAULT_OG_IMAGE),
+    image: absoluteUrl(DEFAULT_OG_IMAGE),
     description: HOME_DESCRIPTION,
+    telephone: SITE_PHONE,
+    email: "hola@ideamadera.cl",
+    foundingDate: "2001",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Boyén Sector 01",
+      addressLocality: "Chillán",
+      addressRegion: "Ñuble",
+      addressCountry: "CL",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -36.6066,
+      longitude: -72.1034,
+    },
     areaServed: {
       "@type": "Country",
       name: "Chile",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "14:00",
+      },
+    ],
+    sameAs: ["https://instagram.com/ideamadera.cl"],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: SITE_PHONE,
@@ -113,6 +145,9 @@ export function buildOrganizationSchema() {
       availableLanguage: ["Spanish", "es"],
       areaServed: "CL",
     },
+    priceRange: "$$",
+    currenciesAccepted: "CLP",
+    paymentAccepted: "Transferencia, Tarjeta de crédito, Tarjeta de débito",
   };
 }
 

@@ -15,9 +15,9 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   },
   mesas: {
     h1: "Mesas de madera",
-    metadataTitle: "Mesas de Madera para Comedor y Living",
+    metadataTitle: "Mesas de Madera Maciza | Comedor y Living Chile",
     description:
-      "Mesas de madera para comedor y living: nórdicas, redondas, trípode y ratonas. Fabricación en Chile, cotización por WhatsApp y envío nacional.",
+      "Mesas de madera maciza para comedor y living: nórdicas, trípode, redondas y ratonas desde $159.990. Fabricación artesanal en Chile, cotización directa por WhatsApp y envío a todo el país.",
   },
   sillas: {
     h1: "Sillas de comedor",

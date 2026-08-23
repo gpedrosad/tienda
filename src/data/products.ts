@@ -119,7 +119,7 @@ export const products: Product[] = [
     shortPitch:
       "Silla Kentucky de madera para comedor: respaldo ergonómico, estructura resistente y terminación artesanal.",
     description:
-      "La Silla Kentucky destaca por su respaldo cómodo y construcción robusta en madera. Funciona bien en comedores, escritorios o espacios de trabajo en casa. Su perfil clásico se integra con mesas modernas y tradicionales. Cotiza por WhatsApp para confirmar terminación y cantidad.",
+      "La Silla Kentucky es una silla de comedor de madera maciza con respaldo ergonómico, fabricada en Chile por Idea Madera ($279.000). Su perfil clásico se integra con mesas nórdicas, modernas y tradicionales, y funciona igual en escritorios o espacios de trabajo. Cotiza cantidad y terminación por WhatsApp.",
     features: [
       "Respaldo ergonómico",
       "Madera resistente al uso frecuente",
@@ -129,9 +129,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o negro",
     productionDays: 15,
-    seoTitle: "Silla Kentucky de Madera para Comedor",
+    seoTitle: "Silla Kentucky de Madera Maciza $279.000 | Comedor",
     seoDescription:
-      "Silla Kentucky de madera maciza para comedor (desde $279.000). Respaldo cómodo, fabricada en Chile. Cotiza cantidad y terminación por WhatsApp.",
+      "Silla Kentucky de madera maciza para comedor y escritorio ($279.000). Respaldo ergonómico, terminación artesanal. Fabricada en Chile, cotiza cantidad por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode",
@@ -243,7 +243,7 @@ export const products: Product[] = [
     imageUrl: "/images/1MESATRIPODEREDONDAMADERA.jpg",
     shortPitch: "Mesa de comedor redonda con patas trípode en madera natural, diseño icónico y convivencia.",
     description:
-      "La Mesa Trípode redonda une el diseño distintivo de patas inclinadas con un tablero circular en madera maciza. Favorece la conversación en comedores y optimiza la circulación. Es una variante redonda de una de las piezas más reconocidas de Idea Madera.",
+      "La Mesa Trípode Redonda es una mesa de comedor circular de madera maciza de Ø140 cm, fabricada en Chile por Idea Madera ($729.900). Su tablero redondo favorece la conversación y optimiza la circulación, con patas inclinadas que le dan un diseño icónico. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Formato redondo con patas trípode",
       "Madera maciza con veta natural",
@@ -254,6 +254,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Trípode Redonda $729.900 | Comedor Madera Maciza",
+    seoDescription:
+      "Mesa de comedor Trípode redonda en madera maciza (Ø140 cm, $729.900). Diseño icónico con patas inclinadas para convivencia. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "silla-milan-lenga",
@@ -367,7 +370,7 @@ export const products: Product[] = [
     imageUrl: "/images/sitial-hank-nero-main.jpg",
     shortPitch: "Sitial Hank en terminación negra, elegante y versátil para living contemporáneo.",
     description:
-      "El Sitial Hank Negro comparte la estructura robusta del modelo nogal con una terminación oscura de alto contraste. Ideal para interiores modernos, minimalistas o espacios que buscan un acento sofisticado sin perder calidez en la madera.",
+      "El Sitial Hank Negro es un sillón de madera maciza con terminación negra, fabricado en Chile por Idea Madera ($459.990). Estructura robusta y cómoda para living, oficina o espacios modernos que buscan un acento sofisticado sin perder la calidez de la madera. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Terminación negra elegante",
       "Estructura sólida y cómoda",
@@ -377,6 +380,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
+    seoTitle: "Sitial Hank Negro $459.990 | Sillón Madera Living",
+    seoDescription:
+      "Sitial Hank Negro en madera maciza ($459.990). Terminación negra elegante para living moderno y minimalista. Fabricado en Chile, cotiza por WhatsApp.",
   },
   {
     id: "banca-capri",
@@ -447,7 +453,7 @@ export const products: Product[] = [
     shortPitch:
       "Mesa de centro Roma en madera maciza: tamaño ideal para living, líneas contemporáneas y terminación prolija.",
     description:
-      "La Mesa Centro Roma eleva la sala de estar con madera maciza y líneas contemporáneas. Su tamaño intermedio permite apoyar decoración, café o controles sin invadir el espacio. Es una pieza funcional con acabado cuidado, pensada para durar en el uso diario.",
+      "La Mesa de Centro Roma es una mesa ratona de madera maciza de 120×60×45 cm, fabricada en Chile por Idea Madera ($359.990). Diseño contemporáneo con tamaño ideal para living: permite apoyar decoración, café o controles sin invadir el espacio. Acabado artesanal pensado para durar en el uso diario.",
     features: [
       "Tamaño ideal para living",
       "Madera maciza con terminación prolija",
@@ -458,9 +464,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa de Centro Roma de Madera Maciza",
+    seoTitle: "Mesa de Centro Roma $359.990 | Madera Maciza Living",
     seoDescription:
-      "Mesa de centro Roma de madera maciza para living (desde $359.990). Formato intermedio, terminación artesanal y envío a Chile. Cotiza por WhatsApp.",
+      "Mesa de centro Roma en madera maciza (120×60×45 cm, $359.990). Diseño contemporáneo para living, terminación artesanal. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "mesa-frida-redonda",
@@ -574,7 +580,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-tripode-negra-2.jpg",
     shortPitch: "Mesa de comedor trípode en madera negra, pieza central con diseño contemporáneo.",
     description:
-      "La Mesa de comedor Trípode Negra combina la silueta icónica de patas inclinadas con una terminación oscura de alto contraste. Ideal para comedores modernos que buscan presencia y calidez en madera. Fabricación a pedido en Chile.",
+      "La Mesa de Comedor Trípode Negra es una mesa de madera maciza de 220×100 cm con patas inclinadas y terminación negra, fabricada en Chile por Idea Madera ($699.000). Su silueta icónica combina presencia y calidez para comedores modernos y contemporáneos. Fabricación a pedido con envío a todo Chile.",
     features: [
       "Patas trípode en terminación negra",
       "Tablero macizo resistente",
@@ -585,6 +591,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Trípode Negra $699.000 | Madera Maciza",
+    seoDescription:
+      "Mesa de comedor Trípode Negra en madera maciza (220×100 cm, $699.000). Patas inclinadas con terminación negra para comedores modernos. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-roma-negra",
@@ -594,7 +603,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-roma-negra-main.jpg",
     shortPitch: "Mesa de comedor Roma en madera negra, elegante y robusta para espacios contemporáneos.",
     description:
-      "La Mesa Comedor Roma Negra ofrece la solidez de la línea Roma con una terminación oscura sofisticada. Su construcción en madera maciza soporta el uso diario en comedores familiares o proyectos de interiorismo moderno.",
+      "La Mesa Comedor Roma Negra es una mesa de comedor de madera maciza de 200×100 cm con terminación oscura, fabricada en Chile por Idea Madera ($699.000). Construcción robusta para uso diario en comedores familiares o proyectos de interiorismo moderno. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Línea Roma en terminación negra",
       "Madera maciza de alta resistencia",
@@ -605,6 +614,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Roma Negra $699.000 | Madera Maciza",
+    seoDescription:
+      "Mesa de comedor Roma Negra en madera maciza (200×100 cm, $699.000). Terminación oscura sofisticada para comedores contemporáneos. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-roma-natural",
