@@ -18,6 +18,10 @@ export default function Accordion() {
       content: "Puedes cambiar o devolver el producto en un plazo de 30 días, siempre que se encuentre en su estado original y sin uso. Se aplican condiciones y restricciones según el tipo de producto."
     },
     {
+      title: "Garantía",
+      content: "2 meses contra defectos de fabricación desde la entrega del mueble."
+    },
+    {
       title: "Tiempo de fabricación",
       content: "15 días hábiles."
     },

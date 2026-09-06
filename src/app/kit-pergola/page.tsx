@@ -119,6 +119,11 @@ const faqItems = [
     answer:
       "Sí. Cotiza por WhatsApp el kit de uniones metálicas, el tipo de base y el despacho a tu comuna. Si también necesitas las maderas, te orientamos aparte.",
   },
+  {
+    question: "¿El kit garantiza que cualquier tamaño de pérgola es seguro?",
+    answer:
+      "No. El kit entrega uniones y bases para 1 módulo sobre suelo. El largo de las maderas, el anclaje y si la estructura sirve para tu viento o carga se revisan en la cotización. No publicamos luces máximas ni certificaciones.",
+  },
 ];
 
 const heroImage = "/images/kit-pergola-instalada.png";
@@ -377,6 +382,37 @@ export default function KitPergolaPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="border-t border-white/10 bg-[#161616]">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
+            <div>
+              <h2 className="text-3xl font-light tracking-tight text-white">Qué no incluye el kit</h2>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+                Es un kit de uniones metálicas y fijaciones para 1 módulo sobre suelo. No es una
+                pérgola terminada ni un cálculo estructural.
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-neutral-300">
+                <li>Maderas (postes, vigas o cubierta)</li>
+                <li>Techo, lona o policarbonato</li>
+                <li>Instalación en terreno</li>
+                <li>Certificación de cargas o luces máximas</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-3xl font-light tracking-tight text-white">Qué necesitamos para cotizar</h2>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+                Con eso te respondemos precio referencial, tipo de base y despacho. Si también
+                quieres orientación de maderas 3×3, dilo en el mismo mensaje.
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-neutral-300">
+                <li>Tipo de base: atornillar o cementar</li>
+                <li>Comuna de despacho</li>
+                <li>Cuántos módulos (empieza en 1)</li>
+                <li>Si ya tienes madera 3×3 (75×75 mm)</li>
+              </ul>
+            </div>
           </div>
         </section>
 

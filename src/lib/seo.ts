@@ -6,35 +6,12 @@ export const SITE_LOCALE = "es_CL";
 export const DEFAULT_OG_IMAGE = "/logonegro.png";
 export const SITE_PHONE = "+56995497838";
 export const MERCHANT_RETURN_DAYS = 30;
+export const WARRANTY_MONTHS = 2;
 export const DEFAULT_PRODUCTION_DAYS = 15;
 export const DEFAULT_TRANSIT_DAYS = { min: 3, max: 10 } as const;
-export const PRODUCT_AGGREGATE_RATING = {
-  ratingValue: "4.9",
-  reviewCount: "200",
-  bestRating: "5",
-  worstRating: "1",
-} as const;
-
-export const productReviewSnippets = [
-  {
-    authorName: "Cliente, Santiago",
-    ratingValue: "5",
-    reviewBody:
-      "Cotizamos por WhatsApp y nos orientaron con medidas, terminación y despacho antes de decidir. Muy buena atención.",
-  },
-  {
-    authorName: "Cliente, Concepción",
-    ratingValue: "5",
-    reviewBody:
-      "El mueble llegó bien terminado y la fabricación cumplió el plazo acordado. Se nota oficio en madera.",
-  },
-  {
-    authorName: "Cliente, Valparaíso",
-    ratingValue: "5",
-    reviewBody:
-      "Compramos a distancia y coordinaron el envío sin problemas. La cotización fue clara desde el inicio.",
-  },
-] as const;
+// Nota (SEO-13): se retiraron las constantes PRODUCT_AGGREGATE_RATING ("4.9"/"200")
+// y productReviewSnippets (testimonios genéricos) por no tener procedencia verificable.
+// No publicar ratings ni reseñas hasta contar con fuente real y autorización del negocio.
 
 export const HOME_TITLE = "Muebles de Madera en Chillán y Chile | Idea Madera";
 export const HOME_DESCRIPTION =
@@ -54,7 +31,7 @@ export const homeFaqItems = [
   {
     question: "¿Qué garantía tienen los muebles?",
     answer:
-      "Nuestros muebles cuentan con una garantía de 12 meses contra defectos de fabricación. Si presentás algún inconveniente, te asistiremos para resolverlo a la brevedad.",
+      `Nuestros muebles tienen ${WARRANTY_MONTHS} meses de garantía contra defectos de fabricación. Si hay un inconveniente, te ayudamos a resolverlo.`,
   },
   {
     question: "¿Puedo pedir medidas especiales?",
@@ -280,29 +257,3 @@ export function buildServiceOfferSchema(options?: { productionDays?: number }) {
   };
 }
 
-export function buildProductAggregateRating() {
-  return {
-    "@type": "AggregateRating",
-    ratingValue: PRODUCT_AGGREGATE_RATING.ratingValue,
-    reviewCount: PRODUCT_AGGREGATE_RATING.reviewCount,
-    bestRating: PRODUCT_AGGREGATE_RATING.bestRating,
-    worstRating: PRODUCT_AGGREGATE_RATING.worstRating,
-  };
-}
-
-export function buildProductReviews() {
-  return productReviewSnippets.map((review) => ({
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: review.authorName,
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: review.ratingValue,
-      bestRating: PRODUCT_AGGREGATE_RATING.bestRating,
-      worstRating: PRODUCT_AGGREGATE_RATING.worstRating,
-    },
-    reviewBody: review.reviewBody,
-  }));
-}

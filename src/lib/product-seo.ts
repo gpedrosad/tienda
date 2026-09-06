@@ -43,7 +43,7 @@ const CATEGORY_TITLE_RULES: Record<
   },
   Pisos: {
     keyword: "piso",
-    comedorSuffix: "de Madera para Interior",
+    comedorSuffix: "de Madera para Barra",
     defaultSuffix: "de Madera",
   },
   Futon: {

@@ -33,11 +33,12 @@ function HeroBanner() {
           </p>
 
           <h1 className="hero-enter hero-enter-2 text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-white tracking-[-0.03em] text-balance">
-            Idea Madera
+            Muebles de madera en Chillán
           </h1>
 
           <p className="hero-enter hero-enter-3 text-sm md:text-base lg:text-lg text-neutral-200 font-light leading-relaxed max-w-xl text-pretty">
-            Muebles de madera a medida con diseño cuidado: mesas, sillas y piezas artesanales para tu hogar.
+            Idea Madera fabrica mesas, sillas y piezas a medida en Chillán, con envío a todo Chile.
+            Cotiza por WhatsApp o revisa el catálogo.
           </p>
 
           <div className="hero-enter hero-enter-4 pt-4 md:pt-6">

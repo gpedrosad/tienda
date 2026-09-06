@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import FAQ from "@/app/components/FAQ";
 import FabricaVideo from "@/app/components/FabricaVideo";
 import HeroBanner from "@/app/components/HeroBanner";
@@ -55,6 +56,29 @@ export default function HomePage() {
   return (
     <div className="pb-28 md:pb-32">
       <HeroBanner />
+
+      <section className="border-b border-neutral-200 bg-neutral-50">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between md:py-7">
+          <p className="max-w-2xl text-sm leading-relaxed text-neutral-700 md:text-base">
+            Taller familiar en Chillán. Si buscas atención local, obras o cómo cotizar desde Ñuble,
+            entra a la página de muebles en Chillán.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/muebles-chillan"
+              className="inline-flex rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 hover:border-neutral-900"
+            >
+              Muebles en Chillán
+            </Link>
+            <Link
+              href="/cubiertas-a-medida"
+              className="inline-flex rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 hover:border-neutral-900"
+            >
+              Cubiertas a medida
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section id="catalogo" className="max-w-7xl mx-auto scroll-mt-24 px-4 py-12">
         <Reveal as="header" className="mb-8">

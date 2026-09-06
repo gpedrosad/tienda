@@ -7,44 +7,39 @@ import { getProductPath } from "@/lib/whatsapp";
 
 const ALL_PRODUCTS_HANDLE = "todos-los-productos";
 
+// SEO-05: no hay fechas de edición reales por URL en el catálogo (sin `updatedAt`),
+// así que se omite `lastModified` en lugar de renovarlo artificialmente en cada build.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const visibleProducts = getVisibleProducts(products);
 
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: now,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${SITE_URL}/ofertas`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     ...serviceLandingPaths.map((path) => ({
       url: `${SITE_URL}${path}`,
-      lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
     {
       url: `${SITE_URL}/kit-pergola`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${SITE_URL}/comedores-nordicos`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${SITE_URL}/mesas-de-centro`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.85,
     },
@@ -53,13 +48,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const collectionPages: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/collections/${ALL_PRODUCTS_HANDLE}`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.85,
     },
     ...getCategoryOptions(visibleProducts).map((option) => ({
       url: `${SITE_URL}/collections/${option.handle}`,
-      lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
@@ -67,7 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const productPages: MetadataRoute.Sitemap = visibleProducts.map((product) => ({
     url: `${SITE_URL}${getProductPath(product)}`,
-    lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.75,
   }));

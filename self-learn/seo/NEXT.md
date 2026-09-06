@@ -15,18 +15,18 @@ Orden de impacto. Actualizar al cerrar ítems.
 | # | Acción | Impacto | Esfuerzo |
 |---|---|---|---|
 | 4 | **Fotos a 26 productos sin `imageUrl`** (prioridad: racks, escritorios, mesas Frida/Liguria/Praga si hay demanda) | Alto — amplía índice | Medio (assets) |
-| 5 | **Profundizar cubiertas/puertas/molduras** con fotos de obra reales (modelo peldaños) | Alto — ya traen clics; más contenido = escala | Medio |
+| 5 | **Fotos de obra** en cubiertas/puertas/molduras/peldaños (texto de alcance ya en código) | Alto — ya traen clics | Medio (assets) |
 | 5b | ~~Indexar `/molduras-a-medida`~~ | — | ✅ 2 clics / CTR 8% en 28d |
 | 6 | Auditar SERP (incógnito) snippets `mesa ratona` / `mesa nordica` | Alto — 170+88 imp con CTR ~0–1% | Bajo |
 | 7 | Re-medir [EVAL.md](./EVAL.md) ~20 ago | Titles 2 ago maduros | Bajo |
-| 7b | Title/meta **`/collections/mesas`** (196 imp / 0 clics) | Medio — gap nuevo | Bajo |
+| 7b | ~~Title/meta **`/collections/mesas`**~~ | — | ✅ 6 sep: title A + intro/FAQ; falta recrawl GSC UI |
 
 ## P2 — consolidación
 
 | # | Acción | Notas |
 |---|---|---|
-| 8 | Redirects adicionales si GSC sigue mostrando URLs legacy (revisar “Páginas” no indexadas / 404) | Tras nuevo informe |
-| 9 | Bloque explícito “Muebles de madera en Chillán” en home debajo del hero (copy + link a quiénes somos / WhatsApp) | Queries locales CTR 0% |
+| 8 | Redirects adicionales si GSC sigue mostrando URLs legacy (revisar “Páginas” no indexadas / 404) | Tras nuevo informe; matriz en `docs/seo-matriz-redirects.md` |
+| 9 | ~~Bloque Chillán en home~~ | ✅ H1 + bloque local (6 sep, pendiente deploy) |
 | 10 | Merchant / Google Business Profile alineado a Chillán + fotos + reseñas reales | Autoridad local |
 | 11 | Sustituir social proof genérico por reseñas verificables (o no mostrar rating) | Confianza + rich results |
 | 12 | Canonical/hreflang no aplica (solo es-CL); mantener `lang="es"` | OK hoy |

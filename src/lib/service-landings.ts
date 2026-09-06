@@ -29,6 +29,11 @@ export type ServiceLandingConfig = {
   steps: LandingStep[];
   bottomHighlights?: LandingHighlight[];
   relatedLinks?: LandingRelatedLink[];
+  extraSections?: Array<{
+    title: string;
+    paragraphs: string[];
+    bullets?: string[];
+  }>;
   faqItems: LandingFaq[];
   ctaTitle: string;
   ctaParagraph: string;
@@ -179,7 +184,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
   eyebrow: "Peldaños a medida en madera",
   h1: "Peldaños a medida para escaleras",
   heroParagraph:
-    "Diseñamos y fabricamos peldaños a medida en madera, adaptados a tu proyecto. Si buscas peldaños de madera a medida con terminaciones limpias y estructura resistente, te ayudamos a cotizar rápido con asesoría directa para empresas y particulares.",
+    "Fabricamos peldaños (huellas) a medida en madera para escaleras nuevas o remodelaciones. Cotizamos con largo, ancho, espesor y cantidad. No incluye la estructura de la escalera ni el montaje, salvo que lo confirmemos al cotizar.",
   badges: ["Envíos a todo Chile", "Empresas y particulares"],
   whatsappButtonLabel: "Cotizar peldaños por WhatsApp",
   whatsappProductTitle: "Peldaños a medida",
@@ -269,6 +274,43 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí. Trabajamos tanto con clientes particulares como con empresas, constructoras, arquitectos y diseñadores.",
     },
+    {
+      question: "¿Instalan la escalera completa?",
+      answer:
+        "No. Esta página es de peldaños (huellas) a medida. La estructura, barandas, contrahuellas y el montaje en obra no se asumen incluidos; se confirman solo si los pides al cotizar.",
+    },
+  ],
+  extraSections: [
+    {
+      title: "Huellas de escalera, no la obra completa",
+      paragraphs: [
+        "Si buscas peldaños de madera a medida, fabricamos las huellas según largo, ancho y espesor. No es una escalera armada ni un servicio de instalación por defecto.",
+        "Para cotizar bien, envía cantidad, largo, ancho, espesor, comuna y una foto o plano de la escalera.",
+      ],
+      bullets: [
+        "Cantidad de peldaños",
+        "Largo, ancho y espesor (cm)",
+        "Comuna de despacho",
+        "Foto o plano de la escalera",
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/cubiertas-a-medida",
+      title: "Cubiertas a medida",
+      description: "Mesones y tablones según largo y ancho.",
+    },
+    {
+      href: "/puertas-a-medida",
+      title: "Puertas a medida",
+      description: "Hojas de madera según vano.",
+    },
+    {
+      href: "/molduras-a-medida",
+      title: "Molduras a medida",
+      description: "Perfiles para muros, techos y vanos.",
+    },
   ],
   ctaTitle: "Cotiza hoy tus peldaños a medida",
   ctaParagraph:
@@ -296,7 +338,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   eyebrow: "Cubiertas de madera a medida",
   h1: "Cubiertas y tablones de madera a tu medida",
   heroParagraph:
-    "Desarrollamos cubiertas y tablones terminados en medidas personalizadas desde nuestro taller en Chillán, para hogares, restaurantes, quinchos y salones de eventos. Trabajamos madera nativa seca en cámara —lenga austral y pino premium— con fabricación artesanal y asesoría directa por WhatsApp.",
+    "Fabricamos cubiertas y tablones a medida en Chillán: mesones de cocina, barras, mesones para quincho y proyectos comerciales. Lenga austral o pino premium, secos en cámara. Para cotizar necesitamos largo, ancho, uso y comuna. El acabado se confirma en la cotización; no prometemos resistencia al calor o a la intemperie sin ver el uso real.",
   badges: ["Taller en Chillán", "Lenga austral y pino premium", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar cubiertas por WhatsApp",
   whatsappProductTitle: "Cubiertas a medida",
@@ -319,8 +361,8 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
       description: "Cubiertas resistentes para cocinas, barras y mesones de trabajo con terminación prolija.",
     },
     {
-      title: "Quinchos y exteriores",
-      description: "Tablones y cubiertas pensadas para espacios de reunión, quinchos y terrazas.",
+      title: "Mesones para quinchos",
+      description: "Cubierta a medida para el mesón del quincho. Cotiza largo, ancho y comuna; el acabado depende del uso.",
     },
     {
       title: "Proyectos comerciales",
@@ -374,8 +416,45 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
         "Escríbenos por WhatsApp con medidas, tipo de uso, comuna y una foto o boceto de referencia para una cotización más precisa.",
     },
     {
+      question: "¿Hacen mesones para quinchos?",
+      answer:
+        "Sí, en esta misma página. Es una cubierta a medida para el mesón del quincho. Envía largo, ancho, si va bajo techo o al aire, y tu comuna. El acabado se define al cotizar.",
+    },
+    {
       question: "¿Envían cubiertas a todo Chile?",
       answer: "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones y tiempos según tu ubicación.",
+    },
+  ],
+  extraSections: [
+    {
+      title: "Mesones para quinchos",
+      paragraphs: [
+        "Si buscas un mesón de madera para quincho, lo fabricamos como cubierta a medida: tablero según el largo y el ancho de tu espacio. No es un quincho armado ni incluye estructura, parrilla o instalación.",
+        "Para cotizar bien, indica si el mesón queda bajo techo o al aire, el largo y el ancho (y el espesor si ya lo tienes), la comuna y una foto del vano o del mesón actual. El tipo de madera y el acabado se confirman en la respuesta; no afirmamos resistencia al calor o a la lluvia sin ver el uso.",
+      ],
+      bullets: [
+        "Largo y ancho del tablero (cm)",
+        "Uso: quincho, barra, cocina o local",
+        "Comuna de despacho",
+        "Foto o croquis, si la tienes",
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/kit-pergola",
+      title: "Kit pérgola",
+      description: "Uniones metálicas para pérgola. No incluye maderas.",
+    },
+    {
+      href: "/puertas-a-medida",
+      title: "Puertas a medida",
+      description: "Hojas de madera según vano. Cotiza con medidas y foto.",
+    },
+    {
+      href: "/muebles-chillan",
+      title: "Taller en Chillán",
+      description: "Fabricación propia y atención directa desde Ñuble.",
     },
   ],
   ctaTitle: "Cotiza hoy tus cubiertas de madera",
@@ -404,7 +483,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
   eyebrow: "Molduras de madera a medida",
   h1: "Molduras de madera a medida para tu proyecto",
   heroParagraph:
-    "Fabricamos molduras y perfiles de madera a medida desde nuestro taller en Chillán. Ideales para muros, techos, vanos, puertas y terminaciones interiores. Trabajamos según tus medidas, estilo y tipo de madera, con cotización clara por WhatsApp y envío a todo Chile.",
+    "Fabricamos molduras y perfiles de madera a medida desde Chillán para muros, techos, vanos y terminaciones interiores. Para cotizar bien necesitamos el perfil (foto de frente o de la sección), el largo y la cantidad. No hay un catálogo de perfiles publicado en esta página: partimos de tu referencia.",
   badges: ["Taller en Chillán", "Perfiles a medida", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar molduras por WhatsApp",
   whatsappProductTitle: "Molduras a medida",
@@ -495,6 +574,43 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones y tiempos según tu ubicación.",
     },
+    {
+      question: "¿Tienen un catálogo de perfiles?",
+      answer:
+        "No publicamos un catálogo fijo. Envía una foto del perfil o de la sección (idealmente con una regla) y el largo. Si no tienes el corte exacto, te ayudamos a definir una opción según el uso.",
+    },
+  ],
+  extraSections: [
+    {
+      title: "Perfil, largo y terminación",
+      paragraphs: [
+        "Cotizamos por tramo o por metro lineal. Lo que más acelera la respuesta es el perfil: una foto de frente y, si puedes, de la sección (el corte) con una regla o una medida escrita.",
+        "Indica si va en muro, techo o vano, y si la quieres cruda, lista para pintar o con barniz. La instalación no se asume incluida.",
+      ],
+      bullets: [
+        "Foto del perfil o de la sección con escala",
+        "Largo (cm o metros) y cantidad",
+        "Uso: muro, techo, marco o vano",
+        "Comuna de despacho",
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/puertas-a-medida",
+      title: "Puertas a medida",
+      description: "Hojas de madera según vano. Cotiza con medidas y foto.",
+    },
+    {
+      href: "/peldanos-a-medida",
+      title: "Peldaños a medida",
+      description: "Huellas de escalera según largo, ancho y espesor.",
+    },
+    {
+      href: "/cubiertas-a-medida",
+      title: "Cubiertas a medida",
+      description: "Mesones y tablones para quincho, barra o cocina.",
+    },
   ],
   ctaTitle: "Cotiza hoy tus molduras de madera",
   ctaParagraph:
@@ -520,35 +636,35 @@ export const puertasLandingConfig: ServiceLandingConfig = {
   eyebrow: "Puertas de madera a medida",
   h1: "Puertas de madera personalizadas a medida",
   heroParagraph:
-    "Fabricamos puertas a medida según tus especificaciones exactas desde Chillán, para que se adapten perfectamente a tu hogar o negocio. Más de 30 años trabajando maderas nobles del sur de Chile con diseño personalizado, durabilidad y terminaciones prolijas.",
+    "Fabricamos la hoja de la puerta a medida desde Chillán, para hogar o negocio. El uso interior o exterior cambia madera y acabado: dínoslo al cotizar. Marco, herrajes e instalación no se asumen incluidos. Para cotizar: alto, ancho, espesor del vano, comuna y una foto.",
   badges: ["Taller en Chillán", "Diseño personalizado", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar puertas por WhatsApp",
   whatsappProductTitle: "Puertas a medida",
   whatsappLines: [
     "Vengo desde la página de puertas a medida.",
     "Quiero cotizar puertas de madera personalizadas.",
-    "Puedo enviar medidas, tipo de puerta, comuna y foto de referencia.",
+    "Puedo enviar alto, ancho, espesor del vano, si es interior o exterior, comuna y foto del vano.",
   ],
   heroHighlights: [
     { title: "Especificaciones exactas", description: "Cada puerta se fabrica según las medidas y diseño de tu proyecto." },
     { title: "Madera nativa seca en cámara", description: "Materiales seleccionados para durabilidad y estabilidad." },
-    { title: "+3.200 proyectos realizados", description: "Experiencia en fabricación artesanal y maquinaria especializada." },
+    { title: "Taller en Chillán", description: "Fabricación propia y atención directa desde Ñuble, con envío a todo Chile." },
   ],
   sectionTitle: "Puertas hechas para durar",
   sectionParagraph:
     "Nuestras puertas de madera personalizadas se fabrican con cuidado y atención al detalle. Te guiamos para elegir la opción que más se acomode a tus necesidades, ya sea para interiores, exteriores o proyectos comerciales. Cada pieza es realizada por manos expertas con herramientas especializadas.",
   featureCards: [
     {
-      title: "Diseños personalizados",
-      description: "Puertas fabricadas según estilo, medidas y terminación que necesites para tu espacio.",
+      title: "Interior o exterior",
+      description: "El uso cambia madera y acabado. Indícalo al cotizar; no prometemos intemperie sin ver el vano.",
     },
     {
-      title: "Durabilidad y calidad",
-      description: "Construcción sólida con madera nativa seca en cámara y materiales de primera calidad.",
+      title: "Hoja a medida",
+      description: "Fabricamos la hoja según alto, ancho y espesor. Marco y herrajes se confirman aparte.",
     },
     {
       title: "Asesoría directa",
-      description: "Te acompañamos desde la idea inicial hasta la cotización final por WhatsApp.",
+      description: "Te orientamos por WhatsApp con medidas, foto del vano y comuna de despacho.",
     },
   ],
   stepsTitle: "Cómo cotizar tus puertas a medida",
@@ -601,18 +717,60 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       question: "¿Realizan envíos a todo Chile?",
       answer: "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones según comuna o región.",
     },
+    {
+      question: "¿Incluyen marco, herrajes e instalación?",
+      answer:
+        "No se asumen incluidos. La cotización parte por la hoja a medida. Marco, herrajes e instalación se confirman en la respuesta si los necesitas.",
+    },
+    {
+      question: "¿Hacen puertas de interior y de exterior?",
+      answer:
+        "Sí, fabricamos según el uso. Interior o exterior cambia madera y acabado: indícalo al cotizar, junto con una foto del vano. No prometemos resistencia a la intemperie sin ver el caso.",
+    },
+  ],
+  extraSections: [
+    {
+      title: "Qué fabricamos y qué cotizar",
+      paragraphs: [
+        "Fabricamos la hoja de la puerta a medida. No hay un catálogo de modelos fijos en esta página: partimos de tus medidas y una referencia visual.",
+        "El uso interior o exterior, el vano y la comuna definen la propuesta. Marco, herrajes e instalación no vienen por defecto.",
+      ],
+      bullets: [
+        "Alto, ancho y espesor del vano o de la hoja (cm)",
+        "Uso: interior o exterior",
+        "Comuna de despacho",
+        "Foto del vano o de la puerta actual",
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/molduras-a-medida",
+      title: "Molduras a medida",
+      description: "Perfiles para muros, techos y vanos.",
+    },
+    {
+      href: "/cubiertas-a-medida",
+      title: "Cubiertas a medida",
+      description: "Mesones y tablones según largo y ancho.",
+    },
+    {
+      href: "/muebles-chillan",
+      title: "Taller en Chillán",
+      description: "Fabricación propia y atención directa desde Ñuble.",
+    },
   ],
   ctaTitle: "Cotiza hoy tus puertas de madera",
   ctaParagraph:
-    "¿Tienes una idea en mente? Escríbenos por WhatsApp y recibe tu cotización cuanto antes.",
+    "Escríbenos por WhatsApp con alto, ancho, foto del vano y comuna. Te respondemos con lo que sí está incluido.",
   ctaBullets: sharedCtaBullets,
   schemaType: "Service",
   serviceName: "Puertas de madera a medida",
   serviceType: "Fabricación de puertas personalizadas",
   stats: [
-    { value: "30+", label: "Años de experiencia" },
-    { value: "3.200+", label: "Proyectos realizados" },
-    { value: "15+", label: "Trabajadores" },
+    { value: "Desde 2001", label: "Taller familiar" },
+    { value: "Chillán", label: "Fabricación propia" },
+    { value: "Todo Chile", label: "Cobertura de envío" },
   ],
 };
 
@@ -961,7 +1119,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   eyebrow: "Muebles en Chillán",
   h1: "Muebles de madera en Chillán",
   heroParagraph:
-    "Idea Madera fabrica muebles de madera en Chillán con diseño cuidado y venta directa: mesas, sillas, bancas, veladores y piezas a medida. Cotiza por WhatsApp y recibe orientación en medidas, terminación y despacho a todo Chile.",
+    "Somos el taller de Idea Madera en Chillán: fabricación propia, venta directa y cotización por WhatsApp. Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es fábrica.",
   badges: ["Fábrica en Chillán", "Desde 2001", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar muebles por WhatsApp",
   whatsappProductTitle: "Muebles Chillán",
@@ -1242,8 +1400,8 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   serviceName: "Muebles de madera a medida",
   serviceType: "Fabricación de muebles de madera a medida",
   stats: [
-    { value: "30+", label: "Años de experiencia" },
-    { value: "3.200+", label: "Proyectos realizados" },
+    { value: "Desde 2001", label: "Taller familiar" },
+    { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
 };

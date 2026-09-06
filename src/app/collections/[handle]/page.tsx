@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
 import ProductCard from "@/app/components/ProductCard";
+import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import {
   getCategoryByHandle,
@@ -17,12 +19,13 @@ import {
 } from "@/lib/collection-seo";
 import {
   buildBreadcrumbSchema,
+  buildFaqPageSchema,
   buildItemListSchema,
   buildOpenGraphDefaults,
   buildTwitterDefaults,
   SITE_NAME,
 } from "@/lib/seo";
-import { getProductPath } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
 
 interface CollectionPageProps {
   params: Promise<{
@@ -37,7 +40,9 @@ function getCollection(handle: string) {
     const seo = getCollectionSeo(handle);
     return {
       ...seo,
+      category: undefined,
       products: sortProductsForCatalog(visibleProducts),
+      isEmpty: false,
     };
   }
 
@@ -45,12 +50,17 @@ function getCollection(handle: string) {
   if (!category) return null;
 
   const seo = getCollectionSeo(handle, category);
+  const categoryProducts = sortProductsForCatalog(
+    visibleProducts.filter((product) => product.category === category),
+  );
 
   return {
     ...seo,
-    products: sortProductsForCatalog(
-      visibleProducts.filter((product) => product.category === category),
-    ),
+    category,
+    products: categoryProducts,
+    // SEO-03: una categoría conocida sin productos publicables no debe quedar
+    // indexable accidentalmente (thin content con canonical propio).
+    isEmpty: categoryProducts.length === 0,
   };
 }
 
@@ -82,6 +92,9 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
     alternates: {
       canonical: `/collections/${handle}`,
     },
+    ...(collection.isEmpty
+      ? { robots: { index: false, follow: true } }
+      : {}),
     openGraph: {
       ...ogDefaults,
       title: fullTitle,
@@ -110,15 +123,27 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         { name: "Inicio", path: "/" },
         { name: collection.h1, path: collectionPath },
       ]),
-      buildItemListSchema(
-        `${collection.metadataTitle} | ${SITE_NAME}`,
-        collection.products.map((product) => ({
-          name: product.name,
-          url: getProductPath(product),
-        })),
-      ),
+      // ItemList solo con elementos visibles (SEO-14): una colección vacía
+      // no emite lista para no contradecir el contenido real de la página.
+      ...(!collection.isEmpty
+        ? [
+            buildItemListSchema(
+              `${collection.metadataTitle} | ${SITE_NAME}`,
+              collection.products.map((product) => ({
+                name: product.name,
+                url: getProductPath(product),
+              })),
+            ),
+          ]
+        : []),
+      ...(collection.faqs?.length ? [buildFaqPageSchema(collection.faqs)] : []),
     ],
   };
+
+  const whatsappMessage = collection.whatsappLines
+    ? ["Hola Idea Madera", ...collection.whatsappLines].join("\n")
+    : null;
+  const whatsappHref = whatsappMessage ? buildWhatsAppUrl(whatsappMessage) : null;
 
   return (
     <>
@@ -143,8 +168,21 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 {collection.h1}
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
-                {collection.description}
+                {collection.intro ?? collection.description}
               </p>
+              {collection.relatedLinks && collection.relatedLinks.length > 0 ? (
+                <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-700">
+                  {collection.relatedLinks.slice(0, 2).map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="underline underline-offset-4 hover:text-neutral-900"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </p>
+              ) : null}
             </div>
             <Link
               href="/#catalogo"
@@ -183,17 +221,139 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 md:py-14">
-        <p className="mb-6 text-sm text-neutral-600">
-          {collection.products.length}{" "}
-          {collection.products.length === 1 ? "producto disponible" : "productos disponibles"}
-        </p>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {collection.products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {collection.isEmpty ? (
+          <div className="max-w-2xl">
+            <p className="text-sm leading-relaxed text-neutral-600 md:text-base">
+              Por ahora no tenemos {collection.category?.toLowerCase()} con fotografías publicadas.
+              Estamos preparando nuevos modelos: si te interesa esta categoría, escríbenos por
+              WhatsApp y te contamos qué podemos fabricar a pedido.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+              Mientras tanto, puedes revisar{" "}
+              <Link
+                href={`/collections/${ALL_PRODUCTS_HANDLE}`}
+                className="underline underline-offset-4 hover:text-neutral-900"
+              >
+                todo el catálogo disponible
+              </Link>{" "}
+              o las{" "}
+              <Link
+                href="/collections/mesas"
+                className="underline underline-offset-4 hover:text-neutral-900"
+              >
+                mesas de madera
+              </Link>{" "}
+              que sí tenemos publicadas.
+            </p>
+          </div>
+        ) : (
+          <>
+            <p className="mb-6 text-sm text-neutral-600">
+              {collection.products.length}{" "}
+              {collection.products.length === 1 ? "producto disponible" : "productos disponibles"}
+            </p>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {collection.products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </>
+        )}
       </section>
+
+      {collection.guideTitle && collection.guideParagraphs && !collection.isEmpty ? (
+        <section className="border-t border-neutral-200 bg-neutral-50">
+          <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+            <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+              {collection.guideTitle}
+            </h2>
+            {collection.guideParagraphs.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 40)}
+                className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {collection.faqs && collection.faqs.length > 0 && !collection.isEmpty ? (
+        <section className="border-t border-neutral-200">
+          <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+            <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+              Preguntas frecuentes
+            </h2>
+            <div className="mt-8 border-t border-neutral-200">
+              {collection.faqs.map((item) => (
+                <article key={item.question} className="border-b border-neutral-200 py-5">
+                  <h3 className="text-base font-medium text-neutral-900 md:text-lg">
+                    {item.question}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
+                    {item.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {collection.relatedLinks && collection.relatedLinks.length > 0 && !collection.isEmpty ? (
+        <section className="border-t border-neutral-200 bg-neutral-50">
+          <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
+            <h2 className="text-xl font-light tracking-tight text-neutral-900">
+              También te puede interesar
+            </h2>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {collection.relatedLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-400"
+                >
+                  <p className="text-sm font-medium text-neutral-900">{link.title}</p>
+                  <p className="mt-1 text-xs text-neutral-600">{link.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {whatsappHref && collection.whatsappTitle && !collection.isEmpty ? (
+        <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
+            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+              Cotiza tu mesa de madera
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+              Escribe por WhatsApp el modelo o las medidas, la terminación y tu comuna.
+              Confirmamos plazo de fabricación y despacho.
+            </p>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
+            >
+              <AiOutlineWhatsApp size={22} />
+              Cotizar {collection.whatsappTitle.toLowerCase()}
+            </a>
+          </div>
+        </section>
+      ) : null}
     </main>
+    {whatsappMessage && collection.whatsappTitle ? (
+      <WhatsappButton
+        productTitle={collection.whatsappTitle}
+        buttonLabel={`Cotizar ${collection.whatsappTitle.toLowerCase()}`}
+        prefilledMessage={whatsappMessage}
+        alwaysVisible
+      />
+    ) : null}
     </>
   );
 }

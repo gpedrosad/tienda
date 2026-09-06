@@ -1,8 +1,26 @@
 #!/usr/bin/env node
 
+// Informe completo de Search Console en Markdown.
+//
+// Uso:
+//   node scripts/gsc-report-md.mjs [ruta-salida.md] [--start=YYYY-MM-DD --end=YYYY-MM-DD]
+//
+// Sin flags, la ventana es de GSC_DASHBOARD_DAYS dias inclusivos (default 28)
+// terminando hoy en zona America/Los_Angeles (la fecha de calendario de GSC).
+// Con --start y --end se usan esas fechas exactas, con prioridad sobre
+// GSC_DASHBOARD_DAYS; el periodo anterior comparado tiene el mismo largo.
+// Ademas del Markdown, exporta los datos crudos en
+// docs/gsc-informe-data-YYYY-MM-DD.json (misma fecha del informe).
+
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { google } from "googleapis";
+import {
+  formatDate,
+  previousWindow,
+  resolveReportWindow,
+  todayInPacific,
+} from "./lib/gsc-dates.mjs";
 
 const SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"];
 const SITE_URL = process.env.GSC_SITE_URL ?? "sc-domain:ideamadera.cl";
@@ -25,17 +43,18 @@ const OAUTH_TOKEN_PATH = resolve(
   process.env.GSC_OAUTH_TOKEN_PATH ?? ".secrets/gsc-oauth-token.json",
 );
 
-const REPORT_DATE = new Date().toISOString().slice(0, 10);
+const REPORT_DATE = formatDate(todayInPacific());
+const positionalArgs = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
 const OUTPUT_PATH = resolve(
   process.cwd(),
-  process.argv[2] ?? `docs/gsc-informe-${REPORT_DATE}.md`,
+  positionalArgs[0] ?? `docs/gsc-informe-${REPORT_DATE}.md`,
 );
 
 const PRIORITY_ORDER = { alta: 0, media: 1, baja: 2 };
 
-function formatDate(date) {
-  return date.toISOString().slice(0, 10);
-}
+// Registro de las consultas hechas a la API (dimensiones, limites, filas y
+// errores) para el JSON de datos crudos.
+const requestLog = [];
 
 function withTimeout(promise, timeoutMs, label) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
@@ -53,7 +72,9 @@ function withTimeout(promise, timeoutMs, label) {
 async function bestEffort(promise, fallback, timeoutMs, label) {
   try {
     return await withTimeout(promise, timeoutMs, label);
-  } catch {
+  } catch (error) {
+    const message = error?.response?.data?.error?.message ?? error.message ?? String(error);
+    requestLog.push({ endpoint: label, rows: null, error: message });
     return fallback;
   }
 }
@@ -130,21 +151,31 @@ function aggregate(rows) {
 }
 
 async function queryAnalytics(client, siteUrl, startDate, endDate, dimensions, rowLimit = 25) {
-  const response = await withTimeout(
-    client.searchanalytics.query({
-      siteUrl,
-      requestBody: {
-        startDate,
-        endDate,
-        dimensions,
-        rowLimit,
-      },
-    }),
-    API_TIMEOUT_MS,
-    `searchanalytics.query(${dimensions.join(",") || "summary"})`,
-  );
-
-  return mapRows(response.data.rows);
+  const label = `searchanalytics.query(${dimensions.join(",") || "summary"})`;
+  try {
+    const response = await withTimeout(
+      client.searchanalytics.query({
+        siteUrl,
+        requestBody: {
+          startDate,
+          endDate,
+          dimensions,
+          rowLimit,
+          type: "web",
+          dataState: "final",
+        },
+      }),
+      API_TIMEOUT_MS,
+      label,
+    );
+    const rows = mapRows(response.data.rows);
+    requestLog.push({ endpoint: label, startDate, endDate, dimensions, rowLimit, rows: rows.length });
+    return rows;
+  } catch (error) {
+    const message = error?.response?.data?.error?.message ?? error.message ?? String(error);
+    requestLog.push({ endpoint: label, startDate, endDate, dimensions, rowLimit, rows: null, error: message });
+    throw error;
+  }
 }
 
 async function fetchSearchAnalyticsKeyedPaged(
@@ -161,21 +192,36 @@ async function fetchSearchAnalyticsKeyedPaged(
 
   while (out.length < maxRows) {
     const rowLimit = Math.min(pageSize, maxRows - out.length);
-    const response = await withTimeout(
-      client.searchanalytics.query({
-        siteUrl,
-        requestBody: {
-          startDate,
-          endDate,
-          dimensions: [dimension],
-          rowLimit,
-          startRow,
-        },
-      }),
-      API_TIMEOUT_MS,
-      `searchanalytics.query(${dimension}) lote ${startRow}`,
-    );
-    const batch = mapRows(response.data.rows);
+    const label = `searchanalytics.query(${dimension}) lote ${startRow}`;
+    let batch;
+    try {
+      const response = await withTimeout(
+        client.searchanalytics.query({
+          siteUrl,
+          requestBody: {
+            startDate,
+            endDate,
+            dimensions: [dimension],
+            rowLimit,
+            startRow,
+            type: "web",
+            dataState: "final",
+          },
+        }),
+        API_TIMEOUT_MS,
+        label,
+      );
+      batch = mapRows(response.data.rows);
+      requestLog.push({
+        endpoint: label, startDate, endDate, dimensions: [dimension], rowLimit, startRow, rows: batch.length,
+      });
+    } catch (error) {
+      const message = error?.response?.data?.error?.message ?? error.message ?? String(error);
+      requestLog.push({
+        endpoint: label, startDate, endDate, dimensions: [dimension], rowLimit, startRow, rows: null, error: message,
+      });
+      throw error;
+    }
     out.push(...batch);
     if (batch.length < rowLimit || batch.length === 0) {
       break;
@@ -405,32 +451,51 @@ function detectObservedHosts(pages) {
     .sort((a, b) => b.rows - a.rows);
 }
 
-function summarizeSitemapCoverageIssues(sitemaps) {
+// Alertas operativas de sitemaps. El campo contents[].indexed de la Sitemaps
+// API fue marcado como obsoleto por Google, por lo que ya no se usa como
+// senal: solo errores, advertencias, fecha de descarga y URLs enviadas.
+function summarizeSitemapOperationalIssues(sitemaps) {
   const issues = [];
 
   for (const sitemap of sitemaps) {
-    for (const content of sitemap.contents ?? []) {
-      const submitted = num(content.submitted);
-      const indexed = num(content.indexed);
-      if (submitted <= 0) continue;
-      if (indexed === 0) {
-        issues.push({
-          path: sitemap.path ?? "-",
-          type: content.type ?? sitemap.type ?? "-",
-          submitted,
-          indexed,
-          severity: "alta",
-        });
-        continue;
-      }
+    const path = sitemap.path ?? "-";
+    const type = sitemap.type ?? "-";
+    const errors = num(sitemap.errors);
+    const warnings = num(sitemap.warnings);
 
-      const ratio = indexed / submitted;
-      if (submitted >= 10 && ratio < 0.3) {
+    if (errors > 0) {
+      issues.push({
+        path,
+        type,
+        detail: `${errors} error(es) reportado(s) por Google`,
+        severity: "alta",
+      });
+    }
+    if (warnings > 0) {
+      issues.push({
+        path,
+        type,
+        detail: `${warnings} advertencia(s) reportada(s) por Google`,
+        severity: "media",
+      });
+    }
+    if (!sitemap.lastDownloaded) {
+      issues.push({
+        path,
+        type,
+        detail: "Google aun no registra descarga del sitemap (lastDownloaded vacio)",
+        severity: "media",
+      });
+    }
+
+    const contents = sitemap.contents ?? [];
+    if (contents.length > 0) {
+      const submitted = contents.reduce((sum, content) => sum + num(content.submitted), 0);
+      if (submitted === 0) {
         issues.push({
-          path: sitemap.path ?? "-",
-          type: content.type ?? sitemap.type ?? "-",
-          submitted,
-          indexed,
+          path,
+          type,
+          detail: "El contenido reportado no incluye URLs enviadas (submitted = 0)",
           severity: "media",
         });
       }
@@ -442,7 +507,6 @@ function summarizeSitemapCoverageIssues(sitemaps) {
 
 function generateActionPlan(data) {
   const items = [];
-  const sitemapCoverageIssues = summarizeSitemapCoverageIssues(data.sitemaps);
 
   const badSitemaps = data.sitemaps.filter((item) => num(item.errors) > 0 || num(item.warnings) > 0);
   if (badSitemaps.length > 0) {
@@ -454,15 +518,6 @@ function generateActionPlan(data) {
         .filter(Boolean)
         .slice(0, 5)
         .join(", ") || "varios"}.`,
-    });
-  }
-
-  if (sitemapCoverageIssues.some((item) => item.severity === "alta")) {
-    const item = sitemapCoverageIssues[0];
-    items.push({
-      priority: "alta",
-      title: "Validar por que el sitemap envia URLs pero no muestra indexacion",
-      detail: `${item.path} reporta ${item.submitted} URL(s) enviadas y ${item.indexed} indexadas. Revisar canonical, indexabilidad real, cobertura y si el API esta devolviendo contenido consistente.`,
     });
   }
 
@@ -584,14 +639,9 @@ async function runUrlInspectionSample(client, siteUrl, inspectionUrls) {
 
 async function getDashboardData() {
   const client = getSearchConsoleClient();
-  const end = new Date();
-  const start = new Date();
-  start.setDate(end.getDate() - DAYS);
-
-  const prevEnd = new Date(start);
-  prevEnd.setDate(prevEnd.getDate() - 1);
-  const prevStart = new Date(prevEnd);
-  prevStart.setDate(prevStart.getDate() - DAYS);
+  const reportWindow = resolveReportWindow(process.argv.slice(2), DAYS);
+  const { start, end } = reportWindow;
+  const { prevStart, prevEnd } = previousWindow(start, end);
 
   const startDate = formatDate(start);
   const endDate = formatDate(end);
@@ -708,7 +758,6 @@ async function getDashboardData() {
         contents: (detailed?.data.contents ?? []).map((content) => ({
           type: content.type ?? null,
           submitted: content.submitted ?? null,
-          indexed: content.indexed ?? null,
         })),
       };
     }),
@@ -734,7 +783,7 @@ async function getDashboardData() {
 
   const data = {
     siteUrl: SITE_URL,
-    period: { start: startDate, end: endDate, days: DAYS },
+    period: { start: startDate, end: endDate, days: reportWindow.days, source: reportWindow.source },
     previousPeriod: { start: prevStartDate, end: prevEndDate },
     generatedAt: new Date().toISOString(),
     sites: (sitesResponse?.data.siteEntry ?? []).map((site) => ({
@@ -836,7 +885,7 @@ function buildMarkdown(data) {
   const inspectionIssues = data.urlInspectionSamples.filter(
     (item) => item.error || (item.indexVerdict && item.indexVerdict !== "PASS"),
   );
-  const sitemapCoverageIssues = summarizeSitemapCoverageIssues(data.sitemaps);
+  const sitemapOperationalIssues = summarizeSitemapOperationalIssues(data.sitemaps);
 
   const parts = [];
   parts.push(`# Informe completo de Google Search Console`);
@@ -893,12 +942,9 @@ function buildMarkdown(data) {
   if (inspectionIssues.length > 0) {
     notableIssues.push(`- URL Inspection: ${inspectionIssues.length} muestra(n) senales de problema o respuesta incompleta.`);
   }
-  if (data.sitemaps.some((item) => num(item.errors) > 0 || num(item.warnings) > 0)) {
-    notableIssues.push("- Sitemaps: hay al menos un sitemap con errores o advertencias.");
-  }
-  if (sitemapCoverageIssues.length > 0) {
+  if (sitemapOperationalIssues.length > 0) {
     notableIssues.push(
-      `- Cobertura de sitemap: ${sitemapCoverageIssues.length} alerta(s) de indexacion baja o nula en URLs enviadas.`,
+      `- Sitemaps: ${sitemapOperationalIssues.length} alerta(s) operativa(s) (errores, advertencias, descarga no registrada o envio de URLs en cero).`,
     );
   }
   parts.push(section("Riesgos detectados", notableIssues.join("\n") || "- No se detectaron riesgos tecnicos fuertes en este corte."));
@@ -1184,7 +1230,7 @@ function buildMarkdown(data) {
           row.lastDownloaded ?? "-",
           row.contents.length > 0
             ? row.contents
-                .map((content) => `${content.type ?? "?"}: ${content.indexed ?? "-"} indexadas / ${content.submitted ?? "-"} enviadas`)
+                .map((content) => `${content.type ?? "?"}: ${content.submitted ?? "-"} enviadas`)
                 .join("<br>")
             : "-",
         ]),
@@ -1192,17 +1238,16 @@ function buildMarkdown(data) {
     ),
   );
 
-  if (sitemapCoverageIssues.length > 0) {
+  if (sitemapOperationalIssues.length > 0) {
     parts.push(
       section(
-        "Alertas de cobertura en sitemap",
+        "Alertas operativas de sitemap",
         table(
-          ["Path", "Tipo", "Enviadas", "Indexadas", "Severidad"],
-          sitemapCoverageIssues.map((item) => [
+          ["Path", "Tipo", "Detalle", "Severidad"],
+          sitemapOperationalIssues.map((item) => [
             item.path,
             item.type,
-            fmtNum(item.submitted),
-            fmtNum(item.indexed),
+            item.detail,
             item.severity,
           ]),
         ),

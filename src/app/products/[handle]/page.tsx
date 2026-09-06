@@ -17,6 +17,7 @@ import {
   buildProductOfferSchema,
   SITE_NAME,
   SITE_URL,
+  WARRANTY_MONTHS,
 } from "@/lib/seo";
 import { getProductSeo } from "@/lib/product-seo";
 import {
@@ -167,6 +168,10 @@ const productFaqItems = [
     question: "¿Hacen envíos fuera de Santiago?",
     answer:
       "Sí, coordinamos envíos a todo Chile. Te indicamos opciones y tiempos según comuna o región al momento de cotizar.",
+  },
+  {
+    question: "¿Qué garantía tiene el mueble?",
+    answer: `Tiene ${WARRANTY_MONTHS} meses de garantía contra defectos de fabricación, desde la entrega.`,
   },
 ];
 

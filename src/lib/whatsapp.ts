@@ -10,15 +10,6 @@ export interface WhatsAppTrackingPayload {
   placement: "sticky" | "inline" | "banner" | "card";
 }
 
-interface DataLayerEvent {
-  event: "whatsapp_click";
-  product_id?: string;
-  product_name: string;
-  value?: number;
-  currency: "CLP";
-  placement: WhatsAppTrackingPayload["placement"];
-}
-
 export function formatCLP(price: number) {
   return `$${price.toLocaleString("es-CL")}`;
 }
@@ -57,6 +48,9 @@ export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 }
 
+// SEO-15: la medición de GA4 se hace vía gtag (instalación actual del sitio).
+// El precio se envía solo como contexto de producto (reference_value), no como
+// ingreso de venta. No se envían datos personales ni el texto del mensaje.
 export async function trackWhatsAppClick({
   productTitle,
   productId,
@@ -65,28 +59,44 @@ export async function trackWhatsAppClick({
 }: WhatsAppTrackingPayload) {
   if (typeof window === "undefined") return;
 
-  const win = window as Window & { dataLayer?: DataLayerEvent[] };
-  win.dataLayer = win.dataLayer ?? [];
-  win.dataLayer.push({
-    event: "whatsapp_click",
+  const win = window as Window & {
+    gtag?: (...args: unknown[]) => void;
+  };
+
+  const eventParams = {
+    page_path: `${window.location.pathname}${window.location.search}`,
     product_id: productId,
     product_name: productTitle,
-    value: productPrice,
+    reference_value: productPrice,
     currency: "CLP",
     placement,
-  });
+  };
 
-  await fetch("/api/facebook-whatsapp", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      event_name: "MensajeWhatsApp",
-      event_source_url: window.location.href,
-      content_name: productTitle,
-      content_ids: productId ? [productId] : undefined,
-      content_type: "product",
-      value: productPrice,
-      currency: "CLP",
-    }),
-  });
+  // Si gtag aún no cargó (scripts diferidos), el evento se deja en dataLayer
+  // con el formato estándar de gtag.js para que se procese al cargar.
+  if (typeof win.gtag === "function") {
+    win.gtag("event", "whatsapp_click", eventParams);
+  } else {
+    const winWithDataLayer = win as Window & { dataLayer?: unknown[] };
+    winWithDataLayer.dataLayer = winWithDataLayer.dataLayer ?? [];
+    winWithDataLayer.dataLayer.push(["event", "whatsapp_click", eventParams]);
+  }
+
+  try {
+    await fetch("/api/facebook-whatsapp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "MensajeWhatsApp",
+        event_source_url: window.location.href,
+        content_name: productTitle,
+        content_ids: productId ? [productId] : undefined,
+        content_type: "product",
+        value: productPrice,
+        currency: "CLP",
+      }),
+    });
+  } catch {
+    // El enlace de WhatsApp debe funcionar aunque el tracking falle.
+  }
 }

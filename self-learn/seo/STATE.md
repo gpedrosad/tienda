@@ -5,8 +5,8 @@
 - **Sitemap vivo:** ~50 URLs (`src/app/sitemap.ts`) · GSC lista solo www
 - **Landings de servicio:** peldaños, cubiertas, molduras, puertas, **muebles-chillan**, **muebles-de-cocina-chillan**, kit-pergola, quiénes somos, contacto
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
-- **Última tanda código:** 2026-08-02 → [CHANGELOG.md](./CHANGELOG.md)
-- **Última medición GSC:** 2026-08-04 → `docs/gsc-informe-2026-08-04.md` · eval [EVAL.md](./EVAL.md)
+- **Última tanda código:** 2026-09-06 → [CHANGELOG.md](./CHANGELOG.md) · plan [docs/plan-seo-kimi3-2026-09-06.md](../../docs/plan-seo-kimi3-2026-09-06.md)
+- **Última medición GSC:** 2026-09-06 → `docs/gsc-informe-2026-09-06.md` (201 clics · 9.698 imp · CTR 2,07% · pos. 9,6). Histórico ago: [EVAL.md](./EVAL.md)
 - **Backlog:** [NEXT.md](./NEXT.md)
 
 ## Snapshot GSC 2026-08-04 (28d: 7 jul → 4 ago)
@@ -64,6 +64,7 @@ Baseline previo: `docs/gsc-informe-2026-07-23.md`
 | Sitemap GSC | ✅ solo www |
 | Titles CTR Aug-02 en prod | ✅ verificados live |
 | Middleware `?page=1` | ✅ 308 en prod; GSC aún muestra fila legacy con imp. |
+| `/collections/mesas-de-centro` y `/mesas-ratona` | Código: 308 → `/mesas-de-centro` (pendiente deploy; prod aún va a `/collections/mesas`) |
 | Hosts | ✅ mayoría www (37 filas) vs apex (2) |
 | Fotos 26 productos | ❌ pendiente (bloquea índice) |
 

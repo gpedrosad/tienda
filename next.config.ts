@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/collections/mesas-de-centro",
-        destination: "/collections/mesas",
+        destination: "/mesas-de-centro",
         permanent: true,
       },
       {
@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/collections/mesas-ratona",
-        destination: "/collections/mesas",
+        destination: "/mesas-de-centro",
         permanent: true,
       },
       {

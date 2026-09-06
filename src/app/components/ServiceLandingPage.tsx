@@ -143,6 +143,31 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </div>
         </section>
 
+        {config.extraSections?.map((section) => (
+          <section key={section.title} className="border-t border-neutral-200 bg-neutral-50">
+            <div className="mx-auto max-w-3xl px-4 py-14 md:py-16">
+              <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
+                {section.title}
+              </h2>
+              {section.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              {section.bullets && section.bullets.length > 0 ? (
+                <ul className="mt-5 list-disc space-y-1.5 pl-5 text-sm text-neutral-700 md:text-base">
+                  {section.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          </section>
+        ))}
+
         <section className="bg-neutral-50 border-y border-neutral-200">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
             <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">{config.stepsTitle}</h2>

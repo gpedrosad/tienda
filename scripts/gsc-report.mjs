@@ -1,10 +1,28 @@
 #!/usr/bin/env node
 
+// Resumen de Search Console en terminal.
+//
+// Uso:
+//   node scripts/gsc-report.mjs [--start=YYYY-MM-DD --end=YYYY-MM-DD]
+//   node scripts/gsc-report.mjs --auth
+//
+// Sin flags, la ventana es de GSC_REPORT_DAYS dias inclusivos (default 28)
+// terminando hoy en zona America/Los_Angeles (la fecha de calendario de GSC).
+// Con --start y --end se usan esas fechas exactas, con prioridad sobre
+// GSC_REPORT_DAYS. Ademas del resumen en pantalla, exporta los datos crudos
+// en docs/gsc-report-data-YYYY-MM-DD.json.
+
 import { createServer } from "node:http";
 import { exec } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { resolve } from "node:path";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 import { google } from "googleapis";
+import {
+  formatDate,
+  previousWindow,
+  resolveReportWindow,
+  todayInPacific,
+} from "./lib/gsc-dates.mjs";
 
 const SITE_URL = process.env.GSC_SITE_URL ?? "sc-domain:ideamadera.cl";
 const DAYS = Number(process.env.GSC_REPORT_DAYS ?? 28);
@@ -24,11 +42,16 @@ const SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"];
 
 const isAuthOnly = process.argv.includes("--auth");
 
-const formatDate = (date) => date.toISOString().slice(0, 10);
+const REPORT_DATE = formatDate(todayInPacific());
 
-const end = new Date();
-const start = new Date();
-start.setDate(end.getDate() - DAYS);
+let reportWindow;
+try {
+  reportWindow = resolveReportWindow(process.argv.slice(2), DAYS);
+} catch (error) {
+  console.error(`Error: ${error.message}`);
+  process.exit(1);
+}
+const { start, end } = reportWindow;
 
 const openBrowser = (url) => {
   const command =
@@ -201,17 +224,42 @@ const main = async () => {
   const auth = await getAuth();
   const searchconsole = google.searchconsole({ version: "v1", auth });
 
+  const requestLog = [];
+
   const queryAnalytics = async (dimensions) => {
-    const response = await searchconsole.searchanalytics.query({
-      siteUrl: SITE_URL,
-      requestBody: {
-        startDate: formatDate(start),
-        endDate: formatDate(end),
+    try {
+      const response = await searchconsole.searchanalytics.query({
+        siteUrl: SITE_URL,
+        requestBody: {
+          startDate: formatDate(start),
+          endDate: formatDate(end),
+          dimensions,
+          rowLimit: ROW_LIMIT,
+          type: "web",
+          dataState: "final",
+        },
+      });
+      const rows = response.data.rows ?? [];
+      requestLog.push({
+        endpoint: "searchanalytics.query",
         dimensions,
         rowLimit: ROW_LIMIT,
-      },
-    });
-    return response.data.rows ?? [];
+        rows: rows.length,
+      });
+      return rows;
+    } catch (error) {
+      const message =
+        error?.response?.data?.error?.message ?? error.message ?? String(error);
+      requestLog.push({
+        endpoint: "searchanalytics.query",
+        dimensions,
+        rowLimit: ROW_LIMIT,
+        rows: null,
+        error: message,
+      });
+      console.error(`  (consulta no disponible: ${message})`);
+      return null;
+    }
   };
 
   console.log(`\n📊 Google Search Console — ${SITE_URL}`);
@@ -239,41 +287,89 @@ const main = async () => {
   }
 
   const summaryRows = await queryAnalytics([]);
-  const totals = sumMetrics(summaryRows);
-  const ctr =
-    totals.impressions > 0
-      ? ((totals.clicks / totals.impressions) * 100).toFixed(2)
-      : "0.00";
-
   console.log("Resumen");
-  console.log(`  Clics:        ${totals.clicks}`);
-  console.log(`  Impresiones:  ${totals.impressions}`);
-  console.log(`  CTR:          ${ctr}%`);
+  if (summaryRows) {
+    const totals = sumMetrics(summaryRows);
+    const ctr =
+      totals.impressions > 0
+        ? ((totals.clicks / totals.impressions) * 100).toFixed(2)
+        : "0.00";
+
+    console.log(`  Clics:        ${totals.clicks}`);
+    console.log(`  Impresiones:  ${totals.impressions}`);
+    console.log(`  CTR:          ${ctr}%`);
+  }
 
   const queries = await queryAnalytics(["query"]);
   console.log(`\nTop ${ROW_LIMIT} consultas`);
-  for (const row of queries) {
-    console.log(
-      `  ${formatRow(row, ["query"])} | clics=${row.clicks} | imp=${row.impressions} | pos=${row.position?.toFixed(1)}`,
-    );
+  if (queries) {
+    for (const row of queries) {
+      console.log(
+        `  ${formatRow(row, ["query"])} | clics=${row.clicks} | imp=${row.impressions} | pos=${row.position?.toFixed(1)}`,
+      );
+    }
+    if (queries.length === 0) console.log("  (sin datos)");
   }
-  if (queries.length === 0) console.log("  (sin datos)");
 
   const pages = await queryAnalytics(["page"]);
   console.log(`\nTop ${ROW_LIMIT} páginas`);
-  for (const row of pages) {
-    console.log(
-      `  ${formatRow(row, ["page"])} | clics=${row.clicks} | imp=${row.impressions}`,
-    );
+  if (pages) {
+    for (const row of pages) {
+      console.log(
+        `  ${formatRow(row, ["page"])} | clics=${row.clicks} | imp=${row.impressions}`,
+      );
+    }
+    if (pages.length === 0) console.log("  (sin datos)");
   }
-  if (pages.length === 0) console.log("  (sin datos)");
 
-  const sitemaps = await searchconsole.sitemaps.list({ siteUrl: SITE_URL });
-  const sitemapEntries = sitemaps.data.sitemap ?? [];
-  console.log(`\nSitemaps (${sitemapEntries.length})`);
-  for (const sitemap of sitemapEntries.slice(0, 5)) {
-    console.log(`  ${sitemap.path}`);
+  let sitemapEntries = null;
+  let sitemapError = null;
+  try {
+    const sitemaps = await searchconsole.sitemaps.list({ siteUrl: SITE_URL });
+    sitemapEntries = sitemaps.data.sitemap ?? [];
+    requestLog.push({ endpoint: "sitemaps.list", rows: sitemapEntries.length });
+  } catch (error) {
+    sitemapError =
+      error?.response?.data?.error?.message ?? error.message ?? String(error);
+    requestLog.push({ endpoint: "sitemaps.list", rows: null, error: sitemapError });
   }
+  if (sitemapEntries) {
+    console.log(`\nSitemaps (${sitemapEntries.length})`);
+    for (const sitemap of sitemapEntries.slice(0, 5)) {
+      console.log(`  ${sitemap.path}`);
+    }
+  } else {
+    console.log(`\nSitemaps: no disponible (${sitemapError})`);
+  }
+
+  const { prevStart, prevEnd } = previousWindow(start, end);
+  const jsonPath = resolve(
+    process.cwd(),
+    `docs/gsc-report-data-${REPORT_DATE}.json`,
+  );
+  const jsonData = {
+    siteUrl: SITE_URL,
+    period: {
+      start: formatDate(start),
+      end: formatDate(end),
+      days: reportWindow.days,
+      source: reportWindow.source,
+    },
+    previousPeriod: { start: formatDate(prevStart), end: formatDate(prevEnd) },
+    filters: { searchType: "web", dataState: "final" },
+    extractedAt: new Date().toISOString(),
+    requests: requestLog,
+    errors: requestLog.filter((entry) => entry.error),
+    data: {
+      summary: summaryRows,
+      queries,
+      pages,
+      sitemaps: sitemapEntries,
+    },
+  };
+  mkdirSync(dirname(jsonPath), { recursive: true });
+  writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), "utf8");
+  console.log(`\nJSON guardado en ${jsonPath}`);
 
   console.log("\n✓ Reporte listo.\n");
 };
