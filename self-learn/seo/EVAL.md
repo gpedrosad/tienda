@@ -86,3 +86,27 @@ curl -sL "https://www.ideamadera.cl/products/mesa-tripode-ratona" | rg -n "<titl
 2. Actualizar `STATE.md`.
 3. 1 línea en `CHANGELOG.md`.
 4. Ajustar [NEXT.md](./NEXT.md).
+
+## Reevaluación 2026-08-04
+
+Fuente: `docs/gsc-informe-2026-08-04.md` · periodo 7 jul → 4 ago (28d).  
+Comparado vs baseline informe 23 jul (25 jun → 23 jul). Periodos se solapan → lectura direccional, no A/B puro. Titles del 2 ago aún con poco tiempo de recrawl.
+
+| Check | ¿OK? | Nota |
+|---|---|---|
+| Deploy vivo de tanda 23 jul + 2 ago | ✅ | Titles live verificados |
+| Sitemap GSC = www only | ✅ | |
+| CTR ratona > 0% (≥20 imp.) | ✅ | 0,35% · 282 imp · 1 clic (débil) |
+| CTR nórdica > baseline | ❌ | 0,52% plano vs 0,57% |
+| Kentucky o Roma con ≥1 clic | ✅ parcial | Roma 1 clic; Kentucky 0 |
+| Hosts en informe: mayoría www | ✅ | 37 www / 2 apex |
+| Clics 28d ≥ 63 o imp. money pages ↑ | ✅ | 98 clics · CTR 2,77% |
+
+### Resultado orientativo: **Éxito parcial / en progreso**
+
+- Cumple umbral de clics y sitemap; ≥2 PDPs A2 con CTR > 0% (ratona, roma).
+- Fallan: nórdica plana; kentucky 0%; query `mesa ratona` 170 imp / 0 clics.
+- Ganadores claros: landings servicio (cubiertas/puertas/molduras/kit) y home www.
+- Meta CTR plan (global ≥3% / no marca ≥2%) aún no: 2,77% / 1,54%.
+
+Próxima medición sugerida: ~2026-08-20 (titles 2 ago maduros).

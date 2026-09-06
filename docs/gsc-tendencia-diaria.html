@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEO — clics e impresiones por semana · Idea Madera</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --line: #2a2f3a;
+      --green: #3dd68c;
+      --blue: #5b9cff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding: 32px 24px 64px;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; font-weight: 650; margin: 0 0 6px; }
+    .sub { color: var(--muted); margin: 0 0 24px; font-size: 0.95rem; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .stat .v { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
+    .stat .v.green { color: var(--green); }
+    .stat .v.blue { color: var(--blue); }
+    .stat .l { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+    .note {
+      background: #152033;
+      border: 1px solid #243652;
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #c5d4ef;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 18px 10px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+    .chart-box { position: relative; height: 400px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 11px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+    th { color: var(--muted); font-weight: 550; background: #12151b; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    tr:last-child td { border-bottom: 0; }
+    tr.hi td { background: rgba(61, 214, 140, 0.08); }
+    footer { color: var(--muted); font-size: 0.8rem; margin-top: 18px; }
+    @media (max-width: 700px) {
+      .stats { grid-template-columns: 1fr; }
+      .chart-box { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SEO — clics e impresiones por semana</h1>
+    <p class="sub">GSC · ideamadera.cl · totales semanales · 11 may → 2 ago 2026</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="v">9 → 40</div>
+        <div class="l">Clics/semana (may 11 → jul 27)</div>
+      </div>
+      <div class="stat">
+        <div class="v blue">281 → 1.316</div>
+        <div class="l">Impresiones/semana</div>
+      </div>
+      <div class="stat">
+        <div class="v green">40</div>
+        <div class="l">Clics en la última semana completa</div>
+      </div>
+    </div>
+
+    <div class="note">
+      Barras verdes = <strong>clics</strong> de la semana · línea azul = <strong>impresiones</strong> (eje derecho).
+      Semana del 27 jul: <strong>40 clics</strong> y <strong>1.316 impresiones</strong>.
+    </div>
+
+    <div class="card">
+      <h2>Clics e impresiones por semana</h2>
+      <div class="chart-box"><canvas id="weekly"></canvas></div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Semana (lunes)</th>
+          <th class="num">Clics</th>
+          <th class="num">Impresiones</th>
+          <th class="num">CTR</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <footer>Fuente: Google Search Console API · semanas completas de 7 días · datos hasta 2026-08-02</footer>
+  </div>
+
+  <script>
+    const weeks = [
+      { label: "may 11", clicks: 9, impressions: 281, ctr: 3.2 },
+      { label: "may 18", clicks: 5, impressions: 183, ctr: 2.73 },
+      { label: "may 25", clicks: 1, impressions: 90, ctr: 1.11 },
+      { label: "jun 1", clicks: 2, impressions: 82, ctr: 2.44 },
+      { label: "jun 8", clicks: 3, impressions: 101, ctr: 2.97 },
+      { label: "jun 15", clicks: 10, impressions: 368, ctr: 2.72 },
+      { label: "jun 22", clicks: 12, impressions: 609, ctr: 1.97 },
+      { label: "jun 29", clicks: 19, impressions: 735, ctr: 2.59 },
+      { label: "jul 6", clicks: 8, impressions: 740, ctr: 1.08 },
+      { label: "jul 13", clicks: 29, impressions: 713, ctr: 4.07 },
+      { label: "jul 20", clicks: 21, impressions: 854, ctr: 2.46 },
+      { label: "jul 27", clicks: 40, impressions: 1316, ctr: 3.04 },
+    ];
+
+    const labels = weeks.map((w) => w.label);
+    const grid = { color: "rgba(255,255,255,0.06)" };
+    const ticks = { color: "#9aa0a6", font: { size: 11 } };
+
+    new Chart(document.getElementById("weekly"), {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          {
+            type: "bar",
+            label: "Clics",
+            data: weeks.map((w) => w.clicks),
+            backgroundColor: "rgba(61, 214, 140, 0.85)",
+            borderRadius: 6,
+            maxBarThickness: 36,
+            yAxisID: "y",
+            order: 2,
+          },
+          {
+            type: "line",
+            label: "Impresiones",
+            data: weeks.map((w) => w.impressions),
+            borderColor: "#5b9cff",
+            backgroundColor: "rgba(91, 156, 255, 0.12)",
+            fill: false,
+            tension: 0.25,
+            pointRadius: 4,
+            pointBackgroundColor: "#5b9cff",
+            borderWidth: 2.5,
+            yAxisID: "y1",
+            order: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            labels: { color: "#e8eaed", boxWidth: 14, padding: 16 },
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const v = ctx.parsed.y.toLocaleString("es-CL");
+                return ` ${ctx.dataset.label}: ${v}`;
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks,
+            title: { display: true, text: "Semana (inicio lunes)", color: "#9aa0a6" },
+          },
+          y: {
+            beginAtZero: true,
+            position: "left",
+            grid,
+            ticks,
+            title: { display: true, text: "Clics", color: "#3dd68c" },
+          },
+          y1: {
+            beginAtZero: true,
+            position: "right",
+            grid: { drawOnChartArea: false },
+            ticks,
+            title: { display: true, text: "Impresiones", color: "#5b9cff" },
+          },
+        },
+      },
+    });
+
+    const tbody = document.getElementById("tbody");
+    weeks.forEach((w, i) => {
+      const tr = document.createElement("tr");
+      if (i === weeks.length - 1) tr.className = "hi";
+      tr.innerHTML = `
+        <td>${w.label}</td>
+        <td class="num">${w.clicks.toLocaleString("es-CL")}</td>
+        <td class="num">${w.impressions.toLocaleString("es-CL")}</td>
+        <td class="num">${w.ctr.toLocaleString("es-CL", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

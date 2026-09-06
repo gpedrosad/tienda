@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-08-04
+
+- **GSC reevaluación:** 98 clics · 3.533 imp · CTR 2,77% · pos. 11,6 (vs baseline 23 jul: 63 / 2.675 / 2,36% / 12,4). Informe `docs/gsc-informe-2026-08-04.md`. Landings servicio suben; PDPs CTR-gap aún flojos (`mesa ratona` 170 imp / 0 clics).
+
 ## 2026-08-02
 
 - **CTR + CWV:** titles/metas reforzados en mesa nórdica, mesa ratona, colecciones clave y landings Chillán/servicio; GTM + Facebook Pixel pasan a carga diferida por interacción o espera.

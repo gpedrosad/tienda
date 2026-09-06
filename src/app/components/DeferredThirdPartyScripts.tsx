@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 const GTM_ID = "GTM-K452JXZZ";
+const GA_MEASUREMENT_ID = "G-KBR6DKMXVM";
 const FACEBOOK_PIXEL_ID = "1591255851691449";
 const FALLBACK_DELAY_MS = 8000;
 
@@ -18,6 +20,7 @@ type FacebookPixel = {
 declare global {
   interface Window {
     dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
     fbq?: FacebookPixel;
     _fbq?: FacebookPixel;
   }
@@ -37,6 +40,22 @@ function loadGoogleTagManager() {
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
   appendScript("gtm-script", `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`);
+}
+
+function loadGoogleAnalytics() {
+  window.dataLayer = window.dataLayer ?? [];
+  window.gtag = function gtag() {
+    // gtag.js espera el objeto `arguments`, no un array rest.
+    window.dataLayer!.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    page_path: `${window.location.pathname}${window.location.search}`,
+  });
+  appendScript(
+    "ga-gtag-script",
+    `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+  );
 }
 
 function loadFacebookPixel() {
@@ -67,6 +86,9 @@ function loadFacebookPixel() {
 }
 
 export default function DeferredThirdPartyScripts() {
+  const pathname = usePathname();
+  const gaReadyRef = useRef(false);
+
   useEffect(() => {
     let loaded = false;
 
@@ -74,6 +96,8 @@ export default function DeferredThirdPartyScripts() {
       if (loaded) return;
       loaded = true;
       loadGoogleTagManager();
+      loadGoogleAnalytics();
+      gaReadyRef.current = true;
       loadFacebookPixel();
       cleanup();
     };
@@ -103,6 +127,13 @@ export default function DeferredThirdPartyScripts() {
 
     return cleanup;
   }, []);
+
+  useEffect(() => {
+    if (!gaReadyRef.current || !window.gtag) return;
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      page_path: `${pathname}${window.location.search}`,
+    });
+  }, [pathname]);
 
   return null;
 }

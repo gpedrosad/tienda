@@ -2,72 +2,77 @@
 
 - **Host canónico:** `https://www.ideamadera.cl`
 - **Propiedad GSC:** `sc-domain:ideamadera.cl` (siteOwner vía OAuth)
-- **Sitemap vivo:** ~50 URLs (`src/app/sitemap.ts`)
-- **Landings de servicio:** peldaños, cubiertas, molduras, puertas, **muebles-chillan**, **muebles-de-cocina-chillan**, quiénes somos, contacto
+- **Sitemap vivo:** ~50 URLs (`src/app/sitemap.ts`) · GSC lista solo www
+- **Landings de servicio:** peldaños, cubiertas, molduras, puertas, **muebles-chillan**, **muebles-de-cocina-chillan**, kit-pergola, quiénes somos, contacto
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
-- **Última tanda código:** 2026-07-23 → [CHANGELOG.md](./CHANGELOG.md) · eval [EVAL.md](./EVAL.md)
+- **Última tanda código:** 2026-08-02 → [CHANGELOG.md](./CHANGELOG.md)
+- **Última medición GSC:** 2026-08-04 → `docs/gsc-informe-2026-08-04.md` · eval [EVAL.md](./EVAL.md)
 - **Backlog:** [NEXT.md](./NEXT.md)
 
-## Snapshot GSC 2026-07-23 (28d: 25 jun → 23 jul)
+## Snapshot GSC 2026-08-04 (28d: 7 jul → 4 ago)
 
-| Métrica | Actual | Periodo anterior | Delta |
+| Métrica | Actual | Baseline informe 23 jul | Delta |
 |---|---:|---:|---:|
-| Clics | 63 | 22 | +186% |
-| Impresiones | 2.675 | 812 | +229% |
-| CTR | 2,36% | 2,71% | −0,35 pp |
-| Posición media | 12,4 | 9,4 | empeora ~3 |
+| Clics | 98 | 63 | +56% |
+| Impresiones | 3.533 | 2.675 | +32% |
+| CTR | 2,77% | 2,36% | +0,41 pp |
+| Posición media | 11,6 | 12,4 | mejora ~0,8 |
 
-Informe: `docs/gsc-informe-2026-07-23.md`  
-Diagnóstico: `docs/seo-diagnostico-completo-2026-07-23.md`
+Informe: `docs/gsc-informe-2026-08-04.md`  
+Baseline previo: `docs/gsc-informe-2026-07-23.md`
 
 ### Marca vs no marca
 
 | Bucket | Clics | Imp | CTR |
 |---|---:|---:|---:|
-| Marca | 9 | 19 | 47% |
-| No marca | 18 | 1.438 | 1,25% |
+| Marca | 10 | 22 | 45% |
+| No marca | 28 | 1.824 | 1,54% |
 
 ### Top páginas (clics)
 
 | Página | Clics | Imp |
 |---|---:|---:|
-| `/` (www) | 33 | 907 |
-| `/peldanos-a-medida` | 8 | 145 |
-| `/` (sin www) | 5 | 265 |
-| `/collections/todos-los-productos` | 4 | 128 |
-| `/collections/futon` · `mesas?page=1` | 3 c/u | ~100 |
-| `/products/mesa-nordica` | 2 | 349 |
+| `/` (www) | 46 | 1.113 |
+| `/peldanos-a-medida` | 8 | 189 |
+| `/` (sin www) | 6 | 310 |
+| `/kit-pergola` | 6 | 122 |
+| `/cubiertas-a-medida` · `/puertas-a-medida` | 4 c/u | 52 / 79 |
 
-### Oportunidad CTR (0 clics, con impresiones)
+### CTR gap vs baseline (PDPs A2)
 
-| URL / query | Imp | Nota |
-|---|---:|---|
-| `/products/mesa-tripode-ratona` | 312 | query `mesa ratona` ~194 |
-| `/products/mesa-nordica` | 349 | CTR 0,57% |
-| `/products/mesa-centro-roma` | 74 | |
-| `/products/silla-kentucky` | 49 | query pos. ~2,6 |
-| `muebles de madera en chillán` | 18 | CTR 0% |
+| URL | Baseline CTR | Ahora CTR | Nota |
+|---|---:|---:|---|
+| `/products/mesa-tripode-ratona` | 0% (312 imp) | 0,35% (282) | 1 clic; query `mesa ratona` sigue 170 imp / 0 clics |
+| `/products/mesa-nordica` | 0,57% | 0,52% | plano; pos. ~21 |
+| `/products/mesa-centro-roma` | 0% | 1,64% | 1 clic |
+| `/products/silla-kentucky` | 0% | 0% | pos. ~4,3 sin clic |
 
-### Técnico (post-tanda 23 jul)
+### Landings nuevas / servicio (señal fuerte)
+
+| URL | Clics | Imp | CTR |
+|---|---:|---:|---:|
+| `/cubiertas-a-medida` | 4 | 52 | 7,7% |
+| `/puertas-a-medida` | 4 | 79 | 5,1% |
+| `/molduras-a-medida` | 2 | 25 | 8,0% |
+| `/muebles-chillan` | 2 | 59 | 3,4% |
+| `/kit-pergola` | 6 | 122 | 4,9% |
+
+### Técnico
 
 | Señal | Estado |
 |---|---|
-| Sitemap GSC | ✅ www enviado; legacy sin www eliminado |
-| URL Inspection top | ✅ Submitted and indexed (home, peldaños, cubiertas, puertas, mesas, 4 PDPs) |
-| Titles CTR gap products | ✅ seoTitle/seoDescription en ratona/nórdica/roma/kentucky |
-| Schema reviews fake | ✅ quitados del Product JSON-LD |
-| Middleware `?page=1` + `pr_*` | ✅ |
-| Redirects legacy productos | ✅ mesa-madera, futon viejo, g800065l |
-| Chillán on-page | ✅ hero, quiénes somos, cubiertas, puertas |
+| Sitemap GSC | ✅ solo www |
+| Titles CTR Aug-02 en prod | ✅ verificados live |
+| Middleware `?page=1` | ✅ 308 en prod; GSC aún muestra fila legacy con imp. |
+| Hosts | ✅ mayoría www (37 filas) vs apex (2) |
 | Fotos 26 productos | ❌ pendiente (bloquea índice) |
 
 ## Pendiente (prioridad)
 
-Ver ranking vivo en [NEXT.md](./NEXT.md). Resumen:
+Ver [NEXT.md](./NEXT.md). Resumen:
 
-1. Deploy de esta tanda a prod
-2. Fotos productos sin imagen (prioridad demanda)
-3. Pedir recrawl manual en UI GSC de PDPs CTR gap (tras deploy)
-4. Cierre EVAL ~6–20 ago
-5. Profundizar landings cubiertas/puertas (fotos obra)
-6. No crear blog/guías hasta saturar CTR de money pages
+1. Recrawl GSC UI de PDPs CTR gap (ratona, nórdica, kentucky) + `collections/mesas`
+2. Fotos productos sin imagen
+3. Subir CTR de `mesa ratona` (170 imp / 0 clics) — snippet/SERP audit
+4. Limpiar ruido residual `?page=1` y `pr_*` vía inspección/recrawl
+5. Meta CTR plan: global ≥3,0% · no marca ≥2,0% (hoy 2,77% / 1,54%)

@@ -2,23 +2,24 @@
 
 Orden de impacto. Actualizar al cerrar ítems.
 
-## P0 — ya en código; falta deploy / ops
+## P0 — ops inmediatas
 
 | # | Acción | Quién | Notas |
 |---|---|---|---|
-| 1 | **Deploy a producción** de la tanda 23 jul | Humano / CI | Sin deploy, titles y middleware no afectan SERP |
-| 2 | **URL Inspection → Solicitar indexación** (UI GSC) en ratona, nórdica, kentucky, roma, home | Humano | API no lo hace masivo; acelera recrawl de metas nuevas |
-| 3 | Verificar en prod: `?page=1` redirige; titles nuevos en HTML | Agente | `curl` post-deploy |
+| 1 | ~~Deploy tanda 23 jul / 2 ago~~ | — | ✅ vivo en prod (eval 4 ago) |
+| 2 | **URL Inspection → Solicitar indexación** en ratona, nórdica, kentucky, `collections/mesas`, home | Humano | Titles nuevos aún no mueven `mesa ratona` (170 imp / 0 clics) |
+| 3 | ~~Verificar `?page=1` + titles en HTML~~ | — | ✅; GSC aún lista `mesas?page=1` con 82 imp |
 
 ## P1 — máximo ROI siguiente
 
 | # | Acción | Impacto | Esfuerzo |
 |---|---|---|---|
 | 4 | **Fotos a 26 productos sin `imageUrl`** (prioridad: racks, escritorios, mesas Frida/Liguria/Praga si hay demanda) | Alto — amplía índice | Medio (assets) |
-| 5 | **Profundizar cubiertas/puertas/molduras** con fotos de obra reales (modelo peldaños) | Alto — landings indexables | Medio |
-| 5b | **Deploy + indexar `/molduras-a-medida`** en GSC UI | Medio — URL nueva | Bajo |
-| 6 | Auditar SERP (incógnito) snippets de `mesa ratona` / `mesa nordica` tras 7–14 días | Medio — validar si Google adoptó title | Bajo |
-| 7 | Cerrar [EVAL.md](./EVAL.md) ~6–20 ago con `gsc:report:md` | Medición | Bajo |
+| 5 | **Profundizar cubiertas/puertas/molduras** con fotos de obra reales (modelo peldaños) | Alto — ya traen clics; más contenido = escala | Medio |
+| 5b | ~~Indexar `/molduras-a-medida`~~ | — | ✅ 2 clics / CTR 8% en 28d |
+| 6 | Auditar SERP (incógnito) snippets `mesa ratona` / `mesa nordica` | Alto — 170+88 imp con CTR ~0–1% | Bajo |
+| 7 | Re-medir [EVAL.md](./EVAL.md) ~20 ago | Titles 2 ago maduros | Bajo |
+| 7b | Title/meta **`/collections/mesas`** (196 imp / 0 clics) | Medio — gap nuevo | Bajo |
 
 ## P2 — consolidación
 
