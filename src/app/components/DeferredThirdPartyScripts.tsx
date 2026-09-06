@@ -44,9 +44,8 @@ function loadGoogleTagManager() {
 
 function loadGoogleAnalytics() {
   window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function gtag() {
-    // gtag.js espera el objeto `arguments`, no un array rest.
-    window.dataLayer!.push(arguments);
+  window.gtag = function gtag(...args: unknown[]) {
+    window.dataLayer!.push(args);
   };
   window.gtag("js", new Date());
   window.gtag("config", GA_MEASUREMENT_ID, {

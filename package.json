@@ -11,7 +11,10 @@
     "gsc:report": "node --env-file=.env.local scripts/gsc-report.mjs",
     "gsc:report:md": "node --env-file=.env.local scripts/gsc-report-md.mjs",
     "gsc:sitemap": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs",
-    "gsc:sitemap:auth": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs --auth"
+    "gsc:sitemap:auth": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs --auth",
+    "ga:auth": "node --env-file=.env.local scripts/ga-report.mjs --auth",
+    "ga:report": "node --env-file=.env.local scripts/ga-report.mjs",
+    "ga:list": "node --env-file=.env.local scripts/ga-report.mjs --list"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

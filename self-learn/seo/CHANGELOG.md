@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-09-06
+
+- **GA4 Data API:** OAuth readonly + `npm run ga:report` sobre `properties/552969056` (stream `G-KBR6DKMXVM`). Token en `.secrets/ga-oauth-token.json`.
+
 ## 2026-08-04
 
 - **GSC reevaluación:** 98 clics · 3.533 imp · CTR 2,77% · pos. 11,6 (vs baseline 23 jul: 63 / 2.675 / 2,36% / 12,4). Informe `docs/gsc-informe-2026-08-04.md`. Landings servicio suben; PDPs CTR-gap aún flojos (`mesa ratona` 170 imp / 0 clics).

@@ -14,6 +14,15 @@ npm run gsc:report:md
 npm run gsc:sitemap:auth   # solo si write token expiró
 npm run gsc:sitemap
 
+# GA4 — auth OAuth readonly (si invalid_grant o primer setup)
+npm run ga:auth
+
+# GA4 — resumen (usuarios, sesiones, páginas, fuentes, realtime)
+npm run ga:report
+
+# GA4 — listar propiedades visibles
+npm run ga:list
+
 # QA
 npm run build
 npm run lint
@@ -26,6 +35,11 @@ GSC_AUTH_MODE=oauth
 GOOGLE_OAUTH_CLIENT_PATH=.secrets/gcp-oauth-client.json
 GSC_SITE_URL=sc-domain:ideamadera.cl
 GSC_BRAND_TERMS=idea madera,ideamadera
+
+# Google Analytics 4 (Data API)
+GA_MEASUREMENT_ID=G-KBR6DKMXVM
+# GA_PROPERTY_ID=          # se rellena al primer ga:report
+# GA_OAUTH_TOKEN_PATH=.secrets/ga-oauth-token.json
 ```
 
 `.secrets/` suele ser symlink a gonzalopedrosa (mismo Gmail owner). No commitear.
