@@ -13,6 +13,7 @@ Leer **solo** el archivo de la tarea. No cargar informes GSC largos salvo métri
 | Plan aumentar CTR | [CTR-PLAN.md](./CTR-PLAN.md) |
 | Setup OAuth GSC (detalle) | [../../docs/gsc-conexion.md](../../docs/gsc-conexion.md) |
 | GA4 Data API | [COMMANDS.md](./COMMANDS.md) (`ga:auth` / `ga:report`) |
+| Inspección URLs (solo lectura) | [COMMANDS.md](./COMMANDS.md) (`gsc:inspect`) |
 
 Docs pesados (evitar en contexto salvo pedido):
 

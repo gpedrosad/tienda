@@ -47,7 +47,7 @@
 
 ## GSC ops
 
-- Readonly: `gsc:report` / `gsc:report:md`.
+- Readonly: `gsc:report` / `gsc:report:md` / `gsc:inspect`.
 - Escritura sitemaps: `gsc:sitemap` (token write separado).
 - Si `invalid_grant` → re-auth correspondiente.
-- La API **no** solicita indexación masiva; URL Inspection en UI para forzar recrawl puntual.
+- La API **no** solicita indexación; `gsc:inspect` solo lee cobertura y último crawl. Recrawl forzado: UI GSC.

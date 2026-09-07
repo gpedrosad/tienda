@@ -14,6 +14,10 @@ npm run gsc:report:md
 npm run gsc:sitemap:auth   # solo si write token expiró
 npm run gsc:sitemap
 
+# GSC — inspeccionar 11 URLs clave (solo lectura; no pide indexación)
+npm run gsc:inspect
+npm run gsc:inspect -- --since=2026-09-06
+
 # GA4 — auth OAuth readonly (si invalid_grant o primer setup)
 npm run ga:auth
 

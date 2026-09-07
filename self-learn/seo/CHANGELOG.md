@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-09-06
 
+- **GSC inspect:** `npm run gsc:inspect` lee cobertura + último crawl de 11 URLs y compara el title vivo. No pide indexación.
 - **Plan Kimi3 P0+P1 parcial:** GSC fechas inclusivas; Osaka = asiento alto; colecciones vacías `noindex`; lastmod artificial fuera; reseñas 4,9/200 retiradas; garantía **2 meses** (no 12); claim 3.200+ proyectos retirado. **SEO-06** `/collections/mesas`. **SEO-07** ratona, Kentucky, Roma, nórdica. **SEO-09** cubiertas, puertas, molduras, peldaños (texto). **SEO-10** kit exclusiones. **SEO-11** H1 home + bloque Chillán. **SEO-02** `docs/seo-seguimiento-2026-09-06.md`. **SEO-04** redirects `mesas-de-centro`/`mesas-ratona` → `/mesas-de-centro`.
 - **GA4 Data API:** OAuth readonly + `npm run ga:report` sobre `properties/552969056` (stream `G-KBR6DKMXVM`). Token en `.secrets/ga-oauth-token.json`.
 
