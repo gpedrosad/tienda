@@ -5,7 +5,8 @@ import JsonLd from "@/app/components/JsonLd";
 import { absoluteUrl, buildBreadcrumbSchema, buildFaqPageSchema, SITE_NAME, SITE_URL } from "@/lib/seo";
 import Quote, { QuoteButton } from "./Quote";
 import HouseSimulator from "./HouseSimulator";
-import { faqs, landingPath, referenceUrl, technicalUrl } from "./content";
+import DltBenefits from "./DltBenefits";
+import { faqs, landingPath, referenceUrl } from "./content";
 import "./tiny-house.css";
 
 const title = "Tiny House en DLT en Chile | Cotiza con Idea Madera";
@@ -51,15 +52,7 @@ export default function TinyHousePage() {
         <nav className="dlt-section-nav" aria-label="En esta página"><a href="#ventajas">Por qué DLT</a><a href="#proyecto-refugio">Nuestra experiencia</a><a href="#proceso">Tu proyecto</a><a href="#preguntas">Preguntas frecuentes</a><a href="#cotizar">Cotizar <span aria-hidden="true">↗</span></a></nav>
       </div>
 
-      <section id="ventajas" className="dlt-wrap dlt-section dlt-benefits" aria-labelledby="dlt-benefits-title">
-        <div className="dlt-section-intro"><h2 id="dlt-benefits-title">Menos espacio.<br />Más sentido.</h2><p>Una tiny house en DLT es una casa compacta construida con paneles de madera maciza unidos mediante tarugos de madera. Un sistema que combina precisión de taller y una materialidad que puedes dejar a la vista.</p><a className="dlt-text-link" href={technicalUrl} target="_blank" rel="noopener noreferrer">Cómo funciona el DLT · Think Wood ↗</a></div>
-        <div className="dlt-benefit-list">
-          <article><h3>Madera de origen renovable</h3><p>Elegir madera de bosques gestionados responsablemente permite trabajar con un recurso que puede regenerarse. Una planta compacta también ayuda a aprovechar cada metro y ajustar el uso de materiales.</p></article>
-          <article><h3>Prefabricar para avanzar más rápido</h3><p>Los paneles se preparan en taller para llegar al terreno con trabajo adelantado. Esto permite organizar el montaje y reducir tareas en obra. El plazo se define con el diseño, los accesos y el alcance de tu proyecto.</p></article>
-          <article><h3>Tablas unidas con madera</h3><p>El DLT utiliza tarugos para unir las tablas del panel, sin adhesivos en esa unión. La vivienda puede requerir herrajes, anclajes, sellos y otros materiales según su diseño.</p></article>
-          <article><h3>Un interior pensado para habitar</h3><p>La madera a la vista aporta textura al espacio. Para el confort durante todo el año, diseñamos la propuesta considerando aislación, ventanas, ventilación y protección frente a la humedad.</p></article>
-        </div>
-      </section>
+      <DltBenefits />
 
       <section id="proyecto-refugio" className="dlt-project" aria-labelledby="dlt-project-title"><div className="dlt-wrap dlt-project-grid">
         <figure><Image src="/images/proyecto-refugio-fabricacion-dlt.webp" alt="Fabricación de paneles DLT para Proyecto Refugio, con la participación de Idea Madera" width={1000} height={670} sizes="(max-width: 800px) 100vw, 55vw" /><figcaption>Fabricación de paneles para Proyecto Refugio. Jorge Calderón / Madera21.</figcaption></figure>

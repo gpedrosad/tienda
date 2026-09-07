@@ -31,6 +31,23 @@
 .dlt-section-intro > p { color: #bcbcbc; font-size: 18px; line-height: 1.7; margin-block: 26px 14px; max-width: 44ch; }
 .dlt-benefit-list article { padding-block: 25px; border-top: 1px solid #3a3a3a; }
 .dlt-benefit-list article:first-child { padding-top: 0; border-top: 0; }
+.dlt-benefit { display: flex; align-items: flex-start; gap: 22px; }
+.dlt-benefit-symbol { flex: 0 0 30px; margin-top: 1px; color: var(--benefit-color); }
+.dlt-benefit-green { --benefit-color: #abc99b; }
+.dlt-benefit-gold { --benefit-color: #e1b950; }
+.dlt-benefit-blue { --benefit-color: #93cddd; }
+.dlt-benefit-rose { --benefit-color: #dfb3a5; }
+.dlt-benefit-label { display: inline-block; color: var(--benefit-color); font-size: 12px; margin-top: 14px; }
+.dlt-panel-diagram { max-width: 440px; margin-top: 8px; }
+.dlt-panel-diagram svg { display: block; width: 100%; height: auto; }
+.dlt-panel-diagram figcaption { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; font-size: 14px; }
+.dlt-panel-diagram figcaption span { display: inline-flex; align-items: center; gap: 7px; }
+.dlt-panel-diagram figcaption b { color: #a3a3a3; font-weight: 400; }
+.dlt-panel-diagram figcaption i { display: inline-block; width: 12px; height: 12px; }
+.dlt-legend-wood { background: #d3ac78; border-radius: 2px; }
+.dlt-legend-dowel { background: #93cddd; border-radius: 50%; }
+.dlt-panel-diagram .dlt-diagram-note { font-size: 12px; color: #bcbcbc; text-align: center; margin-top: 12px; }
+.dlt-panel-diagram + .dlt-text-link { margin-top: 20px; }
 .dlt-page h3 { font-size: 21px; font-weight: 500; line-height: 1.3; }
 .dlt-benefit-list p, .dlt-steps p, .dlt-scope p { color: #bcbcbc; line-height: 1.7; margin-top: 12px; max-width: 65ch; }
 .dlt-project { background: #eee; color: #171717; padding-block: 72px; }
