@@ -125,6 +125,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/tiny-house-dlt" className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light">
+                    Tiny house en DLT
+                  </Link>
+                </li>
+                <li>
                   <Link 
                     href="/peldanos-a-medida" 
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"

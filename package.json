@@ -12,6 +12,7 @@
     "gsc:report:md": "node --env-file=.env.local scripts/gsc-report-md.mjs",
     "gsc:sitemap": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs",
     "gsc:sitemap:auth": "node --env-file=.env.local scripts/gsc-submit-sitemap.mjs --auth",
+    "gsc:inspect": "node --env-file=.env.local scripts/gsc-inspect.mjs",
     "ga:auth": "node --env-file=.env.local scripts/ga-report.mjs --auth",
     "ga:report": "node --env-file=.env.local scripts/ga-report.mjs",
     "ga:list": "node --env-file=.env.local scripts/ga-report.mjs --list"
@@ -27,12 +28,14 @@
     "react-dom": "^19.0.0",
     "react-facebook-pixel": "^1.0.4",
     "react-icons": "^5.4.0",
-    "swiper": "^11.1.15"
+    "swiper": "^11.1.15",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.185.4",
     "eslint": "^8",
     "eslint-config-next": "^15.5.19",
     "postcss": "^8",
