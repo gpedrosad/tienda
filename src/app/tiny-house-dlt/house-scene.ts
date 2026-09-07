@@ -94,6 +94,29 @@ export function createHouseScene(host: HTMLDivElement, initial: HouseOptions, on
   const moveParts = [front, back, left, right, roof];
   const targetPositions = moveParts.map(() => new THREE.Vector3());
 
+  // One profile drives the gables and both roof slopes. Positive X rotation
+  // lowers a point at positive Z, so the two slopes meet at the ridge.
+  const wallTop = 3.21, halfSpan = 1.7, rise = 0.82;
+  const slope = Math.atan2(rise, halfSpan);
+  const roofRun = halfSpan + 0.22;
+  const roofWidth = roofRun / Math.cos(slope);
+  const ridgeUnderside = wallTop + rise;
+  const roofThickness = 0.12;
+  const ridgeCenter = ridgeUnderside + roofThickness / (2 * Math.cos(slope));
+  const gableBoards = Array.from({ length: 30 }, (_, i) => {
+    const start = -halfSpan + i * (2 * halfSpan / 30);
+    const end = start + 2 * halfSpan / 30;
+    const heightAt = (z: number) => rise * (1 - Math.abs(z) / halfSpan);
+    const shape = new THREE.Shape();
+    shape.moveTo(start, 0); shape.lineTo(end, 0);
+    shape.lineTo(end, Math.max(0, heightAt(end)));
+    shape.lineTo(start, Math.max(0, heightAt(start))); shape.closePath();
+    const geometry = new THREE.ExtrudeGeometry(shape, { depth: 0.096, bevelEnabled: false, steps: 1 });
+    geometry.translate(0, 0, -0.048);
+    geometries.add(geometry);
+    return geometry;
+  });
+
   function boards(parent: THREE.Object3D, width: number, height: number, thickness: number, x: number, y: number, z: number) {
     const count = Math.ceil(width / 0.12), step = width / count;
     // Each lamella is visible, with only a hairline seam between boards.
@@ -132,20 +155,24 @@ export function createHouseScene(host: HTMLDivElement, initial: HouseOptions, on
     // Gable infill made of individual boards.
     for (const side of [-1, 1]) {
       const end = side < 0 ? left : right;
-      for (let i = 0; i < 29; i++) {
-        const z = -1.7 + (i + 0.5) * 3.4 / 29;
-        const h = (1 - Math.abs(z) / 1.7) * 0.82;
-        box(end, [0.096, h, 3.4 / 29 - 0.002], [side * half, 3.21 + h / 2, z], wood[i % 5]);
-      }
+      gableBoards.forEach((geometry, i) => {
+        const board = new THREE.Mesh(geometry, wood[i % 5]);
+        board.rotation.y = -Math.PI / 2;
+        board.position.set(side * half, wallTop, 0);
+        board.castShadow = true; board.receiveShadow = true; end.add(board);
+      });
     }
-    const slope = Math.atan2(0.9, 1.88), roofWidth = Math.hypot(1.88, 0.9);
     for (const side of [-1, 1]) {
-      const wing = new THREE.Group(); roof.add(wing); wing.position.set(0, 3.64, side * 0.94); wing.rotation.x = -side * slope;
-      box(wing, [length + 0.5, 0.12, roofWidth], [0, 0, 0], wood[0]);
-      box(wing, [length + 0.55, 0.035, roofWidth + 0.08], [0, 0.085, 0], dark);
-      for (let x = -half - 0.2; x <= half + 0.2; x += 0.32) box(wing, [0.018, 0.035, roofWidth + 0.08], [x, 0.113, 0], steel);
+      const wing = new THREE.Group(); roof.add(wing);
+      wing.position.set(0, ridgeCenter - Math.tan(slope) * roofRun / 2, side * roofRun / 2);
+      wing.rotation.x = side * slope;
+      box(wing, [length + 0.5, roofThickness, roofWidth], [0, 0, 0], wood[0]);
+      box(wing, [length + 0.55, 0.035, roofWidth + 0.02], [0, 0.0775, 0], dark);
+      for (let x = -half - 0.2; x <= half + 0.2; x += 0.32) box(wing, [0.018, 0.03, roofWidth], [x, 0.11, 0], steel);
+      // Folded ridge flashing follows each slope and covers their meeting seam.
+      const cap = box(roof, [length + 0.58, 0.022, 0.24], [0, ridgeCenter + 0.14 / Math.cos(slope) - Math.sin(slope) * 0.12, side * Math.cos(slope) * 0.12], dark);
+      cap.rotation.x = side * slope;
     }
-    box(roof, [length + 0.6, 0.085, 0.16], [0, 4.12, 0], dark);
     // Furnished open-plan study: sleeping, living, dining and kitchen zones.
     const bedX = -half + 1.18;
     box(furniture, [2, 0.22, 1.48], [bedX, 0.77, 0.45], wood[2]);
