@@ -59,6 +59,9 @@
 .dlt-project p.dlt-project-note { font-size: 13px; color: #555; }
 .dlt-project .dlt-text-link { margin-top: 16px; }
 .dlt-project .dlt-text-link:hover { color: #705100; }
+.dlt-project-build { display: grid; grid-template-columns: minmax(280px, 640px) 1fr; gap: 7%; align-items: center; margin-top: 64px; padding-top: 64px; border-top: 1px solid #d0d0d0; scroll-margin-top: 5.5rem; }
+.dlt-project-build img { width: 100%; height: auto; }
+.dlt-project-build h2 ~ p { color: #444; line-height: 1.7; margin-top: 22px; max-width: 52ch; }
 .dlt-simulator { background: #e4e4df; color: #171717; padding-block: clamp(64px, 8vw, 112px); }
 .dlt-simulator .dlt-kicker { color: #795b09; }
 .dlt-simulator-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: end; }
@@ -112,7 +115,7 @@
 @media (max-width: 1000px) { .dlt-wrap { width: calc(100% - 48px); } .dlt-hero h1 { font-size: 3rem; } .dlt-process-heading { align-items: flex-start; } .dlt-steps { gap: 24px; } }
 @media (max-width: 800px) {
   .dlt-page { padding-top: 4rem; }
-  .dlt-hero, .dlt-benefits, .dlt-project-grid, .dlt-quote-grid, .dlt-faq { grid-template-columns: 1fr; gap: 36px; }
+  .dlt-hero, .dlt-benefits, .dlt-project-grid, .dlt-project-build, .dlt-quote-grid, .dlt-faq { grid-template-columns: 1fr; gap: 36px; }
   .dlt-hero { padding-top: 12px; padding-bottom: 36px; }
   .dlt-hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); max-width: 18ch; }
   .dlt-hero-photo img { min-height: 0; height: auto; max-height: 480px; aspect-ratio: 1.4; }

@@ -17,7 +17,8 @@ Ruta: `/tiny-house-dlt`. Canónico: `https://www.ideamadera.cl/tiny-house-dlt`.
 - [Think Wood: DLT](https://www.thinkwood.com/mass-timber/dowel-laminated-timber-dlt): definición, tarugos y aplicaciones del sistema.
 - `public/images/tiny-house-dlt-madera.webp`: conversión WebP de `https://www.madera21.cl/wp-content/uploads/2020/04/Jorge-Calderon-DLT.jpg`.
 - `public/images/proyecto-refugio-fabricacion-dlt.webp`: conversión WebP de `https://www.madera21.cl/wp-content/uploads/2020/04/Jorge-Calderon-DLT-2.jpg`.
-- Fotografías acreditadas a Jorge Calderón / Madera21 en la página. Son imágenes de fabricación, no fotografías de una vivienda terminada.
+- `public/images/tiny-house-montaje-obra-hq.webp`: versión de mayor definición (1536×1024) generada a partir de la fotografía de montaje en terreno. El pie de foto lo declara. No se atribuye a Madera21 ni se presenta como vivienda terminada.
+- Fotografías de Proyecto Refugio acreditadas a Jorge Calderón / Madera21. Son imágenes de fabricación, no de una vivienda terminada.
 
 ## Validación local
 

@@ -49,7 +49,7 @@ export default function TinyHousePage() {
             <figcaption>Madera real. Experiencia construida.<br /><span>Fotografía: Jorge Calderón · Publicada en <a href={referenceUrl} target="_blank" rel="noopener noreferrer">Madera21 ↗</a></span></figcaption>
           </figure>
         </section>
-        <nav className="dlt-section-nav" aria-label="En esta página"><a href="#ventajas">Por qué DLT</a><a href="#proyecto-refugio">Nuestra experiencia</a><a href="#proceso">Tu proyecto</a><a href="#preguntas">Preguntas frecuentes</a><a href="#cotizar">Cotizar <span aria-hidden="true">↗</span></a></nav>
+        <nav className="dlt-section-nav" aria-label="En esta página"><a href="#ventajas">Por qué DLT</a><a href="#proyecto-refugio">Nuestra experiencia</a><a href="#obra">Obra real</a><a href="#proceso">Tu proyecto</a><a href="#preguntas">Preguntas frecuentes</a><a href="#cotizar">Cotizar <span aria-hidden="true">↗</span></a></nav>
       </div>
 
       <DltBenefits />
@@ -57,7 +57,26 @@ export default function TinyHousePage() {
       <section id="proyecto-refugio" className="dlt-project" aria-labelledby="dlt-project-title"><div className="dlt-wrap dlt-project-grid">
         <figure><Image src="/images/proyecto-refugio-fabricacion-dlt.webp" alt="Fabricación de paneles DLT para Proyecto Refugio, con la participación de Idea Madera" width={1000} height={670} sizes="(max-width: 800px) 100vw, 55vw" /><figcaption>Fabricación de paneles para Proyecto Refugio. Jorge Calderón / Madera21.</figcaption></figure>
         <div><p className="dlt-project-label">Las Trancas · Región de Ñuble</p><h2 id="dlt-project-title">La experiencia detrás de tu próximo refugio.</h2><p>Idea Madera participó junto a Jorge Calderón en <strong>Proyecto Refugio</strong>, una vivienda en DLT a los pies del volcán Chillán, documentada por Madera21.</p><p>El reportaje describe una vivienda de dos plantas y 74 m², con paneles para muros, pisos y cubierta. Esa experiencia es un punto de partida para conversar sobre tu tiny house a medida.</p><p className="dlt-project-note">La publicación relata el inicio de la obra en 2020. Proyecto Refugio es un antecedente constructivo; sus dimensiones y plazos no corresponden a un modelo estándar de tiny house.</p><a className="dlt-text-link" href={referenceUrl} target="_blank" rel="noopener noreferrer">Leer el reportaje en Madera21 <span aria-hidden="true">↗</span></a></div>
-      </div></section>
+      </div>
+      <div id="obra" className="dlt-wrap dlt-project-build">
+        <figure>
+          <Image
+            src="/images/tiny-house-montaje-obra-hq.webp"
+            alt="Montaje de una vivienda compacta de madera en terreno: grúa posicionando paneles sobre la estructura"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 800px) 100vw, 720px"
+            quality={88}
+          />
+          <figcaption>Montaje en terreno. Fotografía de obra de Idea Madera, versión de mayor definición.</figcaption>
+        </figure>
+        <div>
+          <p className="dlt-project-label">Obra real · Idea Madera</p>
+          <h2 id="dlt-build-title">Así se ve el montaje.</h2>
+          <p>Los paneles se fabrican antes y se posicionan en el sitio, con grúa y equipo en el terreno. Esta imagen parte de una fotografía de obra real; no muestra una vivienda terminada ni un modelo estándar a la venta.</p>
+        </div>
+      </div>
+      </section>
 
       <HouseSimulator />
 
