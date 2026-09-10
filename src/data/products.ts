@@ -173,7 +173,7 @@ export const products: Product[] = [
     name: "Mesa de Centro Modelo Hairpin",
     price: 159990,
     category: "Mesas",
-    imageUrl: "/images/mesa-de-centro-hairpin-main.png",
+    imageUrl: "/images/mesa-de-centro-hairpin-main.webp",
     shortPitch: "Mesa de centro con patas hairpin en madera, estilo mid-century para living moderno.",
     description:
       "La Mesa de Centro Hairpin combina un tablero en madera con patas metálicas tipo hairpin, un clásico del diseño mid-century. Es compacta, liviana visualmente y perfecta para living, salas de estar o espacios junto al sofá. Fabricada con terminación cuidada en taller propio.",
@@ -432,7 +432,7 @@ export const products: Product[] = [
     name: "Mesa Centro Ferrara",
     price: 379000,
     category: "Mesas",
-    imageUrl: "/images/mesa-centro-ferrara-main.png",
+    imageUrl: "/images/mesa-centro-ferrara-main.webp",
     shortPitch: "Mesa de centro Ferrara en madera con diseño elegante para living y sala de estar.",
     description:
       "La Mesa Centro Ferrara complementa la línea Ferrara con un formato pensado para living. Su madera maciza y proporciones equilibradas permiten apoyar decoración y objetos del día a día con estilo. Terminación artesanal Idea Madera.",

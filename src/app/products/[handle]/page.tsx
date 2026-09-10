@@ -120,7 +120,7 @@ const productImagesById: Record<string, string[]> = {
   "mesa-comedor-roma-negra": ["/images/mesa-roma-negra-main.jpg"],
   "mesa-comedor-roma-natural": [
     "/images/mesa-comedor-roma-madera-main.jpg",
-    "/images/mesa-roma-madera-2.png",
+    "/images/mesa-roma-madera-2.webp",
   ],
   "mesa-comedor-cantabria": [
     "/images/mesa-comedor-madera-modelo-cantabria-main.jpg",
