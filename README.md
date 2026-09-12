@@ -1,5 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Rama de trabajo y producción
+
+La rama principal del repositorio es `main`. Trabajar y publicar cambios únicamente en ella:
+
+```bash
+git switch main
+git pull --ff-only origin main
+git push origin main
+```
+
+Para configurar una copia nueva con el mismo destino de push predeterminado:
+
+```bash
+git config --local remote.pushDefault origin
+git config --local push.default simple
+git config --local remote.origin.push refs/heads/main:refs/heads/main
+```
+
+En Vercel, el proyecto `tienda` debe usar **Settings → Environments → Production → Branch Tracking → Branch is: `main`**. Esta opción se guarda en Vercel, no en el código del repositorio.
+
 ## Getting Started
 
 First, run the development server:
