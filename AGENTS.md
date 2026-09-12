@@ -15,7 +15,8 @@ README corto para agentes. Memoria detallada y de bajo token: **`self-learn/`**.
 ## Reglas globales
 
 - Responder en **español** (preferencia del repo).
-- Trabajar y hacer push únicamente en `main`, con seguimiento de `origin/main`.
+- Trabajar y hacer push únicamente en `main`, con seguimiento de `origin/main`. No pushear `master` (Vercel no lo despliega).
+- Commits que solo tocan `docs/`, `self-learn/`, `.agents/` o `*.md` no despliegan (`vercel.json` → `ignoreCommand`).
 - No commitear `.secrets/` ni `.env.local`.
 - No inventar métricas de tráfico: usar `npm run gsc:report` o informes fechados en `docs/`.
 - Canónico del sitio: `https://www.ideamadera.cl`.
