@@ -245,9 +245,20 @@ export default function Footer() {
         </div>
 
         {/* Copyright - Línea divisoria sutil */}
-        <div className="border-t border-neutral-800 py-6">
+        <div id="footer-creditos" className="border-t border-neutral-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
             <p>© 2026 Idea Madera. Todos los derechos reservados.</p>
+            <p>
+              Creado por{' '}
+              <a
+                href="https://wa.me/56968257817"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-2 transition-[color,text-decoration-color] duration-300 hover:text-white hover:underline"
+              >
+                Gonzalo Pedrosa
+              </a>
+            </p>
             <p className="tracking-wide">Hecho con dedicación en Chile</p>
           </div>
         </div>

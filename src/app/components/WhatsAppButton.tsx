@@ -26,23 +26,38 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   prefilledMessage,
   alwaysVisible = false,
 }) => {
-  const [isVisible, setIsVisible] = useState(alwaysVisible);
+  const [isPastHero, setIsPastHero] = useState(alwaysVisible);
+  const [isOverFooter, setIsOverFooter] = useState(false);
+  const isVisible = (alwaysVisible || isPastHero) && !isOverFooter;
   const displayPrice = priceLabel ?? (typeof productPrice === "number" ? formatCLP(productPrice) : undefined);
 
   useEffect(() => {
     if (alwaysVisible) {
-      setIsVisible(true);
+      setIsPastHero(true);
       return;
     }
 
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 80);
+      setIsPastHero(window.scrollY > 80);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [alwaysVisible]);
+
+  useEffect(() => {
+    const credit = document.getElementById("footer-creditos");
+    if (!credit) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsOverFooter(entry.isIntersecting),
+      { rootMargin: "0px 0px 96px 0px", threshold: 0 }
+    );
+
+    observer.observe(credit);
+    return () => observer.disconnect();
+  }, []);
 
   const handleWhatsappClick = useCallback(() => {
     void trackWhatsAppClick({
