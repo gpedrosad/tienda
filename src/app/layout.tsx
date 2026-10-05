@@ -29,7 +29,9 @@ export const metadata: Metadata = {
   description: HOME_DESCRIPTION,
   icons: {
     icon: "/logonegro.png",
+    apple: "/logonegro.png",
   },
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
@@ -46,6 +48,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  category: "shopping",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

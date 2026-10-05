@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllProducts, Product } from "@/data/products";
 
 interface SearchModalProps {
@@ -207,12 +208,14 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       className="flex items-center gap-4 px-6 py-3 hover:bg-neutral-50 transition-colors duration-150"
                       onClick={onClose}
                     >
-                      <div className="flex-shrink-0 w-12 h-12 bg-neutral-100 rounded-lg overflow-hidden">
+                      <div className="flex-shrink-0 w-12 h-12 bg-neutral-100 rounded-lg overflow-hidden relative">
                         {product.imageUrl ? (
-                          <img
+                          <Image
                             src={product.imageUrl}
                             alt={product.name}
-                            className="w-full h-full object-cover"
+                            fill
+                            sizes="48px"
+                            className="object-cover"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-neutral-400">
