@@ -3,8 +3,7 @@ import { DEFAULT_SITE_URL } from "@/lib/whatsapp";
 export const SITE_NAME = "Idea Madera";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL).replace(/\/$/, "");
 export const SITE_LOCALE = "es_CL";
-// TODO: Crear og-default.jpg de 1200x630 con logo + marca para mejor presentación en redes
-export const DEFAULT_OG_IMAGE = "/logonegro.png";
+export const DEFAULT_OG_IMAGE = "/og-default.jpg";
 export const SITE_PHONE = "+56995497838";
 export const MERCHANT_RETURN_DAYS = 30;
 export const WARRANTY_MONTHS = 2;
@@ -59,8 +58,8 @@ export function buildOpenGraphDefaults() {
     images: [
       {
         url: DEFAULT_OG_IMAGE,
-        width: 800,
-        height: 800,
+        width: 1200,
+        height: 630,
         alt: `${SITE_NAME} — muebles de madera en Chile`,
       },
     ],
@@ -70,7 +69,14 @@ export function buildOpenGraphDefaults() {
 export function buildTwitterDefaults() {
   return {
     card: "summary_large_image" as const,
-    images: [DEFAULT_OG_IMAGE],
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — muebles de madera en Chile`,
+      },
+    ],
   };
 }
 

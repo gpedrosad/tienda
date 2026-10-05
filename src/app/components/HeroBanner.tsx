@@ -14,14 +14,14 @@ function HeroBanner() {
     <section className="relative bg-neutral-900 overflow-hidden min-h-[85vh] md:min-h-[90vh]">
       <div className="absolute inset-0">
         <Image
-          src="https://cdn.shopify.com/s/files/1/0401/9994/6389/files/IMG_20201102_112309.jpg?v=1614299603"
+          src="/hero-bg.webp"
           alt="Muebles de madera artesanales fabricados por Idea Madera en Chillán, Chile"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
           className="hero-bg-image object-cover object-center"
-          quality={70}
+          quality={85}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>

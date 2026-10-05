@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   description: HOME_DESCRIPTION,
   icons: {
     icon: [
-      { url: "/logonegro.png", sizes: "any", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
     ],
     apple: [
-      { url: "/logonegro.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/manifest.json",
