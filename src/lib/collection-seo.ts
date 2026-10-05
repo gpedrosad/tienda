@@ -32,37 +32,42 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Catálogo online de muebles de madera en Chile: mesas, sillas, bancas, veladores, percheros y futones. Cotiza por WhatsApp con envío nacional.",
   },
   mesas: {
-    h1: "Mesas de madera",
-    metadataTitle: "Mesas de madera para comedor y living",
+    h1: "Mesas de madera para comedor y living",
+    metadataTitle: "Mesas de Madera: Comedor, Ratonas y Living | Chile",
     description:
-      "Explora mesas de madera para comedor y living. Compara modelos y cotiza medidas, terminaciones y despacho con Idea Madera.",
+      "Mesas de madera maciza para comedor y living: rectangulares, redondas y mesas ratonas. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile.",
     intro:
-      "Fabricamos mesas de madera en Chillán para comedor y living: redondas, rectangulares, trípode y ratonas. Aquí ves los modelos con foto, precio vigente y ficha. Si buscas una mesa baja para el sofá, entra a mesas de centro; si quieres un conjunto de estilo nórdico, usa esa guía. Cotizamos medidas, terminación y despacho por WhatsApp. El precio más bajo publicado hoy es $159.990.",
-    guideTitle: "Cómo elegir y cotizar",
+      "Catálogo de mesas de madera maciza fabricadas en Chillán: mesas de comedor rectangulares y redondas, mesas ratonas para living y mesas de centro. Cada modelo incluye foto, precio vigente y medidas. Si buscas una mesa baja para el sofá, aquí encontrarás mesas ratonas y de centro; si quieres armar un comedor completo, revisa los comedores nórdicos. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp. Precio desde $159.990.",
+    guideTitle: "Cómo elegir tu mesa de madera",
     guideParagraphs: [
-      "Primero define el uso: comedor o living. Las mesas de comedor van más altas; las ratonas y de centro son bajas, frente al sofá. Luego la forma: rectangular o redonda, según el espacio.",
-      "No asignamos un número de comensales si el modelo no tiene medidas publicadas. Para cotizar, escribe el largo o diámetro que necesitas, la terminación y tu comuna. Confirmamos plazo de fabricación y envío antes de que pagues.",
+      "Primero define el uso: mesa de comedor (alta, para comer) o mesa ratona (baja, para el living frente al sofá). Las mesas ratonas también se llaman mesas de centro en Chile. Luego elige la forma: rectangular o redonda, según el espacio y la cantidad de personas.",
+      "Para cotizar una mesa a medida, escribe por WhatsApp el largo o diámetro que necesitas, la terminación preferida y tu comuna. Te confirmamos plazo de fabricación, precio y opciones de envío antes de que pagues.",
     ],
     faqs: [
       {
-        question: "¿Qué mesas de madera fabrican?",
+        question: "¿Qué tipos de mesas de madera fabrican?",
         answer:
-          "Mesas de comedor, ratonas y de centro en madera, con foto y precio en esta colección. También cotizamos medidas o terminación distinta si el modelo lo permite.",
+          "Fabricamos mesas de comedor altas (para sentarse a comer), mesas ratonas bajas (para el living), mesas de centro y mesas redondas. Todas en madera maciza, con foto y precio en esta colección. También cotizamos medidas especiales.",
       },
       {
-        question: "¿Puedo pedir una mesa a medida?",
+        question: "¿Qué es una mesa ratona?",
         answer:
-          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna. Te respondemos por WhatsApp con plazo y despacho.",
+          "Una mesa ratona es una mesa baja para el living, que va frente al sofá. En Chile se usan los nombres 'mesa ratona' y 'mesa de centro' indistintamente para referirse a la misma pieza.",
       },
       {
-        question: "¿Qué diferencia hay entre mesa de comedor y mesa ratona?",
+        question: "¿Puedo pedir una mesa de comedor a medida?",
         answer:
-          "La de comedor es para sentarse a comer. La ratona o de centro es baja, para el living. En Chile se usan ambos nombres para la mesa frente al sofá.",
+          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna por WhatsApp. Te respondemos con plazo de fabricación, precio y opciones de despacho.",
       },
       {
-        question: "¿Hacen envío a todo Chile?",
+        question: "¿Cuánto cuesta una mesa de madera?",
         answer:
-          "Sí. Al cotizar te confirmamos costo y plazo de despacho según comuna.",
+          "Los precios parten desde $159.990 según modelo y medidas. Cada ficha de producto incluye el precio vigente. Para mesas a medida, cotizamos por WhatsApp con tus especificaciones.",
+      },
+      {
+        question: "¿Hacen envío de mesas a todo Chile?",
+        answer:
+          "Sí. Al cotizar te confirmamos costo y plazo de despacho según tu comuna o región.",
       },
     ],
     relatedLinks: [
@@ -85,14 +90,14 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     whatsappTitle: "Mesas de madera",
     whatsappLines: [
       "Vengo desde la colección de mesas.",
-      "Quiero cotizar una mesa de madera para comedor o living.",
+      "Quiero cotizar una mesa de madera (comedor, ratona o centro).",
     ],
   },
   sillas: {
-    h1: "Sillas de comedor",
-    metadataTitle: "Sillas de Madera para Comedor | Chile",
+    h1: "Sillas de madera para comedor",
+    metadataTitle: "Sillas de Comedor de Madera | Chile",
     description:
-      "Sillas de madera para comedor y espacios interiores. Modelos Kentucky y Milán con terminación artesanal. Cotiza por WhatsApp con envío a todo Chile.",
+      "Sillas de comedor en madera maciza: Kentucky, Milán y más modelos. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   bancas: {
     h1: "Bancas de madera",
@@ -101,10 +106,10 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
-    h1: "Veladores",
-    metadataTitle: "Veladores de Madera para Dormitorio",
+    h1: "Veladores de madera",
+    metadataTitle: "Veladores de Madera para Dormitorio | Chile",
     description:
-      "Veladores de madera para dormitorio con diseño limpio y terminación artesanal. Superficie de apoyo funcional para tu habitación. Cotiza por WhatsApp con envío a todo Chile.",
+      "Veladores de madera maciza para dormitorio: diseño limpio y funcional. Fabricados en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   sitiales: {
     h1: "Sitiales",
@@ -122,7 +127,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     h1: "Pisos y asientos altos de madera",
     metadataTitle: "Pisos de Madera para Barra y Mesada",
     description:
-      "Pisos y asientos altos de madera para barras de cocina y mesadas. Fabricación artesanal en Chile. Cotiza cantidad y terminación por WhatsApp con envío a todo el país.",
+      "Pisos y asientos altos de madera para barras de cocina. Fabricación en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   futon: {
     h1: "Futones",

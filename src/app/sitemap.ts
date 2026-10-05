@@ -3,13 +3,14 @@ import { execSync } from "child_process";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts } from "@/lib/catalog";
 import { serviceLandingPaths } from "@/lib/service-landings";
+import { guidePaths } from "@/lib/guides";
 import { SITE_URL } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
 const ALL_PRODUCTS_HANDLE = "todos-los-productos";
 
 // lastModified derivado de git log del archivo que define cada recurso (criterio: última modificación del source)
-// Para productos: git log de src/data/products.ts; para landings: src/lib/service-landings.ts
+// Para productos: git log de src/data/products.ts; para landings: src/lib/service-landings.ts; para guías: src/lib/guides.ts
 function getLastModified(filepath: string): Date | undefined {
   try {
     const timestamp = execSync(`git log --format="%at" --max-count=1 -- ${filepath}`, { encoding: 'utf-8' }).trim();
@@ -21,6 +22,7 @@ function getLastModified(filepath: string): Date | undefined {
 
 const productsLastMod = getLastModified('src/data/products.ts');
 const landingsLastMod = getLastModified('src/lib/service-landings.ts');
+const guidesLastMod = getLastModified('src/lib/guides.ts');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleProducts = getVisibleProducts(products);
@@ -68,6 +70,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
       lastModified: landingsLastMod,
     },
+    {
+      url: `${SITE_URL}/guias`,
+      changeFrequency: "monthly",
+      priority: 0.85,
+      lastModified: guidesLastMod,
+    },
+    ...guidePaths.map((path) => ({
+      url: `${SITE_URL}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      lastModified: guidesLastMod,
+    })),
   ];
 
   const collectionPages: MetadataRoute.Sitemap = [

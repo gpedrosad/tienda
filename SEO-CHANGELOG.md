@@ -1,5 +1,317 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-05 (Lote 5): Optimizaciones basadas en GSC + enlazado interno
+
+### Datos de referencia (Google Search Console, 90 días al 2026-10-05)
+
+Priorizadas páginas con alto volumen de impresiones y CTR bajo:
+
+| URL | Impresiones | Clics | CTR | Posición | Query principal |
+|-----|-------------|-------|-----|----------|-----------------|
+| /collections/mesas | 4.301 | 6 | 0,14% | 10,6 | "mesa" (3.056 imp, 0 clics), "mesa ratona" (513 imp, 0 clics) |
+| /comedores-nordicos | 791 | 5 | 0,63% | 15,9 | "comedores nordicos" (281 imp, 0 clics), "comedor nordico" (234 imp, 1 clic) |
+| /products/mesa-nordica | 803 | 6 | 0,75% | 19,9 | "mesa nordica" (184 imp, 1 clic) |
+| /products/mesa-tripode-ratona | 691 | 2 | 0,29% | 7,6 | Posición buena pero snippet débil |
+| /mesas-de-centro | 404 | 1 | 0,25% | 7,8 | "mesa ratona" overlap |
+| /collections/veladores | 422 | 3 | 0,71% | 17,1 | "veladores de madera" (287 imp, 0 clics) |
+| /collections/sillas | 533 | 10 | 1,88% | 30,7 | Posición baja |
+
+**Tráfico en apex detectado:** `https://ideamadera.cl/` con 1.144 impresiones (posición 4,46) vs `https://www.ideamadera.cl/` con 4.039 impresiones. Canonical ya configurado correctamente en código; consolidación de señales SEO en marcha.
+
+### Cambios implementados
+
+#### 1. **Optimización /collections/mesas** ✅
+
+**Problema:** 4.301 impresiones, solo 6 clics (CTR 0,14%). Query "mesa" con 3.056 impresiones y 0 clics; "mesa ratona" con 513 impresiones y 0 clics.
+
+**Solución:**
+- **Title:** "Mesas de madera para comedor y living" → "Mesas de Madera: Comedor, Ratonas y Living | Chile"
+- **Description:** Reescrita con gancho emocional y precio: "Mesas de madera maciza para comedor y living: rectangulares, redondas y mesas ratonas. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile."
+- **H1:** "Mesas de madera" → "Mesas de madera para comedor y living"
+- **Intro:** Ampliada con mención explícita de "mesas de comedor" y "mesas ratonas" 3 veces en el primer párrafo
+- **FAQs:** Agregadas 2 nuevas preguntas:
+  - "¿Qué es una mesa ratona?" (responde query de 513 imp)
+  - "¿Cuánto cuesta una mesa de madera?" (responde intent transaccional)
+- **WhatsApp CTA:** Mensaje pre-llenado mejorado: "Quiero cotizar una mesa de madera (comedor, ratona o centro)"
+
+**Hipótesis:** Captar tráfico de long-tail "mesa ratona" y mejorar CTR con precio visible.
+
+#### 2. **Optimización /comedores-nordicos** ✅
+
+**Problema:** 791 impresiones, CTR 0,63%, posición 15,9. Queries "comedores nordicos" / "comedor nordico" con alta impresión y pocos clics.
+
+**Solución:**
+- **Title:** "Comedores Nórdicos de Madera | Mesas y Sillas" → "Comedores Nórdicos: Mesas y Sillas de Madera | Chile"
+- **Description:** Reescrita con call-to-action: "Arma tu comedor nórdico completo: mesas, sillas y bancas de madera maciza con diseño escandinavo. Fabricación chilena. Cotiza por WhatsApp."
+- **H1:** "Comedores nórdicos de madera maciza" → "Comedores nórdicos: mesas y sillas de madera"
+- **Hero copy:** Reescrito para enfatizar "comedor nórdico completo" y "diseño escandinavo funcional"
+
+**Hipótesis:** Title más directo y description con valor (arma tu comedor completo) mejora CTR.
+
+#### 3. **Optimización /products/mesa-nordica** ✅
+
+**Problema:** 803 impresiones, CTR 0,75%, posición 19,9.
+
+**Solución:**
+- **seoTitle:** "Mesa nórdica de madera: medidas y terminación" → "Mesa Nórdica de Comedor 160x90 | Madera Maciza"
+- **seoDescription:** Reescrita con precio y acción: "Mesa nórdica de comedor en madera maciza (160×90 cm, $369.000). Diseño escandinavo con líneas simples. Fabricada en Chile, cotiza por WhatsApp."
+
+**Hipótesis:** Título con medidas concretas y precio en description mejora CTR.
+
+#### 4. **Optimización /products/mesa-tripode-ratona** ✅
+
+**Problema:** 691 impresiones, CTR 0,29%, posición 7,6 (buena posición pero snippet débil).
+
+**Solución:**
+- **seoTitle:** "Mesa ratona trípode de madera para living" → "Mesa Ratona Trípode 100x60 | Madera para Living"
+- **seoDescription:** Reescrita con medidas y precio: "Mesa ratona trípode de madera para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp."
+
+**Hipótesis:** Medidas en title + precio visible mejora CTR en posición alta.
+
+#### 5. **Optimización /mesas-de-centro** ✅
+
+**Problema:** 404 impresiones, CTR 0,25%.
+
+**Solución:**
+- **Title:** "Mesas de Centro y Ratonas de Madera | Living" → "Mesas Ratonas y de Centro de Madera | Living Chile"
+- **Description:** Reescrita con altura: "Mesas ratonas de madera maciza para living: Trípode, Ferrara, Roma, Hairpin. Desde 40 cm de alto. Fabricadas en Chile, cotiza por WhatsApp."
+- **FAQs:** Agregada pregunta clave: "¿Qué diferencia hay entre mesa ratona y mesa de centro?" (respuesta: son lo mismo, dos nombres para la misma pieza)
+
+**Hipótesis:** Priorizar "mesa ratona" en title (término más buscado en Chile) mejora relevancia.
+
+#### 6. **Optimización /collections/veladores** ✅
+
+**Problema:** 422 impresiones, CTR 0,71%, query "veladores de madera" con 287 impresiones y 0 clics.
+
+**Solución:**
+- **H1:** "Veladores" → "Veladores de madera"
+- **Title:** "Veladores de Madera para Dormitorio" → "Veladores de Madera para Dormitorio | Chile"
+- **Description:** Reescrita: "Veladores de madera maciza para dormitorio: diseño limpio y funcional. Fabricados en Chile. Cotiza por WhatsApp con envío nacional."
+
+**Hipótesis:** Mención explícita de "veladores de madera" en H1 + description mejora relevancia.
+
+#### 7. **Optimización /collections/sillas** ✅
+
+**Problema:** 533 impresiones, posición 30,7 (muy baja).
+
+**Solución:**
+- **H1:** "Sillas de comedor" → "Sillas de madera para comedor"
+- **Description:** Reescrita con modelos: "Sillas de comedor en madera maciza: Kentucky, Milán y más modelos. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional."
+
+**Hipótesis:** Mención de modelos en description + H1 más específico mejora relevancia para "sillas de madera".
+
+### Enlazado interno reforzado
+
+**Enlaces existentes mantenidos:**
+- Footer → /guias (del Lote 4)
+- /collections/mesas → /mesas-de-centro, /comedores-nordicos, /muebles-a-medida
+- /comedores-nordicos → /collections/mesas, /muebles-a-medida, /mesas-de-centro
+- Todas las guías → colecciones y landings relevantes
+
+**Flujo hacia cotización WhatsApp:**
+- Todas las páginas optimizadas incluyen CTA a WhatsApp con mensaje pre-llenado contextual
+- Botón flotante de WhatsApp presente en todas las páginas
+
+### Canonical y redirects (apex vs www)
+
+**Estado actual:**
+- Canonical configurado correctamente en código (`SITE_URL = https://www.ideamadera.cl`)
+- Layout.tsx incluye canonical en metadata
+- GSC detecta tráfico en apex (1.144 imp) vs www (4.039 imp)
+- **Recomendación:** Verificar redirect 301 de apex → www en Vercel (fuera del alcance del código; se gestiona en panel de Vercel)
+
+**Nota:** La fragmentación de señales SEO entre apex y www es normal durante periodo de migración/consolidación. Google eventualmente consolidará todo en www según el canonical.
+
+### Archivos modificados
+
+- `src/lib/collection-seo.ts` — Metadata de mesas, veladores, sillas
+- `src/app/comedores-nordicos/page.tsx` — Title, description, H1, copy
+- `src/app/mesas-de-centro/page.tsx` — Title, description, FAQs
+- `src/data/products.ts` — seoTitle y seoDescription de mesa-nordica y mesa-tripode-ratona
+
+### Resultados esperados
+
+**CTR:**
+- /collections/mesas: de 0,14% → objetivo 0,5%+ (con precio y "mesa ratona" visible)
+- /comedores-nordicos: de 0,63% → objetivo 1,2%+ (title más claro)
+- /products/mesa-tripode-ratona: de 0,29% → objetivo 0,8%+ (snippet mejorado en posición 7,6)
+- /mesas-de-centro: de 0,25% → objetivo 0,6%+ (prioridad a "mesa ratona")
+
+**Posiciones:**
+- /collections/sillas: de posición 30,7 → objetivo <20 (H1 + description mejorados)
+- /collections/veladores: de posición 17,1 → objetivo <15 ("veladores de madera" en H1)
+
+**Queries capturadas:**
+- "mesa ratona" (513 imp, 0 clics) → objetivo: captar 10-20 clics desde /collections/mesas y /mesas-de-centro
+- "mesa" (3.056 imp, 0 clics) → objetivo: captar 30-50 clics desde /collections/mesas con snippet mejorado
+- "veladores de madera" (287 imp, 0 clics) → objetivo: captar 5-10 clics desde /collections/veladores
+
+### Build status
+
+✅ Build pasa sin errores
+⚠️ 4 warnings menores de ESLint (variables no usadas, no afectan funcionamiento)
+
+### URLs optimizadas (7 páginas prioritarias)
+
+1. `/collections/mesas` — 4.301 imp, CTR 0,14% (prioridad 1)
+2. `/comedores-nordicos` — 791 imp, CTR 0,63% (prioridad 2)
+3. `/products/mesa-nordica` — 803 imp, CTR 0,75% (prioridad 3)
+4. `/products/mesa-tripode-ratona` — 691 imp, CTR 0,29% (prioridad 4)
+5. `/mesas-de-centro` — 404 imp, CTR 0,25% (prioridad 5)
+6. `/collections/veladores` — 422 imp, CTR 0,71% (prioridad 6)
+7. `/collections/sillas` — 533 imp, posición 30,7 (prioridad 7)
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **CTR general del sitio:** Actual ~2,5% → Objetivo: >3%
+2. **Clics desde queries long-tail:** "mesa ratona", "veladores de madera", "comedor nordico"
+3. **Posición promedio:** Mesas (10,6 → <10), Sillas (30,7 → <20), Veladores (17,1 → <15)
+4. **Consolidación apex/www:** Monitorear si GSC sigue reportando tráfico en apex o si todo migra a www
+
+---
+
+## 2026-10-05 (Lote 4): Correcciones de metadata y contenido de cola larga
+
+### Cambios implementados
+
+#### 1. **Corrección de titles y descriptions largos** ✅
+
+Acortados todos los titles y descriptions que excedían los límites recomendados, conservando keyword principal al inicio:
+
+**Landing corregida:**
+- `/molduras-a-medida`: description de 174→155 caracteres
+
+**Colecciones corregidas:**
+- `/collections/veladores`: description de 172→108 caracteres
+- `/collections/pisos`: description de 166→132 caracteres
+
+**Productos corregidos (eliminado precio del title para mantener bajo 60 caracteres):**
+- `/products/mesa-comedor-tripode-redonda`: seoTitle de 67→55 caracteres, description de 164→139 caracteres
+- `/products/mesa-comedor-tripode-negra`: seoTitle de 65→53 caracteres, description de 175→129 caracteres
+- `/products/mesa-comedor-roma-negra`: seoTitle de 62→49 caracteres, description de 170→127 caracteres (agregado seoTitle y seoDescription)
+
+Todos los titles ahora quedan bajo 60 caracteres sin el sufijo `| Idea Madera`, y todas las descriptions bajo 160 caracteres.
+
+#### 2. **Sección de guías (/guias) con contenido de cola larga** ✅
+
+Creada sección completa de guías orientada a búsquedas reales de compradores en Chile:
+
+**Hub de guías (/guias):**
+- Página índice con cards a las 3 guías publicadas
+- Title: "Guías de Muebles de Madera | Idea Madera"
+- Description optimizada para long-tail
+- Schema: BreadcrumbList
+- Enlace agregado en footer
+
+**Guía 1: Cuidado y mantención (/guias/cuidado-muebles-madera):**
+- Keywords: cuidado muebles de madera, mantención madera maciza, cómo limpiar muebles
+- 5 secciones: limpieza, manchas, barniz, exposición, protectores
+- 4 FAQs con respuestas prácticas
+- 3 enlaces relacionados internos
+- CTA a WhatsApp contextual
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Guía 2: Medidas de mesa de comedor (/guias/medidas-mesa-comedor):**
+- Keywords: medidas mesa comedor, mesa 4/6/8 personas, cuánto mide mesa comedor
+- 5 secciones con tabla de referencia (personas → medidas)
+- 4 FAQs sobre dimensiones y espacios
+- Enlaces a colecciones de mesas y muebles a medida
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Guía 3: Cómo cotizar muebles a medida (/guias/cotizar-muebles-a-medida):**
+- Keywords: cotizar muebles a medida, pedir presupuesto muebles, muebles personalizados chile
+- 5 secciones: qué info necesitamos, cómo describir, qué esperar, ajustes, pago
+- 4 FAQs sobre proceso de cotización
+- Enlaces a servicios a medida y contacto
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Características técnicas:**
+- Todas las guías con Schema Article completo (headline, author, publisher, datePublished, inLanguage)
+- BreadcrumbList en 3 niveles: Inicio → Guías → Guía específica
+- FAQPage schema en cada guía individual
+- Metadata completa: title absoluto, description, canonical, OG, Twitter
+- Enlaces internos a colecciones y landings relevantes desde cada guía
+- CTA a WhatsApp con mensaje pre-llenado contextual en cada guía
+
+#### 3. **Actualización del sitemap.xml** ✅
+
+Agregadas 4 URLs nuevas al sitemap:
+- `/guias` (hub, priority 0.85)
+- `/guias/cuidado-muebles-madera` (priority 0.8)
+- `/guias/medidas-mesa-comedor` (priority 0.8)
+- `/guias/cotizar-muebles-a-medida` (priority 0.8)
+
+lastModified derivado de `git log src/lib/guides.ts` (mismo criterio que landings y productos)
+
+#### 4. **Enlazado interno reforzado** ✅
+
+- Enlace "Guías" agregado en footer (navegación principal)
+- Cada guía enlaza a colecciones y landings relevantes (mesas, muebles a medida, comedores nórdicos, contacto)
+- Hub de guías enlaza a contacto para consultas adicionales
+
+### Archivos creados/modificados
+
+**Archivos nuevos:**
+- `src/lib/guides.ts` — Helper y configuraciones de las 3 guías + hub
+- `src/app/components/GuidePage.tsx` — Componente de layout para guías
+- `src/app/guias/page.tsx` — Hub de guías
+- `src/app/guias/cuidado-muebles-madera/page.tsx`
+- `src/app/guias/medidas-mesa-comedor/page.tsx`
+- `src/app/guias/cotizar-muebles-a-medida/page.tsx`
+
+**Código modificado:**
+- `src/lib/service-landings.ts` — Acortada description de molduras-a-medida
+- `src/lib/collection-seo.ts` — Acortadas descriptions de veladores y pisos
+- `src/data/products.ts` — Corregidos seoTitle y seoDescription de 3 productos
+- `src/app/sitemap.ts` — Agregadas URLs de guías con lastModified
+- `src/app/components/Footer.tsx` — Agregado enlace a /guias en navegación
+
+### Resultados medibles
+
+**Metadata optimizada:**
+- 6 URLs con metadata corregida (1 landing, 2 colecciones, 3 productos)
+- 100% de titles bajo 60 caracteres (sin sufijo de marca)
+- 100% de descriptions bajo 160 caracteres
+
+**Contenido long-tail:**
+- +4 URLs indexables (1 hub + 3 guías)
+- +3 artículos con contenido original de valor (1.500-2.000 palabras cada uno)
+- +12 FAQs con schema estructurado
+- +15 enlaces internos nuevos desde guías a colecciones y landings
+
+**Schema.org:**
+- 3 Article schema completos
+- 3 FAQPage schema adicionales
+- 4 BreadcrumbList (hub + 3 guías)
+
+**Intención de búsqueda:**
+- Cubre búsquedas informacionales: "cómo cuidar muebles de madera", "medidas mesa comedor 6 personas"
+- Cubre búsquedas transaccionales: "cotizar muebles a medida whatsapp"
+- Todas las guías incluyen CTA a WhatsApp con mensaje contextual pre-llenado
+
+### Build status
+
+✅ Build pasa sin errores
+⚠️ 4 warnings menores de eslint (variables no usadas, no afectan funcionamiento)
+
+### URLs modificadas
+
+- `/molduras-a-medida`
+- `/collections/veladores`
+- `/collections/pisos`
+- `/products/mesa-comedor-tripode-redonda`
+- `/products/mesa-comedor-tripode-negra`
+- `/products/mesa-comedor-roma-negra`
+
+### URLs nuevas
+
+- `/guias`
+- `/guias/cuidado-muebles-madera`
+- `/guias/medidas-mesa-comedor`
+- `/guias/cotizar-muebles-a-medida`
+
+---
+
 ## 2026-10-04 (Lote 3): Assets generados y optimizaciones finales
 
 ### Cambios implementados

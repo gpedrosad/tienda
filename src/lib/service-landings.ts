@@ -470,7 +470,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
   pageTitle: "Molduras de Madera a Medida | Chile",
   pageDescription:
-    "Fabricamos molduras de madera a medida en Chillán para muros, techos, puertas y proyectos de terminación. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
+    "Molduras de madera a medida en Chillán para muros, techos y vanos. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
   keywords: [
     "molduras de madera a medida",
     "molduras madera chile",
