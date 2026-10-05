@@ -1,6 +1,92 @@
 # SEO Changelog — Idea Madera
 
-## 2026-10-04: Auditoría y mejoras técnicas SEO
+## 2026-10-04 (Lote 2): Correcciones basadas en auditoría externa
+
+### Cambios implementados (orden de prioridad)
+
+#### 1. **Recorte de titles y descriptions largos** ✅
+Acortados todos los titles >60 caracteres y descriptions >160 caracteres, conservando keyword principal al inicio:
+
+**Páginas corregidas:**
+- `/comedores-nordicos`: title de 68→54 chars, description de 171→140 chars
+- `/mesas-de-centro`: title de 64→52 chars, description de 159→141 chars
+- `/kit-pergola`: title de 65→48 chars, description de 189→137 chars
+- `/peldanos-a-medida`: title de 69→49 chars, description de 176→127 chars
+- `/cubiertas-a-medida`: title de 71→54 chars
+- `/molduras-a-medida`: title de 62→42 chars
+- `/puertas-a-medida`: title de 68→48 chars
+- `/quienes-somos`: title de 67→47 chars, description de 184→120 chars
+- `/contacto`: title de 55→32 chars, description de 171→116 chars
+- `/muebles-de-cocina-chillan`: title de 64→43 chars
+- `/muebles-chillan`: title de 66→51 chars
+- `/muebles-a-medida`: title de 67→48 chars, description de 165→128 chars
+
+Todos los titles ahora quedan bajo 60 caracteres (sin contar el template `| Idea Madera`).
+Todas las descriptions quedan bajo 160 caracteres.
+
+#### 2. **Open Graph images con dimensiones correctas** ✅
+- Agregadas dimensiones width/height a todas las imágenes OG y Twitter
+- `buildOpenGraphDefaults()`: especificado 800x800 para logo
+- Todas las landings ahora tienen width/height en OG images
+- TODO documentado: crear `og-default.jpg` de 1200x630 para mejor presentación en redes
+
+#### 3. **Favicon y apple-touch-icon corregidos** ✅
+- Eliminado atributo `sizes` erróneo del favicon en layout.tsx
+- Especificado correctamente `icon` y `apple` con dimensiones apropiadas
+- Estructura preparada para favicon.ico real cuando se agregue el archivo
+
+#### 4. **Robots.txt y lang corregidos** ✅
+- ✅ Eliminado `host: SITE_URL` de `robots.ts` (directiva ignorada por Google, solo Yandex)
+- ✅ Cambiado `lang="es"` a `lang="es-CL"` en layout.tsx para coherencia con schema
+- ⚠️  lastModified en sitemap: no se agregó porque no hay `updatedAt` real por URL en el catálogo (decisión consciente documentada en el código original, línea 10-11 de sitemap.ts)
+
+#### 5. **Rendimiento: three bajo demanda** ✅
+- Three.js ya estaba con dynamic import en `HouseSimulator.tsx` (línea 22)
+- Swiper usado solo en `ColecctionsSection.tsx` que no se renderiza en home
+- No se requieren cambios adicionales: bundles ya están optimizados
+
+#### 6. **Headers de caché para /images/\*** ✅
+- Agregado `headers()` en `next.config.ts`
+- Cache-Control: `public, max-age=31536000, immutable` para todas las imágenes estáticas
+- Mejora significativa en caching de assets
+
+#### 7. **Todas las fotos en schema Product.image** ✅
+- Modificado `products/[handle]/page.tsx` línea 314-318
+- Ahora `Product.image` incluye TODAS las imágenes de la galería (array completo)
+- Antes: solo imagen primaria
+- Después: todas las fotos del producto desde `galleryImages`
+
+#### 8. **Enlazado interno consistente hacia /muebles-chillan** ✅
+- Corregido texto del enlace en `Footer.tsx`: "Muebles Chillán" → "Muebles en Chillán"
+- Agregado enlace inline en `HomePage.tsx` en el párrafo descriptivo
+- Anchor text consistente: "muebles en Chillán" apuntando a `/muebles-chillan`
+- Mejora la relevancia para la query objetivo
+
+### Verificaciones de auditoría
+
+**Confirmado correcto (no requiere cambios):**
+- ✅ Sitemap.xml y robots.txt funcionan correctamente
+- ✅ Canonical tags en todas las páginas
+- ✅ H1/H2 únicos y coherentes
+- ✅ Open Graph y Twitter Cards completos
+- ✅ Schema.org implementado (Organization, Product, BreadcrumbList, FAQPage)
+- ✅ Alt text en imágenes (next/image usado correctamente)
+- ✅ 404 personalizada con noindex
+- ✅ Redirects 301 para URLs legacy
+
+**Descartado por no ser aplicable:**
+- ❌ Generar imagen OG de 1200x630: requiere asset gráfico real (documentado como TODO)
+- ❌ Favicon.ico real: requiere archivo binario (preparado layout, falta asset)
+- ❌ lastModified en sitemap: no hay `updatedAt` real en productos (decisión consciente del equipo original)
+- ❌ Imagen hero desde public/: depende de Shopify CDN por diseño (requiere migración de assets completa)
+
+### Build status
+✅ Build pasa sin errores
+⚠️  2 warnings menores de eslint (variables no usadas, no afectan funcionamiento)
+
+---
+
+## 2026-10-04 (Lote 1): Auditoría y mejoras técnicas SEO
 
 ### Cambios implementados
 
