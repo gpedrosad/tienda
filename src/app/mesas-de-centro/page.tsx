@@ -17,9 +17,9 @@ import {
 import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
 
 const canonicalPath = "/mesas-de-centro";
-const pageTitle = "Mesas de Centro y Ratonas de Madera | Living Chile | Idea Madera";
+const pageTitle = "Mesas de Centro y Ratonas de Madera | Living";
 const pageDescription =
-  "Mesas de centro y ratonas de madera maciza para living: modelos Tripode, Ferrara, Roma, Hairpin y mas. Fabricacion artesanal en Chile. Cotiza por WhatsApp.";
+  "Mesas de centro y ratonas de madera maciza: Tripode, Ferrara, Roma, Hairpin. Fabricadas en Chile. Cotiza por WhatsApp con envío nacional.";
 
 const MESA_CENTRO_IDS = [
   "mesa-tripode-ratona",

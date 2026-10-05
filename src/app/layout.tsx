@@ -28,8 +28,12 @@ export const metadata: Metadata = {
   },
   description: HOME_DESCRIPTION,
   icons: {
-    icon: "/logonegro.png",
-    apple: "/logonegro.png",
+    icon: [
+      { url: "/logonegro.png", sizes: "any", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logonegro.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: "/manifest.json",
   robots: {
@@ -62,7 +66,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es-CL">
       <body className={`${geistSans.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>

@@ -13,9 +13,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/kit-pergola";
-const pageTitle = "Kit Pérgola Modular | Uniones Metálicas 3×3 | Idea Madera";
+const pageTitle = "Kit Pérgola Modular | Uniones Metálicas 3×3";
 const pageDescription =
-  "Kit de uniones metálicas para armar una pérgola modular sobre suelo. Para madera 3×3 pulgadas (75×75 mm). No incluye maderas. Bases para atornillar o cementar. Cotiza en Chile por WhatsApp.";
+  "Kit de uniones metálicas para pérgola modular 3×3 pulgadas. Bases para atornillar o cementar. No incluye maderas. Cotiza por WhatsApp en Chile.";
 
 const keywords = [
   "kit pérgola",

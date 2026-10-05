@@ -311,10 +311,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const categoryHandle = slugifyCategory(product.category);
   const categoryPath = `/collections/${categoryHandle}`;
 
+  const allProductImages = galleryImages
+    .filter((img) => img)
+    .map((img) => (img.startsWith("http") ? img : `${origin}${img}`));
+
   const productSchema = {
     "@type": "Product",
     name: product.name,
-    image: absolutePrimaryImage ? [absolutePrimaryImage] : undefined,
+    image: allProductImages.length > 0 ? allProductImages : undefined,
     description: productDescription,
     sku: productId,
     brand: {

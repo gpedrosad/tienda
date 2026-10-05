@@ -61,7 +61,10 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between md:py-7">
           <p className="max-w-2xl text-sm leading-relaxed text-neutral-700 md:text-base">
             Taller familiar en Chillán. Si buscas atención local, obras o cómo cotizar desde Ñuble,
-            entra a la página de muebles en Chillán.
+            entra a la página de{" "}
+            <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
+              muebles en Chillán
+            </Link>.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link

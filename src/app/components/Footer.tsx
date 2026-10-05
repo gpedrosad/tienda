@@ -97,7 +97,7 @@ export default function Footer() {
                     href="/muebles-chillan"
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >
-                    Muebles Chillán
+                    Muebles en Chillán
                   </Link>
                 </li>
                 <li>
