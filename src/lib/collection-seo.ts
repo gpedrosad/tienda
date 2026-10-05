@@ -104,7 +104,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     h1: "Veladores",
     metadataTitle: "Veladores de Madera para Dormitorio",
     description:
-      "Veladores de madera para dormitorio con diseño limpio y terminación artesanal. Superficie de apoyo funcional para tu habitación. Cotiza por WhatsApp con envío a todo Chile.",
+      "Veladores de madera para dormitorio con diseño limpio. Cotiza por WhatsApp con envío a todo Chile.",
   },
   sitiales: {
     h1: "Sitiales",
@@ -122,7 +122,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     h1: "Pisos y asientos altos de madera",
     metadataTitle: "Pisos de Madera para Barra y Mesada",
     description:
-      "Pisos y asientos altos de madera para barras de cocina y mesadas. Fabricación artesanal en Chile. Cotiza cantidad y terminación por WhatsApp con envío a todo el país.",
+      "Pisos y asientos altos de madera para barras de cocina. Fabricación en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   futon: {
     h1: "Futones",

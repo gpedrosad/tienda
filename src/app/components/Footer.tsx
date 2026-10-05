@@ -110,6 +110,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/guias"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Guías
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/molduras-a-medida"
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >

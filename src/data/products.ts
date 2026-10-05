@@ -257,9 +257,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Trípode Redonda $729.900 | Comedor Madera Maciza",
+    seoTitle: "Mesa Trípode Redonda Comedor | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Trípode redonda en madera maciza (Ø140 cm, $729.900). Diseño icónico con patas inclinadas para convivencia. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa de comedor Trípode redonda en madera maciza (Ø140 cm). Diseño icónico con patas inclinadas. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "silla-milan-lenga",
@@ -594,9 +594,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
-    seoTitle: "Mesa Comedor Trípode Negra $699.000 | Madera Maciza",
+    seoTitle: "Mesa Comedor Trípode Negra | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Trípode Negra en madera maciza (220×100 cm, $699.000). Patas inclinadas con terminación negra para comedores modernos. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa de comedor Trípode Negra en madera maciza (220×100 cm). Terminación negra para comedores modernos. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-roma-negra",
@@ -617,9 +617,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
-    seoTitle: "Mesa Comedor Roma Negra $699.000 | Madera Maciza",
+    seoTitle: "Mesa Comedor Roma Negra | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Roma Negra en madera maciza (200×100 cm, $699.000). Terminación oscura sofisticada para comedores contemporáneos. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa de comedor Roma Negra en madera maciza (200×100 cm). Terminación oscura para comedores contemporáneos. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-roma-natural",

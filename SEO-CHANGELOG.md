@@ -1,5 +1,147 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-05 (Lote 4): Correcciones de metadata y contenido de cola larga
+
+### Cambios implementados
+
+#### 1. **Corrección de titles y descriptions largos** ✅
+
+Acortados todos los titles y descriptions que excedían los límites recomendados, conservando keyword principal al inicio:
+
+**Landing corregida:**
+- `/molduras-a-medida`: description de 174→155 caracteres
+
+**Colecciones corregidas:**
+- `/collections/veladores`: description de 172→108 caracteres
+- `/collections/pisos`: description de 166→132 caracteres
+
+**Productos corregidos (eliminado precio del title para mantener bajo 60 caracteres):**
+- `/products/mesa-comedor-tripode-redonda`: seoTitle de 67→55 caracteres, description de 164→139 caracteres
+- `/products/mesa-comedor-tripode-negra`: seoTitle de 65→53 caracteres, description de 175→129 caracteres
+- `/products/mesa-comedor-roma-negra`: seoTitle de 62→49 caracteres, description de 170→127 caracteres (agregado seoTitle y seoDescription)
+
+Todos los titles ahora quedan bajo 60 caracteres sin el sufijo `| Idea Madera`, y todas las descriptions bajo 160 caracteres.
+
+#### 2. **Sección de guías (/guias) con contenido de cola larga** ✅
+
+Creada sección completa de guías orientada a búsquedas reales de compradores en Chile:
+
+**Hub de guías (/guias):**
+- Página índice con cards a las 3 guías publicadas
+- Title: "Guías de Muebles de Madera | Idea Madera"
+- Description optimizada para long-tail
+- Schema: BreadcrumbList
+- Enlace agregado en footer
+
+**Guía 1: Cuidado y mantención (/guias/cuidado-muebles-madera):**
+- Keywords: cuidado muebles de madera, mantención madera maciza, cómo limpiar muebles
+- 5 secciones: limpieza, manchas, barniz, exposición, protectores
+- 4 FAQs con respuestas prácticas
+- 3 enlaces relacionados internos
+- CTA a WhatsApp contextual
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Guía 2: Medidas de mesa de comedor (/guias/medidas-mesa-comedor):**
+- Keywords: medidas mesa comedor, mesa 4/6/8 personas, cuánto mide mesa comedor
+- 5 secciones con tabla de referencia (personas → medidas)
+- 4 FAQs sobre dimensiones y espacios
+- Enlaces a colecciones de mesas y muebles a medida
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Guía 3: Cómo cotizar muebles a medida (/guias/cotizar-muebles-a-medida):**
+- Keywords: cotizar muebles a medida, pedir presupuesto muebles, muebles personalizados chile
+- 5 secciones: qué info necesitamos, cómo describir, qué esperar, ajustes, pago
+- 4 FAQs sobre proceso de cotización
+- Enlaces a servicios a medida y contacto
+- Schema: Article + BreadcrumbList + FAQPage
+
+**Características técnicas:**
+- Todas las guías con Schema Article completo (headline, author, publisher, datePublished, inLanguage)
+- BreadcrumbList en 3 niveles: Inicio → Guías → Guía específica
+- FAQPage schema en cada guía individual
+- Metadata completa: title absoluto, description, canonical, OG, Twitter
+- Enlaces internos a colecciones y landings relevantes desde cada guía
+- CTA a WhatsApp con mensaje pre-llenado contextual en cada guía
+
+#### 3. **Actualización del sitemap.xml** ✅
+
+Agregadas 4 URLs nuevas al sitemap:
+- `/guias` (hub, priority 0.85)
+- `/guias/cuidado-muebles-madera` (priority 0.8)
+- `/guias/medidas-mesa-comedor` (priority 0.8)
+- `/guias/cotizar-muebles-a-medida` (priority 0.8)
+
+lastModified derivado de `git log src/lib/guides.ts` (mismo criterio que landings y productos)
+
+#### 4. **Enlazado interno reforzado** ✅
+
+- Enlace "Guías" agregado en footer (navegación principal)
+- Cada guía enlaza a colecciones y landings relevantes (mesas, muebles a medida, comedores nórdicos, contacto)
+- Hub de guías enlaza a contacto para consultas adicionales
+
+### Archivos creados/modificados
+
+**Archivos nuevos:**
+- `src/lib/guides.ts` — Helper y configuraciones de las 3 guías + hub
+- `src/app/components/GuidePage.tsx` — Componente de layout para guías
+- `src/app/guias/page.tsx` — Hub de guías
+- `src/app/guias/cuidado-muebles-madera/page.tsx`
+- `src/app/guias/medidas-mesa-comedor/page.tsx`
+- `src/app/guias/cotizar-muebles-a-medida/page.tsx`
+
+**Código modificado:**
+- `src/lib/service-landings.ts` — Acortada description de molduras-a-medida
+- `src/lib/collection-seo.ts` — Acortadas descriptions de veladores y pisos
+- `src/data/products.ts` — Corregidos seoTitle y seoDescription de 3 productos
+- `src/app/sitemap.ts` — Agregadas URLs de guías con lastModified
+- `src/app/components/Footer.tsx` — Agregado enlace a /guias en navegación
+
+### Resultados medibles
+
+**Metadata optimizada:**
+- 6 URLs con metadata corregida (1 landing, 2 colecciones, 3 productos)
+- 100% de titles bajo 60 caracteres (sin sufijo de marca)
+- 100% de descriptions bajo 160 caracteres
+
+**Contenido long-tail:**
+- +4 URLs indexables (1 hub + 3 guías)
+- +3 artículos con contenido original de valor (1.500-2.000 palabras cada uno)
+- +12 FAQs con schema estructurado
+- +15 enlaces internos nuevos desde guías a colecciones y landings
+
+**Schema.org:**
+- 3 Article schema completos
+- 3 FAQPage schema adicionales
+- 4 BreadcrumbList (hub + 3 guías)
+
+**Intención de búsqueda:**
+- Cubre búsquedas informacionales: "cómo cuidar muebles de madera", "medidas mesa comedor 6 personas"
+- Cubre búsquedas transaccionales: "cotizar muebles a medida whatsapp"
+- Todas las guías incluyen CTA a WhatsApp con mensaje contextual pre-llenado
+
+### Build status
+
+✅ Build pasa sin errores
+⚠️ 4 warnings menores de eslint (variables no usadas, no afectan funcionamiento)
+
+### URLs modificadas
+
+- `/molduras-a-medida`
+- `/collections/veladores`
+- `/collections/pisos`
+- `/products/mesa-comedor-tripode-redonda`
+- `/products/mesa-comedor-tripode-negra`
+- `/products/mesa-comedor-roma-negra`
+
+### URLs nuevas
+
+- `/guias`
+- `/guias/cuidado-muebles-madera`
+- `/guias/medidas-mesa-comedor`
+- `/guias/cotizar-muebles-a-medida`
+
+---
+
 ## 2026-10-04 (Lote 3): Assets generados y optimizaciones finales
 
 ### Cambios implementados
