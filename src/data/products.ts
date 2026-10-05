@@ -87,9 +87,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o a elección",
     productionDays: 15,
-    seoTitle: "Mesa nórdica de madera: medidas y terminación",
+    seoTitle: "Mesa Nórdica de Comedor 160x90 | Madera Maciza",
     seoDescription:
-      "Mesa nórdica de madera para comedor, 160 × 90 × 75 cm, $369.000. Fabricada en Chillán. Cotiza terminación y envío por WhatsApp.",
+      "Mesa nórdica de comedor en madera maciza (160×90 cm, $369.000). Diseño escandinavo con líneas simples. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -571,9 +571,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa ratona trípode de madera para living",
+    seoTitle: "Mesa Ratona Trípode 100x60 | Madera para Living",
     seoDescription:
-      "Mesa ratona trípode de madera para living, 100 × 60 × 40 cm, $399.990. Fabricada en Chillán. Cotiza terminación y envío por WhatsApp.",
+      "Mesa ratona trípode de madera para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode-negra",

@@ -15,9 +15,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/comedores-nordicos";
-const pageTitle = "Comedores Nórdicos de Madera | Mesas y Sillas";
+const pageTitle = "Comedores Nórdicos: Mesas y Sillas de Madera | Chile";
 const pageDescription =
-  "Comedor nórdico: mesas, sillas y bancas de madera maciza. Diseño escandinavo fabricado en Chile. Cotiza por WhatsApp con envío nacional.";
+  "Arma tu comedor nórdico completo: mesas, sillas y bancas de madera maciza con diseño escandinavo. Fabricación chilena. Cotiza por WhatsApp.";
 
 const keywords = [
   "comedores nordicos",
@@ -204,12 +204,12 @@ export default function ComedoresNordicosPage() {
               Estilo nórdico en madera
             </p>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
-              Comedores nórdicos de madera maciza
+              Comedores nórdicos: mesas y sillas de madera
             </h1>
             <p className="mt-5 max-w-3xl text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed">
-              Arma un comedor nórdico completo con piezas de madera maciza fabricadas en Chile.
-              Mesas amplias, sillas livianas y bancas que combinan entre sí para lograr un espacio
-              funcional con la calidez del diseño escandinavo. Cotiza tu combinación por WhatsApp.
+              Arma tu comedor nórdico completo con mesas amplias, sillas livianas y bancas de madera maciza.
+              Diseño escandinavo funcional fabricado en Chile: líneas simples, madera natural y terminación
+              cuidada para que tu comedor sea cálido y duradero. Cotiza tu combinación por WhatsApp.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2.5">

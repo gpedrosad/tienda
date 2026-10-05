@@ -17,9 +17,9 @@ import {
 import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
 
 const canonicalPath = "/mesas-de-centro";
-const pageTitle = "Mesas de Centro y Ratonas de Madera | Living";
+const pageTitle = "Mesas Ratonas y de Centro de Madera | Living Chile";
 const pageDescription =
-  "Mesas de centro y ratonas de madera maciza: Tripode, Ferrara, Roma, Hairpin. Fabricadas en Chile. Cotiza por WhatsApp con envío nacional.";
+  "Mesas ratonas de madera maciza para living: Trípode, Ferrara, Roma, Hairpin. Desde 40 cm de alto. Fabricadas en Chile, cotiza por WhatsApp.";
 
 const MESA_CENTRO_IDS = [
   "mesa-tripode-ratona",
@@ -36,29 +36,34 @@ const mesasCentro = products
 
 const faqItems = [
   {
-    question: "¿Que es una mesa ratona?",
+    question: "¿Qué es una mesa ratona?",
     answer:
-      "Una mesa ratona es una mesa baja de living, tambien conocida como mesa de centro. El termino es comun en Chile y Argentina para referirse a la pieza que se ubica frente al sofa.",
+      "Una mesa ratona es una mesa baja de living, también conocida como mesa de centro. El término es común en Chile y Argentina para referirse a la pieza que se ubica frente al sofá. La altura típica es 40-50 cm.",
   },
   {
-    question: "¿Que tamano de mesa de centro necesito?",
+    question: "¿Qué diferencia hay entre mesa ratona y mesa de centro?",
     answer:
-      "Como referencia, la mesa de centro deberia medir entre la mitad y dos tercios del largo del sofa. La altura ideal esta entre 40 y 50 cm para acceder comodamente desde el asiento.",
+      "No hay diferencia: son dos nombres para la misma pieza. En Chile se usa 'mesa ratona' con más frecuencia, mientras que 'mesa de centro' es más común en otros países hispanohablantes.",
   },
   {
-    question: "¿De que madera son las mesas de centro?",
+    question: "¿Qué tamaño de mesa de centro necesito?",
     answer:
-      "Nuestras mesas de centro estan fabricadas en madera maciza seleccionada, con terminacion en barniz natural o a eleccion. Cada pieza se produce de forma artesanal en nuestro taller en Chile.",
+      "Como referencia, la mesa de centro debería medir entre la mitad y dos tercios del largo del sofá. La altura ideal está entre 40 y 50 cm para acceder cómodamente desde el asiento.",
   },
   {
-    question: "¿Puedo pedir medidas personalizadas?",
+    question: "¿De qué madera son las mesas ratonas?",
     answer:
-      "Si. Fabricamos a medida. Escribenos por WhatsApp con las dimensiones que necesitas y te cotizamos sin compromiso.",
+      "Nuestras mesas ratonas están fabricadas en madera maciza seleccionada, con terminación en barniz natural o a elección. Cada pieza se produce de forma artesanal en nuestro taller en Chile.",
   },
   {
-    question: "¿Envian mesas de centro a todo Chile?",
+    question: "¿Puedo pedir una mesa ratona con medidas personalizadas?",
     answer:
-      "Si, despachamos a todo Chile. Cotiza por WhatsApp para confirmar plazos y costos de envio a tu comuna.",
+      "Sí. Fabricamos a medida. Escríbenos por WhatsApp con las dimensiones que necesitas y te cotizamos sin compromiso.",
+  },
+  {
+    question: "¿Envían mesas ratonas a todo Chile?",
+    answer:
+      "Sí, despachamos a todo Chile. Cotiza por WhatsApp para confirmar plazos y costos de envío a tu comuna.",
   },
 ];
 
