@@ -64,7 +64,10 @@ export default function HomePage() {
             entra a la página de{" "}
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
               muebles en Chillán
-            </Link>.
+            </Link>. Encuentra{" "}
+            <Link href="/mesas-de-centro" className="underline hover:text-neutral-900">
+              mesas ratonas
+            </Link>{" "}de madera maciza para tu living.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link

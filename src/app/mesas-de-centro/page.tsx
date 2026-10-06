@@ -226,6 +226,10 @@ export default function MesasDeCentroPage() {
           <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
             <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <Link href="/guias/cuidado-muebles-madera" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
+                <p className="text-sm font-medium text-neutral-900">Cuidado de muebles de madera</p>
+                <p className="mt-1 text-xs text-neutral-600">Guía práctica para mantener tus mesas ratonas y muebles de madera.</p>
+              </Link>
               <Link href="/comedores-nordicos" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
                 <p className="text-sm font-medium text-neutral-900">Comedores nórdicos</p>
                 <p className="mt-1 text-xs text-neutral-600">Arma tu comedor de estilo escandinavo con mesas, sillas y bancas.</p>
@@ -233,10 +237,6 @@ export default function MesasDeCentroPage() {
               <Link href="/collections/mesas" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
                 <p className="text-sm font-medium text-neutral-900">Todas las mesas</p>
                 <p className="mt-1 text-xs text-neutral-600">Catálogo completo de mesas de madera para comedor y living.</p>
-              </Link>
-              <Link href="/muebles-a-medida" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Muebles a medida</p>
-                <p className="mt-1 text-xs text-neutral-600">Fabricamos piezas personalizadas según tus medidas.</p>
               </Link>
             </div>
           </div>

@@ -13,14 +13,18 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/kit-pergola";
-const pageTitle = "Kit Pérgola Modular | Uniones Metálicas 3×3";
+const pageTitle = "Kit de Pérgola de Madera | Uniones Metálicas 3×3";
 const pageDescription =
-  "Kit de uniones metálicas para pérgola modular 3×3 pulgadas. Bases para atornillar o cementar. No incluye maderas. Cotiza por WhatsApp en Chile.";
+  "Kit de pérgola de madera con uniones metálicas para pérgola modular 3×3 pulgadas. Incluye bases, codos y herrajes. No incluye maderas. Cotiza por WhatsApp.";
 
 const keywords = [
   "kit pérgola",
+  "kit pérgola madera",
+  "kit para pérgola",
   "kit pergola modular",
   "uniones metálicas pérgola",
+  "uniones para pergolas",
+  "herrajes para pergolas",
   "armar pérgola madera",
   "pérgola sobre suelo",
   "bases pérgola atornillar",
@@ -113,6 +117,11 @@ const faqItems = [
     question: "¿Necesito experiencia o herramientas especiales?",
     answer:
       "No. El kit está pensado para armarse con pocos conocimientos y herramientas básicas. Recomendamos revisar las fotos del sistema antes de comprar para entender el montaje.",
+  },
+  {
+    question: "¿Qué herrajes incluye el kit?",
+    answer:
+      "El kit incluye todos los herrajes necesarios para armar 1 módulo: 4 codos metálicos a 90°, tornillos autorroscantes para madera, tapas plásticas de terminación, 25 tarugos y tirafondos de 10 mm para anclaje reforzado. Todo el herraje está pensado para unir madera de 3×3 pulgadas.",
   },
   {
     question: "¿Envían a todo Chile?",
@@ -290,12 +299,13 @@ export default function KitPergolaPage() {
               1 módulo · Sobre suelo · No incluye maderas
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-light tracking-tight text-white md:text-6xl">
-              Kit de uniones metálicas para pérgola
+              Kit de pérgola de madera con uniones metálicas
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-200 md:text-lg">
-              Construye tu propia pérgola modular con un kit de uniones metálicas pensado para
-              madera de 3×3 pulgadas (75×75 mm). Armado simple, módulos combinables y dos tipos de
-              base para el suelo. No incluye maderas; cotiza en Chile por WhatsApp.
+              Construye tu propia pérgola de madera con este kit de uniones metálicas y herrajes
+              pensado para madera de 3×3 pulgadas (75×75 mm). Incluye bases, codos, tornillos y
+              tarugos para armar 1 módulo sobre suelo. Armado simple, módulos combinables y dos
+              tipos de base. No incluye maderas; cotiza por WhatsApp en Chile.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -332,18 +342,20 @@ export default function KitPergolaPage() {
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-light tracking-tight text-white">
-                Cómo funciona el kit pérgola
+                Cómo funciona el kit para pérgola de madera
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-neutral-300 md:text-base">
-                El kit está pensado para maderas de{" "}
+                El kit de pérgola madera está pensado para postes y vigas de{" "}
                 <strong className="font-medium text-white">3×3 pulgadas (75×75 mm)</strong>. Tú
                 eliges el largo de las piezas según el tamaño de pérgola que quieras. Los módulos se
-                pueden combinar entre sí, así que no tienes límite para ampliar la estructura.
+                pueden combinar entre sí, así que no tienes límite para ampliar la estructura. Este
+                kit para pérgola incluye todas las uniones metálicas y herrajes necesarios para un
+                armado firme y duradero.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-neutral-400 md:text-base">
                 Importante: este kit{" "}
                 <strong className="font-medium text-neutral-200">no incluye las maderas</strong>.
-                Solo trae las uniones metálicas y la fijación para armar 1 módulo sobre suelo.
+                Solo trae las uniones metálicas, herrajes y fijación para armar 1 módulo sobre suelo.
               </p>
             </div>
           </div>
@@ -527,6 +539,9 @@ export default function KitPergolaPage() {
             >
               <Link href="/" className="hover:text-neutral-300">
                 Inicio
+              </Link>
+              <Link href="/guias/cotizar-muebles-a-medida" className="hover:text-neutral-300">
+                Cómo cotizar a medida
               </Link>
               <Link href="/cubiertas-a-medida" className="hover:text-neutral-300">
                 Cubiertas a medida

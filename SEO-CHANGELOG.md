@@ -1,5 +1,135 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-06 (Lote 6): Optimizaciones basadas en GSC + enlazado interno
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-08 a 2026-10-05)
+
+Priorizadas páginas con alto volumen de impresiones y CTR bajo, según análisis del usuario:
+
+| URL | Impresiones | Clics | CTR | Posición | Queries principales |
+|-----|-------------|-------|-----|----------|---------------------|
+| /kit-pergola | 978 | 16 | 1,64% | 7,6 | "kit pergola" 143 imp/0 clics, "kit pergola madera" 56/0, "kit para pergola" 39/0, "uniones para pergolas" 14/0 |
+| /puertas-a-medida | 540 | 13 | 2,41% | 8,8 | "puertas a medida" 74 imp, "fabrica de puertas de madera a medida" 20/0, "puertas chillan" 13 imp (pos 6,5) |
+| /cubiertas-a-medida | 434 | CTR 3,9% | | Queries de quincho: "mesones para quinchos" 25, "meson de madera para quincho" 21, "cubiertas para mesones de quinchos" 13, "madera para quincho" 10 |
+| /collections/veladores | 422 | 3 | 0,71% | 17,1 | "veladores de madera" 237 imp/0 clics (ya tocado en Lote 5) |
+| /mesas-de-centro | 404 | 1 | 0,25% | 7,8 | "mesa ratona" 91 imp/0 clics, pos 6,6 |
+
+**Nota:** Las 3 guías (/guias/cuidado-muebles-madera, /guias/medidas-mesa-comedor, /guias/cotizar-muebles-a-medida) tienen solo 1 enlace interno entrante (el hub /guias). /mesas-de-centro solo tiene 2 enlaces entrantes pese a rankear para "mesa ratona".
+
+### Cambios implementados
+
+#### 1. **Optimización /kit-pergola** ✅
+
+**Problema:** 978 impresiones, CTR 1,64%. Queries con alta impresión y 0 clics: "kit pergola" 143 imp, "kit pergola madera" 56 imp, "kit para pergola" 39 imp, "uniones para pergolas" 14 imp.
+
+**Solución:**
+- **Title:** "Kit Pérgola Modular | Uniones Metálicas 3×3" → "Kit de Pérgola de Madera | Uniones Metálicas 3×3"
+- **Description:** Reescrita con "kit de pérgola de madera" + "herrajes" + CTA WhatsApp: "Kit de pérgola de madera con uniones metálicas para pérgola modular 3×3 pulgadas. Incluye bases, codos y herrajes. No incluye maderas. Cotiza por WhatsApp."
+- **Keywords:** Agregados "kit pérgola madera", "kit para pérgola", "uniones para pergolas", "herrajes para pergolas"
+- **H1:** "Kit de uniones metálicas para pérgola" → "Kit de pérgola de madera con uniones metálicas"
+- **Intro:** Ampliada con mención natural de "kit de pérgola madera", "kit para pérgola" y "herrajes"
+- **FAQ nueva:** "¿Qué herrajes incluye el kit?" (respuesta: codos, tornillos, tapas, tarugos, tirafondos)
+
+**Hipótesis:** Priorizar "kit pérgola madera" y "kit para pérgola" en title/H1 mejora relevancia. FAQ sobre herrajes cubre query "uniones para pergolas" con información real del producto.
+
+#### 2. **Optimización /puertas-a-medida** ✅
+
+**Problema:** 540 impresiones, CTR 2,41%, posición 8,8. Queries: "fabrica de puertas de madera a medida" 20 imp/0 clics, "puertas chillan" 13 imp (pos 6,5), casi todas con 0 clics.
+
+**Solución:**
+- **Title:** "Puertas de Madera a Medida | Cotiza en Chile" → "Fábrica de Puertas de Madera a Medida | Chillán"
+- **Description:** Reescrita con "fábrica" y "Chillán" prioritario: "Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca en cámara. Cotiza puertas para hogar y negocio con envío a todo Chile."
+- **Keywords:** Agregados "fabrica de puertas de madera a medida", "fábrica de puertas a medida", "puertas chillan", "puertas de madera chillan"
+- **H1:** "Puertas de madera personalizadas a medida" → "Fábrica de puertas de madera a medida en Chillán"
+- **Sección principal:** Reforzada con "fábrica de puertas de madera en Chillán" + "puertas de madera a medida"
+- **FAQ nueva:** "¿Dónde fabrican las puertas de madera?" (respuesta: Chillán con +30 años experiencia)
+- **FAQ modificada:** Pregunta de cotización ahora menciona "Chillán"
+
+**Hipótesis:** Title con "fábrica" + "Chillán" mejora relevancia para queries locales. H1 + description reforzados capturan tráfico de "fabrica de puertas de madera a medida".
+
+#### 3. **Optimización /cubiertas-a-medida** ✅
+
+**Problema:** 434 impresiones, CTR 3,9%. Queries reales son de quincho: "mesones para quinchos" 25 imp, "meson de madera para quincho" 21 imp, "cubiertas para mesones de quinchos" 13 imp, "madera para quincho" 10 imp, "madera para meson de cocina" 5 imp.
+
+**Solución:**
+- **Title:** "Cubiertas de Madera a Medida | Quinchos y Mesones" → "Mesones para Quincho y Cubiertas de Madera a Medida" (prioridad a "mesones para quincho" que tiene más volumen)
+- **Description:** Reescrita con "mesones para quincho" + "mesón de quincho": "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile."
+- **Keywords:** Agregados todas las variantes: "mesones para quinchos", "mesones para quincho", "meson de madera para quincho", "cubiertas para mesones de quinchos", "cubierta para quincho", "meson de madera para cocina"
+- **Sección principal:** Reforzada con "mesones de madera para quincho" al inicio
+- **Feature cards:** Reordenados: "Mesones para quinchos" ahora es el primero
+- **FAQ:** Reorganizada: "¿Hacen mesones de madera para quinchos?" ahora primera pregunta, más completa
+- **Extra sections:** Ampliadas de 1 a 2 secciones: "Mesones de madera para quinchos" (nueva, detallada) + "Mesones de cocina y barras"
+
+**Hipótesis:** Priorizar "mesones para quincho" en title/H1/description captura el 70% del tráfico real de esta página. FAQ y secciones específicas sobre quinchos mejoran relevancia para queries long-tail.
+
+#### 4. **Enlazado interno reforzado** ✅
+
+**Problema detectado:** Las 3 guías tienen solo 1 enlace entrante (el hub /guias). /mesas-de-centro tiene solo 2 enlaces entrantes pese a rankear para "mesa ratona" (91 imp/0 clics).
+
+**Enlaces agregados a guías:**
+
+**Guía /guias/medidas-mesa-comedor:**
+- Desde /collections/mesas (en related links, primer enlace)
+- Desde /comedores-nordicos (en "También te puede interesar", primer enlace)
+
+**Guía /guias/cotizar-muebles-a-medida:**
+- Desde /peldanos-a-medida (en related links, primer enlace)
+- Desde /cubiertas-a-medida (en related links, primer enlace)
+- Desde /molduras-a-medida (en related links, primer enlace)
+- Desde /puertas-a-medida (en related links, primer enlace – se agregó vía service-landings.ts)
+- Desde /kit-pergola (en footer links)
+- Desde /muebles-a-medida (en related links, primer enlace)
+
+**Guía /guias/cuidado-muebles-madera:**
+- Desde /mesas-de-centro (en "También te puede interesar", primer enlace)
+
+**Enlaces reforzados a /mesas-de-centro con anchor "mesas ratonas":**
+- Desde HomePage (section descriptiva): "Encuentra mesas ratonas de madera maciza para tu living"
+- Desde /collections/mesas (en related links): "Mesas ratonas y de centro"
+- Desde /comedores-nordicos (en "También te puede interesar"): "Mesas ratonas para living"
+
+Cada guía ahora tiene 2-6 enlaces internos desde páginas relevantes, mejorando su autoridad interna y distribución de PageRank.
+
+### Archivos modificados
+
+- `src/app/kit-pergola/page.tsx` — Title, description, keywords, H1, intro, FAQ sobre herrajes
+- `src/lib/service-landings.ts` — Config completa de puertas-a-medida y cubiertas-a-medida; related links en peldanos, molduras, puertas, cubiertas y muebles-a-medida
+- `src/lib/collection-seo.ts` — Related links en colección "mesas" (guía de medidas)
+- `src/app/comedores-nordicos/page.tsx` — Related links (guía de medidas)
+- `src/app/mesas-de-centro/page.tsx` — Related links (guía de cuidado)
+- `src/app/components/HomePage.tsx` — Enlace inline a /mesas-de-centro con anchor "mesas ratonas"
+
+### Resultados esperados
+
+**CTR:**
+- /kit-pergola: de 1,64% → objetivo 2,5%+ (title con "kit pérgola madera" visible)
+- /puertas-a-medida: de 2,41% → objetivo 3,5%+ (title con "fábrica" + "Chillán")
+- /cubiertas-a-medida: mantener 3,9% o mejorar (ya es alto; ajuste de keywords captura mejor el tráfico real)
+- /mesas-de-centro: de 0,25% → objetivo 0,8%+ (más enlaces internos con anchor "mesas ratonas")
+
+**Posiciones:**
+- /kit-pergola: mantener posición 7,6 y captar clics de "kit pergola madera" (56 imp/0 clics)
+- /puertas-a-medida: de posición 8,8 → objetivo <8 para "fabrica de puertas de madera a medida"
+- /cubiertas-a-medida: mejorar relevancia para "mesones para quinchos" (25 imp) y "meson de madera para quincho" (21 imp)
+
+**Queries capturadas:**
+- "kit pergola madera" (56 imp, 0 clics) → objetivo: captar 2-4 clics desde /kit-pergola
+- "kit para pergola" (39 imp, 0 clics) → objetivo: captar 1-2 clics desde /kit-pergola
+- "fabrica de puertas de madera a medida" (20 imp, 0 clics) → objetivo: captar 1-2 clics desde /puertas-a-medida
+- "puertas chillan" (13 imp, pos 6,5) → objetivo: captar 1 clic desde /puertas-a-medida
+- "mesones para quinchos" (25 imp) → objetivo: captar 2-4 clics desde /cubiertas-a-medida
+- "meson de madera para quincho" (21 imp) → objetivo: captar 2-3 clics desde /cubiertas-a-medida
+- "mesa ratona" desde /mesas-de-centro (91 imp, 0 clics, pos 6,6) → objetivo: captar 3-5 clics con enlaces reforzados
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **CTR de landing pages optimizadas:** kit-pergola, puertas-a-medida, cubiertas-a-medida
+2. **Clics desde queries long-tail:** "kit pergola madera", "fabrica de puertas de madera a medida", "mesones para quinchos", "mesa ratona"
+3. **Tráfico a guías:** Monitorear si guías reciben tráfico orgánico con nuevos enlaces internos
+4. **Posición y clics /mesas-de-centro:** Verificar si anchor "mesas ratonas" mejora CTR para query "mesa ratona"
+
+---
+
 ## 2026-10-05 (Lote 5): Optimizaciones basadas en GSC + enlazado interno
 
 ### Datos de referencia (Google Search Console, 90 días al 2026-10-05)

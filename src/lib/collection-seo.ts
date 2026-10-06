@@ -72,8 +72,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
     relatedLinks: [
       {
+        href: "/guias/medidas-mesa-comedor",
+        title: "Guía de medidas de mesa",
+        description: "Cómo elegir el tamaño correcto según cantidad de personas.",
+      },
+      {
         href: "/mesas-de-centro",
-        title: "Mesas de centro y ratonas",
+        title: "Mesas ratonas y de centro",
         description: "Formatos bajos para living: trípode, Roma, Hairpin y Ferrara.",
       },
       {

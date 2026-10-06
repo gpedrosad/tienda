@@ -297,6 +297,11 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
   ],
   relatedLinks: [
     {
+      href: "/guias/cotizar-muebles-a-medida",
+      title: "Cómo cotizar a medida",
+      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+    },
+    {
       href: "/cubiertas-a-medida",
       title: "Cubiertas a medida",
       description: "Mesones y tablones según largo y ancho.",
@@ -323,15 +328,20 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  pageTitle: "Cubiertas de Madera a Medida | Quinchos y Mesones",
+  pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
-    "Cotiza cubiertas de madera a medida en Chillán para quinchos, barras, mesones y proyectos comerciales. Lenga austral, pino premium y envío a todo Chile.",
+    "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
   keywords: [
+    "mesones para quinchos",
+    "mesones para quincho",
+    "meson de madera para quincho",
+    "cubiertas para mesones de quinchos",
+    "cubierta para quincho",
     "cubiertas de madera a medida",
     "mesones de madera",
-    "tablones de madera a medida",
-    "cubiertas para quincho",
     "mesones para restaurant",
+    "meson de madera para cocina",
+    "tablones de madera a medida",
     "cubiertas madera chile",
     "cubiertas madera chillan",
   ],
@@ -352,21 +362,21 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     { title: "Madera seca en cámara", description: "Lenga austral y pino premium seleccionado." },
     { title: "Proyectos comerciales y hogar", description: "Barras, mesones, quinchos y salones de eventos." },
   ],
-  sectionTitle: "Cubiertas de madera para cada uso",
+  sectionTitle: "Mesones para quincho y cubiertas para cada uso",
   sectionParagraph:
-    "Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Fabricamos cubiertas para barras, mesones de trabajo, mesones para restaurant, cubiertas para quincho, salones de eventos y más. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación.",
+    "Fabricamos mesones de madera para quincho, barras, cubiertas de cocina y proyectos comerciales. Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Si buscas un mesón para quincho, lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. También producimos cubiertas para barras, mesones para restaurant, mesones de cocina y salones de eventos. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación.",
   featureCards: [
     {
-      title: "Barras y mesones",
-      description: "Cubiertas resistentes para cocinas, barras y mesones de trabajo con terminación prolija.",
+      title: "Mesones para quinchos",
+      description: "Mesones de madera a medida para el quincho. Cotiza largo, ancho, si va bajo techo o al aire, y comuna; el acabado depende del uso.",
     },
     {
-      title: "Mesones para quinchos",
-      description: "Cubierta a medida para el mesón del quincho. Cotiza largo, ancho y comuna; el acabado depende del uso.",
+      title: "Barras y mesones de cocina",
+      description: "Cubiertas resistentes para cocinas, barras y mesones de trabajo con terminación prolija y madera seca en cámara.",
     },
     {
       title: "Proyectos comerciales",
-      description: "Mesones para restaurantes, salones de eventos y espacios con alto tránsito.",
+      description: "Mesones para restaurantes, salones de eventos y espacios con alto tránsito. Fabricación según especificaciones técnicas.",
     },
   ],
   stepsTitle: "Cómo cotizar tus cubiertas a medida",
@@ -396,9 +406,14 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   ],
   faqItems: [
     {
+      question: "¿Hacen mesones de madera para quinchos?",
+      answer:
+        "Sí, fabricamos mesones de madera para quinchos como cubiertas a medida. Indícanos el largo y ancho del mesón, si va bajo techo o al aire libre, la comuna y una foto del espacio. El tipo de madera y el acabado se confirman en la cotización según el uso.",
+    },
+    {
       question: "¿Qué tipos de cubiertas fabrican?",
       answer:
-        "Fabricamos cubiertas y tablones para barras, mesones de cocina, mesones para restaurant, quinchos, salones de eventos y proyectos personalizados.",
+        "Fabricamos mesones para quinchos, cubiertas y tablones para barras, mesones de cocina, mesones para restaurant, salones de eventos y proyectos personalizados.",
     },
     {
       question: "¿Qué maderas utilizan?",
@@ -411,14 +426,9 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
         "Sí. Atendemos restaurantes, locales comerciales, constructoras y particulares con fabricación según especificaciones del proyecto.",
     },
     {
-      question: "¿Cómo cotizo cubiertas de madera?",
+      question: "¿Cómo cotizo un mesón de madera para quincho?",
       answer:
-        "Escríbenos por WhatsApp con medidas, tipo de uso, comuna y una foto o boceto de referencia para una cotización más precisa.",
-    },
-    {
-      question: "¿Hacen mesones para quinchos?",
-      answer:
-        "Sí, en esta misma página. Es una cubierta a medida para el mesón del quincho. Envía largo, ancho, si va bajo techo o al aire, y tu comuna. El acabado se define al cotizar.",
+        "Escríbenos por WhatsApp con largo, ancho, si el mesón va bajo techo o al aire libre, comuna y una foto del espacio o del mesón actual. Te respondemos con opciones de madera, acabado y precio.",
     },
     {
       question: "¿Envían cubiertas a todo Chile?",
@@ -427,20 +437,32 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   ],
   extraSections: [
     {
-      title: "Mesones para quinchos",
+      title: "Mesones de madera para quinchos",
       paragraphs: [
-        "Si buscas un mesón de madera para quincho, lo fabricamos como cubierta a medida: tablero según el largo y el ancho de tu espacio. No es un quincho armado ni incluye estructura, parrilla o instalación.",
-        "Para cotizar bien, indica si el mesón queda bajo techo o al aire, el largo y el ancho (y el espesor si ya lo tienes), la comuna y una foto del vano o del mesón actual. El tipo de madera y el acabado se confirman en la respuesta; no afirmamos resistencia al calor o a la lluvia sin ver el uso.",
+        "Si buscas un mesón de madera para quincho, lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. Un mesón de quincho bien hecho resiste el uso diario y le da carácter al espacio. No es un quincho armado ni incluye estructura, parrilla o instalación.",
+        "Para cotizar bien tu mesón para quincho, indica si queda bajo techo o al aire libre, el largo y el ancho (y el espesor si ya lo tienes), la comuna y una foto del vano o del mesón actual. El tipo de madera y el acabado se confirman en la respuesta según el uso; no afirmamos resistencia al calor o a la lluvia sin ver el contexto.",
       ],
       bullets: [
-        "Largo y ancho del tablero (cm)",
-        "Uso: quincho, barra, cocina o local",
+        "Largo y ancho del mesón (cm)",
+        "Uso: quincho bajo techo o al aire libre",
         "Comuna de despacho",
-        "Foto o croquis, si la tienes",
+        "Foto del espacio o del mesón actual",
+      ],
+    },
+    {
+      title: "Mesones de cocina y barras",
+      paragraphs: [
+        "También fabricamos mesones de madera para cocina y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal.",
+        "Para cotizar un mesón de cocina, envía las medidas del vano, el uso (cocina, barra, isla), si hay exposición a calor o humedad directa, y la comuna. Te orientamos con las mejores opciones de madera y terminación.",
       ],
     },
   ],
   relatedLinks: [
+    {
+      href: "/guias/cotizar-muebles-a-medida",
+      title: "Cómo cotizar a medida",
+      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+    },
     {
       href: "/kit-pergola",
       title: "Kit pérgola",
@@ -597,6 +619,11 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
   ],
   relatedLinks: [
     {
+      href: "/guias/cotizar-muebles-a-medida",
+      title: "Cómo cotizar a medida",
+      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+    },
+    {
       href: "/puertas-a-medida",
       title: "Puertas a medida",
       description: "Hojas de madera según vano. Cotiza con medidas y foto.",
@@ -623,20 +650,25 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  pageTitle: "Puertas de Madera a Medida | Cotiza en Chile",
+  pageTitle: "Fábrica de Puertas de Madera a Medida | Chillán",
   pageDescription:
-    "Cotiza puertas de madera a medida en Chillán para hogares y negocios. Diseño personalizado, madera nativa seca en cámara y envío a todo Chile.",
+    "Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca en cámara. Cotiza puertas para hogar y negocio con envío a todo Chile.",
   keywords: [
     "puertas de madera a medida",
+    "fabrica de puertas de madera a medida",
+    "fábrica de puertas a medida",
+    "puertas a medida",
+    "puertas chillan",
+    "puertas de madera chillan",
     "puertas personalizadas madera",
     "puertas madera chile",
     "puertas a medida chillan",
     "cotizar puertas madera",
   ],
   eyebrow: "Puertas de madera a medida",
-  h1: "Puertas de madera personalizadas a medida",
+  h1: "Fábrica de puertas de madera a medida en Chillán",
   heroParagraph:
-    "Fabricamos la hoja de la puerta a medida desde Chillán, para hogar o negocio. El uso interior o exterior cambia madera y acabado: dínoslo al cotizar. Marco, herrajes e instalación no se asumen incluidos. Para cotizar: alto, ancho, espesor del vano, comuna y una foto.",
+    "Fabricamos puertas de madera a medida desde nuestro taller en Chillán, para hogar o negocio. Producción propia con diseño personalizado y madera nativa seca en cámara. El uso interior o exterior cambia madera y acabado: dínoslo al cotizar. Marco, herrajes e instalación no se asumen incluidos. Para cotizar: alto, ancho, espesor del vano, comuna y una foto.",
   badges: ["Taller en Chillán", "Diseño personalizado", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar puertas por WhatsApp",
   whatsappProductTitle: "Puertas a medida",
@@ -650,9 +682,9 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     { title: "Madera nativa seca en cámara", description: "Materiales seleccionados para durabilidad y estabilidad." },
     { title: "Taller en Chillán", description: "Fabricación propia y atención directa desde Ñuble, con envío a todo Chile." },
   ],
-  sectionTitle: "Puertas hechas para durar",
+  sectionTitle: "Puertas de madera a medida hechas para durar",
   sectionParagraph:
-    "Nuestras puertas de madera personalizadas se fabrican con cuidado y atención al detalle. Te guiamos para elegir la opción que más se acomode a tus necesidades, ya sea para interiores, exteriores o proyectos comerciales. Cada pieza es realizada por manos expertas con herramientas especializadas.",
+    "Nuestra fábrica de puertas de madera en Chillán produce cada pieza con cuidado y atención al detalle. Fabricamos puertas de madera a medida para interiores, exteriores o proyectos comerciales. Te guiamos por WhatsApp para elegir la opción que más se acomode a tus necesidades. Cada puerta es realizada por manos expertas con herramientas especializadas en nuestro taller.",
   featureCards: [
     {
       title: "Interior o exterior",
@@ -699,6 +731,11 @@ export const puertasLandingConfig: ServiceLandingConfig = {
         "Sí. Cada puerta se fabrica según tus especificaciones exactas de medidas, diseño y terminación.",
     },
     {
+      question: "¿Dónde fabrican las puertas de madera?",
+      answer:
+        "Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida con más de 30 años de experiencia.",
+    },
+    {
       question: "¿Qué maderas usan para puertas?",
       answer:
         "Trabajamos maderas nobles del sur de Chile, seleccionadas y secas en cámara para mayor durabilidad y estabilidad.",
@@ -709,9 +746,9 @@ export const puertasLandingConfig: ServiceLandingConfig = {
         "Sí. Fabricamos puertas para hogares y negocios, adaptándonos a las necesidades de cada proyecto.",
     },
     {
-      question: "¿Cómo cotizo una puerta de madera?",
+      question: "¿Cómo cotizo una puerta de madera en Chillán?",
       answer:
-        "Escríbenos por WhatsApp con medidas, tipo de puerta, comuna y referencias visuales para orientarte con precio y plazos.",
+        "Escríbenos por WhatsApp con alto, ancho, espesor del vano, uso (interior/exterior), comuna y fotos. Te orientamos con precio, madera y plazos desde nuestra fábrica en Chillán.",
     },
     {
       question: "¿Realizan envíos a todo Chile?",
@@ -744,6 +781,11 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     },
   ],
   relatedLinks: [
+    {
+      href: "/guias/cotizar-muebles-a-medida",
+      title: "Cómo cotizar a medida",
+      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+    },
     {
       href: "/molduras-a-medida",
       title: "Molduras a medida",
@@ -1361,6 +1403,11 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
     },
   ],
   relatedLinks: [
+    {
+      href: "/guias/cotizar-muebles-a-medida",
+      title: "Cómo cotizar a medida",
+      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+    },
     {
       href: "/cubiertas-a-medida",
       title: "Cubiertas y mesones",

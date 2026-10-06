@@ -344,17 +344,17 @@ export default function ComedoresNordicosPage() {
           <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
             <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <Link href="/guias/medidas-mesa-comedor" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
+                <p className="text-sm font-medium text-neutral-900">Guía de medidas de mesa</p>
+                <p className="mt-1 text-xs text-neutral-600">Cómo elegir el tamaño correcto según cantidad de personas.</p>
+              </Link>
               <Link href="/mesas-de-centro" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Mesas de centro y ratonas</p>
+                <p className="text-sm font-medium text-neutral-900">Mesas ratonas para living</p>
                 <p className="mt-1 text-xs text-neutral-600">Complementa tu living con una mesa ratona de madera maciza.</p>
               </Link>
               <Link href="/collections/mesas" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
                 <p className="text-sm font-medium text-neutral-900">Todas las mesas</p>
                 <p className="mt-1 text-xs text-neutral-600">Mesas de comedor, centro y living en madera.</p>
-              </Link>
-              <Link href="/muebles-a-medida" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Muebles a medida</p>
-                <p className="mt-1 text-xs text-neutral-600">Fabricamos piezas personalizadas según tus medidas.</p>
               </Link>
             </div>
           </div>
