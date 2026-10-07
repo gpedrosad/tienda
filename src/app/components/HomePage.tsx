@@ -60,10 +60,12 @@ export default function HomePage() {
       <section className="border-b border-neutral-200 bg-neutral-50">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between md:py-7">
           <p className="max-w-2xl text-sm leading-relaxed text-neutral-700 md:text-base">
-            Taller familiar en Chillán. Si buscas atención local, obras o cómo cotizar desde Ñuble,
-            entra a la página de{" "}
+            Taller familiar en Chillán. Somos{" "}
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
-              muebles en Chillán
+              fábrica de muebles en Chillán
+            </Link>{" "}desde 2001. Si buscas atención local desde Ñuble, entra a nuestra página de{" "}
+            <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
+              mueblería en Chillán
             </Link>. Encuentra{" "}
             <Link href="/mesas-de-centro" className="underline hover:text-neutral-900">
               mesas ratonas

@@ -6,27 +6,28 @@ import { buildBreadcrumbSchema, buildOpenGraphDefaults, buildTwitterDefaults, SI
 export const metadata: Metadata = {
   title: { absolute: "Guías de Muebles de Madera | Idea Madera" },
   description:
-    "Guías prácticas sobre muebles de madera: cuidado y mantención, cómo elegir medidas de mesa, cómo cotizar a medida y más consejos útiles.",
+    "Guías prácticas sobre muebles de madera: cuidado, medidas de mesa, cómo elegir sillas de comedor, cotizar a medida y más consejos útiles.",
   alternates: { canonical: "/guias" },
   keywords: [
     "guías muebles madera",
     "consejos muebles madera",
     "cuidado madera",
     "elegir mesa comedor",
+    "elegir sillas comedor",
     "cotizar muebles a medida",
   ],
   openGraph: {
     ...buildOpenGraphDefaults(),
     title: "Guías de Muebles de Madera | Idea Madera",
     description:
-      "Guías prácticas sobre muebles de madera: cuidado y mantención, cómo elegir medidas de mesa, cómo cotizar a medida y más consejos útiles.",
+      "Guías prácticas sobre muebles de madera: cuidado, medidas de mesa, cómo elegir sillas de comedor, cotizar a medida y más consejos útiles.",
     url: "/guias",
   },
   twitter: {
     ...buildTwitterDefaults(),
     title: "Guías de Muebles de Madera | Idea Madera",
     description:
-      "Guías prácticas sobre muebles de madera: cuidado y mantención, cómo elegir medidas de mesa, cómo cotizar a medida y más consejos útiles.",
+      "Guías prácticas sobre muebles de madera: cuidado, medidas de mesa, cómo elegir sillas de comedor, cotizar a medida y más consejos útiles.",
   },
 };
 
@@ -44,6 +45,13 @@ const guides = [
       "Aprende a calcular el tamaño ideal de mesa según la cantidad de personas, el espacio disponible y la circulación del comedor.",
     href: "/guias/medidas-mesa-comedor",
     category: "Medidas",
+  },
+  {
+    title: "Cómo elegir sillas de madera para el comedor",
+    description:
+      "Guía para elegir sillas de comedor: altura ideal, ancho, cuántas sillas por mesa, tipos de madera y mantención.",
+    href: "/guias/elegir-sillas-madera-comedor",
+    category: "Selección",
   },
   {
     title: "Cómo cotizar un mueble a medida por WhatsApp",

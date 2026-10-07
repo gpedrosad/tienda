@@ -1,5 +1,213 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-07 (Lote 7): Mejoras basadas en datos reales de GSC + guía de sillas
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-09 a 2026-10-06)
+
+Total sitio: 192 clics / 7.182 impresiones
+
+**Clusters y páginas priorizadas:**
+
+| Cluster/Página | Query principal | Impresiones | Clics | Posición | Estado |
+|---|---|---|---|---|---|
+| **Mueblería Chillán** | "muebles chillan" | 110 | - | home pos 5,5; /muebles-chillan pos 15 | Reforzar landing |
+| | "muebles en chillan" | 82 | - | home 6,5; /muebles-chillan 9,9 | Reforzar landing |
+| | "muebleria chillan" | 56 | - | home 7,4; /muebles-chillan 8,2 | Reforzar landing |
+| | "fabrica de muebles chillan" | 26 | - | /muebles-chillan pos 6,4 | Reforzar landing |
+| /muebles-chillan | Total | 466 | 23 | 8,3 | Reforzar como página de mueblería en Chillán |
+| **Home** | Total | 1.009 | 49 | - | NO tocar title |
+| **/collections/sillas** | "sillas de madera" | 64 | 0 | 22 | Falta contenido útil + enlaces |
+| | "sillas comedor madera" | 31 | 0 | 47 | Falta contenido útil |
+| | Total | 196 | - | 29,9 | Necesita profundidad |
+| **/collections/mesas** | "mesas de comedor" | 36 | 0 | 43,8 | Reforzar contenido de comedor |
+| | "mesa de comedor" | 35 | 0 | 41 | Reforzar contenido de comedor |
+| | "mesas de comedor de madera" | 35 | 0 | 24 | Reforzar contenido de comedor |
+| **Regresión** | /puertas-a-medida | - | - | - | Description 161 chars (límite 155-160) |
+| **/guias/cuidado-muebles-madera** | - | - | - | - | Solo 2 enlaces internos entrantes |
+
+### Cambios implementados
+
+#### 1. **Corrección de regresión: /puertas-a-medida** ✅
+
+**Problema:** Meta description de 161 caracteres (excede límite de 155-160).
+
+**Solución:**
+- **Description anterior:** "Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca en cámara. Cotiza puertas para hogar y negocio con envío a todo Chile." (161 chars)
+- **Description nueva:** "Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca. Cotiza por WhatsApp con envío a todo Chile." (139 chars)
+- Conserva "fábrica de puertas de madera a medida" y "Chillán" prioritarios
+
+**Hipótesis:** Descripción corregida no pierde keywords y cumple límite Google.
+
+#### 2. **Refuerzo de /muebles-chillan como landing de mueblería en Chillán** ✅
+
+**Problema:** 466 impresiones, 23 clics (pos 8,3). Queries "muebles chillan", "muebles en chillan", "muebleria chillan" y "fabrica de muebles chillan" rankean pero no capturan clics. La home captura la mayoría (49 clics, 1009 imp) pero el objetivo es fortalecer /muebles-chillan sin canibalizar.
+
+**Solución:**
+- **Title:** "Muebles en Chillán | Fábrica de Madera a Medida" → "Mueblería en Chillán | Fábrica de Muebles de Madera"
+- **Description:** "Fábrica y mueblería en Chillán para muebles de madera: mesas, sillas, bancas y piezas a medida. Cotiza por WhatsApp con envío a todo Chile." → "Mueblería y fábrica de muebles en Chillán: mesas, sillas, bancas de madera maciza y piezas a medida. Cotiza por WhatsApp con envío a todo Chile."
+- **Eyebrow:** "Muebles en Chillán" → "Mueblería y Fábrica en Chillán"
+- **H1:** "Muebles de madera en Chillán" → "Mueblería en Chillán: Fábrica de muebles de madera"
+- **Hero paragraph:** Reforzado con "fábrica y mueblería en Chillán desde 2001", "fabricación propia de muebles de madera maciza", "taller y fábrica de muebles en Chillán"
+- **Section title:** "Muebles Chillán para cada espacio del hogar" → "Mueblería en Chillán para cada espacio del hogar"
+- **Section paragraph:** Reforzado con "mueblería en Chillán" y "fábrica de muebles en Chillán"
+- **FAQ nueva:** "¿Son mueblería o fábrica en Chillán?" (respuesta: ambas, somos fábrica de muebles de madera en Chillán con venta directa)
+- **Enlace interno desde home:** Agregados 2 enlaces con anchors "fábrica de muebles en Chillán" y "mueblería en Chillán" desde el párrafo descriptivo de la home (sin tocar title de home)
+
+**Hipótesis:** Priorizar "mueblería en Chillán" y "fábrica de muebles en Chillán" en title/H1/description mejora relevancia y captura clics de queries locales. Enlaces desde home con anchors relevantes fortalecen autoridad interna sin canibalizar.
+
+#### 3. **Optimización /collections/sillas con contenido útil y FAQs** ✅
+
+**Problema:** 196 impresiones, pos 29,9. Queries "sillas de madera" (64 imp pos 22), "sillas comedor madera" (31 imp pos 47), "sillas de madera para comedor" (19 imp pos 36). Falta contenido útil y enlaces internos.
+
+**Solución:**
+- **Intro expandido:** Nuevo párrafo sobre sillas de madera maciza para comedor, fabricación en Chillán, durabilidad y estética
+- **Guía de selección:** 2 nuevos párrafos:
+  - Cómo elegir: altura de asiento (45-48 cm), ancho (45 cm mínimo), coordinación con mesa
+  - Cuántas sillas según largo de mesa (160 cm → 4-6 sillas, 200 cm → 6-8 sillas)
+- **5 FAQs nuevas con schema FAQPage:**
+  - ¿Qué altura debe tener una silla de comedor? (45-48 cm)
+  - ¿Cuántas sillas necesito para mi mesa de comedor?
+  - ¿Las sillas de madera son cómodas para uso diario?
+  - ¿Puedo pedir sillas de madera a medida?
+  - ¿Las sillas vienen barnizadas?
+- **4 Enlaces relacionados:**
+  - /collections/mesas (coordinar con mesa)
+  - /comedores-nordicos (conjuntos completos)
+  - /guias/elegir-sillas-madera-comedor (guía nueva)
+  - /guias/medidas-mesa-comedor
+- **WhatsApp message:** Contextualizado para sillas
+
+**Hipótesis:** Contenido útil (medidas, cuántas sillas, mantención) + FAQs + enlaces mejora relevancia y tiempo en página. FAQPage schema puede generar rich snippets.
+
+#### 4. **Refuerzo de /collections/mesas para queries de comedor** ✅
+
+**Problema:** Queries de comedor rankean muy abajo: "mesas de comedor" 36 imp pos 43,8; "mesa de comedor" 35 imp pos 41; "mesas de comedor de madera" 35 imp pos 24.
+
+**Solución:**
+- **Intro reforzado:** Mención explícita de "mesa de comedor de madera" al inicio, opciones para 4, 6 u 8 personas
+- **Guía de selección ampliada:** Nuevo párrafo específico sobre mesas de comedor:
+  - Cálculo de tamaño según personas (160×90 cm para 4-6, 200×100 cm para 6-8)
+  - Cuándo elegir mesa redonda vs rectangular para comedor
+- **FAQ nueva:** "¿Qué medidas de mesa de comedor recomiendan?" (respuesta con tabla de referencia)
+
+**Hipótesis:** Contenido específico sobre "mesas de comedor de madera" con medidas prácticas mejora relevancia para queries de comedor. Link building desde guías relacionadas refuerza autoridad.
+
+#### 5. **Nueva guía: Cómo elegir sillas de madera para el comedor** ✅
+
+**Objetivo:** Captar tráfico long-tail de "sillas de madera para comedor", "cómo elegir sillas de comedor", "altura silla comedor", "cuantas sillas por mesa".
+
+**Contenido:**
+- **5 secciones detalladas:**
+  1. Altura de asiento ideal según tu mesa (45-48 cm, distancia 27-30 cm a mesa)
+  2. Ancho y profundidad de asiento (45-55 cm ancho, 40-45 cm profundidad)
+  3. Cuántas sillas según tamaño de mesa (tabla de referencia: 120 cm → 4 sillas, 160 cm → 4-6, 200 cm → 6-8, 240 cm → 8-10)
+  4. Tipos de madera para sillas (pino, lenga, roble; barnizadas vs sin barniz)
+  5. Mantención de sillas de madera (limpieza, ajuste de tornillos, renovación de barniz)
+- **5 FAQs con schema FAQPage:**
+  - ¿Qué altura debe tener una silla de comedor?
+  - ¿Cuántas sillas necesito para una mesa de 160 cm?
+  - ¿Las sillas de madera maciza son más cómodas que las de MDF?
+  - ¿Puedo mezclar sillas de distinto modelo en el comedor?
+  - ¿Cómo sé si las sillas que tengo son muy bajas o muy altas?
+- **4 Enlaces relacionados internos:**
+  - /collections/sillas
+  - /comedores-nordicos
+  - /guias/medidas-mesa-comedor
+  - /collections/mesas
+- **Schema completo:** Article + BreadcrumbList + FAQPage
+- **CTA a WhatsApp** con mensaje contextual
+- **Agregada al sitemap** con lastModified
+- **Agregada al hub /guias**
+- **Enlazada desde /collections/sillas** en related links
+
+**Hipótesis:** Guía práctica con información útil (no fluff) captura tráfico informacional de compradores indecisos. Enlaces cruzados desde /collections/sillas y hub mejoran distribución de autoridad. FAQs pueden generar rich snippets.
+
+#### 6. **Más enlaces internos a /guias/cuidado-muebles-madera** ✅
+
+**Problema:** Solo 2 enlaces internos entrantes.
+
+**Solución:**
+- **Enlace desde /collections/veladores:** Agregado en related links ("Guía de cuidado de madera")
+- **Enlace desde /guias/elegir-sillas-madera-comedor:** Mención natural en sección de mantención (enlace indirecto vía related links)
+
+**Resultado:** /guias/cuidado-muebles-madera ahora tiene 3-4 enlaces internos desde páginas relevantes.
+
+**Hipótesis:** Más enlaces internos mejoran autoridad de página y rastreabilidad. Distribución de PageRank interna refuerza posicionamiento de guías.
+
+### Archivos modificados
+
+**Configuración SEO:**
+- `src/lib/service-landings.ts` — Metadata de puertas-a-medida (description acortada) y muebles-chillan (title, description, eyebrow, H1, hero, section, FAQ nueva)
+- `src/lib/collection-seo.ts` — Metadata de sillas (intro, guía, 5 FAQs, related links, whatsapp) y mesas (intro reforzado, FAQ nueva sobre medidas de comedor)
+- `src/lib/guides.ts` — Nueva guía elegirSillasGuideConfig + agregada a guidePaths
+
+**Páginas nuevas:**
+- `src/app/guias/elegir-sillas-madera-comedor/page.tsx` — Página de la nueva guía
+
+**Páginas modificadas:**
+- `src/app/guias/page.tsx` — Hub actualizado con 4ª guía en la grilla + metadata actualizada
+- `src/app/components/HomePage.tsx` — Enlaces internos desde home a /muebles-chillan con anchors "fábrica de muebles en Chillán" y "mueblería en Chillán"
+
+**Automático:**
+- `src/app/sitemap.ts` — Sitemap actualizado automáticamente al agregar guía a guidePaths
+
+### Resultados esperados
+
+**CTR y posiciones:**
+- **/muebles-chillan:** de pos 8,3 → objetivo <7. Captar más clics de "mueblería chillan" y "fabrica de muebles chillan" sin canibalizar home
+- **/collections/sillas:** de pos 29,9 → objetivo <20. Captar clics de "sillas de madera" (64 imp) y "sillas comedor madera" (31 imp)
+- **/collections/mesas:** Mejorar posición para "mesas de comedor" (pos 43,8 → objetivo <30) y "mesas de comedor de madera" (pos 24 → objetivo <20)
+
+**Queries capturadas:**
+- "sillas de madera" (64 imp, 0 clics, pos 22) → objetivo: 3-5 clics desde /collections/sillas
+- "sillas comedor madera" (31 imp, 0 clics, pos 47) → objetivo: 1-2 clics
+- "mesas de comedor" (36 imp, 0 clics, pos 43,8) → objetivo: 2-3 clics desde /collections/mesas
+- "mesa de comedor" (35 imp, 0 clics, pos 41) → objetivo: 2-3 clics
+- Long-tail de sillas: "altura silla comedor", "cuantas sillas por mesa", "como elegir sillas comedor" → objetivo: 5-10 clics combinados desde guía nueva
+
+**Tráfico a guías:**
+- /guias/elegir-sillas-madera-comedor: objetivo 20-40 sesiones en 30 días (tráfico informacional de compradores)
+- /guias/cuidado-muebles-madera: mejorar rastreabilidad y autoridad con más enlaces internos
+
+**Schema y rich snippets:**
+- FAQPage en /collections/sillas puede generar rich snippets en SERP
+- FAQPage en guía de sillas puede generar rich snippets para queries informacionales
+
+### Build status
+
+✅ Build pasa sin errores
+⚠️ 4 warnings menores de ESLint (variables no usadas, no afectan funcionamiento)
+
+### URLs nuevas
+
+- `/guias/elegir-sillas-madera-comedor` (agregada al sitemap con priority 0.8)
+
+### URLs optimizadas (4 páginas)
+
+1. `/puertas-a-medida` — Description acortada de 161 → 139 caracteres
+2. `/muebles-chillan` — Title, description, H1, hero, section, FAQ, enlaces desde home
+3. `/collections/sillas` — Intro, guía, 5 FAQs, related links (prioridad alta por queries de comedor)
+4. `/collections/mesas` — Intro reforzado con contenido de comedor, FAQ de medidas
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Cluster mueblería Chillán:**
+   - /muebles-chillan: posición actual 8,3 → objetivo <7
+   - CTR: clics/impresiones para "muebleria chillan", "fabrica de muebles chillan"
+2. **Sillas:**
+   - /collections/sillas: posición actual 29,9 → objetivo <20
+   - Clics desde "sillas de madera" (64 imp), "sillas comedor madera" (31 imp)
+3. **Mesas de comedor:**
+   - /collections/mesas: posición para "mesas de comedor" (43,8 → objetivo <30), "mesas de comedor de madera" (24 → objetivo <20)
+4. **Guía nueva:**
+   - Indexación de /guias/elegir-sillas-madera-comedor (7-14 días)
+   - Tráfico orgánico a guía (objetivo: 20-40 sesiones en 30 días)
+   - Rich snippets de FAQs en SERP
+5. **Enlaces internos:**
+   - Rastreabilidad de /guias/cuidado-muebles-madera con más enlaces
+
+---
+
 ## 2026-10-06 (Lote 6): Optimizaciones basadas en GSC + enlazado interno
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-08 a 2026-10-05)

@@ -130,6 +130,7 @@ export const guidePaths = [
   "/guias/cuidado-muebles-madera",
   "/guias/medidas-mesa-comedor",
   "/guias/cotizar-muebles-a-medida",
+  "/guias/elegir-sillas-madera-comedor",
 ] as const;
 
 export const cuidadoMueblesGuideConfig: GuideConfig = {
@@ -464,5 +465,136 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
     "Vengo desde la guía de cómo cotizar muebles a medida.",
     "Quiero cotizar un proyecto personalizado en madera.",
     "Puedo enviar tipo de pieza, medidas, uso, comuna y fotos de referencia.",
+  ],
+};
+
+export const elegirSillasGuideConfig: GuideConfig = {
+  canonicalPath: "/guias/elegir-sillas-madera-comedor",
+  pageTitle: "Cómo Elegir Sillas de Madera para el Comedor | Guía Práctica",
+  pageDescription:
+    "Guía para elegir sillas de comedor de madera: altura ideal, ancho, cuántas sillas por mesa, tipos de madera y mantención. Chile.",
+  keywords: [
+    "sillas de madera para comedor",
+    "cómo elegir sillas de comedor",
+    "altura silla comedor",
+    "cuantas sillas por mesa",
+    "sillas de madera chile",
+    "sillas comedor medidas",
+  ],
+  eyebrow: "Guía práctica",
+  h1: "Cómo elegir sillas de madera para el comedor",
+  intro:
+    "Las sillas de comedor son piezas que usas a diario: elegir la altura, el ancho y la cantidad correcta hace la diferencia entre comer cómodo o incómodo. Esta guía te ayuda a decidir qué sillas de madera necesitas según tu mesa, tu espacio y tus hábitos de uso.",
+  updatedDate: "2026-10-07",
+  sections: [
+    {
+      title: "Altura de asiento ideal según tu mesa",
+      content: [
+        "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Para que las piernas queden en ángulo de 90° y los pies apoyen bien, el asiento de la silla debe estar entre 45 y 48 cm de alto.",
+        "La distancia entre el asiento y la superficie de la mesa debe ser de 27-30 cm. Eso da espacio para las piernas sin que las rodillas choquen con la estructura de la mesa.",
+        "Si tu mesa tiene una altura distinta (por ejemplo, mesa baja tipo ratona o mesa alta de barra), ajusta la altura del asiento restando 27-30 cm a la altura de la mesa.",
+      ],
+    },
+    {
+      title: "Ancho y profundidad de asiento",
+      content: [
+        "Cada silla debe tener al menos 45 cm de ancho de asiento para que una persona adulta se siente cómoda. Si el asiento es más ancho (50-55 cm), mejor aún.",
+        "La profundidad del asiento (de adelante hacia atrás) debe ser de 40-45 cm. Esto permite apoyar la espalda sin que el borde del asiento presione la parte trasera de las rodillas.",
+      ],
+    },
+    {
+      title: "Cuántas sillas necesitas según el tamaño de la mesa",
+      content: [
+        "Cada comensal necesita al menos 60 cm de ancho en el borde de la mesa para usar cubiertos y platos sin chocar con el vecino. Si quieres más comodidad, deja 70 cm por persona.",
+      ],
+      bullets: [
+        "Mesa de 120×80 cm: 4 sillas (2 por lado largo)",
+        "Mesa de 160×90 cm: 4-6 sillas (2-3 por lado largo)",
+        "Mesa de 200×100 cm: 6-8 sillas (3-4 por lado largo)",
+        "Mesa de 240×100 cm: 8-10 sillas (4-5 por lado largo)",
+      ],
+      table: {
+        headers: ["Largo de mesa", "Sillas recomendadas"],
+        rows: [
+          ["120 cm", "4 sillas"],
+          ["160 cm", "4-6 sillas"],
+          ["200 cm", "6-8 sillas"],
+          ["240 cm", "8-10 sillas"],
+        ],
+      },
+    },
+    {
+      title: "Tipos de madera para sillas de comedor",
+      content: [
+        "Las sillas de madera maciza son más duraderas que las de aglomerado o MDF. La madera sólida soporta el uso diario, el peso de las personas y los roces sin astillarse ni descascararse.",
+        "Maderas comunes en Chile para sillas de comedor: pino (más liviano, económico, se barniza bien), lenga o roble (más duros, más pesados, más resistentes a golpes). La elección depende del presupuesto y el estilo que buscas.",
+        "Las sillas con terminación barnizada son más fáciles de mantener: se limpian con paño húmedo y resisten mejor las manchas. Si prefieres madera sin barniz, necesitarás aceitar o encerar regularmente.",
+      ],
+    },
+    {
+      title: "Mantención de sillas de madera",
+      content: [
+        "Limpia las sillas con un paño levemente húmedo después de las comidas, especialmente si hay derrames. No uses productos abrasivos ni amoníaco: dañan el barniz.",
+        "Revisa tornillos y ensambles cada 6 meses. El uso diario puede aflojarlos. Ajusta con destornillador si notas que alguna pata o respaldo se mueve.",
+        "Si el barniz se desgasta en las zonas de mayor roce (asiento, respaldo), aplica una mano nueva de barniz al agua para renovar la protección. Si no te sientes cómodo haciéndolo, escríbenos y te orientamos.",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "¿Qué altura debe tener una silla de comedor?",
+      answer:
+        "La altura de asiento estándar es 45-48 cm desde el piso, compatible con mesas de 75 cm de alto. Esto permite sentarse con las piernas en ángulo de 90° y los pies apoyados.",
+    },
+    {
+      question: "¿Cuántas sillas necesito para una mesa de 160 cm?",
+      answer:
+        "Para una mesa de 160 cm caben 4-6 sillas: 2-3 por cada lado largo. Si quieres más comodidad, usa 4 sillas (60-70 cm por persona); si recibes seguido, usa 6 sillas (más apretadas).",
+    },
+    {
+      question: "¿Las sillas de madera maciza son más cómodas que las de MDF?",
+      answer:
+        "No necesariamente más cómodas, pero sí más duraderas. La comodidad depende del diseño del asiento y el respaldo. La madera maciza soporta mejor el uso diario sin deformarse.",
+    },
+    {
+      question: "¿Puedo mezclar sillas de distinto modelo en el comedor?",
+      answer:
+        "Sí, es una tendencia actual. Puedes usar un modelo distinto en las cabeceras o mezclar 2-3 estilos coordinados. Lo importante es que las alturas de asiento sean similares para que todos coman cómodos.",
+    },
+    {
+      question: "¿Cómo sé si las sillas que tengo son muy bajas o muy altas?",
+      answer:
+        "Siéntate en la silla frente a la mesa. Tus piernas deben quedar en ángulo de 90°, con los pies apoyados en el piso y sin que las rodillas choquen con la estructura de la mesa. Si tus rodillas quedan más altas que tus caderas, la silla es muy baja; si tus pies cuelgan, es muy alta.",
+    },
+  ],
+  relatedLinks: [
+    {
+      href: "/collections/sillas",
+      title: "Sillas de madera",
+      description: "Explora modelos de sillas de comedor con foto y precio.",
+    },
+    {
+      href: "/comedores-nordicos",
+      title: "Comedores nórdicos",
+      description: "Conjuntos de mesa + sillas con diseño coordinado.",
+    },
+    {
+      href: "/guias/medidas-mesa-comedor",
+      title: "Guía de medidas de mesa",
+      description: "Cómo elegir el tamaño de mesa según cantidad de personas.",
+    },
+    {
+      href: "/collections/mesas",
+      title: "Mesas de madera",
+      description: "Mesas de comedor para coordinar con tus sillas.",
+    },
+  ],
+  ctaTitle: "¿No sabes qué sillas elegir para tu comedor?",
+  ctaParagraph:
+    "Escríbenos por WhatsApp con el tamaño de tu mesa, cuántas personas comen y tu presupuesto. Te recomendamos el modelo y la cantidad ideal.",
+  whatsappLines: [
+    "Vengo desde la guía de cómo elegir sillas de madera para el comedor.",
+    "Quiero ayuda para elegir sillas según mi mesa.",
+    "Puedo enviar medidas de la mesa, cantidad de personas y presupuesto.",
   ],
 };

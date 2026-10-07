@@ -37,10 +37,11 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     description:
       "Mesas de madera maciza para comedor y living: rectangulares, redondas y mesas ratonas. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile.",
     intro:
-      "Catálogo de mesas de madera maciza fabricadas en Chillán: mesas de comedor rectangulares y redondas, mesas ratonas para living y mesas de centro. Cada modelo incluye foto, precio vigente y medidas. Si buscas una mesa baja para el sofá, aquí encontrarás mesas ratonas y de centro; si quieres armar un comedor completo, revisa los comedores nórdicos. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp. Precio desde $159.990.",
+      "Catálogo de mesas de madera maciza fabricadas en Chillán: mesas de comedor rectangulares y redondas, mesas ratonas para living y mesas de centro. Si buscas una mesa de comedor de madera, aquí encuentras opciones para 4, 6 u 8 personas con distintos estilos y medidas. Las mesas ratonas (también llamadas mesas de centro) son bajas, para el sofá del living. Cada modelo incluye foto, precio vigente y medidas. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp. Precio desde $159.990.",
     guideTitle: "Cómo elegir tu mesa de madera",
     guideParagraphs: [
       "Primero define el uso: mesa de comedor (alta, para comer) o mesa ratona (baja, para el living frente al sofá). Las mesas ratonas también se llaman mesas de centro en Chile. Luego elige la forma: rectangular o redonda, según el espacio y la cantidad de personas.",
+      "Para mesas de comedor de madera, calcula el tamaño según cuántas personas comen: mesa de 160×90 cm para 4-6 personas, mesa de 200×100 cm para 6-8 personas. Si el comedor es cuadrado, considera una mesa redonda para optimizar el espacio visual y la conversación.",
       "Para cotizar una mesa a medida, escribe por WhatsApp el largo o diámetro que necesitas, la terminación preferida y tu comuna. Te confirmamos plazo de fabricación, precio y opciones de envío antes de que pagues.",
     ],
     faqs: [
@@ -48,6 +49,11 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
         question: "¿Qué tipos de mesas de madera fabrican?",
         answer:
           "Fabricamos mesas de comedor altas (para sentarse a comer), mesas ratonas bajas (para el living), mesas de centro y mesas redondas. Todas en madera maciza, con foto y precio en esta colección. También cotizamos medidas especiales.",
+      },
+      {
+        question: "¿Qué medidas de mesa de comedor recomiendan?",
+        answer:
+          "Para 4-6 personas: mesa de 160×90 cm. Para 6-8 personas: mesa de 200×100 cm. Para 8-10 personas: mesa de 240×100 cm. Si tienes dudas, revisa nuestra guía de medidas de mesa de comedor o escribe por WhatsApp con las medidas de tu comedor.",
       },
       {
         question: "¿Qué es una mesa ratona?",
@@ -103,6 +109,67 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     metadataTitle: "Sillas de Comedor de Madera | Chile",
     description:
       "Sillas de comedor en madera maciza: Kentucky, Milán y más modelos. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.",
+    intro:
+      "Catálogo de sillas de madera maciza para comedor fabricadas en Chillán: diseños clásicos y contemporáneos con madera resistente y terminación artesanal. Cada modelo incluye foto, precio y dimensiones. Las sillas de madera para comedor combinan durabilidad, comodidad y estética natural. Cotizamos medidas especiales, cantidad de sillas y despacho por WhatsApp.",
+    guideTitle: "Cómo elegir sillas de madera para tu comedor",
+    guideParagraphs: [
+      "Al elegir sillas de comedor de madera, considera la altura del asiento (debe permitir que tus piernas queden en ángulo de 90° con los pies apoyados), el ancho (mínimo 45 cm para comodidad) y la coordinación con la mesa (altura de mesa estándar: 75 cm; altura de asiento: 45-48 cm).",
+      "Revisa cuántas sillas necesitas según el largo de la mesa: para mesa de 160 cm caben 4-6 sillas; para mesa de 200 cm caben 6-8 sillas. Si tienes dudas sobre medidas, revisa nuestra guía de medidas de mesa de comedor.",
+    ],
+    faqs: [
+      {
+        question: "¿Qué altura debe tener una silla de comedor?",
+        answer:
+          "La altura de asiento estándar es 45-48 cm desde el piso, compatible con mesas de comedor de 75 cm de alto. Esto permite sentarse cómodamente con las piernas en ángulo de 90°.",
+      },
+      {
+        question: "¿Cuántas sillas necesito para mi mesa de comedor?",
+        answer:
+          "Depende del largo de la mesa. Para una mesa de 160 cm caben 4-6 sillas; para una de 200 cm caben 6-8 sillas. Deja al menos 60 cm de ancho por persona.",
+      },
+      {
+        question: "¿Las sillas de madera son cómodas para uso diario?",
+        answer:
+          "Sí. Las sillas de madera maciza con diseño ergonómico son cómodas para comidas diarias. Si las usas para largas sobremesas, considera modelos con respaldo más alto o agrega cojines.",
+      },
+      {
+        question: "¿Puedo pedir sillas de madera a medida?",
+        answer:
+          "Sí. Cotiza por WhatsApp indicando altura de asiento, ancho, estilo preferido y cantidad. Te confirmamos plazo de fabricación y precio.",
+      },
+      {
+        question: "¿Las sillas vienen barnizadas?",
+        answer:
+          "Sí. Todas las sillas de este catálogo incluyen terminación barnizada lista para usar. Si prefieres otro acabado, indícalo al cotizar.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/collections/mesas",
+        title: "Mesas de madera",
+        description: "Mesas de comedor para coordinar con tus sillas.",
+      },
+      {
+        href: "/comedores-nordicos",
+        title: "Comedores nórdicos completos",
+        description: "Conjuntos de mesa + sillas con diseño coordinado.",
+      },
+      {
+        href: "/guias/elegir-sillas-madera-comedor",
+        title: "Guía: Cómo elegir sillas de madera",
+        description: "Altura, ancho, cantidad y medidas según tu mesa.",
+      },
+      {
+        href: "/guias/medidas-mesa-comedor",
+        title: "Guía de medidas de mesa",
+        description: "Cuántas personas caben según el tamaño de tu mesa.",
+      },
+    ],
+    whatsappTitle: "Sillas de madera",
+    whatsappLines: [
+      "Vengo desde la colección de sillas de madera.",
+      "Quiero cotizar sillas de comedor (modelo, cantidad, comuna).",
+    ],
   },
   bancas: {
     h1: "Bancas de madera",
@@ -115,6 +182,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     metadataTitle: "Veladores de Madera para Dormitorio | Chile",
     description:
       "Veladores de madera maciza para dormitorio: diseño limpio y funcional. Fabricados en Chile. Cotiza por WhatsApp con envío nacional.",
+    relatedLinks: [
+      {
+        href: "/guias/cuidado-muebles-madera",
+        title: "Guía de cuidado de madera",
+        description: "Cómo mantener tus muebles de madera como nuevos.",
+      },
+    ],
   },
   sitiales: {
     h1: "Sitiales",
