@@ -558,12 +558,13 @@ export const products: Product[] = [
     category: "Mesas",
     imageUrl: "/images/1MESATRIPODERATONA.jpg",
     shortPitch:
-      "Mesa ratona trípode de madera para living: formato bajo frente al sofá, 100 × 60 × 40 cm.",
+      "Mesa trípode de madera para living: formato ratona (baja) con patas inclinadas, 100 × 60 × 40 cm.",
     description:
-      "Mesa ratona trípode de madera para living. Mide 100 × 60 × 40 cm, vale $399.990 y va frente al sofá. Las patas inclinadas dejan espacio para las piernas. Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
+      "Mesa trípode de madera en formato ratona para living. Mide 100 × 60 × 40 cm, vale $399.990 y va frente al sofá. Las patas trípode inclinadas dejan espacio para las piernas y dan un toque orgánico al diseño. Si buscas más opciones de mesas ratonas, revisa la colección completa en mesas de centro. Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
     features: [
-      "Mesa ratona / mesa de centro baja",
-      "Patas trípode de madera",
+      "Mesa trípode de madera maciza",
+      "Formato ratona / mesa de centro baja",
+      "Patas inclinadas estilo trípode",
       "100 × 60 × 40 cm",
       "Fabricación en Chillán",
     ],
@@ -571,9 +572,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Ratona Trípode 100x60 | Madera para Living",
+    seoTitle: "Mesa Trípode Ratona 100x60 | Madera para Living",
     seoDescription:
-      "Mesa ratona trípode de madera para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa trípode de madera en formato ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode-negra",

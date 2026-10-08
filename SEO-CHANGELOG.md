@@ -1,5 +1,173 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-08 (Lote 8): Optimizaciones basadas en datos reales de GSC
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-10 a 2026-10-07)
+
+**Oportunidades priorizadas hoy:**
+
+| URL / Query | Impresiones | Clics | Posición | Estado/Acción |
+|---|---|---|---|---|
+| **/collections/veladores** | 501 | 2 | - | Reforzar snippet + contenido |
+| "veladores de madera" | 411 | 0 | 6,1 | Mejorar title/description + FAQs |
+| **Mesa ratona (canibalización)** | 146 | 0 | - | Definir página objetivo |
+| /mesas-de-centro | 91 imp | 0 clics | 6,3 | Priorizar como página principal |
+| /products/mesa-tripode-ratona | 55 imp | 0 clics | 8,7 | Enfocar en "mesa trípode" |
+| **Mesones de quincho** | - | - | - | Reforzar /cubiertas-a-medida |
+| "mesones para quinchos" | 26 | 0 | 7,2 | Agregar FAQs específicas |
+| "meson de madera para quincho" | 20 | 2 | 7 | Agregar FAQs específicas |
+
+**URLs NO tocadas hoy (cambios recientes del Lote 7):**
+- /kit-pergola, /comedores-nordicos, /muebles-chillan, /collections/sillas, /collections/mesas, home: dejados sin cambios para que Google reprocese los cambios del 5-7 de octubre.
+
+### Cambios implementados
+
+#### 1. **Optimización /collections/veladores** ✅
+
+**Problema:** 501 impresiones (page), 2 clics, CTR 0,4%. Query "veladores de madera" con 411 impresiones, 0 clics, posición 6,1. Falta contenido útil y razones concretas para hacer clic.
+
+**Solución:**
+- **Title:** "Veladores de Madera para Dormitorio | Chile" → "Veladores de Madera: Mesitas de Noche en Chile"
+- **Description:** Reescrita priorizando "veladores de madera" + orientación práctica: "Veladores de madera maciza para dormitorio: altura ideal 50-70 cm, fabricación propia en Chillán. Cotiza por WhatsApp con envío a todo Chile." (144 chars)
+- **H1:** "Veladores de madera" → "Veladores de madera para dormitorio"
+- **Intro ampliado:** Nuevo párrafo sobre veladores de madera maciza fabricados en Chillán, mesitas de noche funcionales, diseño limpio. Menciona que cotizamos medidas especiales.
+- **Guía de selección:** 3 nuevos párrafos:
+  - Altura ideal del velador (50-70 cm, según altura del colchón)
+  - Ancho y profundidad según espacio disponible (30-35 cm mínimo, 40-50 cm ideal)
+  - Veladores de madera maciza son duraderos y fáciles de mantener
+- **5 FAQs nuevas con schema FAQPage:**
+  - ¿Qué altura debe tener un velador?
+  - ¿Qué tamaño de velador necesito para mi dormitorio?
+  - ¿Los veladores vienen barnizados?
+  - ¿Puedo pedir un velador a medida?
+  - ¿Hacen envío de veladores a todo Chile?
+- **3 Enlaces relacionados:**
+  - /guias/cuidado-muebles-madera
+  - /collections/mesas
+  - /muebles-a-medida
+- **WhatsApp message:** Contextualizado para veladores
+
+**Hipótesis:** Snippet con "veladores de madera" al inicio + orientación práctica (altura, tamaño) mejora CTR. Contenido útil + FAQs mejoran relevancia y tiempo en página. FAQPage schema puede generar rich snippets.
+
+#### 2. **Resolución de canibalización "mesa ratona"** ✅
+
+**Problema:** Query "mesa ratona" con 146 impresiones, 0 clics, repartida entre /mesas-de-centro (91 imp pos 6,3) y /products/mesa-tripode-ratona (55 imp pos 8,7). Canibalización leve.
+
+**Solución:**
+
+**2a. /mesas-de-centro como página objetivo principal:**
+- **Title:** "Mesas Ratonas y de Centro de Madera | Living Chile" → "Mesas Ratonas de Madera para Living | Chile"
+- **Description:** Reescrita priorizando "mesas ratonas" + orientación útil: "Mesas ratonas de madera maciza para living: altura recomendada 40-50 cm según sofá. Trípode, Roma, Ferrara, Hairpin. Cotiza por WhatsApp con envío a todo Chile." (155 chars)
+- **H1:** "Mesas de centro y ratonas de madera" → "Mesas ratonas de madera para living"
+- **Hero paragraph:** Reforzado con "mesas ratonas de madera maciza para living" + "altura recomendada 40-50 cm" + "ancho entre la mitad y dos tercios del largo del sofá"
+- **Contenido ampliado:**
+  - H2 nuevo: "Altura recomendada de una mesa ratona según el sofá" (párrafo sobre 40-50 cm, cojines gruesos vs firmes)
+  - H2 nuevo: "Tamaño de la mesa ratona según el largo del sofá" (párrafo sobre referencia mitad/dos tercios del largo, ejemplo 180 cm sofá → 90-120 cm mesa)
+- **FAQs ampliadas:** Agregadas 2 nuevas preguntas:
+  - "¿Qué altura debe tener una mesa ratona?" (respuesta: 40-50 cm según sofá)
+  - "¿Qué tamaño de mesa ratona necesito según mi sofá?" (respuesta: mitad/dos tercios del largo)
+
+**2b. /products/mesa-tripode-ratona enfocada en "mesa trípode":**
+- **seoTitle:** "Mesa Ratona Trípode 100x60 | Madera para Living" → "Mesa Trípode Ratona 100x60 | Madera para Living"
+- **seoDescription:** Priorizando "mesa trípode": "Mesa trípode de madera en formato ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp."
+- **shortPitch:** "Mesa ratona trípode..." → "Mesa trípode de madera para living: formato ratona (baja)..."
+- **description:** Reforzado con "mesa trípode de madera" al inicio + mención natural de "mesas ratonas" con enlace contextual hacia /mesas-de-centro: "Si buscas más opciones de mesas ratonas, revisa la colección completa en mesas de centro."
+- **features:** Reordenadas priorizando "Mesa trípode de madera maciza" primero, "Formato ratona / mesa de centro baja" segundo
+
+**Hipótesis:** Definir /mesas-de-centro como página principal para "mesa ratona" concentra autoridad. /mesa-tripode-ratona enfocada en "mesa trípode" reduce competencia interna y mantiene relevancia. Enlace contextual desde producto hacia colección distribuye PageRank sin canibalizar.
+
+#### 3. **Refuerzo de /cubiertas-a-medida para mesones de quincho** ✅
+
+**Problema:** Queries de quincho rankean pero con bajo CTR: "mesones para quinchos" 26 imp pos 7,2 (0 clics), "meson de madera para quincho" 20 imp pos 7 (2 clics). Falta información específica sobre madera, sellado y mantención para quincho.
+
+**Solución (NO se creó guía nueva; se reforzó landing existente):**
+- **3 FAQs nuevas agregadas:**
+  - "¿Qué madera recomiendan para mesones de quincho?" (respuesta: lenga austral y pino premium para bajo techo con barniz/aceite; mesones al aire libre necesitan sellado para exterior)
+  - "¿Los mesones de quincho necesitan sellado especial?" (respuesta: bajo techo barniz estándar; expuesto al aire sellado para exterior + mantención cada 6-12 meses)
+  - "¿Qué medidas de mesón recomiendan para un quincho?" (respuesta orientativa: 200-250 cm × 60-70 cm familiar, 300+ cm eventos, espesor 3-4 cm)
+- **Evaluación de guía nueva:** NO se creó `/guias/meson-madera-quincho` porque:
+  - Volumen de búsqueda bajo (26 imp + 20 imp)
+  - La landing /cubiertas-a-medida ya tiene sección extraSections "Mesones de madera para quinchos" completa (agregada en Lote 6)
+  - Reforzar landing con FAQs específicas es más efectivo que diluir autoridad en nueva guía
+
+**Hipótesis:** FAQs específicas sobre madera, sellado y medidas responden dudas prácticas sin necesidad de página nueva. Concentrar contenido en /cubiertas-a-medida mejora autoridad de la landing.
+
+#### 4. **Enlazado interno reforzado a /guias/elegir-sillas-madera-comedor** ✅
+
+**Problema:** Guía nueva (agregada Lote 7) con solo 2 enlaces internos entrantes (hub /guias + /collections/sillas).
+
+**Solución:**
+- **Enlace desde /comedores-nordicos:** Agregado en sección "También te puede interesar", enlace 2 de 3: "Guía de sillas de comedor - Altura ideal, cuántas sillas por mesa y cómo elegirlas"
+- **Enlace desde /guias/medidas-mesa-comedor:** Agregado en related links, enlace 3 de 3: "Guía de sillas de comedor - Altura ideal, cuántas sillas según tu mesa y cómo elegirlas"
+
+**Resultado:** /guias/elegir-sillas-madera-comedor ahora tiene 4 enlaces internos desde páginas relevantes (hub /guias, /collections/sillas, /comedores-nordicos, /guias/medidas-mesa-comedor).
+
+**Hipótesis:** Más enlaces internos desde páginas de comedor mejoran rastreabilidad y autoridad de la guía. Distribución de PageRank interna refuerza posicionamiento de contenido informacional.
+
+### Archivos modificados
+
+**Configuración SEO:**
+- `src/lib/collection-seo.ts` — Metadata de veladores (title, description, H1, intro, guía, 5 FAQs, related links, whatsapp)
+- `src/lib/service-landings.ts` — cubiertasLandingConfig: 3 FAQs nuevas sobre mesones de quincho (madera, sellado, medidas)
+- `src/lib/guides.ts` — medidasMesaGuideConfig: related link a guía de sillas
+
+**Páginas modificadas:**
+- `src/app/mesas-de-centro/page.tsx` — Title, description, H1, hero paragraph, 2 H2 nuevos con contenido ampliado, 2 FAQs nuevas
+- `src/data/products.ts` — Producto mesa-tripode-ratona: seoTitle, seoDescription, shortPitch, description, features reordenadas
+- `src/app/comedores-nordicos/page.tsx` — Related link a guía de sillas en "También te puede interesar"
+
+### Resultados esperados
+
+**CTR y posiciones:**
+- **/collections/veladores:** CTR actual 0,4% → objetivo 0,8%+. Posición actual mix → objetivo: captar clics de "veladores de madera" (411 imp/0 clics pos 6,1)
+- **/mesas-de-centro:** de pos 6,3 → objetivo <6. Captar clics de "mesa ratona" (91 imp/0 clics) consolidando como página objetivo
+- **/products/mesa-tripode-ratona:** de pos 8,7 → objetivo mantener pero enfocar en "mesa trípode" sin canibalizar "mesa ratona"
+
+**Queries capturadas:**
+- "veladores de madera" (411 imp, 0 clics, pos 6,1) → objetivo: 8-15 clics desde /collections/veladores con snippet mejorado
+- "mesa ratona" (91 imp desde /mesas-de-centro, 0 clics, pos 6,3) → objetivo: 4-8 clics consolidando como página principal
+- "mesones para quinchos" (26 imp, 0 clics, pos 7,2) → objetivo: 1-2 clics con FAQs específicas
+
+**Tráfico a guías:**
+- /guias/elegir-sillas-madera-comedor: mejorar rastreabilidad con 4 enlaces internos (antes 2)
+
+**Schema y rich snippets:**
+- FAQPage en /collections/veladores puede generar rich snippets para "veladores de madera"
+- FAQPage en /mesas-de-centro refuerza rich snippets para "mesa ratona"
+
+### Build status
+
+✅ Build pasa sin errores (verificar al final)
+
+### URLs nuevas
+
+Ninguna.
+
+### URLs optimizadas (4 URLs)
+
+1. `/collections/veladores` — Title, description, H1, intro, guía, 5 FAQs, related links (prioridad alta por query 411 imp/0 clics)
+2. `/mesas-de-centro` — Title, description, H1, contenido ampliado, 2 FAQs nuevas (página objetivo "mesa ratona")
+3. `/products/mesa-tripode-ratona` — seoTitle, seoDescription, description enfocada en "mesa trípode"
+4. `/cubiertas-a-medida` — 3 FAQs nuevas sobre mesones de quincho
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Veladores:**
+   - CTR /collections/veladores: 0,4% → objetivo 0,8%+
+   - Clics desde "veladores de madera" (411 imp/0 clics pos 6,1) → objetivo: 8-15 clics
+2. **Mesa ratona:**
+   - Posición /mesas-de-centro para "mesa ratona": 6,3 → objetivo <6
+   - Clics desde "mesa ratona" (91 imp/0 clics) → objetivo: 4-8 clics
+   - Verificar si /mesa-tripode-ratona deja de rankear para "mesa ratona" (reducción de canibalización)
+3. **Mesones de quincho:**
+   - Clics desde "mesones para quinchos" (26 imp/0 clics) → objetivo: 1-2 clics
+   - CTR /cubiertas-a-medida para queries de quincho
+4. **Guía de sillas:**
+   - Rastreabilidad de /guias/elegir-sillas-madera-comedor con 4 enlaces internos
+   - Tráfico orgánico a guía (objetivo: inicio de indexación en 7-14 días)
+
+---
+
 ## 2026-10-07 (Lote 7): Mejoras basadas en datos reales de GSC + guía de sillas
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-09 a 2026-10-06)

@@ -348,13 +348,13 @@ export default function ComedoresNordicosPage() {
                 <p className="text-sm font-medium text-neutral-900">Guía de medidas de mesa</p>
                 <p className="mt-1 text-xs text-neutral-600">Cómo elegir el tamaño correcto según cantidad de personas.</p>
               </Link>
+              <Link href="/guias/elegir-sillas-madera-comedor" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
+                <p className="text-sm font-medium text-neutral-900">Guía de sillas de comedor</p>
+                <p className="mt-1 text-xs text-neutral-600">Altura ideal, cuántas sillas por mesa y cómo elegirlas.</p>
+              </Link>
               <Link href="/mesas-de-centro" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
                 <p className="text-sm font-medium text-neutral-900">Mesas ratonas para living</p>
                 <p className="mt-1 text-xs text-neutral-600">Complementa tu living con una mesa ratona de madera maciza.</p>
-              </Link>
-              <Link href="/collections/mesas" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Todas las mesas</p>
-                <p className="mt-1 text-xs text-neutral-600">Mesas de comedor, centro y living en madera.</p>
               </Link>
             </div>
           </div>

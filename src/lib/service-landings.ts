@@ -411,6 +411,21 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
         "Sí, fabricamos mesones de madera para quinchos como cubiertas a medida. Indícanos el largo y ancho del mesón, si va bajo techo o al aire libre, la comuna y una foto del espacio. El tipo de madera y el acabado se confirman en la cotización según el uso.",
     },
     {
+      question: "¿Qué madera recomiendan para mesones de quincho?",
+      answer:
+        "Para mesones de quincho bajo techo, lenga austral y pino premium funcionan bien con barniz o aceite. Para mesones al aire libre, la madera debe tener sellado adecuado y mantenerse regularmente. Te orientamos en la cotización según si queda bajo techo, semitecho o completamente expuesto.",
+    },
+    {
+      question: "¿Los mesones de quincho necesitan sellado especial?",
+      answer:
+        "Sí. Un mesón de quincho bajo techo lleva barniz o aceite estándar. Un mesón expuesto al aire libre necesita sellado para exterior y mantenimiento periódico (cada 6-12 meses según exposición). Confirmamos el acabado recomendado al cotizar según tu caso.",
+    },
+    {
+      question: "¿Qué medidas de mesón recomiendan para un quincho?",
+      answer:
+        "Las medidas dependen del espacio disponible y el uso. Como referencia general: mesón de 200-250 cm de largo × 60-70 cm de ancho para quincho familiar, 300 cm o más para quincho de eventos. El espesor típico es 3-4 cm. Envíanos las medidas de tu quincho y te orientamos.",
+    },
+    {
       question: "¿Qué tipos de cubiertas fabrican?",
       answer:
         "Fabricamos mesones para quinchos, cubiertas y tablones para barras, mesones de cocina, mesones para restaurant, salones de eventos y proyectos personalizados.",

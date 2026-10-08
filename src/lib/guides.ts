@@ -338,9 +338,9 @@ export const medidasMesaGuideConfig: GuideConfig = {
       description: "Conjuntos de mesa + sillas con medidas balanceadas.",
     },
     {
-      href: "/muebles-a-medida",
-      title: "Muebles a medida",
-      description: "Cotiza una mesa con las medidas exactas de tu comedor.",
+      href: "/guias/elegir-sillas-madera-comedor",
+      title: "Guía de sillas de comedor",
+      description: "Altura ideal, cuántas sillas según tu mesa y cómo elegirlas.",
     },
   ],
   ctaTitle: "¿No sabes qué medida de mesa elegir?",

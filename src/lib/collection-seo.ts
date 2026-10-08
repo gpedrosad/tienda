@@ -178,16 +178,66 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
-    h1: "Veladores de madera",
-    metadataTitle: "Veladores de Madera para Dormitorio | Chile",
+    h1: "Veladores de madera para dormitorio",
+    metadataTitle: "Veladores de Madera: Mesitas de Noche en Chile",
     description:
-      "Veladores de madera maciza para dormitorio: diseño limpio y funcional. Fabricados en Chile. Cotiza por WhatsApp con envío nacional.",
+      "Veladores de madera maciza para dormitorio: altura ideal 50-70 cm, fabricación propia en Chillán. Cotiza por WhatsApp con envío a todo Chile.",
+    intro:
+      "Veladores de madera maciza para dormitorio fabricados en Chillán: mesitas de noche funcionales con diseño limpio y terminación artesanal. Un velador bien elegido suma orden, calidez y equilibrio visual al costado de la cama. Cada modelo incluye foto, precio y medidas. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp.",
+    guideTitle: "Cómo elegir el velador ideal para tu dormitorio",
+    guideParagraphs: [
+      "La altura del velador debe permitir alcanzar cómodamente desde la cama: lo ideal es que quede a la misma altura del colchón o hasta 10 cm más arriba. Para una cama de 60 cm de alto, un velador de 50-70 cm funciona bien. Si la cama tiene colchón más grueso, suma esos centímetros.",
+      "El ancho y la profundidad dependen del espacio disponible. Si el velador va entre la cama y la pared, deja al menos 10-15 cm de pasillo. Si tienes espacio limitado, un velador angosto de 30-35 cm de ancho es suficiente para apoyar lámpara, celular y un vaso de agua. Si tienes más espacio, un velador de 40-50 cm da mayor superficie útil.",
+      "Los veladores de madera maciza son duraderos y fáciles de mantener. Cotiza por WhatsApp si necesitas un velador con medidas especiales o una terminación específica.",
+    ],
+    faqs: [
+      {
+        question: "¿Qué altura debe tener un velador?",
+        answer:
+          "La altura ideal de un velador es entre 50 y 70 cm, a la misma altura del colchón o hasta 10 cm más arriba. Esto permite alcanzar cómodamente desde la cama sin tener que agacharse o estirarse.",
+      },
+      {
+        question: "¿Qué tamaño de velador necesito para mi dormitorio?",
+        answer:
+          "Depende del espacio disponible. Un velador de 30-35 cm de ancho es funcional para espacios ajustados; un velador de 40-50 cm da mayor superficie útil si tienes espacio. La profundidad típica es 30-40 cm.",
+      },
+      {
+        question: "¿Los veladores vienen barnizados?",
+        answer:
+          "Sí. Todos los veladores de este catálogo incluyen terminación barnizada lista para usar. Si prefieres otro acabado, indícalo al cotizar.",
+      },
+      {
+        question: "¿Puedo pedir un velador a medida?",
+        answer:
+          "Sí. Fabricamos veladores con medidas personalizadas. Escríbenos por WhatsApp con alto, ancho y profundidad que necesitas, más tu comuna.",
+      },
+      {
+        question: "¿Hacen envío de veladores a todo Chile?",
+        answer:
+          "Sí. Al cotizar te confirmamos costo y plazo de despacho según tu comuna o región.",
+      },
+    ],
     relatedLinks: [
       {
         href: "/guias/cuidado-muebles-madera",
         title: "Guía de cuidado de madera",
         description: "Cómo mantener tus muebles de madera como nuevos.",
       },
+      {
+        href: "/collections/mesas",
+        title: "Mesas de madera",
+        description: "Mesas de comedor y living en distintos tamaños.",
+      },
+      {
+        href: "/muebles-a-medida",
+        title: "Muebles a medida",
+        description: "Cotiza muebles con medidas personalizadas.",
+      },
+    ],
+    whatsappTitle: "Veladores de madera",
+    whatsappLines: [
+      "Vengo desde la colección de veladores.",
+      "Quiero cotizar un velador de madera para dormitorio.",
     ],
   },
   sitiales: {

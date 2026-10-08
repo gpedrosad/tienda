@@ -17,9 +17,9 @@ import {
 import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
 
 const canonicalPath = "/mesas-de-centro";
-const pageTitle = "Mesas Ratonas y de Centro de Madera | Living Chile";
+const pageTitle = "Mesas Ratonas de Madera para Living | Chile";
 const pageDescription =
-  "Mesas ratonas de madera maciza para living: Trípode, Ferrara, Roma, Hairpin. Desde 40 cm de alto. Fabricadas en Chile, cotiza por WhatsApp.";
+  "Mesas ratonas de madera maciza para living: altura recomendada 40-50 cm según sofá. Trípode, Roma, Ferrara, Hairpin. Cotiza por WhatsApp con envío a todo Chile.";
 
 const MESA_CENTRO_IDS = [
   "mesa-tripode-ratona",
@@ -46,9 +46,14 @@ const faqItems = [
       "No hay diferencia: son dos nombres para la misma pieza. En Chile se usa 'mesa ratona' con más frecuencia, mientras que 'mesa de centro' es más común en otros países hispanohablantes.",
   },
   {
-    question: "¿Qué tamaño de mesa de centro necesito?",
+    question: "¿Qué altura debe tener una mesa ratona?",
     answer:
-      "Como referencia, la mesa de centro debería medir entre la mitad y dos tercios del largo del sofá. La altura ideal está entre 40 y 50 cm para acceder cómodamente desde el asiento.",
+      "La altura recomendada es 40-50 cm, lo que permite alcanzar cómodamente desde el sofá. Si tu sofá tiene cojines muy gruesos, prefiere una mesa de 45-50 cm; si el sofá es bajo o firme, una mesa de 40 cm funciona bien.",
+  },
+  {
+    question: "¿Qué tamaño de mesa ratona necesito según mi sofá?",
+    answer:
+      "Como referencia, la mesa ratona debería medir entre la mitad y dos tercios del largo del sofá. Por ejemplo, para un sofá de 180 cm, una mesa de 90-120 cm de largo se ve equilibrada.",
   },
   {
     question: "¿De qué madera son las mesas ratonas?",
@@ -142,12 +147,13 @@ export default function MesasDeCentroPage() {
                   Living &middot; {SITE_NAME}
                 </p>
                 <h1 className="mt-3 text-4xl font-light tracking-tight md:text-6xl">
-                  Mesas de centro y ratonas de madera
+                  Mesas ratonas de madera para living
                 </h1>
                 <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
-                  Mesas de centro y ratonas de madera maciza para tu living. Formatos bajos ideales
-                  frente al sofa: tripode, hairpin, estilo clasico y contemporaneo. Cotiza medidas y
-                  terminacion por WhatsApp con envio a todo Chile.
+                  Mesas ratonas de madera maciza para living: piezas bajas ideales frente al sofá.
+                  La altura recomendada es 40-50 cm para alcanzar cómodamente desde el asiento.
+                  El ancho debe ser entre la mitad y dos tercios del largo del sofá. Cotiza medidas
+                  y terminación por WhatsApp con envío a todo Chile.
                 </p>
               </div>
               <Link
@@ -188,14 +194,25 @@ export default function MesasDeCentroPage() {
             </p>
 
             <h2 className="mt-10 text-2xl font-light tracking-tight md:text-3xl">
-              Como elegir tu mesa de centro
+              Altura recomendada de una mesa ratona según el sofá
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
-              El tamano ideal depende de tu sofa: la mesa deberia medir entre la mitad y dos tercios
-              de su largo. La altura recomendada esta entre 40 y 50 cm para acceder comodamente
-              desde el asiento. En cuanto a materiales, la madera maciza ofrece durabilidad y calidez
-              natural. Elige un estilo que complemente tu living: lineas rectas para espacios
-              modernos, patas tripode para un toque organico, o hairpin para un look mid-century.
+              La altura ideal de una mesa ratona está entre 40 y 50 cm, lo que permite alcanzar
+              cómodamente desde el sofá sin tener que agacharse. Si tu sofá tiene cojines gruesos o
+              muy blandos, prefiere una mesa más alta (cercana a los 50 cm) para compensar el
+              hundimiento del asiento. Si el sofá es bajo o firme, una mesa de 40 cm funciona bien.
+            </p>
+
+            <h2 className="mt-10 text-2xl font-light tracking-tight md:text-3xl">
+              Tamaño de la mesa ratona según el largo del sofá
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+              Como referencia general, la mesa ratona debería medir entre la mitad y dos tercios del
+              largo del sofá. Por ejemplo, si tu sofá mide 180 cm, una mesa de 90-120 cm de largo se
+              ve equilibrada. Si el espacio es pequeño o hay mucha circulación, puedes optar por una
+              mesa más angosta. En cuanto a materiales, la madera maciza ofrece durabilidad y calidez
+              natural. Elige un estilo que complemente tu living: líneas rectas para espacios
+              modernos, patas trípode para un toque orgánico, o hairpin para un look mid-century.
             </p>
           </div>
         </section>
@@ -235,8 +252,8 @@ export default function MesasDeCentroPage() {
                 <p className="mt-1 text-xs text-neutral-600">Arma tu comedor de estilo escandinavo con mesas, sillas y bancas.</p>
               </Link>
               <Link href="/collections/mesas" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Todas las mesas</p>
-                <p className="mt-1 text-xs text-neutral-600">Catálogo completo de mesas de madera para comedor y living.</p>
+                <p className="text-sm font-medium text-neutral-900">Mesas ratonas de madera</p>
+                <p className="mt-1 text-xs text-neutral-600">Explora todas las mesas ratonas y de comedor en el catálogo.</p>
               </Link>
             </div>
           </div>
