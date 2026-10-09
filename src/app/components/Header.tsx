@@ -2,15 +2,21 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import DesktopNav from "@/app/components/DesktopNav";
-import MobileMenu from "@/app/components/MobileMenu";
-import SearchModal from "@/app/components/SearchModal";
+
+const loadMobileMenu = () => import("@/app/components/MobileMenu");
+const loadSearchModal = () => import("@/app/components/SearchModal");
+const MobileMenu = dynamic(loadMobileMenu, { ssr: false });
+const SearchModal = dynamic(loadSearchModal, { ssr: false });
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [hasOpenedMenu, setHasOpenedMenu] = useState(false);
+  const [hasOpenedSearch, setHasOpenedSearch] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
@@ -27,6 +33,14 @@ export default function Header() {
   const headerTextColor = isTransparentHomeHeader || !isHomePage ? "text-white" : "text-neutral-900";
 
   const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => {
+    if (!isMenuOpen) setHasOpenedMenu(true);
+    setIsMenuOpen((current) => !current);
+  };
+  const openSearch = () => {
+    setHasOpenedSearch(true);
+    setIsSearchOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +65,7 @@ export default function Header() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
+        setHasOpenedSearch(true);
         setIsSearchOpen(true);
       }
     };
@@ -71,7 +86,9 @@ export default function Header() {
                 isHomePage={isHomePage}
               />
               <button
-                onClick={() => setIsMenuOpen((prev) => !prev)}
+                onClick={toggleMenu}
+                onPointerEnter={() => void loadMobileMenu()}
+                onFocus={() => void loadMobileMenu()}
                 className={`lg:hidden p-2 -ml-2 focus:outline-none transition-colors duration-300 ${headerTextColor} ${isMenuOpen ? "text-neutral-900" : ""}`}
                 aria-label="Menú"
               >
@@ -100,7 +117,9 @@ export default function Header() {
 
             <div className="flex items-center justify-end">
               <button
-                onClick={() => setIsSearchOpen(true)}
+                onClick={openSearch}
+                onPointerEnter={() => void loadSearchModal()}
+                onFocus={() => void loadSearchModal()}
                 className={`p-2 focus:outline-none transition-colors duration-300 ${headerTextColor}`}
                 aria-label="Buscar"
               >
@@ -111,8 +130,10 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {hasOpenedMenu && <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />}
+      {hasOpenedSearch && (
+        <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      )}
     </>
   );
 }

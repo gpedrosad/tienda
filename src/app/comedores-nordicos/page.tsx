@@ -290,8 +290,8 @@ export default function ComedoresNordicosPage() {
               puede combinar para armar tu comedor nórdico completo.
             </p>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {nordicProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {nordicProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} priority={index === 0} />
               ))}
             </div>
           </div>

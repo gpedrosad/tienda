@@ -7,9 +7,10 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const whatsappUrl = buildWhatsAppUrl(buildProductWhatsAppMessage(product, getDefaultOrigin()));
   const hasProductImage = Boolean(product.imageUrl);
 
@@ -24,6 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={product.imageUrl!}
             alt={product.name}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           />

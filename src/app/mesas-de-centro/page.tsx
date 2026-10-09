@@ -173,8 +173,8 @@ export default function MesasDeCentroPage() {
             {mesasCentro.length === 1 ? "producto disponible" : "productos disponibles"}
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {mesasCentro.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {mesasCentro.map((product, index) => (
+              <ProductCard key={product.id} product={product} priority={index === 0} />
             ))}
           </div>
         </section>

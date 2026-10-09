@@ -70,12 +70,13 @@
 .dlt-canvas-wrap { min-height: 530px; height: min(57vw, 670px); position: relative; overflow: hidden; cursor: grab; }
 .dlt-canvas-wrap:active { cursor: grabbing; }
 .dlt-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
-.dlt-canvas-fallback { height: 100%; min-height: 530px; display: grid; place-content: center; gap: 8px; padding: 40px; text-align: center; color: #45463f; }
-.dlt-canvas-fallback span { color: #66675e; }
+.dlt-canvas-placeholder, .dlt-canvas-fallback { height: 100%; min-height: 530px; display: grid; place-content: center; gap: 8px; padding: 40px; text-align: center; color: #45463f; }
+.dlt-canvas-placeholder span, .dlt-canvas-fallback span { color: #66675e; }
 .dlt-simulator-controls { padding: 22px 24px 25px; background: #1d1f1d; color: #f4f4ee; }
 .dlt-view-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .dlt-view-tabs button { border: 1px solid #4c504b; background: transparent; color: #d6d7cf; min-height: 60px; padding: 10px 12px; text-align: left; cursor: pointer; }
 .dlt-view-tabs button:hover, .dlt-view-tabs button.is-active { background: #d4a017; border-color: #d4a017; color: #131411; }
+.dlt-view-tabs button:disabled, .dlt-model-actions button:disabled { cursor: wait; opacity: .55; }
 .dlt-view-tabs span, .dlt-view-tabs small { display: block; }
 .dlt-view-tabs span { font-size: 14px; font-weight: 650; }
 .dlt-view-tabs small { font-size: 11px; margin-top: 5px; opacity: .75; }
@@ -129,7 +130,7 @@
   .dlt-scope { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
   .dlt-simulator-heading { grid-template-columns: 1fr; gap: 24px; }
   .dlt-canvas-wrap { height: 100vw; min-height: 330px; max-height: 500px; }
-  .dlt-canvas-fallback { min-height: 330px; }
+  .dlt-canvas-placeholder, .dlt-canvas-fallback { min-height: 330px; }
   .dlt-view-tabs { grid-template-columns: repeat(2, 1fr); }
   .dlt-length-control { align-items: flex-start; flex-direction: column; gap: 14px; }
   .dlt-length-control input { width: 100%; }
