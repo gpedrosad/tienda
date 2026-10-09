@@ -46,7 +46,7 @@
 
 **Solución:**
 - **Nueva sección en extraSections:** "Fábrica de puertas de madera a medida en Chillán"
-  - 3 párrafos nuevos sobre taller en Chillán desde 1992, proceso de cotización por WhatsApp (qué datos enviar), tipos de puerta (hogar y negocios)
+  - 3 párrafos nuevos sobre taller en Chillán desde 2001, proceso de cotización por WhatsApp (qué datos enviar), tipos de puerta (hogar y negocios)
   - Mención natural de "fábrica de puertas de madera en Chillán" sin repetición forzada
 - **2 FAQs nuevas agregadas:**
   - "¿Qué datos necesito para cotizar una puerta a medida?" (respuesta: alto, ancho, espesor, interior/exterior, comuna, fotos)

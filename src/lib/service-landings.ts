@@ -807,7 +807,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     {
       title: "Fábrica de puertas de madera a medida en Chillán",
       paragraphs: [
-        "Nuestra fábrica de puertas de madera está en Chillán, región de Ñuble. Desde 1992 fabricamos piezas a medida con maquinaria especializada y madera nativa seca en cámara. Cada puerta se fabrica según las medidas exactas del vano y el diseño que definas con nosotros.",
+        "Nuestra fábrica de puertas de madera está en Chillán, región de Ñuble. Desde 2001 fabricamos piezas a medida con maquinaria especializada y madera nativa seca en cámara. Cada puerta se fabrica según las medidas exactas del vano y el diseño que definas con nosotros.",
         "Para cotizar por WhatsApp necesitamos: alto, ancho y espesor del vano; si es puerta de interior o exterior; comuna de despacho; y fotos del vano actual o referencia visual del diseño que buscas. Con esa información te enviamos propuesta de madera, terminación, precio y plazo de fabricación.",
         "Fabricamos puertas de hogar (dormitorios, baños, cocinas, entrada principal) y puertas para negocios (locales comerciales, oficinas, bodegas). Cada proyecto se cotiza según especificaciones reales del cliente.",
       ],
