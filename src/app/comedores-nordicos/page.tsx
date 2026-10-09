@@ -63,6 +63,16 @@ const faqItems = [
       "Sí. Puedes combinar una mesa nórdica con sillas y bancas de la línea para armar tu comedor completo. Te orientamos por WhatsApp para elegir las piezas según tu espacio y cantidad de comensales.",
   },
   {
+    question: "¿Cómo elijo el tamaño de mesa según los comensales?",
+    answer:
+      "Para 4 personas una mesa de 120-140 cm de largo es suficiente; para 6 personas recomendamos 160-180 cm; y para 8 comensales lo ideal es 200 cm o más. Revisa nuestra guía de medidas de mesa de comedor para más detalles sobre proporciones y espacios.",
+  },
+  {
+    question: "¿Qué sillas combinan mejor con una mesa nórdica?",
+    answer:
+      "Las sillas con líneas simples, respaldo bajo o medio y sin brazos son las que mejor combinan con el estilo nórdico. Busca modelos en madera clara o con terminación barnizada natural. En nuestra guía de sillas de comedor explicamos alturas recomendadas y cuántas sillas necesitas según tu mesa.",
+  },
+  {
     question: "¿Las mesas nórdicas se pueden pedir en medidas especiales?",
     answer:
       "Sí. Fabricamos a pedido y podemos ajustar dimensiones según tu comedor. Escríbenos por WhatsApp con las medidas que necesitas para cotizar.",
@@ -81,6 +91,11 @@ const faqItems = [
     question: "¿Puedo combinar sillas y bancas en el mismo comedor?",
     answer:
       "Por supuesto. La combinación de sillas en un lado y una banca en el otro es una propuesta muy nórdica que optimiza espacio y aporta un carácter más informal y acogedor al comedor.",
+  },
+  {
+    question: "¿Un comedor nórdico es solo de madera clara?",
+    answer:
+      "No necesariamente. Si bien el estilo escandinavo clásico usa maderas claras como el pino o el roble natural, también puedes optar por maderas con veta marcada o terminaciones que resalten el tono natural sin pinturas. Lo importante es mantener las líneas limpias y la funcionalidad del diseño.",
   },
 ];
 
@@ -277,6 +292,27 @@ export default function ComedoresNordicosPage() {
               </article>
             ))}
           </div>
+
+          <h3 className="mt-12 text-2xl md:text-3xl font-light tracking-tight">
+            Cómo elegir tu comedor nórdico según espacio y comensales
+          </h3>
+          <p className="mt-4 max-w-4xl text-neutral-700 leading-relaxed">
+            Un comedor nórdico bien dimensionado depende de la cantidad de personas que suelan reunirse.
+            Para 4 personas una mesa de 120-140 cm de largo es suficiente; para 6 personas recomendamos
+            160-180 cm; y para 8 comensales lo ideal es 200 cm o más. Si tu comedor es compacto, considera
+            una banca en un lado en lugar de dos sillas: optimizas espacio sin perder asientos.
+          </p>
+          <p className="mt-4 max-w-4xl text-neutral-700 leading-relaxed">
+            Para más detalles sobre proporciones, revisa nuestra{" "}
+            <Link href="/guias/medidas-mesa-comedor" className="underline hover:text-neutral-900">
+              guía de medidas de mesa de comedor
+            </Link>
+            . Si necesitas orientación sobre qué sillas combinan mejor con tu mesa, consulta la{" "}
+            <Link href="/guias/elegir-sillas-madera-comedor" className="underline hover:text-neutral-900">
+              guía de sillas de comedor
+            </Link>{" "}
+            donde explicamos alturas, anchos y cuántas sillas se recomiendan según el largo de tu mesa.
+          </p>
         </section>
 
         {/* Grilla de productos */}

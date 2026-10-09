@@ -751,6 +751,16 @@ export const puertasLandingConfig: ServiceLandingConfig = {
         "Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida con más de 30 años de experiencia.",
     },
     {
+      question: "¿Qué datos necesito para cotizar una puerta a medida?",
+      answer:
+        "Para cotizar necesitas enviar por WhatsApp: alto y ancho del vano (en cm), espesor que necesitas, si es puerta de interior o exterior, comuna de despacho, y fotos del vano actual o referencia visual del diseño que buscas. Con esa información te enviamos propuesta de madera, terminación, precio y plazo.",
+    },
+    {
+      question: "¿Qué tipos de puerta fabrican a medida?",
+      answer:
+        "Fabricamos puertas de hogar (dormitorios, baños, cocinas, entrada principal) y puertas para negocios (locales comerciales, oficinas, bodegas). El diseño puede ser liso, con paneles, con vidrio o según tu referencia. Cada proyecto se cotiza según las especificaciones reales del cliente.",
+    },
+    {
       question: "¿Qué maderas usan para puertas?",
       answer:
         "Trabajamos maderas nobles del sur de Chile, seleccionadas y secas en cámara para mayor durabilidad y estabilidad.",
@@ -792,6 +802,14 @@ export const puertasLandingConfig: ServiceLandingConfig = {
         "Uso: interior o exterior",
         "Comuna de despacho",
         "Foto del vano o de la puerta actual",
+      ],
+    },
+    {
+      title: "Fábrica de puertas de madera a medida en Chillán",
+      paragraphs: [
+        "Nuestra fábrica de puertas de madera está en Chillán, región de Ñuble. Desde 1992 fabricamos piezas a medida con maquinaria especializada y madera nativa seca en cámara. Cada puerta se fabrica según las medidas exactas del vano y el diseño que definas con nosotros.",
+        "Para cotizar por WhatsApp necesitamos: alto, ancho y espesor del vano; si es puerta de interior o exterior; comuna de despacho; y fotos del vano actual o referencia visual del diseño que buscas. Con esa información te enviamos propuesta de madera, terminación, precio y plazo de fabricación.",
+        "Fabricamos puertas de hogar (dormitorios, baños, cocinas, entrada principal) y puertas para negocios (locales comerciales, oficinas, bodegas). Cada proyecto se cotiza según especificaciones reales del cliente.",
       ],
     },
   ],

@@ -76,7 +76,7 @@ export const products: Product[] = [
     shortPitch:
       "Mesa nórdica de madera para comedor: 160 × 90 × 75 cm, líneas simples y barniz a elección.",
     description:
-      "Mesa nórdica de madera para comedor. Mide 160 × 90 × 75 cm y vale $369.000. Líneas simples, madera maciza y barniz natural o a elección. Fabricada en Chillán; si necesitas otra medida, cotiza por WhatsApp. El despacho se confirma aparte según comuna.",
+      "Mesa nórdica de madera para comedor. Mide 160 × 90 × 75 cm y vale $369.000. Líneas simples, madera maciza y barniz natural o a elección. Fabricada en Chillán; si necesitas otra medida, cotiza por WhatsApp. El despacho se confirma aparte según comuna. Si buscas armar un comedor completo de estilo nórdico, revisa nuestras [mesas, sillas y bancas nórdicas](/comedores-nordicos).",
     features: [
       "Mesa de comedor estilo nórdico",
       "160 × 90 × 75 cm",

@@ -1,5 +1,130 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-09 (Lote 9): Profundización de comedores-nordicos y puertas-a-medida
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-11 a 2026-10-08, sc-domain:ideamadera.cl)
+
+**Mejor día reciente:** 2026-10-06 con 10 clics / 508 impresiones / posición media 6,1
+
+**Páginas priorizadas hoy:**
+
+| URL / Query | Impresiones | Clics | CTR | Posición | Estado/Acción |
+|---|---|---|---|---|---|
+| **/comedores-nordicos** | 587 | 4 | 0,68% | 13,1 | Profundizar contenido para subir de página 2 |
+| "comedor nordico" | 144 | - | - | 10,5 | Agregar contenido útil sobre estilo nórdico |
+| "comedores nordicos" | 69 | - | - | 16,8 | Agregar guías de selección |
+| "comedor estilo nordico" | 46 | - | - | 15,3 | Definir qué es comedor nórdico |
+| **/puertas-a-medida** | 603 | 11 | - | 8,7 | Reforzar "fabrica de puertas de madera a medida" |
+| "puertas a medida" | 100 | - | - | 9,8 | Agregar sección sobre proceso en Chillán |
+| "fabrica de puertas de madera a medida" | 26 | - | - | 10,2 | Agregar FAQs específicas |
+
+**URLs NO tocadas:** /kit-pergola (optimizado en Lote 6), /collections/veladores, /mesas-de-centro, /products/mesa-tripode-ratona (optimizados en Lote 8).
+
+### Cambios implementados
+
+#### 1. **Profundización de /comedores-nordicos** ✅
+
+**Problema:** 587 impresiones, CTR 0,68%, posición 13,1 (página 2). Query "comedor nordico" con 144 impresiones (pos 10,5), "comedores nordicos" con 69 imp (pos 16,8). Lote 8 cambió title/description el 10-05, pero el problema ahora es posición, no solo CTR.
+
+**Solución:**
+- **H3 nuevo:** "Cómo elegir tu comedor nórdico según espacio y comensales"
+- **Párrafos ampliados:** 2 nuevos párrafos sobre dimensiones según comensales:
+  - Mesa de 120-140 cm para 4 personas, 160-180 cm para 6 personas, 200+ cm para 8 personas
+  - Uso de bancas para optimizar espacio en comedores compactos
+  - Enlaces contextuales a `/guias/medidas-mesa-comedor` y `/guias/elegir-sillas-madera-comedor`
+- **3 FAQs nuevas agregadas:**
+  - "¿Cómo elijo el tamaño de mesa según los comensales?" (respuesta: dimensiones específicas)
+  - "¿Qué sillas combinan mejor con una mesa nórdica?" (respuesta: líneas simples, madera clara, enlace a guía)
+  - "¿Un comedor nórdico es solo de madera clara?" (respuesta: no necesariamente, veta marcada OK)
+- **Keywords naturales:** "comedor nórdico" en singular usado de forma natural en H2/H3/párrafos sin keyword stuffing
+
+**Hipótesis:** Contenido útil con información práctica (medidas, cómo elegir, combinaciones) mejora relevancia para queries informacionales. Enlaces a guías distribuyen autoridad interna. Subir de página 2 a página 1 para "comedor nordico" (pos 10,5 → objetivo <10).
+
+#### 2. **Refuerzo de /puertas-a-medida** ✅
+
+**Problema:** 603 impresiones, 11 clics, posición 8,7. Query "fabrica de puertas de madera a medida" con 26 impresiones (pos 10,2). Falta información específica sobre el proceso en Chillán.
+
+**Solución:**
+- **Nueva sección en extraSections:** "Fábrica de puertas de madera a medida en Chillán"
+  - 3 párrafos nuevos sobre taller en Chillán desde 1992, proceso de cotización por WhatsApp (qué datos enviar), tipos de puerta (hogar y negocios)
+  - Mención natural de "fábrica de puertas de madera en Chillán" sin repetición forzada
+- **2 FAQs nuevas agregadas:**
+  - "¿Qué datos necesito para cotizar una puerta a medida?" (respuesta: alto, ancho, espesor, interior/exterior, comuna, fotos)
+  - "¿Qué tipos de puerta fabrican a medida?" (respuesta: hogar -dormitorios, baños, cocinas, entrada- y negocios -locales, oficinas, bodegas-)
+
+**Hipótesis:** Sección específica sobre fábrica en Chillán mejora relevancia para "fabrica de puertas de madera a medida". FAQs con información concreta sobre proceso de cotización capturan tráfico long-tail y mejoran UX.
+
+#### 3. **Enlaces internos reforzados** ✅
+
+**Enlaces agregados:**
+- **Desde /comedores-nordicos:** Enlaces contextuales en la nueva sección a `/guias/medidas-mesa-comedor` y `/guias/elegir-sillas-madera-comedor` (ya existía enlace en related links del Lote 8)
+- **Desde /products/mesa-nordica:** Enlace contextual en description hacia `/comedores-nordicos` ("Si buscas armar un comedor completo de estilo nórdico, revisa nuestras mesas, sillas y bancas nórdicas")
+
+**Nota:** El enlace desde `/collections/mesas` hacia `/comedores-nordicos` ya existía desde Lote 5 (related links).
+
+**Hipótesis:** Enlaces contextuales desde productos relacionados mejoran rastreabilidad y autoridad interna de /comedores-nordicos.
+
+#### 4. **CTA de WhatsApp mantenido** ✅
+
+- Todos los CTAs a WhatsApp conservados en /comedores-nordicos y /puertas-a-medida
+- Mensajes pre-llenados contextuales sin cambios (funcionan correctamente)
+
+### Archivos modificados
+
+**Páginas modificadas:**
+- `src/app/comedores-nordicos/page.tsx` — H3 nuevo, 2 párrafos ampliados con enlaces, 3 FAQs nuevas
+- `src/lib/service-landings.ts` — puertasLandingConfig: nueva sección en extraSections, 2 FAQs nuevas
+- `src/data/products.ts` — Producto mesa-nordica: enlace contextual en description
+
+**Datos utilizados:** NO se inventaron precios, plazos, garantías ni materiales. Se usaron solo datos existentes en el repo (medidas de mesas, materiales de products.ts, proceso de cotización de landings existentes).
+
+### Resultados esperados
+
+**Posiciones:**
+- **/comedores-nordicos:** de posición 13,1 → objetivo <10 (subir a página 1)
+- "comedor nordico" (144 imp, pos 10,5) → objetivo: pos <10
+- "comedores nordicos" (69 imp, pos 16,8) → objetivo: pos <15
+- **/puertas-a-medida:** de posición 8,7 → objetivo: mantener <9 (ya en página 1)
+
+**CTR:**
+- /comedores-nordicos: de 0,68% → objetivo 1,2%+ (con contenido profundizado)
+- /puertas-a-medida: mantener o mejorar CTR actual
+
+**Queries capturadas:**
+- "comedor nordico" (144 imp) → objetivo: captar 3-5 clics desde /comedores-nordicos con contenido ampliado
+- "fabrica de puertas de madera a medida" (26 imp) → objetivo: captar 1-2 clics desde /puertas-a-medida con sección nueva
+
+**Tráfico a guías:**
+- Más tráfico desde /comedores-nordicos hacia `/guias/medidas-mesa-comedor` y `/guias/elegir-sillas-madera-comedor` vía enlaces contextuales
+
+### Build status
+
+⏳ Pendiente verificar al final del lote
+
+### URLs optimizadas (2 páginas)
+
+1. `/comedores-nordicos` — Contenido profundizado, 3 FAQs nuevas, enlaces a guías (prioridad alta por query de 144 imp en página 2)
+2. `/puertas-a-medida` — Nueva sección sobre fábrica en Chillán, 2 FAQs nuevas (query de 26 imp)
+
+### URLs con enlaces internos agregados (1 producto)
+
+- `/products/mesa-nordica` — Enlace contextual hacia /comedores-nordicos
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Comedores nórdicos:**
+   - Posición /comedores-nordicos: 13,1 → objetivo <10 (subir a página 1)
+   - Clics desde "comedor nordico" (144 imp, pos 10,5) → objetivo: 3-5 clics
+   - CTR: 0,68% → objetivo 1,2%+
+2. **Puertas a medida:**
+   - Clics desde "fabrica de puertas de madera a medida" (26 imp, pos 10,2) → objetivo: 1-2 clics
+   - Posición: mantener <9
+3. **Enlaces internos:**
+   - Tráfico desde /comedores-nordicos hacia guías de medidas y sillas
+   - Tráfico desde /products/mesa-nordica hacia /comedores-nordicos
+
+---
+
 ## 2026-10-08 (Lote 8): Optimizaciones basadas en datos reales de GSC
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-10 a 2026-10-07)
