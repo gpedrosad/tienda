@@ -143,6 +143,22 @@
 3. **Enlaces internos:**
    - Tráfico desde /cubiertas-a-medida, /molduras-a-medida, /muebles-a-medida, /muebles-chillan hacia /kit-pergola y /peldanos-a-medida
 
+### Corrección posterior: wording de contrahuellas y medidas en peldaños-a-medida
+
+**Fecha:** 2026-10-10 (después del commit 3ab3615)
+
+**Cambio:** Se quitaron afirmaciones sobre contrahuellas y rangos de medidas no confirmados por el negocio.
+
+**Archivos modificados:**
+- `src/lib/service-landings.ts` — peldanosLandingConfig: corregidos 2 FAQs y 1 extraSection
+
+**Detalle:**
+1. En la FAQ "¿Qué diferencia hay entre huella y contrahuella?" se cambió "Fabricamos huellas de madera a medida; las contrahuellas se cotizan aparte si las necesitas" por "Esta página es de huellas de madera a medida; las contrahuellas no se asumen incluidas: si las necesitas, indícalo al cotizar"
+2. En la FAQ "¿Qué medidas necesito para cotizar peldaños de madera para escalera?" se eliminaron rangos numéricos: "(profundidad de pisada, típicamente 25-30 cm)" → "(profundidad de pisada)", "(comúnmente 2-4 cm)" → eliminado, y "tipo de escalera (recta, con descanso, caracol)" → "tipo de escalera (por ejemplo recta o con descanso)"
+3. En extraSection "Peldaños y huellas de madera para escalera a medida" se aplicaron las mismas correcciones de wording
+
+**Build:** ✅ Pasa sin errores
+
 ---
 
 ## 2026-10-09 (Lote 9): Profundización de comedores-nordicos y puertas-a-medida
