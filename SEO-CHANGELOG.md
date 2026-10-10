@@ -1,5 +1,150 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-10 (Lote 10): Optimización CTR /kit-pergola y profundización /peldanos-a-medida
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-12 a 2026-10-09, sc-domain:ideamadera.cl)
+
+**Auditoría rápida previa:** 58 URLs del sitemap con estado 200, sin enlaces internos rotos, canonicals/H1/meta/JSON-LD OK → no hay regresiones técnicas que corregir.
+
+**Páginas priorizadas hoy:**
+
+| URL / Query | Impresiones | Clics | CTR | Posición | Estado/Acción |
+|---|---|---|---|---|---|
+| **/kit-pergola** | 1.124 | 22 | 2,0% | 7,5 | Mayor oportunidad: cluster pérgola con 441 imp / 2 clics |
+| "kit pergola" | 148 | 0 | - | 6,9 | Title CTR-oriented + sección H2 + FAQs |
+| "kit pergola madera" | 69 | - | - | 8,1 | Refuerzo contenido uniones metálicas |
+| "kit para pergola" | 41 | - | - | 8,3 | " |
+| "uniones para pergolas" | 15 | - | - | 9,5 | Sección H2 específica sobre soportes |
+| "kit soporte pergola" | 10 | - | - | 9,6 | 2 FAQs nuevas |
+| **/peldanos-a-medida** | 234 | 6 | - | 9,1 | Nunca trabajado en profundidad (solo title en Lote 2) |
+| "peldaños de madera para escalera" | - | - | - | 23,6 | Sección H2 + FAQs sobre huella vs contrahuella |
+| "huella de madera para escalera" | - | - | - | 5,5 | " |
+| "peldaños a medida" | - | - | - | - | Title/description mejorados |
+
+**URLs NO tocadas hoy:** /products/mesa-tripode-ratona, /mesas-de-centro, /collections/veladores, /comedores-nordicos, /puertas-a-medida (optimizados en Lotes 8-9; commit 2426cec del dueño sobre landing/3D no se toca).
+
+### Cambios implementados
+
+#### 1. **Optimización CTR de /kit-pergola** ✅
+
+**Problema:** Lote 6 (10-06) cambió title/H1/description pero CTR no mejoró. Cluster de queries "pérgola" tiene 441 impresiones / 2 clics. Posiciones buenas (6,9-9,6) pero CTR bajo.
+
+**Solución:**
+- **Nuevo title CTR-oriented:** `Kit para Armar Pérgola de Madera 3×3 | Bases y Soportes` (59 chars)
+  - Incluye "kit para armar" (query 41 imp), "bases" y "soportes" (intención de compra)
+- **Nueva meta description:** "Kit completo para armar pérgola de madera 3×3 pulgadas con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío Chile. Cotiza por WhatsApp." (155 chars)
+  - Incluye "bases atornillar o cementar" (opciones concretas), "uniones metálicas", "envío Chile"
+- **H1 conservado:** "Kit de pérgola de madera con uniones metálicas" (ya alineado con query principal)
+- **Nueva sección H2:** "Uniones y soportes metálicos para pérgola modular"
+  - 3 párrafos nuevos explicando bases metálicas (atornillar vs cementar con 30 cm perforación), codos 90° para postes y vigas, tornillería incluida (25 tarugos y tirafondos 10 mm)
+  - Uso natural de keywords: "uniones metálicas", "soportes para pérgola", "bases metálicas", "pérgola modular 3×3", "kit de soportes"
+  - Solo datos ya presentes en el repo (medidas, cantidad de piezas, características)
+- **2 FAQs nuevas agregadas:**
+  - "¿Sirve como kit de soportes para pérgola?" (respuesta: sí, incluye 4 bases + 4 codos + herrajes)
+  - "¿Qué base de pérgola me conviene?" (respuesta: atornillar para terraza firme, cementar 30 cm para tierra/pasto)
+- **Alt text de imágenes mejorados:**
+  - Imagen hero: "Kit pérgola de madera instalada con uniones metálicas y bases sobre suelo"
+  - Imagen sistema: "Uniones metálicas para pérgola: kit completo con 4 bases, codos 90° y herrajes"
+
+**Hipótesis:** Title más orientado a la acción ("para armar") + meta description con opciones concretas mejora CTR. Sección H2 con vocabulario del usuario ("uniones y soportes metálicos") captura queries long-tail. FAQs responden objeciones antes de la cotización.
+
+#### 2. **Profundización de /peldanos-a-medida** ✅
+
+**Problema:** 234 impresiones, 6 clics, posición 9,1. Queries "peldaños de madera para escalera" en posición 23,6, "huella de madera para escalera" en pos 5,5. Solo el title fue acortado en Lote 2; nunca se profundizó contenido.
+
+**Solución:**
+- **Nuevo title:** `Peldaños de Madera para Escalera a Medida | Chile` (52 chars)
+  - Incluye query exacta "peldaños de madera para escalera"
+- **Nueva meta description:** "Peldaños y huellas de madera para escalera a medida. Cotiza largo, ancho, espesor y cantidad por WhatsApp. Envíos a todo Chile." (129 chars)
+  - Incluye "huellas de madera para escalera" (query con pos 5,5)
+- **Nueva sección en extraSections:** "Peldaños y huellas de madera para escalera a medida"
+  - 2 párrafos explicando diferencia huella vs contrahuella (huella = superficie horizontal, contrahuella = pieza vertical)
+  - Qué medidas enviar para cotización: largo (ancho escalera), ancho/fondo huella (profundidad pisada, típ. 25-30 cm), espesor (2-4 cm), cantidad, tipo escalera, comuna
+  - Solo info general no-numérica-comercial y datos ya en repo
+- **3 FAQs nuevas agregadas:**
+  - "¿Qué diferencia hay entre huella y contrahuella?" (respuesta: huella = pisada horizontal, contrahuella = cierre vertical)
+  - "¿Qué medidas necesito para cotizar peldaños de madera para escalera?" (respuesta: largo, ancho/fondo, espesor, cantidad, tipo, comuna, foto)
+  - (La FAQ "¿Qué tipo de madera recomiendan?" ya existía)
+- **Keywords naturales agregadas:** "peldaños de madera para escalera", "huellas de madera para escalera", "huellas de escalera a medida" en title/description/keywords/contenido
+
+**Hipótesis:** Title con query exacta mejora relevancia para "peldaños de madera para escalera" (pos 23,6 → objetivo <15). Sección H2 sobre huella vs contrahuella responde intent informacional. FAQs con medidas específicas reducen fricción en cotización.
+
+#### 3. **Enlaces internos estratégicos** ✅
+
+**Enlaces agregados en relatedLinks:**
+- **Desde /cubiertas-a-medida:** Agregado enlace a `/peldanos-a-medida`
+- **Desde /molduras-a-medida:** Agregados enlaces a `/kit-pergola` y `/peldanos-a-medida`
+- **Desde /muebles-a-medida:** Agregado enlace a `/kit-pergola`
+- **Desde /muebles-chillan:** Agregados enlaces a `/kit-pergola`, `/peldanos-a-medida`, `/muebles-a-medida`
+
+**Nota:** Los enlaces van en la sección "También te puede interesar" (relatedLinks), que es la forma estándar de enlaces relacionados en el componente ServiceLandingPage. No se modificó el componente para agregar enlaces en medio del texto (arquitectura existente no lo soporta nativamente).
+
+**Hipótesis:** Enlaces desde páginas de servicios relacionados mejoran rastreabilidad y autoridad interna de /kit-pergola y /peldanos-a-medida.
+
+### Archivos modificados
+
+**Páginas modificadas:**
+- `src/app/kit-pergola/page.tsx` — Title/description CTR-oriented, nueva sección H2 sobre uniones y soportes, 2 FAQs nuevas, alt text de imágenes mejorados
+- `src/lib/service-landings.ts` — peldanosLandingConfig: title/description mejorados, nueva sección en extraSections sobre huella vs contrahuella, 3 FAQs (2 nuevas + 1 reordenada); relatedLinks actualizados en cubiertasLandingConfig, moldurasLandingConfig, mueblesAMedidaLandingConfig, mueblesChillanLandingConfig
+
+**Datos utilizados:** NO se inventaron datos de negocio (años, clientes, precios no en repo, ratings, direcciones, plazos, garantías, especies de madera no listadas). Se usaron solo hechos existentes en el repo o consejos generales no-numéricos-comerciales.
+
+**Commit strategy:** Push directo a main (owner request). Build de producción (`npm run build`) debe pasar antes de push.
+
+### Resultados esperados
+
+**Posiciones:**
+- **/kit-pergola:** de posición 7,5 → objetivo: mantener <8 (ya en página 1)
+  - "kit pergola" (148 imp, pos 6,9) → objetivo: mantener <7
+  - "uniones para pergolas" (15 imp, pos 9,5) → objetivo: subir a <8
+- **/peldanos-a-medida:** de posición 9,1 → objetivo: mantener <10
+  - "peldaños de madera para escalera" (pos 23,6) → objetivo: subir a <15
+  - "huella de madera para escalera" (pos 5,5) → objetivo: mantener <6
+
+**CTR:**
+- /kit-pergola: de 2,0% → objetivo 3,5%+ (con title/description más orientados a acción y FAQs que resuelven objeciones)
+- /peldanos-a-medida: mejorar CTR desde queries informacionales con sección H2 útil
+
+**Queries capturadas:**
+- Cluster pérgola (441 imp / 2 clics) → objetivo: 8-12 clics con mejor CTR
+- "kit para armar pergolas de madera" (12 imp) → captar 1-2 clics
+- "peldaños de madera para escalera" → captar 2-3 clics desde pos mejorada
+
+**Tráfico entre páginas:**
+- Más tráfico desde páginas de servicios a medida hacia /kit-pergola y /peldanos-a-medida vía relatedLinks
+
+### Build status
+
+⏳ Pendiente verificar build de producción (`npm run build`) antes de push
+
+### URLs optimizadas (2 páginas)
+
+1. `/kit-pergola` — Title/description CTR-oriented, sección H2 sobre uniones y soportes metálicos, 2 FAQs nuevas, alt text mejorados (mayor oportunidad: 1.124 imp / 22 clics / CTR 2,0%)
+2. `/peldanos-a-medida` — Title/description mejorados con "peldaños de madera para escalera", sección H2 sobre huella vs contrahuella, 3 FAQs (234 imp / 6 clics / pos 9,1)
+
+### URLs con enlaces internos agregados (4 páginas de servicios)
+
+- `/cubiertas-a-medida` → enlace a /peldanos-a-medida
+- `/molduras-a-medida` → enlaces a /kit-pergola y /peldanos-a-medida
+- `/muebles-a-medida` → enlace a /kit-pergola
+- `/muebles-chillan` → enlaces a /kit-pergola, /peldanos-a-medida, /muebles-a-medida
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Kit pérgola:**
+   - CTR: 2,0% → objetivo 3,5%+
+   - Clics desde cluster pérgola (441 imp): 2 → objetivo 8-12
+   - Posición "kit pergola" (148 imp, pos 6,9): mantener <7
+   - Posición "uniones para pergolas" (15 imp, pos 9,5): subir a <8
+2. **Peldaños a medida:**
+   - Posición "peldaños de madera para escalera" (pos 23,6): subir a <15
+   - Posición "huella de madera para escalera" (pos 5,5): mantener <6
+   - CTR general desde queries informacionales (huella vs contrahuella)
+3. **Enlaces internos:**
+   - Tráfico desde /cubiertas-a-medida, /molduras-a-medida, /muebles-a-medida, /muebles-chillan hacia /kit-pergola y /peldanos-a-medida
+
+---
+
 ## 2026-10-09 (Lote 9): Profundización de comedores-nordicos y puertas-a-medida
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-11 a 2026-10-08, sc-domain:ideamadera.cl)

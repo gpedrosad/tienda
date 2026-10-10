@@ -13,9 +13,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/kit-pergola";
-const pageTitle = "Kit de Pérgola de Madera | Uniones Metálicas 3×3";
+const pageTitle = "Kit para Armar Pérgola de Madera 3×3 | Bases y Soportes";
 const pageDescription =
-  "Kit de pérgola de madera con uniones metálicas para pérgola modular 3×3 pulgadas. Incluye bases, codos y herrajes. No incluye maderas. Cotiza por WhatsApp.";
+  "Kit completo para armar pérgola de madera 3×3 pulgadas con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío Chile. Cotiza por WhatsApp.";
 
 const keywords = [
   "kit pérgola",
@@ -107,6 +107,16 @@ const faqItems = [
     question: "¿Qué diferencia hay entre base para atornillar y base para cementar?",
     answer:
       "La base para atornillar sirve en suelos firmes y lisos, como terrazas. La base para cementar sirve en más tipos de suelo: hay que hacer una perforación de 30 cm y rellenarla con cemento.",
+  },
+  {
+    question: "¿Sirve como kit de soportes para pérgola?",
+    answer:
+      "Sí. Este kit incluye todos los soportes metálicos para armar 1 módulo de pérgola sobre suelo: 4 bases para anclar los postes, 4 codos a 90° para conectar postes y vigas, más la tornillería y herrajes de fijación. Es un kit completo de soportes y uniones metálicas para pérgola de madera 3×3 pulgadas.",
+  },
+  {
+    question: "¿Qué base de pérgola me conviene?",
+    answer:
+      "Depende del suelo. Si ya tienes una terraza firme o superficie lista, la base para atornillar es más rápida. Si vas a instalar la pérgola sobre tierra, pasto o un suelo que no es liso, la base para cementar con perforación de 30 cm da más estabilidad y funciona en distintos tipos de terreno.",
   },
   {
     question: "¿Puedo ampliar la pérgola después?",
@@ -285,7 +295,7 @@ export default function KitPergolaPage() {
           <div className="absolute inset-0">
             <Image
               src={heroImage}
-              alt="Pérgola modular de madera armada sobre suelo con kit de uniones metálicas"
+              alt="Kit pérgola de madera instalada con uniones metálicas y bases sobre suelo"
               fill
               priority
               sizes="100vw"
@@ -361,6 +371,39 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
+        <section className="border-y border-white/10">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-light tracking-tight text-white">
+                Uniones y soportes metálicos para pérgola modular
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-300 md:text-base">
+                Este kit de pérgola incluye todas las uniones metálicas y soportes necesarios para
+                armar una estructura modular resistente. Las{" "}
+                <strong className="font-medium text-white">bases metálicas</strong> anclan los 4
+                postes de madera 3×3 pulgadas (75×75 mm) al suelo, con dos opciones: base para
+                atornillar en superficies firmes o base para cementar con perforación de 30 cm en
+                distintos tipos de terreno.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+                Los <strong className="font-medium text-white">4 codos metálicos a 90°</strong> unen
+                postes y vigas en las esquinas, permitiendo un montaje firme sin cortes complicados. La
+                tornillería incluida (tornillos para madera, tapas plásticas, 25 tarugos y tirafondos
+                de 10 mm) completa el sistema de fijación para una pérgola estable y duradera.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+                El diseño modular permite combinar varios kits: empieza con 1 módulo sobre suelo y
+                agranda la pérgola sumando más uniones metálicas según el espacio. Es ideal para quien
+                busca un{" "}
+                <strong className="font-medium text-white">
+                  kit de soportes para pérgola de madera
+                </strong>{" "}
+                con armado simple y sin límite de expansión.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="border-b border-white/10">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
             <div>
@@ -374,7 +417,7 @@ export default function KitPergolaPage() {
               <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
                 <Image
                   src={systemImage}
-                  alt="Kit de uniones metálicas para pérgola: 4 bases, 4 codos a 90 grados y tornillería"
+                  alt="Uniones metálicas para pérgola: kit completo con 4 bases, codos 90° y herrajes"
                   width={900}
                   height={700}
                   sizes="(max-width: 768px) 100vw, 50vw"

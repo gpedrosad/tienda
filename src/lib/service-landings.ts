@@ -171,15 +171,18 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  pageTitle: "Peldaños a Medida en Madera | Cotiza por WhatsApp",
+  pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
-    "Peldaños a medida en madera para escaleras. Atención a empresas y particulares. Envíos a todo Chile. Cotiza por WhatsApp.",
+    "Peldaños y huellas de madera para escalera a medida. Cotiza largo, ancho, espesor y cantidad por WhatsApp. Envíos a todo Chile.",
   keywords: [
     "peldaños a medida",
     "peldaños de madera a medida",
     "escalones de madera a medida",
     "peldaños para escalera",
     "cotizar peldaños a medida",
+    "peldaños de madera para escalera",
+    "huellas de madera para escalera",
+    "huellas de escalera a medida",
   ],
   eyebrow: "Peldaños a medida en madera",
   h1: "Peldaños a medida para escaleras",
@@ -251,6 +254,16 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
         "Sí. Fabricamos cada peldaño en base a las medidas de tu proyecto para lograr un ajuste preciso y una terminación prolija.",
     },
     {
+      question: "¿Qué diferencia hay entre huella y contrahuella?",
+      answer:
+        "La huella es la superficie horizontal del peldaño donde pisas (la profundidad de la pisada). La contrahuella es la pieza vertical que cierra el frente del escalón. Fabricamos huellas de madera a medida; las contrahuellas se cotizan aparte si las necesitas.",
+    },
+    {
+      question: "¿Qué medidas necesito para cotizar peldaños de madera para escalera?",
+      answer:
+        "Para cotizar bien necesitamos: largo del peldaño (ancho de la escalera), ancho o fondo de la huella (profundidad de pisada, típicamente 25-30 cm), espesor de la madera (comúnmente 2-4 cm), cantidad de peldaños, tipo de escalera (recta, con descanso, caracol) y comuna de despacho. Una foto de la escalera actual o plano con medidas ayuda mucho.",
+    },
+    {
       question: "¿Qué tipo de madera recomiendan para peldaños?",
       answer:
         "Trabajamos opciones de madera seleccionada según uso, estilo y terminación. La recomendación final depende del tránsito y del diseño de la escalera.",
@@ -281,6 +294,20 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
     },
   ],
   extraSections: [
+    {
+      title: "Peldaños y huellas de madera para escalera a medida",
+      paragraphs: [
+        "Cuando cotizas peldaños de madera para escalera, es importante entender la diferencia: el peldaño es toda la pieza donde pisas, mientras que la huella es la superficie horizontal (la pisada) y la contrahuella es la pieza vertical que cierra el frente del escalón. En esta página fabricamos huellas de madera a medida; las contrahuellas se cotizan aparte si las necesitas.",
+        "Para cotizar bien tus peldaños o huellas de madera para escalera, envía por WhatsApp: largo de cada peldaño (el ancho de la escalera), ancho o fondo de la huella (la profundidad de la pisada, típicamente 25-30 cm), espesor de la madera (comúnmente 2-4 cm), cantidad de peldaños, tipo de escalera (recta, con descanso, caracol), y la comuna de despacho. Si tienes una foto de la escalera actual o un plano con medidas, mejor aún.",
+      ],
+      bullets: [
+        "Largo del peldaño (ancho de la escalera)",
+        "Ancho/fondo de la huella (profundidad de pisada)",
+        "Espesor de la madera",
+        "Cantidad de peldaños",
+        "Tipo de escalera y comuna",
+      ],
+    },
     {
       title: "Huellas de escalera, no la obra completa",
       paragraphs: [
@@ -484,6 +511,11 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
       description: "Uniones metálicas para pérgola. No incluye maderas.",
     },
     {
+      href: "/peldanos-a-medida",
+      title: "Peldaños a medida",
+      description: "Huellas de escalera según largo, ancho y espesor.",
+    },
+    {
       href: "/puertas-a-medida",
       title: "Puertas a medida",
       description: "Hojas de madera según vano. Cotiza con medidas y foto.",
@@ -639,14 +671,19 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
       description: "Guía para cotizar proyectos personalizados por WhatsApp.",
     },
     {
-      href: "/puertas-a-medida",
-      title: "Puertas a medida",
-      description: "Hojas de madera según vano. Cotiza con medidas y foto.",
+      href: "/kit-pergola",
+      title: "Kit pérgola",
+      description: "Uniones metálicas para pérgola modular 3×3 pulgadas.",
     },
     {
       href: "/peldanos-a-medida",
       title: "Peldaños a medida",
       description: "Huellas de escalera según largo, ancho y espesor.",
+    },
+    {
+      href: "/puertas-a-medida",
+      title: "Puertas a medida",
+      description: "Hojas de madera según vano. Cotiza con medidas y foto.",
     },
     {
       href: "/cubiertas-a-medida",
@@ -1291,6 +1328,28 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
         "Sí. Realizamos envíos a todo Chile. Te indicamos opciones al cotizar.",
     },
   ],
+  relatedLinks: [
+    {
+      href: "/cubiertas-a-medida",
+      title: "Cubiertas a medida",
+      description: "Mesones y tablones de madera para quincho o cocina.",
+    },
+    {
+      href: "/kit-pergola",
+      title: "Kit pérgola modular",
+      description: "Uniones metálicas y soportes para armar pérgola 3×3.",
+    },
+    {
+      href: "/peldanos-a-medida",
+      title: "Peldaños a medida",
+      description: "Huellas de madera para escalera según tus medidas.",
+    },
+    {
+      href: "/muebles-a-medida",
+      title: "Muebles a medida",
+      description: "Proyectos personalizados en madera desde Chillán.",
+    },
+  ],
   ctaTitle: "Cotiza tus muebles en Chillán",
   ctaParagraph:
     "Escríbenos por WhatsApp y te orientamos con catálogo o fabricación a medida.",
@@ -1450,6 +1509,11 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
       href: "/cubiertas-a-medida",
       title: "Cubiertas y mesones",
       description: "Tablones y cubiertas de madera para quinchos, barras y cocinas.",
+    },
+    {
+      href: "/kit-pergola",
+      title: "Kit pérgola modular",
+      description: "Uniones metálicas y soportes para armar pérgola 3×3 pulgadas.",
     },
     {
       href: "/puertas-a-medida",
