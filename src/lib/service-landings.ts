@@ -254,16 +254,6 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
         "Sí. Fabricamos cada peldaño en base a las medidas de tu proyecto para lograr un ajuste preciso y una terminación prolija.",
     },
     {
-      question: "¿Qué diferencia hay entre huella y contrahuella?",
-      answer:
-        "La huella es la superficie horizontal del peldaño donde pisas (la profundidad de la pisada). La contrahuella es la pieza vertical que cierra el frente del escalón. Fabricamos huellas de madera a medida; las contrahuellas se cotizan aparte si las necesitas.",
-    },
-    {
-      question: "¿Qué medidas necesito para cotizar peldaños de madera para escalera?",
-      answer:
-        "Para cotizar bien necesitamos: largo del peldaño (ancho de la escalera), ancho o fondo de la huella (profundidad de pisada, típicamente 25-30 cm), espesor de la madera (comúnmente 2-4 cm), cantidad de peldaños, tipo de escalera (recta, con descanso, caracol) y comuna de despacho. Una foto de la escalera actual o plano con medidas ayuda mucho.",
-    },
-    {
       question: "¿Qué tipo de madera recomiendan para peldaños?",
       answer:
         "Trabajamos opciones de madera seleccionada según uso, estilo y terminación. La recomendación final depende del tránsito y del diseño de la escalera.",

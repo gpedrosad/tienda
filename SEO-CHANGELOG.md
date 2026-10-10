@@ -150,12 +150,13 @@
 **Cambio:** Se quitaron afirmaciones sobre contrahuellas y rangos de medidas no confirmados por el negocio.
 
 **Archivos modificados:**
-- `src/lib/service-landings.ts` — peldanosLandingConfig: corregidos 2 FAQs y 1 extraSection
+- `src/lib/service-landings.ts` — peldanosLandingConfig: eliminadas 2 FAQs duplicadas originales, corregido 1 extraSection
 
 **Detalle:**
-1. En la FAQ "¿Qué diferencia hay entre huella y contrahuella?" se cambió "Fabricamos huellas de madera a medida; las contrahuellas se cotizan aparte si las necesitas" por "Esta página es de huellas de madera a medida; las contrahuellas no se asumen incluidas: si las necesitas, indícalo al cotizar"
-2. En la FAQ "¿Qué medidas necesito para cotizar peldaños de madera para escalera?" se eliminaron rangos numéricos: "(profundidad de pisada, típicamente 25-30 cm)" → "(profundidad de pisada)", "(comúnmente 2-4 cm)" → eliminado, y "tipo de escalera (recta, con descanso, caracol)" → "tipo de escalera (por ejemplo recta o con descanso)"
+1. Eliminadas las 2 FAQs originales agregadas en 3ab3615 que contenían wording incorrecto: "¿Qué diferencia hay entre huella y contrahuella?" (con "las contrahuellas se cotizan aparte") y "¿Qué medidas necesito para cotizar peldaños de madera para escalera?" (con "típicamente 25-30 cm", "comúnmente 2-4 cm", "caracol")
+2. Conservadas las versiones corregidas de esas FAQs con wording aprobado: "las contrahuellas no se asumen incluidas: si las necesitas, indícalo al cotizar" y sin rangos numéricos específicos
 3. En extraSection "Peldaños y huellas de madera para escalera a medida" se aplicaron las mismas correcciones de wording
+4. Verificado con grep que no quedan términos prohibidos en src/: "25-30 cm", "2-4 cm", "caracol", "se cotizan aparte"
 
 **Build:** ✅ Pasa sin errores
 
