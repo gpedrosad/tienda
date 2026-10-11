@@ -268,19 +268,28 @@ export const medidasMesaGuideConfig: GuideConfig = {
       ],
     },
     {
-      title: "Medidas recomendadas por cantidad de personas",
+      title: "Tabla de referencia: medidas según cantidad de personas",
       content: [
-        "Estas son las medidas de referencia para mesas rectangulares y redondas según la cantidad de comensales:",
+        "Usa esta tabla como guía inicial para elegir el tamaño de tu mesa de comedor según cuántas personas comen habitualmente:",
       ],
       table: {
-        headers: ["Personas", "Mesa rectangular", "Mesa redonda"],
+        headers: ["Personas", "Mesa rectangular (largo × ancho)", "Mesa redonda (diámetro)"],
         rows: [
           ["2-4", "120 × 80 cm", "Ø 90-100 cm"],
           ["4-6", "160 × 90 cm", "Ø 120 cm"],
           ["6-8", "200 × 100 cm", "Ø 140 cm"],
           ["8-10", "240 × 100 cm", "Ø 160 cm"],
+          ["10-12", "300 × 100 cm", "Ø 180 cm"],
         ],
       },
+    },
+    {
+      title: "Altura estándar de mesa de comedor y sillas",
+      content: [
+        "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie de la mesa. Esta altura permite sentarse cómodamente con las piernas en ángulo de 90° y los pies apoyados en el suelo.",
+        "La altura del asiento de las sillas debe ser de 45-48 cm, dejando una distancia de 27-30 cm entre el asiento y la superficie de la mesa. Esta separación da espacio suficiente para las piernas sin que las rodillas choquen con la estructura.",
+        "Para mesas de 10 personas o más (240-300 cm de largo), considera el ancho de 100 cm para dar mayor comodidad y permitir que los comensales en los extremos tengan suficiente espacio para los codos.",
+      ],
     },
     {
       title: "Circulación alrededor de la mesa",
@@ -306,6 +315,21 @@ export const medidasMesaGuideConfig: GuideConfig = {
   ],
   faqs: [
     {
+      question: "¿Cuánto mide una mesa de comedor?",
+      answer:
+        "Las medidas estándar varían según la cantidad de personas: una mesa para 4-6 personas mide 160 × 90 cm; para 6-8 personas, 200 × 100 cm; para 8-10 personas, 240 × 100 cm. La altura estándar desde el piso hasta la superficie es 75 cm.",
+    },
+    {
+      question: "¿Qué altura tiene una mesa de comedor?",
+      answer:
+        "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Las sillas deben tener asientos de 45-48 cm de altura, dejando 27-30 cm de espacio entre el asiento y la mesa para las piernas.",
+    },
+    {
+      question: "¿Qué medidas tiene un comedor para 10 personas?",
+      answer:
+        "Para 10 personas cómodas, necesitas una mesa rectangular de 240-300 cm de largo × 100 cm de ancho, o una mesa redonda de Ø 160-180 cm. El comedor debe tener al menos 400-480 cm × 260 cm para dar espacio de circulación de 80 cm alrededor de la mesa.",
+    },
+    {
       question: "¿Cuánto debe medir una mesa para 6 personas?",
       answer:
         "Para 6 personas cómodas, una mesa rectangular de 160 × 90 cm o una mesa redonda de Ø 120 cm son medidas estándar. Si el espacio lo permite, 180 × 90 cm da aún más comodidad.",
@@ -329,8 +353,13 @@ export const medidasMesaGuideConfig: GuideConfig = {
   relatedLinks: [
     {
       href: "/collections/mesas",
-      title: "Mesas de madera",
+      title: "Mesas de comedor de madera",
       description: "Explora mesas de comedor en distintos tamaños y formatos.",
+    },
+    {
+      href: "/collections/sillas",
+      title: "Sillas de madera para comedor",
+      description: "Sillas de madera maciza fabricadas en Chillán.",
     },
     {
       href: "/comedores-nordicos",

@@ -67,9 +67,15 @@ export default function HomePage() {
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
               mueblería en Chillán
             </Link>. Encuentra{" "}
+            <Link href="/collections/mesas" className="underline hover:text-neutral-900">
+              mesas de comedor de madera
+            </Link>{" "}para 4, 6 u 8 personas,{" "}
+            <Link href="/collections/sillas" className="underline hover:text-neutral-900">
+              sillas de madera para comedor
+            </Link>{" "}y{" "}
             <Link href="/mesas-de-centro" className="underline hover:text-neutral-900">
               mesas ratonas
-            </Link>{" "}de madera maciza para tu living.
+            </Link>{" "}para el living.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link

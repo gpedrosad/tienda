@@ -327,7 +327,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
           <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
             <h2 className="text-2xl font-light tracking-tight md:text-3xl">
-              Cotiza tu mesa de madera
+              Cotiza {collection.whatsappTitle.toLowerCase()}
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
               Escribe por WhatsApp el modelo o las medidas, la terminación y tu comuna.
