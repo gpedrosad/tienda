@@ -1,5 +1,228 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-11 (Lote 11): Optimización CTR veladores/mesas/sillas, enlaces internos y guía medidas mesa
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-13 a 2026-10-10, sc-domain:ideamadera.cl)
+
+**Auditoría rápida previa:** 58 URLs del sitemap con estado 200, sin enlaces internos rotos, canonicals/H1/meta/JSON-LD OK → no hay regresiones técnicas que corregir.
+
+**Sitio 28 días:** 203 clics / 8.441 impresiones. Última semana (2026-10-02 a 10-08): 64 clics / 3.058 imp / pos 8.1 vs semana previa 56 clics / 2.060 imp / pos 9.9.
+
+**Páginas priorizadas hoy:**
+
+| URL / Query | Impresiones | Clics | CTR | Posición | Estado/Acción |
+|---|---|---|---|---|---|
+| **/collections/veladores** | 842 | 2 | 0,24% | 6,3 | Query "veladores de madera" 689 imp pos 4.5 (7d: 552 imp pos 3.6 0 clics) |
+| "veladores de madera" | 689 | 0 | - | 4,5 | Reescribir title/description enfoque fabricación a medida |
+| "velador madera" | 60 | - | 20,7 | - | " |
+| **/collections/mesas** | 404 | 3 | 0,74% | 27,5 | Queries comedor: "mesas de comedor de madera" 35 imp pos 23.7 |
+| "mesas de comedor de madera" | 35 | - | - | 23,7 | Lead con "mesas de comedor" en title/H1 |
+| "mesa comedor" | 43 | - | - | 39,6 | " |
+| "mesas de comedor" | 40 | - | - | 43,2 | " |
+| "mesa de comedor" | 39 | - | - | 41,0 | " |
+| **/collections/sillas** | 193 | 5 | 2,59% | 27,4 | Query "sillas de madera" 62 imp pos 21.4 (7d pos 19.9 mejorando) |
+| "sillas de madera" | 62 | - | - | 21,4 | Incluir frase exacta "sillas de madera" en title |
+| "sillas de madera para comedor" | 18 | - | - | 34,8 | " |
+| **/guias/medidas-mesa-comedor** | 110 | 1 | 0,91% | 8,0 | Growing: "cuánto mide una mesa de comedor", "medidas comedor 10 personas" pos 19 |
+| "cuánto mide una mesa de comedor" | - | - | - | - | Tabla referencia + FAQs long-tail |
+| "medidas de mesas de comedor" | - | - | - | 42 | " |
+| "altura mesa comedor" | - | - | - | 64-65 | " |
+| **/cubiertas-a-medida** | - | - | - | - | Ya menciona "mesones de madera para cocina" (no tocar) |
+
+**URLs NO tocadas hoy:** /kit-pergola, /peldanos-a-medida (Lote 10, ayer), /comedores-nordicos, /puertas-a-medida, /mesas-de-centro, /products/mesa-tripode-ratona, /ads/* y /sitelink/* (paid-only noindex).
+
+### Cambios implementados
+
+#### 1. **Bug fix: CTA dinámico en colecciones** ✅
+
+**Problema:** El CTA inferior de las colecciones tenía hardcodeado "Cotiza tu mesa de madera" en todas las colecciones (veladores, sillas, bancas, etc.).
+
+**Solución:**
+- Cambiado H2 del CTA de hardcoded "Cotiza tu mesa de madera" → dinámico "Cotiza {whatsappTitle.toLowerCase()}"
+- Ahora cada colección muestra su propio texto: "Cotiza veladores de madera", "Cotiza sillas de madera", etc.
+- Archivo modificado: `src/app/collections/[handle]/page.tsx` línea 330
+
+**Hipótesis:** CTA contextualizado mejora coherencia y no confunde al usuario en páginas no-mesas.
+
+#### 2. **Optimización CTR /collections/veladores** ✅
+
+**Problema:** 842 impresiones, 2 clics, CTR 0,24%, posición 6,3. Query "veladores de madera" con 689 impresiones (pos 4,5 en últimos 7d: 552 imp pos 3,6) y 0 clics. "velador madera" 60 imp pos 20,7. El catálogo muestra solo 1 producto (Velador Cubo $270.000) pero el copy ya dice "Fabricamos veladores con medidas personalizadas".
+
+**Solución:**
+- **Title anterior:** "Veladores de Madera: Mesitas de Noche en Chile | Idea Madera" (60 chars sin sufijo)
+- **Title nuevo:** "Veladores de Madera Hechos a Medida en Chillán" (48 chars sin sufijo)
+- **Description anterior:** "Veladores de madera maciza para dormitorio: altura ideal 50-70 cm, fabricación propia en Chillán. Cotiza por WhatsApp con envío a todo Chile." (144 chars)
+- **Description nueva:** "Veladores de madera hechos a medida en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile." (149 chars)
+- **Intro reforzado:** "Fabricamos veladores con medidas personalizadas según tu espacio y preferencias" al segundo párrafo.
+- **FAQ ajustada:** "¿Los veladores vienen barnizados?" → "¿Qué terminación tienen los veladores?" con respuesta que no asume barnizado 100% del catálogo ("Si necesitas una terminación específica o sin barniz, indícalo al cotizar")
+
+**Hipótesis:** Title con "hechos a medida" refleja la oferta real (1 producto catálogo + fabricación custom). Description con "fabricación artesanal" y "Chillán" mejora relevancia para búsqueda local. FAQ sin asumir terminación única evita reclamaciones.
+
+#### 3. **Optimización /collections/mesas para queries de comedor** ✅
+
+**Problema:** 404 impresiones, 3 clics, CTR 0,74%, posición 27,5. Queries "mesas de comedor de madera" (35 imp pos 23,7), "mesa comedor" (43 imp pos 39,6), "mesas de comedor" (40 imp pos 43,2), "mesa de comedor" (39 imp pos 41). El título actual prioriza genérico "Mesas de Madera: Comedor, Ratonas y Living | Chile".
+
+**Solución:**
+- **Title anterior:** "Mesas de Madera: Comedor, Ratonas y Living | Chile"
+- **Title nuevo:** "Mesas de Comedor de Madera y Ratonas | Chile" (49 chars sin sufijo)
+- **H1 anterior:** "Mesas de madera para comedor y living"
+- **H1 nuevo:** "Mesas de comedor de madera y ratonas para living"
+- **Description anterior:** "Mesas de madera maciza para comedor y living: rectangulares, redondas y mesas ratonas. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile."
+- **Description nueva:** "Mesas de comedor de madera maciza para 4, 6 u 8 personas. También mesas ratonas para living. Fabricación en Chile, desde $159.990. Cotiza por WhatsApp."
+- **Intro reforzado:** "mesas de comedor rectangulares y redondas para 4, 6 u 8 personas" al inicio del primer párrafo.
+- **Guía título:** "Cómo elegir tu mesa de madera" → "Cómo elegir tu mesa de comedor de madera"
+- **Guía párrafo 2 ampliado:** Menciona "Revisa nuestra guía de medidas de mesa de comedor para calcular el tamaño ideal según tu espacio y cantidad de personas. Si buscas armar un comedor completo de estilo coordinado, revisa comedores nórdicos con mesas, sillas y bancas."
+
+**Hipótesis:** Title y H1 liderando con "mesas de comedor de madera" mejora relevancia para queries con mayor volumen (35-43 imp). Enlaces contextuales a guías distribuyen autoridad interna. No canibaliza /mesas-de-centro (enfocado en "mesa ratona").
+
+#### 4. **Optimización /collections/sillas con frase exacta** ✅
+
+**Problema:** 193 impresiones, 5 clics, CTR 2,59%, posición 27,4 (últimos 7d pos 19,9 mejorando). Query "sillas de madera" 62 imp pos 21,4; "sillas de madera para comedor" 18 imp pos 34,8. Title actual "Sillas de Comedor de Madera | Chile" no incluye la frase exacta al inicio.
+
+**Solución:**
+- **Title anterior:** "Sillas de Comedor de Madera | Chile"
+- **Title nuevo:** "Sillas de Madera para Comedor | Chile" (39 chars sin sufijo)
+- **Description anterior:** "Sillas de comedor en madera maciza: Kentucky, Milán y más modelos. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional."
+- **Description nueva:** "Sillas de madera para comedor: Kentucky, Milán y más modelos en madera maciza. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional."
+
+**Hipótesis:** Frase exacta "sillas de madera para comedor" al inicio del title mejora relevancia para query con 62 imp. Description reforzada con la misma frase.
+
+#### 5. **Enlaces internos con anchors descriptivos** ✅
+
+**Problema:** Falta distribución de autoridad interna desde home, /muebles-chillan y guías hacia /collections/mesas y /collections/sillas con anchors relevantes para las queries objetivo.
+
+**Solución:**
+- **Home (src/app/components/HomePage.tsx línea 62-73):**
+  - Agregados 2 enlaces con anchors "mesas de comedor de madera" y "sillas de madera para comedor" en el párrafo descriptivo.
+  - Antes: "Encuentra [mesas ratonas] de madera maciza para tu living."
+  - Después: "Encuentra [mesas de comedor de madera] para 4, 6 u 8 personas, [sillas de madera para comedor] y [mesas ratonas] para el living."
+- **/muebles-chillan (src/lib/service-landings.ts relatedLinks):**
+  - Agregados 2 enlaces al principio de relatedLinks:
+    - "Mesas de comedor de madera" → /collections/mesas (descripción: "Mesas de madera maciza para 4, 6 u 8 personas")
+    - "Sillas de madera para comedor" → /collections/sillas (descripción: "Sillas de madera maciza fabricadas en Chillán")
+- **/guias/medidas-mesa-comedor (src/lib/guides.ts relatedLinks):**
+  - Agregados 2 enlaces:
+    - "Mesas de comedor de madera" → /collections/mesas (antes: "Mesas de madera")
+    - "Sillas de madera para comedor" → /collections/sillas (nuevo)
+
+**Hipótesis:** Anchors descriptivos con keywords exactas ("mesas de comedor de madera", "sillas de madera para comedor") desde páginas de autoridad (home, /muebles-chillan, guías) distribuyen señales relevantes y mejoran posicionamiento de /collections/mesas y /collections/sillas.
+
+#### 6. **Profundización /guias/medidas-mesa-comedor** ✅
+
+**Problema:** 110 impresiones, 1 clic, CTR 0,91%, posición 8,0. Queries long-tail: "cuánto mide una mesa de comedor", "medidas de mesas de comedor" (pos 42), "altura mesa comedor" (pos 64-65), "medidas comedor 10 personas" (pos 19). Falta tabla de referencia rápida y sección sobre altura estándar.
+
+**Solución:**
+- **Tabla de referencia ampliada:**
+  - Agregada fila "10-12 personas: 300 × 100 cm rectangular / Ø 180 cm redonda"
+  - Headers mejorados: "Personas | Mesa rectangular (largo × ancho) | Mesa redonda (diámetro)"
+- **Sección nueva: "Altura estándar de mesa de comedor y sillas"**
+  - 3 párrafos sobre altura estándar 75 cm mesa, 45-48 cm asiento silla, distancia 27-30 cm.
+  - Mención específica al caso de 10 personas con ancho 100 cm para comodidad en extremos.
+- **3 FAQs nuevas agregadas al inicio:**
+  - "¿Cuánto mide una mesa de comedor?" (respuesta: estándares según personas + altura 75 cm)
+  - "¿Qué altura tiene una mesa de comedor?" (respuesta: 75 cm mesa, 45-48 cm silla, 27-30 cm separación)
+  - "¿Qué medidas tiene un comedor para 10 personas?" (respuesta: 240-300 cm largo × 100 cm ancho / Ø 160-180 cm + espacio circulación)
+- Schema FAQPage actualizado con 3 FAQs nuevas (ahora 7 FAQs totales).
+
+**Hipótesis:** Tabla de referencia rápida con caso 10-12 personas captura queries "medidas comedor 10 personas" (pos 19). Sección sobre altura estándar y nuevas FAQs responden intent informacional de queries long-tail ("cuánto mide", "qué altura"). FAQs estructuradas pueden generar rich snippets en SERP.
+
+#### 7. **Verificación /cubiertas-a-medida** ✅
+
+**Problema:** Query "mesones de madera para cocina" 7 imp pos 10,6; "mesones de madera para cocina" captura tráfico de cocinas.
+
+**Solución:**
+- **Verificado contenido existente:** Landing ya menciona "mesones de cocina" en sectionParagraph (línea 394) y en featureCards (línea 401-402: "Barras y mesones de cocina").
+- **No requiere cambio:** La mención ya existe de forma natural en el copy.
+
+### Archivos modificados
+
+**Páginas modificadas:**
+- `src/app/collections/[handle]/page.tsx` — CTA dinámico H2 línea 330
+- `src/app/components/HomePage.tsx` — Enlaces internos con anchors descriptivos línea 62-73
+
+**Configuración SEO:**
+- `src/lib/collection-seo.ts` — Metadata de veladores (title, description, intro, FAQ), mesas (title, H1, description, intro, guía), sillas (title, description)
+- `src/lib/guides.ts` — medidasMesaGuideConfig: tabla ampliada con 10-12 personas, sección nueva altura estándar, 3 FAQs nuevas; relatedLinks con anchors descriptivos
+- `src/lib/service-landings.ts` — mueblesChillanLandingConfig: relatedLinks con 2 enlaces nuevos a mesas y sillas
+
+**Datos utilizados:** NO se inventaron datos de negocio (años, clientes, precios no en repo, ratings, direcciones, plazos, garantías, especies de madera no listadas). Se usaron solo hechos existentes en el repo o consejos generales no-numéricos-comerciales.
+
+**Commit strategy:** Push directo a main (owner request). Build de producción (`npm run build`) debe pasar antes de push.
+
+### Resultados esperados
+
+**Posiciones:**
+- **/collections/veladores:** de posición 6,3 → objetivo: mantener <7 y capturar clics de "veladores de madera" (689 imp pos 4,5)
+  - "veladores de madera" (689 imp, 0 clics, pos 4,5) → objetivo: captar 10-15 clics con title CTR-oriented
+  - "velador madera" (60 imp, pos 20,7) → objetivo: subir a <15
+- **/collections/mesas:** de posición 27,5 → objetivo: <20
+  - "mesas de comedor de madera" (35 imp, pos 23,7) → objetivo: subir a <18
+  - "mesa comedor" (43 imp, pos 39,6) → objetivo: subir a <30
+  - "mesas de comedor" (40 imp, pos 43,2) → objetivo: subir a <35
+- **/collections/sillas:** de posición 27,4 → objetivo: mantener mejora (<20)
+  - "sillas de madera" (62 imp, pos 21,4) → objetivo: mantener <22 con frase exacta en title
+  - "sillas de madera para comedor" (18 imp, pos 34,8) → objetivo: subir a <25
+- **/guias/medidas-mesa-comedor:** de posición 8,0 → objetivo: mantener <10 (ya en página 1)
+  - "cuánto mide una mesa de comedor" → objetivo: captar 2-3 clics con FAQ específica
+  - "medidas comedor 10 personas" (pos 19) → objetivo: subir a <15 con tabla ampliada
+  - "altura mesa comedor" (pos 64-65) → objetivo: subir a <40 con sección nueva
+
+**CTR:**
+- /collections/veladores: de 0,24% → objetivo 0,8%+ (con title fabricación a medida)
+- /collections/mesas: de 0,74% → objetivo 1,2%+ (con lead "mesas de comedor")
+- /collections/sillas: de 2,59% → objetivo: mantener o mejorar (ya es alto relativo)
+- /guias/medidas-mesa-comedor: de 0,91% → objetivo 1,5%+ (con FAQs long-tail)
+
+**Queries capturadas:**
+- "veladores de madera" (689 imp, 0 clics, pos 4,5) → objetivo: 10-15 clics desde /collections/veladores
+- "mesas de comedor de madera" (35 imp, pos 23,7) → objetivo: 2-3 clics desde /collections/mesas
+- "sillas de madera" (62 imp, pos 21,4) → objetivo: 4-6 clics desde /collections/sillas
+- "cuánto mide una mesa de comedor" → objetivo: 2-3 clics desde guía con FAQ específica
+- "medidas comedor 10 personas" (pos 19) → objetivo: 1-2 clics con tabla ampliada
+
+**Tráfico entre páginas:**
+- Más tráfico desde home, /muebles-chillan y /guias/medidas-mesa-comedor hacia /collections/mesas y /collections/sillas vía enlaces internos con anchors descriptivos.
+
+### Build status
+
+✅ Build pasa sin errores
+⚠️ 4 warnings menores de ESLint (variables no usadas, no afectan funcionamiento)
+
+### URLs optimizadas (4 páginas)
+
+1. `/collections/veladores` — Title/description CTR-oriented fabricación a medida, FAQ ajustada (prioridad alta: 689 imp/0 clics pos 4,5)
+2. `/collections/mesas` — Title/H1/description lead con "mesas de comedor de madera", guía ampliada (35 imp pos 23,7)
+3. `/collections/sillas` — Title con frase exacta "sillas de madera para comedor" (62 imp pos 21,4)
+4. `/guias/medidas-mesa-comedor` — Tabla ampliada con 10-12 personas, sección altura estándar, 3 FAQs nuevas (110 imp pos 8,0)
+
+### URLs con enlaces internos agregados (3 páginas)
+
+- `/` (home) — Enlaces a /collections/mesas y /collections/sillas con anchors descriptivos
+- `/muebles-chillan` — 2 enlaces nuevos a mesas y sillas en relatedLinks
+- `/guias/medidas-mesa-comedor` — 2 enlaces con anchors descriptivos a mesas y sillas
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Veladores de madera:**
+   - CTR /collections/veladores: 0,24% → objetivo 0,8%+
+   - Clics desde "veladores de madera" (689 imp/0 clics pos 4,5) → objetivo: 10-15 clics
+   - Posición "velador madera" (60 imp, pos 20,7): subir a <15
+2. **Mesas de comedor:**
+   - Posición /collections/mesas: 27,5 → objetivo <20
+   - Clics desde "mesas de comedor de madera" (35 imp, pos 23,7) → objetivo: 2-3 clics
+   - Posición "mesa comedor" (43 imp, pos 39,6): subir a <30
+3. **Sillas de madera:**
+   - Posición /collections/sillas: 27,4 → objetivo: mantener mejora (<20)
+   - Clics desde "sillas de madera" (62 imp, pos 21,4) → objetivo: 4-6 clics
+4. **Guía medidas mesa:**
+   - CTR /guias/medidas-mesa-comedor: 0,91% → objetivo 1,5%+
+   - Clics desde "cuánto mide una mesa de comedor" → objetivo: 2-3 clics
+   - Posición "medidas comedor 10 personas" (pos 19): subir a <15
+5. **Enlaces internos:**
+   - Tráfico desde home, /muebles-chillan y guía hacia /collections/mesas y /collections/sillas
+
+---
+
 ## 2026-10-10 (Lote 10): Optimización CTR /kit-pergola y profundización /peldanos-a-medida
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-12 a 2026-10-09, sc-domain:ideamadera.cl)

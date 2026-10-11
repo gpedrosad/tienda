@@ -1330,6 +1330,16 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   ],
   relatedLinks: [
     {
+      href: "/collections/mesas",
+      title: "Mesas de comedor de madera",
+      description: "Mesas de madera maciza para 4, 6 u 8 personas.",
+    },
+    {
+      href: "/collections/sillas",
+      title: "Sillas de madera para comedor",
+      description: "Sillas de madera maciza fabricadas en Chillán.",
+    },
+    {
       href: "/cubiertas-a-medida",
       title: "Cubiertas a medida",
       description: "Mesones y tablones de madera para quincho o cocina.",

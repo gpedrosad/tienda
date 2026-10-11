@@ -32,16 +32,16 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Catálogo online de muebles de madera en Chile: mesas, sillas, bancas, veladores, percheros y futones. Cotiza por WhatsApp con envío nacional.",
   },
   mesas: {
-    h1: "Mesas de madera para comedor y living",
-    metadataTitle: "Mesas de Madera: Comedor, Ratonas y Living | Chile",
+    h1: "Mesas de comedor de madera y ratonas para living",
+    metadataTitle: "Mesas de Comedor de Madera y Ratonas | Chile",
     description:
-      "Mesas de madera maciza para comedor y living: rectangulares, redondas y mesas ratonas. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile.",
+      "Mesas de comedor de madera maciza para 4, 6 u 8 personas. También mesas ratonas para living. Fabricación en Chile, desde $159.990. Cotiza por WhatsApp.",
     intro:
-      "Catálogo de mesas de madera maciza fabricadas en Chillán: mesas de comedor rectangulares y redondas, mesas ratonas para living y mesas de centro. Si buscas una mesa de comedor de madera, aquí encuentras opciones para 4, 6 u 8 personas con distintos estilos y medidas. Las mesas ratonas (también llamadas mesas de centro) son bajas, para el sofá del living. Cada modelo incluye foto, precio vigente y medidas. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp. Precio desde $159.990.",
-    guideTitle: "Cómo elegir tu mesa de madera",
+      "Catálogo de mesas de madera maciza fabricadas en Chillán: mesas de comedor rectangulares y redondas para 4, 6 u 8 personas, y mesas ratonas bajas para el sofá del living. Si buscas una mesa de comedor de madera, aquí encuentras opciones con distintos estilos y medidas. También ofrecemos mesas ratonas (también llamadas mesas de centro) para el living. Cada modelo incluye foto, precio vigente y medidas. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp. Precio desde $159.990.",
+    guideTitle: "Cómo elegir tu mesa de comedor de madera",
     guideParagraphs: [
-      "Primero define el uso: mesa de comedor (alta, para comer) o mesa ratona (baja, para el living frente al sofá). Las mesas ratonas también se llaman mesas de centro en Chile. Luego elige la forma: rectangular o redonda, según el espacio y la cantidad de personas.",
-      "Para mesas de comedor de madera, calcula el tamaño según cuántas personas comen: mesa de 160×90 cm para 4-6 personas, mesa de 200×100 cm para 6-8 personas. Si el comedor es cuadrado, considera una mesa redonda para optimizar el espacio visual y la conversación.",
+      "Primero define el uso: mesa de comedor (alta, para comer) o mesa ratona (baja, para el living frente al sofá). Para mesas de comedor de madera, calcula el tamaño según cuántas personas comen: mesa de 160×90 cm para 4-6 personas, mesa de 200×100 cm para 6-8 personas. Si el comedor es cuadrado, considera una mesa redonda para optimizar el espacio visual y la conversación.",
+      "Revisa nuestra guía de medidas de mesa de comedor para calcular el tamaño ideal según tu espacio y cantidad de personas. Si buscas armar un comedor completo de estilo coordinado, revisa comedores nórdicos con mesas, sillas y bancas.",
       "Para cotizar una mesa a medida, escribe por WhatsApp el largo o diámetro que necesitas, la terminación preferida y tu comuna. Te confirmamos plazo de fabricación, precio y opciones de envío antes de que pagues.",
     ],
     faqs: [
@@ -106,9 +106,9 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   },
   sillas: {
     h1: "Sillas de madera para comedor",
-    metadataTitle: "Sillas de Comedor de Madera | Chile",
+    metadataTitle: "Sillas de Madera para Comedor | Chile",
     description:
-      "Sillas de comedor en madera maciza: Kentucky, Milán y más modelos. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.",
+      "Sillas de madera para comedor: Kentucky, Milán y más modelos en madera maciza. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.",
     intro:
       "Catálogo de sillas de madera maciza para comedor fabricadas en Chillán: diseños clásicos y contemporáneos con madera resistente y terminación artesanal. Cada modelo incluye foto, precio y dimensiones. Las sillas de madera para comedor combinan durabilidad, comodidad y estética natural. Cotizamos medidas especiales, cantidad de sillas y despacho por WhatsApp.",
     guideTitle: "Cómo elegir sillas de madera para tu comedor",
@@ -179,11 +179,11 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   },
   veladores: {
     h1: "Veladores de madera para dormitorio",
-    metadataTitle: "Veladores de Madera: Mesitas de Noche en Chile",
+    metadataTitle: "Veladores de Madera Hechos a Medida en Chillán",
     description:
-      "Veladores de madera maciza para dormitorio: altura ideal 50-70 cm, fabricación propia en Chillán. Cotiza por WhatsApp con envío a todo Chile.",
+      "Veladores de madera hechos a medida en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile.",
     intro:
-      "Veladores de madera maciza para dormitorio fabricados en Chillán: mesitas de noche funcionales con diseño limpio y terminación artesanal. Un velador bien elegido suma orden, calidez y equilibrio visual al costado de la cama. Cada modelo incluye foto, precio y medidas. Cotizamos medidas especiales, terminaciones y despacho por WhatsApp.",
+      "Veladores de madera maciza para dormitorio fabricados a medida en Chillán: mesitas de noche funcionales con diseño limpio y terminación artesanal. Un velador bien elegido suma orden, calidez y equilibrio visual al costado de la cama. Fabricamos veladores con medidas personalizadas según tu espacio y preferencias. Cada modelo incluye foto, precio y medidas. Cotiza medidas especiales, terminaciones y despacho por WhatsApp.",
     guideTitle: "Cómo elegir el velador ideal para tu dormitorio",
     guideParagraphs: [
       "La altura del velador debe permitir alcanzar cómodamente desde la cama: lo ideal es que quede a la misma altura del colchón o hasta 10 cm más arriba. Para una cama de 60 cm de alto, un velador de 50-70 cm funciona bien. Si la cama tiene colchón más grueso, suma esos centímetros.",
@@ -202,14 +202,14 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
           "Depende del espacio disponible. Un velador de 30-35 cm de ancho es funcional para espacios ajustados; un velador de 40-50 cm da mayor superficie útil si tienes espacio. La profundidad típica es 30-40 cm.",
       },
       {
-        question: "¿Los veladores vienen barnizados?",
-        answer:
-          "Sí. Todos los veladores de este catálogo incluyen terminación barnizada lista para usar. Si prefieres otro acabado, indícalo al cotizar.",
-      },
-      {
         question: "¿Puedo pedir un velador a medida?",
         answer:
           "Sí. Fabricamos veladores con medidas personalizadas. Escríbenos por WhatsApp con alto, ancho y profundidad que necesitas, más tu comuna.",
+      },
+      {
+        question: "¿Qué terminación tienen los veladores?",
+        answer:
+          "Los veladores de este catálogo tienen terminación barnizada lista para usar. Si necesitas una terminación específica o sin barniz, indícalo al cotizar y te confirmamos disponibilidad.",
       },
       {
         question: "¿Hacen envío de veladores a todo Chile?",
