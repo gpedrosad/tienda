@@ -15,9 +15,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/comedores-nordicos";
-const pageTitle = "Comedores Nórdicos: Mesas y Sillas de Madera | Chile";
+const pageTitle = "Comedor Nórdico: Mesas y Sillas Estilo Escandinavo | Chile";
 const pageDescription =
-  "Arma tu comedor nórdico completo: mesas, sillas y bancas de madera maciza con diseño escandinavo. Fabricación chilena. Cotiza por WhatsApp.";
+  "Comedor nórdico completo en madera: mesas, sillas y bancas estilo escandinavo. Líneas simples, funcionalidad. Fabricación en Chile. Cotiza por WhatsApp.";
 
 const keywords = [
   "comedores nordicos",

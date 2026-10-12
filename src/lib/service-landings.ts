@@ -1096,9 +1096,9 @@ export const contactoLandingConfig: ServiceLandingConfig = {
 
 export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-de-cocina-chillan",
-  pageTitle: "Muebles de Cocina en Chillán a Medida | Idea Madera",
+  pageTitle: "Muebles de Cocina a Medida en Chillán | Mesones · Cotiza por WhatsApp",
   pageDescription:
-    "Cotiza muebles de cocina en Chillán: mesones, cubiertas, islas y terminaciones en madera a medida. Fabricación local y envío a todo Chile.",
+    "Muebles de cocina a medida en Chillán: mesones, cubiertas, islas de madera. Fabricación local, cotización por WhatsApp. Envío a todo Chile.",
   keywords: [
     "muebles de cocina chillan",
     "muebles de cocina en chillán",
@@ -1106,11 +1106,12 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
     "mesones cocina madera",
     "cubiertas cocina chillan",
     "muebles cocina a medida chile",
+    "muebles de cocina a medida chillan",
   ],
   eyebrow: "Muebles de cocina · Chillán",
-  h1: "Muebles de cocina en madera a medida en Chillán",
+  h1: "Muebles de cocina a medida en Chillán: mesones, cubiertas e islas",
   heroParagraph:
-    "Diseñamos y fabricamos muebles de cocina en madera desde nuestro taller en Chillán: mesones, cubiertas, islas y piezas a medida para cocinas nuevas o remodelaciones. Te orientamos por WhatsApp con medidas, madera y terminación, con despacho a todo Chile.",
+    "Fabricamos muebles de cocina a medida desde Chillán: mesones, cubiertas, islas y piezas en madera para cocinas nuevas o remodelaciones. Cotización directa por WhatsApp con medidas, tipo de madera y terminación. Atención local en Chillán y envíos coordinados a todo Chile.",
   badges: ["Taller en Chillán", "Cocinas a medida", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar cocina por WhatsApp",
   whatsappProductTitle: "Muebles de cocina Chillán",
@@ -1133,9 +1134,9 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
       description: "Cotización clara por WhatsApp para particulares y obras.",
     },
   ],
-  sectionTitle: "Cocinas en madera con oficio chillanejo",
+  sectionTitle: "Muebles de cocina en madera desde Chillán",
   sectionParagraph:
-    "Si buscas muebles de cocina en Chillán con madera real y terminación prolija, trabajamos contigo desde la medida hasta el despacho. Combinamos catálogo y fabricación a pedido para mesones, cubiertas de barra, islas y complementos que resisten el uso diario.",
+    "Si buscas muebles de cocina a medida en Chillán con madera real y terminación prolija, trabajamos contigo desde la medida hasta el despacho. Fabricamos mesones de trabajo, cubiertas de barra e islas según las medidas de tu cocina. Atención directa por WhatsApp para particulares y obras, con cotización clara antes de fabricar. Envíos coordinados a Chillán y todo Chile.",
   featureCards: [
     {
       title: "Mesones y cubiertas",
@@ -1175,31 +1176,45 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
       description: "Selección y secado en cámara para mayor estabilidad en cocina.",
     },
   ],
+  extraSections: [
+    {
+      title: "Qué datos necesitas para cotizar muebles de cocina en Chillán",
+      paragraphs: [
+        "Para cotizar muebles de cocina a medida desde Chillán, envía por WhatsApp las medidas de las piezas que necesitas: largo, ancho y espesor del mesón o cubierta. Si es una isla, indica también la altura. Una foto de la cocina ayuda a entender el contexto (ubicación de toma de agua, encimera, ventanas) y proponer la mejor solución.",
+        "Indica también el tipo de pieza: mesón de trabajo, cubierta de isla, barra desayunador, o complementos como repisas. Si tienes preferencia de madera o terminación (barniz natural, teñido, aceite), menciónalo. Si no sabes, te orientamos según el uso y presupuesto. Fabricamos en Chillán y coordinamos envíos a tu comuna.",
+      ],
+    },
+  ],
   faqItems: [
     {
-      question: "¿Hacen muebles de cocina en Chillán?",
+      question: "¿Hacen muebles de cocina a medida en Chillán?",
       answer:
-        "Sí. Fabricamos en Chillán muebles y piezas de cocina en madera a medida, con cotización por WhatsApp.",
+        "Sí. Fabricamos muebles de cocina a medida en Chillán: mesones, cubiertas, islas y piezas personalizadas según las medidas de tu cocina. Cotización directa por WhatsApp.",
     },
     {
-      question: "¿Qué fabrican para cocinas?",
+      question: "¿Qué muebles de cocina fabrican?",
       answer:
-        "Mesones, cubiertas, islas, barras y piezas personalizadas según las medidas y el estilo de tu cocina.",
+        "Fabricamos mesones de trabajo, cubiertas de isla, barras desayunadoras y piezas personalizadas en madera. Todo a medida según las dimensiones de tu cocina.",
     },
     {
-      question: "¿Puedo pedir solo la cubierta o el mesón?",
+      question: "¿Puedo cotizar solo un mesón o cubierta?",
       answer:
-        "Sí. Puedes cotizar una pieza puntual o un conjunto. Indica medidas y uso para una propuesta precisa.",
+        "Sí. Puedes cotizar una pieza puntual (solo el mesón, solo la cubierta de la isla) o un conjunto completo. Indica medidas, tipo de pieza y tu comuna para una propuesta precisa.",
     },
     {
-      question: "¿Envían fuera de Chillán?",
+      question: "¿Qué tipo de madera usan para muebles de cocina?",
       answer:
-        "Sí. Además de atender Chillán, coordinamos envíos a todo Chile según comuna o región.",
+        "Usamos madera maciza seca en cámara para mayor estabilidad. Te orientamos con la mejor opción según uso, presupuesto y terminación (barniz, teñido o aceite protector).",
     },
     {
-      question: "¿Cómo cotizo?",
+      question: "¿Envían muebles de cocina fuera de Chillán?",
       answer:
-        "Escríbenos por WhatsApp con medidas, fotos o plano, comuna y el tipo de mueble de cocina que necesitas.",
+        "Sí. Además de atender Chillán, coordinamos envíos a todo Chile según comuna o región. Cotiza por WhatsApp para confirmar plazo y costo de despacho.",
+    },
+    {
+      question: "¿Cómo cotizo muebles de cocina por WhatsApp?",
+      answer:
+        "Envía medidas (largo, ancho, espesor), foto de la cocina, comuna y tipo de pieza (mesón, isla, cubierta). Te respondemos con opciones de madera, terminación, plazo y precio.",
     },
   ],
   ctaTitle: "Cotiza tus muebles de cocina en Chillán",
@@ -1329,6 +1344,11 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
     },
   ],
   relatedLinks: [
+    {
+      href: "/muebles-de-cocina-chillan",
+      title: "Muebles de cocina en Chillán",
+      description: "Mesones, cubiertas e islas de cocina a medida en madera.",
+    },
     {
       href: "/collections/mesas",
       title: "Mesas de comedor de madera",

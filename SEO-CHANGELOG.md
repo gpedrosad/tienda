@@ -1,5 +1,197 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-12 (Lote 12): Resolver canibalización "mesa ratona" y mejorar CTR guía medidas + cocina Chillán
+
+### Datos de referencia (Google Search Console, 7 días: 2026-10-05 a 2026-10-12, sc-domain:ideamadera.cl)
+
+**Auditoría rápida previa:** 58 URLs del sitemap con estado 200, robots OK, Lote 11 ya live en veladores/mesas/sillas. Sin regresiones técnicas.
+
+**Último día completo 2026-10-11:** 9 clics / 564 impresiones / posición 8.9  
+**7 días (páginas):** 61 clics / 3.619 impresiones / posición 7.9 vs prior 7d: 53 clics / 2.335 imp / pos 9.5 (mejorando)  
+**28 días:** 216 clics / 9.681 impresiones
+
+**Páginas priorizadas hoy:**
+
+| URL / Query | Impresiones | Clics | Posición | Estado/Acción |
+|---|---|---|---|---|
+| **Canibalización "mesa ratona"** | 207 imp sitewide | 0 clics | - | Resolver: /mesas-de-centro hub, /mesa-tripode-ratona específica |
+| /products/mesa-tripode-ratona | 111 imp | 0 clics | 7.7 | Title más específico "trípode", enlaza a hub |
+| /mesas-de-centro | 113 imp | - | - | Reforzar como hub principal "mesa ratona" |
+| /guias/medidas-mesa-comedor | 427 imp | 1 clic | - | Title CTR + ampliar sección altura |
+| "altura de mesa comedor" | - | - | ~70 | Ampliar contenido altura + FAQ |
+| "altura mesa comedor" | - | - | ~70 | " |
+| /muebles-de-cocina-chillan | - | 1 clic | - | 7 clics en prior7; recuperar con local + a medida |
+
+**URLs NO tocadas:** /collections/veladores (Lote 11 fresco, 0 clics en "veladores de madera" 900 imp — solo medir), /collections/mesas y /collections/sillas (Lote 11), /kit-pergola y /peldanos-a-medida (Lote 10; seguir midiendo).
+
+### Cambios implementados
+
+#### 1. **Resolución de canibalización "mesa ratona" (CRÍTICO)** ✅
+
+**Problema:** Query "mesa ratona" con 207 impresiones sitewide y 0 clics, repartida entre /mesas-de-centro (113 imp) y /products/mesa-tripode-ratona (111 imp pos 7.7). Canibalización leve pero crítica por alto volumen sin clics.
+
+**Solución en /mesas-de-centro como hub principal:**
+- **Title anterior:** "Mesas Ratonas de Madera para Living | Chile"
+- **Title nuevo:** "Mesas Ratonas de Madera y Mesa Ratona | Living Chile"
+- **Description anterior:** "Mesas ratonas de madera maciza para living: altura recomendada 40-50 cm según sofá. Trípode, Roma, Ferrara, Hairpin. Cotiza por WhatsApp con envío a todo Chile." (155 chars)
+- **Description nueva:** "Mesa ratona y mesas ratonas de madera: altura 40-50 cm ideal para sofá. Trípode, Roma, Ferrara, Hairpin. Fabricación en Chile. Cotiza por WhatsApp." (149 chars)
+- **Hero paragraph reforzado:** "Mesas ratonas de madera maciza para living: altura ideal 40-50 cm según la altura del sofá. La mesa ratona es la pieza baja que va frente al sofá, también llamada mesa de centro. Ancho recomendado: entre la mitad y dos tercios del largo del sofá para equilibrio visual. Fabricación en Chillán con envío a todo Chile. Cotiza medidas a medida por WhatsApp."
+- **Contenido ampliado:** 4 H2 nuevos con contenido útil:
+  - "¿Qué es una mesa ratona y cómo elegir el tamaño ideal?" (párrafo ampliado sobre qué es, cómo se usa, y que es lo mismo que mesa de centro)
+  - "Altura recomendada de una mesa ratona según el sofá" (ampliado con cojines gruesos vs sofá bajo)
+  - "Tamaño de la mesa ratona según el largo del sofá" (referencia mitad/dos tercios del largo)
+  - "Cómo cotizar una mesa ratona a medida" (párrafo nuevo sobre proceso de cotización por WhatsApp)
+- **3 FAQs nuevas agregadas:**
+  - "¿Cómo sé si una mesa ratona es de la altura correcta?" (respuesta: misma altura del asiento o 5 cm más baja)
+  - "¿Qué modelos de mesa ratona tienen disponibles?" (respuesta: Trípode, Roma, Ferrara, Hairpin, Bali, Seúl, Taipei)
+  - (Total ahora: 9 FAQs)
+- Schema FAQPage actualizado con 9 FAQs
+
+**Solución en /products/mesa-tripode-ratona enfocada en "mesa trípode":**
+- **seoTitle anterior:** "Mesa Trípode Ratona 100x60 | Madera para Living"
+- **seoTitle nuevo:** "Mesa Trípode de Madera Estilo Ratona 100x60 | Living"
+- **seoDescription anterior:** "Mesa trípode de madera en formato ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Fabricada en Chile, cotiza por WhatsApp."
+- **seoDescription nueva:** "Mesa trípode de madera estilo ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Diseño orgánico. Fabricada en Chile, cotiza por WhatsApp."
+- **shortPitch:** "Mesa trípode de madera para living: formato ratona (baja) con patas inclinadas" → "Mesa trípode de madera estilo ratona para living: patas inclinadas, 100 × 60 × 40 cm. Diseño orgánico."
+- **description reforzado:** Mención de "mesa trípode de madera" al inicio + enlace contextual natural hacia /mesas-de-centro: "Si buscas más opciones de mesas ratonas de distintos estilos (Roma, Ferrara, Hairpin, Bali, Seúl, Taipei), revisa nuestra colección completa de mesas ratonas de madera."
+- **features reordenadas:** "Mesa trípode de madera maciza" primero, "Formato ratona / mesa de centro baja" segundo, "Patas inclinadas estilo trípode orgánico" tercero
+
+**Hipótesis:** Definir /mesas-de-centro como página principal para "mesa ratona" concentra autoridad con title/description/contenido reforzado. /mesa-tripode-ratona enfocada en "mesa trípode" y "diseño orgánico" reduce competencia interna. Enlace contextual desde producto hacia colección distribuye PageRank sin canibalizar.
+
+#### 2. **Optimización /guias/medidas-mesa-comedor para CTR** ✅
+
+**Problema:** 427 impresiones / 1 clic en 7d (era 0 antes). Queries débiles: "altura de mesa comedor" y "altura mesa comedor" en posición ~70. Necesita mejorar title/description para CTR y ampliar sección de altura.
+
+**Solución:**
+- **Title anterior:** "Medidas de Mesa de Comedor según Cantidad de Personas | Chile"
+- **Title nuevo:** "Medidas de Mesa de Comedor: Guía Práctica 2026 | Chile"
+- **Description anterior:** "Guía práctica para elegir el tamaño de mesa de comedor según cuántas personas comen: medidas recomendadas, espacio por persona y circulación." (155 chars)
+- **Description nueva:** "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida." (156 chars)
+- **Keywords agregados:** "altura mesa comedor", "altura de mesa de comedor"
+- **Sección "Altura estándar de mesa de comedor y sillas" ampliada de 3 a 5 párrafos:**
+  - Agregados 2 párrafos nuevos sobre cómo verificar si tus sillas actuales son compatibles con una mesa de 75 cm (medir altura del asiento, distancia ideal 27-30 cm)
+  - Mención de qué pasa si la diferencia es mayor a 30 cm (incomodidad al comer)
+- **2 FAQs nuevas agregadas:**
+  - "¿Cómo saber si mis sillas son de la altura correcta para mi mesa?" (respuesta: separación ideal 27-30 cm, ejemplo con mesa 75 cm y silla 45-48 cm)
+  - "¿Puedo usar sillas de distinta altura en la misma mesa?" (respuesta: no es recomendable, incomodidad)
+  - (Total ahora: 8 FAQs)
+- Schema FAQPage actualizado con 8 FAQs
+
+**Hipótesis:** Title con "Guía Práctica 2026" mejora CTR (más actualizado y accionable). Description con "¿Qué medidas debe tener…?" genera curiosidad. Sección de altura ampliada captura queries "altura mesa comedor" con información práctica sobre cómo verificar compatibilidad sillas-mesa. FAQs específicas responden objeciones antes de cotizar.
+
+#### 3. **Refuerzo de /muebles-de-cocina-chillan para recuperar clics** ✅
+
+**Problema:** 1 clic en últimos 7 días vs 7 clics en prior 7d. Queries locales "muebles de cocina chillan" con impresiones pero sin captar clics. Falta claridad sobre intención local + a medida + WhatsApp.
+
+**Solución:**
+- **Title anterior:** "Muebles de Cocina en Chillán a Medida | Idea Madera"
+- **Title nuevo:** "Muebles de Cocina a Medida en Chillán | Mesones · Cotiza por WhatsApp"
+- **Description anterior:** "Cotiza muebles de cocina en Chillán: mesones, cubiertas, islas y terminaciones en madera a medida. Fabricación local y envío a todo Chile." (139 chars)
+- **Description nueva:** "Muebles de cocina a medida en Chillán: mesones, cubiertas, islas de madera. Fabricación local, cotización por WhatsApp. Envío a todo Chile." (143 chars)
+- **H1 anterior:** "Muebles de cocina en madera a medida en Chillán"
+- **H1 nuevo:** "Muebles de cocina a medida en Chillán: mesones, cubiertas e islas"
+- **Hero paragraph reforzado:** "Fabricamos muebles de cocina a medida desde Chillán: mesones, cubiertas, islas y piezas en madera para cocinas nuevas o remodelaciones. Cotización directa por WhatsApp con medidas, tipo de madera y terminación. Atención local en Chillán y envíos coordinados a todo Chile."
+- **Section title:** "Cocinas en madera con oficio chillanejo" → "Muebles de cocina en madera desde Chillán"
+- **Section paragraph reforzado:** "Si buscas muebles de cocina a medida en Chillán con madera real y terminación prolija, trabajamos contigo desde la medida hasta el despacho. Fabricamos mesones de trabajo, cubiertas de barra e islas según las medidas de tu cocina. Atención directa por WhatsApp para particulares y obras, con cotización clara antes de fabricar. Envíos coordinados a Chillán y todo Chile."
+- **Nueva sección en extraSections:** "Qué datos necesitas para cotizar muebles de cocina en Chillán" (2 párrafos sobre medidas, foto, tipo de pieza, madera/terminación, comuna)
+- **6 FAQs reescritas con enfoque local + a medida:**
+  - "¿Hacen muebles de cocina a medida en Chillán?" (reforzado con "a medida")
+  - "¿Qué muebles de cocina fabrican?" (respuesta más específica: mesones de trabajo, cubiertas de isla, barras)
+  - "¿Puedo cotizar solo un mesón o cubierta?" (nueva pregunta, respuesta: sí, pieza puntual o conjunto)
+  - "¿Qué tipo de madera usan para muebles de cocina?" (nueva pregunta, respuesta: madera maciza seca en cámara)
+  - "¿Envían muebles de cocina fuera de Chillán?" (reforzado con "muebles de cocina" en pregunta)
+  - "¿Cómo cotizo muebles de cocina por WhatsApp?" (nueva pregunta, respuesta: medidas, foto, comuna, tipo de pieza)
+
+**Hipótesis:** Title con "a medida" y "Mesones · Cotiza por WhatsApp" mejora relevancia para queries locales con intención transaccional. Description con "cotización por WhatsApp" reduce fricción. Sección extraSections sobre qué datos enviar responde dudas prácticas. FAQs específicas de cocina mejoran autoridad para queries long-tail.
+
+#### 4. **Enlace interno reforzado a /muebles-de-cocina-chillan** ✅
+
+**Problema:** Falta enlace interno desde /muebles-chillan hacia /muebles-de-cocina-chillan.
+
+**Solución:**
+- Agregado enlace en relatedLinks de /muebles-chillan: "Muebles de cocina en Chillán" → /muebles-de-cocina-chillan (descripción: "Mesones, cubiertas e islas de cocina a medida en madera.")
+- Ahora primer enlace del array relatedLinks
+
+**Hipótesis:** Enlace contextual desde /muebles-chillan (página con autoridad de "muebles chillan") mejora rastreabilidad y distribución de PageRank hacia /muebles-de-cocina-chillan.
+
+#### 5. **Optimización opcional /comedores-nordicos para CTR** ✅
+
+**Problema:** 167 impresiones / 2 clics / posición 9.8 para "comedor nordico". CTR bajo pese a posición página 1.
+
+**Solución:**
+- **Title anterior:** "Comedores Nórdicos: Mesas y Sillas de Madera | Chile"
+- **Title nuevo:** "Comedor Nórdico: Mesas y Sillas Estilo Escandinavo | Chile"
+- **Description anterior:** "Arma tu comedor nórdico completo: mesas, sillas y bancas de madera maciza con diseño escandinavo. Fabricación chilena. Cotiza por WhatsApp." (140 chars)
+- **Description nueva:** "Comedor nórdico completo en madera: mesas, sillas y bancas estilo escandinavo. Líneas simples, funcionalidad. Fabricación en Chile. Cotiza por WhatsApp." (154 chars)
+
+**Hipótesis:** Title con "Comedor Nórdico" en singular (query más buscada: 144 imp) y "Estilo Escandinavo" mejora relevancia. Description con "líneas simples, funcionalidad" resume valor del estilo nórdico para compradores que buscan definición.
+
+### Archivos modificados
+
+**Páginas modificadas:**
+- `src/app/mesas-de-centro/page.tsx` — Title, description, hero paragraph, 4 H2 nuevos con contenido ampliado, 3 FAQs nuevas (ahora 9 FAQs), schema FAQPage actualizado
+- `src/data/products.ts` — Producto mesa-tripode-ratona: seoTitle, seoDescription, shortPitch, description reforzado con enlace contextual, features reordenadas
+- `src/app/comedores-nordicos/page.tsx` — Title, description mejorados para CTR
+
+**Configuración SEO:**
+- `src/lib/guides.ts` — medidasMesaGuideConfig: title, description, keywords agregados, sección "Altura estándar" ampliada de 3 a 5 párrafos, 2 FAQs nuevas (ahora 8 FAQs)
+- `src/lib/service-landings.ts` — mueblesCocinaChillanLandingConfig: title, description, H1, heroParagraph, sectionTitle, sectionParagraph, extraSections nueva (qué datos necesitas), 6 FAQs reescritas; mueblesChillanLandingConfig: relatedLinks con enlace nuevo a /muebles-de-cocina-chillan
+
+### Resultados esperados
+
+**Posiciones:**
+- **/mesas-de-centro:** Consolidar como hub principal para "mesa ratona" (capturar tráfico de 207 imp / 0 clics sitewide)
+  - "mesa ratona" (113 imp desde /mesas-de-centro) → objetivo: captar 5-10 clics con contenido reforzado
+- **/products/mesa-tripode-ratona:** de pos 7.7 → objetivo: mantener pero enfocar en "mesa trípode" y "diseño orgánico" (reducir competencia con "mesa ratona")
+- **/guias/medidas-mesa-comedor:** de pos ~70 para queries de altura → objetivo: <40 con sección ampliada
+  - "altura mesa comedor" / "altura de mesa comedor" → objetivo: 1-2 clics con contenido práctico
+
+**CTR:**
+- /mesas-de-centro: mejorar CTR desde queries "mesa ratona" con title/description reforzados
+- /guias/medidas-mesa-comedor: de CTR 0,23% (1 clic / 427 imp) → objetivo 0,7%+ con title CTR-oriented
+- /muebles-de-cocina-chillan: recuperar clics (7 → 1 en prior7) con title/H1/description local + a medida
+- /comedores-nordicos: de CTR 1,2% (2 clics / 167 imp) → objetivo 1,8%+ con title singular "comedor nórdico"
+
+**Queries capturadas:**
+- "mesa ratona" (207 imp sitewide, 0 clics) → objetivo: 5-10 clics desde /mesas-de-centro con contenido ampliado
+- "altura mesa comedor" (~70 pos) → objetivo: 1-2 clics desde /guias/medidas-mesa-comedor con sección ampliada
+- "muebles de cocina a medida chillan" → objetivo: recuperar 3-5 clics desde /muebles-de-cocina-chillan con copy local
+
+### Build status
+
+✅ Build pasa sin errores  
+⚠️ Warnings menores de ESLint (variables no usadas, no afectan funcionamiento)
+
+### URLs optimizadas (5 páginas)
+
+1. `/mesas-de-centro` — Hub principal "mesa ratona": title/description/hero/contenido ampliado, 3 FAQs nuevas (prioridad 1: 207 imp/0 clics sitewide)
+2. `/products/mesa-tripode-ratona` — Enfoque en "mesa trípode" y "diseño orgánico": seoTitle, seoDescription, description con enlace contextual (prioridad 1)
+3. `/guias/medidas-mesa-comedor` — Title CTR + sección altura ampliada, 2 FAQs nuevas (prioridad 2: 427 imp/1 clic)
+4. `/muebles-de-cocina-chillan` — Title/H1/description local + a medida, extraSections nueva, 6 FAQs reescritas (prioridad 3: recuperar clics)
+5. `/comedores-nordicos` — Title/description CTR mejorados (opcional: 167 imp/2 clics pos 9.8)
+
+### URLs con enlaces internos agregados (1 página)
+
+- `/muebles-chillan` — Enlace nuevo a /muebles-de-cocina-chillan en relatedLinks
+
+### Métricas GSC a monitorear (próximos 14-30 días)
+
+1. **Canibalización "mesa ratona":**
+   - /mesas-de-centro: clics desde "mesa ratona" (objetivo: 5-10 clics)
+   - /products/mesa-tripode-ratona: verificar si deja de rankear para "mesa ratona" (reducción de canibalización)
+2. **Guía medidas mesa comedor:**
+   - CTR: 0,23% (1 clic / 427 imp) → objetivo 0,7%+
+   - Posición "altura mesa comedor" (~70 → objetivo <40)
+   - Clics desde queries de altura: objetivo 1-2 clics
+3. **Muebles cocina Chillán:**
+   - Clics: 1 → objetivo recuperar a 3-5 clics
+   - Queries locales "muebles de cocina a medida chillan"
+4. **Comedores nórdicos:**
+   - CTR: 1,2% (2 clics / 167 imp) → objetivo 1,8%+
+   - Clics desde "comedor nordico" singular
+
+---
+
 ## 2026-10-11 (Lote 11): Optimización CTR veladores/mesas/sillas, enlaces internos y guía medidas mesa
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-13 a 2026-10-10, sc-domain:ideamadera.cl)
