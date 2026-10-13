@@ -1,5 +1,226 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-13 (Lote 13): Optimización fichas producto + diferenciación muebles a medida vs catálogo
+
+### Datos de referencia (Google Search Console, 28 días: 2026-09-13 a 2026-10-10, sc-domain:ideamadera.cl)
+
+**Auditoría del sitio publicado (2026-10-13):** 58/58 URLs del sitemap con estado 200, robots.txt OK, todos los enlaces internos responden 200, canonicals y H1 correctos, JSON-LD válido, Lote 12 ya live. Sin regresiones técnicas.
+
+**Productos con rankeo alto pero 0 clics (prioridad Lote 13):**
+- /products/mesa-centro-roma: 59 imp, 0 clics, pos 4.3
+- /products/sitial-hank-negro: 46 imp, 0 clics, pos 3.4 (title incluía precio)
+- /products/silla-milan-lenga: 43 imp, 0 clics, pos 6.4
+- /products/mesa-comedor-tripode-negra: 32 imp, 0 clics, pos 7.2
+- /products/mesa-comedor-roma-negra: 26 imp, 0 clics, pos 7.1
+- /products/mesa-comedor-redonda-novara: 20 imp, 0 clics, pos 8.1
+
+**Posible canibalización detectada:**
+- /muebles-a-medida: 32 imp, 0 clics, pos 7.9
+- /muebles-chillan: 523 imp, 24 clics (diferente intención de búsqueda)
+
+**Página con mejor CTR del sitio:**
+- /molduras-a-medida: 115 imp, 9 clics (CTR 7.8%), pos 7.9 → ampliar con cola larga
+
+### Cambios implementados
+
+#### 1. **Optimización SEO de 6 fichas de producto con rankeo alto y 0 clics** ✅
+
+**Mesa de centro Roma** (59 imp, pos 4.3)
+- **Title anterior:** `Mesa de centro Roma de madera`
+- **Title nuevo:** `Mesa Centro Roma 120×60 cm | Ratona Madera Living`
+- **Description anterior:** "Mesa de centro Roma de madera para living, 120 × 60 × 45 cm, $359.990. Distinta de las mesas de comedor Roma. Cotiza por WhatsApp." (140 chars)
+- **Description nueva:** "Mesa de centro Roma en madera maciza, 120 × 60 × 45 cm para living. Mesa ratona con barniz natural. Desde $359.990, cotiza por WhatsApp." (137 chars)
+- **Contenido ampliado:** diferencia vs mesa de comedor Roma, referencias a /mesas-de-centro y /collections/mesas
+
+**Sitial Hank Negro** (46 imp, pos 3.4)
+- **Title anterior:** `Sitial Hank Negro $459.990 | Sillón Madera Living` (con precio)
+- **Title nuevo:** `Sitial Hank Negro | Sillón Madera Maciza Living` (sin precio, más contexto)
+- **Description anterior:** "Sitial Hank Negro en madera maciza ($459.990). Terminación negra elegante para living moderno y minimalista. Fabricado en Chile, cotiza por WhatsApp." (152 chars)
+- **Description nueva:** "Sitial Hank Negro en madera maciza con terminación elegante para living, oficina o dormitorio. Desde $459.990, cotiza por WhatsApp con envío a todo Chile." (157 chars)
+- **Contenido ampliado:** usos múltiples (living, sala de lectura, oficina, dormitorio), enlace a /collections/sitiales
+
+**Silla Milán Lenga** (43 imp, pos 6.4) — **seoTitle y seoDescription agregados (antes no tenía)**
+- **Title anterior:** (generado automático) `Silla Milán Lenga de Comedor en Madera`
+- **Title nuevo:** `Silla Milán Lenga | Comedor Madera Maciza`
+- **Description anterior:** (generada automática)
+- **Description nueva:** "Silla Milán en madera de lenga, diseño contemporáneo liviano para comedor diario. Desde $199.000. Cotiza por WhatsApp con envío a todo Chile." (143 chars)
+- **Contenido ampliado:** descripción de la madera de lenga, fabricación en Chile, referencias a /collections/sillas y /guias/elegir-sillas-madera-comedor
+
+**Mesa comedor Trípode Negra** (32 imp, pos 7.2)
+- **Title anterior:** `Mesa Comedor Trípode Negra | Madera Maciza`
+- **Title nuevo:** `Mesa Comedor Trípode Negra 220×100 cm | Madera Maciza`
+- **Description anterior:** "Mesa de comedor Trípode Negra en madera maciza (220×100 cm). Terminación negra para comedores modernos. Cotiza por WhatsApp." (125 chars)
+- **Description nueva:** "Mesa de comedor Trípode Negra en madera maciza, 220×100 cm con terminación negra. Diseño contemporáneo para 6-8 personas. Desde $699.000." (141 chars)
+- **Contenido ampliado:** capacidad (6-8 personas), usos (comedores, interiorismo), referencias a /collections/mesas y /guias/medidas-mesa-comedor
+
+**Mesa comedor Roma Negra** (26 imp, pos 7.1)
+- **Title anterior:** `Mesa Comedor Roma Negra | Madera Maciza`
+- **Title nuevo:** `Mesa Comedor Roma Negra 200×100 cm | Madera Maciza`
+- **Description anterior:** "Mesa de comedor Roma Negra en madera maciza (200×100 cm). Terminación oscura para comedores contemporáneos. Cotiza por WhatsApp." (130 chars)
+- **Description nueva:** "Mesa de comedor Roma Negra en madera maciza, 200×100 cm con terminación oscura. Robusta para 6-8 personas. Desde $699.000, cotiza por WhatsApp." (147 chars)
+- **Contenido ampliado:** capacidad, usos múltiples (comedores familiares, coworking), línea Roma natural, referencias a /collections/sillas y /guias/medidas-mesa-comedor
+
+**Mesa Comedor Redonda Novara** (20 imp, pos 8.1) — **seoTitle y seoDescription agregados (antes no tenía)**
+- **Title anterior:** (generado automático) `Mesa Comedor Redonda Modelo Novara de Comedor en Madera Maciza`
+- **Title nuevo:** `Mesa Comedor Redonda Novara Ø150 cm | Madera Maciza`
+- **Description anterior:** (generada automática)
+- **Description nueva:** "Mesa de comedor redonda Novara en madera maciza, Ø150 cm para 6-8 personas. Diseño moderno con base robusta. Desde $719.990, cotiza por WhatsApp." (149 chars)
+- **Contenido ampliado:** ventajas del formato redondo (conversación, optimización de espacio), capacidad, referencias a /collections/mesas y /guias/medidas-mesa-comedor
+
+**Producto JSON-LD:** verificado completo y coherente con datos visibles en las 6 fichas ✅
+
+#### 2. **Diferenciación /muebles-a-medida vs /muebles-chillan (evitar canibalización)** ✅
+
+**Problema detectado:**
+- /muebles-a-medida: 32 imp, 0 clics, pos 7.9
+- /muebles-chillan: 523 imp, 24 clics
+- Posible solapamiento de intención de búsqueda ("muebles a medida" vs "muebles Chillán")
+
+**Solución en `/muebles-a-medida` (enfoque: proyectos personalizados):**
+
+- **Hero paragraph ampliado:** "Fabricamos piezas de madera a medida desde nuestro taller en Chillán: cubiertas y mesones para quincho o cocina, puertas personalizadas, peldaños para escaleras, molduras con perfil específico y muebles de cocina según tus medidas. Cada proyecto parte de tu idea y especificaciones exactas, con asesoría directa por WhatsApp y envío coordinado a todo Chile. **Si buscas muebles de catálogo (mesas, sillas, bancas) fabricados localmente en Chillán, visita nuestra página de muebles en Chillán.**"
+
+- **Section title y paragraph actualizados:**
+  - Title: "Proyectos de madera según tus medidas" (antes: "Todo lo que fabricamos a medida")
+  - Paragraph: "Desde peldaños para una escalera hasta el mesón de un quincho, trabajamos madera según tus especificaciones para que cada pieza encaje exactamente en tu proyecto. Cada línea de producto a medida tiene su propia página con detalle y cotización directa. **Para muebles de catálogo (mesas, sillas, bancas) con medidas estándar, consulta nuestra mueblería en Chillán.**"
+
+- **Nueva FAQ agregada:**
+  - **P:** "¿Cuál es la diferencia entre muebles a medida y la mueblería en Chillán?"
+  - **R:** "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según tus medidas exactas. La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad."
+
+- **FAQ existente actualizada:**
+  - **P:** "¿Puedo ver los otros servicios en detalle?"
+  - **R:** "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida, molduras a medida y muebles de cocina en Chillán. **Si buscas mesas, sillas o bancas de catálogo, visita muebles Chillán.**"
+
+- **Nuevo enlace en relatedLinks:**
+  - Título: "Muebles en Chillán"
+  - Descripción: "Catálogo de mesas, sillas y bancas fabricadas localmente."
+  - Enlace: /muebles-chillan
+
+**Solución en `/muebles-chillan` (enfoque: catálogo local):**
+
+- **Hero paragraph ampliado:** "Somos fábrica y mueblería en Chillán desde 2001: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; **también proyectos a medida como cubiertas, puertas y peldaños (consulta muebles a medida en madera)**. Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán."
+
+- **Section paragraph actualizado:** "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. **Para proyectos personalizados con medidas específicas (cubiertas, puertas, peldaños, molduras), visita nuestra página de muebles a medida en madera.**"
+
+- **FAQ actualizada:**
+  - **P:** "¿Hacen muebles a medida en Chillán?"
+  - **R:** "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. **Revisa la página de muebles a medida en madera para más detalle.**"
+
+**Enlaces bidireccionales creados ✅**
+
+#### 3. **Ampliación /molduras-a-medida con contenido de cola larga** ✅
+
+**Métrica actual:** 115 imp, 9 clics (CTR 7.8%, **el mejor del sitio**), pos 7.9
+
+**5 nuevas FAQs agregadas (total ahora: 11 FAQs):**
+
+1. **¿Qué es una moldura de guardapolvo?**
+   - Respuesta: definición, función (protección base del muro, tapa unión con piso), uso en toda habitación, cotización por metro lineal
+
+2. **¿Para qué sirve una cornisa de madera?**
+   - Respuesta: moldura en encuentro muro-cielo, detalle arquitectónico, oculta imperfecciones, lisa o con perfil decorativo
+
+3. **¿Qué terminación recomiendan para molduras de interior?**
+   - Respuesta: opciones cruda (lista para pintar), con imprimante (base selladora), o con barniz; depende del estilo del proyecto
+
+4. **¿Puedo pedir molduras con perfil personalizado?**
+   - Respuesta: sí, enviar foto del perfil/sección con regla; ayudamos a definir si no tiene corte exacto
+
+5. **¿Las molduras de madera necesitan mantenimiento?**
+   - Respuesta: interior con barniz/pintura no requiere mantenimiento regular; zonas húmedas (baños, cocinas) requieren sellador apropiado y ventilación
+
+**2 nuevas secciones extraSections agregadas:**
+
+**Sección 1: "Tipos de molduras de madera más comunes"**
+- Clasificación por ubicación y función
+- Guardapolvo/zócalo: corre en base del muro protegiendo unión con piso
+- Cornisas: rematan encuentro muro-cielo, aportan altura visual, ocultan imperfecciones
+- Molduras de marco: puertas y ventanas, terminan vano con detalle
+- Molduras decorativas: dividir paños de muro, panelados, enmarcar espejos
+- Perfiles lisos o con relieves según estilo arquitectónico
+
+**Sección 2: "Cómo medir molduras para cotizar"**
+- Qué medidas enviar: largo total (suma tramos), perfil/sección (foto de corte con regla), cantidad de piezas o metros lineales
+- Guardapolvo: medir perímetro de habitación descontando anchos de puertas
+- Cornisas: medir contorno del cielo en mismo sentido
+- Moldura existente a replicar: foto de frente + foto del corte lateral con regla
+- Indicar si necesita esquinas ingleteadas (corte a 45°) o piezas rectas sin corte
+
+**Sin inventar servicios:** todo el contenido agregado es información verificable sobre molduras de madera (tipos, funciones, medición, terminaciones) ✅
+
+### Estado del sitio post-Lote 13
+
+**Build:**
+- ✅ Compilación exitosa sin errores
+- ⚠️ 4 warnings menores de eslint (variables no usadas en guias/page.tsx, manifest.ts, products/[handle]/page.tsx, guides.ts — no afectan funcionamiento)
+
+**Commit:**
+- Hash: `1062602`
+- Branch: `main`
+- Push exitoso a origin/main
+
+**URLs modificadas:**
+- ✅ 6 fichas de producto actualizadas (products.ts)
+- ✅ 2 páginas de servicio diferenciadas (service-landings.ts: mueblesAMedidaLandingConfig, mueblesChillanLandingConfig)
+- ✅ 1 página de servicio ampliada (service-landings.ts: moldurasLandingConfig)
+
+**URLs intactas según instrucciones:**
+- ✅ No se tocó /collections/veladores
+- ✅ No se tocó /collections/mesas (página de colección)
+- ✅ No se tocó /collections/sillas (página de colección)
+- ✅ No se tocó /kit-pergola
+- ✅ No se tocó /peldanos-a-medida
+- ✅ No se tocó /mesas-de-centro (página landing)
+- ✅ No se tocó /products/mesa-tripode-ratona
+- ✅ No se tocó /guias/medidas-mesa-comedor
+- ✅ No se tocó /muebles-de-cocina-chillan
+- ✅ No se tocó /comedores-nordicos
+- ✅ Scripts de analítica intactos
+
+### Sugerencias para Lote 14 (prioridad tentativa)
+
+**Prioridad alta:**
+
+1. **Monitorear CTR de las 6 fichas optimizadas** durante 7-14 días en próximo reporte de GSC
+   - Hipótesis: titles con medidas + contexto de uso → mejor CTR
+   - Mesa centro Roma (59 imp, pos 4.3): ¿mejora con "120×60 cm | Ratona Madera Living"?
+   - Sitial Hank (46 imp, pos 3.4): ¿mejora sin precio en title pero con contextos de uso?
+   - Silla Milán (43 imp, pos 6.4): ¿mejora con title SEO específico (antes era automático)?
+
+2. **Revisar si la diferenciación /muebles-a-medida vs /muebles-chillan reduce solapamiento**
+   - Comparar impresiones y clics de ambas URLs en próximo reporte
+   - ¿/muebles-a-medida mejora su posición 7.9 con intención más clara?
+   - ¿/muebles-chillan mantiene sus 24 clics sin pérdida por diferenciación?
+
+3. **Evaluar si ampliar FAQs de cola larga en otras páginas de servicio**
+   - /molduras-a-medida tiene CTR 7.8% (el mejor del sitio) → si mantiene o mejora CTR post-ampliación, aplicar mismo modelo a:
+     - /peldanos-a-medida
+     - /cubiertas-a-medida
+     - /puertas-a-medida
+
+**Prioridad media:**
+
+4. **Optimizar fichas de producto con 10-50 impresiones y 0 clics** (próximo lote)
+   - Candidatos: productos con posiciones 5-10 que aún no reciben clics
+   - Aplicar mismo modelo: title con medidas + contexto, description con capacidad/uso + CTA, contenido ampliado con enlaces internos
+
+5. **Agregar breadcrumbs visuales en fichas de producto** para reforzar enlaces internos
+   - Actualmente hay breadcrumbs en JSON-LD y navegación simple en texto
+   - Considerar breadcrumbs visuales más prominentes (ej: Inicio > Mesas > Mesa centro Roma)
+
+6. **Revisar otros pares de páginas que puedan estar canibalizándose**
+   - Buscar en próximo reporte GSC: páginas con queries similares y posiciones cercanas sin clics
+
+**Monitoreo continuo:**
+
+- Seguimiento de impresiones y clics de las 6 URLs optimizadas
+- Evaluar si /muebles-a-medida mejora su posición (actual 7.9) tras diferenciación
+- Verificar que /molduras-a-medida mantiene su CTR 7.8% con el contenido ampliado
+- Monitorear si /muebles-chillan mantiene sus 24 clics tras clarificación de intención
+
+---
+
 ## 2026-10-12 (Lote 12): Resolver canibalización "mesa ratona" y mejorar CTR guía medidas + cocina Chillán
 
 ### Datos de referencia (Google Search Console, 7 días: 2026-10-05 a 2026-10-12, sc-domain:ideamadera.cl)
