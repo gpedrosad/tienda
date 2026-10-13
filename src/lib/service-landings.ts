@@ -648,6 +648,31 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
       answer:
         "No publicamos un catálogo fijo. Envía una foto del perfil o de la sección (idealmente con una regla) y el largo. Si no tienes el corte exacto, te ayudamos a definir una opción según el uso.",
     },
+    {
+      question: "¿Qué es una moldura de guardapolvo?",
+      answer:
+        "El guardapolvo es una moldura que corre en el encuentro entre el muro y el piso, protegiendo la base del muro y tapando la unión. Se usa en toda la habitación para dar un remate limpio. Cotiza por metro lineal o por tramos cortados según tu proyecto.",
+    },
+    {
+      question: "¿Para qué sirve una cornisa de madera?",
+      answer:
+        "La cornisa es una moldura que se instala en el encuentro entre el muro y el cielo (techo), aportando un detalle arquitectónico y ocultando imperfecciones en la unión. Puede ser lisa o con perfil decorativo según el estilo del proyecto.",
+    },
+    {
+      question: "¿Qué terminación recomiendan para molduras de interior?",
+      answer:
+        "Para interiores, las molduras se pueden entregar crudas (listas para pintar), con imprimante (base selladora), o con barniz. La elección depende del resto de las terminaciones del proyecto y del color que busques. Te orientamos según tu caso al cotizar.",
+    },
+    {
+      question: "¿Puedo pedir molduras con perfil personalizado?",
+      answer:
+        "Sí. Envianos una foto del perfil o de la sección que necesitas, junto con una referencia de medida (regla o cinta). Si no tienes el corte exacto, podemos ayudarte a definir un perfil similar según el uso (zócalo, cornisa, marco).",
+    },
+    {
+      question: "¿Las molduras de madera necesitan mantenimiento?",
+      answer:
+        "Molduras de interior con barniz o pintura no requieren mantenimiento regular. Si quedan en zonas de alta humedad (baños, cocinas), es recomendable usar sellador apropiado y revisar la ventilación del espacio.",
+    },
   ],
   extraSections: [
     {
@@ -661,6 +686,20 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
         "Largo (cm o metros) y cantidad",
         "Uso: muro, techo, marco o vano",
         "Comuna de despacho",
+      ],
+    },
+    {
+      title: "Tipos de molduras de madera más comunes",
+      paragraphs: [
+        "Las molduras de madera se clasifican según su ubicación y función en el espacio. El guardapolvo (o zócalo) corre en la base del muro protegiendo la unión con el piso. Las cornisas rematan el encuentro del muro con el cielo, aportando altura visual y ocultando imperfecciones. Las molduras de marco se usan en puertas y ventanas para terminar el vano con detalle.",
+        "También existen molduras decorativas para dividir paños de muro, crear panelados o enmarcar espejos. Cada tipo puede tener perfiles lisos o con relieves según el estilo arquitectónico del proyecto.",
+      ],
+    },
+    {
+      title: "Cómo medir molduras para cotizar",
+      paragraphs: [
+        "Para cotizar molduras de madera necesitas el largo total (suma de todos los tramos), el perfil o sección (foto del corte con regla), y la cantidad de piezas o metros lineales. Si vas a instalar guardapolvo, mide el perímetro de la habitación descontando anchos de puertas. Para cornisas, mide el contorno del cielo en el mismo sentido.",
+        "Si tienes una moldura existente que quieres replicar, saca una foto de frente y otra del corte lateral con una regla. Indica también si necesitas esquinas ingleteadas (corte a 45°) o si prefieres piezas rectas sin corte.",
       ],
     },
   ],
@@ -1246,7 +1285,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   eyebrow: "Mueblería y Fábrica en Chillán",
   h1: "Mueblería en Chillán: Fábrica de muebles de madera",
   heroParagraph:
-    "Somos fábrica y mueblería en Chillán desde 2001: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.",
+    "Somos fábrica y mueblería en Chillán desde 2001: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta muebles a medida en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.",
   badges: ["Fábrica en Chillán", "Desde 2001", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar muebles por WhatsApp",
   whatsappProductTitle: "Muebles Chillán",
@@ -1271,7 +1310,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Mueblería en Chillán para cada espacio del hogar",
   sectionParagraph:
-    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, muebles de living y proyectos a medida. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención.",
+    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas (cubiertas, puertas, peldaños, molduras), visita nuestra página de muebles a medida en madera.",
   featureCards: [
     {
       title: "Comedor",
@@ -1335,7 +1374,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen muebles a medida en Chillán?",
       answer:
-        "Sí. Además del catálogo, fabricamos según medidas y especificaciones de tu proyecto.",
+        "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. Revisa la página de muebles a medida en madera para más detalle.",
     },
     {
       question: "¿Envían fuera de Chillán?",
@@ -1397,7 +1436,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-a-medida",
   pageTitle: "Muebles a Medida en Madera | Fabricación Chile",
   pageDescription:
-    "Muebles de madera a medida en Chile: cubiertas, puertas, peldaños, molduras y cocinas. Cotiza tu proyecto por WhatsApp con envío nacional.",
+    "Muebles de madera a medida en Chile: cubiertas, puertas, peldaños, molduras y cocinas personalizadas. Cotiza tu proyecto por WhatsApp con envío nacional.",
   keywords: [
     "muebles a medida",
     "muebles de madera a medida",
@@ -1409,7 +1448,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   eyebrow: "Fabricación a medida en madera",
   h1: "Muebles de madera a medida para tu proyecto",
   heroParagraph:
-    "En Idea Madera fabricamos piezas de madera a medida desde nuestro taller en Chillán: cubiertas y mesones, puertas, peldaños para escaleras, molduras y muebles de cocina. Cada proyecto parte de tus medidas y especificaciones, con asesoría directa por WhatsApp y envío a todo Chile.",
+    "Fabricamos piezas de madera a medida desde nuestro taller en Chillán: cubiertas y mesones para quincho o cocina, puertas personalizadas, peldaños para escaleras, molduras con perfil específico y muebles de cocina según tus medidas. Cada proyecto parte de tu idea y especificaciones exactas, con asesoría directa por WhatsApp y envío coordinado a todo Chile. Si buscas muebles de catálogo (mesas, sillas, bancas) fabricados localmente en Chillán, visita nuestra página de muebles en Chillán.",
   badges: ["Taller en Chillán", "Fabricación a medida", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar proyecto a medida",
   whatsappProductTitle: "Muebles a medida",
@@ -1432,9 +1471,9 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
       description: "Cotización clara por WhatsApp para particulares y obras.",
     },
   ],
-  sectionTitle: "Todo lo que fabricamos a medida",
+  sectionTitle: "Proyectos de madera según tus medidas",
   sectionParagraph:
-    "Desde peldaños para una escalera hasta el mesón de un quincho, trabajamos madera según tus especificaciones. Cada línea de producto a medida tiene su propia página con detalle y cotización directa.",
+    "Desde peldaños para una escalera hasta el mesón de un quincho, trabajamos madera según tus especificaciones para que cada pieza encaje exactamente en tu proyecto. Cada línea de producto a medida tiene su propia página con detalle y cotización directa. Para muebles de catálogo (mesas, sillas, bancas) con medidas estándar, consulta nuestra mueblería en Chillán.",
   featureCards: [
     {
       title: "Cubiertas y mesones",
@@ -1526,7 +1565,12 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Puedo ver los otros servicios en detalle?",
       answer:
-        "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida, molduras a medida y muebles de cocina en Chillán.",
+        "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida, molduras a medida y muebles de cocina en Chillán. Si buscas mesas, sillas o bancas de catálogo, visita muebles Chillán.",
+    },
+    {
+      question: "¿Cuál es la diferencia entre muebles a medida y la mueblería en Chillán?",
+      answer:
+        "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según tus medidas exactas. La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad.",
     },
   ],
   relatedLinks: [
@@ -1564,6 +1608,11 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
       href: "/muebles-de-cocina-chillan",
       title: "Muebles de cocina",
       description: "Mesones, islas y piezas de cocina en madera.",
+    },
+    {
+      href: "/muebles-chillan",
+      title: "Muebles en Chillán",
+      description: "Catálogo de mesas, sillas y bancas fabricadas localmente.",
     },
     {
       href: "/comedores-nordicos",

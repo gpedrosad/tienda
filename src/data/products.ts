@@ -268,7 +268,7 @@ export const products: Product[] = [
     category: "Sillas",
     shortPitch: "Silla de lenga con diseño contemporáneo, liviana y resistente para comedor diario.",
     description:
-      "Silla de madera de lenga con diseño contemporáneo, pensada para acompañar comedores y espacios de estar con una línea limpia y resistente para uso diario. La lenga aporta tonos cálidos y buena durabilidad. Cotiza por WhatsApp para combinar cantidad, terminación y despacho.",
+      "La Silla Milán en madera de lenga es una pieza contemporánea fabricada en Chile para comedores y espacios de estar. Con diseño liviano, líneas limpias y madera de lenga seleccionada, aporta tonos cálidos y durabilidad para el uso diario. Ideal para combinar con mesas de comedor de madera maciza. Cotiza cantidad, terminación y despacho por WhatsApp.",
     features: [
       "Madera de lenga seleccionada",
       "Diseño contemporáneo liviano",
@@ -279,6 +279,9 @@ export const products: Product[] = [
     finish: "Barniz natural",
     productionDays: 15,
     imageUrl: "/images/silla-milan-lenga-main.jpg",
+    seoTitle: "Silla Milán Lenga | Comedor Madera Maciza",
+    seoDescription:
+      "Silla Milán en madera de lenga, diseño contemporáneo liviano para comedor diario. Desde $199.000. Cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "perchero-madera-verona",
@@ -373,7 +376,7 @@ export const products: Product[] = [
     imageUrl: "/images/sitial-hank-nero-main.jpg",
     shortPitch: "Sitial Hank en terminación negra, elegante y versátil para living contemporáneo.",
     description:
-      "El Sitial Hank Negro es un sillón de madera maciza con terminación negra, fabricado en Chile por Idea Madera ($459.990). Estructura robusta y cómoda para living, oficina o espacios modernos que buscan un acento sofisticado sin perder la calidez de la madera. Cotiza por WhatsApp con envío a todo Chile.",
+      "El Sitial Hank Negro es un sillón individual de madera maciza con terminación en barniz negro, fabricado en Chile por Idea Madera. Estructura robusta y cómoda ideal para living, sala de lectura, oficina o dormitorio principal en espacios que buscan un acento sofisticado sin perder la calidez de la madera. Complementa con otros sitiales de madera de la colección. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Terminación negra elegante",
       "Estructura sólida y cómoda",
@@ -383,9 +386,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
-    seoTitle: "Sitial Hank Negro $459.990 | Sillón Madera Living",
+    seoTitle: "Sitial Hank Negro | Sillón Madera Maciza Living",
     seoDescription:
-      "Sitial Hank Negro en madera maciza ($459.990). Terminación negra elegante para living moderno y minimalista. Fabricado en Chile, cotiza por WhatsApp.",
+      "Sitial Hank Negro en madera maciza con terminación elegante para living, oficina o dormitorio. Desde $459.990, cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "banca-capri",
@@ -456,7 +459,7 @@ export const products: Product[] = [
     shortPitch:
       "Mesa de centro Roma de madera para living: 120 × 60 × 45 cm, formato ratona frente al sofá.",
     description:
-      "Mesa de centro Roma de madera para living. Mide 120 × 60 × 45 cm y vale $359.990. Es una mesa ratona baja, distinta de las mesas de comedor Roma. Fabricada en Chillán con barniz natural; cotiza terminación y despacho por WhatsApp.",
+      "La Mesa de Centro Roma es una mesa ratona de madera maciza para living, fabricada en Chillán con medidas 120 × 60 × 45 cm. Pieza baja ideal para colocar frente al sofá, con barniz natural que resalta la calidez de la madera. Distinta de las mesas de comedor Roma. Complementa con otras mesas de centro en madera o explora la colección completa de mesas. Cotiza terminación y despacho por WhatsApp.",
     features: [
       "Mesa de centro / ratona para living",
       "120 × 60 × 45 cm",
@@ -467,9 +470,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa de centro Roma de madera",
+    seoTitle: "Mesa Centro Roma 120×60 cm | Ratona Madera Living",
     seoDescription:
-      "Mesa de centro Roma de madera para living, 120 × 60 × 45 cm, $359.990. Distinta de las mesas de comedor Roma. Cotiza por WhatsApp.",
+      "Mesa de centro Roma en madera maciza, 120 × 60 × 45 cm para living. Mesa ratona con barniz natural. Desde $359.990, cotiza por WhatsApp.",
   },
   {
     id: "mesa-frida-redonda",
@@ -584,7 +587,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-tripode-negra-2.jpg",
     shortPitch: "Mesa de comedor trípode en madera negra, pieza central con diseño contemporáneo.",
     description:
-      "La Mesa de Comedor Trípode Negra es una mesa de madera maciza de 220×100 cm con patas inclinadas y terminación negra, fabricada en Chile por Idea Madera ($699.000). Su silueta icónica combina presencia y calidez para comedores modernos y contemporáneos. Fabricación a pedido con envío a todo Chile.",
+      "La Mesa de Comedor Trípode Negra es una pieza de madera maciza de 220×100 cm con patas inclinadas y terminación en barniz negro, fabricada en Chile por Idea Madera. Diseño icónico que combina presencia visual y calidez natural para comedores modernos y contemporáneos. Ideal para proyectos de interiorismo que buscan una mesa de comedor con carácter. Consulta la guía de medidas para mesa de comedor o explora otras mesas de la colección. Fabricación a pedido, cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Patas trípode en terminación negra",
       "Tablero macizo resistente",
@@ -595,9 +598,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
-    seoTitle: "Mesa Comedor Trípode Negra | Madera Maciza",
+    seoTitle: "Mesa Comedor Trípode Negra 220×100 cm | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Trípode Negra en madera maciza (220×100 cm). Terminación negra para comedores modernos. Cotiza por WhatsApp.",
+      "Mesa de comedor Trípode Negra en madera maciza, 220×100 cm con terminación negra. Diseño contemporáneo para 6-8 personas. Desde $699.000.",
   },
   {
     id: "mesa-comedor-roma-negra",
@@ -607,7 +610,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-roma-negra-main.jpg",
     shortPitch: "Mesa de comedor Roma en madera negra, elegante y robusta para espacios contemporáneos.",
     description:
-      "La Mesa Comedor Roma Negra es una mesa de comedor de madera maciza de 200×100 cm con terminación oscura, fabricada en Chile por Idea Madera ($699.000). Construcción robusta para uso diario en comedores familiares o proyectos de interiorismo moderno. Cotiza por WhatsApp con envío a todo Chile.",
+      "La Mesa de Comedor Roma Negra es una pieza de madera maciza de 200×100 cm con terminación en barniz oscuro, fabricada en Chile por Idea Madera. Construcción robusta para uso diario en comedores familiares, proyectos de interiorismo moderno o espacios de coworking. La línea Roma también está disponible en madera natural. Complementa con sillas de comedor de madera o revisa la guía para elegir medidas de mesa de comedor. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Línea Roma en terminación negra",
       "Madera maciza de alta resistencia",
@@ -618,9 +621,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
-    seoTitle: "Mesa Comedor Roma Negra | Madera Maciza",
+    seoTitle: "Mesa Comedor Roma Negra 200×100 cm | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Roma Negra en madera maciza (200×100 cm). Terminación oscura para comedores contemporáneos. Cotiza por WhatsApp.",
+      "Mesa de comedor Roma Negra en madera maciza, 200×100 cm con terminación oscura. Robusta para 6-8 personas. Desde $699.000, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-roma-natural",
@@ -670,7 +673,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-comedor-redonda-modelo-novara-main.jpg",
     shortPitch: "Mesa de comedor redonda en madera con estilo moderno y base robusta.",
     description:
-      "La Mesa Novara redonda combina diseño moderno con la calidez de la madera maciza. Su base estable y tablero circular favorecen la conversación en comedores y espacios abiertos. Una opción destacada para proyectos residenciales que buscan calidad y estética atemporal.",
+      "La Mesa de Comedor Redonda Novara es una pieza de madera maciza con diámetro de 150 cm y diseño moderno, fabricada en Chile por Idea Madera. Su base estable y tablero circular favorecen la conversación y optimizan el espacio en comedores integrados, cocinas abiertas o salones familiares. El formato redondo permite acomodar de 6 a 8 personas cómodamente. Explora otras mesas de comedor de madera o consulta la guía de medidas para elegir el tamaño ideal. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Diseño redondo moderno",
       "Base robusta en madera maciza",
@@ -681,6 +684,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Redonda Novara Ø150 cm | Madera Maciza",
+    seoDescription:
+      "Mesa de comedor redonda Novara en madera maciza, Ø150 cm para 6-8 personas. Diseño moderno con base robusta. Desde $719.990, cotiza por WhatsApp.",
   },
   {
     id: "futon-noruega",
