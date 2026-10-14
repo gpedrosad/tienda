@@ -27,9 +27,9 @@ export const ALL_PRODUCTS_HANDLE = "todos-los-productos";
 export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   [ALL_PRODUCTS_HANDLE]: {
     h1: "Todos los productos",
-    metadataTitle: "Muebles de Madera en Chile | Catálogo Online",
+    metadataTitle: "Catálogo de Muebles de Madera en Chile",
     description:
-      "Catálogo online de muebles de madera en Chile: mesas, sillas, bancas, veladores, percheros y futones. Cotiza por WhatsApp con envío nacional.",
+      "Catálogo de muebles de madera fabricados en Chillán: mesas, sillas, bancas, veladores y más. Cotiza por WhatsApp con envío a todo Chile.",
   },
   mesas: {
     h1: "Mesas de comedor de madera y ratonas para living",

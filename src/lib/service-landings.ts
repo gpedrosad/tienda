@@ -661,7 +661,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué terminación recomiendan para molduras de interior?",
       answer:
-        "Para interiores, las molduras se pueden entregar crudas (listas para pintar), con imprimante (base selladora), o con barniz. La elección depende del resto de las terminaciones del proyecto y del color que busques. Te orientamos según tu caso al cotizar.",
+        "Para interiores, las molduras se pueden entregar crudas (listas para pintar) o con barniz. La elección depende del resto de las terminaciones del proyecto y del color que busques. Te orientamos según tu caso al cotizar.",
     },
     {
       question: "¿Puedo pedir molduras con perfil personalizado?",
@@ -741,14 +741,16 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  pageTitle: "Fábrica de Puertas de Madera a Medida | Chillán",
+  pageTitle: "Puertas de Madera a Medida | Fábrica en Chillán",
   pageDescription:
-    "Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca. Cotiza por WhatsApp con envío a todo Chile.",
+    "Fábrica de puertas de madera a medida en Chillán: interior o exterior, según tu vano. Envía alto, ancho y foto por WhatsApp. Envío a todo Chile.",
   keywords: [
     "puertas de madera a medida",
+    "puertas a medida",
     "fabrica de puertas de madera a medida",
     "fábrica de puertas a medida",
-    "puertas a medida",
+    "fábrica de puertas de madera a medida",
+    "fabricacion de puertas a medida",
     "puertas chillan",
     "puertas de madera chillan",
     "puertas personalizadas madera",
@@ -812,7 +814,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     },
     {
       title: "Fabricación chilena",
-      description: "Más de 30 años de experiencia en madera con equipo artesanal en Chile.",
+      description: "Taller familiar en Chillán desde 2001, con equipo artesanal y maquinaria especializada.",
     },
   ],
   faqItems: [
@@ -824,7 +826,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Dónde fabrican las puertas de madera?",
       answer:
-        "Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida con más de 30 años de experiencia.",
+        "Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida desde 2001.",
     },
     {
       question: "¿Qué datos necesito para cotizar una puerta a medida?",
@@ -865,6 +867,31 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí, fabricamos según el uso. Interior o exterior cambia madera y acabado: indícalo al cotizar, junto con una foto del vano. No prometemos resistencia a la intemperie sin ver el caso.",
     },
+    {
+      question: "¿Cómo mido el vano para cotizar una puerta a medida?",
+      answer:
+        "Mide el ancho del vano arriba, al medio y abajo, y anota la medida más chica. Mide el alto a ambos lados. Si reemplazas una puerta, también sirve el alto, ancho y espesor de la hoja actual. Suma uso (interior o exterior), comuna y una foto del vano. Con eso cotizamos por WhatsApp.",
+    },
+    {
+      question: "¿Mido el vano o la hoja de la puerta actual?",
+      answer:
+        "Sirven las dos. Si el vano ya existe, envía alto, ancho y espesor del vano. Si estás cambiando una puerta, envía también las medidas de la hoja actual. Si puedes, manda ambas más una foto: así evitamos errores al cotizar.",
+    },
+    {
+      question: "¿Fabrican puertas de entrada principal a medida?",
+      answer:
+        "Sí. La entrada principal es un uso exterior: cambia madera y acabado respecto de una puerta de dormitorio o baño. Indícalo al cotizar, con las medidas del vano y una foto. Marco, herrajes e instalación no se asumen incluidos.",
+    },
+    {
+      question: "¿Puedo enviar una foto de una puerta como referencia de diseño?",
+      answer:
+        "Sí. No tenemos un catálogo de modelos fijos: partimos de tus medidas y de una referencia visual. Puede ser la puerta actual, un croquis o una foto de un diseño que te guste (liso, con paneles o con vidrio). Te confirmamos qué es factible en el taller.",
+    },
+    {
+      question: "¿Puedo cotizar varias puertas iguales?",
+      answer:
+        "Sí. Indica la cantidad, si todas comparten las mismas medidas o si hay vanos distintos, y el uso de cada una. Te respondemos con una propuesta por WhatsApp.",
+    },
   ],
   extraSections: [
     {
@@ -886,6 +913,26 @@ export const puertasLandingConfig: ServiceLandingConfig = {
         "Nuestra fábrica de puertas de madera está en Chillán, región de Ñuble. Fabricamos piezas a medida con maquinaria especializada y madera nativa seca en cámara. Cada puerta se fabrica según las medidas exactas del vano y el diseño que definas con nosotros.",
         "Para cotizar por WhatsApp necesitamos: alto, ancho y espesor del vano; si es puerta de interior o exterior; comuna de despacho; y fotos del vano actual o referencia visual del diseño que buscas. Con esa información te enviamos propuesta de madera, terminación, precio y plazo de fabricación.",
         "Fabricamos puertas de hogar (dormitorios, baños, cocinas, entrada principal) y puertas para negocios (locales comerciales, oficinas, bodegas). Cada proyecto se cotiza según especificaciones reales del cliente.",
+      ],
+    },
+    {
+      title: "Tipos de puertas de madera más comunes",
+      paragraphs: [
+        "Cotizamos puertas de hogar y de negocio según el vano y el uso. En casa suelen ser puertas de dormitorio, baño, cocina o la entrada principal. En un local, oficina o bodega el vano y el tránsito pueden ser distintos: dínoslo al escribir.",
+        "El diseño parte de tu referencia: hoja lisa, con paneles o con vidrio. No publicamos un catálogo de modelos. Interior o exterior cambia madera y acabado; no prometemos intemperie sin ver el vano. La cotización parte por la hoja: marco, herrajes e instalación se confirman aparte si los necesitas.",
+      ],
+    },
+    {
+      title: "Cómo medir el vano para cotizar por WhatsApp",
+      paragraphs: [
+        "Para cotizar una puerta a medida necesitamos el vano bien medido. Toma el ancho en tres puntos (arriba, al medio y abajo) y quédate con la medida más chica. Toma el alto a la izquierda y a la derecha. Anota el espesor que necesitas o el de la hoja actual, en centímetros.",
+        "Indica si es interior o exterior, la comuna de despacho y una foto del vano (o de la puerta que quieres reemplazar). Si tienes un croquis o una foto de referencia del diseño, súmala al mismo mensaje. Con eso te respondemos con madera, terminación, precio referencial y plazo.",
+      ],
+      bullets: [
+        "Ancho del vano en tres alturas (usa la menor)",
+        "Alto a ambos lados del vano",
+        "Espesor de la hoja o el que necesitas (cm)",
+        "Uso interior o exterior, comuna y foto",
       ],
     },
   ],
