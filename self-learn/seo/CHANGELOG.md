@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-14
+
+- **Lote 14:** fact-check Lote 13 (quito imprimante en molduras y coworking en Roma Negra; «30 años» en puertas → 2001); CTR `/puertas-a-medida` (title/meta + tipos + medir vano + 5 FAQ); seoTitle/meta en 3 Trípode; snippets `/collections/todos-los-productos` y `/tiny-house-dlt`. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-09-06
 
 - **GSC inspect:** `npm run gsc:inspect` lee cobertura + último crawl de 11 URLs y compara el title vivo. No pide indexación.

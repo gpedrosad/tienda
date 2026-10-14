@@ -142,19 +142,23 @@ export const products: Product[] = [
     price: 699000,
     category: "Mesas",
     imageUrl: "/images/mesa-tripode-1.jpg",
-    shortPitch: "Mesa de comedor con patas trípode en madera, pieza central con presencia y equilibrio visual.",
+    shortPitch:
+      "Mesa de comedor Trípode rectangular en madera natural: 220 × 100 × 75 cm, patas inclinadas para 6 a 8 comensales.",
     description:
-      "La Mesa de comedor Trípode es una de las piezas más reconocidas de Idea Madera. Sus patas inclinadas aportan estabilidad y un diseño distintivo para comedores amplios. El tablero en madera maciza realza la veta natural y la calidez del espacio. Disponible para cotizar con medidas y terminaciones según tu proyecto.",
+      "La Mesa de comedor Trípode es una de las piezas más reconocidas de Idea Madera: patas inclinadas y tablero rectangular de 220 × 100 × 75 cm en madera maciza con barniz natural. Ideal para 6 a 8 comensales en comedores amplios. Distinta de la Trípode negra (misma medida, terminación oscura) y de las Trípode redondas. Revisa la guía de medidas de mesa de comedor o explora otras mesas de la colección. Cotiza terminación y despacho por WhatsApp.",
     features: [
       "Patas trípode de diseño icónico",
-      "Tablero en madera maciza",
+      "Tablero rectangular 220 × 100 cm",
       "Ideal para 6 a 8 comensales",
-      "Fabricación a pedido en Chile",
+      "Barniz natural, fabricación a pedido en Chile",
     ],
     dimensions: { width: "220 cm", depth: "100 cm", height: "75 cm" },
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Trípode 220×100 cm | Madera Natural",
+    seoDescription:
+      "Mesa de comedor Trípode en madera maciza, 220×100 cm con barniz natural. Patas inclinadas para 6 a 8 comensales. Desde $699.000, cotiza por WhatsApp.",
   },
   {
     id: "sillon-lombardo-dos-cuerpos",
@@ -244,22 +248,23 @@ export const products: Product[] = [
     price: 729900,
     category: "Mesas",
     imageUrl: "/images/1MESATRIPODEREDONDAMADERA.jpg",
-    shortPitch: "Mesa de comedor redonda con patas trípode en madera natural, diseño icónico y convivencia.",
+    shortPitch:
+      "Mesa de comedor Trípode redonda en madera natural: Ø140 × 75 cm, patas inclinadas y tablero circular.",
     description:
-      "La Mesa Trípode Redonda es una mesa de comedor circular de madera maciza de Ø140 cm, fabricada en Chile por Idea Madera ($729.900). Su tablero redondo favorece la conversación y optimiza la circulación, con patas inclinadas que le dan un diseño icónico. Cotiza por WhatsApp con envío a todo Chile.",
+      "La Mesa Trípode Redonda es una mesa de comedor circular de madera maciza de Ø140 cm y 75 cm de alto, con patas inclinadas y barniz natural, fabricada en Chile por Idea Madera. El tablero redondo favorece la conversación; la guía de medidas usa Ø140 cm como referencia para 6-8 personas. Distinta de la Trípode rectangular (220 × 100 cm) y de la Trípode redonda negra (Ø150 cm). Explora otras mesas de la colección o cotiza por WhatsApp con envío a todo Chile.",
     features: [
-      "Formato redondo con patas trípode",
-      "Madera maciza con veta natural",
-      "Ideal para comedores integrados",
+      "Formato redondo Ø140 cm con patas trípode",
+      "Madera maciza con barniz natural",
+      "Referencia 6-8 personas (guía de medidas)",
       "Diseño icónico Idea Madera",
     ],
     dimensions: { diameter: "140 cm", height: "75 cm" },
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Trípode Redonda Comedor | Madera Maciza",
+    seoTitle: "Mesa Comedor Trípode Redonda Ø140 cm | Madera Maciza",
     seoDescription:
-      "Mesa de comedor Trípode redonda en madera maciza (Ø140 cm). Diseño icónico con patas inclinadas. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa de comedor Trípode redonda en madera maciza, Ø140 cm con barniz natural. Formato circular para 6-8 personas. Desde $729.900, cotiza por WhatsApp.",
   },
   {
     id: "silla-milan-lenga",
@@ -540,19 +545,23 @@ export const products: Product[] = [
     price: 820000,
     category: "Mesas",
     imageUrl: "/images/mesa-roma-redonda-negra-main.jpg",
-    shortPitch: "Mesa redonda con patas trípode en terminación negra, diseño icónico para comedor moderno.",
+    shortPitch:
+      "Mesa Trípode redonda negra para comedor: Ø150 × 75 cm, patas inclinadas y terminación oscura.",
     description:
-      "La Mesa Trípode Redonda Negra lleva el diseño distintivo de patas inclinadas a una terminación oscura contemporánea. El tablero circular en madera favorece la convivencia en comedores modernos. Pieza de alto impacto visual con fabricación Idea Madera.",
+      "La Mesa Trípode Redonda Negra lleva el diseño de patas inclinadas a un tablero circular de Ø150 cm y 75 cm de alto, con terminación en barniz negro. Pieza de comedor contemporánea, distinta de la Trípode redonda en barniz natural (Ø140 cm) y de la Trípode rectangular negra (220 × 100 cm). Revisa la guía de medidas de mesa de comedor o explora otras mesas de la colección. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Patas trípode en terminación negra",
-      "Tablero redondo en madera maciza",
-      "Ideal para comedores modernos",
+      "Tablero redondo Ø150 cm en madera maciza",
+      "Barniz negro para comedores modernos",
       "Diseño icónico de la casa",
     ],
     dimensions: { diameter: "150 cm", height: "75 cm" },
     material: "Madera maciza",
     finish: "Barniz negro",
     productionDays: 15,
+    seoTitle: "Mesa Trípode Redonda Negra Ø150 cm | Madera Maciza",
+    seoDescription:
+      "Mesa Trípode redonda negra en madera maciza, Ø150 cm con patas inclinadas. Terminación oscura para comedor. Desde $820.000, cotiza por WhatsApp.",
   },
   {
     id: "mesa-tripode-ratona",
@@ -610,7 +619,7 @@ export const products: Product[] = [
     imageUrl: "/images/mesa-roma-negra-main.jpg",
     shortPitch: "Mesa de comedor Roma en madera negra, elegante y robusta para espacios contemporáneos.",
     description:
-      "La Mesa de Comedor Roma Negra es una pieza de madera maciza de 200×100 cm con terminación en barniz oscuro, fabricada en Chile por Idea Madera. Construcción robusta para uso diario en comedores familiares, proyectos de interiorismo moderno o espacios de coworking. La línea Roma también está disponible en madera natural. Complementa con sillas de comedor de madera o revisa la guía para elegir medidas de mesa de comedor. Cotiza por WhatsApp con envío a todo Chile.",
+      "La Mesa de Comedor Roma Negra es una pieza de madera maciza de 200×100 cm con terminación en barniz oscuro, fabricada en Chile por Idea Madera. Construcción robusta para uso diario en comedores familiares o proyectos de interiorismo moderno. La línea Roma también está disponible en madera natural. Complementa con sillas de comedor de madera o revisa la guía para elegir medidas de mesa de comedor. Cotiza por WhatsApp con envío a todo Chile.",
     features: [
       "Línea Roma en terminación negra",
       "Madera maciza de alta resistencia",

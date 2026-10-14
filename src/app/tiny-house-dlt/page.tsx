@@ -9,8 +9,8 @@ import DltBenefits from "./DltBenefits";
 import { faqs, landingPath, referenceUrl } from "./content";
 import "./tiny-house.css";
 
-const title = "Tiny House en DLT en Chile | Cotiza con Idea Madera";
-const description = "Cotiza tu tiny house en DLT: madera renovable y prefabricación para un montaje rápido. Idea Madera, Chillán, con experiencia en Proyecto Refugio de Las Trancas.";
+const title = "Tiny House en DLT en Chile | Cotiza por WhatsApp";
+const description = "Tiny house en DLT desde Chillán: paneles de madera prefabricados. Cotiza metros y comuna por WhatsApp. Experiencia en Proyecto Refugio, Las Trancas.";
 const socialImage = { url: absoluteUrl("/images/tiny-house-dlt-madera.webp"), width: 1000, height: 675, alt: "Panel de madera DLT en taller, publicado en el reportaje de Proyecto Refugio" };
 
 export const metadata: Metadata = {

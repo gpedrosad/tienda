@@ -1,5 +1,97 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-14 (Lote 14): Fact-check Lote 13 + CTR puertas + fichas Trípode
+
+### Datos de referencia
+
+**Auditoría del sitio publicado (2026-10-14):** 58/58 URLs del sitemap con estado 200, robots.txt OK, enlaces internos 200, canonicals/H1/meta/JSON-LD válidos. Apex `ideamadera.cl` hace 308 a `www` conservando el path (no se tocaron redirects de dominio). Lote 13 live (`1062602` + changelog `6048faa`).
+
+**GSC:** token no fresco hoy. Números 28 días (2026-09-14 a 2026-10-12) entregados en el brief:
+
+| URL / query | Imp | Clics | CTR | Pos |
+|---|---:|---:|---:|---:|
+| /puertas-a-medida | 734 | 15 | 2,0% | 8,4 |
+| "puertas a medida" | 139 | 2 | — | 9,9 |
+| "fabrica de puertas de madera a medida" | 33 | 0 | — | 10,1 |
+| "fábrica de puertas a medida" | 26 | 0 | — | 10,0 |
+| "fábrica de puertas de madera a medida" | 15 | 0 | — | 10,3 |
+| "fabricacion de puertas a medida" | 15 | 1 | — | 8,5 |
+| /molduras-a-medida (modelo CTR) | — | — | 8,5% | — |
+| /products/mesa-comedor-tripode-redonda | 68 | 0 | 0% | 3,7 |
+| /products/mesa-comedor-tripode | 36 | 0 | 0% | 5,0 |
+| /products/mesa-tripode-redonda-negra | 15 | 0 | 0% | 6,4 |
+| /collections/todos-los-productos | 83 | 0 | 0% | 17,7 |
+| /tiny-house-dlt | 22 | 0 | 0% | 5,3 |
+
+### 1. Fact-check Lote 13 (contra repo anterior a `1062602`)
+
+Contrastado con `products.ts`, `guides.ts` (tabla de medidas), `service-landings.ts` (molduras pre-Lote 13) y el helper `product-seo.ts`.
+
+| Claim Lote 13 | Veredicto | Acción |
+|---|---|---|
+| Capacidad **6-8 personas** (Trípode Negra 220×100, Roma Negra 200×100, Novara Ø150) | **OK.** `mesa-comedor-tripode` ya decía «Ideal para 6 a 8 comensales» (misma 220×100). Guía de medidas: 200×100 = 6-8; Ø140 = 6-8. Ø150 queda entre Ø140 y Ø160. | Se mantiene. |
+| **Envío a todo Chile** | **OK.** Ya estaba en landings, PDP y CTA por defecto de `product-seo.ts`. | Se mantiene. |
+| **Barniz natural** en Mesa Centro Roma | **OK.** Pre-Lote 13: `finish: "Barniz natural"` y copy «con barniz natural». | Se mantiene. |
+| **Ø150 cm** Novara | **OK.** `dimensions.diameter: "150 cm"` ya existía. | Se mantiene. |
+| **Desde $X** (precios de catálogo) | **OK.** Precios en `products.ts`. «Desde» es el patrón de `buildProductMetadataDescription` y el FAQ de PDP dice que el precio publicado es referencial. | Se mantiene. |
+| **Imprimante** (base selladora) en molduras | **No respaldado.** Pre-Lote 13 solo: cruda / lista para pintar / barniz. | **Quitado.** FAQ vuelve a esas tres opciones. |
+| **Coworking** en Mesa Comedor Roma Negra | **No respaldado.** Pre-Lote 13: comedores familiares e interiorismo moderno. | **Quitado.** |
+| «Más de **30 años**» en /puertas-a-medida | **Inconsistente** con «Desde 2001» (stats de la misma página; ~25 años a 2026). No es copy nuevo del Lote 13, pero se tocó la landing. | **Suavizado** a «desde 2001». No se tocó el mismo claim en `/muebles-a-medida` (página Lote 13). |
+
+No se inventaron plazos, garantías, maderas ni servicios nuevos.
+
+### 2. /puertas-a-medida (CTR + modelo molduras)
+
+- **Title:** `Fábrica de Puertas de Madera a Medida \| Chillán` → `Puertas de Madera a Medida \| Fábrica en Chillán` (47). «Puertas a medida» (139 imp / 2 clics) al inicio; se conserva «Fábrica» para las queries de fábrica (0 clics, pos ~10).
+- **Meta:** `Fábrica de puertas de madera a medida en Chillán. Diseño personalizado, madera nativa seca. Cotiza por WhatsApp con envío a todo Chile.` → `Fábrica de puertas de madera a medida en Chillán: interior o exterior, según tu vano. Envía alto, ancho y foto por WhatsApp. Envío a todo Chile.` (144). Exact match de la query fábrica + CTA de medición.
+- **H1** sin cambio: «Fábrica de puertas de madera a medida en Chillán».
+- **Secciones nuevas** (hechos ya en la landing + oficio de vano, sin precios ni plazos): «Tipos de puertas de madera más comunes»; «Cómo medir el vano para cotizar por WhatsApp».
+- **5 FAQs nuevas:** cómo medir el vano; vano vs hoja actual; entrada principal; foto de referencia; varias puertas iguales.
+- Keywords: se suman `fábrica de puertas de madera a medida` y `fabricacion de puertas a medida`.
+
+### 3. Tres fichas Trípode (modelo Lote 13)
+
+Distintas entre sí y de `/products/mesa-comedor-tripode-negra` y `/products/mesa-tripode-ratona` (no tocadas). JSON-LD Product sigue el `description` visible + precio/medidas de data.
+
+**Mesa comedor Trípode** (`/products/mesa-comedor-tripode`)
+- Title: (auto) → `Mesa Comedor Trípode 220×100 cm | Madera Natural`
+- Meta: (auto) → `Mesa de comedor Trípode en madera maciza, 220×100 cm con barniz natural. Patas inclinadas para 6 a 8 comensales. Desde $699.000, cotiza por WhatsApp.`
+- Copy: 220×100, barniz natural, 6-8 (feature preexistente), vs Trípode negra y redondas; mención a `/collections/mesas` y `/guias/medidas-mesa-comedor`.
+
+**Mesa comedor Trípode redonda** (`/products/mesa-comedor-tripode-redonda`)
+- Title: `Mesa Trípode Redonda Comedor | Madera Maciza` → `Mesa Comedor Trípode Redonda Ø140 cm | Madera Maciza`
+- Meta: `Mesa de comedor Trípode redonda en madera maciza (Ø140 cm). Diseño icónico con patas inclinadas. Fabricada en Chile, cotiza por WhatsApp.` → `Mesa de comedor Trípode redonda en madera maciza, Ø140 cm con barniz natural. Formato circular para 6-8 personas. Desde $729.900, cotiza por WhatsApp.`
+- Copy: Ø140 (data) + referencia 6-8 de la guía (fila Ø140 cm); vs rectangular y vs redonda negra.
+
+**Mesa Trípode redonda negra** (`/products/mesa-tripode-redonda-negra`)
+- Title: (auto) → `Mesa Trípode Redonda Negra Ø150 cm | Madera Maciza`
+- Meta: (auto) → `Mesa Trípode redonda negra en madera maciza, Ø150 cm con patas inclinadas. Terminación oscura para comedor. Desde $820.000, cotiza por WhatsApp.`
+- Copy: Ø150 y barniz negro de data; vs redonda natural Ø140 y vs Trípode rectangular negra. **Sin** capacidad 6-8 (Ø150 queda entre las filas Ø140 y Ø160 de la guía).
+
+### 4. Snippets opcionales
+
+**/collections/todos-los-productos**
+- Title: `Muebles de Madera en Chile | Catálogo Online` → `Catálogo de Muebles de Madera en Chile` (el layout añade ` | Idea Madera`)
+- Meta: `Catálogo online de muebles de madera en Chile: mesas, sillas, bancas, veladores, percheros y futones. Cotiza por WhatsApp con envío nacional.` → `Catálogo de muebles de madera fabricados en Chillán: mesas, sillas, bancas, veladores y más. Cotiza por WhatsApp con envío a todo Chile.`
+
+**/tiny-house-dlt**
+- Title: `Tiny House en DLT en Chile | Cotiza con Idea Madera` → `Tiny House en DLT en Chile | Cotiza por WhatsApp`
+- Meta: `Cotiza tu tiny house en DLT: madera renovable y prefabricación para un montaje rápido. Idea Madera, Chillán, con experiencia en Proyecto Refugio de Las Trancas.` → `Tiny house en DLT desde Chillán: paneles de madera prefabricados. Cotiza metros y comuna por WhatsApp. Experiencia en Proyecto Refugio, Las Trancas.`
+
+### URLs no tocadas (Lotes 10–13 salvo fact-check)
+
+Veladores, collections mesas/sillas, kit-pergola, peldaños, mesas-de-centro, mesa-tripode-ratona, guias/medidas-mesa-comedor, muebles-de-cocina-chillan, comedores-nordicos, las 6 fichas Lote 13 (salvo coworking en Roma Negra), muebles-a-medida, muebles-chillan, molduras (salvo FAQ imprimante). Sin scripts de analítica. Sin páginas de otras ciudades. Sin redirects de dominio.
+
+### Sugerencias para Lote 15
+
+1. **Medir CTR** de /puertas-a-medida (2,0% → ¿se acerca al 8,5% de molduras?) y de las 3 Trípode (hoy 0 clics en pos. 3,7–6,4). Recrawl GSC UI.
+2. **Otras fichas** con impresiones y 0 clics (mismo modelo: title con medida real + meta uso/WhatsApp). Priorizar las que no se tocaron en Lotes 10–14.
+3. **Fact-check residual:** «Más de 30 años» sigue en `/muebles-a-medida` (pre-Lote 13). Alinear a 2001 si se vuelve a editar esa landing.
+4. **Fotos** a productos sin `imageUrl` (bloquean índice). No crear URLs nuevas mientras PDPs con impresiones tengan CTR 0%.
+5. Si el token GSC vuelve: `npm run gsc:report` y comparar 28d vs este brief.
+
+---
+
 ## 2026-10-13 (Lote 13): Optimización fichas producto + diferenciación muebles a medida vs catálogo
 
 ### Datos de referencia (Google Search Console, 28 días: 2026-09-13 a 2026-10-10, sc-domain:ideamadera.cl)
