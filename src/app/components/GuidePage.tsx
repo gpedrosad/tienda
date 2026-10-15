@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
 import { buildGuideSchemaGraph, buildGuideWhatsAppHref, type GuideConfig } from "@/lib/guides";
+import { InlineLinkedText } from "@/lib/inline-links";
 
 export default function GuidePage({ config }: { config: GuideConfig }) {
   const whatsappHref = config.whatsappLines
@@ -60,7 +61,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                     key={pIdx}
                     className="mb-4 text-base leading-relaxed text-neutral-700"
                   >
-                    {paragraph}
+                    <InlineLinkedText text={paragraph} />
                   </p>
                 ))}
                 {section.bullets && (

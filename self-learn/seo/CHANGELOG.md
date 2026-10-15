@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-15
+
+- **Lote 15:** «30/31 años» → desde 2001 en `/muebles-a-medida` y footer; CTR guía elegir-sillas (title/meta + FAQ de ancho + enlaces Kentucky/Milán); seoTitle con medida en Hairpin 100×50, Ferrara Ø140 y Cantabria 240×110; pulido meta de mesa-nordica vs hub. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-14
 
 - **Lote 14:** fact-check Lote 13 (quito imprimante en molduras y coworking en Roma Negra; «30 años» en puertas → 2001); CTR `/puertas-a-medida` (title/meta + tipos + medir vano + 5 FAQ); seoTitle/meta en 3 Trípode; snippets `/collections/todos-los-productos` y `/tiny-house-dlt`. Detalle: `SEO-CHANGELOG.md`.

@@ -1,5 +1,88 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-15 (Lote 15): Claim 2001 + CTR sillas + fichas Hairpin, Ferrara y Cantabria
+
+### Datos de referencia
+
+**Auditoría del sitio publicado (2026-10-15, brief):** 58/58 URLs del sitemap con estado 200. Apex `ideamadera.cl` → `www` en 308 conservando el path. Titles del Lote 14 ya live. Sin regresiones. No se reeditaron puertas, Trípode, todos-los-productos ni tiny-house.
+
+**GSC fresco** (`sc-domain:ideamadera.cl`, 28 días 2026-09-17 a 2026-10-14): **228 clics / 10.608 impresiones**. Token OK tras re-auth.
+
+| URL | Imp | Clics | Pos |
+|---|---:|---:|---:|
+| /guias/elegir-sillas-madera-comedor | 91 | 0 | ~8,0 |
+| /products/mesa-centro-hairpin | ~30 | 1 | ~7,5 |
+| /products/mesa-comedor-redonda-ferrara | ~22 | 1 | ~10,9 |
+| /products/mesa-comedor-cantabria | ~17 | 1 | ~6,4 |
+| /products/mesa-nordica | ~85 | 1 | ~12 |
+
+### 1. Claim «30 / 31 años» → desde 2001
+
+- `/muebles-a-medida`: highlight «Más de 30 años de experiencia» → **«Taller familiar desde 2001»**. La descripción del highlight no cambia. El stat «Desde 2001» y `foundingDate` 2001 siguen igual. No se tocó el resto del contenido Lote 13 de esa landing.
+- Footer (todas las páginas): «31 años creando…» → **«Desde 2001 creando…»**.
+- No se inventaron años, plazos ni garantías.
+- Residual fuera de este lote: `FabricaVideo` (home) sigue con «31 años». No es la landing ni el footer.
+
+### 2. /guias/elegir-sillas-madera-comedor
+
+- **Title:** `Cómo Elegir Sillas de Madera para el Comedor | Guía Práctica` (60) → `Sillas de Madera para Comedor | Altura, Ancho y Cantidad` (56). Title absoluto (sin sufijo de marca).
+- **Meta:** `Guía para elegir sillas de comedor de madera: altura ideal, ancho, cuántas sillas por mesa, tipos de madera y mantención. Chile.` (128) → `Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.` (147).
+- **H1** sin cambio.
+- **FAQ nueva** (hechos ya en la guía): ancho de asiento ≥45 cm y profundidad 40–45 cm. Altura de asiento y «cuántas sillas para 160 cm» ya existían; no se duplicaron.
+- Enlaces: párrafo a `/collections/sillas`, `/products/silla-kentucky` y `/products/silla-milan-lenga`, más esas dos fichas en relacionados. La colección ya estaba en relacionados.
+
+### 3. Fichas nunca tocadas (modelo Lote 13/14)
+
+El `<title>` de ficha suma ` | Idea Madera` por el template del layout. Abajo, el seoTitle es la parte editable. JSON-LD Product usa la descripción visible (los enlaces markdown se renderizan en la página y en el schema quedan como texto plano).
+
+**Mesa centro Hairpin** (`/products/mesa-centro-hairpin`)
+- Title: `Mesa de Centro Modelo Hairpin en Madera Maciza` → `Mesa Centro Hairpin 100×50 cm | Living Mid-Century` (50)
+- Meta: (auto, 143) `Mesa de centro con patas hairpin en madera, estilo mid-century para living moderno. Desde $159.990. Cotiza por WhatsApp con envío a todo Chile.` → `Mesa de centro Hairpin en madera maciza, 100×50×45 cm, patas metálicas mid-century y barniz natural para living. Desde $159.990, cotiza por WhatsApp.` (149)
+- Copy: 100×50×45, patas metálicas hairpin, barniz natural; vs Roma 120×60×45 y Trípode ratona 100×60×40. Enlace a `/mesas-de-centro`.
+
+**Mesa comedor Ferrara redonda** (`/products/mesa-comedor-redonda-ferrara`)
+- Title: `Mesa de comedor redonda modelo Ferrara` → `Mesa Comedor Ferrara Redonda Ø140 cm | Madera Maciza` (52)
+- Meta: (auto, 142) `Mesa de comedor redonda en madera, perfecta para conversar y optimizar el espacio. Desde $799.000. Cotiza por WhatsApp con envío a todo Chile.` → `Mesa de comedor redonda Ferrara, Ø140×75 cm, madera maciza y barniz natural. Trípode redonda: mismo Ø; Novara: Ø150. Desde $799.000, cotiza por WhatsApp.` (153)
+- Copy: Ø140 y alto 75, base estable, barniz natural. Mismo diámetro que la Trípode redonda; más chica que la Novara Ø150. **Sin** capacidad inventada.
+
+**Mesa comedor Cantabria** (`/products/mesa-comedor-cantabria`)
+- Title: `Mesa Comedor Madera Modelo Cantabria` → `Mesa de Comedor Cantabria 240×110 cm | Gran Formato` (51)
+- Meta: (auto, 149) `Mesa de comedor amplia en madera maciza, diseñada para reuniones grandes y uso intensivo. Desde $999.000. Cotiza por WhatsApp con envío a todo Chile.` → `Mesa de comedor Cantabria, gran formato 240×110×75 cm, madera maciza y barniz natural. Más larga que Roma y Trípode. Desde $999.000, cotiza por WhatsApp.` (153)
+- Copy: 240×110×75 y «gran formato» (ya estaba en la ficha). Más larga que Roma 200×100 y Trípode rectangular 220×100. **Sin** cupo de personas.
+
+### 4. Pulido opcional /products/mesa-nordica
+
+- Title: `Mesa Nórdica de Comedor 160x90 | Madera Maciza` → `Mesa Nórdica de Comedor de 160×90 cm | Madera Maciza` (52)
+- Meta: `Mesa nórdica de comedor en madera maciza (160×90 cm, $369.000). Diseño escandinavo con líneas simples. Fabricada en Chile, cotiza por WhatsApp.` (143) → `Mesa nórdica de comedor 160×90×75 cm, madera maciza y barniz a elección. Es el modelo; mesas nórdicas, sillas en comedores nórdicos. Cotiza por WhatsApp.` (153)
+- Cierre de la descripción: esta ficha es el modelo 160×90; el conjunto (mesas nórdicas, sillas y bancas) enlaza a `/comedores-nordicos`. No se reescribió la página.
+
+### Archivos
+
+- `src/lib/service-landings.ts`
+- `src/app/components/Footer.tsx`
+- `src/lib/guides.ts`
+- `src/app/components/GuidePage.tsx`
+- `src/data/products.ts`
+- `src/app/products/[handle]/page.tsx`
+- `src/lib/inline-links.tsx` (enlaces internos `[texto](/ruta)` en descripciones; el schema queda en texto plano)
+
+### Build
+
+`npm run lint`: OK. Warnings previos (`SITE_NAME`, `SITE_URL`, `absolutePrimaryImage`, `buildServiceOfferSchema`); ninguno nuevo de este lote. `npm run build`: OK (Next.js 15.5.19, 67 páginas estáticas). HTML generado: `/muebles-a-medida` sin «30 años» ni «31 años»; titles y metas de la guía y de las cuatro fichas coinciden con esta sección.
+
+### URLs no tocadas
+
+Lote 14 (puertas, tres Trípode de comedor, todos-los-productos, tiny-house). Lote 13 (Roma centro, Hank, Milán lenga salvo el enlace desde la guía, Trípode negra, Roma negra, Novara; muebles-a-medida salvo el highlight). Lotes 10–12 (mesas-de-centro, medidas-mesa-comedor, cocina Chillán, comedores nórdicos salvo el enlace desde la nórdica, ratona, veladores, collections mesas/sillas, kit pérgola, peldaños). Sin scripts de analítica. Sin datos de negocio nuevos.
+
+### Sugerencias para Lote 16
+
+1. **Veladores:** CTR sigue ~0,3% con ~1,2k impresiones. Revisar title/meta de la colección antes de crear URLs.
+2. **Medidas de mesa:** reabrir solo el title de `/guias/medidas-mesa-comedor` si el CTR sigue plano.
+3. Medir si Hairpin, Ferrara, Cantabria y la guía de sillas convierten impresiones en clics tras el recrawl.
+4. Residual: «31 años» en el video de fábrica de la home, si se quiere alinear a 2001 en otro lote.
+
+---
+
 ## 2026-10-14 (Lote 14): Fact-check Lote 13 + CTR puertas + fichas Trípode
 
 ### Datos de referencia

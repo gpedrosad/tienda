@@ -19,6 +19,7 @@ import {
   SITE_URL,
   WARRANTY_MONTHS,
 } from "@/lib/seo";
+import { InlineLinkedText, plainTextFromInlineLinks } from "@/lib/inline-links";
 import { getProductSeo } from "@/lib/product-seo";
 import {
   buildProductWhatsAppMessage,
@@ -319,7 +320,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     "@type": "Product",
     name: product.name,
     image: allProductImages.length > 0 ? allProductImages : undefined,
-    description: productDescription,
+    description: plainTextFromInlineLinks(productDescription),
     sku: productId,
     brand: {
       "@type": "Brand",
@@ -474,7 +475,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 Descripción
               </h3>
               <p className="mt-3 text-base leading-relaxed text-neutral-700">
-                {productDescription}
+                <InlineLinkedText text={productDescription} />
               </p>
             </div>
 
