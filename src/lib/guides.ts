@@ -508,9 +508,9 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
-  pageTitle: "Cómo Elegir Sillas de Madera para el Comedor | Guía Práctica",
+  pageTitle: "Sillas de Madera para Comedor | Altura, Ancho y Cantidad",
   pageDescription:
-    "Guía para elegir sillas de comedor de madera: altura ideal, ancho, cuántas sillas por mesa, tipos de madera y mantención. Chile.",
+    "Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.",
   keywords: [
     "sillas de madera para comedor",
     "cómo elegir sillas de comedor",
@@ -523,7 +523,7 @@ export const elegirSillasGuideConfig: GuideConfig = {
   h1: "Cómo elegir sillas de madera para el comedor",
   intro:
     "Las sillas de comedor son piezas que usas a diario: elegir la altura, el ancho y la cantidad correcta hace la diferencia entre comer cómodo o incómodo. Esta guía te ayuda a decidir qué sillas de madera necesitas según tu mesa, tu espacio y tus hábitos de uso.",
-  updatedDate: "2026-10-07",
+  updatedDate: "2026-10-15",
   sections: [
     {
       title: "Altura de asiento ideal según tu mesa",
@@ -544,6 +544,7 @@ export const elegirSillasGuideConfig: GuideConfig = {
       title: "Cuántas sillas necesitas según el tamaño de la mesa",
       content: [
         "Cada comensal necesita al menos 60 cm de ancho en el borde de la mesa para usar cubiertos y platos sin chocar con el vecino. Si quieres más comodidad, deja 70 cm por persona.",
+        "Cuando ya tienes el largo, puedes ver sillas de madera para comedor en la [colección de sillas](/collections/sillas). La [Silla Kentucky](/products/silla-kentucky) es de madera maciza con respaldo firme; la [Silla Milán Lenga](/products/silla-milan-lenga) es un modelo liviano en lenga.",
       ],
       bullets: [
         "Mesa de 120×80 cm: 4 sillas (2 por lado largo)",
@@ -585,6 +586,11 @@ export const elegirSillasGuideConfig: GuideConfig = {
         "La altura de asiento estándar es 45-48 cm desde el piso, compatible con mesas de 75 cm de alto. Esto permite sentarse con las piernas en ángulo de 90° y los pies apoyados.",
     },
     {
+      question: "¿Qué ancho de asiento conviene en una silla de comedor?",
+      answer:
+        "Al menos 45 cm de ancho de asiento para un adulto. Si llega a 50-55 cm, queda más holgado. La profundidad recomendada es de 40 a 45 cm, para apoyar la espalda sin que el borde presione las rodillas.",
+    },
+    {
       question: "¿Cuántas sillas necesito para una mesa de 160 cm?",
       answer:
         "Para una mesa de 160 cm caben 4-6 sillas: 2-3 por cada lado largo. Si quieres más comodidad, usa 4 sillas (60-70 cm por persona); si recibes seguido, usa 6 sillas (más apretadas).",
@@ -610,6 +616,16 @@ export const elegirSillasGuideConfig: GuideConfig = {
       href: "/collections/sillas",
       title: "Sillas de madera",
       description: "Explora modelos de sillas de comedor con foto y precio.",
+    },
+    {
+      href: "/products/silla-kentucky",
+      title: "Silla Kentucky",
+      description: "Silla de comedor de madera maciza con respaldo firme.",
+    },
+    {
+      href: "/products/silla-milan-lenga",
+      title: "Silla Milán Lenga",
+      description: "Silla liviana de lenga para comedor diario.",
     },
     {
       href: "/comedores-nordicos",

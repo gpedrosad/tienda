@@ -76,7 +76,7 @@ export const products: Product[] = [
     shortPitch:
       "Mesa nórdica de madera para comedor: 160 × 90 × 75 cm, líneas simples y barniz a elección.",
     description:
-      "Mesa nórdica de madera para comedor. Mide 160 × 90 × 75 cm y vale $369.000. Líneas simples, madera maciza y barniz natural o a elección. Fabricada en Chillán; si necesitas otra medida, cotiza por WhatsApp. El despacho se confirma aparte según comuna. Si buscas armar un comedor completo de estilo nórdico, revisa nuestras [mesas, sillas y bancas nórdicas](/comedores-nordicos).",
+      "Mesa nórdica de madera para comedor. Mide 160 × 90 × 75 cm y vale $369.000. Líneas simples, madera maciza y barniz natural o a elección. Fabricada en Chillán; si necesitas otra medida, cotiza por WhatsApp. El despacho se confirma aparte según comuna. Esta ficha es la mesa nórdica de 160 × 90 cm; el conjunto de mesas nórdicas, sillas y bancas está en [comedores nórdicos](/comedores-nordicos).",
     features: [
       "Mesa de comedor estilo nórdico",
       "160 × 90 × 75 cm",
@@ -87,9 +87,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o a elección",
     productionDays: 15,
-    seoTitle: "Mesa Nórdica de Comedor 160x90 | Madera Maciza",
+    seoTitle: "Mesa Nórdica de Comedor de 160×90 cm | Madera Maciza",
     seoDescription:
-      "Mesa nórdica de comedor en madera maciza (160×90 cm, $369.000). Diseño escandinavo con líneas simples. Fabricada en Chile, cotiza por WhatsApp.",
+      "La mesa nórdica de comedor mide 160×90×75 cm, es de madera maciza con barniz a elección y vale $369.000. Cotiza por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -178,19 +178,23 @@ export const products: Product[] = [
     price: 159990,
     category: "Mesas",
     imageUrl: "/images/mesa-de-centro-hairpin-main.webp",
-    shortPitch: "Mesa de centro con patas hairpin en madera, estilo mid-century para living moderno.",
+    shortPitch:
+      "Mesa de centro Hairpin de 100 × 50 × 45 cm: patas metálicas mid-century y tablero de madera maciza para living.",
     description:
-      "La Mesa de Centro Hairpin combina un tablero en madera con patas metálicas tipo hairpin, un clásico del diseño mid-century. Es compacta, liviana visualmente y perfecta para living, salas de estar o espacios junto al sofá. Fabricada con terminación cuidada en taller propio.",
+      "La Mesa de Centro Hairpin mide 100 × 50 × 45 cm: tablero de madera maciza con barniz natural y patas metálicas tipo hairpin, el clásico mid-century para living. Es compacta y liviana visualmente, distinta de la Roma (120 × 60 × 45 cm) y de la Trípode ratona (100 × 60 × 40 cm, patas inclinadas). Mira otras piezas en [mesas de centro](/mesas-de-centro) o cotiza por WhatsApp.",
     features: [
       "Estilo mid-century con patas hairpin",
       "Tablero en madera maciza",
+      "100 × 50 × 45 cm",
       "Formato compacto para living",
-      "Diseño liviano y contemporáneo",
     ],
     dimensions: { width: "100 cm", depth: "50 cm", height: "45 cm" },
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Centro Hairpin 100×50 cm | Living Mid-Century",
+    seoDescription:
+      "Mesa de centro Hairpin en madera maciza, 100×50×45 cm, patas metálicas mid-century y barniz natural para living. Desde $159.990, cotiza por WhatsApp.",
   },
   {
     id: "repisa-madera-moderna",
@@ -314,11 +318,12 @@ export const products: Product[] = [
     price: 799000,
     category: "Mesas",
     imageUrl: "/images/mesa-ferrara-redonda-3.jpg",
-    shortPitch: "Mesa de comedor redonda en madera, perfecta para conversar y optimizar el espacio.",
+    shortPitch:
+      "Mesa de comedor redonda Ferrara, Ø140 cm y 75 cm de alto, en madera maciza con base estable.",
     description:
-      "La Mesa Ferrara redonda favorece la cercanía en comedores y cocinas integradas. Su formato circular facilita la circulación y convoca a reuniones informales. Fabricada en madera maciza con base estable, es una pieza de alto impacto visual con terminación artesanal.",
+      "La Mesa Ferrara redonda mide Ø140 cm y 75 cm de alto, en madera maciza con barniz natural y base estable. El formato circular favorece la cercanía y la circulación en espacios compactos. Comparte el diámetro con la Trípode redonda (Ø140 cm, patas inclinadas) y es más chica que la Novara (Ø150 cm). Cotiza por WhatsApp.",
     features: [
-      "Formato redondo para mejor convivencia",
+      "Formato redondo Ø140 cm",
       "Base estable en madera maciza",
       "Ideal para espacios compactos",
       "Terminación artesanal Idea Madera",
@@ -327,6 +332,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Ferrara Redonda Ø140 cm | Madera Maciza",
+    seoDescription:
+      "Mesa de comedor redonda Ferrara, Ø140×75 cm, en madera maciza con barniz natural, desde $799.000. Cotiza por WhatsApp.",
   },
   {
     id: "banca-griega",
@@ -660,19 +668,23 @@ export const products: Product[] = [
     price: 999000,
     category: "Mesas",
     imageUrl: "/images/mesa-comedor-madera-modelo-cantabria-main.jpg",
-    shortPitch: "Mesa de comedor amplia en madera maciza, diseñada para reuniones grandes y uso intensivo.",
+    shortPitch:
+      "Mesa de comedor Cantabria de gran formato, 240 × 110 × 75 cm, en madera maciza para reuniones grandes.",
     description:
-      "La Mesa Cantabria es una pieza de gran formato para comedores que reciben familia y visitas. Su tablero generoso en madera maciza transmite solidez y presencia. Ideal para quienes buscan una mesa central duradera con estética cálida y fabricación chilena.",
+      "La Mesa Cantabria es una pieza de gran formato: 240 × 110 × 75 cm en madera maciza con barniz natural, para comedores que reciben familia y visitas. El tablero es más largo que la Roma (200 × 100 cm) y que la Trípode rectangular (220 × 100 cm). Cotiza por WhatsApp.",
     features: [
       "Gran formato para comedor amplio",
+      "240 × 110 × 75 cm",
       "Tablero macizo de alta resistencia",
-      "Pieza central con fuerte presencia",
       "Fabricación a pedido en taller propio",
     ],
     dimensions: { width: "240 cm", depth: "110 cm", height: "75 cm" },
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa de Comedor Cantabria 240×110 cm | Gran Formato",
+    seoDescription:
+      "Mesa de comedor Cantabria, gran formato 240×110×75 cm, madera maciza y barniz natural. Más larga que Roma y Trípode. Desde $999.000, cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-redonda-novara",
