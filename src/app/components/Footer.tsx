@@ -41,7 +41,7 @@ export default function Footer() {
                   Artesanía en madera
                 </p>
                 <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
-                  Desde 2001 creando productos de madera con dedicación, calidad y diseño excepcional.
+                  31 años creando productos de madera con dedicación, calidad y diseño excepcional.
                 </p>
               </div>
             </div>

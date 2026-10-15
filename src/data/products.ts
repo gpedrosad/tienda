@@ -89,7 +89,7 @@ export const products: Product[] = [
     productionDays: 15,
     seoTitle: "Mesa Nórdica de Comedor de 160×90 cm | Madera Maciza",
     seoDescription:
-      "Mesa nórdica de comedor 160×90×75 cm, madera maciza y barniz a elección. Es el modelo; mesas nórdicas, sillas en comedores nórdicos. Cotiza por WhatsApp.",
+      "La mesa nórdica de comedor mide 160×90×75 cm, es de madera maciza con barniz a elección y vale $369.000. Cotiza por WhatsApp.",
   },
   {
     id: "piso-osaka",
@@ -334,7 +334,7 @@ export const products: Product[] = [
     productionDays: 15,
     seoTitle: "Mesa Comedor Ferrara Redonda Ø140 cm | Madera Maciza",
     seoDescription:
-      "Mesa de comedor redonda Ferrara, Ø140×75 cm, madera maciza y barniz natural. Trípode redonda: mismo Ø; Novara: Ø150. Desde $799.000, cotiza por WhatsApp.",
+      "Mesa de comedor redonda Ferrara, Ø140×75 cm, en madera maciza con barniz natural, desde $799.000. Cotiza por WhatsApp.",
   },
   {
     id: "banca-griega",

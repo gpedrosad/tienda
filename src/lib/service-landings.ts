@@ -1573,7 +1573,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   ],
   bottomHighlights: [
     {
-      title: "Taller familiar desde 2001",
+      title: "Más de 30 años de experiencia",
       description:
         "Equipo artesanal con maquinaria especializada para cumplir especificaciones técnicas de cada cliente.",
     },
