@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-16
+
+- **Lote 16:** title/meta de `/collections/veladores` hacia «veladores de madera» + dormitorio; title de `/guias/medidas-mesa-comedor` sin año, con personas y altura 75 cm; seoTitle/meta de mesa-tripode-ratona (100×60×40) y primer seoTitle de mesa-comedor-niza (200×100×75). Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-15
 
 - **Lote 15:** «30/31 años» → desde 2001 en `/muebles-a-medida` y footer; CTR guía elegir-sillas (title/meta + FAQ de ancho + enlaces Kentucky/Milán); seoTitle con medida en Hairpin 100×50, Ferrara Ø140 y Cantabria 240×110; pulido meta de mesa-nordica vs hub. Detalle: `SEO-CHANGELOG.md`.

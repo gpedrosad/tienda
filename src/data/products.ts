@@ -245,6 +245,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Mesa Comedor Niza 200×100×75 cm | Madera Maciza",
+    seoDescription:
+      "Mesa de comedor Niza, 200×100×75 cm, madera maciza y barniz natural. Desde $689.900, cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "mesa-comedor-tripode-redonda",
@@ -592,9 +595,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Trípode de Madera Estilo Ratona 100x60 | Living",
+    seoTitle: "Mesa Ratona Trípode 100×60×40 cm | Living",
     seoDescription:
-      "Mesa trípode de madera estilo ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Diseño orgánico. Fabricada en Chile, cotiza por WhatsApp.",
+      "Mesa ratona Trípode en madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. Desde $399.990, cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "mesa-comedor-tripode-negra",
