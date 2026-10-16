@@ -243,7 +243,7 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  pageTitle: "Medidas de Mesa de Comedor: Guía Práctica 2026 | Chile",
+  pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
   pageDescription:
     "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
   keywords: [

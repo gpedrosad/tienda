@@ -77,7 +77,7 @@ const FabricaVideo = React.memo(() => {
             </h2>
 
             <p className="text-sm md:text-base text-neutral-700 font-light leading-relaxed max-w-lg text-pretty">
-              Somos una empresa familiar con 31 años de pasión en el diseño y fabricación de muebles en
+              Somos una empresa familiar desde 2001, con pasión en el diseño y fabricación de muebles en
               madera. En este video verás a nuestro talentoso equipo en acción, trabajando con
               dedicación para crear piezas únicas que cuentan nuestra historia.
             </p>

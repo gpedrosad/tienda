@@ -179,9 +179,9 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   },
   veladores: {
     h1: "Veladores de madera para dormitorio",
-    metadataTitle: "Veladores de Madera Hechos a Medida en Chillán",
+    metadataTitle: "Veladores de Madera para Dormitorio | Chillán",
     description:
-      "Veladores de madera hechos a medida en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile.",
+      "Veladores de madera para dormitorio en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile.",
     intro:
       "Veladores de madera maciza para dormitorio fabricados a medida en Chillán: mesitas de noche funcionales con diseño limpio y terminación artesanal. Un velador bien elegido suma orden, calidez y equilibrio visual al costado de la cama. Fabricamos veladores con medidas personalizadas según tu espacio y preferencias. Cada modelo incluye foto, precio y medidas. Cotiza medidas especiales, terminaciones y despacho por WhatsApp.",
     guideTitle: "Cómo elegir el velador ideal para tu dormitorio",
