@@ -1,10 +1,10 @@
 # SEO Changelog — Idea Madera
 
-## 2026-10-16 (Lote 16): Claim 2001 reaplicado + titles veladores, medidas y ratona
+## 2026-10-16 (Lote 16): Titles veladores, medidas y ratona
 
 ### Datos de referencia
 
-**Auditoría del sitio publicado (2026-10-16, brief):** 58/58 URLs del sitemap con estado 200. Apex `ideamadera.cl` → `www` en 308 conservando el path. Titles del Lote 15 ya live (elegir-sillas, Hairpin 100×50, Ferrara Ø140, Cantabria 240×110, Nórdica 160×90). Sin regresiones técnicas. El claim «Más de 30 años» seguía en `/muebles-a-medida` y «31 años» en el footer: el Lote 15 lo documentó, pero el merge lo revirtió (el commit `175114c` no incluye `service-landings.ts` ni `Footer.tsx`).
+**Auditoría del sitio publicado (2026-10-16, brief):** 58/58 URLs del sitemap con estado 200. Apex `ideamadera.cl` → `www` en 308 conservando el path. Titles del Lote 15 ya live (elegir-sillas, Hairpin 100×50, Ferrara Ø140, Cantabria 240×110, Nórdica 160×90). Sin regresiones técnicas.
 
 **GSC fresco** (`sc-domain:ideamadera.cl`, 28 días 2026-09-18 a 2026-10-15): **229 clics / 10.719 impresiones** (plano frente al día anterior).
 
@@ -15,37 +15,30 @@
 | /products/mesa-tripode-ratona | 195 | 0 | 0% | 6,6 |
 | /products/mesa-comedor-niza | 11 | 0 | 0% | 5,0 |
 
-Query «veladores de madera»: ~1090 imp / 1 clic, pos ~3,7. «mesa ratona» sigue sin clic en la ficha. No se reeditaron páginas del Lote 15 (salvo el claim).
+Query «veladores de madera»: ~1090 imp / 1 clic, pos ~3,7. «mesa ratona» sigue sin clic en la ficha. No se reeditaron páginas del Lote 15.
 
-### 1. Claim «30 / 31 años» → desde 2001 (reaplicado)
-
-- `/muebles-a-medida`: highlight «Más de 30 años de experiencia» → **«Taller familiar desde 2001»**. La descripción del highlight no cambia. El stat «Desde 2001» y `foundingDate` 2001 siguen igual. No se tocó el resto del contenido de esa landing.
-- Footer (todas las páginas): «31 años creando…» → **«Desde 2001 creando…»**.
-- Home `FabricaVideo`: «31 años de pasión…» → **«desde 2001, con pasión…»**. Sin números nuevos.
-- No se inventaron años, plazos ni garantías.
-
-### 2. /collections/veladores (title y meta)
+### 1. /collections/veladores (title y meta)
 
 El layout suma ` | Idea Madera`. Abajo, el `metadataTitle` es la parte editable. Intro, guía, FAQs y H1 no cambian. La altura 50–70 cm ya estaba en la meta y en la página.
 
 - **Title:** `Veladores de Madera Hechos a Medida en Chillán` (46) → `Veladores de Madera para Dormitorio | Chillán` (45). Title renderizado: `Veladores de Madera para Dormitorio | Chillán | Idea Madera` (59).
 - **Meta:** `Veladores de madera hechos a medida en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile.` → `Veladores de madera para dormitorio en Chillán. Fabricación artesanal, altura 50-70 cm ideal para cama. Cotiza por WhatsApp con envío a todo Chile.` (147). Se quita «hechos a medida» del snippet; el catálogo sigue ofreciendo medidas especiales en el cuerpo.
 
-### 3. /guias/medidas-mesa-comedor (solo title)
+### 2. /guias/medidas-mesa-comedor (solo title)
 
 Title absoluto (sin sufijo de marca). H1, cuerpo y meta no cambian. La guía enseña 75 cm; no se menciona 85 cm.
 
 - **Title:** `Medidas de Mesa de Comedor: Guía Práctica 2026 | Chile` → `Medidas de Mesa de Comedor | Personas y Altura 75 cm` (52).
 - **Meta** sin cambio: tabla según personas, altura ideal 75 cm y circulación.
 
-### 4. /products/mesa-tripode-ratona (title y meta)
+### 3. /products/mesa-tripode-ratona (title y meta)
 
 El `<title>` de ficha suma ` | Idea Madera`. Solo `seoTitle` / `seoDescription`. Medidas 100×60×40, madera maciza, barniz natural y precio ya estaban en `products.ts`. Sin capacidad inventada. El cuerpo ya enlaza a `/mesas-de-centro`.
 
 - **Title:** `Mesa Trípode de Madera Estilo Ratona 100x60 | Living` → `Mesa Ratona Trípode 100×60×40 cm | Living` (41). Renderizado: `Mesa Ratona Trípode 100×60×40 cm | Living | Idea Madera` (55).
 - **Meta:** `Mesa trípode de madera estilo ratona para living (100×60 cm, $399.990). Patas inclinadas, altura 40 cm. Diseño orgánico. Fabricada en Chile, cotiza por WhatsApp.` → `Mesa ratona Trípode en madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. Desde $399.990, cotiza por WhatsApp con envío a todo Chile.` (146).
 
-### 5. /products/mesa-comedor-niza (primer seoTitle)
+### 4. /products/mesa-comedor-niza (primer seoTitle)
 
 Antes no tenía `seoTitle`. Medidas 200×100×75, madera maciza, barniz natural y precio $689.900 salen de `products.ts`. Sin cupo de personas. El cuerpo de la ficha no cambia.
 
@@ -54,28 +47,24 @@ Antes no tenía `seoTitle`. Medidas 200×100×75, madera maciza, barniz natural 
 
 ### Archivos
 
-- `src/lib/service-landings.ts`
-- `src/app/components/Footer.tsx`
-- `src/app/components/FabricaVideo.tsx`
 - `src/lib/collection-seo.ts`
 - `src/lib/guides.ts`
 - `src/data/products.ts`
 
 ### Build
 
-`npm run lint`: OK. Warnings previos (`SITE_NAME`, `SITE_URL`, `absolutePrimaryImage`, `buildServiceOfferSchema`); ninguno nuevo de este lote. `npm run build`: OK (Next.js 15.5.19, 67 páginas estáticas). HTML generado: sin «30 años» ni «31 años»; highlight «Taller familiar desde 2001»; footer «Desde 2001 creando…»; home «desde 2001, con pasión». Titles y metas de veladores, la guía, la ratona y Niza coinciden con esta sección.
+`npm run lint`: OK. Warnings previos (`SITE_NAME`, `SITE_URL`, `absolutePrimaryImage`, `buildServiceOfferSchema`); ninguno nuevo de este lote. `npm run build`: OK (Next.js 15.5.19, 67 páginas estáticas). Titles y metas de veladores, la guía, la ratona y Niza coinciden con esta sección.
 
 ### URLs no tocadas
 
-Lote 15 (elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica) salvo el claim de este lote. Lote 14 (puertas, tres Trípode de comedor, todos-los-productos, tiny-house). Lote 13 (Roma centro y el resto de fichas; muebles-a-medida salvo el highlight). Lotes 10–12 (mesas-de-centro, cuerpo de medidas-mesa, cocina Chillán, comedores nórdicos, contenido de veladores, kit pérgola, peldaños, molduras). Sin `/ads/*` ni `/sitelink/*`. Sin scripts de analítica. Sin datos de negocio nuevos.
+Lote 15 (elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica). Lote 14 (puertas, tres Trípode de comedor, todos-los-productos, tiny-house). Lote 13 (Roma centro y el resto de fichas; muebles-a-medida). Lotes 10–12 (mesas-de-centro, cuerpo de medidas-mesa, cocina Chillán, comedores nórdicos, contenido de veladores, kit pérgola, peldaños, molduras). Sin `/ads/*` ni `/sitelink/*`. Sin scripts de analítica. Sin datos de negocio nuevos.
 
 ### Sugerencias para Lote 17
 
-1. Confirmar en vivo que no queda «30 años» ni «31 años» en el highlight de `/muebles-a-medida`, en el footer ni en el video de fábrica.
-2. Medir CTR de veladores y del title de medidas de mesa tras el recrawl (varios días).
-3. Revisar si Hairpin, Ferrara, Cantabria y elegir-sillas empiezan a convertir impresiones en clics.
-4. Si `/products/mesa-comedor-tripode-redonda` sigue en 0 clics con posición ~3,6 y ≥70 impresiones: reabrir solo el title (Lote 14).
-5. No reabrir `/comedores-nordicos` ni `/mesas-de-centro` hasta que pasen al menos 14 días del último cambio y el CTR siga plano.
+1. Medir CTR de veladores y del title de medidas de mesa tras el recrawl (varios días).
+2. Revisar si Hairpin, Ferrara, Cantabria y elegir-sillas empiezan a convertir impresiones en clics.
+3. Si `/products/mesa-comedor-tripode-redonda` sigue en 0 clics con posición ~3,6 y ≥70 impresiones: reabrir solo el title (Lote 14).
+4. No reabrir `/comedores-nordicos` ni `/mesas-de-centro` hasta que pasen al menos 14 días del último cambio y el CTR siga plano.
 
 ---
 
