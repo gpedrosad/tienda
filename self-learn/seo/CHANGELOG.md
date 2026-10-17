@@ -4,10 +4,10 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-17
 
-- **Lote 17:** claims de antigüedad alineados a «desde 2001» (el arreglo del Lote 15 no había salido); lastmod por `updatedAt` fijo; enlaces del pie a puertas, peldaños y mesas a medida; guía `/guias/medidas-mesa-de-centro` y `/guias/madera-para-meson-quincho`. Detalle: `SEO-CHANGELOG.md`.
+- **Lote 17:** claims de antigüedad alineados a «desde 1993 / 33 años» (Gonzalo, 2026-10-17; `FOUNDING_YEAR` = 1993 en `src/lib/founding.ts`; el arreglo del Lote 15 no había salido); lastmod por `updatedAt` fijo; enlaces del pie a puertas, peldaños y mesas a medida; guía `/guias/medidas-mesa-de-centro` y `/guias/madera-para-meson-quincho`. Detalle: `SEO-CHANGELOG.md`.
 - **Ronda 2:** páginas `/puertas-de-madera-con-vidrio`, `/puertas-para-locales`, `/peldanos-flotantes` y `/mesas-de-comedor-a-medida` (WhatsApp, enlaces de clúster, sitemap por descubrimiento). Alt, lazy y nombres de 28 fotos de catálogo con redirect. Oportunidades en `docs/seo-oportunidades-ronda2.md`. Sin precios ni cambios de antigüedad.
 - **SEO técnico:** sitemap descubre `page.tsx` nuevas; titles ≤60 y metas ≤155; alt de producto con datos reales; búsqueda solo enlaza fichas con foto; un `<main>` por página. Sin cambios de copy en home, puertas ni peldaños.
-- **Puertas:** más profundidad, FAQ y enlaces en `/puertas-a-medida` (el «desde 2001» queda igual); páginas nuevas de interiores, entrada/exterior, correderas y madera nativa; guía `/guias/medidas-y-madera-puertas`. Sin páginas de granero, pino ni «maciza»: el repo no las respalda como línea de puertas.
+- **Puertas:** más profundidad, FAQ y enlaces en `/puertas-a-medida` (la antigüedad la fija el Lote 17: desde 1993); páginas nuevas de interiores, entrada/exterior, correderas y madera nativa; guía `/guias/medidas-y-madera-puertas`. Sin páginas de granero, pino ni «maciza»: el repo no las respalda como línea de puertas.
 - **Peldaños:** clúster de huellas (`/peldanos-madera-chillan`, `/peldanos-escalera-concreto`, `/escaleras-de-madera`) y guías de medidas y de madera. Hub `/peldanos-a-medida` enlaza el clúster. Sin URL de pasamanos (no es línea de producto). Sin precios ni especies nuevas.
 
 ## 2026-10-16
@@ -16,7 +16,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-15
 
-- **Lote 15:** el changelog anotó «30/31 años» → desde 2001, pero el texto no salió a producción (el arreglo real es el Lote 17). Sí salieron: CTR guía elegir-sillas (title/meta + FAQ de ancho + enlaces Kentucky/Milán); seoTitle con medida en Hairpin 100×50, Ferrara Ø140 y Cantabria 240×110; pulido meta de mesa-nordica vs hub. Detalle: `SEO-CHANGELOG.md`.
+- **Lote 15:** el changelog anotó un cambio de antigüedad que no salió a producción. La antigüedad publicada quedó en el Lote 17: desde 1993 / 33 años (Gonzalo, 2026-10-17). Sí salieron: CTR guía elegir-sillas (title/meta + FAQ de ancho + enlaces Kentucky/Milán); seoTitle con medida en Hairpin 100×50, Ferrara Ø140 y Cantabria 240×110; pulido meta de mesa-nordica vs hub. Detalle: `SEO-CHANGELOG.md`.
 
 ## 2026-10-14
 

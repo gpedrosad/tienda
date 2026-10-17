@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
+import { YEARS_SINCE_FOUNDING_LABEL } from '@/lib/founding';
 import {
   ALL_PRODUCTS_COLLECTION_PATH,
   collectionNavLinks,
@@ -53,7 +54,7 @@ export default function Footer() {
                   Artesanía en madera
                 </p>
                 <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
-                  Desde 2001 creando productos de madera con dedicación, calidad y diseño excepcional.
+                  {YEARS_SINCE_FOUNDING_LABEL} creando productos de madera con dedicación, calidad y diseño excepcional.
                 </p>
               </div>
             </div>

@@ -7,6 +7,13 @@ import {
   fitAbsoluteTitle,
   SITE_NAME,
 } from "@/lib/seo";
+import {
+  FOUNDING_YEAR_LABEL,
+  SINCE_FOUNDING,
+  SINCE_FOUNDING_LABEL,
+  YEARS_SINCE_FOUNDING_LABEL,
+  tallerFamiliarStat,
+} from "@/lib/founding";
 import { peldanosClusterPaths } from "@/lib/peldanos-cluster";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -207,7 +214,7 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
         "@type": "Organization",
         name: SITE_NAME,
         url: absoluteUrl("/"),
-        foundingDate: "2001",
+        foundingDate: FOUNDING_YEAR_LABEL,
         description: config.pageDescription,
         areaServed: { "@type": "Country", name: "Chile" },
       },
@@ -994,7 +1001,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     },
     {
       title: "Fabricación chilena",
-      description: "Taller familiar en Chillán desde 2001, con equipo artesanal y maquinaria especializada.",
+      description: `Taller familiar en Chillán ${SINCE_FOUNDING}, con equipo artesanal y maquinaria especializada.`,
     },
   ],
   faqItems: [
@@ -1006,7 +1013,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Dónde fabrican las puertas de madera?",
       answer:
-        "Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida desde 2001.",
+        `Fabricamos en nuestro taller en Chillán con maquinaria especializada y madera nativa seca en cámara. Somos una fábrica de puertas de madera a medida ${SINCE_FOUNDING}.`,
     },
     {
       question: "¿Qué datos necesito para cotizar una puerta a medida?",
@@ -1215,7 +1222,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
   serviceName: "Puertas de madera a medida",
   serviceType: "Fabricación de puertas personalizadas",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
@@ -1226,7 +1233,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   updatedAt: "2026-10-17",
   pageTitle: "¿Quiénes Somos? | Muebles de Madera en Chile",
   pageDescription:
-    "Idea Madera: empresa familiar de Chillán desde 2001. Fabricamos muebles de madera con calidad artesanal y envíos a todo Chile.",
+    `Idea Madera: empresa familiar de Chillán ${SINCE_FOUNDING}. Fabricamos muebles de madera con calidad artesanal y envíos a todo Chile.`,
   keywords: [
     "idea madera",
     "muebles madera chillan",
@@ -1238,8 +1245,8 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   eyebrow: "Taller en Chillán",
   h1: "Muebles de madera fabricados en Chillán",
   heroParagraph:
-    "Somos una empresa familiar de Chillán que desde 2001 crea muebles de madera con diseño cuidadoso, construcción de calidad y venta directa. Involucrados en todo el proceso —desde el desarrollo del producto hasta la experiencia del cliente— eliminamos intermediarios para ofrecer piezas duraderas a precios accesibles, con envío a todo Chile.",
-  badges: ["Taller en Chillán", "Desde 2001", "Envíos a todo Chile"],
+    `Somos una empresa familiar de Chillán que ${SINCE_FOUNDING} crea muebles de madera con diseño cuidadoso, construcción de calidad y venta directa. Involucrados en todo el proceso —desde el desarrollo del producto hasta la experiencia del cliente— eliminamos intermediarios para ofrecer piezas duraderas a precios accesibles, con envío a todo Chile.`,
+  badges: ["Taller en Chillán", SINCE_FOUNDING_LABEL, "Envíos a todo Chile"],
   whatsappButtonLabel: "Hablar con Idea Madera",
   whatsappProductTitle: "Quiénes somos",
   whatsappLines: [
@@ -1299,7 +1306,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   faqItems: [
     {
       question: "¿Desde cuándo existe Idea Madera?",
-      answer: "Idea Madera opera desde 2001 fabricando muebles de madera con diseño y calidad artesanal en Chile.",
+      answer: `Idea Madera opera ${SINCE_FOUNDING} fabricando muebles de madera con diseño y calidad artesanal en Chile.`,
     },
     {
       question: "¿Dónde fabrican los muebles?",
@@ -1331,9 +1338,9 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   ],
   schemaType: "AboutPage",
   stats: [
-    { value: "2001", label: "Año de fundación" },
+    { value: FOUNDING_YEAR_LABEL, label: "Año de fundación" },
     { value: "3.000+", label: "Clientes satisfechos" },
-    { value: "Desde 2001", label: "Taller familiar" },
+    { value: YEARS_SINCE_FOUNDING_LABEL, label: "Taller familiar" },
   ],
 };
 
@@ -1585,8 +1592,8 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   eyebrow: "Mueblería y Fábrica en Chillán",
   h1: "Mueblería en Chillán: Fábrica de muebles de madera",
   heroParagraph:
-    "Somos fábrica y mueblería en Chillán desde 2001: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta muebles a medida en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.",
-  badges: ["Fábrica en Chillán", "Desde 2001", "Envíos a todo Chile"],
+    `Somos fábrica y mueblería en Chillán ${SINCE_FOUNDING}: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta muebles a medida en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.`,
+  badges: ["Fábrica en Chillán", SINCE_FOUNDING_LABEL, "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar muebles por WhatsApp",
   whatsappProductTitle: "Muebles Chillán",
   whatsappLines: [
@@ -1643,7 +1650,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   bottomHighlights: [
     {
       title: "Empresa familiar de Chillán",
-      description: "Desde 2001 fabricando muebles de madera con venta directa.",
+      description: `${YEARS_SINCE_FOUNDING_LABEL} fabricando muebles de madera con venta directa.`,
     },
     {
       title: "Envío nacional",
@@ -1827,7 +1834,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   ],
   bottomHighlights: [
     {
-      title: "Taller familiar desde 2001",
+      title: `${YEARS_SINCE_FOUNDING_LABEL} de experiencia`,
       description:
         "Equipo artesanal con maquinaria especializada para cumplir especificaciones técnicas de cada cliente.",
     },
@@ -1934,7 +1941,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   serviceName: "Muebles de madera a medida",
   serviceType: "Fabricación de muebles de madera a medida",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],

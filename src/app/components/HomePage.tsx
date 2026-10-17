@@ -10,6 +10,7 @@ import Reveal from "@/app/components/Reveal";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts, sortProductsForCatalog } from "@/lib/catalog";
+import { SINCE_FOUNDING } from "@/lib/founding";
 import { buildGeneralWhatsAppMessage } from "@/lib/whatsapp";
 
 const homeWhatsAppMessage = buildGeneralWhatsAppMessage("inicio de Idea Madera", [
@@ -63,7 +64,8 @@ export default function HomePage() {
             Taller familiar en Chillán. Somos{" "}
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
               fábrica de muebles en Chillán
-            </Link>{" "}desde 2001. Si buscas atención local desde Ñuble, entra a nuestra página de{" "}
+            </Link>{" "}
+            {SINCE_FOUNDING}. Si buscas atención local desde Ñuble, entra a nuestra página de{" "}
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
               mueblería en Chillán
             </Link>. Encuentra{" "}

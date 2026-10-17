@@ -1,3 +1,4 @@
+import { FOUNDING_YEAR_LABEL } from "@/lib/founding";
 import { DEFAULT_SITE_URL } from "@/lib/whatsapp";
 
 export const SITE_NAME = "Idea Madera";
@@ -160,7 +161,7 @@ export function buildOrganizationSchema() {
     description: HOME_DESCRIPTION,
     telephone: SITE_PHONE,
     email: "hola@ideamadera.cl",
-    foundingDate: "2001",
+    foundingDate: FOUNDING_YEAR_LABEL,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Boyén Sector 01",

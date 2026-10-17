@@ -2,16 +2,18 @@
 
 ## 2026-10-17 — Lote 17
 
-### 1. Antigüedad: solo «desde 2001»
+### 1. Antigüedad: solo «desde 1993 / 33 años»
 
-El Lote 15 lo dejó escrito y no publicado. `foundingDate` sigue en 2001. No hay años, plazos ni garantías nuevos.
+Gonzalo fijó el 2026-10-17 el año real de fundación: **1993**, o sea 33 años en 2026. La única antigüedad permitida es «desde 1993» o «33 años». El año vive en `FOUNDING_YEAR` (`src/lib/founding.ts`) y los años cumplidos salen de `yearsSinceFounding()`. `foundingDate` del schema (FurnitureStore de la organización y Organization de `/quienes-somos`) es `"1993"`. No hay plazos ni garantías nuevos.
 
-- Footer: «31 años creando…» → «Desde 2001 creando…».
-- `/muebles-a-medida`: highlight «Más de 30 años de experiencia» → «Taller familiar desde 2001». La descripción del highlight no cambia.
-- Home (`FabricaVideo`): «31 años de pasión…» → «desde 2001, con pasión…».
-- `/muebles-chillan`: «Más de 20 años fabricando…» → «Desde 2001 fabricando…».
-- `/quienes-somos`: el stat «31 / Años de experiencia» → «Desde 2001 / Taller familiar». El stat «2001 / Año de fundación» queda igual.
-- `docs/seo-oportunidades-ronda2.md`: la regla para agentes pasa a ser que la única antigüedad permitida es «desde 2001».
+- Footer: «33 años creando…».
+- `/muebles-a-medida`: highlight «33 años de experiencia». La descripción del highlight no cambia.
+- Home (`FabricaVideo`): «desde 1993, con pasión…». La intro de la home dice «fábrica de muebles en Chillán desde 1993».
+- `/muebles-chillan`: el hero y el badge dicen «desde 1993»; el highlight, «33 años fabricando…».
+- `/quienes-somos`: stat «1993 / Año de fundación» y stat «33 años / Taller familiar». El resto de las frases de esa página dice «desde 1993».
+- Puertas (hub y clúster): «desde 1993» o «Desde 1993».
+- `public/llms.txt`: «Desde 1993».
+- `docs/seo-oportunidades-ronda2.md`: la regla para agentes es que la única antigüedad permitida es «desde 1993 / 33 años» (decisión de Gonzalo, 2026-10-17).
 
 ### 2. lastmod del sitemap
 
@@ -32,15 +34,15 @@ Title `Madera para Mesón de Quincho | Lenga y Pino` (43). Meta 152 caracteres. 
 
 ### Build
 
-`npm run build`: OK (Next.js 15.5.19). El sitemap generado tiene 74 URLs (las 72 anteriores más las dos guías) y 13 fechas de `lastmod` distintas. En el HTML de `.next/server/app`, la búsqueda `31 años|30 años|20 años` no encuentra nada.
+`npm run build`: OK (Next.js 15.5.19). El sitemap generado tiene 74 URLs (las 72 anteriores más las dos guías) y 13 fechas de `lastmod` distintas. En el HTML de `.next/server/app` (75 archivos `.html`), `2001`, `31 años`, `30 años`, `20 años` y `25 años` no aparecen. `foundingDate` es `1993`.
 
 ### No se tocó
 
-Schema Service (política de devoluciones). Pixel, GTM y analítica. `foundingDate`. Cuerpo de veladores, medidas de mesa de comedor, titles de ratona y Niza, elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica, hub de puertas, páginas de peldaños y comedores nórdicos, más allá del claim, del `updatedAt` y de la línea de enlace indicada. Sin páginas por ciudad, closet, acústica, granero, pasamanos, `/ads/*` ni `/sitelink/*`.
+Schema Service (política de devoluciones). Pixel, GTM y analítica. Cuerpo de veladores, medidas de mesa de comedor, titles de ratona y Niza, elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica, hub de puertas, páginas de peldaños y comedores nórdicos, más allá del claim, del `updatedAt` y de la línea de enlace indicada. Sin páginas por ciudad, closet, acústica, granero, pasamanos, `/ads/*` ni `/sitelink/*`.
 
 ## 2026-10-17: Cluster de puertas
 
-Solo landings y guía de puertas. No se tocó el claim «desde 2001» / «Desde 2001» de `/puertas-a-medida`.
+Solo landings y guía de puertas. Ese cambio no reescribió el claim de antigüedad de `/puertas-a-medida`. El Lote 17 lo dejó en «desde 1993».
 
 Páginas nuevas, con title ≤60, meta ≤155, canónico, un H1, schema Service + Breadcrumb + FAQ y CTA de WhatsApp del helper existente:
 
@@ -143,7 +145,7 @@ Lote 15 (elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica). Lote 14 (puertas
 - No se inventaron años, plazos ni garantías.
 - Residual fuera de este lote: `FabricaVideo` (home) sigue con «31 años». No es la landing ni el footer.
 
-**Corrección (Lote 17, 2026-10-17):** este claim quedó escrito aquí, pero no se publicó. En producción seguían el footer («31 años creando…»), el highlight de `/muebles-a-medida` («Más de 30 años»), el video de la home («31 años») y `/muebles-chillan` («Más de 20 años»). El arreglo real está en el Lote 17.
+**Corrección (Lote 17, 2026-10-17):** este claim quedó escrito aquí, pero no se publicó. En producción seguían el footer («31 años creando…»), el highlight de `/muebles-a-medida` («Más de 30 años»), el video de la home («31 años») y `/muebles-chillan` («Más de 20 años»). Gonzalo fijó el mismo día el año real de fundación en 1993 (33 años en 2026). El texto publicado está en la sección del Lote 17.
 
 ### 2. /guias/elegir-sillas-madera-comedor
 

@@ -1,3 +1,4 @@
+import { SINCE_FOUNDING, tallerFamiliarStat } from "@/lib/founding";
 import type { LandingRelatedLink, ServiceLandingConfig } from "@/lib/service-landings";
 
 const doorCtaBullets = [
@@ -62,9 +63,9 @@ function relatedExcept(href: string) {
   return doorRelatedLinks(href);
 }
 
-const tallerDesde2001 = {
+const tallerFamiliar = {
   title: "Fabricación chilena",
-  description: "Taller familiar en Chillán desde 2001, con equipo artesanal y maquinaria especializada.",
+  description: `Taller familiar en Chillán ${SINCE_FOUNDING}, con equipo artesanal y maquinaria especializada.`,
 };
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
@@ -144,7 +145,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
     },
   ],
   bottomHighlights: [
-    tallerDesde2001,
+    tallerFamiliar,
     {
       title: "Varias hojas del mismo interior",
       description: "Indica la cantidad y si los vanos son iguales o distintos. Cada uno se revisa con su medida.",
@@ -214,7 +215,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   serviceName: "Puertas interiores de madera a medida",
   serviceType: "Fabricación de puertas interiores de madera",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
@@ -320,7 +321,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
     },
   ],
   bottomHighlights: [
-    tallerDesde2001,
+    tallerFamiliar,
     {
       title: "Envío a tu comuna",
       description: "Coordinamos despacho a todo Chile. El costo de envío se indica al cotizar.",
@@ -384,7 +385,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
   serviceName: "Puertas de entrada y exteriores de madera a medida",
   serviceType: "Fabricación de puertas de entrada de madera",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
@@ -472,7 +473,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
     },
   ],
   bottomHighlights: [
-    tallerDesde2001,
+    tallerFamiliar,
     {
       title: "Una referencia, no un kit",
       description: "Madera y vidrio en interior. No vendemos la foto como conjunto armado.",
@@ -542,7 +543,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
   serviceName: "Puertas correderas de madera a medida",
   serviceType: "Fabricación de puertas correderas de madera",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
@@ -624,7 +625,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
     },
   ],
   bottomHighlights: [
-    tallerDesde2001,
+    tallerFamiliar,
     {
       title: "Sin especie por catálogo",
       description: "Si no está escrita en la respuesta de WhatsApp, no está prometida.",
@@ -694,7 +695,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
   serviceName: "Puertas de madera nativa a medida",
   serviceType: "Fabricación de puertas de madera nativa",
   stats: [
-    { value: "Desde 2001", label: "Taller familiar" },
+    tallerFamiliarStat,
     { value: "Chillán", label: "Fabricación propia" },
     { value: "Todo Chile", label: "Cobertura de envío" },
   ],
