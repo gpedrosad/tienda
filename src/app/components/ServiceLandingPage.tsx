@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
@@ -6,9 +7,21 @@ import {
   buildLandingSchemaGraph,
   buildLandingWhatsAppHref,
   buildLandingWhatsAppMessage,
+  type LandingImage,
   type ServiceLandingConfig,
 } from "@/lib/service-landings";
 import { ALL_PRODUCTS_COLLECTION_PATH } from "@/lib/navigation";
+
+function galleryFrame(image: LandingImage) {
+  const ratio = image.width / image.height;
+  if (ratio >= 1.35) {
+    return { item: "col-span-2", frame: "aspect-[16/9]" };
+  }
+  if (ratio >= 0.9) {
+    return { item: "", frame: "aspect-square" };
+  }
+  return { item: "", frame: "aspect-[3/4]" };
+}
 
 interface ServiceLandingPageProps {
   config: ServiceLandingConfig;
@@ -25,57 +38,80 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
       <main className="bg-white text-neutral-900">
         <section className="border-b border-neutral-200 bg-gradient-to-b from-neutral-100 to-white">
           <div className="max-w-6xl mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-16">
-            <p className="text-[11px] md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-              {config.eyebrow}
-            </p>
-            <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
-              {config.h1}
-            </h1>
-            <p className="mt-5 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl">
-              {config.heroParagraph}
-            </p>
+            <div
+              className={
+                config.heroImage
+                  ? "lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-stretch lg:gap-10"
+                  : undefined
+              }
+            >
+              <div>
+                <p className="text-[11px] md:text-sm uppercase tracking-[0.18em] text-neutral-600">
+                  {config.eyebrow}
+                </p>
+                <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
+                  {config.h1}
+                </h1>
+                <p className="mt-5 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl">
+                  {config.heroParagraph}
+                </p>
 
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {config.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs md:text-sm text-neutral-700"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
+                <div className="mt-5 flex flex-wrap gap-2.5">
+                  {config.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs md:text-sm text-neutral-700"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
 
-            <div className="mt-7 flex flex-col sm:flex-row gap-3">
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
-              >
-                <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
-                {config.whatsappButtonLabel}
-              </a>
-              {config.schemaType === "AboutPage" && (
-                <Link
-                  href={ALL_PRODUCTS_COLLECTION_PATH}
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-900 px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-50 transition-colors"
-                >
-                  Ver catálogo
-                </Link>
-              )}
-            </div>
+                <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
+                  >
+                    <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
+                    {config.whatsappButtonLabel}
+                  </a>
+                  {config.schemaType === "AboutPage" && (
+                    <Link
+                      href={ALL_PRODUCTS_COLLECTION_PATH}
+                      className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-900 px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-50 transition-colors"
+                    >
+                      Ver catálogo
+                    </Link>
+                  )}
+                </div>
 
-            {config.stats && config.stats.length > 0 && (
-              <div className="mt-8 grid grid-cols-3 gap-3 max-w-2xl">
-                {config.stats.map((stat) => (
-                  <div key={stat.label} className="text-center sm:text-left">
-                    <p className="text-2xl md:text-3xl font-light text-neutral-900">{stat.value}</p>
-                    <p className="mt-1 text-xs md:text-sm text-neutral-600">{stat.label}</p>
+                {config.stats && config.stats.length > 0 && (
+                  <div className="mt-8 grid grid-cols-3 gap-3 max-w-2xl">
+                    {config.stats.map((stat) => (
+                      <div key={stat.label} className="text-center sm:text-left">
+                        <p className="text-2xl md:text-3xl font-light text-neutral-900">{stat.value}</p>
+                        <p className="mt-1 text-xs md:text-sm text-neutral-600">{stat.label}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
-            )}
+
+              {config.heroImage ? (
+                <figure className="relative mt-8 h-[min(78vw,560px)] overflow-hidden rounded-2xl bg-neutral-100 shadow-sm lg:mt-0 lg:h-full lg:min-h-[560px]">
+                  <Image
+                    src={config.heroImage.src}
+                    alt={config.heroImage.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </figure>
+              ) : null}
+            </div>
 
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {config.heroHighlights.map((item) => (
@@ -87,6 +123,43 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
             </div>
           </div>
         </section>
+
+        {config.gallery && config.gallery.length > 0 ? (
+          <section className="border-b border-neutral-200" aria-label={config.galleryTitle ?? "Galería"}>
+            <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+                {config.galleryTitle ?? "Trabajos reales"}
+              </h2>
+              {config.galleryIntro ? (
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-neutral-700 md:text-base">
+                  {config.galleryIntro}
+                </p>
+              ) : null}
+              <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+                {config.gallery.map((image) => {
+                  const frame = galleryFrame(image);
+                  return (
+                    <li key={image.src} className={frame.item}>
+                      <figure className={`relative overflow-hidden rounded-2xl bg-neutral-100 ${frame.frame}`}>
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes={
+                            frame.item
+                              ? "(max-width: 768px) 100vw, 66vw"
+                              : "(max-width: 768px) 50vw, 33vw"
+                          }
+                          className="object-cover"
+                        />
+                      </figure>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </section>
+        ) : null}
 
         {config.contactDetails && (
           <section className="border-b border-neutral-200 bg-neutral-50">

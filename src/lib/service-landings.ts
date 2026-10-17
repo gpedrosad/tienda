@@ -9,6 +9,13 @@ export type LandingStat = { value: string; label: string };
 
 export type LandingRelatedLink = { href: string; title: string; description: string };
 
+export type LandingImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type ServiceLandingConfig = {
   canonicalPath: string;
   pageTitle: string;
@@ -42,6 +49,10 @@ export type ServiceLandingConfig = {
   serviceName?: string;
   serviceType?: string;
   stats?: LandingStat[];
+  heroImage?: LandingImage;
+  galleryTitle?: string;
+  galleryIntro?: string;
+  gallery?: LandingImage[];
   contactDetails?: {
     phone: string;
     email: string;
@@ -59,6 +70,15 @@ export function buildLandingWhatsAppHref(config: ServiceLandingConfig) {
 }
 
 export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
+  const shareImage = config.heroImage
+    ? {
+        url: config.heroImage.src,
+        width: config.heroImage.width,
+        height: config.heroImage.height,
+        alt: config.heroImage.alt,
+      }
+    : { url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME };
+
   return {
     title: { absolute: config.pageTitle },
     description: config.pageDescription,
@@ -71,13 +91,13 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
       siteName: SITE_NAME,
       locale: "es_CL",
       type: "website",
-      images: [{ url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME }],
+      images: [shareImage],
     },
     twitter: {
       card: "summary_large_image",
       title: config.pageTitle,
       description: config.pageDescription,
-      images: [{ url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME }],
+      images: [shareImage],
     },
     robots: {
       index: true,
@@ -126,6 +146,7 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
       provider: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
       areaServed: { "@type": "Country", name: "Chile" },
       description: config.pageDescription,
+      ...(config.heroImage ? { image: absoluteUrl(config.heroImage.src) } : {}),
       audience: [
         { "@type": "Audience", audienceType: "Particulares" },
         { "@type": "Audience", audienceType: "Empresas" },
@@ -200,6 +221,47 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
     { title: "Medidas exactas por proyecto", description: "Fabricación personalizada para ajuste preciso." },
     { title: "Empresas y particulares", description: "Desde una obra pequeña hasta proyectos grandes." },
     { title: "Envíos a todo Chile", description: "Coordinación de despacho según comuna o región." },
+  ],
+  heroImage: {
+    src: "/images/peldanos/peldanos-escalera-barnizada-vidrio.webp",
+    alt: "Escalera con peldaños de madera barnizada y baranda de vidrio",
+    width: 738,
+    height: 1210,
+  },
+  galleryTitle: "Peldaños de madera en obra y en taller",
+  galleryIntro:
+    "Referencias reales de huellas fabricadas. La estructura de la escalera y el montaje no se asumen incluidos, salvo que lo confirmemos al cotizar.",
+  gallery: [
+    {
+      src: "/images/peldanos/peldanos-flotantes-instalados.webp",
+      alt: "Peldaños flotantes de madera instalados sobre estructura metálica",
+      width: 1080,
+      height: 600,
+    },
+    {
+      src: "/images/peldanos/peldanos-escalera-vidrio-instalada.webp",
+      alt: "Escalera con huellas de madera barnizada y baranda de vidrio en obra",
+      width: 878,
+      height: 1480,
+    },
+    {
+      src: "/images/peldanos/peldanos-gruesos-madera-maciza.webp",
+      alt: "Peldaños gruesos de madera maciza apilados en el taller",
+      width: 1200,
+      height: 1600,
+    },
+    {
+      src: "/images/peldanos/peldanos-madera-a-medida-taller.webp",
+      alt: "Peldaños de madera clara a medida recién cepillados en el taller",
+      width: 1200,
+      height: 1600,
+    },
+    {
+      src: "/images/peldanos/peldanos-madera-cruda-taller.webp",
+      alt: "Huellas de madera cruda listas para terminar en el taller",
+      width: 738,
+      height: 978,
+    },
   ],
   sectionTitle: "Peldaños de madera a medida para cada espacio",
   sectionParagraph:
@@ -774,6 +836,35 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     { title: "Especificaciones exactas", description: "Cada puerta se fabrica según las medidas y diseño de tu proyecto." },
     { title: "Madera nativa seca en cámara", description: "Materiales seleccionados para durabilidad y estabilidad." },
     { title: "Taller en Chillán", description: "Fabricación propia y atención directa desde Ñuble, con envío a todo Chile." },
+  ],
+  heroImage: {
+    src: "/images/puertas/puerta-doble-madera-vidrios-fachada.webp",
+    alt: "Puerta doble de madera con vidrios en fachada",
+    width: 1200,
+    height: 1600,
+  },
+  galleryTitle: "Puertas de madera fabricadas a medida",
+  galleryIntro:
+    "Referencias de puertas de interior y exterior. Marco, herrajes e instalación no se asumen incluidos.",
+  gallery: [
+    {
+      src: "/images/puertas/puerta-corredera-madera-vidrio-interior.webp",
+      alt: "Puerta corredera de madera y vidrio para interior",
+      width: 956,
+      height: 1268,
+    },
+    {
+      src: "/images/puertas/puerta-doble-madera-muro-piedra.webp",
+      alt: "Puerta doble de madera con vidrios instalada en un muro de piedra",
+      width: 720,
+      height: 1280,
+    },
+    {
+      src: "/images/puertas/puerta-doble-madera-con-montante.webp",
+      alt: "Puerta doble de madera con montante y dintel en la entrada",
+      width: 720,
+      height: 760,
+    },
   ],
   sectionTitle: "Puertas de madera a medida hechas para durar",
   sectionParagraph:
