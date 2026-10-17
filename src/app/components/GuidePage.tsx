@@ -17,7 +17,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
       <JsonLd data={structuredData} />
       <main className="bg-white text-neutral-900">
         <section className="border-b border-neutral-200 bg-neutral-50">
-          <div className="mx-auto max-w-4xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
+          <div className="mx-auto max-w-3xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
             <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
               <Link href="/" className="hover:text-neutral-900">
                 Inicio
@@ -65,7 +65,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                   </p>
                 ))}
                 {section.bullets && (
-                  <ul className="my-4 space-y-2 pl-5">
+                  <ul className="my-4 list-disc space-y-2 pl-5 marker:text-neutral-400">
                     {section.bullets.map((bullet, bIdx) => (
                       <li
                         key={bIdx}
@@ -137,11 +137,11 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
 
         {config.relatedLinks && config.relatedLinks.length > 0 && (
           <section className="border-t border-neutral-200">
-            <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
+            <div className="mx-auto max-w-3xl px-4 py-10 md:py-12">
               <h2 className="mb-5 text-xl font-light tracking-tight text-neutral-900">
                 También te puede interesar
               </h2>
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {config.relatedLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -158,21 +158,21 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
         )}
 
         {whatsappHref && config.ctaTitle && (
-          <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+          <section className="mx-auto max-w-3xl px-4 py-12 md:py-16">
             <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
               <h2 className="text-2xl font-light tracking-tight md:text-3xl">
                 {config.ctaTitle}
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
                 {config.ctaParagraph}
               </p>
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
+                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100 md:text-base"
               >
-                <AiOutlineWhatsApp size={22} />
+                <AiOutlineWhatsApp className="text-neutral-900" size={22} />
                 Escribir por WhatsApp
               </a>
             </div>

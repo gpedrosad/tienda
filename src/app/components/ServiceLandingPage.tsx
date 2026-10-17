@@ -13,15 +13,39 @@ import {
 } from "@/lib/service-landings";
 import { ALL_PRODUCTS_COLLECTION_PATH } from "@/lib/navigation";
 
-function galleryFrame(image: LandingImage) {
-  const ratio = image.width / image.height;
-  if (ratio >= 1.35) {
-    return { item: "col-span-2", frame: "aspect-[16/9]" };
+function isWideGalleryImage(image: LandingImage) {
+  return image.width / image.height >= 1.35;
+}
+
+function galleryFrame(image: LandingImage, stretchOnMobile: boolean) {
+  if (isWideGalleryImage(image)) {
+    return {
+      item: "col-span-2",
+      frame: "aspect-[3/2]",
+      sizes: "(max-width: 768px) 100vw, 66vw",
+    };
   }
-  if (ratio >= 0.9) {
-    return { item: "", frame: "aspect-square" };
+  if (stretchOnMobile) {
+    return {
+      item: "col-span-2 md:col-span-1",
+      frame: "aspect-[3/2] md:aspect-[3/4]",
+      sizes: "(max-width: 768px) 100vw, 33vw",
+    };
   }
-  return { item: "", frame: "aspect-[3/4]" };
+  return {
+    item: "",
+    frame: "aspect-[3/4]",
+    sizes: "(max-width: 768px) 50vw, 33vw",
+  };
+}
+
+function lastPortraitGalleryIndex(images: LandingImage[]) {
+  const cells = images.reduce((sum, image) => sum + (isWideGalleryImage(image) ? 2 : 1), 0);
+  if (cells % 2 === 0) return -1;
+  for (let index = images.length - 1; index >= 0; index -= 1) {
+    if (!isWideGalleryImage(images[index])) return index;
+  }
+  return -1;
 }
 
 interface ServiceLandingPageProps {
@@ -31,6 +55,7 @@ interface ServiceLandingPageProps {
 export default function ServiceLandingPage({ config }: ServiceLandingPageProps) {
   const whatsappHref = buildLandingWhatsAppHref(config);
   const whatsappMessage = buildLandingWhatsAppMessage(config);
+  const galleryStretchIndex = lastPortraitGalleryIndex(config.gallery ?? []);
 
   return (
     <>
@@ -42,18 +67,40 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
             <div
               className={
                 config.heroImage
-                  ? "lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-stretch lg:gap-10"
+                  ? "flex flex-col lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:grid-rows-[auto_1fr] lg:gap-x-10"
                   : undefined
               }
             >
-              <div>
+              <div className={config.heroImage ? "lg:col-start-1 lg:row-start-1" : undefined}>
                 <p className="text-[11px] md:text-sm uppercase tracking-[0.18em] text-neutral-600">
                   {config.eyebrow}
                 </p>
                 <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
                   {config.h1}
                 </h1>
-                <p className="mt-5 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl">
+              </div>
+
+              {config.heroImage ? (
+                <figure className="relative mt-6 h-[min(64vw,420px)] overflow-hidden rounded-2xl bg-neutral-100 shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:h-full lg:min-h-[560px]">
+                  <Image
+                    src={config.heroImage.src}
+                    alt={config.heroImage.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </figure>
+              ) : null}
+
+              <div className={config.heroImage ? "lg:col-start-1 lg:row-start-2" : undefined}>
+                <p
+                  className={
+                    config.heroImage
+                      ? "mt-6 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl lg:mt-5"
+                      : "mt-5 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl"
+                  }
+                >
                   {config.heroParagraph}
                 </p>
 
@@ -99,26 +146,13 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   </div>
                 )}
               </div>
-
-              {config.heroImage ? (
-                <figure className="relative mt-8 h-[min(78vw,560px)] overflow-hidden rounded-2xl bg-neutral-100 shadow-sm lg:mt-0 lg:h-full lg:min-h-[560px]">
-                  <Image
-                    src={config.heroImage.src}
-                    alt={config.heroImage.alt}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                </figure>
-              ) : null}
             </div>
 
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {config.heroHighlights.map((item) => (
                 <div key={item.title} className="border border-neutral-200 rounded-xl p-4 bg-white shadow-sm">
-                  <p className="mt-3 text-sm font-medium text-neutral-900">{item.title}</p>
-                  <p className="mt-1 text-xs text-neutral-600">{item.description}</p>
+                  <p className="text-sm font-medium text-neutral-900">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -137,8 +171,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 </p>
               ) : null}
               <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-                {config.gallery.map((image) => {
-                  const frame = galleryFrame(image);
+                {config.gallery.map((image, index) => {
+                  const frame = galleryFrame(image, index === galleryStretchIndex);
                   return (
                     <li key={image.src} className={frame.item}>
                       <figure className={`relative overflow-hidden rounded-2xl bg-neutral-100 ${frame.frame}`}>
@@ -146,11 +180,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                           src={image.src}
                           alt={image.alt}
                           fill
-                          sizes={
-                            frame.item
-                              ? "(max-width: 768px) 100vw, 66vw"
-                              : "(max-width: 768px) 50vw, 33vw"
-                          }
+                          sizes={frame.sizes}
                           loading="lazy"
                           className="object-cover"
                         />
@@ -205,7 +235,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         )}
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-          <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">{config.sectionTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.sectionTitle}</h2>
           <p className="mt-5 text-neutral-700 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -219,39 +249,41 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         </section>
 
         {config.extraSections?.map((section) => (
-          <section key={section.title} className="border-t border-neutral-200 bg-neutral-50">
-            <div className="mx-auto max-w-3xl px-4 py-14 md:py-16">
-              <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
-                {section.title}
-              </h2>
-              {section.paragraphs.map((paragraph) => (
-                <p
-                  key={paragraph.slice(0, 48)}
-                  className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base"
-                >
-                  <InlineLinkedText text={paragraph} />
-                </p>
-              ))}
-              {section.bullets && section.bullets.length > 0 ? (
-                <ul className="mt-5 list-disc space-y-1.5 pl-5 text-sm text-neutral-700 md:text-base">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>
-                      <InlineLinkedText text={bullet} />
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+          <section key={section.title} className="border-t border-neutral-200 bg-white">
+            <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
+                  {section.title}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 48)}
+                    className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base"
+                  >
+                    <InlineLinkedText text={paragraph} />
+                  </p>
+                ))}
+                {section.bullets && section.bullets.length > 0 ? (
+                  <ul className="mt-5 list-disc space-y-1.5 pl-5 text-sm text-neutral-700 md:text-base">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>
+                        <InlineLinkedText text={bullet} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
             </div>
           </section>
         ))}
 
         <section className="bg-neutral-50 border-y border-neutral-200">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-            <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">{config.stepsTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.stepsTitle}</h2>
             <ol className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {config.steps.map((step, index) => (
                 <li key={step.title} className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-neutral-500">
+                  <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
                     Paso {index + 1}
                   </p>
                   <h3 className="mt-2 text-lg font-medium text-neutral-900">{step.title}</h3>
@@ -262,12 +294,27 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </div>
         </section>
 
+        <section className="max-w-6xl mx-auto px-4 pt-10 md:pt-12">
+          <div className="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between md:p-6">
+            <p className="text-base md:text-lg text-neutral-900">¿Ya tienes las medidas? Envíalas y te respondemos con la propuesta.</p>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto shrink-0 inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
+            >
+              <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
+              {config.whatsappButtonLabel}
+            </a>
+          </div>
+        </section>
+
         {config.bottomHighlights && config.bottomHighlights.length > 0 && (
           <section className="max-w-6xl mx-auto px-4 py-4 md:py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {config.bottomHighlights.map((item) => (
                 <article key={item.title} className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-                  <h2 className="mt-3 text-xl md:text-2xl font-light tracking-tight text-neutral-900">
+                  <h2 className="text-xl md:text-2xl font-light tracking-tight text-neutral-900">
                     {item.title}
                   </h2>
                   <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
@@ -287,7 +334,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 {config.relatedLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
                     <p className="text-sm font-medium text-neutral-900">{link.title}</p>
-                    <p className="mt-1 text-xs text-neutral-600">{link.description}</p>
+                    <p className="mt-1 text-sm text-neutral-600">{link.description}</p>
                   </Link>
                 ))}
               </div>
@@ -296,15 +343,22 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         )}
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-          <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight">Preguntas frecuentes</h2>
           <div className="mt-8 border-t border-neutral-200">
-            {config.faqItems.map((item) => (
-              <article key={item.question} className="border-b border-neutral-200 py-5">
-                <h3 className="text-lg font-medium text-neutral-900">{item.question}</h3>
+            {config.faqItems.map((item, index) => (
+              <details
+                key={item.question}
+                className="group border-b border-neutral-200 py-5"
+                open={index === 0}
+              >
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-medium text-neutral-900 [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 rounded-sm">
+                  <h3 className="text-lg font-medium">{item.question}</h3>
+                  <span aria-hidden="true" className="mt-1 text-neutral-500 transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
+                </summary>
                 <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
                   <InlineLinkedText text={item.answer} />
                 </p>
-              </article>
+              </details>
             ))}
           </div>
         </section>
