@@ -74,6 +74,13 @@ const guides = [
     href: "/guias/cotizar-muebles-a-medida",
     category: "Cotización",
   },
+  {
+    title: "Medidas estándar de puertas y cómo elegir la madera",
+    description:
+      "Medidas habituales de hoja en Chile, diferencia entre vano y hoja, y cómo pensar la madera de una puerta interior o de entrada.",
+    href: "/guias/medidas-y-madera-puertas",
+    category: "Puertas",
+  },
 ];
 
 export default function GuiasPage() {

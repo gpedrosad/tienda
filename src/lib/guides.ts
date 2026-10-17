@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { plainTextFromInlineLinks } from "@/lib/inline-links";
 import { absoluteUrl, buildServiceOfferSchema, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
 import { peldanosGuidePaths } from "@/lib/peldanos-guides";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -125,7 +126,7 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
       mainEntity: config.faqs.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
       })),
     });
   }
