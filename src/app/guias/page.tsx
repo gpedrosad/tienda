@@ -33,6 +33,20 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    title: "Cómo medir la huella y la contrahuella",
+    description:
+      "Referencia general de confort para peldaños: huella, contrahuella y qué medidas enviar para cotizar las huellas de madera.",
+    href: "/guias/medidas-peldanos-escalera",
+    category: "Peldaños",
+  },
+  {
+    title: "Cómo elegir la madera de un peldaño",
+    description:
+      "Tránsito, espesor y terminación. Lenga austral o pino premium se confirman al cotizar las huellas.",
+    href: "/guias/elegir-madera-peldanos",
+    category: "Peldaños",
+  },
+  {
     title: "Cómo cuidar y mantener tus muebles de madera maciza",
     description:
       "Guía práctica para limpiar, proteger y mantener tus muebles de madera: limpieza diaria, barniz, manchas y protección para que duren años.",
