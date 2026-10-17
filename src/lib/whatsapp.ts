@@ -72,15 +72,15 @@ export async function trackWhatsAppClick({
     placement,
   };
 
-  // Si gtag aún no cargó (scripts diferidos), el evento se deja en dataLayer
-  // con el formato estándar de gtag.js para que se procese al cargar.
-  if (typeof win.gtag === "function") {
-    win.gtag("event", "whatsapp_click", eventParams);
-  } else {
-    const winWithDataLayer = win as Window & { dataLayer?: unknown[] };
-    winWithDataLayer.dataLayer = winWithDataLayer.dataLayer ?? [];
-    winWithDataLayer.dataLayer.push(["event", "whatsapp_click", eventParams]);
+  const winWithDataLayer = win as Window & { dataLayer?: unknown[] };
+  winWithDataLayer.dataLayer = winWithDataLayer.dataLayer ?? [];
+  if (typeof win.gtag !== "function") {
+    win.gtag = function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      winWithDataLayer.dataLayer!.push(arguments);
+    };
   }
+  win.gtag("event", "whatsapp_click", eventParams);
 
   try {
     await fetch("/api/facebook-whatsapp", {

@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const GTM_ID = "GTM-K452JXZZ";
-const GA_MEASUREMENT_ID = "G-KBR6DKMXVM";
 const FACEBOOK_PIXEL_ID = "1591255851691449";
 const FALLBACK_DELAY_MS = 8000;
 
@@ -42,21 +40,6 @@ function loadGoogleTagManager() {
   appendScript("gtm-script", `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`);
 }
 
-function loadGoogleAnalytics() {
-  window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args);
-  };
-  window.gtag("js", new Date());
-  window.gtag("config", GA_MEASUREMENT_ID, {
-    page_path: `${window.location.pathname}${window.location.search}`,
-  });
-  appendScript(
-    "ga-gtag-script",
-    `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
-  );
-}
-
 function loadFacebookPixel() {
   if (!window.fbq) {
     const fbq: FacebookPixel = (...args: unknown[]) => {
@@ -85,9 +68,6 @@ function loadFacebookPixel() {
 }
 
 export default function DeferredThirdPartyScripts() {
-  const pathname = usePathname();
-  const gaReadyRef = useRef(false);
-
   useEffect(() => {
     let loaded = false;
 
@@ -95,8 +75,6 @@ export default function DeferredThirdPartyScripts() {
       if (loaded) return;
       loaded = true;
       loadGoogleTagManager();
-      loadGoogleAnalytics();
-      gaReadyRef.current = true;
       loadFacebookPixel();
       cleanup();
     };
@@ -126,13 +104,6 @@ export default function DeferredThirdPartyScripts() {
 
     return cleanup;
   }, []);
-
-  useEffect(() => {
-    if (!gaReadyRef.current || !window.gtag) return;
-    window.gtag("config", GA_MEASUREMENT_ID, {
-      page_path: `${pathname}${window.location.search}`,
-    });
-  }, [pathname]);
 
   return null;
 }

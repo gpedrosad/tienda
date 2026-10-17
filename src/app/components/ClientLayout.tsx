@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { usePathname } from "next/navigation";
 import DeferredThirdPartyScripts from "@/app/components/DeferredThirdPartyScripts";
+import GaPageTracker from "@/app/components/GaPageTracker";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
@@ -16,6 +17,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
+      <GaPageTracker />
       <DeferredThirdPartyScripts />
       <noscript>
         <img
