@@ -3,7 +3,7 @@
 - **Host canónico:** `https://www.ideamadera.cl`
 - **Propiedad GSC:** `sc-domain:ideamadera.cl` (siteOwner vía OAuth)
 - **Sitemap vivo:** ~50 URLs (`src/app/sitemap.ts`) · GSC lista solo www
-- **Landings de servicio:** peldaños, cubiertas, molduras, puertas, **muebles-chillan**, **muebles-de-cocina-chillan**, kit-pergola, quiénes somos, contacto
+- **Landings de servicio:** peldaños (`/peldanos-a-medida`, `/peldanos-madera-chillan`, `/peldanos-escalera-concreto`, `/escaleras-de-madera`), cubiertas, molduras, puertas, **muebles-chillan**, **muebles-de-cocina-chillan**, kit-pergola, quiénes somos, contacto
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
 - **Última tanda código:** 2026-09-06 → [CHANGELOG.md](./CHANGELOG.md) · plan [docs/plan-seo-kimi3-2026-09-06.md](../../docs/plan-seo-kimi3-2026-09-06.md)
 - **Última medición GSC:** 2026-09-06 → `docs/gsc-informe-2026-09-06.md` (201 clics · 9.698 imp · CTR 2,07% · pos. 9,6). Histórico ago: [EVAL.md](./EVAL.md)

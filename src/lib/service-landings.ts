@@ -6,6 +6,7 @@ import {
   fitAbsoluteTitle,
   SITE_NAME,
 } from "@/lib/seo";
+import { peldanosClusterPaths } from "@/lib/peldanos-cluster";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export type LandingHighlight = { title: string; description: string };
@@ -54,6 +55,13 @@ export type ServiceLandingConfig = {
   schemaType: "Service" | "AboutPage" | "ContactPage";
   serviceName?: string;
   serviceType?: string;
+  /** Nombre visible del último ítem. Si falta, se deriva del slug. */
+  breadcrumbLabel?: string;
+  /** Ítem intermedio, por ejemplo la landing madre del clúster. */
+  breadcrumbParent?: { name: string; path: string };
+  areaServed?:
+    | { "@type": "Country" | "City" | "AdministrativeArea"; name: string }
+    | Array<{ "@type": "Country" | "City" | "AdministrativeArea"; name: string }>;
   stats?: LandingStat[];
   heroImage?: LandingImage;
   galleryTitle?: string;
@@ -123,19 +131,28 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
 }
 
 export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
-  const breadcrumbName = config.h1;
+  const breadcrumbName = config.breadcrumbLabel ?? config.h1;
+  const itemListElement: Record<string, unknown>[] = [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: absoluteUrl("/") },
+  ];
+  if (config.breadcrumbParent) {
+    itemListElement.push({
+      "@type": "ListItem",
+      position: 2,
+      name: config.breadcrumbParent.name,
+      item: absoluteUrl(config.breadcrumbParent.path),
+    });
+  }
+  itemListElement.push({
+    "@type": "ListItem",
+    position: itemListElement.length + 1,
+    name: breadcrumbName,
+    item: absoluteUrl(config.canonicalPath),
+  });
   const graph: Record<string, unknown>[] = [
     {
       "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: absoluteUrl("/") },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: breadcrumbName,
-          item: absoluteUrl(config.canonicalPath),
-        },
-      ],
+      itemListElement,
     },
     {
       "@type": "FAQPage",
@@ -153,7 +170,7 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
       name: config.serviceName,
       serviceType: config.serviceType,
       provider: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
-      areaServed: { "@type": "Country", name: "Chile" },
+      areaServed: config.areaServed ?? { "@type": "Country", name: "Chile" },
       description: config.pageDescription,
       ...(config.heroImage ? { image: absoluteUrl(config.heroImage.src) } : {}),
       audience: [
@@ -201,6 +218,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
+  breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
     "Peldaños y huellas de madera para escalera a medida. Cotiza largo, ancho, espesor y cantidad por WhatsApp. Envíos a todo Chile.",
@@ -361,7 +379,17 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué medidas necesito para cotizar peldaños de madera para escalera?",
       answer:
-        "Necesitas el largo de la huella, el ancho (profundidad de pisada), el espesor, la cantidad de peldaños y el tipo de escalera (por ejemplo recta o con descanso). Si tienes fotos o plano de la escalera, ayuda para confirmar la propuesta.",
+        "Necesitas el largo de la huella, el ancho (profundidad de pisada), el espesor, la cantidad de peldaños y el tipo de escalera (por ejemplo recta o con descanso). Si tienes fotos o plano de la escalera, ayuda para confirmar la propuesta. La guía de medidas de peldaños explica huella, contrahuella y la referencia general de confort.",
+    },
+    {
+      question: "¿Fabrican peldaños de madera en Chillán?",
+      answer:
+        "Sí. El taller está en Chillán, región de Ñuble, y despachamos a todo Chile. El servicio con foco local está en la página de peldaños de madera a medida en Chillán.",
+    },
+    {
+      question: "¿Puedo revestir una escalera de concreto con huellas de madera?",
+      answer:
+        "Sí. Fabricamos las huellas de madera a la medida de la escalera que ya existe. No modificamos el hormigón y el montaje no se asume incluido. El detalle está en la página de peldaños para escalera de concreto.",
     },
   ],
   extraSections: [
@@ -392,27 +420,45 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
         "Foto o plano de la escalera",
       ],
     },
+    {
+      title: "Según el proyecto, entra a la página específica",
+      paragraphs: [
+        "Esta página es la cotización general de huellas de madera a medida, con despacho a todo Chile. El pedido sigue siendo la pieza donde se pisa: largo, ancho, espesor y cantidad.",
+        "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa peldaños de madera a medida en Chillán. Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa peldaños para escalera de concreto. Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa escaleras de madera.",
+        "Antes de escribir, puedes revisar la guía de medidas de peldaños (huella y contrahuella) y la guía para elegir madera. Otros proyectos del taller, como cubiertas o muebles, parten en muebles a medida.",
+      ],
+    },
   ],
   relatedLinks: [
     {
-      href: "/guias/cotizar-muebles-a-medida",
-      title: "Cómo cotizar a medida",
-      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
+      href: "/peldanos-madera-chillan",
+      title: "Peldaños a medida en Chillán",
+      description: "Huellas fabricadas en el taller de Chillán, con despacho en Ñuble y a todo Chile.",
     },
     {
-      href: "/cubiertas-a-medida",
-      title: "Cubiertas a medida",
-      description: "Mesones y tablones según largo y ancho.",
+      href: "/peldanos-escalera-concreto",
+      title: "Peldaños para escalera de concreto",
+      description: "Huellas de madera para revestir una escalera de hormigón que ya existe.",
     },
     {
-      href: "/puertas-a-medida",
-      title: "Puertas a medida",
-      description: "Hojas de madera según vano.",
+      href: "/escaleras-de-madera",
+      title: "Escaleras de madera",
+      description: "Qué parte de madera fabricamos y qué no incluye una escalera.",
     },
     {
-      href: "/molduras-a-medida",
-      title: "Molduras a medida",
-      description: "Perfiles para muros, techos y vanos.",
+      href: "/guias/medidas-peldanos-escalera",
+      title: "Medidas de huella y contrahuella",
+      description: "Referencia general de confort para preparar el pedido.",
+    },
+    {
+      href: "/guias/elegir-madera-peldanos",
+      title: "Cómo elegir madera para peldaños",
+      description: "Tránsito, espesor y terminación antes de cotizar.",
+    },
+    {
+      href: "/muebles-a-medida",
+      title: "Muebles a medida",
+      description: "Cubiertas, puertas, peldaños y otros proyectos del taller.",
     },
   ],
   ctaTitle: "Cotiza hoy tus peldaños a medida",
@@ -1783,6 +1829,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
 
 export const serviceLandingPaths = [
   peldanosLandingConfig.canonicalPath,
+  ...peldanosClusterPaths,
   cubiertasLandingConfig.canonicalPath,
   moldurasLandingConfig.canonicalPath,
   puertasLandingConfig.canonicalPath,

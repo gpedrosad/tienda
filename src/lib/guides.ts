@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { absoluteUrl, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, buildServiceOfferSchema, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
+import { peldanosGuidePaths } from "@/lib/peldanos-guides";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export type GuideFaq = { question: string; answer: string };
@@ -28,6 +29,9 @@ export type GuideConfig = {
   ctaTitle?: string;
   ctaParagraph?: string;
   whatsappLines?: string[];
+  /** Si está, la guía también publica schema Service (además de Article). */
+  serviceName?: string;
+  serviceType?: string;
 };
 
 export function buildGuideWhatsAppMessage(lines: string[]) {
@@ -126,6 +130,19 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
     });
   }
 
+  if (config.serviceName) {
+    graph.unshift({
+      "@type": "Service",
+      name: config.serviceName,
+      serviceType: config.serviceType,
+      url: absoluteUrl(config.canonicalPath),
+      provider: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
+      areaServed: { "@type": "Country", name: "Chile" },
+      description: config.pageDescription,
+      offers: buildServiceOfferSchema(),
+    });
+  }
+
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
@@ -134,6 +151,7 @@ export const guidePaths = [
   "/guias/medidas-mesa-comedor",
   "/guias/cotizar-muebles-a-medida",
   "/guias/elegir-sillas-madera-comedor",
+  ...peldanosGuidePaths,
 ] as const;
 
 export const cuidadoMueblesGuideConfig: GuideConfig = {
