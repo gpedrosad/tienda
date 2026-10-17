@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { plainTextFromInlineLinks } from "@/lib/inline-links";
 import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
 import { peldanosClusterPaths } from "@/lib/peldanos-cluster";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -49,6 +50,7 @@ export type ServiceLandingConfig = {
   schemaType: "Service" | "AboutPage" | "ContactPage";
   serviceName?: string;
   serviceType?: string;
+  breadcrumbItems?: Array<{ name: string; path: string }>;
   /** Nombre visible del último ítem. Si falta, se deriva del slug. */
   breadcrumbLabel?: string;
   /** Ítem intermedio, por ejemplo la landing madre del clúster. */
@@ -121,7 +123,7 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
   };
 }
 
-export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
+function buildBreadcrumbFromLabel(config: ServiceLandingConfig) {
   const breadcrumbName =
     config.breadcrumbLabel ?? config.canonicalPath.replace(/^\//, "").replace(/-/g, " ");
   const itemListElement: Record<string, unknown>[] = [
@@ -141,6 +143,18 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
     name: breadcrumbName,
     item: absoluteUrl(config.canonicalPath),
   });
+  return itemListElement;
+}
+
+export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
+  const itemListElement: Record<string, unknown>[] = config.breadcrumbItems
+    ? config.breadcrumbItems.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: absoluteUrl(item.path),
+      }))
+    : buildBreadcrumbFromLabel(config);
   const graph: Record<string, unknown>[] = [
     {
       "@type": "BreadcrumbList",
@@ -151,7 +165,7 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
       mainEntity: config.faqItems.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
       })),
     },
   ];
@@ -850,6 +864,10 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
+  breadcrumbItems: [
+    { name: "Inicio", path: "/" },
+    { name: "Puertas a medida", path: "/puertas-a-medida" },
+  ],
   pageTitle: "Puertas de Madera a Medida | Fábrica en Chillán",
   pageDescription:
     "Fábrica de puertas de madera a medida en Chillán: interior o exterior, según tu vano. Envía alto, ancho y foto por WhatsApp. Envío a todo Chile.",
@@ -1030,6 +1048,26 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí. Indica la cantidad, si todas comparten las mismas medidas o si hay vanos distintos, y el uso de cada una. Te respondemos con una propuesta por WhatsApp.",
     },
+    {
+      question: "¿Dónde veo cada tipo de puerta?",
+      answer:
+        "Esta página es la fábrica en general. El detalle está en [puertas interiores](/puertas-interiores), [puertas de entrada y exteriores](/puertas-exteriores), [puertas correderas](/puertas-correderas) y [puertas de madera nativa](/puertas-madera-nativa). Si el proyecto incluye otros muebles, sigue en [muebles a medida](/muebles-a-medida).",
+    },
+    {
+      question: "¿Dónde reviso medidas habituales antes de cotizar?",
+      answer:
+        "En la [guía de medidas y madera para puertas](/guias/medidas-y-madera-puertas). Ahí están medidas de hoja que se ven seguido en Chile y cómo pensar la madera. La hoja igual se fabrica según tu vano, no según un catálogo.",
+    },
+    {
+      question: "¿Las fotos de la galería tienen precio?",
+      answer:
+        "No. Son referencias de puertas fabricadas, no un catálogo con precio publicado. Cada hoja se cotiza por WhatsApp según el vano, el uso y tu referencia.",
+    },
+    {
+      question: "¿Publican la especie de madera de la puerta?",
+      answer:
+        "No hay un listado de especies en esta página. Trabajamos maderas nobles del sur de Chile, nativas y secas en cámara. La especie se confirma al cotizar, porque interior o exterior cambia la madera y el acabado. El detalle está en [puertas de madera nativa](/puertas-madera-nativa).",
+    },
   ],
   extraSections: [
     {
@@ -1058,6 +1096,15 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       paragraphs: [
         "Cotizamos puertas de hogar y de negocio según el vano y el uso. En casa suelen ser puertas de dormitorio, baño, cocina o la entrada principal. En un local, oficina o bodega el vano y el tránsito pueden ser distintos: dínoslo al escribir.",
         "El diseño parte de tu referencia: hoja lisa, con paneles o con vidrio. No publicamos un catálogo de modelos. Interior o exterior cambia madera y acabado; no prometemos intemperie sin ver el vano. La cotización parte por la hoja: marco, herrajes e instalación se confirman aparte si los necesitas.",
+        "Si ya tienes claro el uso, sigue en la página de ese tipo: [puertas interiores](/puertas-interiores), [puertas de entrada y exteriores](/puertas-exteriores), [puertas correderas](/puertas-correderas) o [puertas de madera nativa](/puertas-madera-nativa). Las medidas habituales y la elección de madera están en la [guía de puertas](/guias/medidas-y-madera-puertas).",
+      ],
+    },
+    {
+      title: "Elige la página según tu puerta",
+      paragraphs: [
+        "Esta página es la cotización general: hoja a medida, desde el taller en Chillán, para hogar o negocio. Si ya sabes el uso, entra a la página de ese tipo y escribe desde ahí.",
+        "Las [puertas interiores](/puertas-interiores) son de dormitorio, baño, cocina u oficina. Las [puertas de entrada](/puertas-exteriores) son la entrada principal: ahí el uso es exterior y cambian madera y acabado. Las [puertas correderas](/puertas-correderas) parten de la referencia de interior en madera y vidrio. Las [puertas de madera nativa](/puertas-madera-nativa) explican el material publicado: madera nativa seca en cámara.",
+        "Antes de escribir, puedes mirar la [guía de medidas y madera](/guias/medidas-y-madera-puertas). Si además necesitas mesas, cubiertas u otras piezas, el encargo sigue en [muebles a medida](/muebles-a-medida).",
       ],
     },
     {
@@ -1075,6 +1122,36 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     },
   ],
   relatedLinks: [
+    {
+      href: "/puertas-interiores",
+      title: "Puertas interiores",
+      description: "Dormitorio, baño, cocina u oficina, según el vano.",
+    },
+    {
+      href: "/puertas-exteriores",
+      title: "Puertas de entrada",
+      description: "Entrada principal y uso exterior. Cambia madera y acabado.",
+    },
+    {
+      href: "/puertas-correderas",
+      title: "Puertas correderas",
+      description: "Hoja que corre. Referencia de interior en madera y vidrio.",
+    },
+    {
+      href: "/puertas-madera-nativa",
+      title: "Madera nativa",
+      description: "Madera nativa seca en cámara. La especie se confirma al cotizar.",
+    },
+    {
+      href: "/guias/medidas-y-madera-puertas",
+      title: "Medidas y madera",
+      description: "Medidas habituales en Chile y cómo pensar la madera de la hoja.",
+    },
+    {
+      href: "/muebles-a-medida",
+      title: "Muebles a medida",
+      description: "Otras piezas de madera a medida desde el mismo taller.",
+    },
     {
       href: "/guias/cotizar-muebles-a-medida",
       title: "Cómo cotizar a medida",

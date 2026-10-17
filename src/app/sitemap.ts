@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { execSync } from "child_process";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts } from "@/lib/catalog";
+import { doorGuidePath } from "@/lib/door-guide";
+import { doorLandingPaths } from "@/lib/door-landings";
 import { serviceLandingPaths } from "@/lib/service-landings";
 import { guidePaths } from "@/lib/guides";
 import { SITE_URL } from "@/lib/seo";
@@ -23,6 +25,8 @@ function getLastModified(filepath: string): Date | undefined {
 const productsLastMod = getLastModified('src/data/products.ts');
 const landingsLastMod = getLastModified('src/lib/service-landings.ts');
 const guidesLastMod = getLastModified('src/lib/guides.ts');
+const doorLandingsLastMod = getLastModified('src/lib/door-landings.ts');
+const doorGuideLastMod = getLastModified('src/lib/door-guide.ts');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleProducts = getVisibleProducts(products);
@@ -45,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
       lastModified: landingsLastMod,
+    })),
+    ...doorLandingPaths.map((path) => ({
+      url: `${SITE_URL}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+      lastModified: doorLandingsLastMod,
     })),
     {
       url: `${SITE_URL}/kit-pergola`,
@@ -82,6 +92,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       lastModified: guidesLastMod,
     })),
+    {
+      url: `${SITE_URL}${doorGuidePath}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      lastModified: doorGuideLastMod,
+    },
   ];
 
   const collectionPages: MetadataRoute.Sitemap = [

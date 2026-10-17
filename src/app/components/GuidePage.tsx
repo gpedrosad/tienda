@@ -126,7 +126,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                       {faq.question}
                     </h3>
                     <p className="text-sm leading-relaxed text-neutral-600 md:text-base">
-                      {faq.answer}
+                      <InlineLinkedText text={faq.answer} />
                     </p>
                   </article>
                 ))}
