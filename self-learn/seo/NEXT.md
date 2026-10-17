@@ -2,6 +2,10 @@
 
 Orden de impacto. Actualizar al cerrar ítems.
 
+## Plan vigente: `docs/plan-seo-2026-10-17.md` (18 oct → 15 dic, fases 1–5)
+
+P0 de la revisión ya aplicado (commit 545c162). Siguiente: fase 1 del plan.
+
 ## Revisión 2026-10-17 (ver `docs/seo-revision-2026-10-17.md`)
 
 - **Congelar** titles de veladores, guía medidas comedor, ratona, puertas, kentucky y guía sillas hasta ~5 nov (medir lote 16).
