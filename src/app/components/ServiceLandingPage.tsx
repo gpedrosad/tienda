@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import JsonLd from "@/app/components/JsonLd";
+import { InlineLinkedText } from "@/lib/inline-links";
 import {
   buildLandingSchemaGraph,
   buildLandingWhatsAppHref,
@@ -227,13 +228,15 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   key={paragraph.slice(0, 48)}
                   className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base"
                 >
-                  {paragraph}
+                  <InlineLinkedText text={paragraph} />
                 </p>
               ))}
               {section.bullets && section.bullets.length > 0 ? (
                 <ul className="mt-5 list-disc space-y-1.5 pl-5 text-sm text-neutral-700 md:text-base">
                   {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
+                    <li key={bullet}>
+                      <InlineLinkedText text={bullet} />
+                    </li>
                   ))}
                 </ul>
               ) : null}
@@ -297,7 +300,9 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
             {config.faqItems.map((item) => (
               <article key={item.question} className="border-b border-neutral-200 py-5">
                 <h3 className="text-lg font-medium text-neutral-900">{item.question}</h3>
-                <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">{item.answer}</p>
+                <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
+                  <InlineLinkedText text={item.answer} />
+                </p>
               </article>
             ))}
           </div>

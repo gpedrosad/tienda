@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-17
+
+- **Puertas:** más profundidad, FAQ y enlaces en `/puertas-a-medida` (el «desde 2001» queda igual); páginas nuevas de interiores, entrada/exterior, correderas y madera nativa; guía `/guias/medidas-y-madera-puertas`. Sin páginas de granero, pino ni «maciza»: el repo no las respalda como línea de puertas.
+
 ## 2026-10-16
 
 - **Lote 16:** title/meta de `/collections/veladores` hacia «veladores de madera» + dormitorio; title de `/guias/medidas-mesa-comedor` sin año, con personas y altura 75 cm; seoTitle/meta de mesa-tripode-ratona (100×60×40) y primer seoTitle de mesa-comedor-niza (200×100×75). Detalle: `SEO-CHANGELOG.md`.

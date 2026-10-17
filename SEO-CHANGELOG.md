@@ -1,5 +1,19 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-17: Cluster de puertas
+
+Solo landings y guía de puertas. No se tocó el claim «desde 2001» / «Desde 2001» de `/puertas-a-medida`.
+
+Páginas nuevas, con title ≤60, meta ≤155, canónico, un H1, schema Service + Breadcrumb + FAQ y CTA de WhatsApp del helper existente:
+
+- `/puertas-interiores`
+- `/puertas-exteriores` (entrada y exterior en la misma URL, para no partir el mismo uso)
+- `/puertas-correderas` (referencia de interior en madera y vidrio; el riel no se asume incluido)
+- `/puertas-madera-nativa`
+- `/guias/medidas-y-madera-puertas` (medidas habituales en Chile, marcadas como referencia y no como catálogo)
+
+No se crearon páginas de puerta de granero, de pino ni de «madera maciza»: el copy de puertas publica madera nativa seca en cámara, no esas líneas. Pino premium y lenga siguen nombrados solo donde ya estaban (cubiertas y sillas).
+
 ## 2026-10-16 (Lote 16): Titles veladores, medidas y ratona
 
 ### Datos de referencia

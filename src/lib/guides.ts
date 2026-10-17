@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { plainTextFromInlineLinks } from "@/lib/inline-links";
 import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -28,6 +29,8 @@ export type GuideConfig = {
   ctaTitle?: string;
   ctaParagraph?: string;
   whatsappLines?: string[];
+  serviceName?: string;
+  serviceType?: string;
 };
 
 export function buildGuideWhatsAppMessage(lines: string[]) {
@@ -112,13 +115,26 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
     },
   ];
 
+  if (config.serviceName && config.serviceType) {
+    graph.unshift({
+      "@type": "Service",
+      name: config.serviceName,
+      serviceType: config.serviceType,
+      url: absoluteUrl(config.canonicalPath),
+      provider: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
+      areaServed: { "@type": "Country", name: "Chile" },
+      description: config.pageDescription,
+      offers: buildServiceOfferSchema(),
+    });
+  }
+
   if (config.faqs && config.faqs.length > 0) {
     graph.push({
       "@type": "FAQPage",
       mainEntity: config.faqs.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
       })),
     });
   }

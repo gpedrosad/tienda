@@ -33,6 +33,11 @@ Idea Madera es una empresa familiar que diseña y fabrica muebles de madera maci
 - [Muebles a medida](https://www.ideamadera.cl/muebles-a-medida): Hub de fabricación personalizada en madera.
 - [Cubiertas a medida](https://www.ideamadera.cl/cubiertas-a-medida): Tablones y cubiertas para quinchos, barras y mesones.
 - [Puertas a medida](https://www.ideamadera.cl/puertas-a-medida): Puertas de madera personalizadas para hogares y negocios.
+- [Puertas interiores](https://www.ideamadera.cl/puertas-interiores): Hoja interior a medida para dormitorio, baño, cocina u oficina.
+- [Puertas de entrada](https://www.ideamadera.cl/puertas-exteriores): Entrada principal y uso exterior. La madera y el acabado cambian.
+- [Puertas correderas](https://www.ideamadera.cl/puertas-correderas): Hoja corredera. Referencia de interior en madera y vidrio. Herrajes no incluidos por defecto.
+- [Puertas de madera nativa](https://www.ideamadera.cl/puertas-madera-nativa): Madera nativa seca en cámara. La especie se confirma al cotizar.
+- [Medidas y madera para puertas](https://www.ideamadera.cl/guias/medidas-y-madera-puertas): Medidas habituales en Chile y cómo pensar la madera. No es un catálogo.
 - [Peldaños a medida](https://www.ideamadera.cl/peldanos-a-medida): Peldaños para escaleras en largo, ancho y espesor personalizados.
 - [Molduras a medida](https://www.ideamadera.cl/molduras-a-medida): Molduras y perfiles de madera para muros, techos y terminaciones.
 - [Muebles de cocina en Chillán](https://www.ideamadera.cl/muebles-de-cocina-chillan): Mesones, cubiertas e islas de cocina en madera.
