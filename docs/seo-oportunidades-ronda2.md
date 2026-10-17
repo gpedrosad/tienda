@@ -2,7 +2,7 @@
 
 Fecha: 2026-10-17. Sitio: `https://www.ideamadera.cl`. Objetivo comercial: cotización por WhatsApp.
 
-Esta nota no trae métricas nuevas de tráfico. Los números de Search Console siguen en los informes fechados de `docs/`. No se publican precios ni se reescriben los textos de antigüedad del taller (`31 años`, `Más de 30 años`, `desde 2001`).
+Esta nota no trae métricas nuevas de tráfico. Los números de Search Console siguen en los informes fechados de `docs/`. No se publican precios. La única antigüedad permitida es «desde 1993 / 33 años» (año de fundación 1993, decidido por Gonzalo el 2026-10-17; `foundingDate` es «1993»).
 
 ## Qué quedó publicado en el código
 
@@ -53,7 +53,7 @@ Otras búsquedas que conviene no perseguir con URLs nuevas por comuna: el propio
 
 ## Google Business Profile
 
-Alinear la ficha con lo que el sitio ya publica, sin reseñas inventadas y sin cambiar la antigüedad que ya está escrita.
+Alinear la ficha con lo que el sitio ya publica, sin reseñas inventadas. La única antigüedad que se puede decir es desde 1993 o 33 años.
 
 - Nombre: Idea Madera. Sitio: `https://www.ideamadera.cl` (con www).
 - Teléfono y correo ya públicos: +56 9 9549 7838 y hola@ideamadera.cl.
@@ -91,6 +91,6 @@ Ideas de citación. Ninguna está hecha en este cambio y ninguna se compra.
 ## Qué no hacer en la siguiente ronda
 
 - Precios en páginas de cotización. El catálogo ya muestra el precio en la ficha.
-- Reescribir `31 años`, `Más de 30 años` o `desde 2001`.
+- Inventar una antigüedad distinta de «desde 1993 / 33 años».
 - URLs de pasamanos, contrahuella como producto, puerta acústica, granero, closet o una comuna por página.
 - Productos sin foto en el sitemap.

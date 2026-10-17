@@ -16,6 +16,8 @@ export type GuideConfig = {
   h1: string;
   intro: string;
   updatedDate?: string;
+  /** Fecha ISO de la última edición. El sitemap la prefiere sobre `updatedDate`. */
+  updatedAt?: string;
   sections: Array<{
     title: string;
     content: string[];
@@ -150,13 +152,16 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
 export const guidePaths = [
   "/guias/cuidado-muebles-madera",
   "/guias/medidas-mesa-comedor",
+  "/guias/medidas-mesa-de-centro",
   "/guias/cotizar-muebles-a-medida",
   "/guias/elegir-sillas-madera-comedor",
+  "/guias/madera-para-meson-quincho",
   ...peldanosGuidePaths,
 ] as const;
 
 export const cuidadoMueblesGuideConfig: GuideConfig = {
   canonicalPath: "/guias/cuidado-muebles-madera",
+  updatedAt: "2026-10-05",
   pageTitle: "Cuidado y Mantención de Muebles de Madera Maciza | Chile",
   pageDescription:
     "Guía práctica para cuidar y mantener muebles de madera maciza en Chile: limpieza, barniz, manchas y protección para que duren años.",
@@ -265,6 +270,7 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
+  updatedAt: "2026-10-17",
   pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
   pageDescription:
     "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
@@ -420,6 +426,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
 
 export const cotizarMueblesGuideConfig: GuideConfig = {
   canonicalPath: "/guias/cotizar-muebles-a-medida",
+  updatedAt: "2026-10-07",
   pageTitle: "Cómo Cotizar un Mueble a Medida por WhatsApp | Idea Madera",
   pageDescription:
     "Guía rápida para cotizar muebles de madera a medida: qué información enviar, cómo describir tu proyecto y qué esperar en la respuesta.",
@@ -535,6 +542,7 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
+  updatedAt: "2026-10-15",
   pageTitle: "Sillas de Madera para Comedor | Altura, Ancho y Cantidad",
   pageDescription:
     "Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.",

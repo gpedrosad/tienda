@@ -10,6 +10,7 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -169,6 +170,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
 
 export const puertasLocalesLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-para-locales",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -305,6 +307,7 @@ export const puertasLocalesLandingConfig: ServiceLandingConfig = {
 
 export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-flotantes",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Peldaños a medida", path: "/peldanos-a-medida" },
@@ -470,6 +473,7 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
 
 export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/mesas-de-comedor-a-medida",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Muebles a medida", path: "/muebles-a-medida" },

@@ -162,6 +162,14 @@ export default function MesasDeCentroPage() {
                 <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
                   Mesas ratonas de madera maciza para living: altura ideal 40-50 cm según la altura del sofá. La mesa ratona es la pieza baja que va frente al sofá, también llamada mesa de centro. Ancho recomendado: entre la mitad y dos tercios del largo del sofá para equilibrio visual. Fabricación en Chillán con envío a todo Chile. Cotiza medidas a medida por WhatsApp.
                 </p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600">
+                  <Link
+                    href="/guias/medidas-mesa-de-centro"
+                    className="underline decoration-neutral-300 underline-offset-4 hover:text-neutral-900"
+                  >
+                    Guía de medidas de mesa de centro y mesa ratona
+                  </Link>
+                </p>
               </div>
               <Link
                 href="/collections/mesas"

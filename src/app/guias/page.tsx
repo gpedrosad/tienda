@@ -61,6 +61,20 @@ const guides = [
     category: "Medidas",
   },
   {
+    title: "Cómo elegir las medidas de una mesa de centro",
+    description:
+      "Largo respecto al sofá, altura del asiento y las medidas del catálogo: Roma, Ferrara, Hairpin y Trípode ratona.",
+    href: "/guias/medidas-mesa-de-centro",
+    category: "Medidas",
+  },
+  {
+    title: "Qué madera usar en un mesón de quincho",
+    description:
+      "Lenga austral o pino premium, secos en cámara, y cómo cambia el acabado si el mesón va bajo techo o al aire.",
+    href: "/guias/madera-para-meson-quincho",
+    category: "Cubiertas",
+  },
+  {
     title: "Cómo elegir sillas de madera para el comedor",
     description:
       "Guía para elegir sillas de comedor: altura ideal, ancho, cuántas sillas por mesa, tipos de madera y mantención.",

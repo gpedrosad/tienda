@@ -10,6 +10,8 @@ export type CollectionRelatedLink = {
 };
 
 export type CollectionSeo = {
+  /** Fecha ISO de la última edición del texto de la colección. */
+  updatedAt?: string;
   h1: string;
   metadataTitle: string;
   description: string;
@@ -26,12 +28,14 @@ export const ALL_PRODUCTS_HANDLE = "todos-los-productos";
 
 export const collectionSeoByHandle: Record<string, CollectionSeo> = {
   [ALL_PRODUCTS_HANDLE]: {
+    updatedAt: "2026-10-14",
     h1: "Todos los productos",
     metadataTitle: "Catálogo de Muebles de Madera en Chile",
     description:
       "Catálogo de muebles de madera fabricados en Chillán: mesas, sillas, bancas, veladores y más. Cotiza por WhatsApp con envío a todo Chile.",
   },
   mesas: {
+    updatedAt: "2026-10-17",
     h1: "Mesas de comedor de madera y ratonas para living",
     metadataTitle: "Mesas de Comedor de Madera y Ratonas | Chile",
     description:
@@ -110,6 +114,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   sillas: {
+    updatedAt: "2026-10-11",
     h1: "Sillas de madera para comedor",
     metadataTitle: "Sillas de Madera para Comedor | Chile",
     description:
@@ -177,12 +182,14 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   bancas: {
+    updatedAt: "2026-06-24",
     h1: "Bancas de madera",
     metadataTitle: "Bancas de Madera para Comedor e Interior",
     description:
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
+    updatedAt: "2026-10-16",
     h1: "Veladores de madera para dormitorio",
     metadataTitle: "Veladores de Madera para Dormitorio | Chillán",
     description:
@@ -246,24 +253,28 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   sitiales: {
+    updatedAt: "2026-08-02",
     h1: "Sitiales",
     metadataTitle: "Sitiales y Sillones de Madera | Living Chile",
     description:
       "Sitiales y sillones de madera para living, comedor y espacios de estar. Estructura sólida, fabricación chilena y cotización directa por WhatsApp.",
   },
   percheros: {
+    updatedAt: "2026-06-24",
     h1: "Percheros de madera",
     metadataTitle: "Percheros de Madera para Hogar",
     description:
       "Percheros de madera para recibidor y dormitorio. Diseño funcional con terminación artesanal. Cotiza por WhatsApp con envíos a todo Chile.",
   },
   pisos: {
+    updatedAt: "2026-10-05",
     h1: "Pisos y asientos altos de madera",
     metadataTitle: "Pisos de Madera para Barra y Mesada",
     description:
       "Pisos y asientos altos de madera para barras de cocina. Fabricación en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   futon: {
+    updatedAt: "2026-06-24",
     h1: "Futones",
     metadataTitle: "Futones de Madera para Living y Dormitorio",
     description:
