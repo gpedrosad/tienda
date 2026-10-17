@@ -421,6 +421,7 @@ export default function KitPergolaPage() {
                   width={900}
                   height={700}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                   className="h-auto w-full object-cover"
                 />
               </div>

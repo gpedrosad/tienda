@@ -254,7 +254,7 @@ export const products: Product[] = [
     name: "Mesa de comedor Tripode redonda",
     price: 729900,
     category: "Mesas",
-    imageUrl: "/images/1MESATRIPODEREDONDAMADERA.jpg",
+    imageUrl: "/images/mesa-tripode-redonda-vista-1.jpg",
     shortPitch:
       "Mesa de comedor Trípode redonda en madera natural: Ø140 × 75 cm, patas inclinadas y tablero circular.",
     description:
@@ -579,7 +579,7 @@ export const products: Product[] = [
     name: "Mesa ratona trípode",
     price: 399990,
     category: "Mesas",
-    imageUrl: "/images/1MESATRIPODERATONA.jpg",
+    imageUrl: "/images/mesa-tripode-ratona-vista-1.jpg",
     shortPitch:
       "Mesa trípode de madera estilo ratona para living: patas inclinadas, 100 × 60 × 40 cm. Diseño orgánico.",
     description:

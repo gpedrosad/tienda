@@ -438,7 +438,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       title: "Según el proyecto, entra a la página específica",
       paragraphs: [
         "Esta página es la cotización general de huellas de madera a medida, con despacho a todo Chile. El pedido sigue siendo la pieza donde se pisa: largo, ancho, espesor y cantidad.",
-        "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa peldaños de madera a medida en Chillán. Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa peldaños para escalera de concreto. Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa escaleras de madera.",
+        "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa peldaños de madera a medida en Chillán. Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa peldaños para escalera de concreto. Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa escaleras de madera. Si la huella va separada del muro, sobre metal, usa [peldaños flotantes](/peldanos-flotantes): la estructura no está incluida.",
         "Antes de escribir, puedes revisar la guía de medidas de peldaños (huella y contrahuella) y la guía para elegir madera. Otros proyectos del taller, como cubiertas o muebles, parten en muebles a medida.",
       ],
     },
@@ -458,6 +458,11 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       href: "/escaleras-de-madera",
       title: "Escaleras de madera",
       description: "Qué parte de madera fabricamos y qué no incluye una escalera.",
+    },
+    {
+      href: "/peldanos-flotantes",
+      title: "Peldaños flotantes",
+      description: "Huella de madera para escalera abierta. La estructura metálica no está incluida.",
     },
     {
       href: "/guias/medidas-peldanos-escalera",
@@ -1111,7 +1116,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       title: "Elige la página según tu puerta",
       paragraphs: [
         "Esta página es la cotización general: hoja a medida, desde el taller en Chillán, para hogar o negocio. Si ya sabes el uso, entra a la página de ese tipo y escribe desde ahí.",
-        "Las [puertas interiores](/puertas-interiores) son de dormitorio, baño, cocina u oficina. Las [puertas de entrada](/puertas-exteriores) son la entrada principal: ahí el uso es exterior y cambian madera y acabado. Las [puertas correderas](/puertas-correderas) parten de la referencia de interior en madera y vidrio. Las [puertas de madera nativa](/puertas-madera-nativa) explican el material publicado: madera nativa seca en cámara.",
+        "Las [puertas interiores](/puertas-interiores) son de dormitorio, baño, cocina u oficina. Las [puertas de entrada](/puertas-exteriores) son la entrada principal: ahí el uso es exterior y cambian madera y acabado. Las [puertas correderas](/puertas-correderas) parten de la referencia de interior en madera y vidrio. Las [puertas de madera con vidrio](/puertas-de-madera-con-vidrio) son la hoja con paños, distinta de la corredera. Las [puertas para locales](/puertas-para-locales) cubren oficina, bodega o acceso de un negocio. Las [puertas de madera nativa](/puertas-madera-nativa) explican el material publicado: madera nativa seca en cámara.",
         "Antes de escribir, puedes mirar la [guía de medidas y madera](/guias/medidas-y-madera-puertas). Si además necesitas mesas, cubiertas u otras piezas, el encargo sigue en [muebles a medida](/muebles-a-medida).",
       ],
     },
@@ -1144,6 +1149,16 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       href: "/puertas-correderas",
       title: "Puertas correderas",
       description: "Hoja que corre. Referencia de interior en madera y vidrio.",
+    },
+    {
+      href: "/puertas-de-madera-con-vidrio",
+      title: "Puertas con vidrio",
+      description: "Hoja con vidrio según tu referencia. El tipo de vidrio se confirma al cotizar.",
+    },
+    {
+      href: "/puertas-para-locales",
+      title: "Puertas para locales",
+      description: "Hoja para local, oficina o bodega. No es puerta acústica ni de seguridad.",
     },
     {
       href: "/puertas-madera-nativa",
@@ -1840,10 +1855,15 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Cuál es la diferencia entre muebles a medida y la mueblería en Chillán?",
       answer:
-        "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según tus medidas exactas. La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad.",
+        "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras, muebles de cocina y [mesas de comedor a medida](/mesas-de-comedor-a-medida). La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad.",
     },
   ],
   relatedLinks: [
+    {
+      href: "/mesas-de-comedor-a-medida",
+      title: "Mesas de comedor a medida",
+      description: "Cuando el catálogo no cabe en el comedor. El precio se cotiza.",
+    },
     {
       href: "/guias/cotizar-muebles-a-medida",
       title: "Cómo cotizar a medida",

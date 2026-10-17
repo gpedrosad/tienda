@@ -388,6 +388,11 @@ export const medidasMesaGuideConfig: GuideConfig = {
       description: "Explora mesas de comedor en distintos tamaños y formatos.",
     },
     {
+      href: "/mesas-de-comedor-a-medida",
+      title: "Mesa de comedor a medida",
+      description: "Si la tabla no alcanza, cotiza el largo o el diámetro.",
+    },
+    {
       href: "/collections/sillas",
       title: "Sillas de madera para comedor",
       description: "Sillas de madera maciza fabricadas en Chillán.",

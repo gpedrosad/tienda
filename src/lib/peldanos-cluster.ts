@@ -63,6 +63,11 @@ const clusterLinks: LandingRelatedLink[] = [
     description: "Qué pieza de madera fabricamos cuando la escalera es de madera.",
   },
   {
+    href: "/peldanos-flotantes",
+    title: "Peldaños flotantes",
+    description: "Huella de madera para escalera abierta. La estructura metálica no está incluida.",
+  },
+  {
     href: "/guias/medidas-peldanos-escalera",
     title: "Medidas de huella y contrahuella",
     description: "Referencia general de confort para anotar las medidas del pedido.",
@@ -79,8 +84,12 @@ const clusterLinks: LandingRelatedLink[] = [
   },
 ];
 
-function linksExcept(href: string) {
+export function peldanosRelatedLinks(href: string) {
   return clusterLinks.filter((link) => link.href !== href);
+}
+
+function linksExcept(href: string) {
+  return peldanosRelatedLinks(href);
 }
 
 export const peldanosChillanLandingConfig: ServiceLandingConfig = {
@@ -529,7 +538,7 @@ export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen peldaños flotantes?",
       answer:
-        "Fabricamos la huella de madera, también en espesores gruesos como los de las fotos. La estructura metálica que los separa del muro no está incluida.",
+        "Fabricamos la huella de madera, también en espesores gruesos como los de las fotos. La estructura metálica que los separa del muro no está incluida. El encargo está en [peldaños flotantes](/peldanos-flotantes).",
     },
     {
       question: "¿Y si la escalera tiene descanso?",
@@ -565,4 +574,5 @@ export const peldanosClusterPaths = [
   peldanosChillanLandingConfig.canonicalPath,
   peldanosConcretoLandingConfig.canonicalPath,
   escalerasMaderaLandingConfig.canonicalPath,
+  "/peldanos-flotantes",
 ] as const;
