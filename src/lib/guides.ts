@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export type GuideFaq = { question: string; answer: string };
@@ -39,14 +39,17 @@ export function buildGuideWhatsAppHref(lines: string[]) {
 }
 
 export function buildGuideMetadata(config: GuideConfig): Metadata {
+  const title = fitAbsoluteTitle(config.pageTitle);
+  const description = clampMetaDescription(config.pageDescription);
+
   return {
-    title: { absolute: config.pageTitle },
-    description: config.pageDescription,
+    title: { absolute: title },
+    description,
     alternates: { canonical: config.canonicalPath },
     ...(config.keywords ? { keywords: config.keywords } : {}),
     openGraph: {
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       url: config.canonicalPath,
       siteName: SITE_NAME,
       locale: "es_CL",
@@ -55,8 +58,8 @@ export function buildGuideMetadata(config: GuideConfig): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       images: [{ url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME }],
     },
     robots: {

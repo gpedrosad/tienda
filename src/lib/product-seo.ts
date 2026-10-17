@@ -1,4 +1,5 @@
 import type { Product } from "@/data/products";
+import { clampMetaDescription, DESCRIPTION_LIMIT } from "@/lib/seo";
 import { formatCLP } from "@/lib/whatsapp";
 
 const CATEGORY_TITLE_RULES: Record<
@@ -139,7 +140,7 @@ export function buildProductMetadataTitle(product: Product): string {
 
 export function buildProductMetadataDescription(product: Product, shortPitch: string): string {
   if (product.seoDescription) {
-    return product.seoDescription;
+    return clampMetaDescription(product.seoDescription);
   }
 
   const base = shortPitch.trim();
@@ -151,18 +152,14 @@ export function buildProductMetadataDescription(product: Product, shortPitch: st
 
   let description = hasCta ? base : `${base}${cta}`;
 
-  if (!description.toLowerCase().includes("desde $") && description.length + priceHint.length + 1 <= 160) {
+  if (
+    !description.toLowerCase().includes("desde $") &&
+    [...description].length + [...priceHint].length + 1 <= DESCRIPTION_LIMIT
+  ) {
     description = `${base} ${priceHint}${hasCta ? "" : cta}`.trim();
   }
 
-  if (description.length <= 160) {
-    return description;
-  }
-
-  const target = 157;
-  const truncated = description.slice(0, target).trimEnd();
-  const lastSpace = truncated.lastIndexOf(" ");
-  return `${truncated.slice(0, lastSpace > 100 ? lastSpace : target)}…`;
+  return clampMetaDescription(description);
 }
 
 export function getProductSeo(product: Product, shortPitch: string) {

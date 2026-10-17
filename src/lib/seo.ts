@@ -45,6 +45,74 @@ export const homeFaqItems = [
   },
 ];
 
+export const TITLE_LIMIT = 60;
+export const DESCRIPTION_LIMIT = 155;
+
+const BRAND_SUFFIX = ` | ${SITE_NAME}`;
+
+function codePoints(value: string) {
+  return [...value].length;
+}
+
+function trimAtWord(value: string, budget: number) {
+  if (codePoints(value) <= budget) return value.trim();
+
+  let trimmed = [...value].slice(0, budget).join("").trimEnd();
+  const space = trimmed.lastIndexOf(" ");
+  if (space >= 24) trimmed = trimmed.slice(0, space);
+
+  return trimmed.replace(/[\s|·,;:.\-–—]+$/u, "").trim();
+}
+
+/**
+ * Title de documento con marca. Si no cabe, quita primero el tramo final
+ * después de «|» y no deja una palabra suelta de ese tramo.
+ */
+export function documentTitle(title: string, limit = TITLE_LIMIT) {
+  const cleaned = title
+    .replace(new RegExp(`\\s*\\|\\s*${SITE_NAME}\\s*$`, "i"), "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const parts = cleaned.split(/\s+\|\s+/).filter(Boolean);
+
+  const compose = () => `${parts.join(" | ")}${BRAND_SUFFIX}`;
+  if (codePoints(compose()) <= limit) return compose();
+
+  while (parts.length > 1 && codePoints(compose()) > limit) {
+    const words = parts[parts.length - 1].split(" ");
+    if (words.length > 1) {
+      words.pop();
+      if (words.length === 1) {
+        parts.pop();
+      } else {
+        parts[parts.length - 1] = words.join(" ");
+      }
+      continue;
+    }
+    parts.pop();
+  }
+
+  if (codePoints(compose()) <= limit) return compose();
+
+  parts[0] = trimAtWord(parts[0], limit - codePoints(BRAND_SUFFIX));
+  return compose();
+}
+
+/** Title que ya es el texto final. Si se pasa de 60, aplica la misma regla con marca. */
+export function fitAbsoluteTitle(title: string, limit = TITLE_LIMIT) {
+  const cleaned = title.replace(/\s+/g, " ").trim();
+  if (codePoints(cleaned) <= limit) return cleaned;
+  return documentTitle(cleaned, limit);
+}
+
+export function clampMetaDescription(description: string, limit = DESCRIPTION_LIMIT) {
+  const cleaned = description.replace(/\s+/g, " ").trim();
+  if (codePoints(cleaned) <= limit) return cleaned;
+
+  const trimmed = trimAtWord(cleaned, limit - 1);
+  return `${trimmed}…`;
+}
+
 export function absoluteUrl(path: string) {
   if (path.startsWith("http")) return path;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;

@@ -32,7 +32,8 @@ export default function Footer() {
                   src="/logonegro.png" 
                   alt="Idea Madera" 
                   width={100} 
-                  height={100} 
+                  height={100}
+                  sizes="96px"
                   className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-90 hover:opacity-100 transition-opacity" 
                 />
               </Link>

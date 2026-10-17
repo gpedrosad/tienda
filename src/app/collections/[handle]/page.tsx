@@ -23,6 +23,8 @@ import {
   buildItemListSchema,
   buildOpenGraphDefaults,
   buildTwitterDefaults,
+  clampMetaDescription,
+  documentTitle,
   SITE_NAME,
 } from "@/lib/seo";
 import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
@@ -84,11 +86,12 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
   }
 
   const ogDefaults = buildOpenGraphDefaults();
-  const fullTitle = `${collection.metadataTitle} | ${SITE_NAME}`;
+  const fullTitle = documentTitle(collection.metadataTitle);
+  const description = clampMetaDescription(collection.description);
 
   return {
-    title: collection.metadataTitle,
-    description: collection.description,
+    title: { absolute: fullTitle },
+    description,
     alternates: {
       canonical: `/collections/${handle}`,
     },
@@ -98,13 +101,13 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
     openGraph: {
       ...ogDefaults,
       title: fullTitle,
-      description: collection.description,
+      description,
       url: `/collections/${handle}`,
     },
     twitter: {
       ...buildTwitterDefaults(),
       title: fullTitle,
-      description: collection.description,
+      description,
     },
   };
 }

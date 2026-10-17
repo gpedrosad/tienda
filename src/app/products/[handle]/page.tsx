@@ -10,11 +10,13 @@ import WhatsAppButton from "@/app/components/WhatsAppButton";
 import WhatsAppInlineCTA from "@/app/components/WhatsAppInlineCTA";
 import JsonLd from "@/app/components/JsonLd";
 import { products, type Product } from "@/data/products";
-import { hasProductImage, slugifyCategory } from "@/lib/catalog";
+import { hasProductImage, productImageAlt, slugifyCategory } from "@/lib/catalog";
 import {
   buildBreadcrumbSchema,
   buildFaqPageSchema,
   buildProductOfferSchema,
+  clampMetaDescription,
+  documentTitle,
   SITE_NAME,
   SITE_URL,
   WARRANTY_MONTHS,
@@ -244,12 +246,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const productId = getProductId(product);
   const primaryImage = productImagesById[productId]?.[0] ?? product.imageUrl;
   const shortPitch = getShortPitch(product);
-  const { metadataTitle, description } = getProductSeo(product, shortPitch);
+  const seo = getProductSeo(product, shortPitch);
+  const description = clampMetaDescription(seo.description);
   const canonicalPath = getProductPath(product);
-  const fullTitle = `${metadataTitle} | ${SITE_NAME}`;
+  const fullTitle = documentTitle(seo.metadataTitle);
+  const imageAlt = productImageAlt(product);
 
   return {
-    title: metadataTitle,
+    title: { absolute: fullTitle },
     description,
     alternates: {
       canonical: canonicalPath,
@@ -266,7 +270,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
             images: [
               {
                 url: primaryImage,
-                alt: product.name,
+                alt: imageAlt,
               },
             ],
           }
@@ -295,12 +299,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const canonicalUrl = `${origin}${productPath}`;
   const galleryImages = getGalleryImages(product);
   const primaryImage = galleryImages[0] ?? product.imageUrl;
-  const absolutePrimaryImage = primaryImage?.startsWith("http")
-    ? primaryImage
-    : primaryImage
-      ? `${origin}${primaryImage}`
-      : undefined;
   const productDescription = getProductDescription(product);
+  const imageAlt = productImageAlt(product);
   const whatsappMessage = buildProductWhatsAppMessage(product, origin);
   const priceLabel = formatCLP(product.price);
   const specRows = getSpecRows(product);
@@ -308,6 +308,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const productionDays = product.productionDays ?? 15;
   const shouldShowDetails = productFeatures.length > 0 || specRows.length > 0;
   const availability = product.inStock === false ? "https://schema.org/PreOrder" : "https://schema.org/InStock";
+  const offer =
+    Number.isFinite(product.price) && product.price > 0
+      ? buildProductOfferSchema({
+          url: canonicalUrl,
+          price: product.price,
+          availability,
+          productionDays,
+        })
+      : undefined;
 
   const categoryHandle = slugifyCategory(product.category);
   const categoryPath = `/collections/${categoryHandle}`;
@@ -319,19 +328,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const productSchema = {
     "@type": "Product",
     name: product.name,
-    image: allProductImages.length > 0 ? allProductImages : undefined,
+    ...(allProductImages.length > 0 ? { image: allProductImages } : {}),
     description: plainTextFromInlineLinks(productDescription),
     sku: productId,
+    category: product.category,
+    ...(product.material ? { material: product.material } : {}),
     brand: {
       "@type": "Brand",
-      name: "Idea Madera",
+      name: SITE_NAME,
     },
-    offers: buildProductOfferSchema({
-      url: canonicalUrl,
-      price: product.price,
-      availability,
-      productionDays,
-    }),
+    ...(offer ? { offers: offer } : {}),
   };
 
   const structuredData = {
@@ -382,7 +388,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mt-5 grid gap-5 md:mt-8 md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-start">
               <div className="order-1">
                 {galleryImages.length > 0 ? (
-                  <ProductGallery images={galleryImages} productName={product.name} />
+                  <ProductGallery images={galleryImages} productName={product.name} imageAlt={imageAlt} />
                 ) : (
                   <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-neutral-200 bg-white">
                     <p className="text-neutral-600">Este producto todavía no tiene fotos cargadas.</p>

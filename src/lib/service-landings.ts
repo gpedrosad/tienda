@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
+import {
+  absoluteUrl,
+  buildServiceOfferSchema,
+  clampMetaDescription,
+  fitAbsoluteTitle,
+  SITE_NAME,
+} from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export type LandingHighlight = { title: string; description: string };
@@ -79,14 +85,17 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
       }
     : { url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME };
 
+  const title = fitAbsoluteTitle(config.pageTitle);
+  const description = clampMetaDescription(config.pageDescription);
+
   return {
-    title: { absolute: config.pageTitle },
-    description: config.pageDescription,
+    title: { absolute: title },
+    description,
     alternates: { canonical: config.canonicalPath },
     ...(config.keywords ? { keywords: config.keywords } : {}),
     openGraph: {
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       url: config.canonicalPath,
       siteName: SITE_NAME,
       locale: "es_CL",
@@ -95,8 +104,8 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       images: [shareImage],
     },
     robots: {
@@ -114,7 +123,7 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
 }
 
 export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
-  const breadcrumbName = config.canonicalPath.replace(/^\//, "").replace(/-/g, " ");
+  const breadcrumbName = config.h1;
   const graph: Record<string, unknown>[] = [
     {
       "@type": "BreadcrumbList",

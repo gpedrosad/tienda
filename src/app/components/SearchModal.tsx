@@ -4,7 +4,8 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllProducts, Product } from "@/data/products";
+import { Product } from "@/data/products";
+import { getVisibleProducts, productImageAlt } from "@/lib/catalog";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -74,8 +75,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   }, [isOpen]);
 
   useEffect(() => {
-    const allProducts = getAllProducts();
-    const filtered = filterProducts(allProducts, debouncedQuery);
+    const visibleProducts = getVisibleProducts();
+    const filtered = filterProducts(visibleProducts, debouncedQuery);
     setResults(filtered);
   }, [debouncedQuery]);
 
@@ -212,7 +213,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         {product.imageUrl ? (
                           <Image
                             src={product.imageUrl}
-                            alt={product.name}
+                            alt={productImageAlt(product)}
                             fill
                             sizes="48px"
                             className="object-cover"

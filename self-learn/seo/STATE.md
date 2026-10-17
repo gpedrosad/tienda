@@ -61,7 +61,7 @@ Baseline previo: `docs/gsc-informe-2026-07-23.md`
 
 | Señal | Estado |
 |---|---|
-| Sitemap GSC | ✅ solo www |
+| Sitemap GSC | ✅ solo www. El XML descubre rutas estáticas nuevas desde `src/app` (2026-10-17). |
 | Titles CTR Aug-02 en prod | ✅ verificados live |
 | Middleware `?page=1` | ✅ 308 en prod; GSC aún muestra fila legacy con imp. |
 | `/collections/mesas-de-centro` y `/mesas-ratona` | Código: 308 → `/mesas-de-centro` (pendiente deploy; prod aún va a `/collections/mesas`) |

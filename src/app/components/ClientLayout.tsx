@@ -28,11 +28,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       </noscript>
 
       {isStandalone ? (
-        <main>{children}</main>
+        children
       ) : (
         <>
           <Header />
-          <main>{children}</main>
+          {children}
           <Footer />
         </>
       )}
