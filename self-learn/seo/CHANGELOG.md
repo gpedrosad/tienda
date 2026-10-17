@@ -5,6 +5,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 ## 2026-10-17
 
 - **Puertas:** más profundidad, FAQ y enlaces en `/puertas-a-medida` (el «desde 2001» queda igual); páginas nuevas de interiores, entrada/exterior, correderas y madera nativa; guía `/guias/medidas-y-madera-puertas`. Sin páginas de granero, pino ni «maciza»: el repo no las respalda como línea de puertas.
+- **Peldaños:** clúster de huellas (`/peldanos-madera-chillan`, `/peldanos-escalera-concreto`, `/escaleras-de-madera`) y guías de medidas y de madera. Hub `/peldanos-a-medida` enlaza el clúster. Sin URL de pasamanos (no es línea de producto). Sin precios ni especies nuevas.
 
 ## 2026-10-16
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { plainTextFromInlineLinks } from "@/lib/inline-links";
 import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
+import { peldanosGuidePaths } from "@/lib/peldanos-guides";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export type GuideFaq = { question: string; answer: string };
@@ -29,6 +30,7 @@ export type GuideConfig = {
   ctaTitle?: string;
   ctaParagraph?: string;
   whatsappLines?: string[];
+  /** Si está, la guía también publica schema Service (además de Article). */
   serviceName?: string;
   serviceType?: string;
 };
@@ -115,7 +117,18 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
     },
   ];
 
-  if (config.serviceName && config.serviceType) {
+  if (config.faqs && config.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: config.faqs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
+      })),
+    });
+  }
+
+  if (config.serviceName) {
     graph.unshift({
       "@type": "Service",
       name: config.serviceName,
@@ -128,17 +141,6 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
     });
   }
 
-  if (config.faqs && config.faqs.length > 0) {
-    graph.push({
-      "@type": "FAQPage",
-      mainEntity: config.faqs.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
-      })),
-    });
-  }
-
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
@@ -147,6 +149,7 @@ export const guidePaths = [
   "/guias/medidas-mesa-comedor",
   "/guias/cotizar-muebles-a-medida",
   "/guias/elegir-sillas-madera-comedor",
+  ...peldanosGuidePaths,
 ] as const;
 
 export const cuidadoMueblesGuideConfig: GuideConfig = {
