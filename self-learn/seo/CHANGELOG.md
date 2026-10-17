@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-17
 
+- **Revisión 17 oct (P0):** quiénes somos sin "+3.000 clientes" ni "hasta 50%"; FAQ de fichas sin "fuera de Santiago"; plazo único "15 días hábiles en total" de fabricación (home, acordeón, ficha); Service sin `Offer` sin precio (landings, guías, kit); kit sin `HowTo.totalTime`; guías con `datePublished`/`dateModified` reales (sin `new Date()`), misma fecha en sitemap y pantalla; FAQ mesas-de-centro solo con modelos con foto; colecciones sin botón "Ver filtros" → `/#catalogo`. Informe: `docs/seo-revision-2026-10-17.md`.
 - **Lote 17:** claims de antigüedad alineados a «desde 1993 / 33 años» (Gonzalo, 2026-10-17; `FOUNDING_YEAR` = 1993 en `src/lib/founding.ts`; el arreglo del Lote 15 no había salido); lastmod por `updatedAt` fijo; enlaces del pie a puertas, peldaños y mesas a medida; guía `/guias/medidas-mesa-de-centro` y `/guias/madera-para-meson-quincho`. Detalle: `SEO-CHANGELOG.md`.
 - **Ronda 2:** páginas `/puertas-de-madera-con-vidrio`, `/puertas-para-locales`, `/peldanos-flotantes` y `/mesas-de-comedor-a-medida` (WhatsApp, enlaces de clúster, sitemap por descubrimiento). Alt, lazy y nombres de 28 fotos de catálogo con redirect. Oportunidades en `docs/seo-oportunidades-ronda2.md`. Sin precios ni cambios de antigüedad.
 - **SEO técnico:** sitemap descubre `page.tsx` nuevas; titles ≤60 y metas ≤155; alt de producto con datos reales; búsqueda solo enlaza fichas con foto; un `<main>` por página. Sin cambios de copy en home, puertas ni peldaños.

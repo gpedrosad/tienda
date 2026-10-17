@@ -162,7 +162,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             <span>{collection.h1}</span>
           </nav>
 
-          <div className="mt-6 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="mt-6">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
                 Catálogo Idea Madera
@@ -187,12 +187,6 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 </p>
               ) : null}
             </div>
-            <Link
-              href="/#catalogo"
-              className="inline-flex w-fit rounded-full border border-neutral-300 bg-white px-5 py-3 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900"
-            >
-              Ver filtros
-            </Link>
           </div>
 
           <div className="mt-7 flex flex-wrap gap-2">

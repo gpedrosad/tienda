@@ -169,9 +169,9 @@ const productFaqItems = [
       "Sí. Al escribir por WhatsApp puedes contarnos las medidas, color o terminación que necesitas para revisar factibilidad y precio.",
   },
   {
-    question: "¿Hacen envíos fuera de Santiago?",
+    question: "¿Hacen envíos a todo Chile?",
     answer:
-      "Sí, coordinamos envíos a todo Chile. Te indicamos opciones y tiempos según comuna o región al momento de cotizar.",
+      "Sí. Fabricamos en Chillán y coordinamos envíos a todo Chile. Te indicamos opciones y tiempos según comuna o región al momento de cotizar.",
   },
   {
     question: "¿Qué garantía tiene el mueble?",
@@ -356,7 +356,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const trustItems = [
     "Envíos a todo Chile",
-    `Fabricación ${productionDays} días hábiles`,
+    `Fabricación ${productionDays} días hábiles en total`,
     "Cambios 30 días",
     "Pago tarjeta/transferencia",
   ];

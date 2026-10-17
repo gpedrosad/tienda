@@ -20,9 +20,9 @@ export const HOME_DESCRIPTION =
 
 export const homeFaqItems = [
   {
-    question: "¿Cuánto tarda el envío?",
+    question: "¿Cuánto tarda mi pedido?",
     answer:
-      "El envío usualmente tarda 15 días hábiles, dependiendo de la ubicación y la disponibilidad del producto. Además, recibirás un número de seguimiento para estar al tanto de la entrega.",
+      "La fabricación toma 15 días hábiles en total. El despacho se coordina según tu comuna o región y recibirás un número de seguimiento para estar al tanto de la entrega.",
   },
   {
     question: "¿Se puede pagar en cuotas?",
@@ -322,16 +322,6 @@ export function buildProductOfferSchema(options: {
     itemCondition: "https://schema.org/NewCondition",
     hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
     shippingDetails: buildShippingDetails(productionDays),
-  };
-}
-
-export function buildServiceOfferSchema(options?: { productionDays?: number }) {
-  return {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    priceCurrency: "CLP",
-    hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
-    shippingDetails: buildShippingDetails(options?.productionDays),
   };
 }
 

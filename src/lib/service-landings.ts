@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { plainTextFromInlineLinks } from "@/lib/inline-links";
 import {
   absoluteUrl,
-  buildServiceOfferSchema,
   clampMetaDescription,
   fitAbsoluteTitle,
   SITE_NAME,
@@ -200,7 +199,6 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
         { "@type": "Audience", audienceType: "Particulares" },
         { "@type": "Audience", audienceType: "Empresas" },
       ],
-      offers: buildServiceOfferSchema(),
     });
   }
 
@@ -1255,7 +1253,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   ],
   heroHighlights: [
     { title: "Empresa familiar", description: "Pasión por el diseño y la madera en cada pieza." },
-    { title: "+3.000 clientes", description: "Clientes satisfechos de Arica a Punta Arenas." },
+    { title: SINCE_FOUNDING_LABEL, description: "Taller familiar en Chillán, con envíos a todo Chile." },
     { title: "Fabricación propia", description: "Controlamos calidad desde el diseño hasta el despacho." },
   ],
   sectionTitle: "Más que lucir bien: muebles esenciales para tu hogar",
@@ -1275,7 +1273,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
     {
       title: "Venta directa",
       description:
-        "Eliminamos intermediarios y vendemos directo, ahorrándote hasta un 50% sin comprometer calidad.",
+        "Eliminamos intermediarios y vendemos directo desde nuestro taller, sin comprometer calidad.",
     },
   ],
   stepsTitle: "Cómo trabajamos contigo",
@@ -1339,7 +1337,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   schemaType: "AboutPage",
   stats: [
     { value: FOUNDING_YEAR_LABEL, label: "Año de fundación" },
-    { value: "3.000+", label: "Clientes satisfechos" },
+    { value: "Todo Chile", label: "Envíos" },
     { value: YEARS_SINCE_FOUNDING_LABEL, label: "Taller familiar" },
   ],
 };

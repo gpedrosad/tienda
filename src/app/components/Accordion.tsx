@@ -11,7 +11,7 @@ export default function Accordion() {
     },
     {
       title: "Envíos",
-      content: "Envíos a todo Chile, cada pedido tiene un plazo de 15 días hábiles."
+      content: "Envíos a todo Chile. El despacho se coordina según tu comuna o región al cotizar."
     },
     {
       title: "Cambios y devoluciones",
@@ -23,7 +23,7 @@ export default function Accordion() {
     },
     {
       title: "Tiempo de fabricación",
-      content: "15 días hábiles."
+      content: "15 días hábiles en total."
     },
     {
       title: "Contacto",

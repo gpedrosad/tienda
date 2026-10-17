@@ -63,7 +63,7 @@ const faqItems = [
   {
     question: "¿Qué modelos de mesa ratona tienen disponibles?",
     answer:
-      "Tenemos varios modelos: Trípode (patas inclinadas), Roma (diseño rectangular), Ferrara (estilo moderno), Hairpin (patas metálicas), Bali, Seúl y Taipei. Cada modelo tiene fotos, medidas y precio en esta página.",
+      "Tenemos Trípode (patas inclinadas), Roma (diseño rectangular), Ferrara (estilo moderno) y Hairpin (patas metálicas). Cada modelo tiene fotos, medidas y precio en esta página. Si buscas otro diseño o medida, lo cotizamos a medida por WhatsApp.",
   },
   {
     question: "¿De qué madera son las mesas ratonas?",

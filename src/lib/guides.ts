@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { plainTextFromInlineLinks } from "@/lib/inline-links";
-import { absoluteUrl, buildServiceOfferSchema, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
+import { absoluteUrl, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
 import { peldanosGuidePaths } from "@/lib/peldanos-guides";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -83,7 +83,14 @@ export function buildGuideMetadata(config: GuideConfig): Metadata {
   };
 }
 
+/** Fechas ISO de la guía: la más antigua como publicación y la más reciente como modificación (la misma que usa el sitemap). */
+export function guideDates(config: Pick<GuideConfig, "updatedAt" | "updatedDate">) {
+  const dates = [config.updatedAt, config.updatedDate].filter((date): date is string => Boolean(date)).sort();
+  return { published: dates[0], modified: dates[dates.length - 1] };
+}
+
 export function buildGuideSchemaGraph(config: GuideConfig) {
+  const dates = guideDates(config);
   const breadcrumbName = config.h1;
   const graph: Record<string, unknown>[] = [
     {
@@ -116,8 +123,8 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
           url: absoluteUrl("/logonegro.png"),
         },
       },
-      datePublished: config.updatedDate || new Date().toISOString().split("T")[0],
-      dateModified: config.updatedDate || new Date().toISOString().split("T")[0],
+      ...(dates.published ? { datePublished: dates.published } : {}),
+      ...(dates.modified ? { dateModified: dates.modified } : {}),
       inLanguage: "es-CL",
     },
   ];
@@ -142,7 +149,6 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
       provider: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
       areaServed: { "@type": "Country", name: "Chile" },
       description: config.pageDescription,
-      offers: buildServiceOfferSchema(),
     });
   }
 

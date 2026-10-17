@@ -7,7 +7,6 @@ import {
   absoluteUrl,
   buildBreadcrumbSchema,
   buildFaqPageSchema,
-  buildServiceOfferSchema,
   SITE_NAME,
 } from "@/lib/seo";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -209,7 +208,6 @@ const serviceSchema = {
     { "@type": "Audience", audienceType: "Particulares" },
     { "@type": "Audience", audienceType: "Empresas" },
   ],
-  offers: buildServiceOfferSchema(),
 };
 
 const howToSchema = {
@@ -219,7 +217,6 @@ const howToSchema = {
   description:
     "Pasos para armar 1 módulo de pérgola sobre suelo con uniones metálicas para madera 3×3 pulgadas. El kit no incluye maderas.",
   image: absoluteUrl(systemImage),
-  totalTime: "PT4H",
   supply: [
     { "@type": "HowToSupply", name: "Kit de uniones metálicas (bases, codos, tornillería)" },
     { "@type": "HowToSupply", name: "Madera 3×3 pulgadas (75×75 mm) en el largo deseado" },

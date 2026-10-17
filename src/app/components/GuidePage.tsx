@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
-import { buildGuideSchemaGraph, buildGuideWhatsAppHref, type GuideConfig } from "@/lib/guides";
+import { buildGuideSchemaGraph, buildGuideWhatsAppHref, guideDates, type GuideConfig } from "@/lib/guides";
 import { InlineLinkedText } from "@/lib/inline-links";
 
 export default function GuidePage({ config }: { config: GuideConfig }) {
@@ -11,6 +11,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
     ? buildGuideWhatsAppHref(config.whatsappLines)
     : null;
   const structuredData = buildGuideSchemaGraph(config);
+  const updatedDate = guideDates(config).modified;
 
   return (
     <>
@@ -40,9 +41,9 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
               <p className="mt-4 text-base leading-relaxed text-neutral-600 md:text-lg">
                 {config.intro}
               </p>
-              {config.updatedDate && (
+              {updatedDate && (
                 <p className="mt-3 text-xs text-neutral-500">
-                  Actualizado: {config.updatedDate}
+                  Actualizado: {updatedDate}
                 </p>
               )}
             </div>

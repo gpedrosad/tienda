@@ -2,11 +2,12 @@
 
 - **Host canónico:** `https://www.ideamadera.cl`
 - **Propiedad GSC:** `sc-domain:ideamadera.cl` (siteOwner vía OAuth)
-- **Sitemap vivo:** ~50 URLs (`src/app/sitemap.ts`) · GSC lista solo www
+- **Sitemap vivo:** 74 URLs (`src/app/sitemap.ts`, GSC 2026-10-17, 0 errores) · GSC lista solo www
 - **Landings de servicio:** peldaños (`/peldanos-a-medida`, Chillán, concreto, escaleras de madera, **flotantes**), cubiertas, molduras, puertas (interiores, entrada, correderas, nativa, **vidrio**, **locales**), **muebles-chillan**, **muebles-de-cocina-chillan**, **mesas-de-comedor-a-medida**, kit-pergola, quiénes somos, contacto
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
-- **Última tanda código:** 2026-09-06 → [CHANGELOG.md](./CHANGELOG.md) · plan [docs/plan-seo-kimi3-2026-09-06.md](../../docs/plan-seo-kimi3-2026-09-06.md)
-- **Última medición GSC:** 2026-09-06 → `docs/gsc-informe-2026-09-06.md` (201 clics · 9.698 imp · CTR 2,07% · pos. 9,6). Histórico ago: [EVAL.md](./EVAL.md)
+- **Última tanda código:** 2026-10-17 (lotes 11–17 + UX landings, 11→17 oct) → [CHANGELOG.md](./CHANGELOG.md)
+- **Última medición GSC:** 2026-10-17 → `docs/gsc-informe-2026-10-17.md` (20 sep→17 oct, serie hasta 15 oct: 224 clics · 10.076 imp · CTR 2,22% · pos. 9,0 · no marca 1,29%). Es **línea base** de los lotes 11–17. Revisión: `docs/seo-revision-2026-10-17.md`. Anterior: 2026-09-06 (201 · 9.698 · 2,07% · 9,6). Histórico ago: [EVAL.md](./EVAL.md)
+- **Titles congelados hasta ~5 nov:** veladores, guía medidas comedor, mesa-tripode-ratona, puertas-a-medida, silla-kentucky, guía sillas
 - **Backlog:** [NEXT.md](./NEXT.md)
 
 ## Snapshot GSC 2026-08-04 (28d: 7 jul → 4 ago)
@@ -74,6 +75,6 @@ Ver [NEXT.md](./NEXT.md). Resumen:
 
 1. Recrawl GSC UI de PDPs CTR gap (ratona, nórdica, kentucky) + `collections/mesas`
 2. Fotos productos sin imagen
-3. Subir CTR de `mesa ratona` (170 imp / 0 clics) — snippet/SERP audit
+3. Subir CTR de `mesa ratona` (212 imp / 0 clics al 17 oct) y `veladores de madera` (1.114 imp / CTR 0,09% en pos. 3,6) — medir lote 16 antes de tocar
 4. Limpiar ruido residual `?page=1` y `pr_*` vía inspección/recrawl
-5. Meta CTR plan: global ≥3,0% · no marca ≥2,0% (hoy 2,77% / 1,54%)
+5. Meta CTR plan: global ≥3,0% · no marca ≥2,0% (17 oct: 2,22% / 1,29%)

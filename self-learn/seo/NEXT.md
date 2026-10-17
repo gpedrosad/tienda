@@ -2,6 +2,14 @@
 
 Orden de impacto. Actualizar al cerrar ítems.
 
+## Revisión 2026-10-17 (ver `docs/seo-revision-2026-10-17.md`)
+
+- **Congelar** titles de veladores, guía medidas comedor, ratona, puertas, kentucky y guía sillas hasta ~5 nov (medir lote 16).
+- **P0 datos inconsistentes:** FAQ fichas "fuera de Santiago" · Offer de servicios sin precio/InStock · claims "+3.000 clientes"/"50%" en quiénes somos · FAQ mesas-de-centro con modelos sin foto · plazos 15 días contradictorios · fechas de guías / `new Date()` · HowTo `PT4H`.
+- **P1 conversión:** hero colección "Ver filtros" → `/#catalogo` · CTA intermedio + enlaces en guía comedor · botón hero mesas-de-centro → comedor · title kit pérgola vs "sin maderas" · "Contáctanos" en home.
+- **Descartado:** diferir gtag (rompe fix `1765042`) · quitar Chillán del title home.
+- **Próximo corte:** ~5 nov `npm run gsc:report:md`.
+
 ## P0 — ops inmediatas
 
 | # | Acción | Quién | Notas |

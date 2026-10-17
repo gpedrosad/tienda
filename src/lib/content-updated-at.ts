@@ -99,7 +99,7 @@ const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDa
 
 const configUpdatedAt = new Map<string, string>();
 for (const config of datedConfigs) {
-  const iso = config.updatedAt || config.updatedDate;
+  const iso = [config.updatedAt, config.updatedDate].filter(Boolean).sort().at(-1);
   if (iso) configUpdatedAt.set(config.canonicalPath, iso);
 }
 
