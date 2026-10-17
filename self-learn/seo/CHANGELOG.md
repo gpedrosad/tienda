@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-17
 
+- **Ronda 2:** páginas `/puertas-de-madera-con-vidrio`, `/puertas-para-locales`, `/peldanos-flotantes` y `/mesas-de-comedor-a-medida` (WhatsApp, enlaces de clúster, sitemap por descubrimiento). Alt, lazy y nombres de 28 fotos de catálogo con redirect. Oportunidades en `docs/seo-oportunidades-ronda2.md`. Sin precios ni cambios de antigüedad.
 - **SEO técnico:** sitemap descubre `page.tsx` nuevas; titles ≤60 y metas ≤155; alt de producto con datos reales; búsqueda solo enlaza fichas con foto; un `<main>` por página. Sin cambios de copy en home, puertas ni peldaños.
 - **Puertas:** más profundidad, FAQ y enlaces en `/puertas-a-medida` (el «desde 2001» queda igual); páginas nuevas de interiores, entrada/exterior, correderas y madera nativa; guía `/guias/medidas-y-madera-puertas`. Sin páginas de granero, pino ni «maciza»: el repo no las respalda como línea de puertas.
 - **Peldaños:** clúster de huellas (`/peldanos-madera-chillan`, `/peldanos-escalera-concreto`, `/escaleras-de-madera`) y guías de medidas y de madera. Hub `/peldanos-a-medida` enlaza el clúster. Sin URL de pasamanos (no es línea de producto). Sin precios ni especies nuevas.

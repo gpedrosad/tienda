@@ -93,6 +93,11 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
         description: "Mesas, sillas y bancas de líneas simples para armar el comedor.",
       },
       {
+        href: "/mesas-de-comedor-a-medida",
+        title: "Mesa de comedor a medida",
+        description: "Largo o diámetro fuera del catálogo. El precio se cotiza por WhatsApp.",
+      },
+      {
         href: "/muebles-a-medida",
         title: "Muebles a medida",
         description: "Si ninguna ficha calza, cotiza medidas y terminación desde el taller.",

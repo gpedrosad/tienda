@@ -65,6 +65,7 @@ export default function ProductsSection({ products }: ProductsSectionProps) {
                 width={640}
                 height={480}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                loading="lazy"
                 className="h-auto w-full"
               />
               <h2 className={`text-sm sm:text-lg font-semibold mt-4 ${isLongName ? "px-4" : ""}`}>

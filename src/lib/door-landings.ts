@@ -28,6 +28,16 @@ const doorClusterLinks: LandingRelatedLink[] = [
     description: "Hoja que corre. Referencia de interior en madera y vidrio.",
   },
   {
+    href: "/puertas-de-madera-con-vidrio",
+    title: "Puertas con vidrio",
+    description: "Hoja con vidrio según tu referencia. El tipo de vidrio se confirma al cotizar.",
+  },
+  {
+    href: "/puertas-para-locales",
+    title: "Puertas para locales",
+    description: "Hoja para local, oficina o bodega. No es puerta acústica ni de seguridad.",
+  },
+  {
     href: "/puertas-madera-nativa",
     title: "Madera nativa",
     description: "Madera nativa seca en cámara. La especie se confirma al cotizar.",
@@ -44,8 +54,12 @@ const doorClusterLinks: LandingRelatedLink[] = [
   },
 ];
 
-function relatedExcept(href: string) {
+export function doorRelatedLinks(href: string) {
   return doorClusterLinks.filter((link) => link.href !== href);
+}
+
+function relatedExcept(href: string) {
+  return doorRelatedLinks(href);
 }
 
 const tallerDesde2001 = {
@@ -687,4 +701,6 @@ export const doorLandingPaths = [
   puertasExterioresLandingConfig.canonicalPath,
   puertasCorrederasLandingConfig.canonicalPath,
   puertasMaderaNativaLandingConfig.canonicalPath,
+  "/puertas-de-madera-con-vidrio",
+  "/puertas-para-locales",
 ] as const;

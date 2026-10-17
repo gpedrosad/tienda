@@ -95,6 +95,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/muebles-a-medida"
+                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    Muebles a medida
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/muebles-chillan"
                     className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
                   >

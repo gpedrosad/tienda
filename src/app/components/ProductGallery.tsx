@@ -111,7 +111,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
-                priority={index === 0}
+                {...(index === 0 ? { priority: true as const } : { loading: "lazy" as const })}
               />
             </button>
           ))}
@@ -141,6 +141,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
                   alt=""
                   fill
                   sizes="96px"
+                  loading="lazy"
                   className="object-cover"
                 />
               </button>

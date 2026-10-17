@@ -221,6 +221,147 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Fotos de producto con nombre antiguo
+      {
+        source: "/images/1ARRMINOGRIEGO.jpg",
+        destination: "/images/arrimo-griego-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2ARRMINOGRIEGO.jpg",
+        destination: "/images/arrimo-griego-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESACENTROROMA.jpg",
+        destination: "/images/mesa-centro-roma-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESACENTROROMA.jpg",
+        destination: "/images/mesa-centro-roma-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3MESACENTROROMA.jpg",
+        destination: "/images/mesa-centro-roma-vista-3.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/4MESACENTROROMA.jpg",
+        destination: "/images/mesa-centro-roma-vista-4.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1BANCACAPRI.jpg",
+        destination: "/images/banca-capri-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2BANCACAPRI.jpg",
+        destination: "/images/banca-capri-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1BANCACAPRINEGRA.jpg",
+        destination: "/images/banca-capri-negra-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2BANCACAPRINEGRA.jpg",
+        destination: "/images/banca-capri-negra-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESAROMAREDONDAPATASNEGRAS.jpg",
+        destination: "/images/mesa-roma-redonda-patas-negras-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESAROMAREDONDAPATASNEGRAS.jpg",
+        destination: "/images/mesa-roma-redonda-patas-negras-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3MESAROMAREDONDAPATASNEGRAS.jpg",
+        destination: "/images/mesa-roma-redonda-patas-negras-vista-3.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1BANCAGRIEGA.jpg",
+        destination: "/images/banca-griega-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2BANCAGRIEGA.jpg",
+        destination: "/images/banca-griega-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3BANCAGRIEGA.jpg",
+        destination: "/images/banca-griega-vista-3.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/4BANCAGRIEGA.jpg",
+        destination: "/images/banca-griega-vista-4.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESAFRIDAREDONDA.jpg",
+        destination: "/images/mesa-frida-redonda-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESAFRIDAREDONDA.jpg",
+        destination: "/images/mesa-frida-redonda-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3MESAFRIDAREDONDA.jpg",
+        destination: "/images/mesa-frida-redonda-vista-3.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESATRIPODERATONA.jpg",
+        destination: "/images/mesa-tripode-ratona-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESATRIPODERATONA.jpg",
+        destination: "/images/mesa-tripode-ratona-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3MESATRIPODERATONA.jpg",
+        destination: "/images/mesa-tripode-ratona-vista-3.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESAFERRARACENTRO.jpg",
+        destination: "/images/mesa-centro-ferrara-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESAFERRARACENTRO.jpg",
+        destination: "/images/mesa-centro-ferrara-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/1MESATRIPODEREDONDAMADERA.jpg",
+        destination: "/images/mesa-tripode-redonda-vista-1.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/2MESATRIPODEREDONDAMADERA.jpg",
+        destination: "/images/mesa-tripode-redonda-vista-2.jpg",
+        permanent: true,
+      },
+      {
+        source: "/images/3MESATRIPODEREDONDAMADERA.jpg",
+        destination: "/images/mesa-tripode-redonda-vista-3.jpg",
+        permanent: true,
+      },
     ];
   },
   async headers() {

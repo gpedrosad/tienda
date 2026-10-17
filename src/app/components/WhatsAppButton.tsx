@@ -90,10 +90,11 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
             {imageUrl && (
               <Image
                 src={imageUrl}
-                alt={productTitle}
+                alt={`Miniatura de ${productTitle}`}
                 width={44}
                 height={44}
                 sizes="44px"
+                loading="lazy"
                 className="h-11 w-11 rounded-full object-cover"
               />
             )}

@@ -151,6 +151,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                               ? "(max-width: 768px) 100vw, 66vw"
                               : "(max-width: 768px) 50vw, 33vw"
                           }
+                          loading="lazy"
                           className="object-cover"
                         />
                       </figure>

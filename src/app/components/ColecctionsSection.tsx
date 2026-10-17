@@ -56,9 +56,10 @@ export default function CollectionsSection({ collections }: CollectionsSectionPr
                 <div className="relative w-full h-52 md:h-64 lg:h-72">
                   <Image
                     src={collection.image.src}
-                    alt={collection.title}
+                    alt={`${collection.title}: colección de muebles de madera`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                     className="object-cover object-center"
                   />
                   {/* Capa de superposición para resaltar el texto */}
