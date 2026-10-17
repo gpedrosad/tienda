@@ -60,6 +60,8 @@ export interface Product {
   stockNote?: string;
   seoTitle?: string;
   seoDescription?: string;
+  /** Fecha ISO de la última edición de esta ficha. El sitemap la usa como lastmod. */
+  updatedAt?: string;
 }
 
 export function getAllProducts(): Product[] {
@@ -69,6 +71,7 @@ export function getAllProducts(): Product[] {
 export const products: Product[] = [
   {
     id: "mesa-nordica",
+    updatedAt: "2026-10-17",
     name: "Mesa Nórdica",
     price: 369000,
     category: "Mesas",
@@ -93,6 +96,7 @@ export const products: Product[] = [
   },
   {
     id: "piso-osaka",
+    updatedAt: "2026-09-06",
     name: "Piso Osaka",
     price: 139990,
     category: "Pisos",
@@ -115,6 +119,7 @@ export const products: Product[] = [
   },
   {
     id: "silla-kentucky",
+    updatedAt: "2026-09-06",
     name: "Silla Kentucky",
     price: 279000,
     category: "Sillas",
@@ -138,6 +143,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-tripode",
+    updatedAt: "2026-10-17",
     name: "Mesa de comedor Tripode",
     price: 699000,
     category: "Mesas",
@@ -162,18 +168,21 @@ export const products: Product[] = [
   },
   {
     id: "sillon-lombardo-dos-cuerpos",
+    updatedAt: "2026-01-17",
     name: "Sillón Lombardo dos cuerpos",
     price: 495990,
     category: "Sitiales",
   },
   {
     id: "mesa-comedor-liguria",
+    updatedAt: "2026-01-17",
     name: "Mesa Comedor Liguria",
     price: 497000,
     category: "Mesas",
   },
   {
     id: "mesa-centro-hairpin",
+    updatedAt: "2026-10-17",
     name: "Mesa de Centro Modelo Hairpin",
     price: 159990,
     category: "Mesas",
@@ -198,36 +207,42 @@ export const products: Product[] = [
   },
   {
     id: "repisa-madera-moderna",
+    updatedAt: "2026-01-17",
     name: "Repisa de madera moderna",
     price: 59990,
     category: "Repisas",
   },
   {
     id: "repisa-madera-catania",
+    updatedAt: "2026-01-17",
     name: "Repisa de madera modelo Catania",
     price: 59990,
     category: "Repisas",
   },
   {
     id: "mesa-comedor-genova",
+    updatedAt: "2026-01-17",
     name: "Mesa Comedor Genova",
     price: 467000,
     category: "Mesas",
   },
   {
     id: "mesa-comedor-frida",
+    updatedAt: "2026-01-17",
     name: "Mesa Comedor Frida",
     price: 679000,
     category: "Mesas",
   },
   {
     id: "mesa-comedor-frida-negra",
+    updatedAt: "2026-01-17",
     name: "Mesa Comedor Frida Negra",
     price: 670000,
     category: "Mesas",
   },
   {
     id: "mesa-comedor-niza",
+    updatedAt: "2026-10-17",
     name: "Mesa Comedor Niza",
     price: 689900,
     category: "Mesas",
@@ -251,6 +266,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-tripode-redonda",
+    updatedAt: "2026-10-17",
     name: "Mesa de comedor Tripode redonda",
     price: 729900,
     category: "Mesas",
@@ -275,6 +291,7 @@ export const products: Product[] = [
   },
   {
     id: "silla-milan-lenga",
+    updatedAt: "2026-10-13",
     name: "Silla Milán Lenga",
     price: 199000,
     category: "Sillas",
@@ -297,6 +314,7 @@ export const products: Product[] = [
   },
   {
     id: "perchero-madera-verona",
+    updatedAt: "2026-06-15",
     name: "Perchero de madera modelo Verona",
     price: 149990,
     category: "Percheros",
@@ -317,6 +335,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-redonda-ferrara",
+    updatedAt: "2026-10-17",
     name: "Mesa de comedor redonda modelo Ferrara",
     price: 799000,
     category: "Mesas",
@@ -341,6 +360,7 @@ export const products: Product[] = [
   },
   {
     id: "banca-griega",
+    updatedAt: "2026-06-15",
     name: "Banca Griega",
     price: 279000,
     category: "Bancas",
@@ -361,12 +381,14 @@ export const products: Product[] = [
   },
   {
     id: "banca-griega-negra",
+    updatedAt: "2026-01-17",
     name: "Banca Griega Negra",
     price: 279000,
     category: "Bancas",
   },
   {
     id: "sitial-hank-nogal",
+    updatedAt: "2026-06-15",
     name: "Sitial Hank Nogal",
     price: 459990,
     category: "Sitiales",
@@ -386,6 +408,7 @@ export const products: Product[] = [
   },
   {
     id: "sitial-hank-negro",
+    updatedAt: "2026-10-13",
     name: "Sitial Hank Negro",
     price: 459990,
     category: "Sitiales",
@@ -408,6 +431,7 @@ export const products: Product[] = [
   },
   {
     id: "banca-capri",
+    updatedAt: "2026-06-15",
     name: "Banca Capri",
     price: 259000,
     category: "Bancas",
@@ -428,6 +452,7 @@ export const products: Product[] = [
   },
   {
     id: "banca-capri-negra",
+    updatedAt: "2026-06-15",
     name: "Banca Capri Negra",
     price: 259000,
     category: "Bancas",
@@ -448,6 +473,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-centro-ferrara",
+    updatedAt: "2026-10-17",
     name: "Mesa Centro Ferrara",
     price: 379000,
     category: "Mesas",
@@ -468,6 +494,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-centro-roma",
+    updatedAt: "2026-10-17",
     name: "Mesa de centro Roma",
     price: 359990,
     category: "Mesas",
@@ -492,6 +519,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-frida-redonda",
+    updatedAt: "2026-10-17",
     name: "Mesa Frida Redonda",
     price: 699990,
     category: "Mesas",
@@ -512,6 +540,7 @@ export const products: Product[] = [
   },
   {
     id: "velador-cubo",
+    updatedAt: "2026-06-15",
     name: "Velador Cubo",
     price: 270000,
     category: "Veladores",
@@ -532,6 +561,7 @@ export const products: Product[] = [
   },
   {
     id: "arrimo-griego",
+    updatedAt: "2026-06-15",
     name: "Arrimo Griego",
     price: 289000,
     category: "Mesas",
@@ -552,6 +582,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-tripode-redonda-negra",
+    updatedAt: "2026-10-17",
     name: "Mesa Tripode Redonda Negra",
     price: 820000,
     category: "Mesas",
@@ -576,6 +607,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-tripode-ratona",
+    updatedAt: "2026-10-17",
     name: "Mesa ratona trípode",
     price: 399990,
     category: "Mesas",
@@ -601,6 +633,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-tripode-negra",
+    updatedAt: "2026-10-17",
     name: "Mesa de comedor Tripode Negra",
     price: 699000,
     category: "Mesas",
@@ -624,6 +657,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-roma-negra",
+    updatedAt: "2026-10-17",
     name: "Mesa Comedor Roma Madera Negra",
     price: 699000,
     category: "Mesas",
@@ -647,6 +681,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-roma-natural",
+    updatedAt: "2026-10-17",
     name: "Mesa Comedor Roma Madera Natural",
     price: 699000,
     category: "Mesas",
@@ -667,6 +702,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-cantabria",
+    updatedAt: "2026-10-17",
     name: "Mesa Comedor Madera Modelo Cantabria",
     price: 999000,
     category: "Mesas",
@@ -691,6 +727,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-redonda-novara",
+    updatedAt: "2026-10-17",
     name: "Mesa Comedor Redonda Modelo Novara",
     price: 719990,
     category: "Mesas",
@@ -714,6 +751,7 @@ export const products: Product[] = [
   },
   {
     id: "futon-noruega",
+    updatedAt: "2026-06-15",
     name: "Futon Noruega",
     price: 499990,
     category: "Futon",
@@ -733,6 +771,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-bolonia",
+    updatedAt: "2026-10-17",
     name: "Mesa de comedor Bolonia",
     price: 679900,
     category: "Mesas",
@@ -753,108 +792,126 @@ export const products: Product[] = [
   },
   {
     id: "perchero-sofia",
+    updatedAt: "2026-01-17",
     name: "Perchero Sofía",
     price: 229990,
     category: "Percheros",
   },
   {
     id: "banca-luisa",
+    updatedAt: "2026-01-17",
     name: "Banca Luisa",
     price: 289990,
     category: "Bancas",
   },
   {
     id: "rack-oslo",
+    updatedAt: "2026-01-17",
     name: "Rack Oslo",
     price: 719990,
     category: "Racks",
   },
   {
     id: "repisa-taipei",
+    updatedAt: "2026-01-17",
     name: "Repisa Taipei",
     price: 69990,
     category: "Repisas",
   },
   {
     id: "mesa-centro-taipei",
+    updatedAt: "2026-01-17",
     name: "Mesa centro Taipei",
     price: 379990,
     category: "Mesas",
   },
   {
     id: "rack-bali",
+    updatedAt: "2026-01-17",
     name: "Rack Bali",
     price: 279990,
     category: "Racks",
   },
   {
     id: "mesa-centro-bali",
+    updatedAt: "2026-01-17",
     name: "Mesa de centro Bali",
     price: 419990,
     category: "Mesas",
   },
   {
     id: "rack-osaka",
+    updatedAt: "2026-01-17",
     name: "Rack Osaka",
     price: 529990,
     category: "Racks",
   },
   {
     id: "rack-tokio",
+    updatedAt: "2026-01-17",
     name: "Rack Tokio",
     price: 569990,
     category: "Racks",
   },
   {
     id: "velador-tokio",
+    updatedAt: "2026-01-17",
     name: "Velador Tokio",
     price: 379990,
     category: "Veladores",
   },
   {
     id: "mesa-comedor-osaka",
+    updatedAt: "2026-01-17",
     name: "Mesa de comedor Osaka",
     price: 879990,
     category: "Mesas",
   },
   {
     id: "mesa-comedor-luisa",
+    updatedAt: "2026-01-17",
     name: "Mesa de comedor Luisa",
     price: 789990,
     category: "Mesas",
   },
   {
     id: "rack-kyoto",
+    updatedAt: "2026-01-17",
     name: "Rack Kyoto",
     price: 789990,
     category: "Racks",
   },
   {
     id: "rack-helsinki",
+    updatedAt: "2026-01-17",
     name: "Rack Helsinki",
     price: 639990,
     category: "Racks",
   },
   {
     id: "escritorio-mid-century",
+    updatedAt: "2026-01-17",
     name: "Escritorio Mid Century",
     price: 469990,
     category: "Escritorios",
   },
   {
     id: "escritorio-mid-century-negro",
+    updatedAt: "2026-01-17",
     name: "Escritorio Mid Century Negro",
     price: 469990,
     category: "Escritorios",
   },
   {
     id: "mesa-comedor-praga",
+    updatedAt: "2026-01-17",
     name: "Mesa de comedor Praga",
     price: 759990,
     category: "Mesas",
   },
   {
     id: "mesa-centro-seul",
+    updatedAt: "2026-01-17",
     name: "Mesa de centro Seúl",
     price: 369990,
     category: "Mesas",

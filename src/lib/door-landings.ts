@@ -69,6 +69,7 @@ const tallerDesde2001 = {
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-interiores",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -221,6 +222,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasExterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-exteriores",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -390,6 +392,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-correderas",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -547,6 +550,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
 
 export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-madera-nativa",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },

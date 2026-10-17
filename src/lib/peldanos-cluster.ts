@@ -94,6 +94,7 @@ function linksExcept(href: string) {
 
 export const peldanosChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-madera-chillan",
+  updatedAt: "2026-10-16",
   breadcrumbLabel: "Peldaños en Chillán",
   breadcrumbParent: peldanosParent,
   pageTitle: "Peldaños de Madera a Medida en Chillán | Idea Madera",
@@ -259,6 +260,7 @@ export const peldanosChillanLandingConfig: ServiceLandingConfig = {
 
 export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-escalera-concreto",
+  updatedAt: "2026-10-16",
   breadcrumbLabel: "Escalera de concreto",
   breadcrumbParent: peldanosParent,
   pageTitle: "Peldaños para Escalera de Concreto | Idea Madera",
@@ -416,6 +418,7 @@ export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
 
 export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/escaleras-de-madera",
+  updatedAt: "2026-10-17",
   breadcrumbLabel: "Escaleras de madera",
   breadcrumbParent: peldanosParent,
   pageTitle: "Escaleras de Madera: Huellas a Medida | Chile",

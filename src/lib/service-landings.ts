@@ -26,6 +26,8 @@ export type LandingImage = {
 
 export type ServiceLandingConfig = {
   canonicalPath: string;
+  /** Fecha ISO de la última edición del contenido. El sitemap la usa como lastmod. */
+  updatedAt?: string;
   pageTitle: string;
   pageDescription: string;
   keywords?: string[];
@@ -232,6 +234,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
+  updatedAt: "2026-10-17",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
@@ -491,6 +494,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
+  updatedAt: "2026-10-17",
   pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
     "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
@@ -661,6 +665,11 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
       title: "Taller en Chillán",
       description: "Fabricación propia y atención directa desde Ñuble.",
     },
+    {
+      href: "/guias/madera-para-meson-quincho",
+      title: "Madera para mesón de quincho",
+      description: "Lenga austral o pino premium, y qué decir al cotizar la cubierta.",
+    },
   ],
   ctaTitle: "Cotiza hoy tus cubiertas de madera",
   ctaParagraph:
@@ -673,6 +682,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
+  updatedAt: "2026-10-14",
   pageTitle: "Molduras de Madera a Medida | Chile",
   pageDescription:
     "Molduras de madera a medida en Chillán para muros, techos y vanos. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
@@ -877,6 +887,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
+  updatedAt: "2026-10-17",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -1212,6 +1223,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
 
 export const quienesSomosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/quienes-somos",
+  updatedAt: "2026-10-17",
   pageTitle: "¿Quiénes Somos? | Muebles de Madera en Chile",
   pageDescription:
     "Idea Madera: empresa familiar de Chillán desde 2001. Fabricamos muebles de madera con calidad artesanal y envíos a todo Chile.",
@@ -1321,12 +1333,13 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   stats: [
     { value: "2001", label: "Año de fundación" },
     { value: "3.000+", label: "Clientes satisfechos" },
-    { value: "31", label: "Años de experiencia" },
+    { value: "Desde 2001", label: "Taller familiar" },
   ],
 };
 
 export const contactoLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/contacto",
+  updatedAt: "2026-10-05",
   pageTitle: "Contacto | Cotiza por WhatsApp",
   pageDescription:
     "Contáctanos para cotizar muebles de madera o piezas a medida. WhatsApp +56 9 9549 7838, hola@ideamadera.cl. Envíos a todo Chile.",
@@ -1420,6 +1433,7 @@ export const contactoLandingConfig: ServiceLandingConfig = {
 
 export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-de-cocina-chillan",
+  updatedAt: "2026-10-12",
   pageTitle: "Muebles de Cocina a Medida en Chillán | Mesones · Cotiza por WhatsApp",
   pageDescription:
     "Muebles de cocina a medida en Chillán: mesones, cubiertas, islas de madera. Fabricación local, cotización por WhatsApp. Envío a todo Chile.",
@@ -1556,6 +1570,7 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-chillan",
+  updatedAt: "2026-10-17",
   pageTitle: "Mueblería en Chillán | Fábrica de Muebles de Madera",
   pageDescription:
     "Mueblería y fábrica de muebles en Chillán: mesas, sillas, bancas de madera maciza y piezas a medida. Cotiza por WhatsApp con envío a todo Chile.",
@@ -1628,7 +1643,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   bottomHighlights: [
     {
       title: "Empresa familiar de Chillán",
-      description: "Más de 20 años fabricando muebles de madera con venta directa.",
+      description: "Desde 2001 fabricando muebles de madera con venta directa.",
     },
     {
       title: "Envío nacional",
@@ -1719,6 +1734,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-a-medida",
+  updatedAt: "2026-10-17",
   pageTitle: "Muebles a Medida en Madera | Fabricación Chile",
   pageDescription:
     "Muebles de madera a medida en Chile: cubiertas, puertas, peldaños, molduras y cocinas personalizadas. Cotiza tu proyecto por WhatsApp con envío nacional.",
@@ -1811,7 +1827,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   ],
   bottomHighlights: [
     {
-      title: "Más de 30 años de experiencia",
+      title: "Taller familiar desde 2001",
       description:
         "Equipo artesanal con maquinaria especializada para cumplir especificaciones técnicas de cada cliente.",
     },

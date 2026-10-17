@@ -4,6 +4,7 @@ export const doorGuidePath = "/guias/medidas-y-madera-puertas";
 
 export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   canonicalPath: doorGuidePath,
+  updatedAt: "2026-10-17",
   pageTitle: "Medidas y Madera para Puertas | Idea Madera",
   pageDescription:
     "Medidas habituales de puertas en Chile y cómo elegir la madera según interior o exterior. La hoja se fabrica a tu vano. Cotiza por WhatsApp.",

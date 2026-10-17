@@ -30,6 +30,7 @@ const clusterAndWorkshop = [
 
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
+  updatedAt: "2026-10-16",
   pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
   pageDescription:
     "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
@@ -156,6 +157,7 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
 
 export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-madera-peldanos",
+  updatedAt: "2026-10-16",
   pageTitle: "Cómo Elegir Madera para Peldaños | Idea Madera",
   pageDescription:
     "Criterios para peldaños: tránsito, espesor y terminación. Lenga austral o pino premium se confirman al cotizar. Escríbenos por WhatsApp.",

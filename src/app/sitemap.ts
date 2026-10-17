@@ -1,28 +1,18 @@
 import type { MetadataRoute } from "next";
-import { execSync } from "child_process";
 import { readdirSync } from "fs";
 import path from "path";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts } from "@/lib/catalog";
+import { ALL_PRODUCTS_HANDLE } from "@/lib/collection-seo";
+import {
+  FALLBACK_UPDATED_AT,
+  updatedAtForCollection,
+  updatedAtForRoute,
+} from "@/lib/content-updated-at";
 import { SITE_URL } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
-const ALL_PRODUCTS_HANDLE = "todos-los-productos";
 const APP_DIR = path.join(process.cwd(), "src", "app");
-
-function gitLastModified(filepath: string): Date | undefined {
-  try {
-    const timestamp = execSync(`git log -1 --format=%ct -- ${filepath}`, {
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "ignore"],
-    }).trim();
-    if (!timestamp) return undefined;
-    const date = new Date(Number(timestamp) * 1000);
-    return Number.isNaN(date.getTime()) ? undefined : date;
-  } catch {
-    return undefined;
-  }
-}
 
 type DiscoveredRoute = { route: string; file: string };
 
@@ -72,30 +62,29 @@ function staticMeta(route: string): Pick<MetadataRoute.Sitemap[number], "changeF
 function entry(
   url: string,
   meta: Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority">,
-  lastModified: Date | undefined,
+  lastModified: string | undefined,
 ): MetadataRoute.Sitemap[number] {
-  return lastModified ? { url, ...meta, lastModified } : { url, ...meta };
+  return { url, ...meta, lastModified: lastModified || FALLBACK_UPDATED_AT };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleProducts = getVisibleProducts(products);
-  const productsLastMod = gitLastModified("src/data/products.ts");
 
-  const staticPages = discoverStaticRoutes().map(({ route, file }) =>
-    entry(route === "/" ? SITE_URL : `${SITE_URL}${route}`, staticMeta(route), gitLastModified(file)),
+  const staticPages = discoverStaticRoutes().map(({ route }) =>
+    entry(route === "/" ? SITE_URL : `${SITE_URL}${route}`, staticMeta(route), updatedAtForRoute(route)),
   );
 
   const collectionPages: MetadataRoute.Sitemap = [
     entry(
       `${SITE_URL}/collections/${ALL_PRODUCTS_HANDLE}`,
       { changeFrequency: "weekly", priority: 0.85 },
-      productsLastMod,
+      updatedAtForCollection(ALL_PRODUCTS_HANDLE),
     ),
     ...getCategoryOptions(visibleProducts).map((option) =>
       entry(
         `${SITE_URL}/collections/${option.handle}`,
         { changeFrequency: "weekly", priority: 0.8 },
-        productsLastMod,
+        updatedAtForCollection(option.handle),
       ),
     ),
   ];
@@ -104,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(
       `${SITE_URL}${getProductPath(product)}`,
       { changeFrequency: "weekly", priority: 0.75 },
-      productsLastMod,
+      product.updatedAt,
     ),
   );
 

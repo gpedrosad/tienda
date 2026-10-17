@@ -1,5 +1,43 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-17 — Lote 17
+
+### 1. Antigüedad: solo «desde 2001»
+
+El Lote 15 lo dejó escrito y no publicado. `foundingDate` sigue en 2001. No hay años, plazos ni garantías nuevos.
+
+- Footer: «31 años creando…» → «Desde 2001 creando…».
+- `/muebles-a-medida`: highlight «Más de 30 años de experiencia» → «Taller familiar desde 2001». La descripción del highlight no cambia.
+- Home (`FabricaVideo`): «31 años de pasión…» → «desde 2001, con pasión…».
+- `/muebles-chillan`: «Más de 20 años fabricando…» → «Desde 2001 fabricando…».
+- `/quienes-somos`: el stat «31 / Años de experiencia» → «Desde 2001 / Taller familiar». El stat «2001 / Año de fundación» queda igual.
+- `docs/seo-oportunidades-ronda2.md`: la regla para agentes pasa a ser que la única antigüedad permitida es «desde 2001».
+
+### 2. lastmod del sitemap
+
+`src/app/sitemap.ts` ya no lee `git log` (el clone de Vercel dejaba la misma fecha en muchas URLs, y las 43 fichas/colecciones compartían la de `products.ts`). Cada landing, guía, ficha y colección tiene un `updatedAt` ISO, tomado una vez del blame y escrito en el config. Las rutas cuyo texto vive en el `page.tsx` están en `src/lib/content-updated-at.ts`. Si falta una fecha, el fallback es `2026-06-15` (día en que quedó la mayoría de las fichas con foto), documentado en ese archivo. Hoy solo llevan `2026-10-17` las páginas cuyo contenido cambia en este lote o cuyo último commit de contenido ya era ese día.
+
+### 3. Enlaces internos
+
+- Footer, grupo «Puertas y peldaños»: `/puertas-interiores`, `/puertas-exteriores`, `/puertas-correderas`, `/escaleras-de-madera`, `/peldanos-flotantes`, `/guias/medidas-y-madera-puertas`, `/guias/medidas-peldanos-escalera` y `/mesas-de-comedor-a-medida`.
+- Fichas de mesa de comedor: una línea «¿Necesitas otra medida? Mesas de comedor a medida» hacia `/mesas-de-comedor-a-medida`. No se reescribió el cuerpo de Niza, Nórdica, Ferrara, Cantabria ni el resto.
+
+### 4. Guía `/guias/medidas-mesa-de-centro`
+
+Title `Medidas de Mesa de Centro y Mesa Ratona | Living` (48). Meta 149 caracteres. H1, breadcrumbs, Article, FAQPage y CTA de WhatsApp del helper de guías. Tabla solo con medidas publicadas: Roma 120×60×45, Ferrara centro 110×60×45, Hairpin 100×50×45, Trípode ratona 100×60×40. Enlaza a `/mesas-de-centro` y a esas cuatro fichas. `/mesas-de-centro` suma una línea a la guía; cada una de esas fichas suma una línea de vuelta. «Mesa ratona» queda como el nombre usado en Chile y Argentina.
+
+### 5. Guía `/guias/madera-para-meson-quincho`
+
+Title `Madera para Mesón de Quincho | Lenga y Pino` (43). Meta 152 caracteres. Misma estructura de guía. Solo lenga austral y pino premium, secos en cámara, y los usos ya dichos en `/cubiertas-a-medida` (quincho, barra, cocina, restaurant). El acabado bajo techo o al aire, y la mantención de 6 a 12 meses al exterior, se citan de esa página. Sin largo estándar ni espesor nuevo. `/cubiertas-a-medida` enlaza la guía.
+
+### Build
+
+`npm run build`: OK (Next.js 15.5.19). El sitemap generado tiene 74 URLs (las 72 anteriores más las dos guías) y 13 fechas de `lastmod` distintas. En el HTML de `.next/server/app`, la búsqueda `31 años|30 años|20 años` no encuentra nada.
+
+### No se tocó
+
+Schema Service (política de devoluciones). Pixel, GTM y analítica. `foundingDate`. Cuerpo de veladores, medidas de mesa de comedor, titles de ratona y Niza, elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica, hub de puertas, páginas de peldaños y comedores nórdicos, más allá del claim, del `updatedAt` y de la línea de enlace indicada. Sin páginas por ciudad, closet, acústica, granero, pasamanos, `/ads/*` ni `/sitelink/*`.
+
 ## 2026-10-17: Cluster de puertas
 
 Solo landings y guía de puertas. No se tocó el claim «desde 2001» / «Desde 2001» de `/puertas-a-medida`.
@@ -104,6 +142,8 @@ Lote 15 (elegir-sillas, Hairpin, Ferrara, Cantabria, Nórdica). Lote 14 (puertas
 - Footer (todas las páginas): «31 años creando…» → **«Desde 2001 creando…»**.
 - No se inventaron años, plazos ni garantías.
 - Residual fuera de este lote: `FabricaVideo` (home) sigue con «31 años». No es la landing ni el footer.
+
+**Corrección (Lote 17, 2026-10-17):** este claim quedó escrito aquí, pero no se publicó. En producción seguían el footer («31 años creando…»), el highlight de `/muebles-a-medida` («Más de 30 años»), el video de la home («31 años») y `/muebles-chillan` («Más de 20 años»). El arreglo real está en el Lote 17.
 
 ### 2. /guias/elegir-sillas-madera-comedor
 

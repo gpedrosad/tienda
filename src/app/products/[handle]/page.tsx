@@ -22,6 +22,7 @@ import {
   WARRANTY_MONTHS,
 } from "@/lib/seo";
 import { InlineLinkedText, plainTextFromInlineLinks } from "@/lib/inline-links";
+import { isDiningTableId, showsCoffeeTableGuide } from "@/lib/mesa-groups";
 import { getProductSeo } from "@/lib/product-seo";
 import {
   buildProductWhatsAppMessage,
@@ -483,6 +484,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <p className="mt-3 text-base leading-relaxed text-neutral-700">
                 <InlineLinkedText text={productDescription} />
               </p>
+              {isDiningTableId(product.id) ? (
+                <p className="mt-3 text-sm leading-relaxed">
+                  <Link
+                    href="/mesas-de-comedor-a-medida"
+                    className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+                  >
+                    ¿Necesitas otra medida? Mesas de comedor a medida
+                  </Link>
+                </p>
+              ) : null}
+              {showsCoffeeTableGuide(product.id) ? (
+                <p className="mt-3 text-sm leading-relaxed">
+                  <Link
+                    href="/guias/medidas-mesa-de-centro"
+                    className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+                  >
+                    Cómo elegir la medida de una mesa de centro o mesa ratona
+                  </Link>
+                </p>
+              ) : null}
             </div>
 
             {shouldShowDetails && (

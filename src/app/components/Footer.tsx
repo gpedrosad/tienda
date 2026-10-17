@@ -10,6 +10,17 @@ import {
   collectionNavLinks,
 } from '@/lib/navigation';
 
+const doorAndStepLinks = [
+  { href: "/puertas-interiores", label: "Puertas interiores" },
+  { href: "/puertas-exteriores", label: "Puertas exteriores" },
+  { href: "/puertas-correderas", label: "Puertas correderas" },
+  { href: "/escaleras-de-madera", label: "Escaleras de madera" },
+  { href: "/peldanos-flotantes", label: "Peldaños flotantes" },
+  { href: "/guias/medidas-y-madera-puertas", label: "Medidas de puertas" },
+  { href: "/guias/medidas-peldanos-escalera", label: "Huella y contrahuella" },
+  { href: "/mesas-de-comedor-a-medida", label: "Mesas de comedor a medida" },
+];
+
 const footerContactUrl = buildWhatsAppUrl(
   buildGeneralWhatsAppMessage('footer del sitio', [
     'Quiero consultar por disponibilidad, medidas y despacho.',
@@ -42,7 +53,7 @@ export default function Footer() {
                   Artesanía en madera
                 </p>
                 <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
-                  31 años creando productos de madera con dedicación, calidad y diseño excepcional.
+                  Desde 2001 creando productos de madera con dedicación, calidad y diseño excepcional.
                 </p>
               </div>
             </div>
@@ -258,6 +269,24 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+          </div>
+
+          <div className="mt-12 border-t border-neutral-800 pt-8">
+            <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4">
+              Puertas y peldaños
+            </h3>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2">
+              {doorAndStepLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 font-light"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
