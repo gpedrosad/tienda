@@ -51,9 +51,6 @@ export const metadata: Metadata = {
   },
   openGraph: buildOpenGraphDefaults(),
   twitter: buildTwitterDefaults(),
-  alternates: {
-    canonical: "/",
-  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },

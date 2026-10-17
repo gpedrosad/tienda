@@ -33,6 +33,26 @@ export function hasProductImage(product: Product) {
   return Boolean(product.imageUrl);
 }
 
+/** Alt de una foto de producto usando solo nombre, material y medidas reales. */
+export function productImageAlt(
+  product: Product,
+  photo?: { index: number; total: number },
+) {
+  const parts = [product.name];
+  if (product.material) parts.push(product.material);
+  if (product.dimensions?.diameter) {
+    parts.push(`diámetro ${product.dimensions.diameter}`);
+  } else if (product.dimensions?.width) {
+    parts.push(`ancho ${product.dimensions.width}`);
+  }
+
+  let alt = parts.join(", ");
+  if (photo && photo.total > 1) {
+    alt += `, foto ${photo.index + 1} de ${photo.total}`;
+  }
+  return alt;
+}
+
 export function getVisibleProducts(items: Product[] = products) {
   return items.filter(hasProductImage);
 }

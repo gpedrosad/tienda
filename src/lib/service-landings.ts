@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { plainTextFromInlineLinks } from "@/lib/inline-links";
-import { absoluteUrl, buildServiceOfferSchema, SITE_NAME } from "@/lib/seo";
+import {
+  absoluteUrl,
+  buildServiceOfferSchema,
+  clampMetaDescription,
+  fitAbsoluteTitle,
+  SITE_NAME,
+} from "@/lib/seo";
 import { peldanosClusterPaths } from "@/lib/peldanos-cluster";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -89,14 +95,17 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
       }
     : { url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME };
 
+  const title = fitAbsoluteTitle(config.pageTitle);
+  const description = clampMetaDescription(config.pageDescription);
+
   return {
-    title: { absolute: config.pageTitle },
-    description: config.pageDescription,
+    title: { absolute: title },
+    description,
     alternates: { canonical: config.canonicalPath },
     ...(config.keywords ? { keywords: config.keywords } : {}),
     openGraph: {
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       url: config.canonicalPath,
       siteName: SITE_NAME,
       locale: "es_CL",
@@ -105,8 +114,8 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: config.pageTitle,
-      description: config.pageDescription,
+      title,
+      description,
       images: [shareImage],
     },
     robots: {
@@ -124,8 +133,7 @@ export function buildLandingMetadata(config: ServiceLandingConfig): Metadata {
 }
 
 function buildBreadcrumbFromLabel(config: ServiceLandingConfig) {
-  const breadcrumbName =
-    config.breadcrumbLabel ?? config.canonicalPath.replace(/^\//, "").replace(/-/g, " ");
+  const breadcrumbName = config.breadcrumbLabel ?? config.h1;
   const itemListElement: Record<string, unknown>[] = [
     { "@type": "ListItem", position: 1, name: "Inicio", item: absoluteUrl("/") },
   ];

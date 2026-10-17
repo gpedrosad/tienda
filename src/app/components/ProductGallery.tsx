@@ -6,13 +6,17 @@ import { useCallback, useEffect, useRef, useState } from "react";
 interface ProductGalleryProps {
   images: string[];
   productName: string;
+  imageAlt?: string;
 }
 
-export default function ProductGallery({ images, productName }: ProductGalleryProps) {
+export default function ProductGallery({ images, productName, imageAlt }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [zoomScale, setZoomScale] = useState(1);
   const mainTrackRef = useRef<HTMLDivElement>(null);
+  const baseAlt = imageAlt || productName;
+  const altFor = (index: number) =>
+    images.length > 1 ? `${baseAlt}, foto ${index + 1} de ${images.length}` : baseAlt;
 
   const goToSlide = useCallback((index: number) => {
     const track = mainTrackRef.current;
@@ -103,9 +107,9 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             >
               <Image
                 src={imageSrc}
-                alt={`${productName} - foto ${index + 1}`}
+                alt={altFor(index)}
                 fill
-                sizes="(max-width: 768px) 100vw, 70vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority={index === 0}
               />
@@ -134,7 +138,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               >
                 <Image
                   src={imageSrc}
-                  alt={`${productName} miniatura ${index + 1}`}
+                  alt=""
                   fill
                   sizes="96px"
                   className="object-cover"
@@ -209,7 +213,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               </span>
             <Image
               src={images[activeIndex]}
-              alt={`${productName} - ampliada ${activeIndex + 1}`}
+              alt={altFor(activeIndex)}
               fill
               sizes="100vw"
               className={`object-contain transition-transform duration-300 ${

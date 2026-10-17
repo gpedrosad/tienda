@@ -54,7 +54,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="pb-28 md:pb-32">
+    <main className="pb-28 md:pb-32">
       <HeroBanner />
 
       <section className="border-b border-neutral-200 bg-neutral-50">
@@ -181,6 +181,6 @@ export default function HomePage() {
         prefilledMessage={homeWhatsAppMessage}
         alwaysVisible
       />
-    </div>
+    </main>
   );
 }

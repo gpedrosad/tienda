@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function TinyHousePage() {
   return (
-    <div className="dlt-page">
+    <main className="dlt-page">
       <JsonLd data={[
         buildBreadcrumbSchema([{ name: "Inicio", path: "/" }, { name: "Tiny house en DLT", path: landingPath }]),
         buildFaqPageSchema(faqs),
@@ -91,6 +91,6 @@ export default function TinyHousePage() {
       <section id="preguntas" className="dlt-wrap dlt-section dlt-faq" aria-labelledby="dlt-faq-title"><h2 id="dlt-faq-title">Antes de construir,<br />resolvamos tus dudas.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
 
       <nav className="dlt-wrap dlt-related" aria-label="Complementa tu proyecto"><p>También hacemos el interior.</p><Link href="/muebles-a-medida">Muebles a medida ↗</Link><Link href="/cubiertas-a-medida">Cubiertas de madera ↗</Link><Link href="/puertas-a-medida">Puertas a medida ↗</Link><Link href="/quienes-somos">Conoce Idea Madera ↗</Link></nav>
-    </div>
+    </main>
   );
 }

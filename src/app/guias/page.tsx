@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
-import { buildBreadcrumbSchema, buildOpenGraphDefaults, buildTwitterDefaults, SITE_NAME } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildOpenGraphDefaults, buildTwitterDefaults } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: { absolute: "Guías de Muebles de Madera | Idea Madera" },

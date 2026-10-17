@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/data/products";
+import { productImageAlt } from "@/lib/catalog";
 import { buildProductWhatsAppMessage, buildWhatsAppUrl, getDefaultOrigin, formatCLP } from "@/lib/whatsapp";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
@@ -23,7 +24,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {hasProductImage ? (
           <Image
             src={product.imageUrl!}
-            alt={product.name}
+            alt={productImageAlt(product)}
             fill
             priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

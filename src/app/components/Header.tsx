@@ -107,6 +107,7 @@ export default function Header() {
                   alt="Idea Madera"
                   width={80}
                   height={80}
+                  sizes="96px"
                   className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
                     isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
                   }`}

@@ -15,7 +15,7 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 const canonicalPath = "/kit-pergola";
 const pageTitle = "Kit para Armar Pérgola de Madera 3×3 | Bases y Soportes";
 const pageDescription =
-  "Kit completo para armar pérgola de madera 3×3 pulgadas con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío Chile. Cotiza por WhatsApp.";
+  "Kit para armar pérgola de madera 3×3 con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío a Chile. Cotiza por WhatsApp.";
 
 const keywords = [
   "kit pérgola",
@@ -270,7 +270,7 @@ export default function KitPergolaPage() {
     <>
       <JsonLd data={structuredData} />
 
-      <div className="min-h-screen bg-[#111111] text-white">
+      <main className="min-h-screen bg-[#111111] text-white">
         <header className="border-b border-white/10">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
             <Link href="/" className="group">
@@ -612,7 +612,7 @@ export default function KitPergolaPage() {
         >
           <AiOutlineWhatsApp size={28} />
         </a>
-      </div>
+      </main>
     </>
   );
 }

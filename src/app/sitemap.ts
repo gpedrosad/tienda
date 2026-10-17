@@ -1,126 +1,112 @@
 import type { MetadataRoute } from "next";
 import { execSync } from "child_process";
+import { readdirSync } from "fs";
+import path from "path";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts } from "@/lib/catalog";
-import { doorGuidePath } from "@/lib/door-guide";
-import { doorLandingPaths } from "@/lib/door-landings";
-import { serviceLandingPaths } from "@/lib/service-landings";
-import { guidePaths } from "@/lib/guides";
 import { SITE_URL } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
 const ALL_PRODUCTS_HANDLE = "todos-los-productos";
+const APP_DIR = path.join(process.cwd(), "src", "app");
 
-// lastModified derivado de git log del archivo que define cada recurso (criterio: última modificación del source)
-// Para productos: git log de src/data/products.ts; para landings: src/lib/service-landings.ts; para guías: src/lib/guides.ts
-function getLastModified(filepath: string): Date | undefined {
+function gitLastModified(filepath: string): Date | undefined {
   try {
-    const timestamp = execSync(`git log --format="%at" --max-count=1 -- ${filepath}`, { encoding: 'utf-8' }).trim();
-    return timestamp ? new Date(parseInt(timestamp) * 1000) : undefined;
+    const timestamp = execSync(`git log -1 --format=%ct -- ${filepath}`, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (!timestamp) return undefined;
+    const date = new Date(Number(timestamp) * 1000);
+    return Number.isNaN(date.getTime()) ? undefined : date;
   } catch {
     return undefined;
   }
 }
 
-const productsLastMod = getLastModified('src/data/products.ts');
-const landingsLastMod = getLastModified('src/lib/service-landings.ts');
-const guidesLastMod = getLastModified('src/lib/guides.ts');
-const doorLandingsLastMod = getLastModified('src/lib/door-landings.ts');
-const doorGuideLastMod = getLastModified('src/lib/door-guide.ts');
+type DiscoveredRoute = { route: string; file: string };
+
+/** Rutas estáticas de `src/app`. Una `page.tsx` nueva entra al sitemap sin lista manual. */
+function discoverStaticRoutes(dir = APP_DIR, route = ""): DiscoveredRoute[] {
+  const entries = readdirSync(dir, { withFileTypes: true });
+  const found: DiscoveredRoute[] = [];
+  const page = entries.find((entry) => entry.isFile() && /^page\.(tsx|ts|jsx|js)$/.test(entry.name));
+
+  if (page) {
+    found.push({
+      route: route || "/",
+      file: path.relative(process.cwd(), path.join(dir, page.name)),
+    });
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    if (entry.name === "api" || entry.name === "components" || entry.name.startsWith("_")) continue;
+    if (entry.name.startsWith("(") && entry.name.endsWith(")")) {
+      found.push(...discoverStaticRoutes(path.join(dir, entry.name), route));
+      continue;
+    }
+    if (entry.name.startsWith("[") || entry.name.startsWith("@")) continue;
+    found.push(...discoverStaticRoutes(path.join(dir, entry.name), `${route}/${entry.name}`));
+  }
+
+  return found;
+}
+
+function staticMeta(route: string): Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority"> {
+  if (route === "/") return { changeFrequency: "daily", priority: 1 };
+  if (route === "/ofertas") return { changeFrequency: "weekly", priority: 0.9 };
+  if (route === "/guias") return { changeFrequency: "monthly", priority: 0.85 };
+  if (route.startsWith("/guias/")) return { changeFrequency: "monthly", priority: 0.8 };
+  if (
+    route === "/kit-pergola" ||
+    route === "/tiny-house-dlt" ||
+    route === "/comedores-nordicos" ||
+    route === "/mesas-de-centro"
+  ) {
+    return { changeFrequency: "monthly", priority: 0.85 };
+  }
+  return { changeFrequency: "monthly", priority: 0.9 };
+}
+
+function entry(
+  url: string,
+  meta: Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority">,
+  lastModified: Date | undefined,
+): MetadataRoute.Sitemap[number] {
+  return lastModified ? { url, ...meta, lastModified } : { url, ...meta };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleProducts = getVisibleProducts(products);
+  const productsLastMod = gitLastModified("src/data/products.ts");
 
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: SITE_URL,
-      changeFrequency: "daily",
-      priority: 1,
-      lastModified: landingsLastMod,
-    },
-    {
-      url: `${SITE_URL}/ofertas`,
-      changeFrequency: "weekly",
-      priority: 0.9,
-      lastModified: productsLastMod,
-    },
-    ...serviceLandingPaths.map((path) => ({
-      url: `${SITE_URL}${path}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-      lastModified: landingsLastMod,
-    })),
-    ...doorLandingPaths.map((path) => ({
-      url: `${SITE_URL}${path}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-      lastModified: doorLandingsLastMod,
-    })),
-    {
-      url: `${SITE_URL}/kit-pergola`,
-      changeFrequency: "monthly",
-      priority: 0.85,
-      lastModified: landingsLastMod,
-    },
-    {
-      url: `${SITE_URL}/tiny-house-dlt`,
-      changeFrequency: "monthly",
-      priority: 0.85,
-      lastModified: landingsLastMod,
-    },
-    {
-      url: `${SITE_URL}/comedores-nordicos`,
-      changeFrequency: "monthly",
-      priority: 0.85,
-      lastModified: landingsLastMod,
-    },
-    {
-      url: `${SITE_URL}/mesas-de-centro`,
-      changeFrequency: "weekly",
-      priority: 0.85,
-      lastModified: landingsLastMod,
-    },
-    {
-      url: `${SITE_URL}/guias`,
-      changeFrequency: "monthly",
-      priority: 0.85,
-      lastModified: guidesLastMod,
-    },
-    ...guidePaths.map((path) => ({
-      url: `${SITE_URL}${path}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-      lastModified: guidesLastMod,
-    })),
-    {
-      url: `${SITE_URL}${doorGuidePath}`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-      lastModified: doorGuideLastMod,
-    },
-  ];
+  const staticPages = discoverStaticRoutes().map(({ route, file }) =>
+    entry(route === "/" ? SITE_URL : `${SITE_URL}${route}`, staticMeta(route), gitLastModified(file)),
+  );
 
   const collectionPages: MetadataRoute.Sitemap = [
-    {
-      url: `${SITE_URL}/collections/${ALL_PRODUCTS_HANDLE}`,
-      changeFrequency: "weekly",
-      priority: 0.85,
-      lastModified: productsLastMod,
-    },
-    ...getCategoryOptions(visibleProducts).map((option) => ({
-      url: `${SITE_URL}/collections/${option.handle}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-      lastModified: productsLastMod,
-    })),
+    entry(
+      `${SITE_URL}/collections/${ALL_PRODUCTS_HANDLE}`,
+      { changeFrequency: "weekly", priority: 0.85 },
+      productsLastMod,
+    ),
+    ...getCategoryOptions(visibleProducts).map((option) =>
+      entry(
+        `${SITE_URL}/collections/${option.handle}`,
+        { changeFrequency: "weekly", priority: 0.8 },
+        productsLastMod,
+      ),
+    ),
   ];
 
-  const productPages: MetadataRoute.Sitemap = visibleProducts.map((product) => ({
-    url: `${SITE_URL}${getProductPath(product)}`,
-    changeFrequency: "weekly" as const,
-    priority: 0.75,
-    lastModified: productsLastMod,
-  }));
+  const productPages: MetadataRoute.Sitemap = visibleProducts.map((product) =>
+    entry(
+      `${SITE_URL}${getProductPath(product)}`,
+      { changeFrequency: "weekly", priority: 0.75 },
+      productsLastMod,
+    ),
+  );
 
   return [...staticPages, ...collectionPages, ...productPages];
 }

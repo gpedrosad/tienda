@@ -8,15 +8,18 @@ import {
   buildItemListSchema,
   buildOpenGraphDefaults,
   buildTwitterDefaults,
+  clampMetaDescription,
+  documentTitle,
 } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
 
-const pageTitle = "Productos destacados";
-const pageDescription =
-  "Selección de productos destacados de Idea Madera con fotografía disponible para revisar, comparar y cotizar por WhatsApp.";
+const pageTitle = documentTitle("Productos destacados");
+const pageDescription = clampMetaDescription(
+  "Selección de productos destacados de Idea Madera con fotografía disponible para revisar, comparar y cotizar por WhatsApp.",
+);
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: pageTitle },
   description: pageDescription,
   alternates: {
     canonical: "/ofertas",
