@@ -79,8 +79,8 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBackgroundClass}`}
       >
         <div className="mx-auto px-5 md:px-12 lg:px-20">
-          <div className="grid grid-cols-3 items-center h-16 md:h-20">
-            <div className="flex items-center justify-start">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center h-16 md:h-20">
+            <div className="flex min-w-0 items-center justify-start">
               <DesktopNav
                 isScrolled={isScrolled}
                 isHomePage={isHomePage}
@@ -101,14 +101,16 @@ export default function Header() {
             </div>
 
             <div className="flex items-center justify-center">
-              <Link href="/" className="transition-opacity duration-300 hover:opacity-80">
+              <Link
+                href="/"
+                className="relative block h-12 w-[4.625rem] shrink-0 transition-opacity duration-300 hover:opacity-80 md:h-14 md:w-[5.375rem]"
+              >
                 <Image
                   src="/logonegro.png"
                   alt="Idea Madera"
-                  width={80}
-                  height={80}
-                  sizes="96px"
-                  className={`w-20 h-20 md:w-24 md:h-24 object-contain ${
+                  fill
+                  sizes="86px"
+                  className={`object-contain object-center ${
                     isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
                   }`}
                   priority

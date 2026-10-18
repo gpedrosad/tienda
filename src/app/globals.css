@@ -220,6 +220,25 @@ nav button:focus-visible {
   border-radius: 2px;
 }
 
+/* Cerrado: ocultar. Desde md se ven aunque partan sin el atributo open. */
+.footer-col:not([open]) > :not(summary) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .footer-col:not([open]) > :not(summary) {
+    display: block;
+  }
+}
+
+.footer-col > summary {
+  list-style: none;
+}
+
+.footer-col > summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

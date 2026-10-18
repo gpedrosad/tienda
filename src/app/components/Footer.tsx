@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaChevronDown, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { WhatsAppAnchor } from '@/app/components/ui/WhatsAppCTA';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -23,6 +23,51 @@ const doorAndStepLinks = [
   { href: "/guias/medidas-peldanos-escalera", label: "Huella y contrahuella" },
   { href: "/mesas-de-comedor-a-medida", label: "Mesas de comedor a medida" },
 ];
+
+function FooterColumn({
+  title,
+  className,
+  children,
+}: {
+  title: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+  const [desktop, setDesktop] = React.useState(false);
+
+  useEffect(() => {
+    const details = detailsRef.current;
+    if (!details) return;
+    const media = window.matchMedia('(min-width: 768px)');
+    const sync = () => {
+      setDesktop(media.matches);
+      if (media.matches) details.open = true;
+    };
+    sync();
+    media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
+
+  return (
+    <details ref={detailsRef} className={`footer-col group ${className ?? ''}`}>
+      <summary
+        tabIndex={desktop ? -1 : 0}
+        className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 border-b border-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 md:mb-6 md:block md:min-h-0 md:cursor-default md:border-0 md:pointer-events-none"
+      >
+        <h3 className="text-xs font-light uppercase tracking-[0.15em] text-neutral-500">
+          {title}
+        </h3>
+        <FaChevronDown
+          size={10}
+          aria-hidden="true"
+          className="shrink-0 text-neutral-500 transition-transform duration-200 group-open:rotate-180 md:hidden"
+        />
+      </summary>
+      <div className="pb-5 pt-4 md:pb-0 md:pt-0">{children}</div>
+    </details>
+  );
+}
 
 const footerContactUrl = buildWhatsAppUrl(
   buildGeneralWhatsAppMessage('footer del sitio', [
@@ -61,11 +106,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Navegación rápida */}
-            <div className="lg:col-span-2">
-              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
-                Navegación
-              </h3>
+            <FooterColumn title="Navegación" className="lg:col-span-2">
               <ul className="space-y-3">
                 <li>
                   <Link 
@@ -185,13 +226,9 @@ export default function Footer() {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </FooterColumn>
 
-            {/* Colecciones */}
-            <div className="lg:col-span-2">
-              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
-                Colecciones
-              </h3>
+            <FooterColumn title="Colecciones" className="lg:col-span-2">
               <ul className="space-y-3">
                 {collectionNavLinks.map((link) => (
                   <li key={link.href}>
@@ -204,13 +241,9 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </FooterColumn>
 
-            {/* Contacto */}
-            <div className="lg:col-span-2">
-              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
-                Contacto
-              </h3>
+            <FooterColumn title="Contacto" className="lg:col-span-2">
               <ul className="space-y-3 text-sm md:text-base text-neutral-400 font-light">
                 <li>
                   <a 
@@ -237,13 +270,9 @@ export default function Footer() {
                   </span>
                 </li>
               </ul>
-            </div>
+            </FooterColumn>
 
-            {/* Redes sociales */}
-            <div className="lg:col-span-2">
-              <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4 md:mb-6">
-                Síguenos
-              </h3>
+            <FooterColumn title="Síguenos" className="lg:col-span-2">
               <div className="flex gap-4">
                 <a
                   href="https://www.facebook.com/ideamadera.cl"
@@ -273,7 +302,7 @@ export default function Footer() {
                   <AiOutlineWhatsApp size={20} aria-hidden="true" />
                 </WhatsAppAnchor>
               </div>
-            </div>
+            </FooterColumn>
           </div>
 
           <div className="mt-12 border-t border-neutral-800 pt-8">
