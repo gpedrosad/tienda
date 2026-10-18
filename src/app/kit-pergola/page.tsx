@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
-import WhatsAppCTA, { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
+import WhatsAppButton from "@/app/components/WhatsAppButton";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import {
   absoluteUrl,
   buildBreadcrumbSchema,
@@ -345,6 +345,43 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
+        <section className="border-b border-white/10">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
+            <div>
+              <h2 className="text-3xl font-light tracking-tight text-white">
+                Qué incluye el kit de uniones metálicas
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+                Uniones y fijaciones para armar 1 módulo de pérgola sobre suelo. La madera se
+                cotiza o consigue aparte según tus medidas.
+              </p>
+              <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                <Image
+                  src={systemImage}
+                  alt="Uniones metálicas para pérgola: kit completo con 4 bases, codos 90° y herrajes"
+                  width={900}
+                  height={700}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <ul className="grid content-start gap-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+              {kitIncludes.map((item) => (
+                <li
+                  key={item.title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                >
+                  <p className="text-sm font-medium text-[#d4a017]">{item.title}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-neutral-300">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <section className="border-y border-white/10 bg-[#161616]">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-3xl">
@@ -398,43 +435,6 @@ export default function KitPergolaPage() {
                 con armado simple y sin límite de expansión.
               </p>
             </div>
-          </div>
-        </section>
-
-        <section className="border-b border-white/10">
-          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
-            <div>
-              <h2 className="text-3xl font-light tracking-tight text-white">
-                Qué incluye el kit de uniones metálicas
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
-                Uniones y fijaciones para armar 1 módulo de pérgola sobre suelo. La madera se
-                cotiza o consigue aparte según tus medidas.
-              </p>
-              <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                <Image
-                  src={systemImage}
-                  alt="Uniones metálicas para pérgola: kit completo con 4 bases, codos 90° y herrajes"
-                  width={900}
-                  height={700}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  loading="lazy"
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-            </div>
-
-            <ul className="grid content-start gap-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-              {kitIncludes.map((item) => (
-                <li
-                  key={item.title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
-                >
-                  <p className="text-sm font-medium text-[#d4a017]">{item.title}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-neutral-300">{item.description}</p>
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
@@ -540,20 +540,29 @@ export default function KitPergolaPage() {
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
             <h2 className="text-3xl font-light tracking-tight">Preguntas frecuentes</h2>
             <div className="mt-8 border-t border-white/10">
-              {faqItems.map((item) => (
-                <article key={item.question} className="border-b border-white/10 py-5">
-                  <h3 className="text-lg font-medium text-white">{item.question}</h3>
+              {faqItems.map((item, index) => (
+                <details
+                  key={item.question}
+                  className="group border-b border-white/10 py-5"
+                  open={index === 0}
+                >
+                  <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 rounded-sm text-lg font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#161616] [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-lg font-medium">{item.question}</h3>
+                    <span aria-hidden="true" className="mt-1 text-neutral-400 transition-transform group-open:rotate-45 motion-reduce:transition-none">
+                      +
+                    </span>
+                  </summary>
                   <p className="mt-2 text-sm leading-relaxed text-neutral-300 md:text-base">
                     {item.answer}
                   </p>
-                </article>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
         <section className="border-t border-white/10 bg-[#0c0c0c]">
-          <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+          <div className="mx-auto max-w-6xl px-4 pt-14 pb-28 md:px-6 md:pt-16 md:pb-32">
             <div className="rounded-3xl border border-[#d4a017]/30 bg-gradient-to-br from-[#1a1608] to-[#111111] p-7 md:p-10">
               <h2 className="text-2xl font-light tracking-tight md:text-3xl">
                 Cotiza tu kit pérgola por WhatsApp
@@ -594,22 +603,18 @@ export default function KitPergolaPage() {
               </Link>
             </nav>
 
-            <p className="mt-6 text-center text-xs text-neutral-500">
+            <p id="footer-creditos" className="mt-6 text-center text-xs text-neutral-500">
               Kit pérgola modular · Idea Madera · Chile
             </p>
           </div>
         </section>
-
-        <WhatsAppAnchor
-          href={whatsappHref}
-          placement="kit_pergola_fab"
-          productTitle="Kit pérgola"
-          aria-label="Cotizar kit pérgola por WhatsApp"
-          className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-neutral-950 shadow-lg shadow-black/40 transition hover:scale-105 hover:bg-[#1ebe57] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 md:bottom-8 md:right-8"
-        >
-          <AiOutlineWhatsApp size={28} aria-hidden="true" />
-        </WhatsAppAnchor>
       </main>
+
+      <WhatsAppButton
+        productTitle="Kit pérgola"
+        prefilledMessage={whatsappMessage}
+        buttonLabel="Cotizar por WhatsApp"
+      />
     </>
   );
 }

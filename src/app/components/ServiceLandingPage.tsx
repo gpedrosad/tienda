@@ -10,6 +10,7 @@ import {
   buildLandingWhatsAppHref,
   buildLandingWhatsAppMessage,
   type LandingImage,
+  type LandingRelatedLink,
   type ServiceLandingConfig,
 } from "@/lib/service-landings";
 import { ALL_PRODUCTS_COLLECTION_PATH } from "@/lib/navigation";
@@ -49,6 +50,23 @@ function lastPortraitGalleryIndex(images: LandingImage[]) {
   return -1;
 }
 
+function RelatedLinkGrid({ links }: { links: LandingRelatedLink[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {links.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors"
+        >
+          <p className="text-sm font-medium text-neutral-900">{link.title}</p>
+          <p className="mt-1 text-sm text-neutral-600">{link.description}</p>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 interface ServiceLandingPageProps {
   config: ServiceLandingConfig;
 }
@@ -57,6 +75,11 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
   const whatsappHref = buildLandingWhatsAppHref(config);
   const whatsappMessage = buildLandingWhatsAppMessage(config);
   const galleryStretchIndex = lastPortraitGalleryIndex(config.gallery ?? []);
+  const hasStats = Boolean(config.stats && config.stats.length > 0);
+  const visibleBadges = hasStats ? [] : config.badges.slice(0, 3);
+  const relatedLinks = config.relatedLinks ?? [];
+  const visibleRelatedLinks = relatedLinks.slice(0, 6);
+  const moreRelatedLinks = relatedLinks.slice(6);
 
   return (
     <>
@@ -98,23 +121,25 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 <p
                   className={
                     config.heroImage
-                      ? "mt-6 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl lg:mt-5"
-                      : "mt-5 text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl"
+                      ? "mt-6 text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl lg:mt-5"
+                      : "mt-5 text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl"
                   }
                 >
                   {config.heroParagraph}
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-2.5">
-                  {config.badges.map((badge) => (
-                    <span
-                      key={badge}
-                      className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs md:text-sm text-neutral-700"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
+                {visibleBadges.length > 0 ? (
+                  <div className="mt-5 flex flex-wrap gap-2.5">
+                    {visibleBadges.map((badge) => (
+                      <span
+                        key={badge}
+                        className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs md:text-sm text-neutral-700"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
 
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
                   <WhatsAppCTA
@@ -133,7 +158,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   )}
                 </div>
 
-                {config.stats && config.stats.length > 0 && (
+                {hasStats && config.stats ? (
                   <div className="mt-8 grid grid-cols-3 gap-3 max-w-2xl">
                     {config.stats.map((stat) => (
                       <div key={stat.label} className="text-center sm:text-left">
@@ -142,17 +167,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                       </div>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
-            </div>
-
-            <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {config.heroHighlights.map((item) => (
-                <div key={item.title} className="border border-neutral-200 rounded-xl p-4 bg-white shadow-sm">
-                  <p className="text-sm font-medium text-neutral-900">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">{item.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -187,6 +203,21 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   );
                 })}
               </ul>
+            </div>
+          </section>
+        ) : null}
+
+        {config.heroHighlights.length > 0 ? (
+          <section className="border-b border-neutral-200">
+            <div className="max-w-6xl mx-auto px-4 py-8 md:py-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {config.heroHighlights.map((item) => (
+                  <div key={item.title} className="border border-neutral-200 rounded-xl p-4 bg-white shadow-sm">
+                    <p className="text-sm font-medium text-neutral-900">{item.title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-600">{item.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         ) : null}
@@ -234,49 +265,6 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </section>
         )}
 
-        <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.sectionTitle}</h2>
-          <p className="mt-5 text-neutral-700 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {config.featureCards.map((card) => (
-              <article key={card.title} className="border border-neutral-200 rounded-2xl p-5 shadow-sm">
-                <h3 className="text-lg font-medium text-neutral-900">{card.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700 leading-relaxed">{card.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {config.extraSections?.map((section) => (
-          <section key={section.title} className="border-t border-neutral-200 bg-white">
-            <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
-                  {section.title}
-                </h2>
-                {section.paragraphs.map((paragraph) => (
-                  <p
-                    key={paragraph.slice(0, 48)}
-                    className="mt-4 text-sm leading-relaxed text-neutral-700 md:text-base"
-                  >
-                    <InlineLinkedText text={paragraph} />
-                  </p>
-                ))}
-                {section.bullets && section.bullets.length > 0 ? (
-                  <ul className="mt-5 list-disc space-y-1.5 pl-5 text-sm text-neutral-700 md:text-base">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>
-                        <InlineLinkedText text={bullet} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            </div>
-          </section>
-        ))}
-
         <section className="bg-neutral-50 border-y border-neutral-200">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
             <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.stepsTitle}</h2>
@@ -308,38 +296,48 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </div>
         </section>
 
-        {config.bottomHighlights && config.bottomHighlights.length > 0 && (
-          <section className="max-w-6xl mx-auto px-4 py-4 md:py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {config.bottomHighlights.map((item) => (
-                <article key={item.title} className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-                  <h2 className="text-xl md:text-2xl font-light tracking-tight text-neutral-900">
-                    {item.title}
-                  </h2>
-                  <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
+        <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.sectionTitle}</h2>
+          <p className="mt-5 text-neutral-700 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
 
-        {config.relatedLinks && config.relatedLinks.length > 0 && (
-          <section className="border-t border-neutral-200 bg-neutral-50">
-            <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
-              <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {config.relatedLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                    <p className="text-sm font-medium text-neutral-900">{link.title}</p>
-                    <p className="mt-1 text-sm text-neutral-600">{link.description}</p>
-                  </Link>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {config.featureCards.map((card) => (
+              <article key={card.title} className="border border-neutral-200 rounded-2xl p-5 shadow-sm">
+                <h3 className="text-lg font-medium text-neutral-900">{card.title}</h3>
+                <p className="mt-2 text-sm text-neutral-700 leading-relaxed">{card.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {config.extraSections?.map((section) => (
+          <section key={section.title} className="border-t border-neutral-200 bg-white">
+            <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
+                  {section.title}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 48)}
+                    className="mt-4 text-base leading-relaxed text-neutral-700"
+                  >
+                    <InlineLinkedText text={paragraph} />
+                  </p>
                 ))}
+                {section.bullets && section.bullets.length > 0 ? (
+                  <ul className="mt-5 list-disc space-y-1.5 pl-5 text-base text-neutral-700">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>
+                        <InlineLinkedText text={bullet} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
           </section>
-        )}
+        ))}
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <h2 className="text-3xl md:text-4xl font-light tracking-tight">Preguntas frecuentes</h2>
@@ -361,6 +359,27 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
             ))}
           </div>
         </section>
+
+        {relatedLinks.length > 0 ? (
+          <section className="border-t border-neutral-200 bg-neutral-50">
+            <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
+              <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
+              <div className="mt-5">
+                <RelatedLinkGrid links={visibleRelatedLinks} />
+              </div>
+              {moreRelatedLinks.length > 0 ? (
+                <details className="mt-4">
+                  <summary className="inline-flex min-h-11 cursor-pointer list-none items-center rounded-sm text-sm font-medium text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+                    Ver más páginas relacionadas
+                  </summary>
+                  <div className="mt-3">
+                    <RelatedLinkGrid links={moreRelatedLinks} />
+                  </div>
+                </details>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
 
         <section className="max-w-6xl mx-auto px-4 pt-0 pb-32 md:pb-36">
           <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 md:p-9 text-white">
