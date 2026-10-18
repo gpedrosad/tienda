@@ -27,6 +27,9 @@ npm run ga:report
 # GA4 — listar propiedades visibles
 npm run ga:list
 
+# Fotos: medir proporciones tras agregar o reemplazar imágenes en public/images
+npm run images:dims
+
 # QA
 npm run build
 npm run lint

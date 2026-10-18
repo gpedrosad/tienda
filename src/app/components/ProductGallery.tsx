@@ -2,11 +2,19 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import ProductImage from "@/app/components/ui/ProductImage";
+import { galleryFrameRatio, getImageDimensions } from "@/lib/image-fit";
 
 interface ProductGalleryProps {
   images: string[];
   productName: string;
   imageAlt?: string;
+}
+
+/** Evita estirar en el visor fotos de baja resolución más allá de su tamaño real. */
+function lightboxMaxSize(src: string) {
+  const size = getImageDimensions(src);
+  return size ? { maxWidth: `min(64rem, ${size[0]}px)`, maxHeight: `${size[1]}px` } : undefined;
 }
 
 export default function ProductGallery({ images, productName, imageAlt }: ProductGalleryProps) {
@@ -15,6 +23,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
   const [zoomScale, setZoomScale] = useState(1);
   const mainTrackRef = useRef<HTMLDivElement>(null);
   const baseAlt = imageAlt || productName;
+  const desktopRatio = galleryFrameRatio(images);
   const altFor = (index: number) =>
     images.length > 1 ? `${baseAlt}, foto ${index + 1} de ${images.length}` : baseAlt;
 
@@ -102,16 +111,17 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
               key={imageSrc}
               type="button"
               onClick={() => openLightbox(index)}
-              className="relative min-w-full aspect-square snap-center cursor-zoom-in sm:aspect-[4/3]"
+              className={`relative min-w-full aspect-square snap-center cursor-zoom-in overflow-hidden ${
+                desktopRatio === 1 ? "" : "sm:aspect-[4/3]"
+              }`}
               aria-label={`Ampliar foto ${index + 1} de ${productName}`}
             >
-              <Image
+              <ProductImage
                 src={imageSrc}
                 alt={altFor(index)}
-                fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                {...(index === 0 ? { priority: true as const } : { loading: "lazy" as const })}
+                frameRatio={{ base: 1, sm: desktopRatio }}
+                priority={index === 0}
               />
             </button>
           ))}
@@ -226,6 +236,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
 
           <div
             className="relative w-full max-w-5xl h-[75vh] md:h-[80vh] overflow-hidden"
+            style={lightboxMaxSize(images[activeIndex])}
             onClick={(event) => event.stopPropagation()}
           >
             <button

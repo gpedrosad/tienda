@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import ProductImage from "@/app/components/ui/ProductImage";
 import Link from "next/link";
 import { Product } from "@/data/products";
 import { productImageAlt } from "@/lib/catalog";
@@ -23,15 +23,15 @@ export default function ProductCard({ product, priority = false, cta = "whatsapp
       {/* Link envolvente para toda la tarjeta */}
       <Link href={productPath} className="block flex-grow">
         {/* Imagen del producto */}
-        <div className="relative w-full aspect-[4/3] bg-canvas overflow-hidden">
+        <div className="relative w-full aspect-square bg-canvas overflow-hidden">
         {hasProductImage ? (
-          <Image
+          <ProductImage
             src={product.imageUrl!}
             alt={productImageAlt(product)}
-            fill
             priority={priority}
+            maxCrop={0.34}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+            className="group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           />
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-canvas-deep px-5 text-center text-ink-muted">

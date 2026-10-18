@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-18
+
+- **Fotos de producto:** `ui/ProductImage` decide por foto si llena el marco o se muestra completa sobre fondo desenfocado (`src/lib/image-fit.ts`, medidas en `src/data/image-dimensions.json` vía `npm run images:dims`). Galería cuadrada en móvil; en escritorio 4:3 si la mayoría de sus fotos son horizontales. Tarjetas 4:3 → cuadradas. Visor sin estirar fotos de baja resolución.
+
 ## 2026-10-17
 
 - **UX L1–L8** (`docs/specs-ux-grok-2026-10-17.md`, Grok 4.7 High + revisión Opus): sistema de botones (`ui/Button`, `ui/WhatsAppCTA`, contraste AA, tracking en todos los wa.me); ficha con CTA en primer pantallazo, IVA incluido, retiro en taller; home 12 productos + "Ver todo"; colecciones con productos arriba; guías con tabla primero y CTA intermedio; landings sin repetición en hero; kit con sticky; nav "A medida" + Kit pérgola. Sin cambios de title/meta ni borrado de texto indexable (FAQ y bloques ocultos siguen en config).

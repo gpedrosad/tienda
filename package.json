@@ -15,7 +15,8 @@
     "gsc:inspect": "node --env-file=.env.local scripts/gsc-inspect.mjs",
     "ga:auth": "node --env-file=.env.local scripts/ga-report.mjs --auth",
     "ga:report": "node --env-file=.env.local scripts/ga-report.mjs",
-    "ga:list": "node --env-file=.env.local scripts/ga-report.mjs --list"
+    "ga:list": "node --env-file=.env.local scripts/ga-report.mjs --list",
+    "images:dims": "node scripts/image-dims.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
