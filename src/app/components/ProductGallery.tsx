@@ -128,28 +128,18 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
         </div>
 
         {images.length > 1 && (
-          <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center overflow-x-auto bg-gradient-to-t from-white via-white/85 to-transparent pt-3 sm:hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex w-max">
-              {images.map((imageSrc, index) => {
-                const isActive = index === activeIndex;
-
-                return (
-                  <button
-                    key={`dot-${imageSrc}`}
-                    type="button"
-                    onClick={() => goToSlide(index)}
-                    className="inline-flex h-11 min-w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
-                    aria-label={`Ver foto ${index + 1} de ${productName}`}
-                    aria-current={isActive ? "true" : undefined}
-                  >
-                    <span
-                      className={`block h-2 w-2 rounded-full ${
-                        isActive ? "bg-ink" : "bg-ink/25"
-                      }`}
-                    />
-                  </button>
-                );
-              })}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-ink/45 px-2 py-1.5 backdrop-blur-sm sm:hidden"
+          >
+            <div className="relative h-[3px] w-16 overflow-hidden rounded-full bg-white/35">
+              <span
+                className="absolute inset-y-0 left-0 rounded-full bg-white transition-transform duration-300 ease-out"
+                style={{
+                  width: `${100 / images.length}%`,
+                  transform: `translateX(${activeIndex * 100}%)`,
+                }}
+              />
             </div>
           </div>
         )}
