@@ -4,6 +4,9 @@ import { products, type Product } from "@/data/products";
 import { getVisibleProducts, slugifyCategory } from "@/lib/catalog";
 import { COFFEE_TABLE_WITH_SIZES, DINING_TABLE_IDS } from "@/lib/mesa-groups";
 
+/** Sillas que no son de comedor: no se combinan con mesas de comedor. */
+const NON_DINING_CHAIR_IDS = new Set(["silla-kentucky"]);
+
 interface RelatedProductsProps {
   currentProductId: string;
   category: string;
@@ -31,7 +34,7 @@ function selectRelated(current: Product | undefined, category: string) {
     };
   }
 
-  if (current?.category === "Sillas") {
+  if (current?.category === "Sillas" && !NON_DINING_CHAIR_IDS.has(current.id)) {
     return {
       title: "Combínala con",
       subtitle: "Mesas de comedor para acompañar esta silla.",

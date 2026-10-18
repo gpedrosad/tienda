@@ -31,7 +31,6 @@ const keywords = [
 const NORDIC_PRODUCT_IDS = [
   "mesa-nordica",
   "silla-milan-lenga",
-  "silla-kentucky",
   "banca-capri",
   "banca-capri-negra",
   "banca-griega",

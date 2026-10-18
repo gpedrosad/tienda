@@ -7,7 +7,7 @@
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
 - **Última tanda código:** 2026-10-17 (lotes 11–17 + UX landings, 11→17 oct) → [CHANGELOG.md](./CHANGELOG.md)
 - **Última medición GSC:** 2026-10-17 → `docs/gsc-informe-2026-10-17.md` (20 sep→17 oct, serie hasta 15 oct: 224 clics · 10.076 imp · CTR 2,22% · pos. 9,0 · no marca 1,29%). Es **línea base** de los lotes 11–17. Revisión: `docs/seo-revision-2026-10-17.md`. Anterior: 2026-09-06 (201 · 9.698 · 2,07% · 9,6). Histórico ago: [EVAL.md](./EVAL.md)
-- **Titles congelados hasta ~5 nov:** veladores, guía medidas comedor, mesa-tripode-ratona, puertas-a-medida, silla-kentucky, guía sillas
+- **Titles congelados hasta ~5 nov:** veladores, guía medidas comedor, mesa-tripode-ratona, puertas-a-medida, guía sillas. `silla-kentucky` se corrigió el 2026-10-18 (no es de comedor: silla de descanso) → medir desde ~1 nov
 - **Backlog:** [NEXT.md](./NEXT.md)
 
 ## Snapshot GSC 2026-08-04 (28d: 7 jul → 4 ago)

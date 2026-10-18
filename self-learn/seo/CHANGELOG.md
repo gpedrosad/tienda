@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-18
 
+- **Silla Kentucky no es de comedor** (confirmado por el dueño): ficha, seoTitle/meta y features como silla de descanso de listones; fuera de `/comedores-nordicos`, de la guía de sillas de comedor y de la meta de `/collections/sillas`; relacionados ya no ofrecen mesas de comedor (`NON_DINING_CHAIR_IDS`). Rompe el congelamiento de su title a propósito (dato falso).
 - **Fotos de producto:** `ui/ProductImage` decide por foto si llena el marco o se muestra completa sobre fondo desenfocado (`src/lib/image-fit.ts`, medidas en `src/data/image-dimensions.json` vía `npm run images:dims`). Galería cuadrada en móvil; en escritorio 4:3 si la mayoría de sus fotos son horizontales. Tarjetas 4:3 → cuadradas. Visor sin estirar fotos de baja resolución.
 
 ## 2026-10-17

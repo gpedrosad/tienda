@@ -602,7 +602,7 @@ export const elegirSillasGuideConfig: GuideConfig = {
       title: "Cuántas sillas necesitas según el tamaño de la mesa",
       content: [
         "Cada comensal necesita al menos 60 cm de ancho en el borde de la mesa para usar cubiertos y platos sin chocar con el vecino. Si quieres más comodidad, deja 70 cm por persona.",
-        "Cuando ya tienes el largo, puedes ver sillas de madera para comedor en la [colección de sillas](/collections/sillas). La [Silla Kentucky](/products/silla-kentucky) es de madera maciza con respaldo firme; la [Silla Milán Lenga](/products/silla-milan-lenga) es un modelo liviano en lenga.",
+        "Cuando ya tienes el largo, puedes ver sillas de madera para comedor en la [colección de sillas](/collections/sillas). La [Silla Milán Lenga](/products/silla-milan-lenga) es un modelo liviano en lenga.",
       ],
       bullets: [
         "Mesa de 120×80 cm: 4 sillas (2 por lado largo)",
@@ -674,11 +674,6 @@ export const elegirSillasGuideConfig: GuideConfig = {
       href: "/collections/sillas",
       title: "Sillas de madera",
       description: "Explora modelos de sillas de comedor con foto y precio.",
-    },
-    {
-      href: "/products/silla-kentucky",
-      title: "Silla Kentucky",
-      description: "Silla de comedor de madera maciza con respaldo firme.",
     },
     {
       href: "/products/silla-milan-lenga",

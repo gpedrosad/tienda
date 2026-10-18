@@ -119,27 +119,27 @@ export const products: Product[] = [
   },
   {
     id: "silla-kentucky",
-    updatedAt: "2026-09-06",
+    updatedAt: "2026-10-18",
     name: "Silla Kentucky",
     price: 279000,
     category: "Sillas",
     imageUrl: "/images/silla-kentucky-1.jpg",
     shortPitch:
-      "Silla Kentucky de madera para comedor: respaldo firme, estructura maciza y terminación artesanal.",
+      "Silla Kentucky de madera: silla de descanso reclinada, de listones y estructura maciza, con terminación artesanal.",
     description:
-      "La Silla Kentucky es una silla de madera para comedor, fabricada en Chillán. Cuesta $279.000, tiene respaldo firme y sirve en mesas nórdicas o tradicionales. Cotiza cantidad y terminación por WhatsApp; despachamos a todo Chile.",
+      "La Silla Kentucky es una silla de descanso de listones de madera, reclinada, fabricada en Chillán. Cuesta $279.000 y viene en barniz natural o negro. Cotiza cantidad y terminación por WhatsApp; retiro en taller o envío a todo Chile.",
     features: [
-      "Silla de comedor de madera",
-      "Respaldo firme para uso diario",
+      "Silla de descanso reclinada",
+      "Listones de madera maciza",
       "Terminación barniz natural o negro",
       "Fabricación en Chillán",
     ],
     material: "Madera maciza",
     finish: "Barniz natural o negro",
     productionDays: 15,
-    seoTitle: "Silla Kentucky de madera para comedor",
+    seoTitle: "Silla Kentucky de madera | Silla de descanso",
     seoDescription:
-      "Silla Kentucky de madera para comedor, $279.000. Fabricada en Chillán, con envío a todo Chile. Cotiza cantidad y terminación por WhatsApp.",
+      "Silla Kentucky de madera maciza, reclinada y de listones, $279.000. Fabricada en Chillán; retiro en taller o envío a todo Chile. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-comedor-tripode",
