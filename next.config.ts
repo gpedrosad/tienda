@@ -162,13 +162,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blogs",
+        destination: "/guias",
+        permanent: true,
+      },
+      {
         source: "/blogs/:path*",
-        destination: "/",
+        destination: "/guias",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "/guias",
         permanent: true,
       },
       {
         source: "/blog/:path*",
-        destination: "/",
+        destination: "/guias",
         permanent: true,
       },
       {

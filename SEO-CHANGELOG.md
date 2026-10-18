@@ -1,5 +1,73 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-18 — Lote 18
+
+Conversión y limpieza del plan del 17 oct (tareas 1.2, 1.3, 1.5 y 1.8) más dos regresiones del commit de la Silla Kentucky. Sin datos de negocio nuevos. Sin URLs nuevas. Titles congelados (veladores, guía de medidas, ratona, hub de puertas, guía de sillas y Kentucky) no se reescribieron.
+
+### 1. /collections/sillas
+
+Title y H1 sin cambio: `Sillas de Madera para Comedor | Chile` y «Sillas de madera para comedor». La meta y la intro dejaban la colección como si todas las sillas fueran de comedor. En el catálogo con foto hay dos: Milán Lenga (comedor, lenga, fabricada en Chile) y Kentucky (silla de descanso reclinada, listones de madera maciza, Chillán, barniz natural o negro). Esos datos salen de `src/data/products.ts`.
+
+- **Meta:** `Sillas de madera para comedor: Milán Lenga y más modelos en madera maciza. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.` (146) → `Sillas de comedor (Milán Lenga, en lenga) y Kentucky, silla de descanso reclinada de listones. Fabricadas en Chile. Cotiza por WhatsApp.` (136).
+- **Intro:** el párrafo que hablaba de «sillas de madera maciza para comedor» y de «cada modelo incluye foto, precio y dimensiones» → «El catálogo incluye sillas de comedor y una silla de descanso…» con Milán Lenga y Kentucky en los términos de sus fichas.
+- `updatedAt`: `2026-10-11` → `2026-10-18`.
+
+### 2. lastmod del sitemap
+
+Solo estas rutas. El resto queda con la fecha que ya tenía.
+
+| URL | Antes | Ahora | Motivo |
+|---|---|---|---|
+| `/comedores-nordicos` | 2026-10-12 | 2026-10-18 | El commit Kentucky editó la página y no movió la fecha |
+| `/guias/elegir-sillas-madera-comedor` | 2026-10-15 | 2026-10-18 | El mismo commit sacó a Kentucky de la guía |
+| `/collections/sillas` | 2026-10-11 | 2026-10-18 | Intro y meta de este lote |
+| `/kit-pergola` | 2026-10-17 | 2026-10-18 | Title, meta y H1 de este lote |
+| `/guias/medidas-mesa-comedor` | 2026-10-17 | 2026-10-18 | CTA y enlaces de este lote |
+| `/mesas-de-centro` | 2026-10-17 | 2026-10-18 | Botón del hero y enlace relacionado |
+
+La ficha Kentucky ya tenía `updatedAt` `2026-10-18`. No se volvió a tocar.
+
+### 3. /kit-pergola
+
+El title absoluto, la meta y el H1 pasan a decir lo que la página ya dice: kit de uniones metálicas y bases para una pérgola de madera 3×3 (75×75 mm), sin las maderas. Queries de referencia del encargo: «uniones para pergolas» ~24 imp, «base pergola» ~20, «kit soporte pergola» 19, «kit pergola madera» 62, todas con 0 clics.
+
+- **Title:** `Kit para Armar Pérgola de Madera 3×3 | Bases y Soportes` (55) → `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` (55).
+- **Meta:** `Kit para armar pérgola de madera 3×3 con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío a Chile. Cotiza por WhatsApp.` (146) → `Kit de uniones metálicas y bases para pérgola de madera 3×3 (75×75 mm), sin maderas. Soportes para atornillar o cementar. Cotiza por WhatsApp.` (142).
+- **H1:** `Kit de pérgola de madera con uniones metálicas` (46) → `Kit de uniones metálicas para pérgola 3×3, sin maderas` (54).
+
+El cuerpo, las FAQ y el schema Service no se reescribieron. Open Graph y la WebPage usan el title y la meta nuevos.
+
+### 4. /guias/medidas-mesa-comedor
+
+Title y meta sin cambio (`Medidas de Mesa de Comedor | Personas y Altura 75 cm`). El CTA intermedio de WhatsApp ya estaba después de la tabla (UX L5, `leadSectionIndex`). Este lote lo deja pegado a la tabla, con el helper `WhatsAppCTA` y el rótulo «Cotizar por WhatsApp». En el mismo bloque, dos bullets con `InlineLinkedText`:
+
+- [colección de mesas](/collections/mesas)
+- [mesas de comedor a medida](/mesas-de-comedor-a-medida)
+
+El texto del segundo bullet repite el enlace relacionado que ya decía «si la tabla no alcanza, cotiza el largo o el diámetro». Las otras guías no cambian el orden de sus bullets.
+
+### 5. /mesas-de-centro
+
+Title y meta sin cambio.
+
+- Botón del hero: «Ver todas las mesas» (iba a `/collections/mesas`) → «Cotizar mesa ratona», WhatsApp con el mensaje que la página ya usaba (`placement="mesas_centro_hero"`).
+- Enlace relacionado: `/comedores-nordicos` («Comedores nórdicos») → `/products/mesa-tripode-ratona` («Mesa ratona Trípode», 100×60×40 cm). Esas medidas están en la ficha.
+
+### 6. Redirects 308
+
+En `next.config.ts`, `permanent: true` (308 en Next.js 15). No hay rutas `app/blog` ni `app/blogs`.
+
+| Origen | Antes | Ahora |
+|---|---|---|
+| `/blog` | (sin regla propia) | `/guias` |
+| `/blog/:path*` | `/` | `/guias` |
+| `/blogs` | (sin regla propia) | `/guias` |
+| `/blogs/:path*` | `/` | `/guias` |
+
+### No se tocó
+
+Pixel, GTM, GA y CAPI. Titles de veladores, la guía de medidas, la ficha ratona, el hub de puertas, la guía de sillas y Kentucky. Antigüedad «desde 1993 / 33 años». El sistema visual y los commits UX L2–L8. Sin páginas por ciudad ni URLs nuevas.
+
 ## 2026-10-17 — Lote 17
 
 ### 1. Antigüedad: solo «desde 1993 / 33 años»

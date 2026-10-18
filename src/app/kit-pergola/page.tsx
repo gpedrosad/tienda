@@ -13,9 +13,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/kit-pergola";
-const pageTitle = "Kit para Armar Pérgola de Madera 3×3 | Bases y Soportes";
+const pageTitle = "Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas";
 const pageDescription =
-  "Kit para armar pérgola de madera 3×3 con uniones metálicas, bases atornillar o cementar, codos 90° y herrajes. Envío a Chile. Cotiza por WhatsApp.";
+  "Kit de uniones metálicas y bases para pérgola de madera 3×3 (75×75 mm), sin maderas. Soportes para atornillar o cementar. Cotiza por WhatsApp.";
 
 const keywords = [
   "kit pérgola",
@@ -308,7 +308,7 @@ export default function KitPergolaPage() {
               1 módulo · Sobre suelo · No incluye maderas
             </p>
             <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-white md:text-6xl font-semibold">
-              Kit de pérgola de madera con uniones metálicas
+              Kit de uniones metálicas para pérgola 3×3, sin maderas
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-canvas/80 md:text-lg">
               Construye tu propia pérgola de madera con este kit de uniones metálicas y herrajes

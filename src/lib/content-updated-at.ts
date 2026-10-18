@@ -59,10 +59,10 @@ const PAGE_FILE_UPDATED_AT: Record<string, string> = {
   "/": "2026-10-17",
   "/ofertas": "2026-10-17",
   "/guias": "2026-10-17",
-  "/kit-pergola": "2026-10-17",
+  "/kit-pergola": "2026-10-18",
   "/tiny-house-dlt": "2026-10-17",
-  "/comedores-nordicos": "2026-10-12",
-  "/mesas-de-centro": "2026-10-17",
+  "/comedores-nordicos": "2026-10-18",
+  "/mesas-de-centro": "2026-10-18",
 };
 
 const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDate?: string }> = [

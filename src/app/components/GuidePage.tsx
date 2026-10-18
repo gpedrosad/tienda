@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import ProductCard from "@/app/components/ProductCard";
@@ -35,7 +35,60 @@ function featuredProductsFor(ids: string[] | undefined) {
     .slice(0, 3);
 }
 
-function GuideSectionBlock({ section }: { section: GuideSection }) {
+function GuideBullets({ bullets }: { bullets: string[] }) {
+  return (
+    <ul className="my-4 list-disc space-y-2 pl-5 marker:text-wood">
+      {bullets.map((bullet, bIdx) => (
+        <li key={bIdx} className="text-base leading-relaxed text-ink/80">
+          <InlineLinkedText text={bullet} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function GuideTable({ table }: { table: NonNullable<GuideSection["table"]> }) {
+  return (
+    <div className="my-6 overflow-x-auto">
+      <table className="w-full border-collapse">
+        <thead>
+          <tr className="border-b border-line bg-canvas">
+            {table.headers.map((header, hIdx) => (
+              <th
+                key={hIdx}
+                className="px-4 py-3 text-left text-sm font-medium text-ink"
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {table.rows.map((row, rIdx) => (
+            <tr key={rIdx} className="border-b border-line">
+              {row.map((cell, cIdx) => (
+                <td key={cIdx} className="px-4 py-3 text-sm text-ink/80">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function GuideSectionBlock({
+  section,
+  afterTable,
+}: {
+  section: GuideSection;
+  afterTable?: ReactNode;
+}) {
+  const bullets = section.bullets ? <GuideBullets bullets={section.bullets} /> : null;
+  const table = section.table ? <GuideTable table={section.table} /> : null;
+
   return (
     <section className="mb-10">
       <h2 className="font-display mb-4 text-2xl tracking-tight text-ink md:text-3xl font-semibold">
@@ -46,43 +99,16 @@ function GuideSectionBlock({ section }: { section: GuideSection }) {
           <InlineLinkedText text={paragraph} />
         </p>
       ))}
-      {section.bullets && (
-        <ul className="my-4 list-disc space-y-2 pl-5 marker:text-wood">
-          {section.bullets.map((bullet, bIdx) => (
-            <li key={bIdx} className="text-base leading-relaxed text-ink/80">
-              <InlineLinkedText text={bullet} />
-            </li>
-          ))}
-        </ul>
-      )}
-      {section.table && (
-        <div className="my-6 overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b border-line bg-canvas">
-                {section.table.headers.map((header, hIdx) => (
-                  <th
-                    key={hIdx}
-                    className="px-4 py-3 text-left text-sm font-medium text-ink"
-                  >
-                    {header}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {section.table.rows.map((row, rIdx) => (
-                <tr key={rIdx} className="border-b border-line">
-                  {row.map((cell, cIdx) => (
-                    <td key={cIdx} className="px-4 py-3 text-sm text-ink/80">
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      {afterTable ? (
+        <>
+          {table}
+          {afterTable}
+        </>
+      ) : (
+        <>
+          {bullets}
+          {table}
+        </>
       )}
     </section>
   );
@@ -92,17 +118,20 @@ function GuideMidCta({
   href,
   title,
   productTitle,
+  bullets,
 }: {
   href: string;
   title: string;
   productTitle: string;
+  bullets?: string[];
 }) {
   return (
     <div className="not-prose mb-10 rounded-2xl border border-line bg-canvas p-6 md:p-8">
       <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">{title}</h2>
+      {bullets && bullets.length > 0 ? <GuideBullets bullets={bullets} /> : null}
       <WhatsAppCTA
         href={href}
-        label="Escríbenos por WhatsApp"
+        label="Cotizar por WhatsApp"
         placement="guide_mid"
         productTitle={productTitle}
         className="mt-5"
@@ -199,14 +228,19 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
           <div className="prose prose-neutral max-w-none">
             {orderedSections.map(({ section, index }) => (
               <Fragment key={index}>
-                <GuideSectionBlock section={section} />
-                {showBridge(index) && whatsappHref && config.ctaTitle && (
-                  <GuideMidCta
-                    href={whatsappHref}
-                    title={config.ctaTitle}
-                    productTitle={config.h1}
-                  />
-                )}
+                <GuideSectionBlock
+                  section={section}
+                  afterTable={
+                    showBridge(index) && whatsappHref && config.ctaTitle ? (
+                      <GuideMidCta
+                        href={whatsappHref}
+                        title={config.ctaTitle}
+                        productTitle={config.h1}
+                        bullets={section.bullets}
+                      />
+                    ) : undefined
+                  }
+                />
                 {showBridge(index) && <GuideFeaturedProducts items={featuredProducts} />}
               </Fragment>
             ))}
