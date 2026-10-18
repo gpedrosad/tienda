@@ -27,6 +27,10 @@ export type GuideConfig = {
       rows: string[][];
     };
   }>;
+  /** Si está, esa sección (la tabla de respuesta) se renderiza primero. El resto conserva su orden. */
+  leadSectionIndex?: number;
+  /** Ids del catálogo a mostrar tras el CTA intermedio. Solo entran los que tienen foto. */
+  featuredProductIds?: string[];
   faqs?: GuideFaq[];
   relatedLinks?: GuideRelatedLink[];
   ctaTitle?: string;
@@ -87,6 +91,17 @@ export function buildGuideMetadata(config: GuideConfig): Metadata {
 export function guideDates(config: Pick<GuideConfig, "updatedAt" | "updatedDate">) {
   const dates = [config.updatedAt, config.updatedDate].filter((date): date is string => Boolean(date)).sort();
   return { published: dates[0], modified: dates[dates.length - 1] };
+}
+
+/** ISO YYYY-MM-DD → "17 de octubre de 2026", anclado al mediodía UTC para no correr el día en Chile. */
+export function formatGuideUpdatedDate(isoDate: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
+  if (!match) return isoDate;
+  const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 15));
+  return new Intl.DateTimeFormat("es-CL", {
+    dateStyle: "long",
+    timeZone: "America/Santiago",
+  }).format(date);
 }
 
 export function buildGuideSchemaGraph(config: GuideConfig) {
@@ -295,6 +310,8 @@ export const medidasMesaGuideConfig: GuideConfig = {
   intro:
     "La mesa de comedor es el centro de reunión de la casa. Elegir el tamaño correcto asegura que todos coman cómodos y que el espacio fluya sin apreturas. Esta guía te ayuda a calcular las medidas ideales según la cantidad de personas y el espacio disponible.",
   updatedDate: "2026-10-05",
+  leadSectionIndex: 1,
+  featuredProductIds: ["mesa-nordica", "mesa-comedor-niza", "mesa-comedor-cantabria"],
   sections: [
     {
       title: "Espacio mínimo por persona",
