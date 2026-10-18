@@ -114,13 +114,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   sillas: {
-    updatedAt: "2026-10-11",
+    updatedAt: "2026-10-18",
     h1: "Sillas de madera para comedor",
     metadataTitle: "Sillas de Madera para Comedor | Chile",
     description:
-      "Sillas de madera para comedor: Milán Lenga y más modelos en madera maciza. Fabricación artesanal en Chile. Cotiza por WhatsApp con envío nacional.",
+      "Sillas de comedor (Milán Lenga, en lenga) y Kentucky, silla de descanso reclinada de listones. Fabricadas en Chile. Cotiza por WhatsApp.",
     intro:
-      "Catálogo de sillas de madera maciza para comedor fabricadas en Chillán: diseños clásicos y contemporáneos con madera resistente y terminación artesanal. Cada modelo incluye foto, precio y dimensiones. Las sillas de madera para comedor combinan durabilidad, comodidad y estética natural. Cotizamos medidas especiales, cantidad de sillas y despacho por WhatsApp.",
+      "El catálogo incluye sillas de comedor y una silla de descanso. La Silla Milán Lenga es de madera de lenga, contemporánea y liviana, para el comedor diario, fabricada en Chile. La Silla Kentucky es una silla de descanso reclinada, de listones de madera maciza, fabricada en Chillán, con barniz natural o negro. Cotiza cantidad, terminación y despacho por WhatsApp.",
     guideTitle: "Cómo elegir sillas de madera para tu comedor",
     guideParagraphs: [
       "Al elegir sillas de comedor de madera, considera la altura del asiento (debe permitir que tus piernas queden en ángulo de 90° con los pies apoyados), el ancho (mínimo 45 cm para comodidad) y la coordinación con la mesa (altura de mesa estándar: 75 cm; altura de asiento: 45-48 cm).",

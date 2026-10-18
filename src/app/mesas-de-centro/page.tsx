@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
-import { buttonClasses } from "@/app/components/ui/Button";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import ProductCard from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
@@ -169,12 +168,13 @@ export default function MesasDeCentroPage() {
                   </Link>
                 </p>
               </div>
-              <Link
-                href="/collections/mesas"
-                className={buttonClasses({ variant: "secondary" })}
-              >
-                Ver todas las mesas
-              </Link>
+              <WhatsAppCTA
+                href={whatsappHref}
+                label="Cotizar mesa ratona"
+                placement="mesas_centro_hero"
+                productTitle="Mesas de centro y ratonas"
+                fullWidthMobile={false}
+              />
             </div>
           </div>
         </section>
@@ -278,9 +278,9 @@ export default function MesasDeCentroPage() {
                 <p className="text-sm font-medium text-ink">Cuidado de muebles de madera</p>
                 <p className="mt-1 text-xs text-ink-muted">Guía práctica para mantener tus mesas ratonas y muebles de madera.</p>
               </Link>
-              <Link href="/comedores-nordicos" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
-                <p className="text-sm font-medium text-ink">Comedores nórdicos</p>
-                <p className="mt-1 text-xs text-ink-muted">Arma tu comedor de estilo escandinavo con mesas, sillas y bancas.</p>
+              <Link href="/products/mesa-tripode-ratona" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Mesa ratona Trípode</p>
+                <p className="mt-1 text-xs text-ink-muted">Patas inclinadas, 100×60×40 cm, para living.</p>
               </Link>
               <Link href="/collections/mesas" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
                 <p className="text-sm font-medium text-ink">Mesas ratonas de madera</p>

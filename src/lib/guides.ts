@@ -291,7 +291,7 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-18",
   pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
   pageDescription:
     "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
@@ -324,6 +324,10 @@ export const medidasMesaGuideConfig: GuideConfig = {
       title: "Tabla de referencia: medidas según cantidad de personas",
       content: [
         "Usa esta tabla como guía inicial para elegir el tamaño de tu mesa de comedor según cuántas personas comen habitualmente:",
+      ],
+      bullets: [
+        "Mesas con foto y precio: [colección de mesas](/collections/mesas).",
+        "Si la tabla no alcanza, cotiza el largo o el diámetro en [mesas de comedor a medida](/mesas-de-comedor-a-medida).",
       ],
       table: {
         headers: ["Personas", "Mesa rectangular (largo × ancho)", "Mesa redonda (diámetro)"],
@@ -565,7 +569,7 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
-  updatedAt: "2026-10-15",
+  updatedAt: "2026-10-18",
   pageTitle: "Sillas de Madera para Comedor | Altura, Ancho y Cantidad",
   pageDescription:
     "Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.",
