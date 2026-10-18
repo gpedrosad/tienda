@@ -110,6 +110,8 @@ Depende de L1.
 | 2.10 | Relacionados por intención | `RelatedProducts.tsx:27-30`: si el producto está en `COFFEE_TABLE_WITH_SIZES` o `DINING_TABLE_IDS` (`src/lib/mesa-groups.ts`), elegir relacionados del mismo grupo; si es silla, mostrar mesas de comedor con título "Combínala con". Orden determinista (no pseudoaleatorio). Añadir enlace "Ver todas →" a `/mesas-de-centro`, `/collections/mesas` o la colección de la categoría. En las cards de relacionados, el CTA es `secondary` "Ver ficha" (enlace a la ficha), no WhatsApp. |
 | 2.11 | Galería móvil | `ProductGallery.tsx:105`: `aspect-square sm:aspect-[4/3]`; indicador de puntos bajo la imagen en móvil (hoy solo contador "1/4"). |
 | 2.12 | H1 desktop | `lg:text-6xl` → `lg:text-5xl`. |
+| 2.13 | Etiqueta del precio | Bajo el precio, `text-xs text-neutral-500`: **"IVA incluido"** (confirmado por el dueño 2026-10-17). |
+| 2.14 | Entrega | En trustItems reemplazar "Envíos a todo Chile" por **"Retiro en taller (Chillán) o envío a todo Chile"** (confirmado 2026-10-17). En el Accordion "Envíos": "Retiro en nuestro taller en Chillán o envío a todo Chile. El despacho se coordina según tu comuna o región al cotizar." No agregar costos ni días de despacho. |
 
 **No hacer en L2:** fusionar Accordion + FAQ (afecta schema FAQ; queda para después del 5 nov), cambiar `trustItems` "Cambios 30 días" (pendiente de negocio), mostrar tiempo/costo de despacho (pendiente de negocio).
 
@@ -209,10 +211,12 @@ Opus revisa cada diff contra estas specs y `self-learn/seo/RULES.md`, corre buil
 
 ## Pendiente de negocio (bloquea partes, no lotes)
 
+Confirmado por el dueño 2026-10-17: **precios con IVA incluido** y **retiro en taller en Chillán**.
+
+
 | Dato | Desbloquea |
 |---|---|
 | Medidas de Silla Kentucky (alto total, alto asiento, ancho, fondo) | Línea de specs y tabla en la ficha con más tráfico |
 | Política real de cambios (¿30 días aplica a muebles a pedido?) | trustItem "Cambios 30 días", Accordion y `MerchantReturnPolicy` |
-| Tiempo y costo de despacho; ¿retiro en taller? | Línea de despacho en ficha; `shippingRate`/`transitTime` del schema |
-| ¿El precio incluye IVA? ¿Es "referencia" o "desde"? | Etiqueta bajo el precio |
+| Tiempo y costo de despacho (retiro en taller: **sí**, ya en L2.14) | Línea de despacho en ficha; `shippingRate`/`transitTime` del schema |
 | Commit de `public/images/taller-idea-madera.webp` | Foto en `/muebles-chillan` y bloque de taller en la ficha |
