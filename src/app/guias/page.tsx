@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
+import { buttonClasses } from "@/app/components/ui/Button";
 import { buildBreadcrumbSchema, buildOpenGraphDefaults, buildTwitterDefaults } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -171,7 +172,7 @@ export default function GuiasPage() {
             </p>
             <Link
               href="/contacto"
-              className="mt-6 inline-block rounded-full bg-neutral-900 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800 md:text-base"
+              className={buttonClasses({ variant: "primary", className: "mt-6" })}
             >
               Ir a contacto
             </Link>

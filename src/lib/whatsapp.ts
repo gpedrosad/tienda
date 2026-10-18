@@ -7,7 +7,7 @@ export interface WhatsAppTrackingPayload {
   productTitle: string;
   productId?: string;
   productPrice?: number;
-  placement: "sticky" | "inline" | "banner" | "card";
+  placement: string;
 }
 
 export function formatCLP(price: number) {

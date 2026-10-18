@@ -3,7 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { WhatsAppAnchor } from '@/app/components/ui/WhatsAppCTA';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
 import { YEARS_SINCE_FOUNDING_LABEL } from '@/lib/founding';
 import {
@@ -219,12 +221,14 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href={footerContactUrl} 
+                  <WhatsAppAnchor
+                    href={footerContactUrl}
+                    placement="footer_phone"
+                    productTitle="Contacto"
                     className="hover:text-white transition-colors duration-300 block"
                   >
                     +569 9549 7838
-                  </a>
+                  </WhatsAppAnchor>
                 </li>
                 <li className="pt-1">
                   <span className="text-neutral-500">
@@ -246,7 +250,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                 >
                   <FaFacebookF size={16} />
                 </a>
@@ -255,19 +259,19 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                 >
                   <FaInstagram size={16} />
                 </a>
-                <a
+                <WhatsAppAnchor
                   href={footerContactUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  className="w-10 h-10 flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-400 hover:text-white transition-all duration-300"
+                  placement="footer_social"
+                  productTitle="Contacto"
+                  aria-label="Escríbenos por WhatsApp"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                 >
-                  <FaWhatsapp size={16} />
-                </a>
+                  <AiOutlineWhatsApp size={20} aria-hidden="true" />
+                </WhatsAppAnchor>
               </div>
             </div>
           </div>
@@ -297,14 +301,14 @@ export default function Footer() {
             <p>© 2026 Idea Madera. Todos los derechos reservados.</p>
             <p>
               Creado por{' '}
-              <a
+              <WhatsAppAnchor
                 href="https://wa.me/56968257817"
-                target="_blank"
-                rel="noopener noreferrer"
+                placement="footer_credit"
+                productTitle="Gonzalo Pedrosa"
                 className="underline-offset-2 transition-[color,text-decoration-color] duration-300 hover:text-white hover:underline"
               >
                 Gonzalo Pedrosa
-              </a>
+              </WhatsAppAnchor>
             </p>
             <p className="tracking-wide">Hecho con dedicación en Chile</p>
           </div>

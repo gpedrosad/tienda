@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
+import { buttonClasses } from "@/app/components/ui/Button";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import ProductCard from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
@@ -173,7 +174,7 @@ export default function MesasDeCentroPage() {
               </div>
               <Link
                 href="/collections/mesas"
-                className="inline-flex w-fit rounded-full border border-neutral-300 bg-white px-5 py-3 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900"
+                className={buttonClasses({ variant: "secondary" })}
               >
                 Ver todas las mesas
               </Link>
@@ -302,22 +303,21 @@ export default function MesasDeCentroPage() {
               Escribenos por WhatsApp para consultar precio, medidas, terminacion y despacho a tu
               comuna. Fabricamos en madera maciza con envio a todo Chile.
             </p>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
-            >
-              <AiOutlineWhatsApp size={22} />
-              Cotizar por WhatsApp
-            </a>
+              label="Cotizar por WhatsApp"
+              placement="mesas_centro_cta"
+              tone="dark"
+              productTitle="Mesas de centro y ratonas"
+              className="mt-7"
+            />
           </div>
         </section>
       </main>
 
       <WhatsappButton
         productTitle="Mesas de centro y ratonas"
-        buttonLabel="Cotizar mesa de centro"
+        buttonLabel="Cotizar por WhatsApp"
         prefilledMessage={whatsappMessage}
         alwaysVisible
       />

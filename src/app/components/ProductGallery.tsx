@@ -160,7 +160,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
         >
           <button
             type="button"
-            className="absolute top-4 right-4 md:top-6 md:right-6 h-10 w-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+            className="absolute top-4 right-4 md:top-6 md:right-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={(event) => {
               event.stopPropagation();
               closeLightbox();
@@ -174,7 +174,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
             <>
               <button
                 type="button"
-                className="absolute left-3 md:left-6 h-10 w-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                className="absolute left-3 md:left-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 onClick={(event) => {
                   event.stopPropagation();
                   goToPrevious();
@@ -185,7 +185,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
               </button>
               <button
                 type="button"
-                className="absolute right-3 md:right-6 h-10 w-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                className="absolute right-3 md:right-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 onClick={(event) => {
                   event.stopPropagation();
                   goToNext();

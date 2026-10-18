@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
+import WhatsAppCTA, { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
 import {
   absoluteUrl,
   buildBreadcrumbSchema,
@@ -269,22 +270,23 @@ export default function KitPergolaPage() {
 
       <main className="min-h-screen bg-[#111111] text-white">
         <header className="border-b border-white/10">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
             <Link href="/" className="group">
               <p className="text-[11px] uppercase tracking-[0.2em] text-[#d4a017] group-hover:text-[#e0b020]">
                 Idea Madera
               </p>
               <p className="mt-1 text-sm text-neutral-300">Kit uniones metálicas para pérgola</p>
             </Link>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-medium text-neutral-950 transition hover:bg-[#1ebe57]"
-            >
-              <AiOutlineWhatsApp size={18} />
-              WhatsApp
-            </a>
+              label="Cotizar por WhatsApp"
+              placement="kit_pergola_header"
+              size="sm"
+              tone="dark"
+              fullWidthMobile={false}
+              productTitle="Kit pérgola"
+              className="shrink-0"
+            />
           </div>
         </header>
 
@@ -332,15 +334,13 @@ export default function KitPergolaPage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
+              <WhatsAppCTA
                 href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
-              >
-                <AiOutlineWhatsApp size={22} />
-                Cotizar por WhatsApp
-              </a>
+                label="Cotizar por WhatsApp"
+                placement="kit_pergola_hero"
+                tone="dark"
+                productTitle="Kit pérgola"
+              />
             </div>
           </div>
         </section>
@@ -563,15 +563,14 @@ export default function KitPergolaPage() {
                 disponibilidad y despacho a tu comuna. Si también necesitas las maderas de 3×3, te
                 ayudamos a cotizarlas aparte.
               </p>
-              <a
+              <WhatsAppCTA
                 href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
-              >
-                <AiOutlineWhatsApp size={22} />
-                Contactar por WhatsApp
-              </a>
+                label="Cotizar por WhatsApp"
+                placement="kit_pergola_final"
+                tone="dark"
+                productTitle="Kit pérgola"
+                className="mt-7"
+              />
             </div>
 
             <nav
@@ -601,15 +600,15 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
-        <a
+        <WhatsAppAnchor
           href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          placement="kit_pergola_fab"
+          productTitle="Kit pérgola"
           aria-label="Cotizar kit pérgola por WhatsApp"
-          className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-neutral-950 shadow-lg shadow-black/40 transition hover:scale-105 hover:bg-[#1ebe57] md:bottom-8 md:right-8"
+          className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-neutral-950 shadow-lg shadow-black/40 transition hover:scale-105 hover:bg-[#1ebe57] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 md:bottom-8 md:right-8"
         >
-          <AiOutlineWhatsApp size={28} />
-        </a>
+          <AiOutlineWhatsApp size={28} aria-hidden="true" />
+        </WhatsAppAnchor>
       </main>
     </>
   );

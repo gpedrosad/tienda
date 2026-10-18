@@ -1245,7 +1245,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
   heroParagraph:
     `Somos una empresa familiar de Chillán que ${SINCE_FOUNDING} crea muebles de madera con diseño cuidadoso, construcción de calidad y venta directa. Involucrados en todo el proceso —desde el desarrollo del producto hasta la experiencia del cliente— eliminamos intermediarios para ofrecer piezas duraderas a precios accesibles, con envío a todo Chile.`,
   badges: ["Taller en Chillán", SINCE_FOUNDING_LABEL, "Envíos a todo Chile"],
-  whatsappButtonLabel: "Hablar con Idea Madera",
+  whatsappButtonLabel: "Escríbenos por WhatsApp",
   whatsappProductTitle: "Quiénes somos",
   whatsappLines: [
     "Vengo desde la página quiénes somos.",
@@ -1359,7 +1359,7 @@ export const contactoLandingConfig: ServiceLandingConfig = {
   heroParagraph:
     "¿Necesitas un proyecto específico o medidas personalizadas? Escríbenos por WhatsApp, llámanos o envíanos un correo. Todos los mensajes son atendidos directamente por nuestro equipo para darte una respuesta clara y rápida.",
   badges: ["Respuesta por WhatsApp", "Envíos a todo Chile"],
-  whatsappButtonLabel: "Escribir por WhatsApp",
+  whatsappButtonLabel: "Escríbenos por WhatsApp",
   whatsappProductTitle: "Contacto",
   whatsappLines: [
     "Vengo desde la página de contacto.",

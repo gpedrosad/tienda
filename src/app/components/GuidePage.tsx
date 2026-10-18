@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buildGuideSchemaGraph, buildGuideWhatsAppHref, guideDates, type GuideConfig } from "@/lib/guides";
 import { InlineLinkedText } from "@/lib/inline-links";
 
@@ -167,15 +167,14 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
                 {config.ctaParagraph}
               </p>
-              <a
+              <WhatsAppCTA
                 href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100 md:text-base"
-              >
-                <AiOutlineWhatsApp className="text-neutral-900" size={22} />
-                Escribir por WhatsApp
-              </a>
+                label="Escríbenos por WhatsApp"
+                placement="guide_cta"
+                tone="dark"
+                productTitle={config.h1}
+                className="mt-7"
+              />
             </div>
           </section>
         )}

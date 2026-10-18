@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
+import { buttonClasses } from "@/app/components/ui/Button";
+import WhatsAppCTA, { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
 import JsonLd from "@/app/components/JsonLd";
 import { InlineLinkedText } from "@/lib/inline-links";
 import {
@@ -116,19 +117,16 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 </div>
 
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                  <a
+                  <WhatsAppCTA
                     href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
-                  >
-                    <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
-                    {config.whatsappButtonLabel}
-                  </a>
+                    label={config.whatsappButtonLabel}
+                    placement="landing_hero"
+                    productTitle={config.whatsappProductTitle}
+                  />
                   {config.schemaType === "AboutPage" && (
                     <Link
                       href={ALL_PRODUCTS_COLLECTION_PATH}
-                      className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-900 px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-50 transition-colors"
+                      className={buttonClasses({ variant: "secondary" })}
                     >
                       Ver catálogo
                     </Link>
@@ -199,12 +197,14 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Teléfono</p>
-                  <a
+                  <WhatsAppAnchor
                     href={whatsappHref}
+                    placement="landing_phone"
+                    productTitle={config.whatsappProductTitle}
                     className="mt-2 block text-lg font-light text-neutral-900 hover:text-neutral-700"
                   >
                     {config.contactDetails.phone}
-                  </a>
+                  </WhatsAppAnchor>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Correo</p>
@@ -297,15 +297,14 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         <section className="max-w-6xl mx-auto px-4 pt-10 md:pt-12">
           <div className="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between md:p-6">
             <p className="text-base md:text-lg text-neutral-900">¿Ya tienes las medidas? Envíalas y te respondemos con la propuesta.</p>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto shrink-0 inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
-            >
-              <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
-              {config.whatsappButtonLabel}
-            </a>
+              label={config.whatsappButtonLabel}
+              placement="landing_mid"
+              productTitle={config.whatsappProductTitle}
+              fullWidthMobile={false}
+              className="w-full shrink-0 md:w-auto"
+            />
           </div>
         </section>
 
@@ -372,15 +371,14 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-white text-neutral-900 px-7 py-3 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-100 transition-colors"
-            >
-              <AiOutlineWhatsApp className="mr-2 text-neutral-900" size={20} />
-              {config.whatsappButtonLabel}
-            </a>
+              label={config.whatsappButtonLabel}
+              placement="landing_final"
+              tone="dark"
+              productTitle={config.whatsappProductTitle}
+              className="mt-6"
+            />
           </div>
         </section>
       </main>

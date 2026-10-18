@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
+import { buttonClasses } from "@/app/components/ui/Button";
 import ProductCard from "@/app/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/catalog";
 import {
@@ -92,10 +93,7 @@ export default function OfertasPage() {
                 {featuredProducts.length} productos seleccionados
               </p>
             </div>
-            <Link
-              href="/#catalogo"
-              className="inline-flex w-fit rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition-colors hover:border-neutral-900"
-            >
+            <Link href="/#catalogo" className={buttonClasses({ variant: "secondary" })}>
               Ver catálogo completo
             </Link>
           </div>

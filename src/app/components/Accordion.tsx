@@ -75,7 +75,7 @@ export default function Accordion() {
             {/* Encabezado del acordeón */}
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left focus:outline-none group"
+              className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
             >
               <div className="flex items-center">
                 {renderIcon(item.title)}

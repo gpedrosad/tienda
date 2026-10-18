@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaSearch, FaTimes } from "react-icons/fa";
+import WhatsAppCTA, { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
 import { collectionNavLinks } from "@/lib/navigation";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -93,7 +94,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <button
             ref={firstFocusableRef}
             onClick={onClose}
-            className="absolute top-5 right-5 z-[60] p-2 text-neutral-900 focus:outline-none"
+            className="absolute top-5 right-5 z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
             aria-label="Cerrar menú"
           >
             <FaTimes size={22} />
@@ -269,13 +270,15 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 }`}
                 style={{ transitionDelay: isOpen && !prefersReducedMotion ? "600ms" : "0ms" }}
               >
-                <Link
+                <WhatsAppAnchor
                   href={contactUrl}
+                  placement="mobile_nav"
+                  productTitle="Contacto"
                   onClick={onClose}
                   className="block text-3xl md:text-4xl font-light text-neutral-900 hover:text-neutral-600 transition-colors duration-300 tracking-tight"
                 >
                   Contacto
-                </Link>
+                </WhatsAppAnchor>
               </li>
             </ul>
           </nav>
@@ -284,13 +287,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <p className="text-xs md:text-sm text-neutral-500 tracking-wider uppercase font-light mb-3">
               Artesanía en madera
             </p>
-            <Link
+            <WhatsAppCTA
               href={contactUrl}
+              label="Escríbenos por WhatsApp"
+              placement="mobile_menu"
+              productTitle="Menú móvil"
               onClick={onClose}
-              className="inline-block px-6 py-2 rounded-full bg-green-600 text-white text-sm font-light hover:bg-green-700 transition-colors duration-300"
-            >
-              Escríbenos por WhatsApp
-            </Link>
+            />
           </div>
         </div>
       </div>

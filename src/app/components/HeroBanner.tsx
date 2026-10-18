@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const heroWhatsAppUrl = buildWhatsAppUrl(
@@ -42,18 +41,13 @@ function HeroBanner() {
           </p>
 
           <div className="hero-enter hero-enter-4 pt-4 md:pt-6">
-            <Link
+            <WhatsAppCTA
               href={heroWhatsAppUrl}
-              className="inline-flex items-center gap-2.5 bg-white text-neutral-900 px-7 py-3.5 md:px-8 md:py-4 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-100 transition-colors duration-200 group border border-white/20 active:scale-[0.98]"
-              style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
-            >
-              <span>Contáctanos</span>
-              <AiOutlineWhatsApp
-                size={20}
-                className="group-hover:scale-110 transition-transform duration-200"
-                style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
-              />
-            </Link>
+              label="Cotizar por WhatsApp"
+              placement="home_hero"
+              tone="dark"
+              productTitle="Inicio"
+            />
           </div>
         </div>
       </div>

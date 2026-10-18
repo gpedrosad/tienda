@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Reveal from "@/app/components/Reveal";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import { homeFaqItems } from "@/lib/seo";
 
@@ -26,7 +27,7 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
   return (
     <div className="border-b border-neutral-200 bg-white transition-colors duration-300 hover:bg-neutral-50/50">
       <button
-        className="w-full flex items-center justify-between py-5 md:py-6 text-left focus:outline-none group"
+        className="w-full flex items-center justify-between py-5 md:py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-base md:text-lg font-light text-neutral-900 tracking-tight pr-8 group-hover:text-neutral-600 transition-colors duration-300">
@@ -93,15 +94,12 @@ const FAQ = () => {
         <p className="text-sm md:text-base text-neutral-600 font-light mb-4">
           ¿No encuentras lo que buscas?
         </p>
-        <a
+        <WhatsAppCTA
           href={faqWhatsAppUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-sm md:text-base text-neutral-900 font-normal border-b border-neutral-900 hover:text-neutral-600 hover:border-neutral-600 transition-colors duration-200 pb-0.5"
-          style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
-        >
-          Contáctanos directamente
-        </a>
+          label="Escríbenos por WhatsApp"
+          placement="home_faq"
+          productTitle="Preguntas frecuentes"
+        />
       </Reveal>
     </section>
   );

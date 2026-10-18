@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/data/products";
 import { productImageAlt } from "@/lib/catalog";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buildProductWhatsAppMessage, buildWhatsAppUrl, getDefaultOrigin, formatCLP } from "@/lib/whatsapp";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 
 interface ProductCardProps {
   product: Product;
@@ -79,19 +79,17 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
       {/* Botón de WhatsApp minimalista - fuera del Link para evitar conflictos */}
       <div className="px-4 md:px-5 pb-4 md:pb-5 mt-auto">
-        <a
+        <WhatsAppCTA
           href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-neutral-900 hover:bg-neutral-800 text-white font-normal py-2.5 md:py-3 px-4 text-sm tracking-wide transition-colors duration-200 group/button relative z-10 active:scale-[0.98]"
-          style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
-        >
-          <span>{hasProductImage ? "Consultar" : "Pedir foto"}</span>
-          <AiOutlineWhatsApp 
-            size={18} 
-            className="group-hover/button:scale-110 transition-transform duration-300" 
-          />
-        </a>
+          label={hasProductImage ? "Cotizar" : "Pedir foto"}
+          placement="product_card"
+          size="sm"
+          fullWidthMobile={false}
+          className="relative z-10 w-full"
+          productTitle={product.name}
+          productId={product.handle || product.id}
+          productPrice={product.price}
+        />
       </div>
     </div>
   );

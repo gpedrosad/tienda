@@ -89,7 +89,7 @@ export default function Header() {
                 onClick={toggleMenu}
                 onPointerEnter={() => void loadMobileMenu()}
                 onFocus={() => void loadMobileMenu()}
-                className={`lg:hidden p-2 -ml-2 focus:outline-none transition-colors duration-300 ${headerTextColor} ${isMenuOpen ? "text-neutral-900" : ""}`}
+                className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 transition-colors duration-300 ${headerTextColor} ${isMenuOpen ? "text-neutral-900" : ""}`}
                 aria-label="Menú"
               >
                 {isMenuOpen ? (
@@ -121,7 +121,7 @@ export default function Header() {
                 onClick={openSearch}
                 onPointerEnter={() => void loadSearchModal()}
                 onFocus={() => void loadSearchModal()}
-                className={`p-2 focus:outline-none transition-colors duration-300 ${headerTextColor}`}
+                className={`inline-flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 transition-colors duration-300 ${headerTextColor}`}
                 aria-label="Buscar"
               >
                 <FaSearch size={18} />

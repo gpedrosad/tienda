@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import ProductCard from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
@@ -330,15 +330,14 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               Escribe por WhatsApp el modelo o las medidas, la terminación y tu comuna.
               Confirmamos plazo de fabricación y despacho.
             </p>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-neutral-950 transition hover:bg-[#1ebe57] md:text-base"
-            >
-              <AiOutlineWhatsApp size={22} />
-              Cotizar {collection.whatsappTitle.toLowerCase()}
-            </a>
+              label={`Cotizar ${collection.whatsappTitle.toLowerCase()}`}
+              placement="collection_cta"
+              tone="dark"
+              productTitle={collection.whatsappTitle}
+              className="mt-7"
+            />
           </div>
         </section>
       ) : null}

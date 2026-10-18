@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
+import { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import { ALL_PRODUCTS_COLLECTION_PATH, collectionNavLinks } from "@/lib/navigation";
 
@@ -111,14 +112,14 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                 </div>
               </div>
             ) : item.external ? (
-              <a
+              <WhatsAppAnchor
                 href={item.href!}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-2 py-2 text-xs font-light tracking-tight transition-colors duration-200 ${textColor} ${hoverColor}`}
+                placement="desktop_nav"
+                productTitle="Contacto"
+                className={`inline-flex min-h-11 items-center px-2 py-2 text-xs font-light tracking-tight transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 ${textColor} ${hoverColor}`}
               >
                 {item.label}
-              </a>
+              </WhatsAppAnchor>
             ) : (
               <Link
                 href={item.href!}

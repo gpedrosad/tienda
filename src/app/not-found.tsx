@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
+import { buttonClasses } from "@/app/components/ui/Button";
 import { buildOrganizationSchema, buildOpenGraphDefaults, buildTwitterDefaults, SITE_NAME } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -36,15 +37,12 @@ export default function NotFound() {
             catálogo o explorar nuestras colecciones.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="inline-flex w-fit rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white hover:bg-neutral-800"
-            >
+            <Link href="/" className={buttonClasses({ variant: "primary" })}>
               Ir al inicio
             </Link>
             <Link
               href="/collections/todos-los-productos"
-              className="inline-flex w-fit rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-900 hover:border-neutral-900"
+              className={buttonClasses({ variant: "secondary" })}
             >
               Ver catálogo
             </Link>

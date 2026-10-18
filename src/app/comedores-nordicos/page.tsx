@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AiOutlineWhatsApp } from "react-icons/ai";
 import JsonLd from "@/app/components/JsonLd";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import ProductCard from "@/app/components/ProductCard";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
@@ -241,15 +241,12 @@ export default function ComedoresNordicosPage() {
             </div>
 
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
-              <a
+              <WhatsAppCTA
                 href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-800 transition-colors"
-              >
-                <AiOutlineWhatsApp className="mr-2 text-emerald-400" size={20} />
-                Cotizar comedor nórdico por WhatsApp
-              </a>
+                label="Cotizar comedor nórdico por WhatsApp"
+                placement="comedores_hero"
+                productTitle="Comedor nórdico"
+              />
             </div>
 
             <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -411,15 +408,14 @@ export default function ComedoresNordicosPage() {
               <li>Fabricación artesanal en Chile.</li>
               <li>Envíos a todo Chile.</li>
             </ul>
-            <a
+            <WhatsAppCTA
               href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-white text-neutral-900 px-7 py-3 text-sm md:text-base font-medium tracking-wide hover:bg-neutral-100 transition-colors"
-            >
-              <AiOutlineWhatsApp className="mr-2 text-neutral-900" size={20} />
-              Cotizar comedor nórdico por WhatsApp
-            </a>
+              label="Cotizar comedor nórdico por WhatsApp"
+              placement="comedores_final"
+              tone="dark"
+              productTitle="Comedor nórdico"
+              className="mt-6"
+            />
           </div>
         </section>
       </main>
@@ -427,7 +423,7 @@ export default function ComedoresNordicosPage() {
       <WhatsAppButton
         productTitle="Comedor nórdico"
         prefilledMessage={whatsappMessage}
-        buttonLabel="Cotizar comedor nórdico"
+        buttonLabel="Cotizar comedor nórdico por WhatsApp"
       />
     </>
   );

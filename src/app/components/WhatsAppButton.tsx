@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { AiOutlineWhatsApp } from "react-icons/ai";
+import { buttonClasses } from "@/app/components/ui/Button";
 import { buildWhatsAppUrl, formatCLP, trackWhatsAppClick } from "@/lib/whatsapp";
 
 interface WhatsappButtonProps {
@@ -104,20 +105,30 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
             </div>
           </div>
           <button
+            type="button"
             onClick={handleWhatsappClick}
             data-fb-disable-auto-event-tracking="true"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium tracking-wide text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-[#1ebe5d] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
+            className={buttonClasses({
+              variant: "whatsapp",
+              fullWidthMobile: false,
+              className: "shrink-0",
+            })}
           >
-            <AiOutlineWhatsApp size={21} />
+            <AiOutlineWhatsApp size={20} aria-hidden="true" />
             {buttonLabel}
           </button>
         </div>
         <button
+          type="button"
           onClick={handleWhatsappClick}
           data-fb-disable-auto-event-tracking="true"
-          className="flex w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium tracking-wide text-white shadow-lg shadow-emerald-500/25 backdrop-blur-sm transition-colors hover:bg-[#1ebe5d] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 lg:hidden"
+          className={buttonClasses({
+            variant: "whatsapp",
+            fullWidthMobile: false,
+            className: "w-full lg:hidden",
+          })}
         >
-          <AiOutlineWhatsApp size={22} />
+          <AiOutlineWhatsApp size={20} aria-hidden="true" />
           {buttonLabel}
         </button>
       </div>

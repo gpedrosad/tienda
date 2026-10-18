@@ -179,7 +179,7 @@ export default function HomePage() {
       <WhatsAppButton
         productTitle="Idea Madera"
         priceLabel="Atención directa · cotiza por WhatsApp"
-        buttonLabel="Consultar por WhatsApp"
+        buttonLabel="Cotizar por WhatsApp"
         prefilledMessage={homeWhatsAppMessage}
         alwaysVisible
       />
