@@ -8,10 +8,38 @@ import HeroBanner from "@/app/components/HeroBanner";
 import ProductCard from "@/app/components/ProductCard";
 import Reveal from "@/app/components/Reveal";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
+import { buttonClasses } from "@/app/components/ui/Button";
+import Chip, { chipRowClassName } from "@/app/components/ui/Chip";
 import { products } from "@/data/products";
 import { getCategoryOptions, getVisibleProducts, sortProductsForCatalog } from "@/lib/catalog";
+import { ALL_PRODUCTS_HANDLE } from "@/lib/collection-seo";
 import { SINCE_FOUNDING } from "@/lib/founding";
 import { buildGeneralWhatsAppMessage } from "@/lib/whatsapp";
+
+const CATALOG_PREVIEW_LIMIT = 12;
+
+const homeShortcuts = [
+  {
+    href: "/muebles-chillan",
+    title: "Muebles en Chillán",
+    line: "Mesas, sillas, bancas y piezas a medida.",
+  },
+  {
+    href: "/puertas-a-medida",
+    title: "Puertas a medida",
+    line: "Interior o exterior, según tu vano.",
+  },
+  {
+    href: "/kit-pergola",
+    title: "Kit pérgola",
+    line: "Herrajes para madera de 3×3. No incluye maderas.",
+  },
+  {
+    href: "/cubiertas-a-medida",
+    title: "Cubiertas a medida",
+    line: "Mesones, barras y cubiertas de madera a medida.",
+  },
+] as const;
 
 const homeWhatsAppMessage = buildGeneralWhatsAppMessage("inicio de Idea Madera", [
   "Estoy revisando el catálogo y quiero orientación para elegir un producto.",
@@ -40,6 +68,11 @@ export default function HomePage() {
     const matchesCategory = selectedCategory === "Todas" || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+  const previewProducts = filteredProducts.slice(0, CATALOG_PREVIEW_LIMIT);
+  const activeCategory = categoryOptions.find((option) => option.category === selectedCategory);
+  const catalogHref = activeCategory
+    ? `/collections/${activeCategory.handle}`
+    : `/collections/${ALL_PRODUCTS_HANDLE}`;
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -55,12 +88,101 @@ export default function HomePage() {
   };
 
   return (
-    <main className="pb-28 md:pb-32">
+    <main className="pb-24 md:pb-32">
       <HeroBanner />
 
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between md:py-7">
-          <p className="max-w-2xl text-sm leading-relaxed text-neutral-700 md:text-base">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 py-4 md:grid-cols-4 md:gap-4 md:py-8">
+          {homeShortcuts.map((shortcut) => (
+            <Link
+              key={shortcut.href}
+              href={shortcut.href}
+              className="rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+            >
+              <p className="font-medium text-neutral-900">{shortcut.title}</p>
+              <p className="mt-1 text-sm leading-snug text-neutral-600">{shortcut.line}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section id="catalogo" className="max-w-7xl mx-auto scroll-mt-24 px-4 py-10">
+        <Reveal as="header" className="mb-8">
+          <h2 className="text-2xl font-light text-left md:text-center md:text-4xl tracking-[-0.02em] text-balance">
+            Nuestro Catálogo
+          </h2>
+        </Reveal>
+
+        <Reveal delay={80} className="mb-8 space-y-4">
+          <div className="w-full">
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-neutral-900"
+            />
+          </div>
+
+          <div className={chipRowClassName} role="group" aria-label="Filtrar por categoría">
+            <Chip active={selectedCategory === "Todas"} onClick={() => handleCategoryChange("Todas")}>
+              Todas <span className="opacity-70">({visibleProducts.length})</span>
+            </Chip>
+            {categoryOptions.map(({ category, count }) => (
+              <Chip
+                key={category}
+                active={selectedCategory === category}
+                onClick={() => handleCategoryChange(category)}
+              >
+                {category} <span className="opacity-70">({count})</span>
+              </Chip>
+            ))}
+          </div>
+        </Reveal>
+
+        <p
+          key={`${selectedCategory}-${searchTerm}-${filteredProducts.length}`}
+          className="count-animate text-neutral-600 mb-6"
+        >
+          {filteredProducts.length}{" "}
+          {filteredProducts.length === 1 ? "producto" : "productos"} encontrados
+        </p>
+
+        <div
+          key={`${selectedCategory}-${searchTerm}`}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-6"
+        >
+          {previewProducts.map((product, index) => (
+            <div
+              key={product.id}
+              className="product-enter"
+              style={{ "--i": Math.min(index, 11) } as React.CSSProperties}
+            >
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+
+        {filteredProducts.length === 0 && (
+          <Reveal className="text-center py-12">
+            <p className="text-neutral-500 text-lg">
+              No se encontraron productos que coincidan con tu búsqueda.
+            </p>
+          </Reveal>
+        )}
+
+        <div className="mt-8">
+          <Link href={catalogHref} className={buttonClasses({ variant: "secondary" })}>
+            Ver todo el catálogo
+          </Link>
+        </div>
+      </section>
+
+      <FabricaVideo />
+
+      <section className="border-t border-neutral-200">
+        <div className="mx-auto max-w-3xl px-5 py-8 md:px-12 md:py-14">
+          <p className="text-sm leading-relaxed text-neutral-700 md:text-base">
             Taller familiar en Chillán. Somos{" "}
             <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
               fábrica de muebles en Chillán
@@ -79,101 +201,9 @@ export default function HomePage() {
               mesas ratonas
             </Link>{" "}para el living.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/muebles-chillan"
-              className="inline-flex rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 hover:border-neutral-900"
-            >
-              Muebles en Chillán
-            </Link>
-            <Link
-              href="/cubiertas-a-medida"
-              className="inline-flex rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-900 hover:border-neutral-900"
-            >
-              Cubiertas a medida
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section id="catalogo" className="max-w-7xl mx-auto scroll-mt-24 px-4 py-12">
-        <Reveal as="header" className="mb-8">
-          <h2 className="text-4xl font-bold text-left md:text-center font-poppins tracking-[-0.02em] text-balance">
-            Nuestro Catálogo
-          </h2>
-        </Reveal>
-
-        <Reveal delay={80} className="mb-8 space-y-4">
-          <div className="w-full">
-            <input
-              type="text"
-              placeholder="Buscar productos..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-neutral-900"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => handleCategoryChange("Todas")}
-              className={`filter-pill px-4 py-2 rounded-full text-sm font-semibold ${
-                selectedCategory === "Todas"
-                  ? "bg-black text-white shadow-sm"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Todas <span className="opacity-70">({visibleProducts.length})</span>
-            </button>
-            {categoryOptions.map(({ category, count }) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`filter-pill px-4 py-2 rounded-full text-sm font-semibold ${
-                  selectedCategory === category
-                    ? "bg-black text-white shadow-sm"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {category} <span className="opacity-70">({count})</span>
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
-        <p
-          key={`${selectedCategory}-${searchTerm}-${filteredProducts.length}`}
-          className="count-animate text-gray-600 mb-6"
-        >
-          {filteredProducts.length}{" "}
-          {filteredProducts.length === 1 ? "producto" : "productos"} encontrados
-        </p>
-
-        <div
-          key={`${selectedCategory}-${searchTerm}`}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
-          {filteredProducts.map((product, index) => (
-            <div
-              key={product.id}
-              className="product-enter"
-              style={{ "--i": Math.min(index, 11) } as React.CSSProperties}
-            >
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-
-        {filteredProducts.length === 0 && (
-          <Reveal className="text-center py-12">
-            <p className="text-gray-500 text-lg">
-              No se encontraron productos que coincidan con tu búsqueda.
-            </p>
-          </Reveal>
-        )}
-      </section>
-
-      <FabricaVideo />
       <FAQ />
 
       <WhatsAppButton
@@ -181,7 +211,7 @@ export default function HomePage() {
         priceLabel="Atención directa · cotiza por WhatsApp"
         buttonLabel="Cotizar por WhatsApp"
         prefilledMessage={homeWhatsAppMessage}
-        alwaysVisible
+        watchSelector="#inicio-hero"
       />
     </main>
   );

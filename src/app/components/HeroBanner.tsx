@@ -1,5 +1,6 @@
 import Image from "next/image";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
+import { SINCE_FOUNDING_LABEL } from "@/lib/founding";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const heroWhatsAppUrl = buildWhatsAppUrl(
@@ -10,7 +11,7 @@ const heroWhatsAppUrl = buildWhatsAppUrl(
 
 function HeroBanner() {
   return (
-    <section className="relative bg-neutral-900 overflow-hidden min-h-[85vh] md:min-h-[90vh]">
+    <section id="inicio-hero" className="relative bg-neutral-900 overflow-hidden min-h-[70vh] md:min-h-[90vh]">
       <div className="absolute inset-0">
         <Image
           src="/hero-bg.webp"
@@ -25,10 +26,10 @@ function HeroBanner() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-start justify-end h-full min-h-[85vh] md:min-h-[90vh] px-5 pb-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20">
+      <div className="relative z-10 flex flex-col items-start justify-end h-full min-h-[70vh] md:min-h-[90vh] px-5 pb-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20">
         <div className="max-w-2xl space-y-4 md:space-y-6">
           <p className="hero-enter hero-enter-1 text-xs md:text-sm tracking-[0.2em] uppercase text-neutral-300 font-light">
-            Fabricado en Chillán · Envío a todo Chile
+            {SINCE_FOUNDING_LABEL} · Taller familiar en Chillán
           </p>
 
           <h1 className="hero-enter hero-enter-2 text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-white tracking-[-0.03em] text-balance">

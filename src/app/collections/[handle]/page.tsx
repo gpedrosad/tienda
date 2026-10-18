@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/app/components/JsonLd";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
+import Chip, { chipRowClassName } from "@/app/components/ui/Chip";
 import ProductCard from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
@@ -10,7 +11,6 @@ import {
   getCategoryByHandle,
   getCategoryOptions,
   getVisibleProducts,
-  slugifyCategory,
   sortProductsForCatalog,
 } from "@/lib/catalog";
 import {
@@ -33,6 +33,22 @@ interface CollectionPageProps {
   params: Promise<{
     handle: string;
   }>;
+}
+
+function splitFirstSentence(text: string) {
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    if (char !== "." && char !== "!" && char !== "?") continue;
+    if (char === "." && /\d/.test(text[index - 1] ?? "") && /\d/.test(text[index + 1] ?? "")) {
+      continue;
+    }
+    return {
+      lead: text.slice(0, index + 1).trim(),
+      rest: text.slice(index + 1).trim(),
+    };
+  }
+
+  return { lead: text.trim(), rest: "" };
 }
 
 function getCollection(handle: string) {
@@ -147,13 +163,16 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     ? ["Hola Idea Madera", ...collection.whatsappLines].join("\n")
     : null;
   const whatsappHref = whatsappMessage ? buildWhatsAppUrl(whatsappMessage) : null;
+  const { lead: introLead, rest: introRest } = splitFirstSentence(
+    collection.intro ?? collection.description,
+  );
 
   return (
     <>
       <JsonLd data={structuredData} />
       <main className="bg-white text-neutral-900">
       <section className="border-b border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-7xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
+        <div className="mx-auto max-w-7xl px-4 pb-6 pt-20 md:pb-14 md:pt-32">
           <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
             <Link href="/" className="hover:text-neutral-900">
               Inicio
@@ -171,49 +190,28 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 {collection.h1}
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
-                {collection.intro ?? collection.description}
+                {introLead}
               </p>
-              {collection.relatedLinks && collection.relatedLinks.length > 0 ? (
-                <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-700">
-                  {collection.relatedLinks.slice(0, 2).map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="underline underline-offset-4 hover:text-neutral-900"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
-                </p>
-              ) : null}
             </div>
           </div>
 
-          <div className="mt-7 flex flex-wrap gap-2">
-            <Link
+          <nav aria-label="Categorías" className={`mt-7 ${chipRowClassName}`}>
+            <Chip
               href={`/collections/${ALL_PRODUCTS_HANDLE}`}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                handle === ALL_PRODUCTS_HANDLE
-                  ? "bg-neutral-900 text-white"
-                  : "bg-white text-neutral-700 hover:bg-neutral-100"
-              }`}
+              active={handle === ALL_PRODUCTS_HANDLE}
             >
               Todos
-            </Link>
+            </Chip>
             {getCategoryOptions().map((option) => (
-              <Link
+              <Chip
                 key={option.category}
-                href={`/collections/${slugifyCategory(option.category)}`}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  handle === option.handle
-                    ? "bg-neutral-900 text-white"
-                    : "bg-white text-neutral-700 hover:bg-neutral-100"
-                }`}
+                href={`/collections/${option.handle}`}
+                active={handle === option.handle}
               >
                 {option.category} <span className="opacity-70">({option.count})</span>
-              </Link>
+              </Chip>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
@@ -258,6 +256,14 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         )}
       </section>
 
+      {introRest ? (
+        <section className="border-t border-neutral-200">
+          <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+            <p className="text-sm leading-relaxed text-neutral-600 md:text-base">{introRest}</p>
+          </div>
+        </section>
+      ) : null}
+
       {collection.guideTitle && collection.guideParagraphs && !collection.isEmpty ? (
         <section className="border-t border-neutral-200 bg-neutral-50">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
@@ -283,15 +289,25 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               Preguntas frecuentes
             </h2>
             <div className="mt-8 border-t border-neutral-200">
-              {collection.faqs.map((item) => (
-                <article key={item.question} className="border-b border-neutral-200 py-5">
-                  <h3 className="text-base font-medium text-neutral-900 md:text-lg">
-                    {item.question}
-                  </h3>
+              {collection.faqs.map((item, index) => (
+                <details
+                  key={item.question}
+                  className="group border-b border-neutral-200 py-5"
+                  open={index === 0}
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-sm text-base font-medium text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 md:text-lg [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-base font-medium md:text-lg">{item.question}</h3>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 text-neutral-500 transition-transform group-open:rotate-45 motion-reduce:transition-none"
+                    >
+                      +
+                    </span>
+                  </summary>
                   <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
                     {item.answer}
                   </p>
-                </article>
+                </details>
               ))}
             </div>
           </div>

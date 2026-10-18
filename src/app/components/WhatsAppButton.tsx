@@ -15,6 +15,7 @@ interface WhatsappButtonProps {
   buttonLabel?: string;
   prefilledMessage?: string;
   alwaysVisible?: boolean;
+  watchSelector?: string;
 }
 
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({
@@ -26,6 +27,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   buttonLabel = "Cotizar por WhatsApp",
   prefilledMessage,
   alwaysVisible = false,
+  watchSelector,
 }) => {
   const [isPastHero, setIsPastHero] = useState(alwaysVisible);
   const [isOverFooter, setIsOverFooter] = useState(false);
@@ -38,6 +40,20 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
       return;
     }
 
+    if (watchSelector) {
+      const target = document.querySelector(watchSelector);
+      if (!target) {
+        setIsPastHero(window.scrollY > 80);
+        return;
+      }
+
+      const observer = new IntersectionObserver(([entry]) => {
+        setIsPastHero(!entry.isIntersecting);
+      });
+      observer.observe(target);
+      return () => observer.disconnect();
+    }
+
     const handleScroll = () => {
       setIsPastHero(window.scrollY > 80);
     };
@@ -45,7 +61,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [alwaysVisible]);
+  }, [alwaysVisible, watchSelector]);
 
   useEffect(() => {
     const credit = document.getElementById("footer-creditos");
