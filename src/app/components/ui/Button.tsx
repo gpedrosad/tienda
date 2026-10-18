@@ -13,7 +13,7 @@ export function buttonClasses(opts?: {
   const tone = opts?.tone ?? "light";
   const fullWidthMobile = opts?.fullWidthMobile ?? true;
   const classes = [
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+    "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[background-color,border-color,color,box-shadow,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
   ];
 
   if (variant !== "ghost") {
@@ -21,23 +21,27 @@ export function buttonClasses(opts?: {
   }
 
   if (variant === "whatsapp") {
-    classes.push("bg-[#25D366] text-neutral-950 hover:bg-[#1ebe57] focus-visible:ring-[#25D366]");
+    classes.push(
+      "bg-[#25D366] text-ink shadow-md shadow-[#25D366]/30 hover:-translate-y-px hover:bg-[#2fe074] hover:shadow-lg hover:shadow-[#25D366]/40 active:translate-y-0 focus-visible:ring-[#25D366]"
+    );
   } else if (variant === "primary") {
-    classes.push("bg-neutral-900 text-white hover:bg-neutral-800 focus-visible:ring-neutral-900");
+    classes.push(
+      "bg-wood text-white shadow-md shadow-wood/25 hover:-translate-y-px hover:bg-wood-dark hover:shadow-lg active:translate-y-0 focus-visible:ring-wood"
+    );
   } else if (variant === "secondary") {
     classes.push(
       tone === "dark"
-        ? "border border-white/30 bg-transparent text-white hover:border-white focus-visible:ring-white"
-        : "border border-neutral-300 bg-white text-neutral-900 hover:border-neutral-900 focus-visible:ring-neutral-900"
+        ? "border border-white/30 bg-transparent text-white hover:border-white hover:bg-white/5 focus-visible:ring-white"
+        : "border border-ink/20 bg-white text-ink hover:border-ink hover:bg-canvas focus-visible:ring-ink"
     );
   } else {
     classes.push(
-      "min-h-0 px-0 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900"
+      "min-h-0 px-0 font-medium underline underline-offset-4 decoration-wood/40 hover:decoration-wood"
     );
   }
 
   if (tone === "dark") {
-    classes.push("focus-visible:ring-offset-neutral-900");
+    classes.push("focus-visible:ring-offset-ink");
   }
 
   if (variant !== "ghost" && fullWidthMobile) {

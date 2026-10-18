@@ -1,5 +1,5 @@
 {
-  "name": "shopify-headless",
+  "name": "ideamadera",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,6 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "cookies-next": "^5.1.0",
-    "isomorphic-fetch": "^3.0.0",
     "next": "^15.5.19",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

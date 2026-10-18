@@ -6,6 +6,14 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import DesktopNav from "@/app/components/DesktopNav";
+import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
+import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const headerContactUrl = buildWhatsAppUrl(
+  buildGeneralWhatsAppMessage("menú principal", [
+    "Quiero revisar opciones de muebles, medidas y despacho.",
+  ])
+);
 
 const loadMobileMenu = () => import("@/app/components/MobileMenu");
 const loadSearchModal = () => import("@/app/components/SearchModal");
@@ -20,17 +28,15 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-  const isSolidHeader = isScrolled || !isHomePage;
+  // El logo es blanco: la barra es transparente sobre el hero de la home y carbón cálido en el resto.
+  const isTransparentHeader = isHomePage && !isScrolled && !isMenuOpen;
 
-  const headerBackgroundClass = isSolidHeader
-    ? isHomePage
-      ? "bg-white/95 backdrop-blur-md shadow-sm"
-      : "bg-black/90 backdrop-blur-md shadow-sm"
-    : "bg-transparent";
+  const headerBackgroundClass = isTransparentHeader
+    ? "bg-transparent border-b border-transparent"
+    : "bg-ink/95 backdrop-blur-md border-b border-white/10 shadow-sm";
 
-  const isDarkInternalHeader = isSolidHeader && !isHomePage && !isMenuOpen;
-  const isTransparentHomeHeader = isHomePage && !isScrolled;
-  const headerTextColor = isTransparentHomeHeader || !isHomePage ? "text-white" : "text-neutral-900";
+  const iconButtonClass =
+    "inline-flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors duration-300 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
 
   const closeMenu = () => setIsMenuOpen(false);
   const toggleMenu = () => {
@@ -78,57 +84,57 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBackgroundClass}`}
       >
-        <div className="mx-auto px-5 md:px-12 lg:px-20">
-          <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center h-16 md:h-20">
-            <div className="flex min-w-0 items-center justify-start">
-              <DesktopNav
-                isScrolled={isScrolled}
-                isHomePage={isHomePage}
+        <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-10">
+          <div className="relative flex h-16 items-center justify-between gap-4 md:h-20 lg:gap-8">
+            <button
+              onClick={toggleMenu}
+              onPointerEnter={() => void loadMobileMenu()}
+              onFocus={() => void loadMobileMenu()}
+              className={`lg:hidden ${iconButtonClass}`}
+              aria-label="Menú"
+            >
+              {isMenuOpen ? (
+                <FaTimes size={22} className="md:w-6 md:h-6" />
+              ) : (
+                <FaBars size={22} className="md:w-6 md:h-6" />
+              )}
+            </button>
+
+            <Link
+              href="/"
+              className="absolute left-1/2 block h-12 w-[4.625rem] shrink-0 -translate-x-1/2 transition-opacity duration-300 hover:opacity-80 md:h-14 md:w-[5.375rem] lg:static lg:translate-x-0"
+            >
+              <Image
+                src="/logonegro.png"
+                alt="Idea Madera"
+                fill
+                sizes="86px"
+                className="object-contain object-center brightness-0 invert"
+                priority
               />
-              <button
-                onClick={toggleMenu}
-                onPointerEnter={() => void loadMobileMenu()}
-                onFocus={() => void loadMobileMenu()}
-                className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 transition-colors duration-300 ${headerTextColor} ${isMenuOpen ? "text-neutral-900" : ""}`}
-                aria-label="Menú"
-              >
-                {isMenuOpen ? (
-                  <FaTimes size={22} className="md:w-6 md:h-6" />
-                ) : (
-                  <FaBars size={22} className="md:w-6 md:h-6" />
-                )}
-              </button>
-            </div>
+            </Link>
 
-            <div className="flex items-center justify-center">
-              <Link
-                href="/"
-                className="relative block h-12 w-[4.625rem] shrink-0 transition-opacity duration-300 hover:opacity-80 md:h-14 md:w-[5.375rem]"
-              >
-                <Image
-                  src="/logonegro.png"
-                  alt="Idea Madera"
-                  fill
-                  sizes="86px"
-                  className={`object-contain object-center ${
-                    isDarkInternalHeader || isTransparentHomeHeader ? "brightness-0 invert" : ""
-                  }`}
-                  priority
-                />
-              </Link>
-            </div>
+            <DesktopNav />
 
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end gap-2">
               <button
                 onClick={openSearch}
                 onPointerEnter={() => void loadSearchModal()}
                 onFocus={() => void loadSearchModal()}
-                className={`inline-flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 transition-colors duration-300 ${headerTextColor}`}
+                className={iconButtonClass}
                 aria-label="Buscar"
               >
                 <FaSearch size={18} />
               </button>
-              <div className="w-[38px] md:w-[46px]"></div>
+              <WhatsAppCTA
+                href={headerContactUrl}
+                label="Cotizar"
+                placement="desktop_nav"
+                productTitle="Contacto"
+                size="sm"
+                fullWidthMobile={false}
+                className="hidden lg:inline-flex"
+              />
             </div>
           </div>
         </div>

@@ -110,7 +110,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
       }`}
     >
       <div className="mx-auto w-full max-w-md lg:max-w-5xl">
-        <div className="hidden lg:flex items-center justify-between gap-5 rounded-full border border-neutral-200 bg-white/95 px-5 py-3 shadow-2xl shadow-neutral-900/10 backdrop-blur">
+        <div className="hidden lg:flex items-center justify-between gap-5 rounded-full border border-line bg-white/95 px-5 py-3 shadow-2xl shadow-ink/10 backdrop-blur">
           <div className="flex min-w-0 items-center gap-3">
             {imageUrl && (
               <Image
@@ -124,8 +124,8 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
               />
             )}
             <div className="min-w-0">
-              <p className="truncate text-sm font-normal text-neutral-900">{productTitle}</p>
-              {displayPrice && <p className="text-xs text-neutral-500">{displayPrice}</p>}
+              <p className="truncate text-sm font-normal text-ink">{productTitle}</p>
+              {displayPrice && <p className="text-xs text-ink-muted">{displayPrice}</p>}
             </div>
           </div>
           <button
@@ -143,8 +143,8 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
           </button>
         </div>
         {numericPrice ? (
-          <div className="flex items-center justify-between gap-3 rounded-full border border-neutral-200 bg-white/95 py-2 pl-5 pr-2 shadow-2xl shadow-neutral-900/10 backdrop-blur lg:hidden">
-            <p className="min-w-0 truncate text-sm font-medium text-neutral-900">{numericPrice}</p>
+          <div className="flex items-center justify-between gap-3 rounded-full border border-line bg-white/95 py-2 pl-5 pr-2 shadow-2xl shadow-ink/10 backdrop-blur lg:hidden">
+            <p className="min-w-0 truncate text-sm font-medium text-ink">{numericPrice}</p>
             <button
               type="button"
               onClick={handleWhatsappClick}

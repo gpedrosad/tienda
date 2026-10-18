@@ -87,8 +87,8 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
 
   return (
     <section className="space-y-4">
-      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100 shadow-sm">
-        <div className="absolute right-3 top-3 z-10 rounded-full bg-black/65 px-2.5 py-1 text-xs text-white backdrop-blur-sm">
+      <div className="relative overflow-hidden rounded-2xl border border-line bg-canvas-deep shadow-sm">
+        <div className="absolute right-3 top-3 z-10 rounded-full bg-ink/70 px-2.5 py-1 text-xs text-white backdrop-blur-sm">
           {activeIndex + 1}/{images.length}
         </div>
 
@@ -128,13 +128,13 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
                     key={`dot-${imageSrc}`}
                     type="button"
                     onClick={() => goToSlide(index)}
-                    className="inline-flex h-11 min-w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                    className="inline-flex h-11 min-w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
                     aria-label={`Ver foto ${index + 1} de ${productName}`}
                     aria-current={isActive ? "true" : undefined}
                   >
                     <span
                       className={`block h-2 w-2 rounded-full ${
-                        isActive ? "bg-neutral-900" : "bg-neutral-300"
+                        isActive ? "bg-ink" : "bg-ink/25"
                       }`}
                     />
                   </button>
@@ -157,8 +157,8 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
                 onClick={() => goToSlide(index)}
                 className={`relative h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-xl border transition-all duration-300 ${
                   isActive
-                    ? "border-black ring-2 ring-black/20 shadow-md scale-[1.02]"
-                    : "border-neutral-200 hover:border-neutral-400"
+                    ? "border-ink ring-2 ring-ink/20 shadow-md scale-[1.02]"
+                    : "border-line hover:border-ink-muted"
                 }`}
                 aria-label={`Ver foto ${index + 1} de ${productName}`}
                 aria-current={isActive}

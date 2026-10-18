@@ -8,6 +8,16 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Paleta de marca (canales RGB para usar opacidad en Tailwind) ── */
+  --color-canvas: 247 243 238; /* #F7F3EE crema: fondos de sección */
+  --color-canvas-deep: 239 232 223; /* #EFE8DF crema hondo: fondos de foto/realce */
+  --color-ink: 31 27 22; /* #1F1B16 carbón cálido: texto y bloques oscuros */
+  --color-ink-muted: 107 97 88; /* #6B6158 texto secundario */
+  --color-line: 230 221 210; /* #E6DDD2 bordes y divisores */
+  --color-wood: 138 75 42; /* #8A4B2A acento madera */
+  --color-wood-dark: 110 59 32; /* #6E3B20 acento en hover */
+  --color-wood-light: 217 167 127; /* #D9A77F acento sobre fondos oscuros */
 }
 
 /* Forzamos a que, incluso en modo oscuro, se usen los estilos del modo claro */
@@ -21,11 +31,17 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Títulos: Archivo semi-expandido (eje wdth) */
+.font-display {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-stretch: 112%;
 }
 
 .font-poppins {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   font-weight: 800;
 }
 

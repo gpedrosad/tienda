@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronDown, FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { AiOutlineWhatsApp } from 'react-icons/ai';
+import WhatsAppCTA from '@/app/components/ui/WhatsAppCTA';
 import { WhatsAppAnchor } from '@/app/components/ui/WhatsAppCTA';
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
 import { YEARS_SINCE_FOUNDING_LABEL } from '@/lib/founding';
@@ -13,26 +13,50 @@ import {
   collectionNavLinks,
 } from '@/lib/navigation';
 
-const doorAndStepLinks = [
-  { href: "/puertas-interiores", label: "Puertas interiores" },
-  { href: "/puertas-exteriores", label: "Puertas exteriores" },
-  { href: "/puertas-correderas", label: "Puertas correderas" },
-  { href: "/escaleras-de-madera", label: "Escaleras de madera" },
-  { href: "/peldanos-flotantes", label: "Peldaños flotantes" },
-  { href: "/guias/medidas-y-madera-puertas", label: "Medidas de puertas" },
-  { href: "/guias/medidas-peldanos-escalera", label: "Huella y contrahuella" },
-  { href: "/mesas-de-comedor-a-medida", label: "Mesas de comedor a medida" },
+type FooterLink = { href: string; label: string };
+
+const shopLinks: FooterLink[] = [
+  { href: ALL_PRODUCTS_COLLECTION_PATH, label: 'Productos' },
+  { href: '/ofertas', label: 'Destacados' },
+  { href: '/kit-pergola', label: 'Kit pérgola' },
+  { href: '/tiny-house-dlt', label: 'Tiny house en DLT' },
 ];
 
-function FooterColumn({
-  title,
-  className,
-  children,
-}: {
-  title: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
+const customMadeLinks: FooterLink[] = [
+  { href: '/muebles-a-medida', label: 'Muebles a medida' },
+  { href: '/muebles-de-cocina-chillan', label: 'Muebles de cocina' },
+  { href: '/mesas-de-comedor-a-medida', label: 'Mesas de comedor a medida' },
+  { href: '/cubiertas-a-medida', label: 'Cubiertas a medida' },
+  { href: '/molduras-a-medida', label: 'Molduras a medida' },
+  { href: '/puertas-a-medida', label: 'Puertas a medida' },
+  { href: '/peldanos-a-medida', label: 'Peldaños a medida' },
+];
+
+const doorAndStepLinks: FooterLink[] = [
+  { href: '/puertas-interiores', label: 'Puertas interiores' },
+  { href: '/puertas-exteriores', label: 'Puertas exteriores' },
+  { href: '/puertas-correderas', label: 'Puertas correderas' },
+  { href: '/escaleras-de-madera', label: 'Escaleras de madera' },
+  { href: '/peldanos-flotantes', label: 'Peldaños flotantes' },
+  { href: '/guias/medidas-y-madera-puertas', label: 'Medidas de puertas' },
+  { href: '/guias/medidas-peldanos-escalera', label: 'Huella y contrahuella' },
+];
+
+const companyLinks: FooterLink[] = [
+  { href: '/', label: 'Inicio' },
+  { href: '/quienes-somos', label: 'Quiénes somos' },
+  { href: '/muebles-chillan', label: 'Muebles en Chillán' },
+  { href: '/guias', label: 'Guías' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const linkClass =
+  'inline-flex min-h-9 items-center text-sm text-canvas/70 transition-colors duration-200 hover:text-white md:min-h-0';
+
+const socialClass =
+  'inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-canvas/80 transition-colors duration-200 hover:border-wood-light hover:text-wood-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70';
+
+function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
   const [desktop, setDesktop] = React.useState(false);
 
@@ -50,21 +74,27 @@ function FooterColumn({
   }, []);
 
   return (
-    <details ref={detailsRef} className={`footer-col group ${className ?? ''}`}>
+    <details ref={detailsRef} className="footer-col group border-b border-white/10 md:border-0">
       <summary
         tabIndex={desktop ? -1 : 0}
-        className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 border-b border-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 md:mb-6 md:block md:min-h-0 md:cursor-default md:border-0 md:pointer-events-none"
+        className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 md:mb-4 md:block md:min-h-0 md:cursor-default md:pointer-events-none"
       >
-        <h3 className="text-xs font-light uppercase tracking-[0.15em] text-neutral-500">
-          {title}
-        </h3>
+        <h3 className="text-[15px] font-medium text-white">{title}</h3>
         <FaChevronDown
-          size={10}
+          size={11}
           aria-hidden="true"
-          className="shrink-0 text-neutral-500 transition-transform duration-200 group-open:rotate-180 md:hidden"
+          className="shrink-0 text-canvas/50 transition-transform duration-200 group-open:rotate-180 md:hidden"
         />
       </summary>
-      <div className="pb-5 pt-4 md:pb-0 md:pt-0">{children}</div>
+      <ul className="pb-4 md:space-y-2.5 md:pb-0">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} className={linkClass}>
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </details>
   );
 }
@@ -77,270 +107,95 @@ const footerContactUrl = buildWhatsAppUrl(
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white border-t border-neutral-800">
-      <div className="container mx-auto px-5 md:px-12 lg:px-20">
-        {/* Contenido principal del footer */}
-        <div className="py-12 md:py-16 lg:py-20">
-          {/* Grid layout minimalista */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
-            
-            {/* Logo y descripción - Ocupa más espacio en desktop */}
-            <div className="lg:col-span-4 space-y-6">
-              <Link href="/" className="inline-block">
-                <Image 
-                  src="/logonegro.png" 
-                  alt="Idea Madera" 
-                  width={100} 
+    <footer className="bg-ink text-white">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10">
+        <div className="grid gap-10 pt-12 pb-6 md:pt-16 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,3fr)] lg:gap-16 lg:pt-20 lg:pb-12">
+          {/* Marca, CTA y contacto */}
+          <div className="max-w-sm space-y-6">
+            <div className="flex items-center gap-4">
+              <Link href="/" className="shrink-0">
+                <Image
+                  src="/logonegro.png"
+                  alt="Idea Madera"
+                  width={100}
                   height={100}
-                  sizes="96px"
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-90 hover:opacity-100 transition-opacity" 
+                  sizes="64px"
+                  className="h-14 w-14 object-contain md:h-16 md:w-16"
                 />
               </Link>
-              <div className="space-y-3 max-w-sm">
-                <p className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
-                  Artesanía en madera
-                </p>
-                <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
-                  {YEARS_SINCE_FOUNDING_LABEL} creando productos de madera con dedicación, calidad y diseño excepcional.
-                </p>
-              </div>
+              <p className="text-sm leading-relaxed text-canvas/70">
+                Taller familiar en Chillán. {YEARS_SINCE_FOUNDING_LABEL} fabricando muebles de madera, con envíos a todo Chile.
+              </p>
             </div>
 
-            <FooterColumn title="Navegación" className="lg:col-span-2">
-              <ul className="space-y-3">
-                <li>
-                  <Link 
-                    href="/" 
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href={ALL_PRODUCTS_COLLECTION_PATH}
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Productos
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/ofertas" 
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Destacados
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/cubiertas-a-medida"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Cubiertas a medida
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/puertas-a-medida"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Puertas a medida
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/muebles-a-medida"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Muebles a medida
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/muebles-chillan"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Muebles en Chillán
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/muebles-de-cocina-chillan"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Muebles de cocina
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/guias"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Guías
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/molduras-a-medida"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Molduras a medida
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/kit-pergola"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Kit pérgola
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tiny-house-dlt" className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light">
-                    Tiny house en DLT
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/peldanos-a-medida" 
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Peldaños a medida
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/quienes-somos"
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Quiénes somos
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/contacto" 
-                    className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    Contacto
-                  </Link>
-                </li>
-              </ul>
-            </FooterColumn>
+            <WhatsAppCTA
+              href={footerContactUrl}
+              label="Escríbenos por WhatsApp"
+              placement="footer_cta"
+              productTitle="Contacto"
+            />
 
-            <FooterColumn title="Colecciones" className="lg:col-span-2">
-              <ul className="space-y-3">
-                {collectionNavLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm md:text-base text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </FooterColumn>
-
-            <FooterColumn title="Contacto" className="lg:col-span-2">
-              <ul className="space-y-3 text-sm md:text-base text-neutral-400 font-light">
-                <li>
-                  <a 
-                    href="mailto:hola@ideamadera.cl" 
-                    className="hover:text-white transition-colors duration-300 block"
-                  >
-                    hola@ideamadera.cl
-                  </a>
-                </li>
-                <li>
-                  <WhatsAppAnchor
-                    href={footerContactUrl}
-                    placement="footer_phone"
-                    productTitle="Contacto"
-                    className="hover:text-white transition-colors duration-300 block"
-                  >
-                    +569 9549 7838
-                  </WhatsAppAnchor>
-                </li>
-                <li className="pt-1">
-                  <span className="text-neutral-500">
-                    Boyén Sector 01<br />
-                    Chillán, Chile
-                  </span>
-                </li>
-              </ul>
-            </FooterColumn>
-
-            <FooterColumn title="Síguenos" className="lg:col-span-2">
-              <div className="flex gap-4">
-                <a
-                  href="https://www.facebook.com/ideamadera.cl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-                >
-                  <FaFacebookF size={16} />
-                </a>
-                <a
-                  href="https://instagram.com/ideamadera.cl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-                >
-                  <FaInstagram size={16} />
-                </a>
-                <WhatsAppAnchor
-                  href={footerContactUrl}
-                  placement="footer_social"
-                  productTitle="Contacto"
-                  aria-label="Escríbenos por WhatsApp"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition-all duration-300 hover:border-neutral-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-                >
-                  <AiOutlineWhatsApp size={20} aria-hidden="true" />
-                </WhatsAppAnchor>
-              </div>
-            </FooterColumn>
+            <div className="space-y-1 text-sm text-canvas/70">
+              <a href="mailto:hola@ideamadera.cl" className="block w-fit transition-colors hover:text-white">
+                hola@ideamadera.cl
+              </a>
+              <WhatsAppAnchor
+                href={footerContactUrl}
+                placement="footer_phone"
+                productTitle="Contacto"
+                className="block w-fit transition-colors hover:text-white"
+              >
+                +56 9 9549 7838
+              </WhatsAppAnchor>
+              <p className="text-canvas/60">Boyén Sector 01, Chillán</p>
+            </div>
           </div>
 
-          <div className="mt-12 border-t border-neutral-800 pt-8">
-            <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light mb-4">
-              Puertas y peldaños
-            </h3>
-            <ul className="flex flex-wrap gap-x-5 gap-y-2">
-              {doorAndStepLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-neutral-300 hover:text-white transition-colors duration-300 font-light"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Enlaces: plegables en móvil, columnas desde md */}
+          <nav aria-label="Pie de página" className="border-t border-white/10 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10 md:border-0 xl:grid-cols-5">
+            <FooterColumn title="Tienda" links={shopLinks} />
+            <FooterColumn title="Colecciones" links={collectionNavLinks} />
+            <FooterColumn title="A medida" links={customMadeLinks} />
+            <FooterColumn title="Puertas y peldaños" links={doorAndStepLinks} />
+            <FooterColumn title="Idea Madera" links={companyLinks} />
+          </nav>
         </div>
 
-        {/* Copyright - Línea divisoria sutil */}
-        <div id="footer-creditos" className="border-t border-neutral-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500 font-light">
-            <p>© 2026 Idea Madera. Todos los derechos reservados.</p>
-            <p>
-              Creado por{' '}
-              <WhatsAppAnchor
-                href="https://wa.me/56968257817"
-                placement="footer_credit"
-                productTitle="Gonzalo Pedrosa"
-                className="underline-offset-2 transition-[color,text-decoration-color] duration-300 hover:text-white hover:underline"
-              >
-                Gonzalo Pedrosa
-              </WhatsAppAnchor>
-            </p>
-            <p className="tracking-wide">Hecho con dedicación en Chile</p>
+        <div
+          id="footer-creditos"
+          className="flex flex-col gap-5 border-t border-white/10 py-6 md:flex-row md:items-center md:justify-between"
+        >
+          <div className="flex gap-3">
+            <a
+              href="https://www.facebook.com/ideamadera.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className={socialClass}
+            >
+              <FaFacebookF size={16} aria-hidden="true" />
+            </a>
+            <a
+              href="https://instagram.com/ideamadera.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className={socialClass}
+            >
+              <FaInstagram size={17} aria-hidden="true" />
+            </a>
           </div>
+          <p className="text-xs leading-relaxed text-canvas/60">
+            © 2026 Idea Madera · Sitio por{' '}
+            <WhatsAppAnchor
+              href="https://wa.me/56968257817"
+              placement="footer_credit"
+              productTitle="Gonzalo Pedrosa"
+              className="underline decoration-white/20 underline-offset-2 transition-colors hover:text-white hover:decoration-white"
+            >
+              Gonzalo Pedrosa
+            </WhatsAppAnchor>
+          </p>
         </div>
       </div>
     </footer>

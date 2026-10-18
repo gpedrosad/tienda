@@ -63,19 +63,16 @@ export default function RelatedProducts({
     <section className="mx-auto w-full max-w-7xl px-4 py-14 md:py-20">
       <div className="mb-7 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-            Sigue explorando
-          </p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-ink">
             {selection.title}
           </h2>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-600">
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-muted">
             {selection.subtitle}
           </p>
         </div>
         <Link
           href={selection.href}
-          className="inline-flex min-h-11 items-center text-sm text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900"
+          className="inline-flex min-h-11 items-center text-sm text-ink underline underline-offset-4 decoration-wood/40 hover:decoration-wood"
         >
           Ver todas →
         </Link>

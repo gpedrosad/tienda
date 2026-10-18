@@ -393,24 +393,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <>
       <JsonLd data={structuredData} />
 
-      <main className="bg-white text-neutral-900">
-        <section className="border-b border-neutral-200 bg-gradient-to-b from-neutral-100 to-white">
+      <main className="bg-white text-ink">
+        <section className="border-b border-line bg-canvas">
           <div className="mx-auto max-w-7xl px-4 pt-20 md:pt-32 pb-10 md:pb-16">
-            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
+            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-ink-muted">
               <ol className="flex flex-wrap items-center gap-1.5">
                 <li>
-                  <Link href="/" className="hover:text-neutral-900">
+                  <Link href="/" className="hover:text-ink">
                     Inicio
                   </Link>
                 </li>
                 <li>/</li>
                 <li>
-                  <Link href={categoryPath} className="hover:text-neutral-900">
+                  <Link href={categoryPath} className="hover:text-ink">
                     {product.category}
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-neutral-900">{product.name}</li>
+                <li className="text-ink">{product.name}</li>
               </ol>
             </nav>
 
@@ -419,31 +419,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {galleryImages.length > 0 ? (
                   <ProductGallery images={galleryImages} productName={product.name} imageAlt={imageAlt} />
                 ) : (
-                  <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-neutral-200 bg-white">
-                    <p className="text-neutral-600">Este producto todavía no tiene fotos cargadas.</p>
+                  <div className="flex min-h-[260px] items-center justify-center rounded-2xl border border-line bg-white">
+                    <p className="text-ink-muted">Este producto todavía no tiene fotos cargadas.</p>
                   </div>
                 )}
               </div>
 
               <div className="order-2 lg:sticky lg:top-24">
-                <div className="rounded-3xl border border-neutral-200 bg-white p-4 shadow-sm md:p-8">
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500">
-                    {product.category}
-                  </p>
-                  <h1 className="mt-1 text-3xl sm:text-4xl md:mt-3 md:text-5xl font-light tracking-tight leading-tight text-neutral-900">
+                <div className="rounded-3xl border border-line bg-white p-4 shadow-sm md:p-8">
+                  <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-ink">
                     {product.name}
                   </h1>
                   {heroSpecLine ? (
-                    <p className="mt-1.5 text-sm text-neutral-600">{heroSpecLine}</p>
+                    <p className="mt-1.5 text-sm text-ink-muted">{heroSpecLine}</p>
                   ) : null}
 
-                  <p className="mt-2 text-3xl md:mt-6 md:text-4xl font-light tracking-tight text-neutral-900">
+                  <p className="mt-2 font-display text-3xl md:mt-6 md:text-4xl font-semibold tracking-tight text-ink">
                     {priceLabel}
                   </p>
-                  <p className="mt-1 text-xs text-neutral-500">IVA incluido</p>
+                  <p className="mt-1 text-xs text-ink-muted">IVA incluido</p>
 
                   <div className="mt-2 md:mt-7">
-                    <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                    <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto]">
                       <div id="product-hero-cta">
                         <WhatsAppInlineCTA
                           productTitle={product.name}
@@ -482,34 +479,34 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     {trustItems.map((item) => (
                       <div
                         key={item}
-                        className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-xs text-neutral-700 md:py-3 md:text-sm"
+                        className="rounded-2xl border border-line bg-canvas px-3 py-2.5 text-xs text-ink/80 md:py-3 md:text-sm"
                       >
                         {item}
                       </div>
                     ))}
                   </div>
 
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:mt-4 md:text-lg">
+                  <p className="mt-3 text-sm leading-relaxed text-ink/80 md:mt-4 md:text-lg">
                     {getShortPitch(product)}
                   </p>
 
                   {productFeatures.length > 0 && (
                     <ul className="mt-4 space-y-2.5">
                       {productFeatures.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                          <AiOutlineCheckCircle className="mt-0.5 shrink-0 text-[#25D366]" size={18} aria-hidden="true" />
+                        <li key={feature} className="flex items-start gap-2.5 text-sm text-ink/80">
+                          <AiOutlineCheckCircle className="mt-0.5 shrink-0 text-wood" size={18} aria-hidden="true" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   )}
 
-                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 md:text-sm">
-                    <AiOutlineEnvironment className="text-neutral-700" size={17} aria-hidden="true" />
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-canvas px-3 py-1.5 text-xs text-ink/80 md:text-sm">
+                    <AiOutlineEnvironment className="text-wood" size={17} aria-hidden="true" />
                     <span>Fabricación en Chillán · Envío a todo Chile</span>
                   </div>
 
-                  <p className="mt-4 text-xs text-neutral-500 md:mt-5 md:text-sm">
+                  <p className="mt-4 text-xs text-ink-muted md:mt-5 md:text-sm">
                     {product.stockNote ?? "Fabricación a pedido · Te respondemos por WhatsApp en horario hábil."}
                   </p>
                 </div>
@@ -520,26 +517,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <section className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-14 md:py-20 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-              Detalles
-            </p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-ink">
               Descripción y ficha técnica
             </h2>
           </div>
           <div className="space-y-8">
-            <div className="border-t border-neutral-200 pt-6">
-              <h3 className="text-xl font-light tracking-tight text-neutral-900">
+            <div className="border-t border-line pt-6">
+              <h3 className="font-display text-xl font-medium tracking-tight text-ink">
                 Descripción
               </h3>
-              <p className="mt-3 text-base leading-relaxed text-neutral-700">
+              <p className="mt-3 text-base leading-relaxed text-ink/80">
                 <InlineLinkedText text={productDescription} />
               </p>
               {isDiningTableId(product.id) ? (
                 <p className="mt-3 text-sm leading-relaxed">
                   <Link
                     href="/mesas-de-comedor-a-medida"
-                    className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+                    className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
                   >
                     ¿Necesitas otra medida? Mesas de comedor a medida
                   </Link>
@@ -549,7 +543,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <p className="mt-3 text-sm leading-relaxed">
                   <Link
                     href="/guias/medidas-mesa-de-centro"
-                    className="text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+                    className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
                   >
                     Cómo elegir la medida de una mesa de centro o mesa ratona
                   </Link>
@@ -558,16 +552,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             {specRows.length > 0 && (
-              <div className="border-t border-neutral-200 pt-6">
-                <h3 className="text-xl font-light tracking-tight text-neutral-900">
+              <div className="border-t border-line pt-6">
+                <h3 className="font-display text-xl font-medium tracking-tight text-ink">
                   Detalles del producto
                 </h3>
 
-                <dl className="mt-5 divide-y divide-neutral-100 rounded-2xl border border-neutral-200 bg-white">
+                <dl className="mt-5 divide-y divide-line/70 rounded-2xl border border-line bg-white">
                   {specRows.map((row) => (
                     <div key={row.label} className="grid grid-cols-2 gap-4 px-4 py-3 text-sm">
-                      <dt className="text-neutral-500">{row.label}</dt>
-                      <dd className="text-right text-neutral-900">{row.value}</dd>
+                      <dt className="text-ink-muted">{row.label}</dt>
+                      <dd className="text-right text-ink">{row.value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -576,24 +570,21 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </section>
 
-        <section className="bg-neutral-950 text-white">
+        <section className="bg-ink text-white">
           <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
             <div className="mb-8 max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-                Cómo cotizar
-              </p>
-              <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
                 De la idea a la cotización en 3 pasos
               </h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {quoteSteps.map((step, index) => (
                 <article key={step.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-medium text-neutral-950">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-wood font-display text-base text-white">
                     {index + 1}
                   </span>
-                  <h3 className="mt-5 text-xl font-light tracking-tight">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-300">{step.description}</p>
+                  <h3 className="mt-5 font-display text-xl font-medium tracking-tight">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-canvas/70">{step.description}</p>
                 </article>
               ))}
             </div>
@@ -604,10 +595,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <section className="mx-auto w-full max-w-4xl px-4 py-10 md:py-14">
           <div className="mb-6 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-              Compra con claridad
-            </p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-ink">
               Envíos, pagos y fabricación
             </h2>
           </div>
@@ -618,21 +606,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <section className="mx-auto w-full max-w-4xl px-4 py-10 md:py-14">
           <div className="mb-8">
-            <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-              Preguntas frecuentes
-            </p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-ink">
               Antes de escribirnos
             </h2>
           </div>
-          <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+          <div className="divide-y divide-line border-y border-line">
             {productFaqItems.map((item) => (
               <details key={item.question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base md:text-lg font-light tracking-tight text-neutral-900">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base md:text-lg font-medium tracking-tight text-ink">
                   {item.question}
-                  <span className="text-neutral-400 transition-transform group-open:rotate-180">⌄</span>
+                  <span className="text-wood transition-transform group-open:rotate-180">⌄</span>
                 </summary>
-                <p className="mt-3 max-w-3xl text-sm md:text-base leading-relaxed text-neutral-600">
+                <p className="mt-3 max-w-3xl text-sm md:text-base leading-relaxed text-ink-muted">
                   {item.answer}
                 </p>
               </details>
@@ -641,16 +626,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 pb-24 pt-8 md:pb-28">
-          <div className="rounded-3xl bg-neutral-950 p-7 text-white md:p-10">
+          <div className="rounded-3xl bg-ink p-7 text-white md:p-10">
             <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-                  Cotización rápida
-                </p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-light tracking-tight">
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
                   ¿Quieres confirmar medidas, despacho o terminación?
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-neutral-300">
+                <p className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-canvas/70">
                   Escríbenos por WhatsApp y te respondemos con la información necesaria para avanzar sin vueltas.
                 </p>
               </div>

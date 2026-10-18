@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/app/components/ClientLayout";
 import JsonLd from "@/app/components/JsonLd";
@@ -16,12 +16,11 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GA_MEASUREMENT_ID = "G-KBR6DKMXVM";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  variable: "--font-sans",
   display: "swap",
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -76,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${archivo.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

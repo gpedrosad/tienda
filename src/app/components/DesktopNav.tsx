@@ -3,8 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
-import { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
-import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
   ALL_PRODUCTS_COLLECTION_PATH,
   KIT_PERGOLA_PATH,
@@ -12,23 +10,12 @@ import {
   customMadeNavLinks,
 } from "@/lib/navigation";
 
-const contactUrl = buildWhatsAppUrl(
-  buildGeneralWhatsAppMessage("menú principal", [
-    "Quiero revisar opciones de muebles, medidas y despacho.",
-  ])
-);
-
-interface DesktopNavProps {
-  isScrolled: boolean;
-  isHomePage: boolean;
-}
-
 type DropdownId = "collections" | "medida";
 
 type DropdownLink = { label: string; href: string };
 
 const navItems: Array<
-  | { label: string; href: string; external?: boolean }
+  | { label: string; href: string }
   | { label: string; id: DropdownId; links: DropdownLink[] }
 > = [
   { label: "Productos", href: ALL_PRODUCTS_COLLECTION_PATH },
@@ -36,7 +23,7 @@ const navItems: Array<
   { label: "Destacados", href: "/ofertas" },
   { label: "A medida", id: "medida", links: customMadeNavLinks },
   { label: "Kit pérgola", href: KIT_PERGOLA_PATH },
-  { label: "Contacto", href: contactUrl, external: true },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 function isDropdown(
@@ -45,15 +32,12 @@ function isDropdown(
   return "id" in item;
 }
 
-export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) {
+export default function DesktopNav() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState<DropdownId | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const isTransparentHomeHeader = isHomePage && !isScrolled;
-  const textColor = isTransparentHomeHeader || !isHomePage ? "text-white" : "text-neutral-900";
-  const hoverColor = isTransparentHomeHeader || !isHomePage ? "hover:text-neutral-300" : "hover:text-neutral-600";
-  const activeIndicator = isTransparentHomeHeader || !isHomePage ? "bg-white" : "bg-neutral-900";
+  const activeIndicator = "bg-wood-light";
 
   const isActive = (href: string) => pathname === href;
 
@@ -94,11 +78,11 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const linkClass = `relative inline-flex min-h-11 items-center whitespace-nowrap rounded-sm px-1 xl:px-2 text-[11px] xl:text-xs font-light tracking-tight transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 ${textColor} ${hoverColor}`;
+  const linkClass = `relative inline-flex min-h-11 items-center whitespace-nowrap rounded-sm px-1 xl:px-2 text-[13px] xl:text-sm font-normal tracking-normal transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 text-white hover:text-wood-light`;
 
   return (
-    <nav className="hidden lg:flex items-center h-full min-w-0" aria-label="Principal">
-      <ul className="flex items-center h-full">
+    <nav className="hidden lg:flex flex-1 items-center justify-center h-full min-w-0" aria-label="Principal">
+      <ul className="flex items-center h-full gap-1 xl:gap-3">
         {navItems.map((item) => (
           <li key={item.label} className="relative h-full flex items-center">
             {isDropdown(item) ? (
@@ -137,15 +121,15 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                   onMouseEnter={() => openDropdown(item.id)}
                   onMouseLeave={scheduleClose}
                 >
-                  <div className="bg-white rounded-lg shadow-lg border border-neutral-100 p-2 min-w-52">
+                  <div className="bg-white rounded-xl shadow-lg shadow-ink/10 border border-line p-2 min-w-52">
                     <ul className="flex flex-col">
                       {item.links.map((link) => (
                         <li key={link.href}>
                           <Link
                             href={link.href}
                             aria-current={isActive(link.href) ? "page" : undefined}
-                            className={`block px-3 py-2 text-xs font-light text-neutral-600 rounded-md transition-colors duration-200 hover:bg-neutral-50 hover:text-neutral-900 ${
-                              isActive(link.href) ? "bg-neutral-50 text-neutral-900" : ""
+                            className={`block px-3 py-2 text-sm text-ink-muted rounded-lg transition-colors duration-200 hover:bg-canvas hover:text-ink ${
+                              isActive(link.href) ? "bg-canvas text-ink" : ""
                             }`}
                           >
                             {link.label}
@@ -156,15 +140,6 @@ export default function DesktopNav({ isScrolled, isHomePage }: DesktopNavProps) 
                   </div>
                 </div>
               </div>
-            ) : item.external ? (
-              <WhatsAppAnchor
-                href={item.href}
-                placement="desktop_nav"
-                productTitle="Contacto"
-                className={linkClass}
-              >
-                {item.label}
-              </WhatsAppAnchor>
             ) : (
               <Link
                 href={item.href}

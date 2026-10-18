@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import Reveal from "@/app/components/Reveal";
@@ -13,57 +11,19 @@ const storyWhatsAppUrl = buildWhatsAppUrl(
   ]),
 );
 
-const FabricaVideo = React.memo(() => {
-  const videoContainerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries, observerInstance) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observerInstance.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
-
-    const videoContainer = videoContainerRef.current;
-
-    if (videoContainer) {
-      observer.observe(videoContainer);
-    }
-
-    return () => {
-      if (videoContainer) {
-        observer.unobserve(videoContainer);
-      }
-    };
-  }, []);
-
+export default function FabricaVideo() {
   return (
     <section className="relative bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
-          <div
-            ref={videoContainerRef}
-            className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
-          >
-            {isVisible ? (
-              <video
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-                style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
-                src="https://cdn.shopify.com/videos/c/o/v/96cf6f2a33c149e3b1d124adf6ae4c90.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            ) : (
-              <div className="absolute inset-0 bg-neutral-200" />
-            )}
+          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+            <Image
+              src="/images/taller-idea-madera.webp"
+              alt="Taller de Idea Madera en Chillán, con muebles de madera en fabricación"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center"
+            />
           </div>
 
           <Reveal as="div" className="px-6 py-12 md:px-12 md:py-16 lg:px-16 lg:py-20 space-y-6">
@@ -79,8 +39,8 @@ const FabricaVideo = React.memo(() => {
 
             <p className="text-sm md:text-base text-neutral-700 font-light leading-relaxed max-w-lg text-pretty">
               Somos una empresa familiar {SINCE_FOUNDING}, con pasión en el diseño y fabricación de muebles en
-              madera. En este video verás a nuestro talentoso equipo en acción, trabajando con
-              dedicación para crear piezas únicas que cuentan nuestra historia.
+              madera. En el taller de Chillán el equipo trabaja cada pieza a medida, con dedicación, para
+              crear muebles que duran.
             </p>
 
             <div className="pt-2">
@@ -102,8 +62,4 @@ const FabricaVideo = React.memo(() => {
       </div>
     </section>
   );
-});
-
-FabricaVideo.displayName = "FabricaVideo";
-
-export default FabricaVideo;
+}

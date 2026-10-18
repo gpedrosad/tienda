@@ -54,31 +54,31 @@ export default function Accordion({
   const renderIcon = (title: string) => {
     switch (title) {
       case "Métodos de pago":
-        return <AiOutlineCreditCard className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlineCreditCard className="mr-3 text-wood" size={18} aria-hidden="true" />;
       case "Envíos":
-        return <AiOutlineCar className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlineCar className="mr-3 text-wood" size={18} aria-hidden="true" />;
       case "Cambios y devoluciones":
-        return <AiOutlineUndo className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlineUndo className="mr-3 text-wood" size={18} aria-hidden="true" />;
       case "Garantía":
-        return <AiOutlineSafety className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlineSafety className="mr-3 text-wood" size={18} aria-hidden="true" />;
       case "Tiempo de fabricación":
-        return <AiOutlineSetting className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlineSetting className="mr-3 text-wood" size={18} aria-hidden="true" />;
       case "Contacto":
-        return <AiOutlinePhone className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+        return <AiOutlinePhone className="mr-3 text-wood" size={18} aria-hidden="true" />;
       default:
         return null;
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white border border-neutral-200/60 divide-y divide-neutral-100">
+    <div className="max-w-2xl mx-auto bg-white border border-line divide-y divide-line/70">
       {accordionItems.map((item, index) => {
         const isOpen = openItems.includes(index);
         const panelId = `product-accordion-${index}`;
         return (
           <div 
             key={index}
-            className="transition-all duration-300 hover:bg-neutral-50/50"
+            className="transition-all duration-300 hover:bg-canvas/60"
           >
             {/* Encabezado del acordeón */}
             <button
@@ -86,17 +86,17 @@ export default function Accordion({
               onClick={() => toggleAccordion(index)}
               aria-expanded={isOpen}
               aria-controls={panelId}
-              className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
+              className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 group"
             >
               <div className="flex items-center">
                 {renderIcon(item.title)}
-                <span className="text-sm md:text-base font-light tracking-tight text-neutral-900 group-hover:text-neutral-700 transition-colors duration-300">
+                <span className="font-display text-sm md:text-base font-medium tracking-tight text-ink group-hover:text-wood-dark transition-colors duration-300">
                   {item.title}
                 </span>
               </div>
               {/* Flecha que rota cuando está abierto */}
               <svg
-                className={`w-4 h-4 md:w-5 md:h-5 transform transition-all duration-500 ease-out text-neutral-400 group-hover:text-neutral-600 ${
+                className={`w-4 h-4 md:w-5 md:h-5 transform transition-all duration-500 ease-out text-ink-muted group-hover:text-wood ${
                   isOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
@@ -120,7 +120,7 @@ export default function Accordion({
               }`}
             >
               <div className="px-5 md:px-6 pb-4 md:pb-5 pl-11 md:pl-12">
-                <p className="text-sm md:text-base font-light text-neutral-600 leading-relaxed">
+                <p className="text-sm md:text-base text-ink-muted leading-relaxed">
                   {item.content}
                 </p>
               </div>
