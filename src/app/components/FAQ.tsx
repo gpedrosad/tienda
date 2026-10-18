@@ -25,12 +25,12 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b border-neutral-200 bg-white transition-colors duration-300 hover:bg-neutral-50/50">
+    <div className="border-b border-line bg-white transition-colors duration-300 hover:bg-canvas/50">
       <button
-        className="w-full flex items-center justify-between py-5 md:py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
+        className="w-full flex items-center justify-between py-5 md:py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-base md:text-lg font-light text-neutral-900 tracking-tight pr-8 group-hover:text-neutral-600 transition-colors duration-300">
+        <span className="font-display text-base md:text-lg font-medium text-ink tracking-tight pr-8 group-hover:text-wood transition-colors duration-300">
           {question.question}
         </span>
         <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300 ${
@@ -39,7 +39,7 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
         style={{ transitionTimingFunction: "var(--ease-out-quart)" }}
         >
           <svg
-            className="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 transition-colors duration-300"
+            className="w-4 h-4 text-ink-muted group-hover:text-wood transition-colors duration-300"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
@@ -62,7 +62,7 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
         }}
       >
         <div ref={contentRef} className="pb-6 pr-12">
-          <p className="text-sm md:text-base text-neutral-600 font-light leading-relaxed">
+          <p className="text-sm md:text-base text-ink/80 leading-relaxed">
             {question.answer}
           </p>
         </div>
@@ -74,24 +74,21 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
 const FAQ = () => {
   return (
     <section className="max-w-3xl mx-auto py-16 md:py-20 lg:py-24 px-5 md:px-12 lg:px-20">
-      <Reveal as="header" className="mb-12 md:mb-16 space-y-3">
-        <p className="text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
+      <Reveal as="header" className="mb-8 md:mb-12">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-ink tracking-tight text-balance font-semibold">
           Preguntas frecuentes
-        </p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-neutral-900 tracking-[-0.02em] text-balance">
-          ¿Tienes dudas?
         </h2>
       </Reveal>
 
       {/* Lista de preguntas sin espaciado entre items */}
-      <div className="border-t border-neutral-200">
+      <div className="border-t border-line">
         {homeFaqItems.map((item, index) => (
           <FAQItem key={`${item.question}-${index}`} question={item} />
         ))}
       </div>
 
       <Reveal delay={100} className="mt-12 md:mt-16 text-center">
-        <p className="text-sm md:text-base text-neutral-600 font-light mb-4">
+        <p className="text-sm md:text-base text-ink-muted mb-4">
           ¿No encuentras lo que buscas?
         </p>
         <WhatsAppCTA

@@ -57,10 +57,10 @@ function RelatedLinkGrid({ links }: { links: LandingRelatedLink[] }) {
         <Link
           key={link.href}
           href={link.href}
-          className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors"
+          className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors"
         >
-          <p className="text-sm font-medium text-neutral-900">{link.title}</p>
-          <p className="mt-1 text-sm text-neutral-600">{link.description}</p>
+          <p className="text-sm font-medium text-ink">{link.title}</p>
+          <p className="mt-1 text-sm text-ink-muted">{link.description}</p>
         </Link>
       ))}
     </div>
@@ -85,8 +85,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
     <>
       <JsonLd data={buildLandingSchemaGraph(config)} />
 
-      <main className="bg-white text-neutral-900">
-        <section className="border-b border-neutral-200 bg-gradient-to-b from-neutral-100 to-white">
+      <main className="bg-white text-ink">
+        <section className="border-b border-line bg-gradient-to-b from-canvas to-white">
           <div className="max-w-6xl mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-16">
             <div
               className={
@@ -96,16 +96,16 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
               }
             >
               <div className={config.heroImage ? "lg:col-start-1 lg:row-start-1" : undefined}>
-                <p className="text-[11px] md:text-sm uppercase tracking-[0.18em] text-neutral-600">
+                <p className="text-sm font-medium text-wood">
                   {config.eyebrow}
                 </p>
-                <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
+                <h1 className="font-display mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight font-semibold">
                   {config.h1}
                 </h1>
               </div>
 
               {config.heroImage ? (
-                <figure className="relative mt-6 h-[min(64vw,420px)] overflow-hidden rounded-2xl bg-neutral-100 shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:h-full lg:min-h-[560px]">
+                <figure className="relative mt-6 h-[min(64vw,420px)] overflow-hidden rounded-2xl bg-canvas-deep shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:h-full lg:min-h-[560px]">
                   <Image
                     src={config.heroImage.src}
                     alt={config.heroImage.alt}
@@ -121,8 +121,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 <p
                   className={
                     config.heroImage
-                      ? "mt-6 text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl lg:mt-5"
-                      : "mt-5 text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl"
+                      ? "mt-6 text-base md:text-lg text-ink/80 leading-relaxed max-w-3xl lg:mt-5"
+                      : "mt-5 text-base md:text-lg text-ink/80 leading-relaxed max-w-3xl"
                   }
                 >
                   {config.heroParagraph}
@@ -133,7 +133,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                     {visibleBadges.map((badge) => (
                       <span
                         key={badge}
-                        className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs md:text-sm text-neutral-700"
+                        className="inline-flex items-center rounded-full border border-ink/20 bg-white px-3 py-1.5 text-xs md:text-sm text-ink/80"
                       >
                         {badge}
                       </span>
@@ -162,8 +162,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   <div className="mt-8 grid grid-cols-3 gap-3 max-w-2xl">
                     {config.stats.map((stat) => (
                       <div key={stat.label} className="text-center sm:text-left">
-                        <p className="text-2xl md:text-3xl font-light text-neutral-900">{stat.value}</p>
-                        <p className="mt-1 text-xs md:text-sm text-neutral-600">{stat.label}</p>
+                        <p className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-ink">{stat.value}</p>
+                        <p className="mt-1 text-xs md:text-sm text-ink-muted">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -174,13 +174,13 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         </section>
 
         {config.gallery && config.gallery.length > 0 ? (
-          <section className="border-b border-neutral-200" aria-label={config.galleryTitle ?? "Galería"}>
+          <section className="border-b border-line" aria-label={config.galleryTitle ?? "Galería"}>
             <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+              <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
                 {config.galleryTitle ?? "Trabajos reales"}
               </h2>
               {config.galleryIntro ? (
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-neutral-700 md:text-base">
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink/80 md:text-base">
                   {config.galleryIntro}
                 </p>
               ) : null}
@@ -189,7 +189,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   const frame = galleryFrame(image, index === galleryStretchIndex);
                   return (
                     <li key={image.src} className={frame.item}>
-                      <figure className={`relative overflow-hidden rounded-2xl bg-neutral-100 ${frame.frame}`}>
+                      <figure className={`relative overflow-hidden rounded-2xl bg-canvas-deep ${frame.frame}`}>
                         <Image
                           src={image.src}
                           alt={image.alt}
@@ -208,13 +208,13 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         ) : null}
 
         {config.heroHighlights.length > 0 ? (
-          <section className="border-b border-neutral-200">
+          <section className="border-b border-line">
             <div className="max-w-6xl mx-auto px-4 py-8 md:py-10">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {config.heroHighlights.map((item) => (
-                  <div key={item.title} className="border border-neutral-200 rounded-xl p-4 bg-white shadow-sm">
-                    <p className="text-sm font-medium text-neutral-900">{item.title}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-neutral-600">{item.description}</p>
+                  <div key={item.title} className="border border-line rounded-xl p-4 bg-white shadow-sm">
+                    <p className="text-sm font-medium text-ink">{item.title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-muted">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -223,38 +223,38 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         ) : null}
 
         {config.contactDetails && (
-          <section className="border-b border-neutral-200 bg-neutral-50">
+          <section className="border-b border-line bg-canvas">
             <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Teléfono</p>
+                  <p className="text-sm text-ink-muted">Teléfono</p>
                   <WhatsAppAnchor
                     href={whatsappHref}
                     placement="landing_phone"
                     productTitle={config.whatsappProductTitle}
-                    className="mt-2 block text-lg font-light text-neutral-900 hover:text-neutral-700"
+                    className="mt-1 block text-lg font-medium text-ink hover:text-wood"
                   >
                     {config.contactDetails.phone}
                   </WhatsAppAnchor>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Correo</p>
+                  <p className="text-sm text-ink-muted">Correo</p>
                   <a
                     href={`mailto:${config.contactDetails.email}`}
-                    className="mt-2 block text-lg font-light text-neutral-900 hover:text-neutral-700"
+                    className="mt-1 block text-lg font-medium text-ink hover:text-wood"
                   >
                     {config.contactDetails.email}
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Ubicación</p>
-                  <p className="mt-2 text-lg font-light text-neutral-900">{config.contactDetails.address}</p>
+                  <p className="text-sm text-ink-muted">Ubicación</p>
+                  <p className="mt-1 text-lg font-medium text-ink">{config.contactDetails.address}</p>
                   {config.contactDetails.instagramHandle && (
                     <a
                       href="https://instagram.com/ideamadera.cl"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-block text-sm text-neutral-600 hover:text-neutral-900"
+                      className="mt-2 inline-block text-sm text-ink-muted hover:text-ink"
                     >
                       Instagram {config.contactDetails.instagramHandle}
                     </a>
@@ -265,17 +265,17 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
           </section>
         )}
 
-        <section className="bg-neutral-50 border-y border-neutral-200">
+        <section className="bg-canvas border-y border-line">
           <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.stepsTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">{config.stepsTitle}</h2>
             <ol className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {config.steps.map((step, index) => (
-                <li key={step.title} className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-                  <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+                <li key={step.title} className="rounded-2xl border border-line bg-white p-5 shadow-sm">
+                  <p className="text-sm font-medium text-wood">
                     Paso {index + 1}
                   </p>
-                  <h3 className="mt-2 text-lg font-medium text-neutral-900">{step.title}</h3>
-                  <p className="mt-2 text-sm text-neutral-700 leading-relaxed">{step.description}</p>
+                  <h3 className="font-display mt-2 text-lg text-ink tracking-tight font-medium">{step.title}</h3>
+                  <p className="mt-2 text-sm text-ink/80 leading-relaxed">{step.description}</p>
                 </li>
               ))}
             </ol>
@@ -283,8 +283,8 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         </section>
 
         <section className="max-w-6xl mx-auto px-4 pt-10 md:pt-12">
-          <div className="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 md:flex-row md:items-center md:justify-between md:p-6">
-            <p className="text-base md:text-lg text-neutral-900">¿Ya tienes las medidas? Envíalas y te respondemos con la propuesta.</p>
+          <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5 md:flex-row md:items-center md:justify-between md:p-6">
+            <p className="text-base md:text-lg text-ink">¿Ya tienes las medidas? Envíalas y te respondemos con la propuesta.</p>
             <WhatsAppCTA
               href={whatsappHref}
               label={config.whatsappButtonLabel}
@@ -297,36 +297,36 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         </section>
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">{config.sectionTitle}</h2>
-          <p className="mt-5 text-neutral-700 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">{config.sectionTitle}</h2>
+          <p className="mt-5 text-ink/80 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
             {config.featureCards.map((card) => (
-              <article key={card.title} className="border border-neutral-200 rounded-2xl p-5 shadow-sm">
-                <h3 className="text-lg font-medium text-neutral-900">{card.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700 leading-relaxed">{card.description}</p>
+              <article key={card.title} className="border border-line rounded-2xl p-5 shadow-sm">
+                <h3 className="font-display text-lg text-ink tracking-tight font-medium">{card.title}</h3>
+                <p className="mt-2 text-sm text-ink/80 leading-relaxed">{card.description}</p>
               </article>
             ))}
           </div>
         </section>
 
         {config.extraSections?.map((section) => (
-          <section key={section.title} className="border-t border-neutral-200 bg-white">
+          <section key={section.title} className="border-t border-line bg-white">
             <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
               <div className="max-w-3xl">
-                <h2 className="text-3xl font-light tracking-tight text-neutral-900 md:text-4xl">
+                <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl font-semibold">
                   {section.title}
                 </h2>
                 {section.paragraphs.map((paragraph) => (
                   <p
                     key={paragraph.slice(0, 48)}
-                    className="mt-4 text-base leading-relaxed text-neutral-700"
+                    className="mt-4 text-base leading-relaxed text-ink/80"
                   >
                     <InlineLinkedText text={paragraph} />
                   </p>
                 ))}
                 {section.bullets && section.bullets.length > 0 ? (
-                  <ul className="mt-5 list-disc space-y-1.5 pl-5 text-base text-neutral-700">
+                  <ul className="mt-5 list-disc space-y-1.5 pl-5 text-base text-ink/80">
                     {section.bullets.map((bullet) => (
                       <li key={bullet}>
                         <InlineLinkedText text={bullet} />
@@ -340,19 +340,19 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         ))}
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">Preguntas frecuentes</h2>
-          <div className="mt-8 border-t border-neutral-200">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">Preguntas frecuentes</h2>
+          <div className="mt-8 border-t border-line">
             {config.faqItems.map((item, index) => (
               <details
                 key={item.question}
-                className="group border-b border-neutral-200 py-5"
+                className="group border-b border-line py-5"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-medium text-neutral-900 [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 rounded-sm">
-                  <h3 className="text-lg font-medium">{item.question}</h3>
-                  <span aria-hidden="true" className="mt-1 text-neutral-500 transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-medium text-ink [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 rounded-sm">
+                  <h3 className="font-display text-lg tracking-tight font-medium">{item.question}</h3>
+                  <span aria-hidden="true" className="mt-1 text-ink-muted transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
                 </summary>
-                <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
+                <p className="mt-2 text-sm md:text-base text-ink/80 leading-relaxed">
                   <InlineLinkedText text={item.answer} />
                 </p>
               </details>
@@ -361,15 +361,15 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         </section>
 
         {relatedLinks.length > 0 ? (
-          <section className="border-t border-neutral-200 bg-neutral-50">
+          <section className="border-t border-line bg-canvas">
             <div className="max-w-6xl mx-auto px-4 py-10 md:py-12">
-              <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
+              <h2 className="font-display text-xl tracking-tight text-ink font-medium">También te puede interesar</h2>
               <div className="mt-5">
                 <RelatedLinkGrid links={visibleRelatedLinks} />
               </div>
               {moreRelatedLinks.length > 0 ? (
                 <details className="mt-4">
-                  <summary className="inline-flex min-h-11 cursor-pointer list-none items-center rounded-sm text-sm font-medium text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+                  <summary className="inline-flex min-h-11 cursor-pointer list-none items-center rounded-sm text-sm font-medium text-ink underline underline-offset-4 decoration-wood/40 hover:decoration-wood focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
                     Ver más páginas relacionadas
                   </summary>
                   <div className="mt-3">
@@ -382,10 +382,10 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
         ) : null}
 
         <section className="max-w-6xl mx-auto px-4 pt-0 pb-32 md:pb-36">
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 md:p-9 text-white">
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight">{config.ctaTitle}</h2>
-            <p className="mt-3 text-neutral-200 leading-relaxed max-w-3xl">{config.ctaParagraph}</p>
-            <ul className="mt-5 space-y-2 text-sm text-neutral-200">
+          <div className="rounded-2xl border border-line bg-ink p-7 md:p-9 text-white">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight font-semibold">{config.ctaTitle}</h2>
+            <p className="mt-3 text-canvas/80 leading-relaxed max-w-3xl">{config.ctaParagraph}</p>
+            <ul className="mt-5 space-y-2 text-sm text-canvas/80">
               {config.ctaBullets.map((bullet) => (
                 <li key={bullet}>{bullet}</li>
               ))}

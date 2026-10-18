@@ -30,7 +30,7 @@ export default function Rating({ rating, reviewCount }: RatingProps) {
         ))}
       </div>
       {reviewCount !== undefined && (
-        <span className="text-gray-500 dark:text-gray-400 text-sm">
+        <span className="text-ink-muted text-sm">
           ({reviewCount} valoraciones)
         </span>
       )}

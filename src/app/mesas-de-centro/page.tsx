@@ -140,12 +140,12 @@ export default function MesasDeCentroPage() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <main className="bg-white text-neutral-900">
+      <main className="bg-white text-ink">
         {/* Hero */}
-        <section className="border-b border-neutral-200 bg-neutral-50">
+        <section className="border-b border-line bg-canvas">
           <div className="mx-auto max-w-7xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
-            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
-              <Link href="/" className="hover:text-neutral-900">
+            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-ink-muted">
+              <Link href="/" className="hover:text-ink">
                 Inicio
               </Link>
               <span className="mx-1.5">/</span>
@@ -154,19 +154,16 @@ export default function MesasDeCentroPage() {
 
             <div className="mt-6 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-                  Living &middot; {SITE_NAME}
-                </p>
-                <h1 className="mt-3 text-4xl font-light tracking-tight md:text-6xl">
+                <h1 className="font-display text-4xl tracking-tight md:text-6xl font-semibold">
                   Mesas ratonas de madera para living
                 </h1>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted md:text-base">
                   Mesas ratonas de madera maciza para living: altura ideal 40-50 cm según la altura del sofá. La mesa ratona es la pieza baja que va frente al sofá, también llamada mesa de centro. Ancho recomendado: entre la mitad y dos tercios del largo del sofá para equilibrio visual. Fabricación en Chillán con envío a todo Chile. Cotiza medidas a medida por WhatsApp.
                 </p>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600">
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
                   <Link
                     href="/guias/medidas-mesa-de-centro"
-                    className="underline decoration-neutral-300 underline-offset-4 hover:text-neutral-900"
+                    className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
                   >
                     Guía de medidas de mesa de centro y mesa ratona
                   </Link>
@@ -184,7 +181,7 @@ export default function MesasDeCentroPage() {
 
         {/* Product grid */}
         <section className="mx-auto max-w-7xl px-4 py-10 md:py-14">
-          <p className="mb-6 text-sm text-neutral-600">
+          <p className="mb-6 text-sm text-ink-muted">
             {mesasCentro.length}{" "}
             {mesasCentro.length === 1 ? "producto disponible" : "productos disponibles"}
           </p>
@@ -196,29 +193,29 @@ export default function MesasDeCentroPage() {
         </section>
 
         {/* Contenido SEO */}
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
               ¿Qué es una mesa ratona y cómo elegir el tamaño ideal?
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               Mesa ratona es el término más usado en Chile para referirse a una mesa baja
               de living que va frente al sofá. Es exactamente lo mismo que una mesa de centro.
               La diferencia está solo en el nombre: ambos términos describen una pieza de altura
               reducida (entre 40 y 50 cm) que sirve para apoyar objetos, decoración o bandejas mientras
               estás sentado en el sofá.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               Al elegir una mesa ratona de madera, considera primero la altura del sofá. Si tu sofá tiene
               cojines gruesos o muy blandos, prefiere una mesa más alta (cercana a los 50 cm) para compensar
               el hundimiento del asiento. Si el sofá es bajo o firme, una mesa de 40 cm funciona bien. La idea
               es que puedas alcanzar la superficie de la mesa cómodamente sin agacharte.
             </p>
 
-            <h2 className="mt-10 text-2xl font-light tracking-tight md:text-3xl">
+            <h2 className="font-display mt-10 text-2xl tracking-tight md:text-3xl font-semibold">
               Altura recomendada de una mesa ratona según el sofá
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               La altura ideal de una mesa ratona está entre 40 y 50 cm. Esta altura permite alcanzar
               cómodamente desde el sofá sin tener que agacharse mucho. Si tu sofá tiene cojines gruesos,
               prefiere una mesa más alta (cercana a los 50 cm); si el sofá es bajo o firme, una mesa
@@ -226,10 +223,10 @@ export default function MesasDeCentroPage() {
               asiento del sofá, o hasta 5 cm más baja.
             </p>
 
-            <h2 className="mt-10 text-2xl font-light tracking-tight md:text-3xl">
+            <h2 className="font-display mt-10 text-2xl tracking-tight md:text-3xl font-semibold">
               Tamaño de la mesa ratona según el largo del sofá
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               Como referencia general, la mesa ratona debería medir entre la mitad y dos tercios del
               largo del sofá. Por ejemplo, si tu sofá mide 180 cm, una mesa de 90-120 cm de largo se
               ve equilibrada visualmente. Si el espacio es pequeño o hay mucha circulación, puedes optar
@@ -238,10 +235,10 @@ export default function MesasDeCentroPage() {
               modernos, patas trípode para un toque orgánico, o hairpin para un look mid-century.
             </p>
             
-            <h2 className="mt-10 text-2xl font-light tracking-tight md:text-3xl">
+            <h2 className="font-display mt-10 text-2xl tracking-tight md:text-3xl font-semibold">
               Cómo cotizar una mesa ratona a medida
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               Si ninguna mesa del catálogo calza con tus medidas o estilo, cotizamos mesas ratonas a medida.
               Envía por WhatsApp el largo, ancho y altura que necesitas, una foto del living si es posible,
               tu comuna, y si tienes preferencia de terminación (barniz natural, teñido, etc.). Te confirmamos
@@ -252,18 +249,18 @@ export default function MesasDeCentroPage() {
         </section>
 
         {/* FAQ */}
-        <section className="border-t border-neutral-200">
+        <section className="border-t border-line">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
               Preguntas frecuentes
             </h2>
-            <div className="mt-8 border-t border-neutral-200">
+            <div className="mt-8 border-t border-line">
               {faqItems.map((item) => (
-                <article key={item.question} className="border-b border-neutral-200 py-5">
-                  <h3 className="text-base font-medium text-neutral-900 md:text-lg">
+                <article key={item.question} className="border-b border-line py-5">
+                  <h3 className="font-display text-base text-ink md:text-lg tracking-tight font-medium">
                     {item.question}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
                     {item.answer}
                   </p>
                 </article>
@@ -273,21 +270,21 @@ export default function MesasDeCentroPage() {
         </section>
 
         {/* Related links */}
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
-            <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
+            <h2 className="font-display text-xl tracking-tight text-ink font-medium">También te puede interesar</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <Link href="/guias/cuidado-muebles-madera" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Cuidado de muebles de madera</p>
-                <p className="mt-1 text-xs text-neutral-600">Guía práctica para mantener tus mesas ratonas y muebles de madera.</p>
+              <Link href="/guias/cuidado-muebles-madera" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Cuidado de muebles de madera</p>
+                <p className="mt-1 text-xs text-ink-muted">Guía práctica para mantener tus mesas ratonas y muebles de madera.</p>
               </Link>
-              <Link href="/comedores-nordicos" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Comedores nórdicos</p>
-                <p className="mt-1 text-xs text-neutral-600">Arma tu comedor de estilo escandinavo con mesas, sillas y bancas.</p>
+              <Link href="/comedores-nordicos" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Comedores nórdicos</p>
+                <p className="mt-1 text-xs text-ink-muted">Arma tu comedor de estilo escandinavo con mesas, sillas y bancas.</p>
               </Link>
-              <Link href="/collections/mesas" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Mesas ratonas de madera</p>
-                <p className="mt-1 text-xs text-neutral-600">Explora todas las mesas ratonas y de comedor en el catálogo.</p>
+              <Link href="/collections/mesas" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Mesas ratonas de madera</p>
+                <p className="mt-1 text-xs text-ink-muted">Explora todas las mesas ratonas y de comedor en el catálogo.</p>
               </Link>
             </div>
           </div>
@@ -295,11 +292,11 @@ export default function MesasDeCentroPage() {
 
         {/* CTA final */}
         <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
-            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+          <div className="rounded-2xl border border-line bg-ink p-7 text-white md:p-9">
+            <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
               Cotiza tu mesa de centro
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/70 md:text-base">
               Escribenos por WhatsApp para consultar precio, medidas, terminacion y despacho a tu
               comuna. Fabricamos en madera maciza con envio a todo Chile.
             </p>

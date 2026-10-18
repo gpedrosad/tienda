@@ -211,17 +211,14 @@ export default function ComedoresNordicosPage() {
     <>
       <JsonLd data={structuredData} />
 
-      <main className="bg-white text-neutral-900">
+      <main className="bg-white text-ink">
         {/* Hero */}
-        <section className="border-b border-neutral-200 bg-gradient-to-b from-neutral-100 to-white">
+        <section className="border-b border-line bg-gradient-to-b from-canvas to-white">
           <div className="mx-auto max-w-6xl px-4 pt-24 pb-12 md:pt-32 md:pb-16">
-            <p className="text-[11px] md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-              Estilo nórdico en madera
-            </p>
-            <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight font-semibold">
               Comedores nórdicos: mesas y sillas de madera
             </h1>
-            <p className="mt-5 max-w-3xl text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed">
+            <p className="mt-5 max-w-3xl text-sm sm:text-base md:text-lg text-ink/80 leading-relaxed">
               Arma tu comedor nórdico completo con mesas amplias, sillas livianas y bancas de madera maciza.
               Diseño escandinavo funcional fabricado en Chile: líneas simples, madera natural y terminación
               cuidada para que tu comedor sea cálido y duradero. Cotiza tu combinación por WhatsApp.
@@ -232,7 +229,7 @@ export default function ComedoresNordicosPage() {
                 (badge) => (
                   <span
                     key={badge}
-                    className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-xs text-neutral-700"
+                    className="inline-flex items-center rounded-full border border-ink/20 bg-white px-3 py-1.5 text-xs text-ink/80"
                   >
                     {badge}
                   </span>
@@ -253,10 +250,10 @@ export default function ComedoresNordicosPage() {
               {heroHighlights.map((item) => (
                 <div
                   key={item.title}
-                  className="border border-neutral-200 rounded-xl p-4 bg-white shadow-sm"
+                  className="border border-line rounded-xl p-4 bg-white shadow-sm"
                 >
-                  <p className="text-sm font-medium text-neutral-900">{item.title}</p>
-                  <p className="mt-1 text-xs text-neutral-600">{item.description}</p>
+                  <p className="text-sm font-medium text-ink">{item.title}</p>
+                  <p className="mt-1 text-xs text-ink-muted">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -265,10 +262,10 @@ export default function ComedoresNordicosPage() {
 
         {/* Editorial */}
         <section className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
             Qué define un comedor nórdico
           </h2>
-          <p className="mt-5 max-w-4xl text-neutral-700 leading-relaxed">
+          <p className="mt-5 max-w-4xl text-ink/80 leading-relaxed">
             El estilo nórdico aplicado al comedor busca equilibrio entre forma y función.
             Madera clara o con veta visible, líneas rectas sin adornos y piezas que se sienten
             livianas aunque sean robustas. Un comedor escandinavo invita a sentarse, compartir
@@ -280,32 +277,32 @@ export default function ComedoresNordicosPage() {
             {featureCards.map((card) => (
               <article
                 key={card.title}
-                className="border border-neutral-200 rounded-2xl p-5 shadow-sm"
+                className="border border-line rounded-2xl p-5 shadow-sm"
               >
-                <h3 className="text-lg font-medium text-neutral-900">{card.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
+                <h3 className="font-display text-lg text-ink tracking-tight font-medium">{card.title}</h3>
+                <p className="mt-2 text-sm text-ink/80 leading-relaxed">
                   {card.description}
                 </p>
               </article>
             ))}
           </div>
 
-          <h3 className="mt-12 text-2xl md:text-3xl font-light tracking-tight">
+          <h3 className="font-display mt-12 text-2xl md:text-3xl tracking-tight font-medium">
             Cómo elegir tu comedor nórdico según espacio y comensales
           </h3>
-          <p className="mt-4 max-w-4xl text-neutral-700 leading-relaxed">
+          <p className="mt-4 max-w-4xl text-ink/80 leading-relaxed">
             Un comedor nórdico bien dimensionado depende de la cantidad de personas que suelan reunirse.
             Para 4 personas una mesa de 120-140 cm de largo es suficiente; para 6 personas recomendamos
             160-180 cm; y para 8 comensales lo ideal es 200 cm o más. Si tu comedor es compacto, considera
             una banca en un lado en lugar de dos sillas: optimizas espacio sin perder asientos.
           </p>
-          <p className="mt-4 max-w-4xl text-neutral-700 leading-relaxed">
+          <p className="mt-4 max-w-4xl text-ink/80 leading-relaxed">
             Para más detalles sobre proporciones, revisa nuestra{" "}
-            <Link href="/guias/medidas-mesa-comedor" className="underline hover:text-neutral-900">
+            <Link href="/guias/medidas-mesa-comedor" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               guía de medidas de mesa de comedor
             </Link>
             . Si necesitas orientación sobre qué sillas combinan mejor con tu mesa, consulta la{" "}
-            <Link href="/guias/elegir-sillas-madera-comedor" className="underline hover:text-neutral-900">
+            <Link href="/guias/elegir-sillas-madera-comedor" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               guía de sillas de comedor
             </Link>{" "}
             donde explicamos alturas, anchos y cuántas sillas se recomiendan según el largo de tu mesa.
@@ -313,12 +310,12 @@ export default function ComedoresNordicosPage() {
         </section>
 
         {/* Grilla de productos */}
-        <section className="bg-neutral-50 border-y border-neutral-200">
+        <section className="bg-canvas border-y border-line">
           <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
               Nuestras piezas de estilo nórdico
             </h2>
-            <p className="mt-3 max-w-3xl text-neutral-700 leading-relaxed">
+            <p className="mt-3 max-w-3xl text-ink/80 leading-relaxed">
               Mesas, sillas y bancas de madera maciza con diseño escandinavo. Cada pieza se
               puede combinar para armar tu comedor nórdico completo.
             </p>
@@ -332,20 +329,20 @@ export default function ComedoresNordicosPage() {
 
         {/* Pasos */}
         <section className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
             Cómo armar tu comedor nórdico
           </h2>
           <ol className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
             {steps.map((step, index) => (
               <li
                 key={step.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm"
+                className="rounded-2xl border border-line bg-white p-5 shadow-sm"
               >
-                <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+                <p className="text-sm font-medium text-wood">
                   Paso {index + 1}
                 </p>
-                <h3 className="mt-2 text-lg font-medium text-neutral-900">{step.title}</h3>
-                <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
+                <h3 className="font-display mt-2 text-lg text-ink tracking-tight font-medium">{step.title}</h3>
+                <p className="mt-2 text-sm text-ink/80 leading-relaxed">
                   {step.description}
                 </p>
               </li>
@@ -354,16 +351,16 @@ export default function ComedoresNordicosPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-neutral-50 border-y border-neutral-200">
+        <section className="bg-canvas border-y border-line">
           <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
               Preguntas frecuentes
             </h2>
-            <div className="mt-8 border-t border-neutral-200">
+            <div className="mt-8 border-t border-line">
               {faqItems.map((item) => (
-                <article key={item.question} className="border-b border-neutral-200 py-5">
-                  <h3 className="text-lg font-medium text-neutral-900">{item.question}</h3>
-                  <p className="mt-2 text-sm md:text-base text-neutral-700 leading-relaxed">
+                <article key={item.question} className="border-b border-line py-5">
+                  <h3 className="font-display text-lg text-ink tracking-tight font-medium">{item.question}</h3>
+                  <p className="mt-2 text-sm md:text-base text-ink/80 leading-relaxed">
                     {item.answer}
                   </p>
                 </article>
@@ -373,21 +370,21 @@ export default function ComedoresNordicosPage() {
         </section>
 
         {/* Related links */}
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
-            <h2 className="text-xl font-light tracking-tight text-neutral-900">También te puede interesar</h2>
+            <h2 className="font-display text-xl tracking-tight text-ink font-medium">También te puede interesar</h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <Link href="/guias/medidas-mesa-comedor" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Guía de medidas de mesa</p>
-                <p className="mt-1 text-xs text-neutral-600">Cómo elegir el tamaño correcto según cantidad de personas.</p>
+              <Link href="/guias/medidas-mesa-comedor" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Guía de medidas de mesa</p>
+                <p className="mt-1 text-xs text-ink-muted">Cómo elegir el tamaño correcto según cantidad de personas.</p>
               </Link>
-              <Link href="/guias/elegir-sillas-madera-comedor" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Guía de sillas de comedor</p>
-                <p className="mt-1 text-xs text-neutral-600">Altura ideal, cuántas sillas por mesa y cómo elegirlas.</p>
+              <Link href="/guias/elegir-sillas-madera-comedor" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Guía de sillas de comedor</p>
+                <p className="mt-1 text-xs text-ink-muted">Altura ideal, cuántas sillas por mesa y cómo elegirlas.</p>
               </Link>
-              <Link href="/mesas-de-centro" className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm hover:border-neutral-400 transition-colors">
-                <p className="text-sm font-medium text-neutral-900">Mesas ratonas para living</p>
-                <p className="mt-1 text-xs text-neutral-600">Complementa tu living con una mesa ratona de madera maciza.</p>
+              <Link href="/mesas-de-centro" className="rounded-xl border border-line bg-white p-4 shadow-sm hover:border-wood/40 transition-colors">
+                <p className="text-sm font-medium text-ink">Mesas ratonas para living</p>
+                <p className="mt-1 text-xs text-ink-muted">Complementa tu living con una mesa ratona de madera maciza.</p>
               </Link>
             </div>
           </div>
@@ -395,15 +392,15 @@ export default function ComedoresNordicosPage() {
 
         {/* CTA final */}
         <section className="mx-auto max-w-6xl px-4 pt-14 pb-32 md:pt-16 md:pb-36">
-          <div className="rounded-2xl bg-neutral-900 p-7 md:p-9 text-white">
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight">
+          <div className="rounded-2xl bg-ink p-7 md:p-9 text-white">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight font-semibold">
               Cotiza tu comedor nórdico por WhatsApp
             </h2>
-            <p className="mt-3 max-w-3xl text-neutral-200 leading-relaxed">
+            <p className="mt-3 max-w-3xl text-canvas/80 leading-relaxed">
               Escríbenos con las piezas que te interesan o cuéntanos tu espacio y te ayudamos
               a armar la combinación ideal. Confirmamos precios, medidas, terminación y despacho.
             </p>
-            <ul className="mt-5 space-y-2 text-sm text-neutral-200">
+            <ul className="mt-5 space-y-2 text-sm text-canvas/80">
               <li>Mesas, sillas y bancas de estilo nórdico.</li>
               <li>Fabricación artesanal en Chile.</li>
               <li>Envíos a todo Chile.</li>

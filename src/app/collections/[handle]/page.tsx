@@ -170,11 +170,11 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   return (
     <>
       <JsonLd data={structuredData} />
-      <main className="bg-white text-neutral-900">
-      <section className="border-b border-neutral-200 bg-neutral-50">
+      <main className="bg-white text-ink">
+      <section className="border-b border-line bg-canvas">
         <div className="mx-auto max-w-7xl px-4 pb-6 pt-20 md:pb-14 md:pt-32">
-          <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
-            <Link href="/" className="hover:text-neutral-900">
+          <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-ink-muted">
+            <Link href="/" className="hover:text-ink">
               Inicio
             </Link>
             <span className="mx-1.5">/</span>
@@ -183,13 +183,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
 
           <div className="mt-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-                Catálogo Idea Madera
-              </p>
-              <h1 className="mt-3 text-4xl font-light tracking-tight md:text-6xl">
+              <h1 className="font-display text-4xl tracking-tight md:text-6xl font-semibold">
                 {collection.h1}
               </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted md:text-base">
                 {introLead}
               </p>
             </div>
@@ -218,23 +215,23 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       <section className="mx-auto max-w-7xl px-4 py-10 md:py-14">
         {collection.isEmpty ? (
           <div className="max-w-2xl">
-            <p className="text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="text-sm leading-relaxed text-ink-muted md:text-base">
               Por ahora no tenemos {collection.category?.toLowerCase()} con fotografías publicadas.
               Estamos preparando nuevos modelos: si te interesa esta categoría, escríbenos por
               WhatsApp y te contamos qué podemos fabricar a pedido.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
               Mientras tanto, puedes revisar{" "}
               <Link
                 href={`/collections/${ALL_PRODUCTS_HANDLE}`}
-                className="underline underline-offset-4 hover:text-neutral-900"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
               >
                 todo el catálogo disponible
               </Link>{" "}
               o las{" "}
               <Link
                 href="/collections/mesas"
-                className="underline underline-offset-4 hover:text-neutral-900"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
               >
                 mesas de madera
               </Link>{" "}
@@ -243,7 +240,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
           </div>
         ) : (
           <>
-            <p className="mb-6 text-sm text-neutral-600">
+            <p className="mb-6 text-sm text-ink-muted">
               {collection.products.length}{" "}
               {collection.products.length === 1 ? "producto disponible" : "productos disponibles"}
             </p>
@@ -257,23 +254,23 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       </section>
 
       {introRest ? (
-        <section className="border-t border-neutral-200">
+        <section className="border-t border-line">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <p className="text-sm leading-relaxed text-neutral-600 md:text-base">{introRest}</p>
+            <p className="text-sm leading-relaxed text-ink-muted md:text-base">{introRest}</p>
           </div>
         </section>
       ) : null}
 
       {collection.guideTitle && collection.guideParagraphs && !collection.isEmpty ? (
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">
               {collection.guideTitle}
             </h2>
             {collection.guideParagraphs.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 40)}
-                className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base"
+                className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base"
               >
                 {paragraph}
               </p>
@@ -283,28 +280,28 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       ) : null}
 
       {collection.faqs && collection.faqs.length > 0 && !collection.isEmpty ? (
-        <section className="border-t border-neutral-200">
+        <section className="border-t border-line">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">
               Preguntas frecuentes
             </h2>
-            <div className="mt-8 border-t border-neutral-200">
+            <div className="mt-8 border-t border-line">
               {collection.faqs.map((item, index) => (
                 <details
                   key={item.question}
-                  className="group border-b border-neutral-200 py-5"
+                  className="group border-b border-line py-5"
                   open={index === 0}
                 >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-sm text-base font-medium text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 md:text-lg [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-base font-medium md:text-lg">{item.question}</h3>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-sm text-base font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 md:text-lg [&::-webkit-details-marker]:hidden">
+                    <h3 className="font-display text-base md:text-lg tracking-tight font-medium">{item.question}</h3>
                     <span
                       aria-hidden="true"
-                      className="mt-1 text-neutral-500 transition-transform group-open:rotate-45 motion-reduce:transition-none"
+                      className="mt-1 text-ink-muted transition-transform group-open:rotate-45 motion-reduce:transition-none"
                     >
                       +
                     </span>
                   </summary>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
                     {item.answer}
                   </p>
                 </details>
@@ -315,9 +312,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       ) : null}
 
       {collection.relatedLinks && collection.relatedLinks.length > 0 && !collection.isEmpty ? (
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
-            <h2 className="text-xl font-light tracking-tight text-neutral-900">
+            <h2 className="font-display text-xl tracking-tight text-ink font-medium">
               También te puede interesar
             </h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -325,10 +322,10 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-400"
+                  className="rounded-xl border border-line bg-white p-4 transition-colors hover:border-wood/40"
                 >
-                  <p className="text-sm font-medium text-neutral-900">{link.title}</p>
-                  <p className="mt-1 text-xs text-neutral-600">{link.description}</p>
+                  <p className="text-sm font-medium text-ink">{link.title}</p>
+                  <p className="mt-1 text-xs text-ink-muted">{link.description}</p>
                 </Link>
               ))}
             </div>
@@ -338,11 +335,11 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
 
       {whatsappHref && collection.whatsappTitle && !collection.isEmpty ? (
         <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
-            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+          <div className="rounded-2xl border border-line bg-ink p-7 text-white md:p-9">
+            <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
               Cotiza {collection.whatsappTitle.toLowerCase()}
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/70 md:text-base">
               Escribe por WhatsApp el modelo o las medidas, la terminación y tu comuna.
               Confirmamos plazo de fabricación y despacho.
             </p>

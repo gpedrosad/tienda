@@ -36,9 +36,9 @@ interface ProductsSectionProps {
 export default function ProductsSection({ products }: ProductsSectionProps) {
   return (
     <div className="min-h-screen p-8 grid gap-4">
-      <h1 className="text-4xl font-bold text-left md:text-center font-poppins">
+      <h1 className="font-display text-4xl text-left md:text-center tracking-tight font-semibold">
       Productos</h1>
-      <p className="text-gray-600 mb-4 text-left md:text-center">
+      <p className="text-ink-muted mb-4 text-left md:text-center">
       Descubre nuestros productos de madera, diseñados para tu hogar y tu estilo.
       </p>
 
@@ -71,7 +71,7 @@ export default function ProductsSection({ products }: ProductsSectionProps) {
               <h2 className={`text-sm sm:text-lg font-semibold mt-4 ${isLongName ? "px-4" : ""}`}>
                 {product.title}
               </h2>
-              <p className="text-gray-600 mt-2">${formattedPrice}</p>
+              <p className="text-ink-muted mt-2">${formattedPrice}</p>
             </Link>
           );
         })}

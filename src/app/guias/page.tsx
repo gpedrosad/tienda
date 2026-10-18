@@ -112,11 +112,11 @@ export default function GuiasPage() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <main className="bg-white text-neutral-900">
-        <section className="border-b border-neutral-200 bg-neutral-50">
+      <main className="bg-white text-ink">
+        <section className="border-b border-line bg-canvas">
           <div className="mx-auto max-w-6xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
-            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
-              <Link href="/" className="hover:text-neutral-900">
+            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-ink-muted">
+              <Link href="/" className="hover:text-ink">
                 Inicio
               </Link>
               <span className="mx-1.5">/</span>
@@ -124,13 +124,10 @@ export default function GuiasPage() {
             </nav>
 
             <div className="mt-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
-                Aprende con Idea Madera
-              </p>
-              <h1 className="mt-3 text-4xl font-light tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="font-display text-4xl tracking-tight md:text-5xl lg:text-6xl font-semibold">
                 Guías de muebles de madera
               </h1>
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-neutral-600 md:text-lg">
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-ink-muted md:text-lg">
                 Guías prácticas para cuidar, elegir y cotizar muebles de madera con información útil, consejos reales y experiencia de taller. Todo en español y pensado para compradores en Chile.
               </p>
             </div>
@@ -143,18 +140,18 @@ export default function GuiasPage() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group rounded-2xl border border-neutral-200 bg-white p-6 transition-all hover:border-neutral-400 hover:shadow-sm"
+                className="group rounded-2xl border border-line bg-white p-6 transition-all hover:border-wood/40 hover:shadow-sm"
               >
-                <div className="mb-3 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium uppercase tracking-wide text-neutral-600">
+                <div className="mb-3 inline-block rounded-full bg-canvas-deep px-3 py-1 text-xs font-medium text-ink-muted">
                   {guide.category}
                 </div>
-                <h2 className="text-xl font-light tracking-tight text-neutral-900 group-hover:text-neutral-700">
+                <h2 className="font-display text-xl tracking-tight text-ink group-hover:text-wood font-medium">
                   {guide.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                   {guide.description}
                 </p>
-                <div className="mt-4 text-sm font-medium text-neutral-900 group-hover:underline">
+                <div className="mt-4 text-sm font-medium text-ink group-hover:underline">
                   Leer guía →
                 </div>
               </Link>
@@ -162,12 +159,12 @@ export default function GuiasPage() {
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 bg-neutral-50">
+        <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-4xl px-4 py-12 text-center md:py-16">
-            <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">
               ¿No encuentras lo que buscas?
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-neutral-600 md:text-lg">
+            <p className="mt-3 text-base leading-relaxed text-ink-muted md:text-lg">
               Escríbenos por WhatsApp y te ayudamos con tu consulta sobre muebles de madera, medidas, mantención o cotización.
             </p>
             <Link

@@ -26,13 +26,13 @@ export default function NotFound() {
   return (
     <>
       <JsonLd data={buildOrganizationSchema()} />
-      <main className="bg-white text-neutral-900">
+      <main className="bg-white text-ink">
         <div className="mx-auto flex min-h-[60vh] max-w-4xl flex-col justify-center px-4 pt-24 pb-16">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">Error 404</p>
-          <h1 className="mt-4 text-4xl font-light tracking-tight text-neutral-900 md:text-5xl">
+          <p className="text-sm font-medium text-wood">Error 404</p>
+          <h1 className="font-display mt-4 text-4xl tracking-tight text-ink md:text-5xl font-semibold">
             No encontramos esta página
           </h1>
-          <p className="mt-4 max-w-xl text-neutral-600">
+          <p className="mt-4 max-w-xl text-ink-muted">
             Puede que el enlace haya cambiado o que la página ya no exista. Puedes volver al
             catálogo o explorar nuestras colecciones.
           </p>

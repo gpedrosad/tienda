@@ -106,7 +106,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   };
 
   const itemClass =
-    "inline-flex min-h-11 items-center justify-center text-3xl md:text-4xl font-light text-neutral-900 hover:text-neutral-600 transition-colors duration-300 tracking-tight";
+    "inline-flex min-h-11 items-center justify-center font-display text-3xl md:text-4xl font-medium text-ink hover:text-wood transition-colors duration-300 tracking-tight";
 
   return (
     <>
@@ -126,7 +126,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <button
             ref={firstFocusableRef}
             onClick={onClose}
-            className="absolute top-5 right-5 z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
+            className="absolute top-5 right-5 z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30"
             aria-label="Cerrar menú"
           >
             <FaTimes size={22} />
@@ -134,13 +134,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
           <form onSubmit={handleSearchSubmit} className="mb-8">
             <div className="relative">
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted" />
               <input
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar productos..."
-                className="w-full pl-11 pr-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:border-transparent transition-all duration-300"
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-line bg-canvas text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-ink/30 focus:border-transparent transition-all duration-300"
               />
             </div>
           </form>
@@ -182,7 +182,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                           href={link.href}
                           onClick={onClose}
                           aria-current={isActive(link.href) ? "page" : undefined}
-                          className="inline-flex min-h-11 items-center text-sm font-light text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
+                          className="inline-flex min-h-11 items-center text-sm text-ink-muted hover:text-ink transition-colors duration-300"
                         >
                           {link.label}
                         </Link>
@@ -227,7 +227,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                           href={link.href}
                           onClick={onClose}
                           aria-current={isActive(link.href) ? "page" : undefined}
-                          className="inline-flex min-h-11 items-center text-lg font-light text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
+                          className="inline-flex min-h-11 items-center text-lg text-ink-muted hover:text-ink transition-colors duration-300"
                         >
                           {link.label}
                         </Link>
@@ -262,10 +262,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </ul>
           </nav>
 
-          <div className="text-center pt-6 border-t border-neutral-100">
-            <p className="text-xs md:text-sm text-neutral-500 tracking-wider uppercase font-light mb-3">
-              Artesanía en madera
-            </p>
+          <div className="text-center pt-6 border-t border-line">
             <WhatsAppCTA
               href={contactUrl}
               label="Escríbenos por WhatsApp"

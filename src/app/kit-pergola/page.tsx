@@ -268,14 +268,14 @@ export default function KitPergolaPage() {
     <>
       <JsonLd data={structuredData} />
 
-      <main className="min-h-screen bg-[#111111] text-white">
+      <main className="min-h-screen bg-ink text-white">
         <header className="border-b border-white/10">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
             <Link href="/" className="group">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-[#d4a017] group-hover:text-[#e0b020]">
+              <p className="font-display text-base font-semibold tracking-tight text-white group-hover:text-wood-light">
                 Idea Madera
               </p>
-              <p className="mt-1 text-sm text-neutral-300">Kit uniones metálicas para pérgola</p>
+              <p className="mt-1 text-sm text-canvas/70">Kit uniones metálicas para pérgola</p>
             </Link>
             <WhatsAppCTA
               href={whatsappHref}
@@ -300,17 +300,17 @@ export default function KitPergolaPage() {
               sizes="100vw"
               className="object-cover object-center opacity-55"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-[#111111]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-ink" />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-20 md:px-6 md:pb-24 md:pt-28">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#d4a017]">
+            <p className="text-sm font-medium text-wood-light">
               1 módulo · Sobre suelo · No incluye maderas
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-light tracking-tight text-white md:text-6xl">
+            <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-white md:text-6xl font-semibold">
               Kit de pérgola de madera con uniones metálicas
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-200 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-canvas/80 md:text-lg">
               Construye tu propia pérgola de madera con este kit de uniones metálicas y herrajes
               pensado para madera de 3×3 pulgadas (75×75 mm). Incluye bases, codos, tornillos y
               tarugos para armar 1 módulo sobre suelo. Armado simple, módulos combinables y dos
@@ -326,7 +326,7 @@ export default function KitPergolaPage() {
               ].map((badge) => (
                 <span
                   key={badge}
-                  className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs text-neutral-200"
+                  className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs text-canvas/80"
                 >
                   {badge}
                 </span>
@@ -348,10 +348,10 @@ export default function KitPergolaPage() {
         <section className="border-b border-white/10">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
             <div>
-              <h2 className="text-3xl font-light tracking-tight text-white">
+              <h2 className="font-display text-3xl tracking-tight text-white font-semibold">
                 Qué incluye el kit de uniones metálicas
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Uniones y fijaciones para armar 1 módulo de pérgola sobre suelo. La madera se
                 cotiza o consigue aparte según tus medidas.
               </p>
@@ -374,21 +374,21 @@ export default function KitPergolaPage() {
                   key={item.title}
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
                 >
-                  <p className="text-sm font-medium text-[#d4a017]">{item.title}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-neutral-300">{item.description}</p>
+                  <p className="text-sm font-medium text-wood-light">{item.title}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-canvas/70">{item.description}</p>
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#161616]">
+        <section className="border-y border-white/10 bg-white/[0.03]">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-3xl">
-              <h2 className="text-3xl font-light tracking-tight text-white">
+              <h2 className="font-display text-3xl tracking-tight text-white font-semibold">
                 Cómo funciona el kit para pérgola de madera
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-canvas/70 md:text-base">
                 El kit de pérgola madera está pensado para postes y vigas de{" "}
                 <strong className="font-medium text-white">3×3 pulgadas (75×75 mm)</strong>. Tú
                 eliges el largo de las piezas según el tamaño de pérgola que quieras. Los módulos se
@@ -396,9 +396,9 @@ export default function KitPergolaPage() {
                 kit para pérgola incluye todas las uniones metálicas y herrajes necesarios para un
                 armado firme y duradero.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-400 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-canvas/60 md:text-base">
                 Importante: este kit{" "}
-                <strong className="font-medium text-neutral-200">no incluye las maderas</strong>.
+                <strong className="font-medium text-canvas/80">no incluye las maderas</strong>.
                 Solo trae las uniones metálicas, herrajes y fijación para armar 1 módulo sobre suelo.
               </p>
             </div>
@@ -408,10 +408,10 @@ export default function KitPergolaPage() {
         <section className="border-y border-white/10">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-3xl">
-              <h2 className="text-3xl font-light tracking-tight text-white">
+              <h2 className="font-display text-3xl tracking-tight text-white font-semibold">
                 Uniones y soportes metálicos para pérgola modular
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Este kit de pérgola incluye todas las uniones metálicas y soportes necesarios para
                 armar una estructura modular resistente. Las{" "}
                 <strong className="font-medium text-white">bases metálicas</strong> anclan los 4
@@ -419,13 +419,13 @@ export default function KitPergolaPage() {
                 atornillar en superficies firmes o base para cementar con perforación de 30 cm en
                 distintos tipos de terreno.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Los <strong className="font-medium text-white">4 codos metálicos a 90°</strong> unen
                 postes y vigas en las esquinas, permitiendo un montaje firme sin cortes complicados. La
                 tornillería incluida (tornillos para madera, tapas plásticas, 25 tarugos y tirafondos
                 de 10 mm) completa el sistema de fijación para una pérgola estable y duradera.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 El diseño modular permite combinar varios kits: empieza con 1 módulo sobre suelo y
                 agranda la pérgola sumando más uniones metálicas según el espacio. Es ideal para quien
                 busca un{" "}
@@ -438,15 +438,15 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#161616]">
+        <section className="border-t border-white/10 bg-white/[0.03]">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:px-6 md:py-16">
             <div>
-              <h2 className="text-3xl font-light tracking-tight text-white">Qué no incluye el kit</h2>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <h2 className="font-display text-3xl tracking-tight text-white font-semibold">Qué no incluye el kit</h2>
+              <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Es un kit de uniones metálicas y fijaciones para 1 módulo sobre suelo. No es una
                 pérgola terminada ni un cálculo estructural.
               </p>
-              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-neutral-300">
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-canvas/70">
                 <li>Maderas (postes, vigas o cubierta)</li>
                 <li>Techo, lona o policarbonato</li>
                 <li>Instalación en terreno</li>
@@ -454,12 +454,12 @@ export default function KitPergolaPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-light tracking-tight text-white">Qué necesitamos para cotizar</h2>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-300 md:text-base">
+              <h2 className="font-display text-3xl tracking-tight text-white font-semibold">Qué necesitamos para cotizar</h2>
+              <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Con eso te respondemos precio referencial, tipo de base y despacho. Si también
                 quieres orientación de maderas 3×3, dilo en el mismo mensaje.
               </p>
-              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-neutral-300">
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-canvas/70">
                 <li>Tipo de base: atornillar o cementar</li>
                 <li>Comuna de despacho</li>
                 <li>Cuántos módulos (empieza en 1)</li>
@@ -470,8 +470,8 @@ export default function KitPergolaPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
-          <h2 className="text-3xl font-light tracking-tight">Bases para pérgola sobre suelo</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+          <h2 className="font-display text-3xl tracking-tight font-semibold">Bases para pérgola sobre suelo</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/70 md:text-base">
             Al cotizar puedes elegir entre dos tipos de base para el suelo:
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -480,17 +480,17 @@ export default function KitPergolaPage() {
                 key={option.title}
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
               >
-                <h3 className="text-lg font-medium text-[#d4a017]">{option.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-300">{option.description}</p>
+                <h3 className="font-display text-lg text-wood-light tracking-tight font-medium">{option.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-canvas/70">{option.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#161616]">
+        <section className="border-t border-white/10 bg-white/[0.03]">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
-            <h2 className="text-3xl font-light tracking-tight">Cómo armar tu pérgola</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+            <h2 className="font-display text-3xl tracking-tight font-semibold">Cómo armar tu pérgola</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/70 md:text-base">
               Tres pasos para pasar del kit a un espacio techado con madera a tu medida.
             </p>
             <ol className="mt-8 grid gap-4 md:grid-cols-3">
@@ -499,11 +499,11 @@ export default function KitPergolaPage() {
                   key={step.title}
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
                 >
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#d4a017]">
+                  <p className="text-sm font-medium text-wood-light">
                     Paso {index + 1}
                   </p>
-                  <h3 className="mt-2 text-lg font-medium text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">{step.description}</p>
+                  <h3 className="font-display mt-2 text-lg text-white tracking-tight font-medium">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-canvas/70">{step.description}</p>
                 </li>
               ))}
             </ol>
@@ -512,23 +512,23 @@ export default function KitPergolaPage() {
 
         <section className="border-t border-white/10">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
-            <h2 className="text-3xl font-light tracking-tight">Ventajas del sistema modular</h2>
+            <h2 className="font-display text-3xl tracking-tight font-semibold">Ventajas del sistema modular</h2>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <h3 className="text-lg font-medium text-white">Armado simple</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                <h3 className="font-display text-lg text-white tracking-tight font-medium">Armado simple</h3>
+                <p className="mt-2 text-sm leading-relaxed text-canvas/70">
                   Pensado para armar con mínimos conocimientos y herramientas básicas.
                 </p>
               </article>
               <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <h3 className="text-lg font-medium text-white">A tu medida</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                <h3 className="font-display text-lg text-white tracking-tight font-medium">A tu medida</h3>
+                <p className="mt-2 text-sm leading-relaxed text-canvas/70">
                   Combina maderas de distintos largos y adapta la pérgola a tu espacio.
                 </p>
               </article>
               <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <h3 className="text-lg font-medium text-white">Módulos combinables</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                <h3 className="font-display text-lg text-white tracking-tight font-medium">Módulos combinables</h3>
+                <p className="mt-2 text-sm leading-relaxed text-canvas/70">
                   Puedes sumar módulos y ampliar la estructura sin límites.
                 </p>
               </article>
@@ -536,9 +536,9 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#161616]">
+        <section className="border-t border-white/10 bg-white/[0.03]">
           <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
-            <h2 className="text-3xl font-light tracking-tight">Preguntas frecuentes</h2>
+            <h2 className="font-display text-3xl tracking-tight font-semibold">Preguntas frecuentes</h2>
             <div className="mt-8 border-t border-white/10">
               {faqItems.map((item, index) => (
                 <details
@@ -546,13 +546,13 @@ export default function KitPergolaPage() {
                   className="group border-b border-white/10 py-5"
                   open={index === 0}
                 >
-                  <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 rounded-sm text-lg font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#161616] [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-lg font-medium">{item.question}</h3>
-                    <span aria-hidden="true" className="mt-1 text-neutral-400 transition-transform group-open:rotate-45 motion-reduce:transition-none">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 rounded-sm font-display text-lg font-medium tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#161616] [&::-webkit-details-marker]:hidden">
+                    <h3 className="font-display text-lg tracking-tight font-medium">{item.question}</h3>
+                    <span aria-hidden="true" className="mt-1 text-canvas/60 transition-transform group-open:rotate-45 motion-reduce:transition-none">
                       +
                     </span>
                   </summary>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300 md:text-base">
+                  <p className="mt-2 text-sm leading-relaxed text-canvas/70 md:text-base">
                     {item.answer}
                   </p>
                 </details>
@@ -561,13 +561,13 @@ export default function KitPergolaPage() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#0c0c0c]">
+        <section className="border-t border-white/10 bg-black/20">
           <div className="mx-auto max-w-6xl px-4 pt-14 pb-28 md:px-6 md:pt-16 md:pb-32">
-            <div className="rounded-3xl border border-[#d4a017]/30 bg-gradient-to-br from-[#1a1608] to-[#111111] p-7 md:p-10">
-              <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+            <div className="rounded-3xl border border-wood-light/30 bg-gradient-to-br from-wood/25 to-ink p-7 md:p-10">
+              <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
                 Cotiza tu kit pérgola por WhatsApp
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/70 md:text-base">
                 Escríbenos para confirmar precio, tipo de base (atornillar o cementar),
                 disponibilidad y despacho a tu comuna. Si también necesitas las maderas de 3×3, te
                 ayudamos a cotizarlas aparte.
@@ -584,26 +584,26 @@ export default function KitPergolaPage() {
 
             <nav
               aria-label="Enlaces relacionados"
-              className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-neutral-500"
+              className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-ink-muted"
             >
-              <Link href="/" className="hover:text-neutral-300">
+              <Link href="/" className="hover:text-white">
                 Inicio
               </Link>
-              <Link href="/guias/cotizar-muebles-a-medida" className="hover:text-neutral-300">
+              <Link href="/guias/cotizar-muebles-a-medida" className="hover:text-white">
                 Cómo cotizar a medida
               </Link>
-              <Link href="/cubiertas-a-medida" className="hover:text-neutral-300">
+              <Link href="/cubiertas-a-medida" className="hover:text-white">
                 Cubiertas a medida
               </Link>
-              <Link href="/contacto" className="hover:text-neutral-300">
+              <Link href="/contacto" className="hover:text-white">
                 Contacto
               </Link>
-              <Link href="/quienes-somos" className="hover:text-neutral-300">
+              <Link href="/quienes-somos" className="hover:text-white">
                 Quiénes somos
               </Link>
             </nav>
 
-            <p id="footer-creditos" className="mt-6 text-center text-xs text-neutral-500">
+            <p id="footer-creditos" className="mt-6 text-center text-xs text-ink-muted">
               Kit pérgola modular · Idea Madera · Chile
             </p>
           </div>

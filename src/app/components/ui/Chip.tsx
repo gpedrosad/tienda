@@ -19,10 +19,10 @@ export const chipRowClassName = "flex max-w-full flex-nowrap gap-2 overflow-x-au
 
 export function chipClassName(active = false, className?: string) {
   return [
-    "inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2",
+    "inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2",
     active
-      ? "bg-neutral-900 text-white"
-      : "bg-white text-neutral-700 ring-1 ring-neutral-200 hover:text-neutral-900",
+      ? "bg-ink text-white"
+      : "bg-white text-ink/80 ring-1 ring-ink/15 hover:text-ink hover:ring-ink/30",
     className,
   ]
     .filter(Boolean)

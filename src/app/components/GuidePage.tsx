@@ -38,18 +38,18 @@ function featuredProductsFor(ids: string[] | undefined) {
 function GuideSectionBlock({ section }: { section: GuideSection }) {
   return (
     <section className="mb-10">
-      <h2 className="mb-4 text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+      <h2 className="font-display mb-4 text-2xl tracking-tight text-ink md:text-3xl font-semibold">
         {section.title}
       </h2>
       {section.content.map((paragraph, pIdx) => (
-        <p key={pIdx} className="mb-4 text-base leading-relaxed text-neutral-700">
+        <p key={pIdx} className="mb-4 text-base leading-relaxed text-ink/80">
           <InlineLinkedText text={paragraph} />
         </p>
       ))}
       {section.bullets && (
-        <ul className="my-4 list-disc space-y-2 pl-5 marker:text-neutral-400">
+        <ul className="my-4 list-disc space-y-2 pl-5 marker:text-wood">
           {section.bullets.map((bullet, bIdx) => (
-            <li key={bIdx} className="text-base leading-relaxed text-neutral-700">
+            <li key={bIdx} className="text-base leading-relaxed text-ink/80">
               <InlineLinkedText text={bullet} />
             </li>
           ))}
@@ -59,11 +59,11 @@ function GuideSectionBlock({ section }: { section: GuideSection }) {
         <div className="my-6 overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="border-b border-neutral-200 bg-neutral-50">
+              <tr className="border-b border-line bg-canvas">
                 {section.table.headers.map((header, hIdx) => (
                   <th
                     key={hIdx}
-                    className="px-4 py-3 text-left text-sm font-medium text-neutral-900"
+                    className="px-4 py-3 text-left text-sm font-medium text-ink"
                   >
                     {header}
                   </th>
@@ -72,9 +72,9 @@ function GuideSectionBlock({ section }: { section: GuideSection }) {
             </thead>
             <tbody>
               {section.table.rows.map((row, rIdx) => (
-                <tr key={rIdx} className="border-b border-neutral-100">
+                <tr key={rIdx} className="border-b border-line">
                   {row.map((cell, cIdx) => (
-                    <td key={cIdx} className="px-4 py-3 text-sm text-neutral-700">
+                    <td key={cIdx} className="px-4 py-3 text-sm text-ink/80">
                       {cell}
                     </td>
                   ))}
@@ -98,8 +98,8 @@ function GuideMidCta({
   productTitle: string;
 }) {
   return (
-    <div className="not-prose mb-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 md:p-8">
-      <h2 className="text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">{title}</h2>
+    <div className="not-prose mb-10 rounded-2xl border border-line bg-canvas p-6 md:p-8">
+      <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">{title}</h2>
       <WhatsAppCTA
         href={href}
         label="Escríbenos por WhatsApp"
@@ -124,7 +124,7 @@ function GuideFeaturedProducts({ items }: { items: Product[] }) {
     <section className="not-prose mb-10" aria-labelledby="guide-featured-products">
       <h2
         id="guide-featured-products"
-        className="mb-4 text-2xl font-light tracking-tight text-neutral-900 md:text-3xl"
+        className="mb-4 font-display text-2xl font-semibold tracking-tight text-ink md:text-3xl"
       >
         {heading}
       </h2>
@@ -160,15 +160,15 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
   return (
     <>
       <JsonLd data={structuredData} />
-      <main className="bg-white text-neutral-900">
-        <section className="border-b border-neutral-200 bg-neutral-50">
+      <main className="bg-white text-ink">
+        <section className="border-b border-line bg-canvas">
           <div className="mx-auto max-w-3xl px-4 pb-10 pt-24 md:pb-14 md:pt-32">
-            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-neutral-500">
-              <Link href="/" className="hover:text-neutral-900">
+            <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-ink-muted">
+              <Link href="/" className="hover:text-ink">
                 Inicio
               </Link>
               <span className="mx-1.5">/</span>
-              <Link href="/guias" className="hover:text-neutral-900">
+              <Link href="/guias" className="hover:text-ink">
                 Guías
               </Link>
               <span className="mx-1.5">/</span>
@@ -176,17 +176,17 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
             </nav>
 
             <div className="mt-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
+              <p className="text-sm font-medium text-wood">
                 {config.eyebrow}
               </p>
-              <h1 className="mt-3 text-4xl font-light tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="font-display mt-3 text-4xl tracking-tight md:text-5xl lg:text-6xl font-semibold">
                 {config.h1}
               </h1>
-              <p className="mt-4 text-base leading-relaxed text-neutral-600 md:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-ink-muted md:text-lg">
                 {config.intro}
               </p>
               {updatedDate && (
-                <p className="mt-3 text-xs text-neutral-500">
+                <p className="mt-3 text-xs text-ink-muted">
                   Actualizado:{" "}
                   <time dateTime={updatedDate}>{formatGuideUpdatedDate(updatedDate)}</time>
                 </p>
@@ -215,28 +215,28 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
         </article>
 
         {config.faqs && config.faqs.length > 0 && (
-          <section className="border-t border-neutral-200 bg-neutral-50">
+          <section className="border-t border-line bg-canvas">
             <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-              <h2 className="mb-8 text-2xl font-light tracking-tight text-neutral-900 md:text-3xl">
+              <h2 className="font-display mb-8 text-2xl tracking-tight text-ink md:text-3xl font-semibold">
                 Preguntas frecuentes
               </h2>
-              <div className="border-t border-neutral-200">
+              <div className="border-t border-line">
                 {config.faqs.map((faq, idx) => (
                   <details
                     key={faq.question}
-                    className="group border-b border-neutral-200 py-5"
+                    className="group border-b border-line py-5"
                     open={idx === 0}
                   >
-                    <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-sm text-base font-medium text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 md:text-lg [&::-webkit-details-marker]:hidden">
-                      <h3 className="text-base font-medium md:text-lg">{faq.question}</h3>
+                    <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-sm text-base font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 md:text-lg [&::-webkit-details-marker]:hidden">
+                      <h3 className="font-display text-base md:text-lg tracking-tight font-medium">{faq.question}</h3>
                       <span
                         aria-hidden="true"
-                        className="text-neutral-500 transition-transform group-open:rotate-45 motion-reduce:transition-none"
+                        className="text-ink-muted transition-transform group-open:rotate-45 motion-reduce:transition-none"
                       >
                         +
                       </span>
                     </summary>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
+                    <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
                       <InlineLinkedText text={faq.answer} />
                     </p>
                   </details>
@@ -247,9 +247,9 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
         )}
 
         {config.relatedLinks && config.relatedLinks.length > 0 && (
-          <section className="border-t border-neutral-200">
+          <section className="border-t border-line">
             <div className="mx-auto max-w-3xl px-4 py-10 md:py-12">
-              <h2 className="mb-5 text-xl font-light tracking-tight text-neutral-900">
+              <h2 className="font-display mb-5 text-xl tracking-tight text-ink font-medium">
                 También te puede interesar
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -257,10 +257,10 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-400"
+                    className="rounded-xl border border-line bg-white p-4 transition-colors hover:border-wood/40"
                   >
-                    <p className="text-sm font-medium text-neutral-900">{link.title}</p>
-                    <p className="mt-1 text-xs text-neutral-600">{link.description}</p>
+                    <p className="text-sm font-medium text-ink">{link.title}</p>
+                    <p className="mt-1 text-xs text-ink-muted">{link.description}</p>
                   </Link>
                 ))}
               </div>
@@ -270,11 +270,11 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
 
         {whatsappHref && config.ctaTitle && (
           <section className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-7 text-white md:p-9">
-              <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+            <div className="rounded-2xl border border-line bg-ink p-7 text-white md:p-9">
+              <h2 className="font-display text-2xl tracking-tight md:text-3xl font-semibold">
                 {config.ctaTitle}
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-canvas/80 md:text-base">
                 {config.ctaParagraph}
               </p>
               <WhatsAppCTA

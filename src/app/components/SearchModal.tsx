@@ -163,7 +163,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         <form onSubmit={handleSubmit} className="p-6">
           <div className="relative">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400"
+              className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-ink-muted"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
@@ -181,12 +181,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar productos..."
-              className="w-full pl-12 pr-4 py-4 text-lg font-light text-neutral-900 bg-neutral-50 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent placeholder:text-neutral-400"
+              className="w-full pl-12 pr-4 py-4 text-lg text-ink bg-canvas rounded-xl border border-line focus:outline-none focus:ring-2 focus:ring-ink focus:border-transparent placeholder:text-ink-muted"
               aria-label="Buscar productos"
             />
           </div>
 
-          <div className="mt-3 flex items-center justify-between text-xs text-neutral-400">
+          <div className="mt-3 flex items-center justify-between text-xs text-ink-muted">
             <span>Enter para buscar · Esc para cerrar</span>
             {results.length > 0 && (
               <span>{results.length} resultado{results.length !== 1 ? "s" : ""}</span>
@@ -195,7 +195,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         </form>
 
         {debouncedQuery && (
-          <div className="border-t border-neutral-100">
+          <div className="border-t border-line">
             {results.length > 0 ? (
               <ul className="py-2">
                 {results.map((product, index) => (
@@ -206,10 +206,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   >
                     <Link
                       href={`/products/${product.handle || product.id}`}
-                      className="flex items-center gap-4 px-6 py-3 hover:bg-neutral-50 transition-colors duration-150"
+                      className="flex items-center gap-4 px-6 py-3 hover:bg-canvas transition-colors duration-150"
                       onClick={onClose}
                     >
-                      <div className="flex-shrink-0 w-12 h-12 bg-neutral-100 rounded-lg overflow-hidden relative">
+                      <div className="flex-shrink-0 w-12 h-12 bg-canvas-deep rounded-lg overflow-hidden relative">
                         {product.imageUrl ? (
                           <Image
                             src={product.imageUrl}
@@ -219,7 +219,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                             className="object-cover"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-neutral-400">
+                          <div className="w-full h-full flex items-center justify-center text-ink-muted">
                             <svg
                               className="h-5 w-5"
                               fill="none"
@@ -237,12 +237,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-light text-neutral-900 truncate">
+                        <p className="text-sm font-medium text-ink truncate">
                           {product.name}
                         </p>
-                        <p className="text-xs text-neutral-500">{product.category}</p>
+                        <p className="text-xs text-ink-muted">{product.category}</p>
                       </div>
-                      <div className="flex-shrink-0 text-sm font-light text-neutral-900">
+                      <div className="flex-shrink-0 text-sm text-ink">
                         {priceFormatter.format(product.price)}
                       </div>
                     </Link>
@@ -252,7 +252,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             ) : (
               <div className="py-12 px-6 text-center">
                 <svg
-                  className="mx-auto h-10 w-10 text-neutral-300"
+                  className="mx-auto h-10 w-10 text-ink-muted/50"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -264,7 +264,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
-                <p className="mt-3 text-sm font-light text-neutral-500">
+                <p className="mt-3 text-sm text-ink-muted">
                   No se encontraron productos
                 </p>
               </div>

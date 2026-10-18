@@ -91,16 +91,16 @@ export default function HomePage() {
     <main className="pb-24 md:pb-32">
       <HeroBanner />
 
-      <section className="border-b border-neutral-200 bg-neutral-50">
+      <section className="border-b border-line bg-canvas">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 py-4 md:grid-cols-4 md:gap-4 md:py-8">
           {homeShortcuts.map((shortcut) => (
             <Link
               key={shortcut.href}
               href={shortcut.href}
-              className="rounded-2xl border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+              className="rounded-2xl border border-line bg-white p-4 transition-colors hover:border-wood/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
             >
-              <p className="font-medium text-neutral-900">{shortcut.title}</p>
-              <p className="mt-1 text-sm leading-snug text-neutral-600">{shortcut.line}</p>
+              <p className="font-display font-medium tracking-tight text-ink">{shortcut.title}</p>
+              <p className="mt-1 text-sm leading-snug text-ink-muted">{shortcut.line}</p>
             </Link>
           ))}
         </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
 
       <section id="catalogo" className="max-w-7xl mx-auto scroll-mt-24 px-4 py-10">
         <Reveal as="header" className="mb-8">
-          <h2 className="text-2xl font-light text-left md:text-center md:text-4xl tracking-[-0.02em] text-balance">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight text-ink text-balance font-semibold">
             Nuestro Catálogo
           </h2>
         </Reveal>
@@ -120,7 +120,7 @@ export default function HomePage() {
               placeholder="Buscar productos..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-input w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/80 focus:border-neutral-900"
+              className="search-input w-full px-4 py-3 border border-ink/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-ink/80 focus:border-ink"
             />
           </div>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
 
         <p
           key={`${selectedCategory}-${searchTerm}-${filteredProducts.length}`}
-          className="count-animate text-neutral-600 mb-6"
+          className="count-animate text-ink-muted mb-6"
         >
           {filteredProducts.length}{" "}
           {filteredProducts.length === 1 ? "producto" : "productos"} encontrados
@@ -165,7 +165,7 @@ export default function HomePage() {
 
         {filteredProducts.length === 0 && (
           <Reveal className="text-center py-12">
-            <p className="text-neutral-500 text-lg">
+            <p className="text-ink-muted text-lg">
               No se encontraron productos que coincidan con tu búsqueda.
             </p>
           </Reveal>
@@ -180,24 +180,24 @@ export default function HomePage() {
 
       <FabricaVideo />
 
-      <section className="border-t border-neutral-200">
+      <section className="border-t border-line">
         <div className="mx-auto max-w-3xl px-5 py-8 md:px-12 md:py-14">
-          <p className="text-sm leading-relaxed text-neutral-700 md:text-base">
+          <p className="text-sm leading-relaxed text-ink/80 md:text-base">
             Taller familiar en Chillán. Somos{" "}
-            <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
+            <Link href="/muebles-chillan" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               fábrica de muebles en Chillán
             </Link>{" "}
             {SINCE_FOUNDING}. Si buscas atención local desde Ñuble, entra a nuestra página de{" "}
-            <Link href="/muebles-chillan" className="underline hover:text-neutral-900">
+            <Link href="/muebles-chillan" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               mueblería en Chillán
             </Link>. Encuentra{" "}
-            <Link href="/collections/mesas" className="underline hover:text-neutral-900">
+            <Link href="/collections/mesas" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               mesas de comedor de madera
             </Link>{" "}para 4, 6 u 8 personas,{" "}
-            <Link href="/collections/sillas" className="underline hover:text-neutral-900">
+            <Link href="/collections/sillas" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               sillas de madera para comedor
             </Link>{" "}y{" "}
-            <Link href="/mesas-de-centro" className="underline hover:text-neutral-900">
+            <Link href="/mesas-de-centro" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               mesas ratonas
             </Link>{" "}para el living.
           </p>
