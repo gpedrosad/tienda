@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { AiOutlineCheckCircle, AiOutlinePhone, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineCheckCircle, AiOutlineEnvironment, AiOutlinePhone } from "react-icons/ai";
+import { buttonClasses } from "@/app/components/ui/Button";
 import Accordion from "@/app/components/Accordion";
 import ProductGallery from "@/app/components/ProductGallery";
 import RelatedProducts from "@/app/components/RelatedProducts";
@@ -18,6 +19,7 @@ import {
   clampMetaDescription,
   documentTitle,
   SITE_NAME,
+  DEFAULT_PRODUCTION_DAYS,
   SITE_URL,
   WARRANTY_MONTHS,
 } from "@/lib/seo";
@@ -206,6 +208,32 @@ function getShortPitch(product: Product) {
   );
 }
 
+function dimensionToken(value: string) {
+  return value.replace(/\s*cm\s*$/i, "").trim();
+}
+
+function getHeroSpecLine(product: Product) {
+  const parts: string[] = [];
+  if (product.material) parts.push(product.material);
+
+  const width = product.dimensions?.width;
+  const depth = product.dimensions?.depth;
+  const height = product.dimensions?.height;
+  const diameter = product.dimensions?.diameter;
+  const axes = [width, depth, height].filter((value): value is string => Boolean(value));
+
+  if (diameter && !width && !depth) {
+    const bits = [`diámetro ${dimensionToken(diameter)}`];
+    if (height) bits.push(`alto ${dimensionToken(height)}`);
+    parts.push(`${bits.join(" × ")} cm`);
+  } else if (axes.length > 0) {
+    parts.push(`${axes.map(dimensionToken).join("×")} cm`);
+  }
+
+  if (product.finish) parts.push(product.finish);
+  return parts.length > 0 ? parts.join(" · ") : null;
+}
+
 function getSpecRows(product: Product) {
   const rows: Array<{ label: string; value?: string }> = [
     { label: "Ancho", value: product.dimensions?.width },
@@ -306,8 +334,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const priceLabel = formatCLP(product.price);
   const specRows = getSpecRows(product);
   const productFeatures = product.features?.slice(0, 4) ?? [];
-  const productionDays = product.productionDays ?? 15;
-  const shouldShowDetails = productFeatures.length > 0 || specRows.length > 0;
+  const productionDays = product.productionDays ?? DEFAULT_PRODUCTION_DAYS;
+  const heroSpecLine = getHeroSpecLine(product);
   const availability = product.inStock === false ? "https://schema.org/PreOrder" : "https://schema.org/InStock";
   const offer =
     Number.isFinite(product.price) && product.price > 0
@@ -355,7 +383,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   };
 
   const trustItems = [
-    "Envíos a todo Chile",
+    "Retiro en taller (Chillán) o envío a todo Chile",
     `Fabricación ${productionDays} días hábiles en total`,
     "Cambios 30 días",
     "Pago tarjeta/transferencia",
@@ -386,7 +414,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </ol>
             </nav>
 
-            <div className="mt-5 grid gap-5 md:mt-8 md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-start">
+            <div className="mt-2 grid gap-2 md:mt-8 md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-start">
               <div className="order-1">
                 {galleryImages.length > 0 ? (
                   <ProductGallery images={galleryImages} productName={product.name} imageAlt={imageAlt} />
@@ -398,56 +426,59 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="order-2 lg:sticky lg:top-24">
-                <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm md:p-8">
+                <div className="rounded-3xl border border-neutral-200 bg-white p-4 shadow-sm md:p-8">
                   <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-500">
                     {product.category}
                   </p>
-                  <h1 className="mt-2 text-3xl sm:text-4xl md:mt-3 md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-neutral-900">
+                  <h1 className="mt-1 text-3xl sm:text-4xl md:mt-3 md:text-5xl font-light tracking-tight leading-tight text-neutral-900">
                     {product.name}
                   </h1>
+                  {heroSpecLine ? (
+                    <p className="mt-1.5 text-sm text-neutral-600">{heroSpecLine}</p>
+                  ) : null}
 
-                  <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 md:mt-4 md:text-sm">
-                    <AiOutlineStar className="text-[#25D366]" size={17} />
-                    <span>Fabricación en Chillán · Envío a todo Chile</span>
-                  </div>
-
-                  <p className="mt-4 text-3xl md:mt-6 md:text-4xl font-light tracking-tight text-neutral-900">
+                  <p className="mt-2 text-3xl md:mt-6 md:text-4xl font-light tracking-tight text-neutral-900">
                     {priceLabel}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:mt-4 md:text-lg">
-                    {getShortPitch(product)}
-                  </p>
+                  <p className="mt-1 text-xs text-neutral-500">IVA incluido</p>
 
-                  {productFeatures.length > 0 && (
-                    <ul className="mt-5 space-y-2.5">
-                      {productFeatures.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                          <AiOutlineCheckCircle className="mt-0.5 shrink-0 text-[#25D366]" size={18} />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto] md:mt-7">
-                    <WhatsAppInlineCTA
-                      productTitle={product.name}
-                      productId={productId}
-                      productPrice={product.price}
-                      placement="inline"
-                      fullWidth
-                      prefilledMessage={whatsappMessage}
-                    />
+                  <div className="mt-2 md:mt-7">
+                    <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                      <div id="product-hero-cta">
+                        <WhatsAppInlineCTA
+                          productTitle={product.name}
+                          productId={productId}
+                          productPrice={product.price}
+                          placement="product_hero"
+                          fullWidth
+                          prefilledMessage={whatsappMessage}
+                        />
+                      </div>
+                      <a
+                        href={`tel:+${WHATSAPP_PHONE}`}
+                        className={buttonClasses({
+                          variant: "secondary",
+                          fullWidthMobile: false,
+                          className: "hidden sm:inline-flex",
+                        })}
+                      >
+                        <AiOutlinePhone size={20} aria-hidden="true" />
+                        Llamar
+                      </a>
+                    </div>
                     <a
                       href={`tel:+${WHATSAPP_PHONE}`}
-                      className="hidden items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3.5 text-sm md:text-base font-medium tracking-wide text-neutral-900 transition-colors hover:border-neutral-900 sm:inline-flex"
+                      className={buttonClasses({
+                        variant: "ghost",
+                        fullWidthMobile: false,
+                        className: "mt-2 py-3 sm:hidden",
+                      })}
                     >
-                      <AiOutlinePhone size={20} />
-                      Llamar
+                      o llámanos al +56 9 9549 7838
                     </a>
                   </div>
 
-                  <div className="mt-4 grid grid-cols-2 gap-2 md:mt-6 md:gap-2.5">
+                  <div className="mt-3 grid grid-cols-2 gap-2 md:mt-6 md:gap-2.5">
                     {trustItems.map((item) => (
                       <div
                         key={item}
@@ -458,8 +489,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     ))}
                   </div>
 
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:mt-4 md:text-lg">
+                    {getShortPitch(product)}
+                  </p>
+
+                  {productFeatures.length > 0 && (
+                    <ul className="mt-4 space-y-2.5">
+                      {productFeatures.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5 text-sm text-neutral-700">
+                          <AiOutlineCheckCircle className="mt-0.5 shrink-0 text-[#25D366]" size={18} aria-hidden="true" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-neutral-50 px-3 py-1.5 text-xs text-neutral-700 md:text-sm">
+                    <AiOutlineEnvironment className="text-neutral-700" size={17} aria-hidden="true" />
+                    <span>Fabricación en Chillán · Envío a todo Chile</span>
+                  </div>
+
                   <p className="mt-4 text-xs text-neutral-500 md:mt-5 md:text-sm">
-                    {product.stockNote ?? "Respondemos en menos de 1 hora hábil."}
+                    {product.stockNote ?? "Fabricación a pedido · Te respondemos por WhatsApp en horario hábil."}
                   </p>
                 </div>
               </div>
@@ -506,33 +557,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
               ) : null}
             </div>
 
-            {shouldShowDetails && (
+            {specRows.length > 0 && (
               <div className="border-t border-neutral-200 pt-6">
                 <h3 className="text-xl font-light tracking-tight text-neutral-900">
                   Detalles del producto
                 </h3>
 
-                {productFeatures.length > 0 && (
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {productFeatures.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-neutral-700">
-                        <AiOutlineCheckCircle className="mt-0.5 shrink-0 text-[#25D366]" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {specRows.length > 0 && (
-                  <dl className="mt-5 divide-y divide-neutral-100 rounded-2xl border border-neutral-200 bg-white">
-                    {specRows.map((row) => (
-                      <div key={row.label} className="grid grid-cols-2 gap-4 px-4 py-3 text-sm">
-                        <dt className="text-neutral-500">{row.label}</dt>
-                        <dd className="text-right text-neutral-900">{row.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                )}
+                <dl className="mt-5 divide-y divide-neutral-100 rounded-2xl border border-neutral-200 bg-white">
+                  {specRows.map((row) => (
+                    <div key={row.label} className="grid grid-cols-2 gap-4 px-4 py-3 text-sm">
+                      <dt className="text-neutral-500">{row.label}</dt>
+                      <dd className="text-right text-neutral-900">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             )}
           </div>
@@ -573,10 +611,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               Envíos, pagos y fabricación
             </h2>
           </div>
-          <Accordion />
+          <Accordion productionDays={productionDays} />
         </section>
 
-        <SocialProof />
+        <SocialProof productionDays={productionDays} />
 
         <section className="mx-auto w-full max-w-4xl px-4 py-10 md:py-14">
           <div className="mb-8">
@@ -616,14 +654,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   Escríbenos por WhatsApp y te respondemos con la información necesaria para avanzar sin vueltas.
                 </p>
               </div>
-              <WhatsAppInlineCTA
-                productTitle={product.name}
-                productId={productId}
-                productPrice={product.price}
-                placement="banner"
-                label="Cotizar ahora"
-                prefilledMessage={whatsappMessage}
-              />
+              <div id="product-closing-cta">
+                <WhatsAppInlineCTA
+                  productTitle={product.name}
+                  productId={productId}
+                  productPrice={product.price}
+                  placement="banner"
+                  label="Cotizar ahora"
+                  prefilledMessage={whatsappMessage}
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -636,6 +676,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         priceLabel={priceLabel}
         imageUrl={primaryImage}
         prefilledMessage={whatsappMessage}
+        watchSelector="#product-hero-cta, #product-closing-cta"
       />
     </>
   );

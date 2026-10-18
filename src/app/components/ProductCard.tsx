@@ -4,21 +4,24 @@ import Link from "next/link";
 import { Product } from "@/data/products";
 import { productImageAlt } from "@/lib/catalog";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
+import { buttonClasses } from "@/app/components/ui/Button";
 import { buildProductWhatsAppMessage, buildWhatsAppUrl, getDefaultOrigin, formatCLP } from "@/lib/whatsapp";
 
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  cta?: "whatsapp" | "ficha";
 }
 
-export default function ProductCard({ product, priority = false }: ProductCardProps) {
+export default function ProductCard({ product, priority = false, cta = "whatsapp" }: ProductCardProps) {
+  const productPath = `/products/${product.handle || product.id}`;
   const whatsappUrl = buildWhatsAppUrl(buildProductWhatsAppMessage(product, getDefaultOrigin()));
   const hasProductImage = Boolean(product.imageUrl);
 
   return (
     <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-lg border border-neutral-200/60 hover:border-neutral-300 relative flex flex-col h-full">
       {/* Link envolvente para toda la tarjeta */}
-      <Link href={`/products/${product.handle || product.id}`} className="block flex-grow">
+      <Link href={productPath} className="block flex-grow">
         {/* Imagen del producto */}
         <div className="relative w-full aspect-[4/3] bg-neutral-50 overflow-hidden">
         {hasProductImage ? (
@@ -79,17 +82,31 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
       {/* Botón de WhatsApp minimalista - fuera del Link para evitar conflictos */}
       <div className="px-4 md:px-5 pb-4 md:pb-5 mt-auto">
-        <WhatsAppCTA
-          href={whatsappUrl}
-          label={hasProductImage ? "Cotizar" : "Pedir foto"}
-          placement="product_card"
-          size="sm"
-          fullWidthMobile={false}
-          className="relative z-10 w-full"
-          productTitle={product.name}
-          productId={product.handle || product.id}
-          productPrice={product.price}
-        />
+        {cta === "ficha" ? (
+          <Link
+            href={productPath}
+            className={buttonClasses({
+              variant: "secondary",
+              size: "sm",
+              fullWidthMobile: false,
+              className: "relative z-10 w-full",
+            })}
+          >
+            Ver ficha
+          </Link>
+        ) : (
+          <WhatsAppCTA
+            href={whatsappUrl}
+            label={hasProductImage ? "Cotizar" : "Pedir foto"}
+            placement="product_card"
+            size="sm"
+            fullWidthMobile={false}
+            className="relative z-10 w-full"
+            productTitle={product.name}
+            productId={product.handle || product.id}
+            productPrice={product.price}
+          />
+        )}
       </div>
     </div>
   );

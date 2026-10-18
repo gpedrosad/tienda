@@ -1,6 +1,8 @@
+import Link from "next/link";
 import ProductCard from "@/app/components/ProductCard";
-import { products } from "@/data/products";
-import { getVisibleProducts } from "@/lib/catalog";
+import { products, type Product } from "@/data/products";
+import { getVisibleProducts, slugifyCategory } from "@/lib/catalog";
+import { COFFEE_TABLE_WITH_SIZES, DINING_TABLE_IDS } from "@/lib/mesa-groups";
 
 interface RelatedProductsProps {
   currentProductId: string;
@@ -8,15 +10,42 @@ interface RelatedProductsProps {
   limit?: number;
 }
 
-function seededScore(seed: string, value: string) {
-  const input = `${seed}:${value}`;
-  let hash = 0;
+function selectRelated(current: Product | undefined, category: string) {
+  const visible = getVisibleProducts(products).filter((product) => product.id !== current?.id);
 
-  for (let index = 0; index < input.length; index += 1) {
-    hash = (hash * 31 + input.charCodeAt(index)) % 100000;
+  if (current && COFFEE_TABLE_WITH_SIZES.has(current.id)) {
+    return {
+      title: "También te puede interesar",
+      subtitle: "Otras mesas de centro, por si buscas otra medida o terminación.",
+      href: "/mesas-de-centro",
+      products: visible.filter((product) => COFFEE_TABLE_WITH_SIZES.has(product.id)),
+    };
   }
 
-  return hash;
+  if (current && DINING_TABLE_IDS.has(current.id)) {
+    return {
+      title: "También te puede interesar",
+      subtitle: "Otras mesas de comedor, por si buscas otra medida o terminación.",
+      href: "/collections/mesas",
+      products: visible.filter((product) => DINING_TABLE_IDS.has(product.id)),
+    };
+  }
+
+  if (current?.category === "Sillas") {
+    return {
+      title: "Combínala con",
+      subtitle: "Mesas de comedor para acompañar esta silla.",
+      href: "/collections/mesas",
+      products: visible.filter((product) => DINING_TABLE_IDS.has(product.id)),
+    };
+  }
+
+  return {
+    title: "También te puede interesar",
+    subtitle: "Alternativas de la misma categoría por si buscas otra medida, terminación o estilo.",
+    href: `/collections/${slugifyCategory(category)}`,
+    products: visible.filter((product) => product.category === category),
+  };
 }
 
 export default function RelatedProducts({
@@ -24,32 +53,37 @@ export default function RelatedProducts({
   category,
   limit = 4,
 }: RelatedProductsProps) {
-  const relatedProducts = getVisibleProducts(products)
-    .filter((product) => product.category === category && product.id !== currentProductId)
-    .sort((first, second) => seededScore(currentProductId, first.id) - seededScore(currentProductId, second.id))
-    .slice(0, limit);
+  const current = products.find((product) => product.id === currentProductId);
+  const selection = selectRelated(current, category);
+  const relatedProducts = selection.products.slice(0, limit);
 
   if (relatedProducts.length === 0) return null;
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-14 md:py-20">
-      <div className="mb-7 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+      <div className="mb-7 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-neutral-500">
             Sigue explorando
           </p>
           <h2 className="mt-2 text-3xl md:text-4xl font-light tracking-tight text-neutral-900">
-            También te puede interesar
+            {selection.title}
           </h2>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-600">
+            {selection.subtitle}
+          </p>
         </div>
-        <p className="max-w-md text-sm leading-relaxed text-neutral-600">
-          Alternativas de la misma categoría por si buscas otra medida, terminación o estilo.
-        </p>
+        <Link
+          href={selection.href}
+          className="inline-flex min-h-11 items-center text-sm text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900"
+        >
+          Ver todas →
+        </Link>
       </div>
 
       <div className="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4">
         {relatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} cta="ficha" />
         ))}
       </div>
     </section>

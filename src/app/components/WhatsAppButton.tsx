@@ -15,6 +15,7 @@ interface WhatsappButtonProps {
   buttonLabel?: string;
   prefilledMessage?: string;
   alwaysVisible?: boolean;
+  /** Si se define, el sticky aparece cuando ninguno de estos elementos está en pantalla. */
   watchSelector?: string;
 }
 
@@ -32,7 +33,8 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   const [isPastHero, setIsPastHero] = useState(alwaysVisible);
   const [isOverFooter, setIsOverFooter] = useState(false);
   const isVisible = (alwaysVisible || isPastHero) && !isOverFooter;
-  const displayPrice = priceLabel ?? (typeof productPrice === "number" ? formatCLP(productPrice) : undefined);
+  const numericPrice = typeof productPrice === "number" ? formatCLP(productPrice) : undefined;
+  const displayPrice = priceLabel ?? numericPrice;
 
   useEffect(() => {
     if (alwaysVisible) {
@@ -40,27 +42,29 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
       return;
     }
 
-    if (watchSelector) {
-      const target = document.querySelector(watchSelector);
-      if (!target) {
-        setIsPastHero(window.scrollY > 80);
-        return;
-      }
+    const targets = watchSelector ? Array.from(document.querySelectorAll(watchSelector)) : [];
 
-      const observer = new IntersectionObserver(([entry]) => {
-        setIsPastHero(!entry.isIntersecting);
-      });
-      observer.observe(target);
-      return () => observer.disconnect();
+    if (!watchSelector || targets.length === 0) {
+      const handleScroll = () => {
+        setIsPastHero(window.scrollY > 80);
+      };
+
+      handleScroll();
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
     }
 
-    const handleScroll = () => {
-      setIsPastHero(window.scrollY > 80);
-    };
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      }
+      setIsPastHero(visible.size === 0);
+    });
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
   }, [alwaysVisible, watchSelector]);
 
   useEffect(() => {
@@ -95,10 +99,14 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
       role="region"
       aria-live="polite"
       aria-label="Cotización rápida por WhatsApp"
-      className={`fixed bottom-4 left-0 right-0 z-30 px-4 transition-all duration-300 ${
+      className={`fixed bottom-4 left-0 right-0 z-30 px-4 ${
+        watchSelector ? "" : "transition-all duration-300"
+      } ${
         isVisible
           ? "translate-y-0 opacity-100 pointer-events-auto"
-          : "translate-y-4 opacity-0 pointer-events-none"
+          : watchSelector
+            ? "hidden"
+            : "translate-y-4 opacity-0 pointer-events-none"
       }`}
     >
       <div className="mx-auto w-full max-w-md lg:max-w-5xl">
@@ -134,19 +142,39 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
             {buttonLabel}
           </button>
         </div>
-        <button
-          type="button"
-          onClick={handleWhatsappClick}
-          data-fb-disable-auto-event-tracking="true"
-          className={buttonClasses({
-            variant: "whatsapp",
-            fullWidthMobile: false,
-            className: "w-full lg:hidden",
-          })}
-        >
-          <AiOutlineWhatsApp size={20} aria-hidden="true" />
-          {buttonLabel}
-        </button>
+        {numericPrice ? (
+          <div className="flex items-center justify-between gap-3 rounded-full border border-neutral-200 bg-white/95 py-2 pl-5 pr-2 shadow-2xl shadow-neutral-900/10 backdrop-blur lg:hidden">
+            <p className="min-w-0 truncate text-sm font-medium text-neutral-900">{numericPrice}</p>
+            <button
+              type="button"
+              onClick={handleWhatsappClick}
+              data-fb-disable-auto-event-tracking="true"
+              className={buttonClasses({
+                variant: "whatsapp",
+                size: "sm",
+                fullWidthMobile: false,
+                className: "shrink-0 whitespace-nowrap",
+              })}
+            >
+              <AiOutlineWhatsApp size={20} aria-hidden="true" />
+              {buttonLabel}
+            </button>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={handleWhatsappClick}
+            data-fb-disable-auto-event-tracking="true"
+            className={buttonClasses({
+              variant: "whatsapp",
+              fullWidthMobile: false,
+              className: "w-full lg:hidden",
+            })}
+          >
+            <AiOutlineWhatsApp size={20} aria-hidden="true" />
+            {buttonLabel}
+          </button>
+        )}
       </div>
     </div>
   );

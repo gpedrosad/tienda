@@ -1,7 +1,9 @@
-import { AiOutlineCheckCircle, AiOutlineHome, AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineCar, AiOutlineCheckCircle, AiOutlineEnvironment, AiOutlineHome, AiOutlineMessage } from "react-icons/ai";
+import { DEFAULT_PRODUCTION_DAYS, WARRANTY_MONTHS } from "@/lib/seo";
 
 interface SocialProofProps {
   partners?: string[];
+  productionDays?: number;
 }
 
 const proofHighlights = [
@@ -23,11 +25,14 @@ const proofHighlights = [
   {
     title: "Envío a todo Chile",
     description: "Coordinamos el despacho según comuna o región para que la compra llegue bien.",
-    icon: AiOutlineStar,
+    icon: AiOutlineCar,
   },
 ];
 
-export default function SocialProof({ partners }: SocialProofProps) {
+export default function SocialProof({
+  partners,
+  productionDays = DEFAULT_PRODUCTION_DAYS,
+}: SocialProofProps) {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-14 md:py-20">
       <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 md:p-10">
@@ -41,7 +46,7 @@ export default function SocialProof({ partners }: SocialProofProps) {
             </h2>
           </div>
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-neutral-800 shadow-sm">
-            <span className="text-[#25D366]">★</span>
+            <AiOutlineEnvironment className="text-neutral-700" size={18} aria-hidden="true" />
             <span>Taller familiar en Chillán · Envíos a todo Chile</span>
           </div>
         </div>
@@ -74,13 +79,13 @@ export default function SocialProof({ partners }: SocialProofProps) {
           <article className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
             <h3 className="text-lg font-light tracking-tight text-neutral-900">Fabricación a pedido</h3>
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              Cada mueble se fabrica en nuestro taller con los materiales y el acabado acordados.
+              Cada mueble se fabrica en nuestro taller con los materiales y el acabado acordados. {productionDays} días hábiles en total.
             </p>
           </article>
           <article className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
-            <h3 className="text-lg font-light tracking-tight text-neutral-900">Garantía de 2 meses</h3>
+            <h3 className="text-lg font-light tracking-tight text-neutral-900">Garantía de {WARRANTY_MONTHS} meses</h3>
             <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-              Cubrimos defectos de fabricación durante 2 meses desde la entrega del mueble.
+              Cubrimos defectos de fabricación durante {WARRANTY_MONTHS} meses desde la entrega del mueble.
             </p>
           </article>
         </div>

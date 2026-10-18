@@ -102,7 +102,7 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
               key={imageSrc}
               type="button"
               onClick={() => openLightbox(index)}
-              className="relative min-w-full aspect-[4/3] snap-center cursor-zoom-in"
+              className="relative min-w-full aspect-square snap-center cursor-zoom-in sm:aspect-[4/3]"
               aria-label={`Ampliar foto ${index + 1} de ${productName}`}
             >
               <Image
@@ -116,6 +116,33 @@ export default function ProductGallery({ images, productName, imageAlt }: Produc
             </button>
           ))}
         </div>
+
+        {images.length > 1 && (
+          <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center overflow-x-auto bg-gradient-to-t from-white via-white/85 to-transparent pt-3 sm:hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex w-max">
+              {images.map((imageSrc, index) => {
+                const isActive = index === activeIndex;
+
+                return (
+                  <button
+                    key={`dot-${imageSrc}`}
+                    type="button"
+                    onClick={() => goToSlide(index)}
+                    className="inline-flex h-11 min-w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                    aria-label={`Ver foto ${index + 1} de ${productName}`}
+                    aria-current={isActive ? "true" : undefined}
+                  >
+                    <span
+                      className={`block h-2 w-2 rounded-full ${
+                        isActive ? "bg-neutral-900" : "bg-neutral-300"
+                      }`}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="hidden overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:block">

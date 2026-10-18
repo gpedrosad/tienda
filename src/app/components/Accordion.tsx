@@ -1,8 +1,13 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineClockCircle, AiOutlineCreditCard, AiOutlinePhone, AiOutlineUndo, AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineCar, AiOutlineCreditCard, AiOutlinePhone, AiOutlineSafety, AiOutlineUndo, AiOutlineSetting } from "react-icons/ai";
+import { DEFAULT_PRODUCTION_DAYS, WARRANTY_MONTHS } from "@/lib/seo";
 
-export default function Accordion() {
+export default function Accordion({
+  productionDays = DEFAULT_PRODUCTION_DAYS,
+}: {
+  productionDays?: number;
+}) {
   // Definición de los ítems del acordeón con la información ordenada
   const accordionItems = [
     {
@@ -11,7 +16,7 @@ export default function Accordion() {
     },
     {
       title: "Envíos",
-      content: "Envíos a todo Chile. El despacho se coordina según tu comuna o región al cotizar."
+      content: "Retiro en nuestro taller en Chillán o envío a todo Chile. El despacho se coordina según tu comuna o región al cotizar."
     },
     {
       title: "Cambios y devoluciones",
@@ -19,11 +24,11 @@ export default function Accordion() {
     },
     {
       title: "Garantía",
-      content: "2 meses contra defectos de fabricación desde la entrega del mueble."
+      content: `${WARRANTY_MONTHS} meses contra defectos de fabricación desde la entrega del mueble.`
     },
     {
       title: "Tiempo de fabricación",
-      content: "15 días hábiles en total."
+      content: `${productionDays} días hábiles en total.`
     },
     {
       title: "Contacto",
@@ -49,15 +54,17 @@ export default function Accordion() {
   const renderIcon = (title: string) => {
     switch (title) {
       case "Métodos de pago":
-        return <AiOutlineCreditCard className="mr-3 text-neutral-600" size={18} />;
+        return <AiOutlineCreditCard className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
       case "Envíos":
-        return <AiOutlineClockCircle className="mr-3 text-neutral-600" size={18} />;
+        return <AiOutlineCar className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
       case "Cambios y devoluciones":
-        return <AiOutlineUndo className="mr-3 text-neutral-600" size={18} />;
+        return <AiOutlineUndo className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
+      case "Garantía":
+        return <AiOutlineSafety className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
       case "Tiempo de fabricación":
-        return <AiOutlineSetting className="mr-3 text-neutral-600" size={18} />;
+        return <AiOutlineSetting className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
       case "Contacto":
-        return <AiOutlinePhone className="mr-3 text-neutral-600" size={18} />;
+        return <AiOutlinePhone className="mr-3 text-neutral-600" size={18} aria-hidden="true" />;
       default:
         return null;
     }
@@ -67,6 +74,7 @@ export default function Accordion() {
     <div className="max-w-2xl mx-auto bg-white border border-neutral-200/60 divide-y divide-neutral-100">
       {accordionItems.map((item, index) => {
         const isOpen = openItems.includes(index);
+        const panelId = `product-accordion-${index}`;
         return (
           <div 
             key={index}
@@ -74,7 +82,10 @@ export default function Accordion() {
           >
             {/* Encabezado del acordeón */}
             <button
+              type="button"
               onClick={() => toggleAccordion(index)}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
               className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 group"
             >
               <div className="flex items-center">
@@ -103,6 +114,7 @@ export default function Accordion() {
 
             {/* Contenido que se muestra/oculta */}
             <div
+              id={panelId}
               className={`overflow-hidden transition-all duration-500 ease-out ${
                 isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}

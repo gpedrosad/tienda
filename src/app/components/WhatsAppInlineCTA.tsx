@@ -9,7 +9,7 @@ interface WhatsAppInlineCTAProps {
   productTitle: string;
   productId?: string;
   productPrice?: number;
-  placement: "inline" | "banner";
+  placement: "inline" | "banner" | "product_hero";
   variant?: "primary" | "secondary";
   label?: string;
   fullWidth?: boolean;
