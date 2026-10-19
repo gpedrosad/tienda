@@ -9,6 +9,7 @@
 - **Última medición GSC:** 2026-10-17 → `docs/gsc-informe-2026-10-17.md` (20 sep→17 oct, serie hasta 15 oct: 224 clics · 10.076 imp · CTR 2,22% · pos. 9,0 · no marca 1,29%). Es **línea base** de los lotes 11–17. Revisión: `docs/seo-revision-2026-10-17.md`. Anterior: 2026-09-06 (201 · 9.698 · 2,07% · 9,6). Histórico ago: [EVAL.md](./EVAL.md)
 - **Titles congelados hasta ~5 nov:** veladores, guía medidas comedor, mesa-tripode-ratona, puertas-a-medida, guía sillas. `silla-kentucky` se corrigió el 2026-10-18 (no es de comedor: silla de descanso) → medir desde ~1 nov
 - **Backlog:** [NEXT.md](./NEXT.md)
+- **GA4** (`properties/552969056`, `G-KBR6DKMXVM`): solo mide bien desde el **2026-10-17** (antes, 1 sesión en 6 semanas). Desde el 2026-10-19: `whatsapp_click` es key event, dimensión de evento `placement` registrada, zona `America/Santiago`, y el sitio solo carga GA4/GTM/Pixel en `www.ideamadera.cl` sin `navigator.webdriver`. **Base de clics a WhatsApp: contar desde el 20 oct; primera lectura ~17 nov.** Datos del 17–18 oct contaminados (Buenos Aires = equipo, `localhost`, bots de Meta en Linux con 0 engagement).
 
 ## Snapshot GSC 2026-08-04 (28d: 7 jul → 4 ago)
 
