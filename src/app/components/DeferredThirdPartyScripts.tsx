@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { isAnalyticsHost } from "@/lib/analytics-host";
 
 const GTM_ID = "GTM-K452JXZZ";
 const FACEBOOK_PIXEL_ID = "1591255851691449";
@@ -69,6 +70,8 @@ function loadFacebookPixel() {
 
 export default function DeferredThirdPartyScripts() {
   useEffect(() => {
+    if (!isAnalyticsHost()) return;
+
     let loaded = false;
 
     const loadThirdParties = () => {

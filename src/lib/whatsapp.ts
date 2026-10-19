@@ -1,4 +1,5 @@
 import type { Product } from "@/data/products";
+import { isAnalyticsHost } from "@/lib/analytics-host";
 
 export const WHATSAPP_PHONE = "56995497838";
 export const DEFAULT_SITE_URL = "https://www.ideamadera.cl";
@@ -57,7 +58,7 @@ export async function trackWhatsAppClick({
   productPrice,
   placement,
 }: WhatsAppTrackingPayload) {
-  if (typeof window === "undefined") return;
+  if (!isAnalyticsHost()) return;
 
   const win = window as Window & {
     gtag?: (...args: unknown[]) => void;
