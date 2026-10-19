@@ -4,7 +4,10 @@ Orden de impacto. Actualizar al cerrar ítems.
 
 ## Plan vigente: `docs/plan-seo-2026-10-17.md` (18 oct → 15 dic, fases 1–5)
 
-P0 de la revisión ya aplicado (commit 545c162). Siguiente: fase 1 del plan.
+P0 de la revisión ya aplicado (commit 545c162). Fase 1 en curso.
+
+- [x] **1.6** `GuidePage` como Server Component — Lote 19, 2026-10-19.
+- [x] **1.7** `ProductCard`: `sizes` de la grilla real y `priority` en la primera tarjeta de colección — Lote 19, 2026-10-19.
 
 ## Revisión 2026-10-17 (ver `docs/seo-revision-2026-10-17.md`)
 

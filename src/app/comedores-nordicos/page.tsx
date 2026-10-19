@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { THREE_COL_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { hasProductImage } from "@/lib/catalog";
@@ -320,7 +320,12 @@ export default function ComedoresNordicosPage() {
             </p>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {nordicProducts.map((product, index) => (
-                <ProductCard key={product.id} product={product} priority={index === 0} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  priority={index === 0}
+                  sizes={THREE_COL_GRID_SIZES}
+                />
               ))}
             </div>
           </div>

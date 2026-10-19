@@ -10,6 +10,7 @@ import {
   updatedAtForRoute,
 } from "@/lib/content-updated-at";
 import { SITE_URL } from "@/lib/seo";
+import { sitemapImagesForProduct, sitemapImagesForRoute } from "@/lib/sitemap-images";
 import { getProductPath } from "@/lib/whatsapp";
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
@@ -63,15 +64,26 @@ function entry(
   url: string,
   meta: Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority">,
   lastModified: string | undefined,
+  images?: string[],
 ): MetadataRoute.Sitemap[number] {
-  return { url, ...meta, lastModified: lastModified || FALLBACK_UPDATED_AT };
+  return {
+    url,
+    ...meta,
+    lastModified: lastModified || FALLBACK_UPDATED_AT,
+    ...(images && images.length > 0 ? { images } : {}),
+  };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleProducts = getVisibleProducts(products);
 
   const staticPages = discoverStaticRoutes().map(({ route }) =>
-    entry(route === "/" ? SITE_URL : `${SITE_URL}${route}`, staticMeta(route), updatedAtForRoute(route)),
+    entry(
+      route === "/" ? SITE_URL : `${SITE_URL}${route}`,
+      staticMeta(route),
+      updatedAtForRoute(route),
+      sitemapImagesForRoute(route),
+    ),
   );
 
   const collectionPages: MetadataRoute.Sitemap = [
@@ -94,6 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       `${SITE_URL}${getProductPath(product)}`,
       { changeFrequency: "weekly", priority: 0.75 },
       product.updatedAt,
+      sitemapImagesForProduct(product),
     ),
   );
 

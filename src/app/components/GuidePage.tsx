@@ -1,9 +1,7 @@
-"use client";
-
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { GUIDE_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { products, type Product } from "@/data/products";
 import {
@@ -159,7 +157,12 @@ function GuideFeaturedProducts({ items }: { items: Product[] }) {
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {items.map((product, index) => (
-          <ProductCard key={product.id} product={product} priority={index === 0} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            priority={index === 0}
+            sizes={GUIDE_GRID_SIZES}
+          />
         ))}
       </div>
     </section>

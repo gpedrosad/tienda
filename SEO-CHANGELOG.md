@@ -1,5 +1,74 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-19 — Lote 19
+
+Fase 1 del plan del 17 oct: tareas 1.6 y 1.7, más profundidad en `/mesas-de-comedor-a-medida` y descubrimiento (enlace de la guía de centro + imágenes en el sitemap). Sin URLs nuevas. Sin datos de negocio que no estén en `src/data/products.ts` o en la guía de medidas. Titles congelados sin cambio. Pixel, GTM, GA4 y CAPI no se tocaron.
+
+### 1. LCP de colecciones
+
+La primera tarjeta de `/collections/[handle]` iba con `loading="lazy"`. En móvil, Lighthouse 12.8.2 marcaba `lcp-lazy-loaded` en rojo y el retraso de carga del LCP era de 1,4 a 2,9 s. `/collections/veladores` es la página con más impresiones.
+
+- `ProductCard` recibe `priority={index === 0}` solo en la colección. La home no: su LCP es el hero.
+- `sizes` opcional. El default calza con la grilla de 1/2/3/4 columnas: `(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw`. Antes el componente fijaba `(max-width: 640px) 50vw, …` y la grilla es de una columna bajo 640 px.
+- Cada uso pasa el `sizes` de su grilla: home, ofertas y mesas de centro usan la de 1/2/3/4; comedores nórdicos 1/2/3; guías 1 y 3 desde `sm`; recomendados 1/2/4; relacionados de la ficha 2 y 4 desde `lg`.
+- Con `priority`, la foto pide `fetchPriority="high"` además del preload de `next/image`. No cambia el recorte ni el fondo desenfocado.
+
+No hay bump de lastmod: es plantilla, no contenido.
+
+Medición Lighthouse 12.8.2, móvil, desde esta máquina (simulación). Producción antes del lote y `next start` local después, en caliente:
+
+| URL | Antes (prod) | Después (local, caliente) |
+|---|---|---|
+| `/collections/veladores` | perf 89, LCP 3,7 s, load delay 1,8 s, `lcp-lazy-loaded` falla, CLS 0 | perf 95, LCP 2,9 s, load delay 118 ms, auditoría pasa, CLS 0 |
+| `/collections/mesas` | perf 88, LCP 3,8 s, load delay 1,4 s, auditoría falla, CLS 0 | perf 93, LCP 3,2 s, load delay 194 ms, auditoría pasa, CLS 0 |
+
+La corrida en frío contra `next start` infla el tiempo de carga porque el optimizador de imágenes trabaja en el momento. En caliente ese tramo baja a ~0,5 s. El informe ART del encargo (prod, 4,7–4,9 s y perf 79–80) queda como referencia externa; la comparación de arriba es la misma herramienta y la misma máquina.
+
+### 2. GuidePage como Server Component
+
+Se quitó `"use client"` de `src/app/components/GuidePage.tsx`. No usaba hooks ni handlers. `WhatsAppCTA` sigue siendo cliente. `JsonLd`, `ProductCard`, `ProductImage` e `InlineLinkedText` no lo necesitaban.
+
+En las 9 rutas `/guias/*`, el HTML de `.next/server/app` queda igual en title, meta, canonical, H1, texto visible, enlaces, `<details>` y cada bloque `ld+json`. Sacando `<script>`, comentarios HTML y las URLs de `/_next/static/`, los documentos son idénticos. Ninguna guía cambia `updatedAt`.
+
+`/guias/medidas-mesa-comedor`, First Load JS: 136 kB → 117 kB. El tamaño de la ruta pasa de 142 B a 1,98 kB porque el cliente que queda (el CTA) se cuenta en la página y ya no se arrastra toda la guía.
+
+### 3. /mesas-de-comedor-a-medida
+
+La URL ya existía y seguía sin indexar. Se agregó una sección, «Medidas del catálogo antes de pedir una a medida», con las fichas de comedor que tienen foto y las medidas de `products.ts`:
+
+- Nórdica 160×90×75, Niza, Bolonia y Roma (natural y negra) 200×100×75, Trípode y Trípode negra 220×100×75, Cantabria 240×110×75
+- Ferrara y Trípode redonda Ø140×75, Novara, Frida redonda y Trípode redonda negra Ø150×75
+- Barniz negro solo en Roma negra, Trípode negra y Trípode redonda negra
+
+El párrafo de 6 personas usa la guía de medidas (6: 160×90 cm o Ø120 cm; 6–8: 200×100 cm o Ø140 cm) y dos frases que ya están en las fichas: la Trípode rectangular es «ideal para 6 a 8 comensales» y la Trípode redonda trae la «referencia 6-8 personas». Las sillas van aparte, con enlace a `/collections/sillas`. Sin precios.
+
+En el párrafo que manda las mesas bajas a `/mesas-de-centro` también queda la guía `/guias/medidas-mesa-de-centro`.
+
+Title, meta, H1, hero, CTA de WhatsApp, pasos y FAQ quedan igual. El FAQ del schema coincide con el texto visible. `updatedAt`: `2026-10-19`.
+
+Inlinks en el HTML construido, contra el crawl de producción del mismo día:
+
+| Ficha | Antes | Después |
+|---|---:|---:|
+| tripode-negra, roma-negra, roma-natural, frida-redonda, tripode-redonda-negra | 2 | 3 |
+| bolonia | 3 | 4 |
+| novara | 4 | 5 |
+
+### 4. Descubrimiento e imágenes
+
+- `/collections/mesas` suma el enlace «Medidas de mesa de centro y ratona» → `/guias/medidas-mesa-de-centro`. La descripción sale del texto de esa guía (largo respecto al sofá, altura del asiento, espacio para caminar). Title, meta, H1, intro y FAQ de la colección no cambian. `updatedAt`: `2026-10-19`. La guía pasa de 6 inlinks a 8 (colección de mesas y esta landing).
+- El sitemap agrega `image:loc` absolutos en `https://www.ideamadera.cl` para la galería que renderiza cada ficha visible, el `heroImage` y la `gallery` de cada `ServiceLandingConfig`, y las dos fotos del kit pérgola. Siguen siendo 74 `<loc>`, en el mismo orden. `changefreq` y `priority` iguales. `xmlns:image` presente. 122 `<image:loc>`, 94 URLs distintas, todas con HTTP 200 en producción (los archivos ya estaban en `/public`).
+- lastmod distinto solo en `/mesas-de-comedor-a-medida` y `/collections/mesas` (`2026-10-17` → `2026-10-19`).
+
+### No se tocó
+
+- Titles y metas congelados: veladores, guía de medidas de comedor, ratona, `/puertas-a-medida`, guía de sillas, Kentucky, kit pérgola.
+- Copy de las páginas del lote 18: guía de medidas, mesas de centro, colección de sillas, comedores nórdicos, guía de sillas, kit pérgola.
+- Puertas y peldaños (salvo las imágenes que esas landings ya mostraban y ahora declara el sitemap).
+- Pixel, GTM, GA4, CAPI.
+- URLs nuevas, `/ads`, `/sitelink`, páginas por comuna.
+- Antigüedad: sigue saliendo de `src/lib/founding.ts`. En el HTML armado no hay `2001`, «31 años», «30 años», «20 años» ni «más de N años». `foundingDate` queda en `1993`.
+
 ## 2026-10-18 — Lote 18
 
 Conversión y limpieza del plan del 17 oct (tareas 1.2, 1.3, 1.5 y 1.8) más dos regresiones del commit de la Silla Kentucky. Sin datos de negocio nuevos. Sin URLs nuevas. Titles congelados (veladores, guía de medidas, ratona, hub de puertas, guía de sillas y Kentucky) no se reescribieron.

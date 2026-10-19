@@ -5,7 +5,7 @@ import Link from "next/link";
 import FAQ from "@/app/components/FAQ";
 import FabricaVideo from "@/app/components/FabricaVideo";
 import HeroBanner from "@/app/components/HeroBanner";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import Reveal from "@/app/components/Reveal";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { buttonClasses } from "@/app/components/ui/Button";
@@ -158,7 +158,7 @@ export default function HomePage() {
               className="product-enter"
               style={{ "--i": Math.min(index, 11) } as React.CSSProperties}
             >
-              <ProductCard product={product} />
+              <ProductCard product={product} sizes={CATALOG_GRID_SIZES} />
             </div>
           ))}
         </div>

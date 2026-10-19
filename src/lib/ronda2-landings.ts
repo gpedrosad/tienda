@@ -473,7 +473,7 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
 
 export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/mesas-de-comedor-a-medida",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-19",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Muebles a medida", path: "/muebles-a-medida" },
@@ -545,7 +545,7 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
     {
       title: "Catálogo, guía y medida especial",
       paragraphs: [
-        "Las mesas con foto y precio están en la [colección de mesas](/collections/mesas). Ahí también hay mesas ratonas para el living. Una mesa baja no se cotiza como comedor: si buscas esa, entra a [mesas de centro](/mesas-de-centro).",
+        "Las mesas con foto y precio están en la [colección de mesas](/collections/mesas). Ahí también hay mesas ratonas para el living. Una mesa baja no se cotiza como comedor: si buscas esa, entra a [mesas de centro](/mesas-de-centro) y a la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro).",
         "Para calcular personas, altura de 75 cm y circulación, usa la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor). Esta página no repite la tabla: la guía es la referencia y la cotización aplica tu espacio.",
         "Si el proyecto además lleva cubiertas, puertas o peldaños, el conjunto parte en [muebles a medida](/muebles-a-medida). Un comedor con sillas y bancas de línea coordinada está en [comedores nórdicos](/comedores-nordicos).",
       ],
@@ -554,6 +554,28 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
         "Cantidad de personas",
         "Terminación y comuna",
         "Foto del espacio, si la tienes",
+      ],
+    },
+    {
+      title: "Medidas del catálogo antes de pedir una a medida",
+      paragraphs: [
+        "Para un comedor de 6 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa una mesa de 160×90 cm o una redonda de Ø120 cm. Para 6 a 8 personas, la misma guía usa 200×100 cm o Ø140 cm. En las fichas, la [Mesa de comedor Trípode](/products/mesa-comedor-tripode) de 220×100×75 cm dice que es ideal para 6 a 8 comensales, y la [Mesa de comedor Trípode redonda](/products/mesa-comedor-tripode-redonda) de Ø140 cm anota la referencia de 6-8 personas de esa guía. Las sillas no van con la mesa: están en la [colección de sillas](/collections/sillas).",
+        "En barniz negro hay tres mesas de comedor: [Roma negra](/products/mesa-comedor-roma-negra), [Trípode negra](/products/mesa-comedor-tripode-negra) y [Trípode redonda negra](/products/mesa-tripode-redonda-negra).",
+      ],
+      bullets: [
+        "[Mesa Nórdica](/products/mesa-nordica): 160×90×75 cm",
+        "[Mesa Comedor Niza](/products/mesa-comedor-niza): 200×100×75 cm",
+        "[Mesa de comedor Bolonia](/products/mesa-comedor-bolonia): 200×100×75 cm",
+        "[Mesa Comedor Roma natural](/products/mesa-comedor-roma-natural): 200×100×75 cm",
+        "[Mesa Comedor Roma negra](/products/mesa-comedor-roma-negra): 200×100×75 cm, barniz negro",
+        "[Mesa de comedor Trípode](/products/mesa-comedor-tripode): 220×100×75 cm",
+        "[Mesa de comedor Trípode negra](/products/mesa-comedor-tripode-negra): 220×100×75 cm, barniz negro",
+        "[Mesa Comedor Cantabria](/products/mesa-comedor-cantabria): 240×110×75 cm",
+        "[Mesa Ferrara redonda](/products/mesa-comedor-redonda-ferrara): Ø140×75 cm",
+        "[Mesa de comedor Trípode redonda](/products/mesa-comedor-tripode-redonda): Ø140×75 cm",
+        "[Mesa Comedor Redonda Novara](/products/mesa-comedor-redonda-novara): Ø150×75 cm",
+        "[Mesa Frida redonda](/products/mesa-frida-redonda): Ø150×75 cm",
+        "[Mesa Trípode redonda negra](/products/mesa-tripode-redonda-negra): Ø150×75 cm, barniz negro",
       ],
     },
   ],

@@ -7,13 +7,37 @@ import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buttonClasses } from "@/app/components/ui/Button";
 import { buildProductWhatsAppMessage, buildWhatsAppUrl, getDefaultOrigin, formatCLP } from "@/lib/whatsapp";
 
+/** Grilla 1 / 2 / 3 / 4 columnas (home, colecciones, ofertas, mesas de centro). */
+export const CATALOG_GRID_SIZES =
+  "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw";
+
+/** Guías: 1 columna y 3 desde `sm`. */
+export const GUIDE_GRID_SIZES = "(max-width: 639px) 100vw, 33vw";
+
+/** Comedores nórdicos: 1 / 2 / 3, sin cuarta columna. */
+export const THREE_COL_GRID_SIZES =
+  "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw";
+
+/** Carrusel de recomendados: 1 / 2 / 4. */
+export const RECOMMENDED_GRID_SIZES =
+  "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw";
+
+/** Relacionados en la ficha: 2 columnas y 4 desde `lg`. */
+export const RELATED_GRID_SIZES = "(max-width: 1023px) 50vw, 25vw";
+
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
   cta?: "whatsapp" | "ficha";
+  sizes?: string;
 }
 
-export default function ProductCard({ product, priority = false, cta = "whatsapp" }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  priority = false,
+  cta = "whatsapp",
+  sizes = CATALOG_GRID_SIZES,
+}: ProductCardProps) {
   const productPath = `/products/${product.handle || product.id}`;
   const whatsappUrl = buildWhatsAppUrl(buildProductWhatsAppMessage(product, getDefaultOrigin()));
   const hasProductImage = Boolean(product.imageUrl);
@@ -30,7 +54,7 @@ export default function ProductCard({ product, priority = false, cta = "whatsapp
             alt={productImageAlt(product)}
             priority={priority}
             maxCrop={0.34}
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            sizes={sizes}
             className="group-hover:scale-[1.03] transition-transform duration-700 ease-out"
           />
         ) : (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import { buttonClasses } from "@/app/components/ui/Button";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/catalog";
 import {
   buildBreadcrumbSchema,
@@ -97,7 +97,7 @@ export default function OfertasPage() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} sizes={CATALOG_GRID_SIZES} />
             ))}
           </div>
         </section>
