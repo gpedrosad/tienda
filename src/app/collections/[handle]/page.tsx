@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/app/components/JsonLd";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import Chip, { chipRowClassName } from "@/app/components/ui/Chip";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import {
@@ -245,8 +245,13 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               {collection.products.length === 1 ? "producto disponible" : "productos disponibles"}
             </p>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {collection.products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {collection.products.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  priority={index === 0}
+                  sizes={CATALOG_GRID_SIZES}
+                />
               ))}
             </div>
           </>

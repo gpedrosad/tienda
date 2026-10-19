@@ -35,7 +35,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Catálogo de muebles de madera fabricados en Chillán: mesas, sillas, bancas, veladores y más. Cotiza por WhatsApp con envío a todo Chile.",
   },
   mesas: {
-    updatedAt: "2026-10-17",
+    updatedAt: "2026-10-19",
     h1: "Mesas de comedor de madera y ratonas para living",
     metadataTitle: "Mesas de Comedor de Madera y Ratonas | Chile",
     description:
@@ -85,6 +85,12 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
         href: "/guias/medidas-mesa-comedor",
         title: "Guía de medidas de mesa",
         description: "Cómo elegir el tamaño correcto según cantidad de personas.",
+      },
+      {
+        href: "/guias/medidas-mesa-de-centro",
+        title: "Medidas de mesa de centro y ratona",
+        description:
+          "El largo respecto al sofá, la altura respecto al asiento y el espacio para caminar.",
       },
       {
         href: "/mesas-de-centro",

@@ -1,6 +1,6 @@
 "use client";
 
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { RECOMMENDED_GRID_SIZES } from "@/app/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/catalog";
 
 export default function RecommendedProductsCarousel() {
@@ -13,7 +13,7 @@ export default function RecommendedProductsCarousel() {
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {recommendedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} sizes={RECOMMENDED_GRID_SIZES} />
         ))}
       </div>
     </section>

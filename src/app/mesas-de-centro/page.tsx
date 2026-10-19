@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { hasProductImage } from "@/lib/catalog";
@@ -187,7 +187,12 @@ export default function MesasDeCentroPage() {
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {mesasCentro.map((product, index) => (
-              <ProductCard key={product.id} product={product} priority={index === 0} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                priority={index === 0}
+                sizes={CATALOG_GRID_SIZES}
+              />
             ))}
           </div>
         </section>

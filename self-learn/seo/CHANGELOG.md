@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-19
+
+- **Lote 19:** primera tarjeta de colección con `priority` y `sizes` de la grilla real (home sin priority). `GuidePage` pasa a Server Component; First Load JS de `/guias/medidas-mesa-comedor` 136 kB → 117 kB, HTML de las guías igual. `/mesas-de-comedor-a-medida`: sección con medidas del catálogo (solo `products.ts` y la guía), `updatedAt` 2026-10-19. `/collections/mesas` enlaza `/guias/medidas-mesa-de-centro`. Sitemap con `image:loc` (74 `<loc>` iguales). Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-18
 
 - **Lote 18:** intro y meta de `/collections/sillas` distinguen Milán Lenga (comedor) de Kentucky (silla de descanso); title y H1 iguales. `/kit-pergola`: title `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` (55), meta 142, H1 «Kit de uniones metálicas para pérgola 3×3, sin maderas». Guía de medidas: CTA «Cotizar por WhatsApp» tras la tabla y bullets con `InlineLinkedText` a `/collections/mesas` y `/mesas-de-comedor-a-medida`; title y meta congelados. `/mesas-de-centro`: hero «Cotizar mesa ratona» y relacionado a `/products/mesa-tripode-ratona`. 308 de `/blog`, `/blog/:path*`, `/blogs` y `/blogs/:path*` → `/guias`. lastmod `2026-10-18` en sillas, comedores nórdicos, guía de sillas, kit, guía de medidas y mesas de centro. Detalle: `SEO-CHANGELOG.md`.

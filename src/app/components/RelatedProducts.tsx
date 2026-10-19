@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard, { RELATED_GRID_SIZES } from "@/app/components/ProductCard";
 import { products, type Product } from "@/data/products";
 import { getVisibleProducts, slugifyCategory } from "@/lib/catalog";
 import { COFFEE_TABLE_WITH_SIZES, DINING_TABLE_IDS } from "@/lib/mesa-groups";
@@ -83,7 +83,7 @@ export default function RelatedProducts({
 
       <div className="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4">
         {relatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} cta="ficha" />
+          <ProductCard key={product.id} product={product} cta="ficha" sizes={RELATED_GRID_SIZES} />
         ))}
       </div>
     </section>

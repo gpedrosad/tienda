@@ -32,7 +32,9 @@ export default function ProductImage({
   const ratios = typeof frameRatio === "number" ? { base: frameRatio, sm: frameRatio } : frameRatio;
   const coverBase = imageFitForFrame(src, ratios.base, maxCrop) === "cover";
   const coverSm = imageFitForFrame(src, ratios.sm, maxCrop) === "cover";
-  const loading = priority ? ({ priority: true } as const) : ({ loading: "lazy" } as const);
+  const loading = priority
+    ? ({ priority: true, fetchPriority: "high" } as const)
+    : ({ loading: "lazy" } as const);
   const fit = `${coverBase ? "object-cover" : "object-contain"} ${coverSm ? "sm:object-cover" : "sm:object-contain"}`;
 
   return (
