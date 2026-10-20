@@ -1,5 +1,66 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-20 — Lote 20
+
+Fotos reales en tres URLs de puertas y peldaños que seguían sin imagen, respuesta a las queries de huella en `/escaleras-de-madera`, y dos enlaces de cuerpo hacia la guía del mesón de quincho. Sin URLs nuevas. Sin datos de negocio que no estuvieran ya en las guías o en las landings. Titles congelados sin cambio. Pixel, GTM, GA4 y CAPI no se tocaron.
+
+### 1. Fotos en /puertas-interiores y en dos guías
+
+Evidencia del encargo (inspección GSC, 2026-10-20): `/puertas-interiores`, `/guias/medidas-y-madera-puertas` y `/guias/medidas-peldanos-escalera` estaban «Descubierta: actualmente sin indexar» y en producción no renderizaban ninguna foto de contenido (solo el logo). Las hermanas con foto sí tuvieron clics el 19 oct.
+
+Solo se usan fotos que ya están en `/public`, con el alt y las medidas del config de origen.
+
+- `/puertas-interiores`: `heroImage` copiado de puertas correderas. `src` `/images/puertas/puerta-corredera-madera-vidrio-interior.webp`, alt «Puerta corredera de madera y vidrio para interior», 956×1268. Sin galería. La plantilla del hero no tiene pie de foto; el alt ya dice que es la corredera de interior, y la FAQ de la misma página ya dice «La referencia publicada de hoja que corre es de interior, en madera y vidrio».
+- `/guias/medidas-y-madera-puertas`: foto de la galería de puertas de entrada, 720×760, alt «Puerta doble de madera con montante y dintel en la entrada». Pie: «Las referencias del taller muestran hojas dobles, y el vano real manda.»
+- `/guias/medidas-peldanos-escalera`: foto de la galería de peldaños, 1200×1600, alt «Peldaños de madera clara a medida recién cepillados en el taller». Pie: «La pieza que sale del taller mide lo que nos confirmas.»
+
+`GuideConfig` gana `heroImage` opcional. `GuidePage` sigue siendo Server Component y pinta un solo `<figure>` con `next/image` (`loading="lazy"`, sin `priority`, ancho y alto explícitos, `sizes="(max-width: 767px) 100vw, 768px"`, alto limitado en móvil). Va después de la intro si no hay `leadSectionIndex`, o después de la sección de respuesta si la hay. Con foto, Open Graph y Twitter usan la URL absoluta en `www` y el Article lleva `image`. El sitemap declara ese `heroImage` en la URL de la guía.
+
+`updatedAt` `2026-10-20` en las tres. En las dos guías la fecha visible pasa a «20 de octubre de 2026» (es la más reciente entre `updatedAt` y `updatedDate`). Title, meta, H1, intro, FAQ y CTA de WhatsApp de las tres URLs no cambian.
+
+Las otras 7 guías, contra el HTML de producción del mismo día y sacando `<script>`, comentarios y las URLs de `/_next/static/`, quedan idénticas. Siguen con `og:image` en el logo.
+
+### 2. /escaleras-de-madera
+
+Evidencia del encargo (GSC 28d al 2026-10-19): la URL rankea queries de medida («escaleras interiores de madera medidas», «huella de escaleras», «huella de escalones», «huella medida escalera», «escalera con descanso de madera») y no las respondía con cifra. La guía que sí las responde seguía sin indexar.
+
+Una FAQ nueva: «¿Qué medida tiene una huella de escalera?». Las cifras salen tal cual de `medidasPeldanosGuideConfig`: huella cerca de 25 a 30 cm, contrahuella cerca de 15 a 18 cm, 2 × contrahuella + huella cerca de 60 a 64 cm. Se dice que es referencia general de confort, no una norma ni una medida del taller, y que la huella se corta a la medida que nos confirmas. Enlaza [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) y [peldaños a medida](/peldanos-a-medida).
+
+En «Qué preparar antes de cotizar», «La guía de madera» y «la guía de medidas» pasan a enlaces hacia `/guias/elegir-madera-peldanos` y `/guias/medidas-peldanos-escalera`. El resto del párrafo no cambia. `updatedAt` `2026-10-20`. Title, meta, H1, hero y CTA iguales. El texto del FAQ en el schema es el mismo que el visible.
+
+### 3. /cubiertas-a-medida
+
+Evidencia del encargo (GSC 28d al 2026-10-19): «madera para meson», «madera para quincho» y «madera para meson de cocina» caen en esta URL con 0 clics. La guía `/guias/madera-para-meson-quincho` responde «qué madera» y casi no recibía enlaces de contenido.
+
+- La FAQ «¿Qué madera recomiendan para mesones de quincho?» suma una frase con [guía de madera para mesón de quincho](/guias/madera-para-meson-quincho).
+- El párrafo que empieza «Si buscas un mesón de madera para quincho…» enlaza esas mismas palabras a la guía. No se agregó otra frase.
+
+Quedan dos enlaces nuevos en el contenido (el de la tarjeta relacionada ya estaba). `updatedAt` `2026-10-20`. Title, meta, H1, el resto de las FAQ y el CTA no cambian. Schema y texto visible coinciden, incluido el texto del enlace.
+
+### Sitemap
+
+Siguen 74 `<loc>`, en el mismo orden. `<image:loc>` pasa de 122 a 125: uno en cada URL de la sección 1. Las tres fotos ya estaban en otras URLs, así que las URLs de imagen distintas siguen en 94. `lastmod` `2026-10-20` solo en `/puertas-interiores`, `/guias/medidas-y-madera-puertas`, `/guias/medidas-peldanos-escalera`, `/escaleras-de-madera` y `/cubiertas-a-medida`.
+
+### Medición
+
+Lighthouse 13.5.0, móvil, simulación. `next start` local en caliente, y la misma corrida contra producción como referencia del mismo día:
+
+| URL | Local, este lote | Control |
+|---|---|---|
+| `/guias/medidas-peldanos-escalera` | perf 96, LCP 2,8 s, CLS 0. El LCP es el párrafo de la intro, no la foto | Guía sin foto (`/guias/elegir-madera-peldanos`) en el mismo `next start`: LCP 2,7 s. Producción de esta guía, antes de la foto: LCP 2,1 s, CLS 0, mismo párrafo |
+| `/puertas-interiores` | perf 96, LCP 2,8 s, CLS 0. El LCP es la foto del hero | `/puertas-correderas` usa la misma foto y la misma plantilla: local 2,8 s; producción 2,4 s, CLS 0. Producción de interiores, sin foto: LCP 2,0 s (el párrafo) |
+
+En esta máquina el `next start` local suma unos 0,4 s respecto de producción en la hermana que no se tocó. La foto de la guía no es el LCP.
+
+### No se tocó
+
+- Titles y metas congelados: veladores, guía de medidas de comedor, ratona, `/puertas-a-medida`, guía de sillas, Kentucky, kit pérgola.
+- Copy de las páginas de los lotes 18 y 19: guía de medidas de comedor, mesas de centro, colección de sillas, comedores nórdicos, guía de sillas, kit pérgola, mesas de comedor a medida, colección de mesas.
+- Home, cuerpo del hub `/puertas-a-medida`, analytics (`analytics-host`, scripts diferidos, `layout`), mensaje de WhatsApp, feed de Merchant, IndexNow, `public/llms.txt` y `docs/`.
+- Pixel, GTM, GA4, CAPI.
+- URLs nuevas, `/ads`, `/sitelink`, páginas por comuna.
+- Antigüedad: sigue saliendo de `src/lib/founding.ts`. En el HTML armado no hay `2001`, «31 años», «30 años», «20 años» ni «más de N años». `foundingDate` queda en `1993`.
+
 ## 2026-10-19 — Lote 19
 
 Fase 1 del plan del 17 oct: tareas 1.6 y 1.7, más profundidad en `/mesas-de-comedor-a-medida` y descubrimiento (enlace de la guía de centro + imágenes en el sitemap). Sin URLs nuevas. Sin datos de negocio que no estén en `src/data/products.ts` o en la guía de medidas. Titles congelados sin cambio. Pixel, GTM, GA4 y CAPI no se tocaron.

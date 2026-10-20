@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-20
+
+- **Lote 20:** foto real en `/puertas-interiores` (la corredera de interior ya publicada, sin galería), en `/guias/medidas-y-madera-puertas` y en `/guias/medidas-peldanos-escalera`. `GuidePage` pinta `heroImage` opcional (lazy, sin priority); Open Graph y el Article usan esa foto. `/escaleras-de-madera`: FAQ «¿Qué medida tiene una huella de escalera?» con las cifras de la guía (25 a 30 cm, 15 a 18 cm, 2 × contrahuella + huella 60 a 64 cm) y enlaces a las dos guías de peldaños. `/cubiertas-a-medida`: dos enlaces de contenido a `/guias/madera-para-meson-quincho`. `updatedAt` 2026-10-20 en esas cinco URLs. Sitemap: 74 `<loc>`, `<image:loc>` 122 → 125. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-19
 
 - **Merchant Center + Bing:** feed `/feed/google.xml` (`src/lib/merchant-feed.ts`; 29 productos con foto, precio con IVA, fotos extra, medidas, material, categoría de Google). IndexNow con `npm run indexnow` (clave en `public/`). Mensaje de WhatsApp de ficha pide cantidad, comuna/retiro y terminación (sin "Ref"). Kits del dueño: `docs/merchant-center-y-bing.md`, `docs/google-business-profile.md`. Motivo: merchant listings 26,7% CTR vs product snippets 1,7% (GSC 28d).

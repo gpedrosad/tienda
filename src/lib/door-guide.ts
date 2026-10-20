@@ -4,7 +4,7 @@ export const doorGuidePath = "/guias/medidas-y-madera-puertas";
 
 export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   canonicalPath: doorGuidePath,
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-20",
   pageTitle: "Medidas y Madera para Puertas | Idea Madera",
   pageDescription:
     "Medidas habituales de puertas en Chile y cómo elegir la madera según interior o exterior. La hoja se fabrica a tu vano. Cotiza por WhatsApp.",
@@ -18,6 +18,13 @@ export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   h1: "Medidas estándar de puertas y cómo elegir la madera",
   intro:
     "Esta guía ordena dos datos generales: las medidas de hoja que se ven seguido en Chile, y cómo pensar la madera antes de cotizar. No es un catálogo de Idea Madera ni una lista de precios. En el taller la hoja se fabrica según tu vano. La fábrica está en Chillán y el encargo entra por WhatsApp.",
+  heroImage: {
+    src: "/images/puertas/puerta-doble-madera-con-montante.webp",
+    alt: "Puerta doble de madera con montante y dintel en la entrada",
+    width: 720,
+    height: 760,
+    caption: "Las referencias del taller muestran hojas dobles, y el vano real manda.",
+  },
   updatedDate: "2026-10-17",
   serviceName: "Guía para medir y elegir la madera de una puerta",
   serviceType: "Orientación para cotizar puertas de madera a medida",

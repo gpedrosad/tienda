@@ -30,7 +30,7 @@ const clusterAndWorkshop = [
 
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
-  updatedAt: "2026-10-16",
+  updatedAt: "2026-10-20",
   pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
   pageDescription:
     "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
@@ -45,6 +45,13 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
   h1: "Cómo medir la huella y la contrahuella",
   intro:
     "La huella es la superficie horizontal donde apoyas el pie y la contrahuella es la altura vertical entre un peldaño y el siguiente. Como referencia general de confort en una vivienda, la huella suele quedar cerca de 25 a 30 cm, la contrahuella cerca de 15 a 18 cm, y la relación 2 × contrahuella + huella cerca de 60 a 64 cm. Idea Madera no impone esas cifras: cortamos la huella de madera al largo, al fondo y al espesor que cotizas.",
+  heroImage: {
+    src: "/images/peldanos/peldanos-madera-a-medida-taller.webp",
+    alt: "Peldaños de madera clara a medida recién cepillados en el taller",
+    width: 1200,
+    height: 1600,
+    caption: "La pieza que sale del taller mide lo que nos confirmas.",
+  },
   updatedDate: "2026-10-17",
   serviceName: "Fabricación de peldaños de madera a medida",
   serviceType: "Huellas de madera según las medidas del proyecto",

@@ -418,7 +418,7 @@ export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
 
 export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/escaleras-de-madera",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-20",
   breadcrumbLabel: "Escaleras de madera",
   breadcrumbParent: peldanosParent,
   pageTitle: "Escaleras de Madera: Huellas a Medida | Chile",
@@ -483,7 +483,7 @@ export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
       title: "Qué preparar antes de cotizar",
       paragraphs: [
         "Dinos el tipo de escalera (recta, con descanso o peldaños que van separados), la cantidad de huellas, el largo, el fondo y el espesor. Si tienes plano, mejor que una sola cifra redonda.",
-        "La terminación puede ser natural, oscura o parecida a una referencia que nos mandes. La especie —lenga austral o pino premium, secos en cámara— se confirma al cotizar, no en esta página. La guía de madera ordena esa decisión y la guía de medidas explica la huella y la contrahuella como referencia general.",
+        "La terminación puede ser natural, oscura o parecida a una referencia que nos mandes. La especie —lenga austral o pino premium, secos en cámara— se confirma al cotizar, no en esta página. [La guía de madera](/guias/elegir-madera-peldanos) ordena esa decisión y [la guía de medidas](/guias/medidas-peldanos-escalera) explica la huella y la contrahuella como referencia general.",
       ],
       bullets: [
         "Tipo de escalera y cantidad de huellas",
@@ -537,6 +537,11 @@ export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
       question: "¿Qué diferencia hay entre peldaño, huella y contrahuella?",
       answer:
         "El peldaño es el escalón donde pisas. La huella es la superficie horizontal y es lo que fabricamos aquí. La contrahuella es la cara vertical y no se asume incluida.",
+    },
+    {
+      question: "¿Qué medida tiene una huella de escalera?",
+      answer:
+        "Como referencia general de confort, la huella queda cerca de 25 a 30 cm, la contrahuella cerca de 15 a 18 cm, y 2 × contrahuella + huella cerca de 60 a 64 cm. No es una norma ni una medida del taller: la huella se corta a la medida que nos confirmas. El detalle está en la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera). Para cotizar, entra a [peldaños a medida](/peldanos-a-medida).",
     },
     {
       question: "¿Hacen peldaños flotantes?",

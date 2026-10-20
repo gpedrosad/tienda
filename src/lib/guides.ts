@@ -15,6 +15,14 @@ export type GuideConfig = {
   eyebrow: string;
   h1: string;
   intro: string;
+  /** Foto real ya publicada en el repo. Si está, reemplaza el logo en Open Graph. */
+  heroImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+  };
   updatedDate?: string;
   /** Fecha ISO de la última edición. El sitemap la prefiere sobre `updatedDate`. */
   updatedAt?: string;
@@ -52,6 +60,14 @@ export function buildGuideWhatsAppHref(lines: string[]) {
 export function buildGuideMetadata(config: GuideConfig): Metadata {
   const title = fitAbsoluteTitle(config.pageTitle);
   const description = clampMetaDescription(config.pageDescription);
+  const shareImage = config.heroImage
+    ? {
+        url: absoluteUrl(config.heroImage.src),
+        width: config.heroImage.width,
+        height: config.heroImage.height,
+        alt: config.heroImage.alt,
+      }
+    : { url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME };
 
   return {
     title: { absolute: title },
@@ -65,13 +81,13 @@ export function buildGuideMetadata(config: GuideConfig): Metadata {
       siteName: SITE_NAME,
       locale: "es_CL",
       type: "article",
-      images: [{ url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME }],
+      images: [shareImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [{ url: "/logonegro.png", width: 800, height: 800, alt: SITE_NAME }],
+      images: [shareImage],
     },
     robots: {
       index: true,
@@ -125,6 +141,7 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
       "@type": "Article",
       headline: config.h1,
       description: config.pageDescription,
+      ...(config.heroImage ? { image: absoluteUrl(config.heroImage.src) } : {}),
       author: {
         "@type": "Organization",
         name: SITE_NAME,
