@@ -70,7 +70,7 @@ const tallerFamiliar = {
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-interiores",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-20",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -112,6 +112,12 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
       description: "La especie se confirma al cotizar. Interior y exterior no usan el mismo criterio.",
     },
   ],
+  heroImage: {
+    src: "/images/puertas/puerta-corredera-madera-vidrio-interior.webp",
+    alt: "Puerta corredera de madera y vidrio para interior",
+    width: 956,
+    height: 1268,
+  },
   sectionTitle: "Qué puerta interior cotizamos",
   sectionParagraph:
     "Una puerta interior separa piezas de la casa o de un local: dormitorio, baño, cocina u oficina. La fabricamos como hoja a medida, con las medidas de tu vano. Si la puerta da a la calle o es la entrada principal, cotízala como exterior: madera y acabado cambian, y no prometemos intemperie sin ver el vano.",

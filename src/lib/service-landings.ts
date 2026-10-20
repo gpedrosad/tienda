@@ -499,7 +499,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-20",
   pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
     "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
@@ -585,7 +585,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué madera recomiendan para mesones de quincho?",
       answer:
-        "Para mesones de quincho bajo techo, lenga austral y pino premium funcionan bien con barniz o aceite. Para mesones al aire libre, la madera debe tener sellado adecuado y mantenerse regularmente. Te orientamos en la cotización según si queda bajo techo, semitecho o completamente expuesto.",
+        "Para mesones de quincho bajo techo, lenga austral y pino premium funcionan bien con barniz o aceite. Para mesones al aire libre, la madera debe tener sellado adecuado y mantenerse regularmente. Te orientamos en la cotización según si queda bajo techo, semitecho o completamente expuesto. El criterio está en la [guía de madera para mesón de quincho](/guias/madera-para-meson-quincho).",
     },
     {
       question: "¿Los mesones de quincho necesitan sellado especial?",
@@ -626,7 +626,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     {
       title: "Mesones de madera para quinchos",
       paragraphs: [
-        "Si buscas un mesón de madera para quincho, lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. Un mesón de quincho bien hecho resiste el uso diario y le da carácter al espacio. No es un quincho armado ni incluye estructura, parrilla o instalación.",
+        "Si buscas un [mesón de madera para quincho](/guias/madera-para-meson-quincho), lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. Un mesón de quincho bien hecho resiste el uso diario y le da carácter al espacio. No es un quincho armado ni incluye estructura, parrilla o instalación.",
         "Para cotizar bien tu mesón para quincho, indica si queda bajo techo o al aire libre, el largo y el ancho (y el espesor si ya lo tienes), la comuna y una foto del vano o del mesón actual. El tipo de madera y el acabado se confirman en la respuesta según el uso; no afirmamos resistencia al calor o a la lluvia sin ver el contexto.",
       ],
       bullets: [

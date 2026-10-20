@@ -1,6 +1,8 @@
 import { existsSync } from "fs";
 import path from "path";
 import type { Product } from "@/data/products";
+import { medidasMesaCentroGuideConfig } from "@/lib/centro-guide";
+import { medidasMaderaPuertasGuideConfig } from "@/lib/door-guide";
 import {
   puertasCorrederasLandingConfig,
   puertasExterioresLandingConfig,
@@ -8,10 +10,19 @@ import {
   puertasMaderaNativaLandingConfig,
 } from "@/lib/door-landings";
 import {
+  cotizarMueblesGuideConfig,
+  cuidadoMueblesGuideConfig,
+  elegirSillasGuideConfig,
+  medidasMesaGuideConfig,
+  type GuideConfig,
+} from "@/lib/guides";
+import {
   escalerasMaderaLandingConfig,
   peldanosChillanLandingConfig,
   peldanosConcretoLandingConfig,
 } from "@/lib/peldanos-cluster";
+import { elegirMaderaPeldanosGuideConfig, medidasPeldanosGuideConfig } from "@/lib/peldanos-guides";
+import { maderaMesonQuinchoGuideConfig } from "@/lib/quincho-guide";
 import { galleryImagesForProduct } from "@/lib/product-gallery";
 import {
   mesasComedorAMedidaLandingConfig,
@@ -95,6 +106,23 @@ for (const config of landingConfigs) {
 
 const kitImages = uniqueExisting(KIT_PERGOLA_IMAGES);
 if (kitImages.length > 0) imagesByRoute.set("/kit-pergola", kitImages);
+
+const guideConfigs: GuideConfig[] = [
+  cuidadoMueblesGuideConfig,
+  medidasMesaGuideConfig,
+  medidasMesaCentroGuideConfig,
+  cotizarMueblesGuideConfig,
+  elegirSillasGuideConfig,
+  maderaMesonQuinchoGuideConfig,
+  medidasMaderaPuertasGuideConfig,
+  medidasPeldanosGuideConfig,
+  elegirMaderaPeldanosGuideConfig,
+];
+
+for (const config of guideConfigs) {
+  const images = uniqueExisting([config.heroImage?.src]);
+  if (images.length > 0) imagesByRoute.set(config.canonicalPath, images);
+}
 
 export function sitemapImagesForRoute(route: string): string[] | undefined {
   const images = imagesByRoute.get(route);

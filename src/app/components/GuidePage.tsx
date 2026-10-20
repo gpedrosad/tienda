@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import ProductCard, { GUIDE_GRID_SIZES } from "@/app/components/ProductCard";
@@ -31,6 +32,25 @@ function featuredProductsFor(ids: string[] | undefined) {
     )
     .filter((product): product is Product => Boolean(product?.imageUrl))
     .slice(0, 3);
+}
+
+function GuideHeroFigure({ image }: { image: NonNullable<GuideConfig["heroImage"]> }) {
+  return (
+    <figure className="my-6">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        sizes="(max-width: 767px) 100vw, 768px"
+        className="h-auto max-h-[min(42vw,220px)] w-full rounded-2xl object-cover object-center md:max-h-96"
+      />
+      {image.caption ? (
+        <figcaption className="mt-2 text-sm leading-relaxed text-ink-muted">{image.caption}</figcaption>
+      ) : null}
+    </figure>
+  );
 }
 
 function GuideBullets({ bullets }: { bullets: string[] }) {
@@ -217,6 +237,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
               <p className="mt-4 text-base leading-relaxed text-ink-muted md:text-lg">
                 {config.intro}
               </p>
+              {leadIndex == null && config.heroImage ? <GuideHeroFigure image={config.heroImage} /> : null}
               {updatedDate && (
                 <p className="mt-3 text-xs text-ink-muted">
                   Actualizado:{" "}
@@ -244,6 +265,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                     ) : undefined
                   }
                 />
+                {config.heroImage && leadIndex === index ? <GuideHeroFigure image={config.heroImage} /> : null}
                 {showBridge(index) && <GuideFeaturedProducts items={featuredProducts} />}
               </Fragment>
             ))}
