@@ -27,6 +27,12 @@ npm run ga:report
 # GA4 — listar propiedades visibles
 npm run ga:list
 
+# Bing / ChatGPT: avisar URLs nuevas o cambiadas por IndexNow (tras el deploy)
+npm run indexnow             # todo el sitemap de producción
+npm run indexnow -- /ruta    # solo esas rutas
+
+# Feed de Merchant Center (se genera en el build): https://www.ideamadera.cl/feed/google.xml
+
 # Fotos: medir proporciones tras agregar o reemplazar imágenes en public/images
 npm run images:dims
 

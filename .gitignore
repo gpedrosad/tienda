@@ -34,6 +34,7 @@ yarn-error.log*
 
 # Google OAuth / Search Console secrets (never commit)
 .secrets/
+.secrets
 
 # vercel
 .vercel

@@ -32,7 +32,10 @@ export function buildProductWhatsAppMessage(product: Product, origin = getDefaul
     `Me interesa cotizar: ${product.name}`,
     `Precio referencia: ${formatCLP(product.price)}`,
     `Link: ${cleanOrigin}${productPath}`,
-    `Ref: ${product.handle || product.id}`,
+    "",
+    "Cantidad:",
+    "Comuna (o retiro en taller):",
+    product.finish ? `Terminación (${product.finish.toLowerCase()}):` : "Terminación:",
   ].join("\n");
 }
 

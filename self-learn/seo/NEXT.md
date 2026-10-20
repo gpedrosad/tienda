@@ -9,6 +9,13 @@ P0 de la revisión ya aplicado (commit 545c162). Fase 1 en curso.
 - [x] **1.6** `GuidePage` como Server Component — Lote 19, 2026-10-19.
 - [x] **1.7** `ProductCard`: `sizes` de la grilla real y `priority` en la primera tarjeta de colección — Lote 19, 2026-10-19.
 
+## Canales nuevos (2026-10-19) — pendientes del dueño
+
+- **Merchant Center** con el feed `/feed/google.xml` → pasos en `docs/merchant-center-y-bing.md`. Bloqueo: confirmar política de cambios 30 días para muebles a pedido.
+- **Bing Webmaster Tools** (importar desde GSC). IndexNow ya activo: correr `npm run indexnow` tras deploys con contenido.
+- **Google Business Profile** → kit en `docs/google-business-profile.md`.
+- Medir en GSC la apariencia `MERCHANT_LISTINGS` (base: 15 imp / 4 clics al 19 oct).
+
 ## Revisión 2026-10-17 (ver `docs/seo-revision-2026-10-17.md`)
 
 - **Congelar** titles de veladores, guía medidas comedor, ratona, puertas y guía sillas hasta ~5 nov (medir lote 16). Kentucky: title corregido el 2026-10-18 (silla de descanso, no de comedor); su medición arranca de nuevo (~1 nov).

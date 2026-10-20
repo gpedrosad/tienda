@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-19
 
+- **Merchant Center + Bing:** feed `/feed/google.xml` (`src/lib/merchant-feed.ts`; 29 productos con foto, precio con IVA, fotos extra, medidas, material, categoría de Google). IndexNow con `npm run indexnow` (clave en `public/`). Mensaje de WhatsApp de ficha pide cantidad, comuna/retiro y terminación (sin "Ref"). Kits del dueño: `docs/merchant-center-y-bing.md`, `docs/google-business-profile.md`. Motivo: merchant listings 26,7% CTR vs product snippets 1,7% (GSC 28d).
 - **Lote 19:** primera tarjeta de colección con `priority` y `sizes` de la grilla real (home sin priority). `GuidePage` pasa a Server Component; First Load JS de `/guias/medidas-mesa-comedor` 136 kB → 117 kB, HTML de las guías igual. `/mesas-de-comedor-a-medida`: sección con medidas del catálogo (solo `products.ts` y la guía), `updatedAt` 2026-10-19. `/collections/mesas` enlaza `/guias/medidas-mesa-de-centro`. Sitemap con `image:loc` (74 `<loc>` iguales). Detalle: `SEO-CHANGELOG.md`.
 - **Analytics solo en producción:** GA4, GTM, Pixel y conversiones de Meta (`/api/facebook-whatsapp`) solo cargan/envían en `www.ideamadera.cl` y no en navegadores automatizados (`src/lib/analytics-host.ts`). Antes, localhost y previews contaban como visitas (13 sesiones de `localhost` en GA4 el 17–18 oct). GA4 recién mide bien desde el 17 oct (fix `1765042`); antes, 1 sesión en 6 semanas.
 

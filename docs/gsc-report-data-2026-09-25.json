@@ -1,0 +1,260 @@
+{
+  "siteUrl": "sc-domain:ideamadera.cl",
+  "period": {
+    "start": "2026-08-29",
+    "end": "2026-09-25",
+    "days": 28,
+    "source": "days"
+  },
+  "previousPeriod": {
+    "start": "2026-08-01",
+    "end": "2026-08-28"
+  },
+  "filters": {
+    "searchType": "web",
+    "dataState": "final"
+  },
+  "extractedAt": "2026-09-25T15:42:09.994Z",
+  "requests": [
+    {
+      "endpoint": "searchanalytics.query",
+      "dimensions": [],
+      "rowLimit": 10,
+      "rows": 1
+    },
+    {
+      "endpoint": "searchanalytics.query",
+      "dimensions": [
+        "query"
+      ],
+      "rowLimit": 10,
+      "rows": 10
+    },
+    {
+      "endpoint": "searchanalytics.query",
+      "dimensions": [
+        "page"
+      ],
+      "rowLimit": 10,
+      "rows": 10
+    },
+    {
+      "endpoint": "sitemaps.list",
+      "rows": 1
+    }
+  ],
+  "errors": [],
+  "data": {
+    "summary": [
+      {
+        "clicks": 179,
+        "impressions": 5862,
+        "ctr": 0.030535653360627774,
+        "position": 11.50290003411805
+      }
+    ],
+    "queries": [
+      {
+        "keys": [
+          "muebles chillan"
+        ],
+        "clicks": 8,
+        "impressions": 111,
+        "ctr": 0.07207207207207207,
+        "position": 6.018018018018018
+      },
+      {
+        "keys": [
+          "idea madera"
+        ],
+        "clicks": 6,
+        "impressions": 23,
+        "ctr": 0.2608695652173913,
+        "position": 1.6956521739130435
+      },
+      {
+        "keys": [
+          "muebles en chillan"
+        ],
+        "clicks": 4,
+        "impressions": 66,
+        "ctr": 0.06060606060606061,
+        "position": 7.212121212121212
+      },
+      {
+        "keys": [
+          "fabrica de muebles chillan"
+        ],
+        "clicks": 3,
+        "impressions": 54,
+        "ctr": 0.05555555555555555,
+        "position": 7
+      },
+      {
+        "keys": [
+          "mueblerias en chillan"
+        ],
+        "clicks": 3,
+        "impressions": 32,
+        "ctr": 0.09375,
+        "position": 5.34375
+      },
+      {
+        "keys": [
+          "meson de madera para quincho"
+        ],
+        "clicks": 2,
+        "impressions": 19,
+        "ctr": 0.10526315789473684,
+        "position": 7.105263157894737
+      },
+      {
+        "keys": [
+          "muebleria chillan"
+        ],
+        "clicks": 2,
+        "impressions": 64,
+        "ctr": 0.03125,
+        "position": 6.296875
+      },
+      {
+        "keys": [
+          "comedores estilo nordico"
+        ],
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 0.16666666666666666,
+        "position": 10.833333333333334
+      },
+      {
+        "keys": [
+          "donde la venden"
+        ],
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 3
+      },
+      {
+        "keys": [
+          "en chillan"
+        ],
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 4
+      }
+    ],
+    "pages": [
+      {
+        "keys": [
+          "https://www.ideamadera.cl/"
+        ],
+        "clicks": 52,
+        "impressions": 1114,
+        "ctr": 0.0466786355475763,
+        "position": 11.2262118491921
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/muebles-chillan"
+        ],
+        "clicks": 20,
+        "impressions": 350,
+        "ctr": 0.05714285714285714,
+        "position": 11.574285714285715
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/kit-pergola"
+        ],
+        "clicks": 17,
+        "impressions": 727,
+        "ctr": 0.023383768913342505,
+        "position": 7.500687757909216
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/cubiertas-a-medida"
+        ],
+        "clicks": 14,
+        "impressions": 445,
+        "ctr": 0.03146067415730337,
+        "position": 7.997752808988764
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/puertas-a-medida"
+        ],
+        "clicks": 14,
+        "impressions": 409,
+        "ctr": 0.034229828850855744,
+        "position": 9.799511002444987
+      },
+      {
+        "keys": [
+          "https://ideamadera.cl/"
+        ],
+        "clicks": 12,
+        "impressions": 323,
+        "ctr": 0.03715170278637771,
+        "position": 4.504643962848297
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/molduras-a-medida"
+        ],
+        "clicks": 9,
+        "impressions": 127,
+        "ctr": 0.07086614173228346,
+        "position": 8.716535433070867
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/muebles-de-cocina-chillan"
+        ],
+        "clicks": 6,
+        "impressions": 208,
+        "ctr": 0.028846153846153848,
+        "position": 7.6826923076923075
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/quienes-somos"
+        ],
+        "clicks": 6,
+        "impressions": 51,
+        "ctr": 0.11764705882352941,
+        "position": 8.137254901960784
+      },
+      {
+        "keys": [
+          "https://www.ideamadera.cl/collections/mesas"
+        ],
+        "clicks": 4,
+        "impressions": 228,
+        "ctr": 0.017543859649122806,
+        "position": 25.20614035087719
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://www.ideamadera.cl/sitemap.xml",
+        "lastSubmitted": "2026-07-23T07:16:36.442Z",
+        "isPending": false,
+        "isSitemapsIndex": false,
+        "type": "sitemap",
+        "lastDownloaded": "2026-09-25T05:35:43.428Z",
+        "warnings": "0",
+        "errors": "0",
+        "contents": [
+          {
+            "type": "web",
+            "submitted": "53",
+            "indexed": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
