@@ -1,6 +1,7 @@
 # Idea Madera
 
 > Fábrica y mueblería de madera en Chillán, Chile. Muebles de diseño, piezas a medida y envíos a todo el país. Desde 1993.
+> Precios con IVA incluido. Retiro en el taller de Chillán o envío a todo Chile. Cotización por WhatsApp.
 
 ## Acerca de
 
@@ -16,7 +17,7 @@ Idea Madera es una empresa familiar que diseña y fabrica muebles de madera maci
 
 - [Todos los productos](https://www.ideamadera.cl/collections/todos-los-productos): Catálogo completo de muebles de madera.
 - [Mesas de madera](https://www.ideamadera.cl/collections/mesas): Mesas de comedor, centro y ratonas en madera maciza.
-- [Sillas de comedor](https://www.ideamadera.cl/collections/sillas): Sillas Kentucky y Milán en madera.
+- [Sillas de madera](https://www.ideamadera.cl/collections/sillas): Silla Milán Lenga para comedor y Silla Kentucky, silla de descanso reclinada de listones (no es de comedor).
 - [Bancas de madera](https://www.ideamadera.cl/collections/bancas): Bancas para comedor e interior.
 - [Veladores](https://www.ideamadera.cl/collections/veladores): Veladores de madera para dormitorio.
 - [Sitiales](https://www.ideamadera.cl/collections/sitiales): Sitiales y sillones de madera para living.
