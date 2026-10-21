@@ -557,7 +557,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
 
 export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-madera-nativa",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-21",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -598,6 +598,14 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
       description: "La madera se trabaja al vano. No vendemos una medida de stock.",
     },
   ],
+  heroImage: {
+    src: "/images/puertas/puerta-doble-madera-muro-piedra.webp",
+    alt: "Puerta doble de madera con vidrios instalada en un muro de piedra",
+    width: 720,
+    height: 1280,
+    caption:
+      "Las referencias del taller muestran hojas dobles, y el vano real manda. La especie se confirma al cotizar, no sale de la foto.",
+  },
   sectionTitle: "Qué madera publicamos para una puerta",
   sectionParagraph:
     "En puertas, el material publicado es madera nativa seca en cámara: maderas nobles del sur de Chile, seleccionadas. El secado en cámara es el dato que damos para estabilidad. El nombre de la especie no está en la ficha: sale en la propuesta, cuando vemos si la hoja es interior o exterior.",

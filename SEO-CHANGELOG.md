@@ -1,5 +1,55 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-21 — Lote 21
+
+Dos FAQ en `/molduras-a-medida` para las consultas de cornisa de techo y perfil para marcos, y una foto real en `/puertas-madera-nativa` y en `/puertas-para-locales`. Sin URLs nuevas. Sin precios, plazos, especies ni servicios que la página no dijera ya. Titles congelados sin cambio. El hero compartido no se retocó por CLS: la corrida de hoy no reprodujo el 0,058. Pixel, GTM, GA4 y CAPI no se tocaron.
+
+### 1. /molduras-a-medida
+
+Evidencia del encargo (GSC al 2026-10-20): la URL sube (7d 5 clics / 107 impresiones, contra 3 / 47 la semana previa; 28d 15 clics / 228 impresiones, posición 7,7). Llegan sin clic «cornisa de madera para techo», «moldura de madera para techo», «cornisas de madera para interiores», «corniza madera», «perfil de madera para marcos», «molduras para muros» y «molduras de madera chile». El cuerpo ya nombraba cornisas, techos, marcos, vanos y qué hay que mandar para cotizar.
+
+Dos FAQ nuevas, al final de la lista. La primera que queda abierta sigue siendo «¿Fabrican molduras de madera a medida?». El schema FAQPage usa el mismo texto que el `<details>` (el enlace se aplana a «puertas a medida»).
+
+- «¿Fabrican cornisas de madera para techo?». Las cornisas están entre lo que ya se fabrica a medida, van en techos en el encuentro del muro con el cielo, y la página también hace molduras para muros y terminaciones interiores. Para cotizar: perfil (foto de frente o de la sección), largo y cantidad, por metro lineal o por tramos. Para cornisas, el contorno del cielo en el mismo sentido.
+- «¿Hacen perfiles de madera para marcos de puertas o ventanas?». Molduras y perfiles para marcos de puertas, ventanas y vanos. Mismos datos de cotización. «La instalación no se asume incluida.» La hoja se cotiza en [puertas a medida](/puertas-a-medida).
+
+Cada frase sale de una oración que ya estaba en `moldurasLandingConfig` (hero, sección, tarjeta «Techos y cornisas», tarjeta «Marcos y vanos», FAQ de la cornisa, extra «Perfil, largo y terminación» y «Cómo medir molduras para cotizar», y el enlace relacionado a puertas). Sin especie, precio ni plazo. `updatedAt` `2026-10-21`. Title, meta, H1, hero y CTA de WhatsApp iguales.
+
+### 2. Fotos en /puertas-madera-nativa y /puertas-para-locales
+
+Evidencia del encargo: en 28d, nativa tuvo 1 clic / 17 impresiones (el primero el 19 oct) y locales 8 impresiones («puerta para bodega interior», «puertas para negocio»). En producción no renderizaban foto de contenido. Las hermanas con foto sí tuvieron clics.
+
+Ninguna foto del repo dice que la hoja retratada sea de una especie nativa. Por eso nativa no usa la foto como prueba de especie: usa la referencia de entrada del muro de piedra, con el alt y las medidas que ya tenía la galería de `/puertas-exteriores`.
+
+- `/puertas-madera-nativa`: `heroImage` `/images/puertas/puerta-doble-madera-muro-piedra.webp`, alt «Puerta doble de madera con vidrios instalada en un muro de piedra», 720×1280. Pie: «Las referencias del taller muestran hojas dobles, y el vano real manda. La especie se confirma al cotizar, no sale de la foto.» La primera oración es el pie de `/guias/medidas-y-madera-puertas`. La segunda es la FAQ de `/puertas-correderas`.
+- `/puertas-para-locales`: `heroImage` `/images/puertas/puerta-doble-madera-vidrios-fachada.webp`, alt «Puerta doble de madera con vidrios en fachada», 1200×1600 (el hero de `/puertas-exteriores`). Pie: «Referencia de entrada: puerta doble de madera con vidrios en fachada. No es la hoja de un local. Son obras, no modelos a la venta.» «Referencias de entrada» y «una puerta doble de madera con vidrios en fachada» están en el extra de exteriores; «Son obras, no modelos a la venta» es esa misma sección. «No es la hoja de un local» separa esta fachada de la hoja que esta página sí cotiza (el hero de locales ya dice «hoja de madera para un local»).
+
+`LandingImage` acepta `caption` opcional. Si no hay pie, el `<figure>` del hero queda con las mismas clases de antes. Con pie, la foto conserva `h-[min(64vw,420px)]` en móvil y el texto va debajo, fuera del `overflow`. `updatedAt` `2026-10-21` en las dos. Title, meta, H1, FAQ y CTA no cambian. El sitemap toma el `heroImage` solo: 74 `<loc>`, `<image:loc>` 125 → 127. `lastmod` `2026-10-21` solo en `/molduras-a-medida`, `/puertas-madera-nativa` y `/puertas-para-locales`.
+
+### 3. CLS de /puertas-interiores
+
+El encargo midió en producción, Lighthouse 12.8 móvil: perf 97, LCP 2,4 s (el hero del lote 20), CLS 0,058. En esta máquina, Lighthouse 12.8.2 móvil con simulación, el mismo URL de producción da perf 99, LCP 2,2 s, CLS 0, y `/puertas-correderas` (el mismo hero) perf 97, LCP 2,5 s, CLS 0. Cero eventos de layout shift y cero culpables de CLS. La auditoría de imágenes sin medida pasa.
+
+El `<figure>` ya reserva alto con `h-[min(64vw,420px)]` (en el viewport de 412 px el cuadro del LCP mide 380×264, que es ese `min`). La foto es `position: absolute` y no empuja el alto al cargar. No hay un alto que falte por reservar. No se cambió el hero de las páginas sin pie, ni el `updatedAt` de interiores ni el de correderas.
+
+En el `next start` local, caliente, las cinco URLs quedan en CLS 0. El LCP local sale más alto que producción (molduras, sin foto nueva: 2,1 s → 2,7 s), el mismo efecto de máquina que anotó el lote 20. En nativa y locales el LCP pasa a ser la foto nueva.
+
+| URL | Producción, antes de este lote | Local, este lote |
+|---|---|---|
+| `/molduras-a-medida` | perf 99, LCP 2,1 s (párrafo), CLS 0 | perf 96, LCP 2,7 s (párrafo), CLS 0 |
+| `/puertas-madera-nativa` | perf 99, LCP 2,1 s (párrafo), CLS 0 | perf 92, LCP 3,4 s (foto), CLS 0 |
+| `/puertas-para-locales` | perf 99, LCP 2,1 s (párrafo), CLS 0 | perf 94, LCP 3,2 s (foto), CLS 0 |
+| `/puertas-interiores` | perf 99, LCP 2,2 s (foto), CLS 0. El encargo había anotado CLS 0,058 | perf 94, LCP 3,2 s (foto), CLS 0 |
+| `/puertas-correderas` | perf 97, LCP 2,5 s (foto), CLS 0 | perf 96, LCP 2,8 s (foto), CLS 0 |
+
+### No se tocó
+
+- Titles y metas congelados, y los H1 de todas las URLs.
+- Cuerpo del hub `/puertas-a-medida`, home, `/kit-pergola`, `/collections/*`, `/comedores-nordicos`, `/mesas-de-centro`, `/mesas-de-comedor-a-medida` y las guías.
+- Las cinco URLs del lote 20, salvo leer el hero de interiores y correderas para el CLS. Su copy y su `updatedAt` quedan igual.
+- URLs nuevas, mensaje de WhatsApp, Pixel, GTM, GA4, CAPI.
+- Antigüedad: sigue saliendo de `src/lib/founding.ts`. En el HTML armado no hay `2001`, «31 años», «30 años», «20 años» ni «más de N años». `foundingDate` queda en `1993`.
+
 ## 2026-10-20 — Lote 20
 
 Fotos reales en tres URLs de puertas y peldaños que seguían sin imagen, respuesta a las queries de huella en `/escaleras-de-madera`, y dos enlaces de cuerpo hacia la guía del mesón de quincho. Sin URLs nuevas. Sin datos de negocio que no estuvieran ya en las guías o en las landings. Titles congelados sin cambio. Pixel, GTM, GA4 y CAPI no se tocaron.

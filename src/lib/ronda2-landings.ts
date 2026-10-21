@@ -170,7 +170,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
 
 export const puertasLocalesLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-para-locales",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-21",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -212,6 +212,14 @@ export const puertasLocalesLandingConfig: ServiceLandingConfig = {
       description: "No publicamos puerta acústica, cortafuego ni de seguridad.",
     },
   ],
+  heroImage: {
+    src: "/images/puertas/puerta-doble-madera-vidrios-fachada.webp",
+    alt: "Puerta doble de madera con vidrios en fachada",
+    width: 1200,
+    height: 1600,
+    caption:
+      "Referencia de entrada: puerta doble de madera con vidrios en fachada. No es la hoja de un local. Son obras, no modelos a la venta.",
+  },
   sectionTitle: "Qué puerta de local sí cotizamos",
   sectionParagraph:
     "El taller hace la hoja a medida para hogares y también para negocios: locales, oficinas y bodegas. Esta página es ese segundo caso. Si la puerta es de una casa, parte en puertas interiores o en puertas de entrada, según el vano.",

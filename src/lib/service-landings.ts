@@ -28,6 +28,8 @@ export type LandingImage = {
   alt: string;
   width: number;
   height: number;
+  /** Pie visible. Solo si el texto ya está en otra config del repo. */
+  caption?: string;
 };
 
 export type ServiceLandingConfig = {
@@ -687,7 +689,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
-  updatedAt: "2026-10-14",
+  updatedAt: "2026-10-21",
   pageTitle: "Molduras de Madera a Medida | Chile",
   pageDescription:
     "Molduras de madera a medida en Chillán para muros, techos y vanos. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
@@ -823,6 +825,16 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
       question: "¿Las molduras de madera necesitan mantenimiento?",
       answer:
         "Molduras de interior con barniz o pintura no requieren mantenimiento regular. Si quedan en zonas de alta humedad (baños, cocinas), es recomendable usar sellador apropiado y revisar la ventilación del espacio.",
+    },
+    {
+      question: "¿Fabrican cornisas de madera para techo?",
+      answer:
+        "Sí. Las cornisas están entre las molduras de madera a medida que fabricamos: van en techos, en el encuentro del muro con el cielo. También hacemos molduras para muros y terminaciones interiores. Para cotizar necesitamos el perfil (foto de frente o de la sección), el largo y la cantidad, por metro lineal o por tramos. Para cornisas, mide el contorno del cielo en el mismo sentido.",
+    },
+    {
+      question: "¿Hacen perfiles de madera para marcos de puertas o ventanas?",
+      answer:
+        "Sí. Hacemos molduras y perfiles para marcos de puertas, ventanas y terminaciones de vanos a medida. Para cotizar envía el perfil (foto de frente o de la sección), el largo y la cantidad. La instalación no se asume incluida. La hoja se cotiza en [puertas a medida](/puertas-a-medida).",
     },
   ],
   extraSections: [

@@ -104,7 +104,23 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                 </h1>
               </div>
 
-              {config.heroImage ? (
+              {config.heroImage?.caption ? (
+                <figure className="mt-6 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:flex lg:h-full lg:min-h-[560px] lg:flex-col">
+                  <div className="relative h-[min(64vw,420px)] overflow-hidden rounded-2xl bg-canvas-deep shadow-sm lg:h-auto lg:min-h-0 lg:flex-1">
+                    <Image
+                      src={config.heroImage.src}
+                      alt={config.heroImage.alt}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {config.heroImage.caption}
+                  </figcaption>
+                </figure>
+              ) : config.heroImage ? (
                 <figure className="relative mt-6 h-[min(64vw,420px)] overflow-hidden rounded-2xl bg-canvas-deep shadow-sm lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:mt-0 lg:h-full lg:min-h-[560px]">
                   <Image
                     src={config.heroImage.src}
