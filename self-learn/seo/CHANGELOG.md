@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-21
+
+- **Lote 21:** dos FAQ en `/molduras-a-medida` (cornisas de madera para techo; perfiles para marcos de puertas o ventanas, con enlace a `/puertas-a-medida`). Foto ya publicada en `/puertas-madera-nativa` (muro de piedra, sin afirmar la especie de la foto) y en `/puertas-para-locales` (fachada de entrada, pie que la deja como referencia de entrada). `updatedAt` 2026-10-21 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 125 → 127. CLS del hero de interiores no se reprodujo (0 en Lighthouse 12.8.2) y el componente no se cambió para las páginas sin pie. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-20
 
 - **Lote 20:** foto real en `/puertas-interiores` (la corredera de interior ya publicada, sin galería), en `/guias/medidas-y-madera-puertas` y en `/guias/medidas-peldanos-escalera`. `GuidePage` pinta `heroImage` opcional (lazy, sin priority); Open Graph y el Article usan esa foto. `/escaleras-de-madera`: FAQ «¿Qué medida tiene una huella de escalera?» con las cifras de la guía (25 a 30 cm, 15 a 18 cm, 2 × contrahuella + huella 60 a 64 cm) y enlaces a las dos guías de peldaños. `/cubiertas-a-medida`: dos enlaces de contenido a `/guias/madera-para-meson-quincho`. `updatedAt` 2026-10-20 en esas cinco URLs. Sitemap: 74 `<loc>`, `<image:loc>` 122 → 125. Detalle: `SEO-CHANGELOG.md`.
