@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-22
+
+- **Lote 22:** dos FAQ en `/puertas-de-madera-con-vidrio` (vidrio solo arriba o hasta la mitad; hoja de interior, con enlace a `/puertas-interiores`). Foto ya publicada en `/guias/elegir-madera-peldanos` (peldaños gruesos, pie textual, después del primer apartado para que no sea el LCP) y en `/muebles-chillan` (taller, sin pie). `updatedAt` 2026-10-22 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 127 → 129. CLS del hero con pie no se reprodujo y `ServiceLandingPage` no se cambió. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-21
 
 - **Lote 21:** dos FAQ en `/molduras-a-medida` (cornisas de madera para techo; perfiles para marcos de puertas o ventanas, con enlace a `/puertas-a-medida`). Foto ya publicada en `/puertas-madera-nativa` (muro de piedra, sin afirmar la especie de la foto) y en `/puertas-para-locales` (fachada de entrada, pie que la deja como referencia de entrada). `updatedAt` 2026-10-21 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 125 → 127. CLS del hero de interiores no se reprodujo (0 en Lighthouse 12.8.2) y el componente no se cambió para las páginas sin pie. Detalle: `SEO-CHANGELOG.md`.

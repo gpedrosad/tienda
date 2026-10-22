@@ -22,6 +22,13 @@ function leadSectionIndexOf(config: GuideConfig) {
   return index;
 }
 
+function heroImageAfterSectionOf(config: GuideConfig) {
+  if (leadSectionIndexOf(config) != null) return null;
+  const index = config.heroImageAfterSection;
+  if (index == null || index < 0 || index >= config.sections.length) return null;
+  return index;
+}
+
 function featuredProductsFor(ids: string[] | undefined) {
   if (!ids?.length) return [];
   return ids
@@ -196,6 +203,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
   const structuredData = buildGuideSchemaGraph(config);
   const updatedDate = guideDates(config).modified;
   const leadIndex = leadSectionIndexOf(config);
+  const heroAfter = heroImageAfterSectionOf(config);
   const featuredProducts = featuredProductsFor(config.featuredProductIds);
   const orderedSections =
     leadIndex == null
@@ -237,7 +245,9 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
               <p className="mt-4 text-base leading-relaxed text-ink-muted md:text-lg">
                 {config.intro}
               </p>
-              {leadIndex == null && config.heroImage ? <GuideHeroFigure image={config.heroImage} /> : null}
+              {leadIndex == null && heroAfter == null && config.heroImage ? (
+                <GuideHeroFigure image={config.heroImage} />
+              ) : null}
               {updatedDate && (
                 <p className="mt-3 text-xs text-ink-muted">
                   Actualizado:{" "}
@@ -265,7 +275,9 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                     ) : undefined
                   }
                 />
-                {config.heroImage && leadIndex === index ? <GuideHeroFigure image={config.heroImage} /> : null}
+                {config.heroImage && (leadIndex === index || heroAfter === index) ? (
+                  <GuideHeroFigure image={config.heroImage} />
+                ) : null}
                 {showBridge(index) && <GuideFeaturedProducts items={featuredProducts} />}
               </Fragment>
             ))}

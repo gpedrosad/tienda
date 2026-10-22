@@ -37,6 +37,12 @@ export type GuideConfig = {
   }>;
   /** Si está, esa sección (la tabla de respuesta) se renderiza primero. El resto conserva su orden. */
   leadSectionIndex?: number;
+  /**
+   * Si está, y no hay `leadSectionIndex`, la foto va después de esa sección
+   * en el orden original, sin CTA intermedio. Sin este campo, la foto sigue
+   * bajo la intro.
+   */
+  heroImageAfterSection?: number;
   /** Ids del catálogo a mostrar tras el CTA intermedio. Solo entran los que tienen foto. */
   featuredProductIds?: string[];
   faqs?: GuideFaq[];

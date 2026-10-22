@@ -10,7 +10,7 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-22",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -156,6 +156,16 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
       question: "¿Qué madera usan cuando hay vidrio?",
       answer:
         "La misma lógica del resto de las puertas: madera nativa seca en cámara, y la especie se confirma al cotizar. Interior o exterior cambia la elección. Más contexto en [puertas de madera nativa](/puertas-madera-nativa).",
+    },
+    {
+      question: "¿Pueden hacer la puerta con vidrio solo arriba o hasta la mitad?",
+      answer:
+        "La repartición sale de tu foto: cuántos paños, si llegan al piso o quedan en la mitad superior, y si la hoja es simple o doble. Puede ser un paño o varios. Partimos de tu referencia, no de un código. Te decimos si la repartición es factible y si el vidrio entra en la misma cotización. El vidrio no se asume incluido.",
+    },
+    {
+      question: "¿Hacen puertas de madera con vidrio para interior?",
+      answer:
+        "Sí. Dormitorio, cocina u oficina pueden llevar un paño si el vano y la referencia lo permiten. La hoja de interior no se cotiza como entrada. Interior o entrada cambia la madera y el acabado. Un dormitorio o una oficina sin el mismo uso exterior van en [puertas interiores](/puertas-interiores).",
     },
   ],
   relatedLinks: doorRelatedLinks("/puertas-de-madera-con-vidrio"),

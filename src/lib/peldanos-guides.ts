@@ -164,7 +164,7 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
 
 export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-madera-peldanos",
-  updatedAt: "2026-10-16",
+  updatedAt: "2026-10-22",
   pageTitle: "Cómo Elegir Madera para Peldaños | Idea Madera",
   pageDescription:
     "Criterios para peldaños: tránsito, espesor y terminación. Lenga austral o pino premium se confirman al cotizar. Escríbenos por WhatsApp.",
@@ -179,6 +179,15 @@ export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   h1: "Cómo elegir la madera de un peldaño",
   intro:
     "En una huella de escalera pesan el tránsito, el espesor y la terminación. En el taller de Chillán trabajamos lenga austral y pino premium, secos en cámara. Cuál de las dos va en tus peldaños se confirma al cotizar, según el uso y el acabado que buscas.",
+  heroImage: {
+    src: "/images/peldanos/peldanos-gruesos-madera-maciza.webp",
+    alt: "Peldaños gruesos de madera maciza apilados en el taller",
+    width: 1200,
+    height: 1600,
+    caption:
+      "En las fotos del taller hay peldaños gruesos de madera maciza y tablas más delgadas recién cepilladas: son referencias de fabricación, no dos modelos con nombre.",
+  },
+  heroImageAfterSection: 0,
   updatedDate: "2026-10-17",
   serviceName: "Asesoría y fabricación de peldaños de madera",
   serviceType: "Huellas de madera maciza a medida",
