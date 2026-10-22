@@ -1587,7 +1587,7 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-chillan",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-22",
   pageTitle: "Mueblería en Chillán | Fábrica de Muebles de Madera",
   pageDescription:
     "Mueblería y fábrica de muebles en Chillán: mesas, sillas, bancas de madera maciza y piezas a medida. Cotiza por WhatsApp con envío a todo Chile.",
@@ -1625,6 +1625,12 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
       description: "Sin intermediarios: cotización clara por WhatsApp.",
     },
   ],
+  heroImage: {
+    src: "/images/taller-idea-madera.webp",
+    alt: "Taller de Idea Madera en Chillán, con muebles de madera en fabricación",
+    width: 1920,
+    height: 1920,
+  },
   sectionTitle: "Mueblería en Chillán para cada espacio del hogar",
   sectionParagraph:
     "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas (cubiertas, puertas, peldaños, molduras), visita nuestra página de muebles a medida en madera.",

@@ -1,5 +1,71 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-22 — Lote 22
+
+Dos FAQ en `/puertas-de-madera-con-vidrio` para las consultas de vidrio arriba o a la mitad y de hoja de interior, y una foto real en `/guias/elegir-madera-peldanos` y en `/muebles-chillan`. Sin URLs nuevas. Sin precios, plazos, tipos de vidrio ni especies que la página no dijera ya. Titles congelados sin cambio. El hero con pie no se retocó: el CLS de hoy no se reprodujo. Pixel, GTM, GA4 y CAPI no se tocaron.
+
+### 1. /puertas-de-madera-con-vidrio
+
+Evidencia del encargo (GSC al 2026-10-21): la URL sube, 28d 1 clic / 103 impresiones, posición 9,3 (74 impresiones en el pull de ayer, 52 el día anterior). Indexada (rastreo 10-17). Llegan sin clic «puerta de madera con vidrio» (15i, p9,7), «puerta madera con vidrio» (7i), «puertas de madera con vidrio» (5i), «puerta con vidrio arriba» (2i, p8), «puerta madera con vidrio interior» (2i, p7,5), «puerta de madera con vidrio para interior» (1i, p4), «puerta de madera y vidrio interior» (1i, p4), «puerta mitad madera mitad vidrio» (1i, p6) y «puerta de vidrio con marco de madera» (1i, p7).
+
+Dos FAQ nuevas, al final de la lista. El schema FAQPage usa el mismo texto que el `<details>` (el enlace se aplana a «puertas interiores»).
+
+| Frase de la respuesta | Oración que ya estaba |
+|---|---|
+| La repartición sale de tu foto: cuántos paños, si llegan al piso o quedan en la mitad superior, y si la hoja es simple o doble. | Extra «Qué enviar…»: «La foto tiene que mostrar la repartición: cuántos paños, si llegan al piso o quedan en la mitad superior, y si la hoja es simple o doble.» |
+| Puede ser un paño o varios. | Destacado: «Lisa, con un paño o con varios.» |
+| Partimos de tu referencia, no de un código. | El mismo destacado, textual. |
+| Te decimos si la repartición es factible y si el vidrio entra en la misma cotización. | Paso «Confirmamos hoja y vidrio», textual. |
+| El vidrio no se asume incluido. | FAQ «¿Fabrican el vidrio de la puerta?» y el hero («vidrio … no se asumen incluidos»). |
+| Sí. Dormitorio, cocina u oficina pueden llevar un paño si el vano y la referencia lo permiten. | Tarjeta «Interior con vidrio», textual a partir de «Dormitorio…». El «Sí» responde la pregunta con esa tarjeta. |
+| La hoja de interior no se cotiza como entrada. | La misma tarjeta, textual. |
+| Interior o entrada cambia la madera y el acabado. | Hero, textual. |
+| Un dormitorio o una oficina sin el mismo uso exterior van en puertas interiores. | Extra, textual, con el enlace que ya iba a [puertas interiores](/puertas-interiores). |
+
+Sin tipo de vidrio, espesor, precio ni plazo. `updatedAt` `2026-10-22`. Title, meta, H1, hero, las FAQ anteriores y el CTA de WhatsApp iguales. Esta URL ya tenía tres fotos en el sitemap; no suma `<image:loc>`.
+
+### 2. /guias/elegir-madera-peldanos
+
+Evidencia del encargo: guía en alza, 28d 1 clic / 42 impresiones, posición 7,0 (29 impresiones ayer, 14 hace dos días). Consultas «madera para escalera interior», «madera para escalera», «madera para escalones de escalera», «peldaño de madera». En producción no había foto de contenido y `og:image` era el logo. El texto ya dice: «En las fotos del taller hay peldaños gruesos de madera maciza y tablas más delgadas recién cepilladas: son referencias de fabricación, no dos modelos con nombre.»
+
+`heroImage` `/images/peldanos/peldanos-gruesos-madera-maciza.webp`, alt «Peldaños gruesos de madera maciza apilados en el taller», 1200×1600 (la galería de peldaños; no es el hero de otra guía). El pie es esa oración, textual. `updatedAt` `2026-10-22` (en pantalla, «Actualizado: 22 de octubre de 2026»). Open Graph, Twitter y `Article.image` pasan a la URL absoluta en `www`. Title, meta, H1, intro, FAQ y CTA iguales.
+
+La foto en el encabezado, como en la guía de medidas, quedaba en el primer pantallazo: Lighthouse móvil local la marcó como LCP (perf 92, LCP 3,3 s, `loading="lazy"`). `heroImageAfterSection: 0` la baja al cierre de «Empieza por el uso, no por el nombre», sigue lazy, con el mismo `<figure>`, y no reordena secciones ni agrega el CTA intermedio. Las otras guías no definen el campo: su HTML visible es el de antes (se comparó el cuerpo contra el build previo; solo cambia el id de build de Next).
+
+### 3. /muebles-chillan
+
+Evidencia del encargo (GSC al 2026-10-21): 28d 26 clics / 647 impresiones, posición 7,7 («muebles chillan» 12 clics / 130 impresiones, p5,6). Google la re-rastreó el 2026-10-22 04:57 ART. En producción no había foto de contenido y `og:image` era el logo. El copy ya dice «Hecho en Chillán. Taller propio…» y «No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.»
+
+`heroImage` `/images/taller-idea-madera.webp`, alt «Taller de Idea Madera en Chillán, con muebles de madera en fabricación», 1920×1920 (el alt de `FabricaVideo`; sin pie). El hero sin pie conserva las clases de las otras landings, con preload. `og:image` y `Service.image` salen de esa foto. `updatedAt` `2026-10-22`. Title, meta, H1, FAQ y CTA iguales. El copy del plan 4.1 queda para después.
+
+### 4. CLS del hero con pie
+
+El encargo vio en producción, una vez, CLS 0,031 en `/puertas-madera-nativa` (el `<figure>` del pie) y 0 en la segunda corrida. Aquí, Lighthouse 12.8.2 móvil con simulación, tres veces en producción y tres en local, `/puertas-madera-nativa` y `/puertas-para-locales` quedan en CLS 0 y cero eventos de layout shift. No se cambió `ServiceLandingPage`.
+
+### Lighthouse 12.8.2, móvil, simulado
+
+En esta máquina el `next start` local suma unos 0,5–0,7 s respecto de producción, el mismo efecto de los lotes 20 y 21.
+
+| URL | Producción, antes | Local, este lote |
+|---|---|---|
+| `/puertas-de-madera-con-vidrio` | perf 99, LCP 2,3 s (foto de fachada), CLS 0 | perf 96, LCP 2,8 s (la misma foto), CLS 0 |
+| `/guias/elegir-madera-peldanos` | perf 99, LCP 2,1 s (párrafo «Una escalera de uso diario…»), CLS 0 | perf 96, LCP 2,8 s (el mismo párrafo), CLS 0. La foto no es el LCP |
+| `/muebles-chillan` | perf 99, LCP 2,1 s (párrafo del hero), CLS 0 | perf 96, LCP 2,7 s (el mismo párrafo), CLS 0. La foto tiene preload y no es el LCP |
+| `/puertas-madera-nativa` | 98/2,4 s, 99/2,3 s, 99/2,3 s; CLS 0 las tres | 96/2,9 s, 96/2,8 s, 96/2,9 s; CLS 0 las tres |
+| `/puertas-para-locales` | 99/2,2 s, 99/2,3 s, 99/2,3 s; CLS 0 las tres | 96/2,8 s las tres; CLS 0 |
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` 127 → 129: la guía suma los peldaños gruesos y `/muebles-chillan` suma el taller. `/puertas-de-madera-con-vidrio` sigue con sus tres fotos. `lastmod` `2026-10-22` solo en esas tres URLs. Las dos fotos responden 200 en `www` (ya estaban en `/public`).
+
+### No se tocó
+
+- Titles, metas y H1.
+- Home, hub `/puertas-a-medida`, `/kit-pergola`, `/collections/*`, `/comedores-nordicos`, `/mesas-de-centro`, `/mesas-de-comedor-a-medida`, `/guias/medidas-mesa-comedor`, `/guias/elegir-sillas-madera-comedor`.
+- Las cinco URLs del lote 20 y las tres del lote 21, salvo medir nativa y locales. Su copy y su `updatedAt` quedan igual.
+- WhatsApp, Pixel, GTM, GA4, CAPI, feed merchant, IndexNow, `public/llms.txt` y `docs/`.
+- `foundingDate` sigue en 1993. El HTML armado no tiene 2001, «31 años», «30 años», «20 años» ni «más de … años».
+
 ## 2026-10-21 — Lote 21
 
 Dos FAQ en `/molduras-a-medida` para las consultas de cornisa de techo y perfil para marcos, y una foto real en `/puertas-madera-nativa` y en `/puertas-para-locales`. Sin URLs nuevas. Sin precios, plazos, especies ni servicios que la página no dijera ya. Titles congelados sin cambio. El hero compartido no se retocó por CLS: la corrida de hoy no reprodujo el 0,058. Pixel, GTM, GA4 y CAPI no se tocaron.
