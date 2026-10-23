@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-23
+
+- **Lote 23:** foto del taller (la de `/muebles-chillan`, sin pie y sin decir que es cocina) en `/muebles-de-cocina-chillan`. Una FAQ en `/guias/madera-para-meson-quincho` sobre mesón de cocina, con frases que la guía ya tenía y enlace a `/cubiertas-a-medida`. Seis enlaces en «Según el proyecto» de `/peldanos-a-medida`, sin palabras nuevas. `updatedAt` 2026-10-23 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 129 → 130. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-22
 
 - **Lote 22:** dos FAQ en `/puertas-de-madera-con-vidrio` (vidrio solo arriba o hasta la mitad; hoja de interior, con enlace a `/puertas-interiores`). Foto ya publicada en `/guias/elegir-madera-peldanos` (peldaños gruesos, pie textual, después del primer apartado para que no sea el LCP) y en `/muebles-chillan` (taller, sin pie). `updatedAt` 2026-10-22 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 127 → 129. CLS del hero con pie no se reprodujo y `ServiceLandingPage` no se cambió. Detalle: `SEO-CHANGELOG.md`.

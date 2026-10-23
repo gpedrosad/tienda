@@ -241,7 +241,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-23",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
@@ -448,8 +448,8 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       title: "Según el proyecto, entra a la página específica",
       paragraphs: [
         "Esta página es la cotización general de huellas de madera a medida, con despacho a todo Chile. El pedido sigue siendo la pieza donde se pisa: largo, ancho, espesor y cantidad.",
-        "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa peldaños de madera a medida en Chillán. Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa peldaños para escalera de concreto. Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa escaleras de madera. Si la huella va separada del muro, sobre metal, usa [peldaños flotantes](/peldanos-flotantes): la estructura no está incluida.",
-        "Antes de escribir, puedes revisar la guía de medidas de peldaños (huella y contrahuella) y la guía para elegir madera. Otros proyectos del taller, como cubiertas o muebles, parten en muebles a medida.",
+        "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa [peldaños de madera a medida en Chillán](/peldanos-madera-chillan). Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa [peldaños para escalera de concreto](/peldanos-escalera-concreto). Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa [escaleras de madera](/escaleras-de-madera). Si la huella va separada del muro, sobre metal, usa [peldaños flotantes](/peldanos-flotantes): la estructura no está incluida.",
+        "Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella) y la [guía para elegir madera](/guias/elegir-madera-peldanos). Otros proyectos del taller, como cubiertas o muebles, parten en [muebles a medida](/muebles-a-medida).",
       ],
     },
   ],
@@ -1450,7 +1450,7 @@ export const contactoLandingConfig: ServiceLandingConfig = {
 
 export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-de-cocina-chillan",
-  updatedAt: "2026-10-12",
+  updatedAt: "2026-10-23",
   pageTitle: "Muebles de Cocina a Medida en Chillán | Mesones · Cotiza por WhatsApp",
   pageDescription:
     "Muebles de cocina a medida en Chillán: mesones, cubiertas, islas de madera. Fabricación local, cotización por WhatsApp. Envío a todo Chile.",
@@ -1489,6 +1489,12 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
       description: "Cotización clara por WhatsApp para particulares y obras.",
     },
   ],
+  heroImage: {
+    src: "/images/taller-idea-madera.webp",
+    alt: "Taller de Idea Madera en Chillán, con muebles de madera en fabricación",
+    width: 1920,
+    height: 1920,
+  },
   sectionTitle: "Muebles de cocina en madera desde Chillán",
   sectionParagraph:
     "Si buscas muebles de cocina a medida en Chillán con madera real y terminación prolija, trabajamos contigo desde la medida hasta el despacho. Fabricamos mesones de trabajo, cubiertas de barra e islas según las medidas de tu cocina. Atención directa por WhatsApp para particulares y obras, con cotización clara antes de fabricar. Envíos coordinados a Chillán y todo Chile.",

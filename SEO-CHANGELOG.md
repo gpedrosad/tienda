@@ -1,5 +1,69 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-23 — Lote 23
+
+Foto del taller en `/muebles-de-cocina-chillan`, una FAQ de mesón de cocina en `/guias/madera-para-meson-quincho`, y seis enlaces en el cuerpo de `/peldanos-a-medida`. Sin URLs nuevas. Sin precios, plazos, especies ni usos que la página no dijera ya. Titles congelados sin cambio. `ServiceLandingPage` y `GuidePage` no se tocaron. Pixel, GTM, GA4 y CAPI no se tocaron.
+
+### 1. /muebles-de-cocina-chillan
+
+Evidencia del encargo (GSC al 2026-10-22): 28d 15 clics / 296 impresiones, posición 7,0. En 7d, 3 clics / 82 impresiones, posición 6,2, contra 3 / 61 y posición 7,3 la semana previa. «muebles de cocina chillan» 28d 1 clic / 44 impresiones, posición 6,5; en 7d, 19 impresiones contra 11. En producción no había foto de contenido y `og:image` era el logo. El copy ya dice «Taller en Chillán», «Fabricación local» y «Fabricamos en Chillán y coordinamos envíos a tu comuna». No hay foto de cocina en el repo.
+
+`heroImage` igual al de `/muebles-chillan`: `/images/taller-idea-madera.webp`, alt «Taller de Idea Madera en Chillán, con muebles de madera en fabricación», 1920×1920. Sin pie. El `<figure>` sin pie y el preload son los mismos que en `/muebles-chillan`. `og:image`, `twitter:image` y `Service.image` apuntan a `https://www.ideamadera.cl/images/taller-idea-madera.webp`. `updatedAt` `2026-10-23`. Title, meta, H1, párrafo, FAQ y CTA iguales. La foto no se presenta como cocina.
+
+### 2. /guias/madera-para-meson-quincho
+
+Evidencia del encargo: guía nueva, 28d 0 clics / 22 impresiones, posición 6,2. En el clúster suben, con 0 clics y aterrizando en `/cubiertas-a-medida` (URL del lote 20, no se edita): «mesones de madera» 10i, «meson de quincho» 9i, «madera para meson de cocina» 8i (28d 13i), «madera para meson» 28d 17i, «mesones de madera para cocina» 28d 1 clic / 14i. La guía ya fabrica mesones de cocina; las FAQ solo hablaban de quincho.
+
+Una FAQ al final. Quedan 5. El schema FAQPage usa el mismo texto que el `<details>` (el enlace se aplana a «cubiertas a medida»). `updatedAt` y `updatedDate` `2026-10-23`, así que en pantalla dice «Actualizado: 23 de octubre de 2026» y `datePublished` / `dateModified` quedan en ese día. Title, meta, H1, intro, secciones, las otras FAQ, relacionados y CTA iguales.
+
+| Frase de la respuesta | Oración que ya estaba |
+|---|---|
+| Sí. | La sección «Qué se fabrica y qué no» ya dice que el tablero incluye mesones de cocina. |
+| Fabricamos el tablero: mesones para quincho, barras, mesones de cocina, mesones para restaurant y salones de eventos. | Esa sección, textual. |
+| Para cubiertas y mesones trabajamos dos maderas: lenga austral y pino premium, seleccionadas y secas en cámara. | «Las maderas que trabajamos», textual. |
+| Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. | La misma sección, textual. |
+| No publicamos un largo estándar de mesón. | «Qué enviar para cotizar», textual. |
+| Manda el largo y el ancho del tuyo | La misma sección, textual. |
+| y cuéntanos que es de cocina. | Bullet «Uso: quincho bajo techo o al aire, barra o cocina». |
+| El detalle de la línea está en cubiertas a medida. | «Las maderas que trabajamos», textual, con el enlace que ya iba a [cubiertas a medida](/cubiertas-a-medida). |
+
+Sin barniz, aceite, calor, agua, espesor, precio ni plazo para cocina.
+
+### 3. /peldanos-a-medida
+
+Evidencia del encargo (GSC al 2026-10-22): el hub baja, 7d 3 clics / 145 impresiones, posición 10,3, contra 7 / 119 y posición 8,7 la semana previa (28d 15 clics / 427 impresiones, posición 9,3). Sin clic: «peldaños para escaleras» 23i, «peldaños de madera» 8i, «huella de madera para escalera» 4i. El clúster sube. En «Según el proyecto, entra a la página específica» esos destinos ya estaban nombrados; solo peldaños flotantes era enlace.
+
+Seis frases pasan a enlace, sin agregar ni quitar palabras. El texto visible, sin las etiquetas, es el de `main`. `updatedAt` `2026-10-23`. FAQ, relacionados, hero, galería y el resto de secciones iguales.
+
+- [peldaños de madera a medida en Chillán](/peldanos-madera-chillan)
+- [peldaños para escalera de concreto](/peldanos-escalera-concreto)
+- [escaleras de madera](/escaleras-de-madera)
+- [guía de medidas de peldaños](/guias/medidas-peldanos-escalera), con «(huella y contrahuella)» fuera del enlace
+- [guía para elegir madera](/guias/elegir-madera-peldanos)
+- [muebles a medida](/muebles-a-medida)
+
+### Lighthouse 12.8.2, móvil, simulado
+
+En esta máquina el `next start` local suma unos 0,4–1,1 s respecto de producción.
+
+| URL | Producción, antes | Local, este lote |
+|---|---|---|
+| `/muebles-de-cocina-chillan` | perf 97, LCP 2,3 s (párrafo del hero), CLS 0 | perf 95, LCP 2,9 s (la foto del taller), CLS 0. Tiene el mismo preload que `/muebles-chillan` |
+| `/guias/madera-para-meson-quincho` | perf 96, LCP 2,6 s (intro), CLS 0 | perf 96, LCP 2,7 s (la misma intro), CLS 0 |
+| `/peldanos-a-medida` | perf 99, LCP 2,3 s (foto de la escalera barnizada), CLS 0 | perf 92, LCP 3,4 s (la misma foto), CLS 0 |
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` 129 → 130: solo suma el taller bajo `/muebles-de-cocina-chillan`. La guía no tiene foto. Peldaños conserva sus seis. `lastmod` `2026-10-23` solo en esas tres URLs. La foto responde 200 en `www`. Los seis enlaces nuevos responden 200.
+
+### No se tocó
+
+- Titles, metas y H1.
+- Home, hub `/puertas-a-medida`, `/kit-pergola`, `/collections/*`, `/comedores-nordicos`, `/mesas-de-centro`, `/mesas-de-comedor-a-medida`, `/guias/medidas-mesa-comedor`, `/guias/elegir-sillas-madera-comedor`.
+- Las cinco URLs del lote 20, las tres del lote 21 y las tres del lote 22. Enlazarlas desde peldaños no las edita.
+- WhatsApp, Pixel, GTM, GA4, CAPI, feed merchant, IndexNow, `public/llms.txt`, `docs/`, `ServiceLandingPage` y `GuidePage`.
+- `foundingDate` sigue en 1993. El HTML armado no tiene 2001, «31 años», «30 años», «20 años» ni «más de … años».
+
 ## 2026-10-22 — Lote 22
 
 Dos FAQ en `/puertas-de-madera-con-vidrio` para las consultas de vidrio arriba o a la mitad y de hoja de interior, y una foto real en `/guias/elegir-madera-peldanos` y en `/muebles-chillan`. Sin URLs nuevas. Sin precios, plazos, tipos de vidrio ni especies que la página no dijera ya. Titles congelados sin cambio. El hero con pie no se retocó: el CLS de hoy no se reprodujo. Pixel, GTM, GA4 y CAPI no se tocaron.
