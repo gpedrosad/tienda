@@ -257,6 +257,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   <p className="text-sm text-ink-muted">Correo</p>
                   <a
                     href={`mailto:${config.contactDetails.email}`}
+                    data-placement="landing_contact_email"
                     className="mt-1 block text-lg font-medium text-ink hover:text-wood"
                   >
                     {config.contactDetails.email}

@@ -347,6 +347,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       </div>
                       <a
                         href={`tel:+${WHATSAPP_PHONE}`}
+                        data-placement="product_hero_call"
                         className={buttonClasses({
                           variant: "secondary",
                           fullWidthMobile: false,
@@ -359,6 +360,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     </div>
                     <a
                       href={`tel:+${WHATSAPP_PHONE}`}
+                      data-placement="product_hero_call_mobile"
                       className={buttonClasses({
                         variant: "ghost",
                         fullWidthMobile: false,

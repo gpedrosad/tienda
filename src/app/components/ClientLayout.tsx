@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { usePathname } from "next/navigation";
+import ContactClickTracker from "@/app/components/ContactClickTracker";
 import DeferredThirdPartyScripts from "@/app/components/DeferredThirdPartyScripts";
 import GaPageTracker from "@/app/components/GaPageTracker";
 import Header from "@/app/components/Header";
@@ -18,6 +19,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
       <GaPageTracker />
+      <ContactClickTracker />
       <DeferredThirdPartyScripts />
       <noscript>
         <img

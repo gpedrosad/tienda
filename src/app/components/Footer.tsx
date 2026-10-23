@@ -136,7 +136,7 @@ export default function Footer() {
             />
 
             <div className="space-y-1 text-sm text-canvas/70">
-              <a href="mailto:hola@ideamadera.cl" className="block w-fit transition-colors hover:text-white">
+              <a href="mailto:hola@ideamadera.cl" data-placement="footer_email" className="block w-fit transition-colors hover:text-white">
                 hola@ideamadera.cl
               </a>
               <WhatsAppAnchor

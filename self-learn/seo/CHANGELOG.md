@@ -17,6 +17,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 ## 2026-10-20
 
 - **Lote 20:** foto real en `/puertas-interiores` (la corredera de interior ya publicada, sin galería), en `/guias/medidas-y-madera-puertas` y en `/guias/medidas-peldanos-escalera`. `GuidePage` pinta `heroImage` opcional (lazy, sin priority); Open Graph y el Article usan esa foto. `/escaleras-de-madera`: FAQ «¿Qué medida tiene una huella de escalera?» con las cifras de la guía (25 a 30 cm, 15 a 18 cm, 2 × contrahuella + huella 60 a 64 cm) y enlaces a las dos guías de peldaños. `/cubiertas-a-medida`: dos enlaces de contenido a `/guias/madera-para-meson-quincho`. `updatedAt` 2026-10-20 en esas cinco URLs. Sitemap: 74 `<loc>`, `<image:loc>` 122 → 125. Detalle: `SEO-CHANGELOG.md`.
+- **Medición de llamadas y correos:** `phone_click` / `email_click` en GA4 para todo enlace `tel:` y `mailto:` (`ContactClickTracker`, `src/lib/contact-tracking.ts`), con `data-placement` en cada enlace (ficha, landings, footer, tiny house). Antes no se medían.
 
 ## 2026-10-19
 
