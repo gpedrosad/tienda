@@ -2,7 +2,7 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const maderaMesonQuinchoGuideConfig: GuideConfig = {
   canonicalPath: "/guias/madera-para-meson-quincho",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-23",
   pageTitle: "Madera para Mesón de Quincho | Lenga y Pino",
   pageDescription:
     "Madera para un mesón de quincho: lenga austral o pino premium, secos en cámara. Bajo techo o al aire cambia el acabado. Cotiza la cubierta por WhatsApp.",
@@ -17,7 +17,7 @@ export const maderaMesonQuinchoGuideConfig: GuideConfig = {
   h1: "Qué madera usar en un mesón de quincho",
   intro:
     "En el taller, un mesón de quincho es una cubierta de madera a medida, no un quincho armado. Esta guía resume las maderas y los usos que ya están en cubiertas a medida: lenga austral y pino premium, secos en cámara. El acabado se confirma al cotizar, según si el mesón va bajo techo o al aire.",
-  updatedDate: "2026-10-17",
+  updatedDate: "2026-10-23",
   sections: [
     {
       title: "Las maderas que trabajamos",
@@ -80,6 +80,11 @@ export const maderaMesonQuinchoGuideConfig: GuideConfig = {
       question: "¿Cómo cotizo un mesón de madera para quincho?",
       answer:
         "Por WhatsApp: largo, ancho, si va bajo techo o al aire, comuna y una foto. El precio y el plazo salen en esa respuesta, no en esta guía.",
+    },
+    {
+      question: "¿Usan la misma madera para un mesón de cocina?",
+      answer:
+        "Sí. Fabricamos el tablero: mesones para quincho, barras, mesones de cocina, mesones para restaurant y salones de eventos. Para cubiertas y mesones trabajamos dos maderas: lenga austral y pino premium, seleccionadas y secas en cámara. Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. No publicamos un largo estándar de mesón. Manda el largo y el ancho del tuyo y cuéntanos que es de cocina. El detalle de la línea está en [cubiertas a medida](/cubiertas-a-medida).",
     },
   ],
   relatedLinks: [
