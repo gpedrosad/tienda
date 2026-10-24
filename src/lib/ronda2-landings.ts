@@ -10,7 +10,7 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
-  updatedAt: "2026-10-22",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -135,7 +135,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Es lo mismo que una puerta corredera con vidrio?",
       answer:
-        "No. Aquí la hoja abre con bisagras. La referencia de hoja que corre, de interior y con vidrio, está en [puertas correderas](/puertas-correderas). El riel es herraje y no viene por defecto.",
+        "No. Aquí la hoja abre con bisagras. La referencia de hoja que corre, de interior y con vidrio, está en puertas correderas. El riel es herraje y no viene por defecto.",
     },
     {
       question: "¿Puedo pedir la misma puerta de las fotos?",
@@ -145,7 +145,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Sirve para la entrada de la casa?",
       answer:
-        "Sí, si nos dices que es entrada. Ese uso es exterior: cambia madera y acabado respecto de un dormitorio. No prometemos resistencia a la intemperie sin ver el vano. El detalle de la entrada está en [puertas de entrada](/puertas-exteriores).",
+        "Sí, si nos dices que es entrada. Ese uso es exterior: cambia madera y acabado respecto de un dormitorio. No prometemos resistencia a la intemperie sin ver el vano. El detalle de la entrada está en puertas de entrada.",
     },
     {
       question: "¿Incluyen marco, herrajes e instalación?",
@@ -155,7 +155,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué madera usan cuando hay vidrio?",
       answer:
-        "La misma lógica del resto de las puertas: madera nativa seca en cámara, y la especie se confirma al cotizar. Interior o exterior cambia la elección. Más contexto en [puertas de madera nativa](/puertas-madera-nativa).",
+        "La misma lógica del resto de las puertas: madera nativa seca en cámara, y la especie se confirma al cotizar. Interior o exterior cambia la elección. Más contexto en puertas de madera nativa.",
     },
     {
       question: "¿Pueden hacer la puerta con vidrio solo arriba o hasta la mitad?",
@@ -165,7 +165,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen puertas de madera con vidrio para interior?",
       answer:
-        "Sí. Dormitorio, cocina u oficina pueden llevar un paño si el vano y la referencia lo permiten. La hoja de interior no se cotiza como entrada. Interior o entrada cambia la madera y el acabado. Un dormitorio o una oficina sin el mismo uso exterior van en [puertas interiores](/puertas-interiores).",
+        "Sí. Dormitorio, cocina u oficina pueden llevar un paño si el vano y la referencia lo permiten. La hoja de interior no se cotiza como entrada. Interior o entrada cambia la madera y el acabado. Un dormitorio o una oficina sin el mismo uso exterior van en puertas interiores.",
     },
   ],
   relatedLinks: doorRelatedLinks("/puertas-de-madera-con-vidrio"),
@@ -325,7 +325,7 @@ export const puertasLocalesLandingConfig: ServiceLandingConfig = {
 
 export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-flotantes",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Peldaños a medida", path: "/peldanos-a-medida" },
@@ -461,12 +461,12 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Es lo mismo que revestir una escalera de concreto?",
       answer:
-        "No. El concreto es una losa que ya existe y se cubre con madera. Eso está en [peldaños para escalera de concreto](/peldanos-escalera-concreto). Aquí la huella queda separada, sobre una estructura que no fabricamos.",
+        "No. El concreto es una losa que ya existe y se cubre con madera. Eso está en peldaños para escalera de concreto. Aquí la huella queda separada, sobre una estructura que no fabricamos.",
     },
     {
       question: "¿Hacen la baranda de vidrio de las fotos?",
       answer:
-        "No es una línea de producto. La baranda que se ve en algunas obras no se asume incluida. El alcance de la escalera de madera está explicado en [escaleras de madera](/escaleras-de-madera).",
+        "No es una línea de producto. La baranda que se ve en algunas obras no se asume incluida. El alcance de la escalera de madera está explicado en escaleras de madera.",
     },
     {
       question: "¿Qué espesor pido?",
@@ -627,17 +627,17 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Por qué no hay precio en esta página?",
       answer:
-        "Una medida especial depende del tamaño y de la terminación. Los precios publicados están en cada ficha de la [colección de mesas](/collections/mesas). La mesa a medida se cotiza.",
+        "Una medida especial depende del tamaño y de la terminación. Los precios publicados están en cada ficha de la colección de mesas. La mesa a medida se cotiza.",
     },
     {
       question: "¿Qué altura tiene la mesa?",
       answer:
-        "La altura habitual de una mesa de comedor es 75 cm. Si necesitas otra, dila al cotizar. La relación con las sillas está en la [guía de medidas](/guias/medidas-mesa-comedor).",
+        "La altura habitual de una mesa de comedor es 75 cm. Si necesitas otra, dila al cotizar. La relación con las sillas está en la guía de medidas.",
     },
     {
       question: "¿La mesa incluye sillas?",
       answer:
-        "No. Las sillas se eligen en la [colección de sillas](/collections/sillas) o se cotizan aparte. Esta página es solo la mesa.",
+        "No. Las sillas se eligen en la colección de sillas o se cotizan aparte. Esta página es solo la mesa.",
     },
     {
       question: "¿Hacen la mesa redonda a medida?",
@@ -652,12 +652,12 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué medida de mesa de comedor sirve para 6 personas?",
       answer:
-        "Para un comedor de 6 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa una mesa de 160×90 cm o una redonda de Ø120 cm. Si ninguna ficha del catálogo cabe en tu comedor, fabricamos la mesa con el largo o el diámetro que necesitas. La altura habitual de una mesa de comedor es 75 cm.",
+        "Para un comedor de 6 personas, la guía de medidas de mesa de comedor usa una mesa de 160×90 cm o una redonda de Ø120 cm. Si ninguna ficha del catálogo cabe en tu comedor, fabricamos la mesa con el largo o el diámetro que necesitas. La altura habitual de una mesa de comedor es 75 cm.",
     },
     {
       question: "¿Qué medida sirve para 8 personas?",
       answer:
-        "Para 6 a 8 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa 200×100 cm o Ø140 cm. La [Mesa de comedor Trípode](/products/mesa-comedor-tripode) de 220×100×75 cm dice que es ideal para 6 a 8 comensales. Una medida especial se cotiza: el precio no está en esta página.",
+        "Para 6 a 8 personas, la guía de medidas de mesa de comedor usa 200×100 cm o Ø140 cm. La Mesa de comedor Trípode de 220×100×75 cm dice que es ideal para 6 a 8 comensales. Una medida especial se cotiza: el precio no está en esta página.",
     },
   ],
   relatedLinks: [

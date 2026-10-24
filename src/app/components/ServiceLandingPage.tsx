@@ -4,6 +4,7 @@ import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { buttonClasses } from "@/app/components/ui/Button";
 import WhatsAppCTA, { WhatsAppAnchor } from "@/app/components/ui/WhatsAppCTA";
 import JsonLd from "@/app/components/JsonLd";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { InlineLinkedText } from "@/lib/inline-links";
 import {
   buildLandingSchemaGraph,
@@ -372,7 +373,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                   <span aria-hidden="true" className="mt-1 text-ink-muted transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
                 </summary>
                 <p className="mt-2 text-sm md:text-base text-ink/80 leading-relaxed">
-                  <InlineLinkedText text={item.answer} />
+                  {faqAnswerText(item.answer)}
                 </p>
               </details>
             ))}

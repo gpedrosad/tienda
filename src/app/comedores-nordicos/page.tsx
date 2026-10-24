@@ -6,6 +6,7 @@ import ProductCard, { THREE_COL_GRID_SIZES } from "@/app/components/ProductCard"
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { hasProductImage } from "@/lib/catalog";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import {
   absoluteUrl,
   buildBreadcrumbSchema,
@@ -95,6 +96,11 @@ const faqItems = [
     question: "¿Un comedor nórdico es solo de madera clara?",
     answer:
       "No necesariamente. Si bien el estilo escandinavo clásico usa maderas claras como el pino o el roble natural, también puedes optar por maderas con veta marcada o terminaciones que resalten el tono natural sin pinturas. Lo importante es mantener las líneas limpias y la funcionalidad del diseño.",
+  },
+  {
+    question: "¿Cómo armo un juego de comedor nórdico?",
+    answer:
+      "Un juego de comedor nórdico, en este catálogo, junta una mesa con sillas. La Mesa Nórdica mide 160 × 90 × 75 cm. La silla de comedor es la Silla Milán Lenga, de lenga. En un costado puedes poner la Banca Capri o la Banca Griega. Otras mesas de esta página son la Mesa Comedor Niza y la Mesa de comedor Bolonia, las dos de 200 × 100 × 75 cm. La Silla Kentucky no forma parte del juego: es de descanso y no está en esta selección. El precio de cada pieza está en su ficha.",
   },
 ];
 
@@ -336,6 +342,52 @@ export default function ComedoresNordicosPage() {
           <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">
             Cómo armar tu comedor nórdico
           </h2>
+          <p className="mt-5 max-w-4xl text-ink/80 leading-relaxed">
+              Un juego de comedor nórdico, en este catálogo, junta una mesa con sillas. La{" "}
+              <Link
+                href="/products/mesa-nordica"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Mesa Nórdica
+              </Link>{" "}
+              mide 160 × 90 × 75 cm. La silla de comedor es la{" "}
+              <Link
+                href="/products/silla-milan-lenga"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Silla Milán Lenga
+              </Link>
+              , de lenga. En un costado puedes poner la{" "}
+              <Link
+                href="/products/banca-capri"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Banca Capri
+              </Link>{" "}
+              o la{" "}
+              <Link
+                href="/products/banca-griega"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Banca Griega
+              </Link>
+              . Otras mesas de esta página son la{" "}
+              <Link
+                href="/products/mesa-comedor-niza"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Mesa Comedor Niza
+              </Link>{" "}
+              y la{" "}
+              <Link
+                href="/products/mesa-comedor-bolonia"
+                className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+              >
+                Mesa de comedor Bolonia
+              </Link>
+              , las dos de 200 × 100 × 75 cm. La Silla Kentucky no forma parte del juego: es de
+              descanso y no está en esta selección. El precio de cada pieza está en su ficha.
+            </p>
           <ol className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
             {steps.map((step, index) => (
               <li
@@ -365,7 +417,7 @@ export default function ComedoresNordicosPage() {
                 <article key={item.question} className="border-b border-line py-5">
                   <h3 className="font-display text-lg text-ink tracking-tight font-medium">{item.question}</h3>
                   <p className="mt-2 text-sm md:text-base text-ink/80 leading-relaxed">
-                    {item.answer}
+                    {faqAnswerText(item.answer)}
                   </p>
                 </article>
               ))}

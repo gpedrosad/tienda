@@ -57,17 +57,17 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       {
         question: "¿Qué medidas de mesa de comedor recomiendan?",
         answer:
-          "Para 4-6 personas: mesa de 160×90 cm. Para 6-8 personas: mesa de 200×100 cm. Para 8-10 personas: mesa de 240×100 cm. Si tienes dudas, revisa nuestra [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) o escribe por WhatsApp con las medidas de tu comedor.",
+          "Para 4-6 personas: mesa de 160×90 cm. Para 6-8 personas: mesa de 200×100 cm. Para 8-10 personas: mesa de 240×100 cm. Si tienes dudas, revisa nuestra guía de medidas de mesa de comedor o escribe por WhatsApp con las medidas de tu comedor.",
       },
       {
         question: "¿Qué es una mesa ratona?",
         answer:
-          "Una mesa ratona es una mesa baja para el living, que va frente al sofá. En Chile se usan los nombres 'mesa ratona' y 'mesa de centro' indistintamente para referirse a la misma pieza. El largo respecto al sofá, la altura respecto al asiento y el espacio para caminar están en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro).",
+          "Una mesa ratona es una mesa baja para el living, que va frente al sofá. En Chile se usan los nombres 'mesa ratona' y 'mesa de centro' indistintamente para referirse a la misma pieza. El largo respecto al sofá, la altura respecto al asiento y el espacio para caminar están en la guía de medidas de mesa de centro.",
       },
       {
         question: "¿Puedo pedir una mesa de comedor a medida?",
         answer:
-          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna por WhatsApp. Te respondemos con plazo de fabricación, precio y opciones de despacho. El encargo está en [mesas de comedor a medida](/mesas-de-comedor-a-medida).",
+          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna por WhatsApp. Te respondemos con plazo de fabricación, precio y opciones de despacho. El encargo está en mesas de comedor a medida.",
       },
       {
         question: "¿Cuánto cuesta una mesa de madera?",
@@ -120,17 +120,18 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   sillas: {
-    updatedAt: "2026-10-18",
+    updatedAt: "2026-10-24",
     h1: "Sillas de madera para comedor",
     metadataTitle: "Sillas de Madera para Comedor | Chile",
     description:
       "Sillas de comedor (Milán Lenga, en lenga) y Kentucky, silla de descanso reclinada de listones. Fabricadas en Chile. Cotiza por WhatsApp.",
     intro:
-      "El catálogo incluye sillas de comedor y una silla de descanso. La Silla Milán Lenga es de madera de lenga, contemporánea y liviana, para el comedor diario, fabricada en Chile. La Silla Kentucky es una silla de descanso reclinada, de listones de madera maciza, fabricada en Chillán, con barniz natural o negro. Cotiza cantidad, terminación y despacho por WhatsApp.",
+      "Las sillas de comedor de madera de este catálogo son la Milán Lenga: lenga, contemporánea y liviana, para el comedor diario, fabricada en Chile. Para sillas artesanales hechas en Chillán de descanso, la Kentucky es reclinada, de listones y terminación artesanal: no es de comedor. Cotiza cantidad, terminación y despacho por WhatsApp.",
     guideTitle: "Cómo elegir sillas de madera para tu comedor",
     guideParagraphs: [
       "Al elegir sillas de comedor de madera, considera la altura del asiento (debe permitir que tus piernas queden en ángulo de 90° con los pies apoyados), el ancho (mínimo 45 cm para comodidad) y la coordinación con la mesa (altura de mesa estándar: 75 cm; altura de asiento: 45-48 cm).",
       "Revisa cuántas sillas necesitas según el largo de la mesa: para mesa de 160 cm caben 4-6 sillas; para mesa de 200 cm caben 6-8 sillas. Si tienes dudas sobre medidas, revisa nuestra guía de medidas de mesa de comedor.",
+      "La Milán Lenga es la silla de comedor. La Kentucky es de descanso y no se usa como silla de comedor. La altura del asiento, el ancho y cuántas caben están en la [guía para elegir sillas de madera de comedor](/guias/elegir-sillas-madera-comedor). Si quieres mesa y sillas juntas, mira [comedores nórdicos](/comedores-nordicos).",
     ],
     faqs: [
       {
@@ -157,6 +158,16 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
         question: "¿Las sillas vienen barnizadas?",
         answer:
           "Sí. Todas las sillas de este catálogo incluyen terminación barnizada lista para usar. Si prefieres otro acabado, indícalo al cotizar.",
+      },
+      {
+        question: "¿La Silla Kentucky es de comedor?",
+        answer:
+          "No. La Silla Kentucky es una silla de descanso reclinada, de listones de madera maciza, con barniz natural o negro, fabricada en Chillán. La silla de comedor del catálogo es la Milán Lenga, de lenga.",
+      },
+      {
+        question: "¿La ficha de la Milán Lenga trae la altura del asiento?",
+        answer:
+          "No. La ficha de la Milán Lenga no publica alto, ancho ni profundidad de asiento. Como referencia general, con una mesa de 75 cm el asiento suele quedar entre 45 y 48 cm. Esa cifra no es la medida de la Milán ni de la Kentucky.",
       },
     ],
     relatedLinks: [

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { plainTextFromInlineLinks } from "@/lib/inline-links";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import {
   absoluteUrl,
   clampMetaDescription,
@@ -183,7 +183,7 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
       mainEntity: config.faqItems.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
+        acceptedAnswer: { "@type": "Answer", text: faqAnswerText(item.answer) },
       })),
     },
   ];
@@ -316,7 +316,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Peldaños de madera a medida para cada espacio",
   sectionParagraph:
-    "Fabricamos peldaños para escaleras nuevas o remodelaciones, considerando diseño, uso y durabilidad. También atendemos búsquedas como peldaños a medidas, escalones de madera a medida y peldaños para escalera de madera. Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella). Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa [escaleras de madera](/escaleras-de-madera).",
+    "Fabricamos peldaños para escaleras nuevas o remodelaciones. Los peldaños de madera se cortan según el diseño, el uso y la durabilidad del proyecto. También atendemos búsquedas como peldaños a medidas, escalones de madera a medida y peldaños para escalera de madera. Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella). Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa [escaleras de madera](/escaleras-de-madera).",
   featureCards: [
     {
       title: "Peldaños rectos",
@@ -587,7 +587,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué madera recomiendan para mesones de quincho?",
       answer:
-        "Para mesones de quincho bajo techo, lenga austral y pino premium funcionan bien con barniz o aceite. Para mesones al aire libre, la madera debe tener sellado adecuado y mantenerse regularmente. Te orientamos en la cotización según si queda bajo techo, semitecho o completamente expuesto. El criterio está en la [guía de madera para mesón de quincho](/guias/madera-para-meson-quincho).",
+        "Para mesones de quincho bajo techo, lenga austral y pino premium funcionan bien con barniz o aceite. Para mesones al aire libre, la madera debe tener sellado adecuado y mantenerse regularmente. Te orientamos en la cotización según si queda bajo techo, semitecho o completamente expuesto. El criterio está en la guía de madera para mesón de quincho.",
     },
     {
       question: "¿Los mesones de quincho necesitan sellado especial?",
@@ -626,7 +626,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen mesones de madera para cocina?",
       answer:
-        "Sí. También fabricamos mesones de madera para cocina y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal. Para cotizar un mesón de cocina, envía las medidas del vano, el uso (cocina, barra, isla), si hay exposición a calor o humedad directa, y la comuna. El criterio está en la [guía de madera para mesón de quincho](/guias/madera-para-meson-quincho).",
+        "Sí. También fabricamos mesones de madera para cocina y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal. Para cotizar un mesón de cocina, envía las medidas del vano, el uso (cocina, barra, isla), si hay exposición a calor o humedad directa, y la comuna. El criterio está en la guía de madera para mesón de quincho.",
     },
   ],
   extraSections: [
@@ -839,7 +839,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen perfiles de madera para marcos de puertas o ventanas?",
       answer:
-        "Sí. Hacemos molduras y perfiles para marcos de puertas, ventanas y terminaciones de vanos a medida. Para cotizar envía el perfil (foto de frente o de la sección), el largo y la cantidad. La instalación no se asume incluida. La hoja se cotiza en [puertas a medida](/puertas-a-medida).",
+        "Sí. Hacemos molduras y perfiles para marcos de puertas, ventanas y terminaciones de vanos a medida. Para cotizar envía el perfil (foto de frente o de la sección), el largo y la cantidad. La instalación no se asume incluida. La hoja se cotiza en puertas a medida.",
     },
     {
       question: "¿Fabrican guardapolvos o zócalos de madera a medida?",
@@ -1102,12 +1102,12 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Dónde veo cada tipo de puerta?",
       answer:
-        "Esta página es la fábrica en general. El detalle está en [puertas interiores](/puertas-interiores), [puertas de entrada y exteriores](/puertas-exteriores), [puertas correderas](/puertas-correderas) y [puertas de madera nativa](/puertas-madera-nativa). Si el proyecto incluye otros muebles, sigue en [muebles a medida](/muebles-a-medida).",
+        "Esta página es la fábrica en general. El detalle está en puertas interiores, puertas de entrada y exteriores, puertas correderas y puertas de madera nativa. Si el proyecto incluye otros muebles, sigue en muebles a medida.",
     },
     {
       question: "¿Dónde reviso medidas habituales antes de cotizar?",
       answer:
-        "En la [guía de medidas y madera para puertas](/guias/medidas-y-madera-puertas). Ahí están medidas de hoja que se ven seguido en Chile y cómo pensar la madera. La hoja igual se fabrica según tu vano, no según un catálogo.",
+        "En la guía de medidas y madera para puertas. Ahí están medidas de hoja que se ven seguido en Chile y cómo pensar la madera. La hoja igual se fabrica según tu vano, no según un catálogo.",
     },
     {
       question: "¿Las fotos de la galería tienen precio?",
@@ -1117,7 +1117,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Publican la especie de madera de la puerta?",
       answer:
-        "No hay un listado de especies en esta página. Trabajamos maderas nobles del sur de Chile, nativas y secas en cámara. La especie se confirma al cotizar, porque interior o exterior cambia la madera y el acabado. El detalle está en [puertas de madera nativa](/puertas-madera-nativa).",
+        "No hay un listado de especies en esta página. Trabajamos maderas nobles del sur de Chile, nativas y secas en cámara. La especie se confirma al cotizar, porque interior o exterior cambia la madera y el acabado. El detalle está en puertas de madera nativa.",
     },
   ],
   extraSections: [
@@ -1713,7 +1713,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen muebles a medida en Chillán?",
       answer:
-        "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. Revisa la página de [muebles a medida](/muebles-a-medida) en madera para más detalle.",
+        "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. Revisa la página de muebles a medida en madera para más detalle.",
     },
     {
       question: "¿Envían fuera de Chillán?",
@@ -1773,7 +1773,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-a-medida",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   pageTitle: "Muebles a Medida en Madera | Fabricación Chile",
   pageDescription:
     "Muebles de madera a medida en Chile: cubiertas, puertas, peldaños, molduras y cocinas personalizadas. Cotiza tu proyecto por WhatsApp con envío nacional.",
@@ -1910,7 +1910,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Cuál es la diferencia entre muebles a medida y la mueblería en Chillán?",
       answer:
-        "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras, muebles de cocina y [mesas de comedor a medida](/mesas-de-comedor-a-medida). La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad.",
+        "Esta página (muebles a medida) es para proyectos personalizados: cubiertas, puertas, peldaños, molduras, muebles de cocina y mesas de comedor a medida. La página de muebles en Chillán presenta el catálogo de mesas, sillas, bancas y veladores con medidas estándar. Ambos servicios se fabrican en el mismo taller con la misma calidad.",
     },
   ],
   relatedLinks: [

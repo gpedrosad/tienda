@@ -12,6 +12,7 @@ import {
   guideDates,
   type GuideConfig,
 } from "@/lib/guides";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { InlineLinkedText } from "@/lib/inline-links";
 
 type GuideSection = GuideConfig["sections"][number];
@@ -308,7 +309,7 @@ export default function GuidePage({ config }: { config: GuideConfig }) {
                       </span>
                     </summary>
                     <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                      <InlineLinkedText text={faq.answer} />
+                      {faqAnswerText(faq.answer)}
                     </p>
                   </details>
                 ))}

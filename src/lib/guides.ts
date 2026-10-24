@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { plainTextFromInlineLinks } from "@/lib/inline-links";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { absoluteUrl, clampMetaDescription, fitAbsoluteTitle, SITE_NAME } from "@/lib/seo";
 import { peldanosGuidePaths } from "@/lib/peldanos-guides";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -173,7 +173,7 @@ export function buildGuideSchemaGraph(config: GuideConfig) {
       mainEntity: config.faqs.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: plainTextFromInlineLinks(item.answer) },
+        acceptedAnswer: { "@type": "Answer", text: faqAnswerText(item.answer) },
       })),
     });
   }
@@ -592,7 +592,7 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
-  updatedAt: "2026-10-18",
+  updatedAt: "2026-10-24",
   pageTitle: "Sillas de Madera para Comedor | Altura, Ancho y Cantidad",
   pageDescription:
     "Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.",
@@ -611,11 +611,12 @@ export const elegirSillasGuideConfig: GuideConfig = {
   updatedDate: "2026-10-15",
   sections: [
     {
-      title: "Altura de asiento ideal según tu mesa",
+      title: "Medidas de una silla de comedor: altura de asiento y mesa",
       content: [
         "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Para que las piernas queden en ángulo de 90° y los pies apoyen bien, el asiento de la silla debe estar entre 45 y 48 cm de alto.",
         "La distancia entre el asiento y la superficie de la mesa debe ser de 27-30 cm. Eso da espacio para las piernas sin que las rodillas choquen con la estructura de la mesa.",
         "Si tu mesa tiene una altura distinta (por ejemplo, mesa baja tipo ratona o mesa alta de barra), ajusta la altura del asiento restando 27-30 cm a la altura de la mesa.",
+        "Estas cifras son una referencia ergonómica general, no la ficha de un modelo. La Silla Milán Lenga es de comedor, en lenga, y la Silla Kentucky es de descanso reclinada, no de comedor. Ninguna de las dos publica alto de asiento, ancho ni profundidad.",
       ],
     },
     {

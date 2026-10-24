@@ -6,6 +6,7 @@ import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
 import { hasProductImage } from "@/lib/catalog";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import {
   buildBreadcrumbSchema,
   buildFaqPageSchema,
@@ -266,7 +267,7 @@ export default function MesasDeCentroPage() {
                     {item.question}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                    {item.answer}
+                    {faqAnswerText(item.answer)}
                   </p>
                 </article>
               ))}

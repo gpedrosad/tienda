@@ -4,6 +4,7 @@ import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import {
   absoluteUrl,
   buildBreadcrumbSchema,
@@ -563,7 +564,7 @@ export default function KitPergolaPage() {
                     </span>
                   </summary>
                   <p className="mt-2 text-sm leading-relaxed text-canvas/70 md:text-base">
-                    {item.answer}
+                    {faqAnswerText(item.answer)}
                   </p>
                 </details>
               ))}
