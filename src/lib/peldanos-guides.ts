@@ -30,7 +30,7 @@ const clusterAndWorkshop = [
 
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
-  updatedAt: "2026-10-20",
+  updatedAt: "2026-10-24",
   pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
   pageDescription:
     "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
@@ -142,6 +142,21 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
       question: "¿Qué hago si los peldaños midieron distinto?",
       answer:
         "Envía la lista, no un promedio. Cada huella se corta con la medida que nos das. En escaleras de hormigón es frecuente que haya diferencias.",
+    },
+    {
+      question: "¿Qué es el vuelo de un peldaño?",
+      answer:
+        "Si la huella lleva vuelo —la punta que sobresale de la contrahuella—, márcalo en la foto e indica cuántos centímetros son. El vuelo se corta según ese dato, no con una medida fija del taller.",
+    },
+    {
+      question: "¿El espesor de la madera cambia la altura del escalón?",
+      answer:
+        "El espesor no sale de la regla de confort. Es el grueso de la tabla y lo eliges al cotizar. No publicamos un espesor estándar para peldaños. Si la madera va sobre una escalera que ya existe, ese grueso se suma a la pisada. Cambia la relación del primer y del último escalón con el piso o con la puerta.",
+    },
+    {
+      question: "¿El descanso de la escalera se mide como una huella?",
+      answer:
+        "Si el proyecto trae un descanso, mide cada tramo por separado. El tablero del descanso no es una huella y no se asume en el pedido de [escaleras de madera](/escaleras-de-madera).",
     },
   ],
   relatedLinks: [

@@ -4,7 +4,7 @@ Orden de impacto. Actualizar al cerrar ítems.
 
 ## Plan vigente: `docs/plan-seo-2026-10-17.md` (18 oct → 15 dic, fases 1–5)
 
-P0 de la revisión ya aplicado (commit 545c162). Fase 1 en curso.
+P0 de la revisión ya aplicado (commit 545c162). Fase 1 en curso. Plan 4.1 (`mueblerías en Chillán` en el hero de `/muebles-chillan`) salió en el lote 24 (2026-10-24).
 
 - [x] **1.6** `GuidePage` como Server Component — Lote 19, 2026-10-19.
 - [x] **1.7** `ProductCard`: `sizes` de la grilla real y `priority` en la primera tarjeta de colección — Lote 19, 2026-10-19.

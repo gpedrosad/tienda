@@ -4,7 +4,7 @@ export const doorGuidePath = "/guias/medidas-y-madera-puertas";
 
 export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   canonicalPath: doorGuidePath,
-  updatedAt: "2026-10-20",
+  updatedAt: "2026-10-24",
   pageTitle: "Medidas y Madera para Puertas | Idea Madera",
   pageDescription:
     "Medidas habituales de puertas en Chile y cómo elegir la madera según interior o exterior. La hoja se fabrica a tu vano. Cotiza por WhatsApp.",
@@ -57,6 +57,14 @@ export const medidasMaderaPuertasGuideConfig: GuideConfig = {
           ["90 × 200 cm", "Paso ancho o entrada de una hoja", "La entrada se trata como uso exterior."],
         ],
       },
+    },
+    {
+      title: "Hoja de 60 cm y puerta doble",
+      content: [
+        "También aparecen hojas de 60 cm en vanos angostos y alturas de alrededor de 210 cm en algunos huecos nuevos. Son una referencia para reconocer tu puerta, no medidas de stock del taller.",
+        "Una entrada puede ser de una hoja o de dos: las referencias del taller muestran hojas dobles, y el vano real manda. No hay un ancho estándar de puerta doble en esta guía.",
+        "Idea Madera no publica esas medidas como modelos. Si tu vano no calza, la hoja se fabrica a lo que midas.",
+      ],
     },
     {
       title: "Espesor y cantidad",
@@ -112,6 +120,21 @@ export const medidasMaderaPuertasGuideConfig: GuideConfig = {
       question: "¿Dónde cotizo después de medir?",
       answer:
         "Por WhatsApp, desde [puertas a medida](/puertas-a-medida) o desde la página del tipo de puerta. Lleva alto, ancho, espesor, uso, comuna y una foto. Marco, herrajes e instalación no se asumen incluidos.",
+    },
+    {
+      question: "¿Fabrican la puerta de 80 × 200 cm?",
+      answer:
+        "En obras y en el comercio chileno se ven seguido hojas de 80 cm de ancho por 200 cm de alto, en dormitorio o pasillo. Se cotiza con la medida menor del vano. No es un modelo del taller: si tu vano no calza, la hoja se fabrica a lo que midas.",
+    },
+    {
+      question: "¿Cuál es el espesor de una puerta de madera?",
+      answer:
+        "No publicamos un espesor único de puerta. Si cambias una hoja, mide la actual. Si la puerta es nueva, dinos el espesor que necesitas, en centímetros, y lo confirmamos en la cotización.",
+    },
+    {
+      question: "¿Hay una medida estándar de puerta doble?",
+      answer:
+        "No hay un ancho estándar de puerta doble en esta guía. Una entrada puede ser de una hoja o de dos. Las referencias del taller muestran hojas dobles, y el vano real manda.",
     },
   ],
   relatedLinks: [
