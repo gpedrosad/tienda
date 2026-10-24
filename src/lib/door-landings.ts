@@ -70,7 +70,7 @@ const tallerFamiliar = {
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-interiores",
-  updatedAt: "2026-10-20",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -211,6 +211,21 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
       answer:
         "Ancho del vano arriba, al medio y abajo (quédate con la medida más chica) y alto a ambos lados. La [guía de medidas y madera para puertas](/guias/medidas-y-madera-puertas) ordena esas medidas y las hojas que se ven seguido en Chile. Esas medidas no son un catálogo.",
     },
+    {
+      question: "¿Puedo reemplazar solo la hoja de una puerta interior?",
+      answer:
+        "Si reemplazas una hoja, sirve también el alto, el ancho y el espesor de la hoja actual. Manda las dos cosas si puedes, más una foto. La cotización parte por la hoja. Marco, herrajes e instalación se confirman aparte.",
+    },
+    {
+      question: "¿Hacen varias puertas interiores en el mismo encargo?",
+      answer:
+        "Indica la cantidad y si los vanos son iguales o distintos. Cada uno se revisa con su medida.",
+    },
+    {
+      question: "¿Qué acabado lleva una puerta de baño o de cocina?",
+      answer:
+        "Un baño o una cocina sueltan más vapor que un dormitorio: indícalo para que la madera y el acabado se propongan con ese uso. No publicamos un acabado único para humedad. En dormitorio, baño, cocina u oficina la hoja queda bajo techo.",
+    },
   ],
   relatedLinks: relatedExcept("/puertas-interiores"),
   ctaTitle: "Cotiza tu puerta interior",
@@ -229,7 +244,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasExterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-exteriores",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -381,6 +396,16 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
       answer:
         "No se propone igual. El dormitorio es interior. Cotízalo en [puertas interiores](/puertas-interiores). Las medidas habituales de hoja están en la [guía de puertas](/guias/medidas-y-madera-puertas).",
     },
+    {
+      question: "¿Hacen puerta de entrada de una sola hoja?",
+      answer:
+        "Si tu vano es de una sola hoja, cotízalo igual: manda las medidas y una foto. No forzamos el diseño de la foto si tu hueco es distinto. Las fotos son referencias de hojas dobles, no un modelo con precio publicado.",
+    },
+    {
+      question: "¿La puerta de entrada puede llevar vidrio?",
+      answer:
+        "Hay referencias con vidrio. No publicamos un tipo de vidrio: se confirma si tu diseño lo pide. Las fotos son obras, no modelos a la venta.",
+    },
   ],
   relatedLinks: relatedExcept("/puertas-exteriores"),
   ctaTitle: "Cotiza tu puerta de entrada",
@@ -399,7 +424,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-correderas",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -538,6 +563,16 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
       question: "¿Cómo mido un vano para puerta corredera?",
       answer:
         "Igual que cualquier hoja: ancho arriba, al medio y abajo (usa el menor) y alto a ambos lados, más el espesor. La [guía de medidas](/guias/medidas-y-madera-puertas) lo deja por escrito. Esas medidas habituales no reemplazan tu vano.",
+    },
+    {
+      question: "¿Fabrican puerta corredera de madera y vidrio?",
+      answer:
+        "La referencia del taller es una puerta corredera de madera y vidrio para interior: no es un modelo con precio ni un kit con riel. La hoja se fabrica según tu vano y tu referencia. No hay precio publicado en la foto.",
+    },
+    {
+      question: "¿La puerta corredera viene como kit con riel?",
+      answer:
+        "No. No vendemos la foto como conjunto armado. El riel y el resto de herrajes no se asumen incluidos, igual que el marco y la instalación. Si necesitas que coticemos el riel, dilo.",
     },
   ],
   relatedLinks: relatedExcept("/puertas-correderas"),

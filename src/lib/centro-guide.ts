@@ -2,7 +2,7 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const medidasMesaCentroGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-de-centro",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   pageTitle: "Medidas de Mesa de Centro y Mesa Ratona | Living",
   pageDescription:
     "Cómo elegir el tamaño de una mesa de centro o mesa ratona según el sofá: largo, altura del asiento y paso. Medidas del catálogo. Cotiza por WhatsApp.",
@@ -17,6 +17,14 @@ export const medidasMesaCentroGuideConfig: GuideConfig = {
   h1: "Cómo elegir las medidas de una mesa de centro",
   intro:
     "La mesa de centro va frente al sofá. En Chile y en Argentina también se le dice mesa ratona: es el mismo mueble. Esta guía sirve para mirar el largo respecto al sofá, la altura respecto al asiento y el espacio para caminar. Al final están solo las medidas que el catálogo publica.",
+  heroImage: {
+    src: "/images/mesa-de-centro-hairpin-main.webp",
+    alt: "Mesa de centro Hairpin de madera con patas metálicas",
+    width: 1600,
+    height: 1600,
+    caption: "En estas fichas, Hairpin tiene 50 cm de fondo.",
+  },
+  heroImageAfterSection: 2,
   updatedDate: "2026-10-17",
   sections: [
     {
@@ -56,6 +64,13 @@ export const medidasMesaCentroGuideConfig: GuideConfig = {
         ],
       },
     },
+    {
+      title: "Las mesas ratonas de 100 cm del catálogo",
+      content: [
+        "Hairpin mide 100 cm de largo, 50 cm de fondo y 45 cm de alto. La Trípode ratona mide 100 cm de largo, 60 cm de fondo y 40 cm de alto.",
+        "En estas fichas, Hairpin tiene 50 cm de fondo. Roma, Ferrara centro y la Trípode ratona tienen 60 cm. Si la gente cruza por delante del sofá, una mesa de menos fondo estorba menos.",
+      ],
+    },
   ],
   faqs: [
     {
@@ -82,6 +97,11 @@ export const medidasMesaCentroGuideConfig: GuideConfig = {
       question: "¿Puedo pedir otra medida?",
       answer:
         "Sí. Escribe por WhatsApp el largo del sofá, la altura del asiento y el espacio que quieres dejar. Si ninguna ficha calza, cotizamos la pieza. Las opciones con foto están en [mesas de centro](/mesas-de-centro).",
+    },
+    {
+      question: "¿Qué mesa ratona del catálogo mide cerca de 100 cm?",
+      answer:
+        "Hairpin mide 100 cm de largo, 50 cm de fondo y 45 cm de alto. La Trípode ratona mide 100 cm de largo, 60 cm de fondo y 40 cm de alto. Roma mide 120 × 60 × 45 cm y Ferrara centro 110 × 60 × 45 cm. Las fichas están en [mesas de centro](/mesas-de-centro).",
     },
   ],
   relatedLinks: [

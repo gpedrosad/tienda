@@ -241,7 +241,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  updatedAt: "2026-10-23",
+  updatedAt: "2026-10-24",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
@@ -316,7 +316,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Peldaños de madera a medida para cada espacio",
   sectionParagraph:
-    "Fabricamos peldaños para escaleras nuevas o remodelaciones, considerando diseño, uso y durabilidad. También atendemos búsquedas como peldaños a medidas, escalones de madera a medida y peldaños para escalera de madera.",
+    "Fabricamos peldaños para escaleras nuevas o remodelaciones, considerando diseño, uso y durabilidad. También atendemos búsquedas como peldaños a medidas, escalones de madera a medida y peldaños para escalera de madera. Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella). Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa [escaleras de madera](/escaleras-de-madera).",
   featureCards: [
     {
       title: "Peldaños rectos",
@@ -501,7 +501,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  updatedAt: "2026-10-20",
+  updatedAt: "2026-10-24",
   pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
     "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
@@ -623,6 +623,11 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
       question: "¿Envían cubiertas a todo Chile?",
       answer: "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones y tiempos según tu ubicación.",
     },
+    {
+      question: "¿Hacen mesones de madera para cocina?",
+      answer:
+        "Sí. También fabricamos mesones de madera para cocina y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal. Para cotizar un mesón de cocina, envía las medidas del vano, el uso (cocina, barra, isla), si hay exposición a calor o humedad directa, y la comuna. El criterio está en la [guía de madera para mesón de quincho](/guias/madera-para-meson-quincho).",
+    },
   ],
   extraSections: [
     {
@@ -641,7 +646,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     {
       title: "Mesones de cocina y barras",
       paragraphs: [
-        "También fabricamos mesones de madera para cocina y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal.",
+        "También fabricamos [mesones de madera para cocina](/guias/madera-para-meson-quincho) y cubiertas para barras. La madera seca en cámara aporta estabilidad y durabilidad. El acabado se adapta al uso: barniz para cocinas de uso moderado, aceite natural para proyectos de estilo artesanal.",
         "Para cotizar un mesón de cocina, envía las medidas del vano, el uso (cocina, barra, isla), si hay exposición a calor o humedad directa, y la comuna. Te orientamos con las mejores opciones de madera y terminación.",
       ],
     },
@@ -689,10 +694,10 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
-  updatedAt: "2026-10-21",
+  updatedAt: "2026-10-24",
   pageTitle: "Molduras de Madera a Medida | Chile",
   pageDescription:
-    "Molduras de madera a medida en Chillán para muros, techos y vanos. Perfiles personalizados con envío a todo Chile. Cotiza por WhatsApp.",
+    "Molduras de madera a medida: cornisas, guardapolvos y marcos de vanos. Taller en Chillán, por metro lineal. Cotiza el perfil por WhatsApp.",
   keywords: [
     "molduras de madera a medida",
     "molduras madera chile",
@@ -836,6 +841,11 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí. Hacemos molduras y perfiles para marcos de puertas, ventanas y terminaciones de vanos a medida. Para cotizar envía el perfil (foto de frente o de la sección), el largo y la cantidad. La instalación no se asume incluida. La hoja se cotiza en [puertas a medida](/puertas-a-medida).",
     },
+    {
+      question: "¿Fabrican guardapolvos o zócalos de madera a medida?",
+      answer:
+        "Sí. El guardapolvo (o zócalo) corre en la base del muro protegiendo la unión con el piso. Trabajamos molduras para muros, zócalos, techos, cornisas, marcos de vanos y perfiles decorativos. Cotizamos por tramo o por metro lineal: largo, sección o perfil, cantidad y una foto. Si vas a instalar guardapolvo, mide el perímetro de la habitación descontando anchos de puertas.",
+    },
   ],
   extraSections: [
     {
@@ -904,7 +914,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  updatedAt: "2026-10-17",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -974,7 +984,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Puertas de madera a medida hechas para durar",
   sectionParagraph:
-    "Nuestra fábrica de puertas de madera en Chillán produce cada pieza con cuidado y atención al detalle. Fabricamos puertas de madera a medida para interiores, exteriores o proyectos comerciales. Te guiamos por WhatsApp para elegir la opción que más se acomode a tus necesidades. Cada puerta es realizada por manos expertas con herramientas especializadas en nuestro taller.",
+    "Nuestra fábrica de puertas de madera en Chillán produce cada pieza con cuidado y atención al detalle. Fabricamos puertas de madera a medida para [interiores](/puertas-interiores), [exteriores](/puertas-exteriores) o proyectos comerciales. Las [puertas correderas](/puertas-correderas) parten de la referencia de interior en madera y vidrio. Antes de escribir, puedes mirar la [guía de medidas y madera](/guias/medidas-y-madera-puertas). Te guiamos por WhatsApp para elegir la opción que más se acomode a tus necesidades. Cada puerta es realizada por manos expertas con herramientas especializadas en nuestro taller.",
   featureCards: [
     {
       title: "Interior o exterior",
@@ -1593,7 +1603,7 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-chillan",
-  updatedAt: "2026-10-22",
+  updatedAt: "2026-10-24",
   pageTitle: "Mueblería en Chillán | Fábrica de Muebles de Madera",
   pageDescription:
     "Mueblería y fábrica de muebles en Chillán: mesas, sillas, bancas de madera maciza y piezas a medida. Cotiza por WhatsApp con envío a todo Chile.",
@@ -1608,7 +1618,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   eyebrow: "Mueblería y Fábrica en Chillán",
   h1: "Mueblería en Chillán: Fábrica de muebles de madera",
   heroParagraph:
-    `Somos fábrica y mueblería en Chillán ${SINCE_FOUNDING}: fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta muebles a medida en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.`,
+    `Si buscas mueblerías en Chillán, este es el taller: fábrica y mueblería en Chillán ${SINCE_FOUNDING}, con fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta [muebles a medida](/muebles-a-medida) en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.`,
   badges: ["Fábrica en Chillán", SINCE_FOUNDING_LABEL, "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar muebles por WhatsApp",
   whatsappProductTitle: "Muebles Chillán",
@@ -1639,7 +1649,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   },
   sectionTitle: "Mueblería en Chillán para cada espacio del hogar",
   sectionParagraph:
-    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas (cubiertas, puertas, peldaños, molduras), visita nuestra página de muebles a medida en madera.",
+    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas ([cubiertas](/cubiertas-a-medida), [puertas](/puertas-a-medida), [peldaños](/peldanos-a-medida), [molduras](/molduras-a-medida)), visita nuestra página de [muebles a medida](/muebles-a-medida) en madera.",
   featureCards: [
     {
       title: "Comedor",
@@ -1703,7 +1713,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen muebles a medida en Chillán?",
       answer:
-        "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. Revisa la página de muebles a medida en madera para más detalle.",
+        "Sí. Además del catálogo de mesas, sillas y bancas de esta página, fabricamos proyectos personalizados: cubiertas, puertas, peldaños, molduras y muebles de cocina según medidas y especificaciones de tu proyecto. Revisa la página de [muebles a medida](/muebles-a-medida) en madera para más detalle.",
     },
     {
       question: "¿Envían fuera de Chillán?",

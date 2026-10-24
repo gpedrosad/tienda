@@ -35,7 +35,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Catálogo de muebles de madera fabricados en Chillán: mesas, sillas, bancas, veladores y más. Cotiza por WhatsApp con envío a todo Chile.",
   },
   mesas: {
-    updatedAt: "2026-10-19",
+    updatedAt: "2026-10-24",
     h1: "Mesas de comedor de madera y ratonas para living",
     metadataTitle: "Mesas de Comedor de Madera y Ratonas | Chile",
     description:
@@ -45,8 +45,8 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     guideTitle: "Cómo elegir tu mesa de comedor de madera",
     guideParagraphs: [
       "Primero define el uso: mesa de comedor (alta, para comer) o mesa ratona (baja, para el living frente al sofá). Para mesas de comedor de madera, calcula el tamaño según cuántas personas comen: mesa de 160×90 cm para 4-6 personas, mesa de 200×100 cm para 6-8 personas. Si el comedor es cuadrado, considera una mesa redonda para optimizar el espacio visual y la conversación.",
-      "Revisa nuestra guía de medidas de mesa de comedor para calcular el tamaño ideal según tu espacio y cantidad de personas. Si buscas armar un comedor completo de estilo coordinado, revisa comedores nórdicos con mesas, sillas y bancas.",
-      "Para cotizar una mesa a medida, escribe por WhatsApp el largo o diámetro que necesitas, la terminación preferida y tu comuna. Te confirmamos plazo de fabricación, precio y opciones de envío antes de que pagues.",
+      "Revisa nuestra [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) para calcular el tamaño ideal según tu espacio y cantidad de personas. Si la mesa es baja, la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro) ordena el largo respecto al sofá, la altura respecto al asiento y el espacio para caminar. Si buscas armar un comedor completo de estilo coordinado, revisa [comedores nórdicos](/comedores-nordicos) con mesas, sillas y bancas.",
+      "Para cotizar una [mesa de comedor a medida](/mesas-de-comedor-a-medida), escribe por WhatsApp el largo o diámetro que necesitas, la terminación preferida y tu comuna. Te confirmamos plazo de fabricación, precio y opciones de envío antes de que pagues.",
     ],
     faqs: [
       {
@@ -57,17 +57,17 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       {
         question: "¿Qué medidas de mesa de comedor recomiendan?",
         answer:
-          "Para 4-6 personas: mesa de 160×90 cm. Para 6-8 personas: mesa de 200×100 cm. Para 8-10 personas: mesa de 240×100 cm. Si tienes dudas, revisa nuestra guía de medidas de mesa de comedor o escribe por WhatsApp con las medidas de tu comedor.",
+          "Para 4-6 personas: mesa de 160×90 cm. Para 6-8 personas: mesa de 200×100 cm. Para 8-10 personas: mesa de 240×100 cm. Si tienes dudas, revisa nuestra [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) o escribe por WhatsApp con las medidas de tu comedor.",
       },
       {
         question: "¿Qué es una mesa ratona?",
         answer:
-          "Una mesa ratona es una mesa baja para el living, que va frente al sofá. En Chile se usan los nombres 'mesa ratona' y 'mesa de centro' indistintamente para referirse a la misma pieza.",
+          "Una mesa ratona es una mesa baja para el living, que va frente al sofá. En Chile se usan los nombres 'mesa ratona' y 'mesa de centro' indistintamente para referirse a la misma pieza. El largo respecto al sofá, la altura respecto al asiento y el espacio para caminar están en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro).",
       },
       {
         question: "¿Puedo pedir una mesa de comedor a medida?",
         answer:
-          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna por WhatsApp. Te respondemos con plazo de fabricación, precio y opciones de despacho.",
+          "Sí. Indica largo o diámetro, alto si aplica, terminación y comuna por WhatsApp. Te respondemos con plazo de fabricación, precio y opciones de despacho. El encargo está en [mesas de comedor a medida](/mesas-de-comedor-a-medida).",
       },
       {
         question: "¿Cuánto cuesta una mesa de madera?",

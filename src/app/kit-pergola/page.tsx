@@ -143,6 +143,11 @@ const faqItems = [
     answer:
       "No. El kit entrega uniones y bases para 1 módulo sobre suelo. El largo de las maderas, el anclaje y si la estructura sirve para tu viento o carga se revisan en la cotización. No publicamos luces máximas ni certificaciones.",
   },
+  {
+    question: "¿El kit incluye el techo o la cubierta de la pérgola?",
+    answer:
+      "No. Es un kit de uniones metálicas y fijaciones para 1 módulo sobre suelo. No es una pérgola terminada ni un cálculo estructural. No incluye maderas (postes, vigas o cubierta), techo, lona o policarbonato, ni la instalación en terreno.",
+  },
 ];
 
 const heroImage = "/images/kit-pergola-instalada.png";
@@ -457,7 +462,12 @@ export default function KitPergolaPage() {
               <h2 className="font-display text-3xl tracking-tight text-white font-semibold">Qué necesitamos para cotizar</h2>
               <p className="mt-3 text-sm leading-relaxed text-canvas/70 md:text-base">
                 Con eso te respondemos precio referencial, tipo de base y despacho. Si también
-                quieres orientación de maderas 3×3, dilo en el mismo mensaje.
+                quieres orientación de maderas 3×3, dilo en el mismo mensaje. Cómo armar ese
+                mensaje está en la{" "}
+                <Link href="/guias/cotizar-muebles-a-medida" className="underline underline-offset-2 hover:text-white">
+                  guía para cotizar un mueble a medida
+                </Link>
+                .
               </p>
               <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-canvas/70">
                 <li>Tipo de base: atornillar o cementar</li>

@@ -1,5 +1,65 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-24 — Lote 24
+
+Quince URLs. El encargo pide espesor en páginas que Search Console no ha rastreado, enlaces desde hubs que sí indexan, y un pase de FAQ o snippet en molduras, cubiertas, mesones, Chillán y el kit. Sin URLs nuevas. Sin precios, plazos, especies, tipos de vidrio ni fotos de cocina. Titles congelados (veladores, guía de medidas de comedor, Trípode ratona, puertas a medida, guía de sillas) sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993.
+
+`ServiceLandingPage` ahora pinta enlaces en el párrafo del hero y en el de la sección principal (antes el markdown solo valía en extras y FAQ). `collections/[handle]` hace lo mismo en los párrafos de guía y en las FAQ; el schema aplana el enlace. Una página sin corchetes se ve igual.
+
+### Páginas que el encargo marca como no rastreadas
+
+1. `/puertas-interiores` — tres FAQ al final, con frases que la página ya tenía: reemplazo de la hoja (alto, ancho y espesor de la hoja actual; marco y herrajes aparte), varias hojas (cantidad y vanos iguales o distintos) y acabado de baño o cocina (más vapor, sin acabado único para humedad). Title, meta y H1 iguales. `updatedAt` `2026-10-24`.
+
+2. `/puertas-correderas` — dos FAQ: la referencia es puerta corredera de madera y vidrio de interior, no un modelo con precio; no es un kit con riel (la foto no se vende armada; marco, herrajes e instalación no se asumen). Title, meta y H1 iguales.
+
+3. `/puertas-exteriores` — dos FAQ: vano de una sola hoja se cotiza igual, sin forzar la foto doble; hay referencias con vidrio y no se publica el tipo. Title, meta y H1 iguales.
+
+4. `/guias/medidas-y-madera-puertas` — apartado «Hoja de 60 cm y puerta doble» con las frases que ya estaban en «Medidas habituales» (60 cm, hoja doble, sin ancho estándar, sin modelo de stock). Tres FAQ: 80 × 200 cm se cotiza con la medida menor del vano; no hay espesor único; no hay medida estándar de puerta doble. Title y meta iguales.
+
+5. `/guias/medidas-peldanos-escalera` — tres FAQ desde «Qué hacer con el espesor» y «Cómo medir»: vuelo (la punta que sobresale, sin medida fija), espesor que se suma a la pisada, descanso que no es una huella (enlace a escaleras de madera). Title y meta iguales.
+
+6. `/mesas-de-comedor-a-medida` — el párrafo de 6 personas (160×90 o Ø120) y de 6 a 8 (200×100 o Ø140, Trípode 220×100×75) pasa a un H2 propio, «Mesa de comedor para 6 personas y para 8», más el hero (madera maciza, 75 cm, precio en la cotización). Dos FAQ con esas mismas cifras y enlace a la guía de medidas de comedor. El listado de fichas y el barniz negro siguen en «Medidas del catálogo». Title y meta iguales. La guía de medidas de comedor no se editó.
+
+7. `/guias/medidas-mesa-de-centro` — foto ya publicada de la Mesa de centro Hairpin (`/images/mesa-de-centro-hairpin-main.webp`, 1600×1600, alt «Mesa de centro Hairpin de madera con patas metálicas»). Pie: «En estas fichas, Hairpin tiene 50 cm de fondo.» Va después de «El paso para caminar», lazy, para no ser el LCP. Apartado «Las mesas ratonas de 100 cm del catálogo» con la tabla (Hairpin 100×50×45, Trípode ratona 100×60×40, fondos de 50 y 60 cm). Una FAQ con esas medidas y enlace a `/mesas-de-centro`. Title y meta iguales. La ficha de la Trípode ratona no se editó.
+
+### Enlaces desde hubs indexados
+
+8. `/puertas-a-medida` — en el párrafo de «Puertas de madera a medida hechas para durar», las palabras que ya estaban («interiores», «exteriores») y dos frases que ya estaban más abajo («Las puertas correderas parten de la referencia…», «Antes de escribir, puedes mirar la guía de medidas y madera») pasan a enlace hacia interiores, exteriores, correderas y la guía. Title, meta y H1 iguales.
+
+9. `/peldanos-a-medida` — el mismo párrafo principal enlaza la guía de medidas de peldaños y escaleras de madera, con las frases de «Según el proyecto» (lote 23). Esas frases siguen también abajo.
+
+10. `/escaleras-de-madera` — el párrafo de «Qué pieza corresponde…» enlaza peldaños para escalera de concreto, peldaños a medida («Si ya tienes claro el corte, la cotización directa está en peldaños a medida») y la guía de medidas. Title y meta iguales.
+
+11. `/collections/mesas` — los párrafos de «Cómo elegir tu mesa…» y dos FAQ enlazan la guía de medidas de comedor (sin editarla), la guía de mesa de centro, comedores nórdicos y mesas de comedor a medida. Title y meta iguales. `updatedAt` `2026-10-24`.
+
+### Clústeres en alza y páginas flojas
+
+12. `/cubiertas-a-medida` — FAQ «¿Hacen mesones de madera para cocina?» con el apartado «Mesones de cocina y barras» (barniz, aceite, medidas del vano, cocina/barra/isla) y el enlace que la página ya usaba hacia la guía de mesón de quincho. El mismo apartado enlaza «mesones de madera para cocina» a esa guía. Title y meta iguales.
+
+13. `/molduras-a-medida` — meta nueva, 138 caracteres, con cornisas, guardapolvos y marcos de vanos (el H2 y las FAQ ya los nombraban). Title igual: `Molduras de Madera a Medida | Chile`. FAQ de guardapolvo o zócalo por metro lineal, con el perímetro descontando puertas. 
+
+14. `/muebles-chillan` — el hero abre con «Si buscas mueblerías en Chillán» y sigue cerrando con «es taller y fábrica de muebles en Chillán» (plan 4.1). Enlaces de contenido a muebles a medida, cubiertas, puertas, peldaños y molduras. Title y meta iguales. No se enlazó `/collections/veladores`.
+
+15. `/kit-pergola` — FAQ «¿El kit incluye el techo o la cubierta de la pérgola?» con la lista «Qué no incluye» (maderas, techo, lona, policarbonato, instalación). En «Qué necesitamos para cotizar», enlace a la guía de cómo cotizar. Title y meta iguales (`Sin Maderas`). `lastmod` del kit pasa de 2026-10-18 a 2026-10-24.
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` 130 → 131: solo suma la Hairpin bajo `/guias/medidas-mesa-de-centro`. `lastmod` `2026-10-24` en las quince URLs de arriba. Veladores sigue en `2026-10-16`. Muebles de cocina Chillán sigue en `2026-10-23`. La guía de medidas de comedor sigue en `2026-10-18`.
+
+### No se tocó
+
+- `/collections/veladores` (title, meta, H1 y cuerpo).
+- Title, meta y H1 de `/puertas-a-medida`, `/guias/medidas-mesa-comedor`, `/guias/elegir-sillas-madera-comedor` y la ficha `/products/mesa-tripode-ratona`.
+- `/puertas-de-madera-con-vidrio` (las FAQ de vidrio arriba y de hoja de interior salieron en el lote 22).
+- Guía nueva. Mesón de cocina y quincho ya tienen `/cubiertas-a-medida` y `/guias/madera-para-meson-quincho`.
+- Fotos de cocina: no hay en el repo. La de Chillán cocina sigue siendo el taller, no una cocina.
+- WhatsApp, Pixel, GTM, GA4, CAPI, feed merchant, IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint` sin avisos. `npx tsc --noEmit` y `npm run build` pasan (84 páginas estáticas). No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-23 — Lote 23
 
 Foto del taller en `/muebles-de-cocina-chillan`, una FAQ de mesón de cocina en `/guias/madera-para-meson-quincho`, y seis enlaces en el cuerpo de `/peldanos-a-medida`. Sin URLs nuevas. Sin precios, plazos, especies ni usos que la página no dijera ya. Titles congelados sin cambio. `ServiceLandingPage` y `GuidePage` no se tocaron. Pixel, GTM, GA4 y CAPI no se tocaron.

@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-24
+
+- **Lote 24:** contenido y FAQ en las siete URLs que el encargo marca como no rastreadas (interiores, correderas, exteriores, guía de puertas, guía de peldaños, mesas de comedor a medida, guía de mesa de centro). Enlaces de contenido, más arriba, desde `/puertas-a-medida`, `/peldanos-a-medida`, `/escaleras-de-madera` y `/collections/mesas`. FAQ de mesón de cocina en cubiertas, meta y FAQ de guardapolvo en molduras, «mueblerías en Chillán» en el hero, FAQ de techo en el kit. Foto ya publicada de la Hairpin en la guía de mesa de centro. Titles congelados sin cambio. `updatedAt` 2026-10-24 en las URLs tocadas. Sitemap: 74 `<loc>`, `<image:loc>` 130 → 131. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-23
 
 - **Lote 23:** foto del taller (la de `/muebles-chillan`, sin pie y sin decir que es cocina) en `/muebles-de-cocina-chillan`. Una FAQ en `/guias/madera-para-meson-quincho` sobre mesón de cocina, con frases que la guía ya tenía y enlace a `/cubiertas-a-medida`. Seis enlaces en «Según el proyecto» de `/peldanos-a-medida`, sin palabras nuevas. `updatedAt` 2026-10-23 en esas tres. Sitemap: 74 `<loc>`, `<image:loc>` 129 → 130. Detalle: `SEO-CHANGELOG.md`.

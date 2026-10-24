@@ -491,7 +491,7 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
 
 export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/mesas-de-comedor-a-medida",
-  updatedAt: "2026-10-19",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Muebles a medida", path: "/muebles-a-medida" },
@@ -575,9 +575,15 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
       ],
     },
     {
-      title: "Medidas del catálogo antes de pedir una a medida",
+      title: "Mesa de comedor para 6 personas y para 8",
       paragraphs: [
         "Para un comedor de 6 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa una mesa de 160×90 cm o una redonda de Ø120 cm. Para 6 a 8 personas, la misma guía usa 200×100 cm o Ø140 cm. En las fichas, la [Mesa de comedor Trípode](/products/mesa-comedor-tripode) de 220×100×75 cm dice que es ideal para 6 a 8 comensales, y la [Mesa de comedor Trípode redonda](/products/mesa-comedor-tripode-redonda) de Ø140 cm anota la referencia de 6-8 personas de esa guía. Las sillas no van con la mesa: están en la [colección de sillas](/collections/sillas).",
+        "Si ninguna ficha del catálogo cabe en tu comedor, fabricamos la mesa en madera maciza con el largo o el diámetro que necesitas. La altura habitual de una mesa de comedor es 75 cm; si pides otra, la confirmamos al cotizar. El precio no está en esta página: una medida especial se cotiza por WhatsApp.",
+      ],
+    },
+    {
+      title: "Medidas del catálogo antes de pedir una a medida",
+      paragraphs: [
         "En barniz negro hay tres mesas de comedor: [Roma negra](/products/mesa-comedor-roma-negra), [Trípode negra](/products/mesa-comedor-tripode-negra) y [Trípode redonda negra](/products/mesa-tripode-redonda-negra).",
       ],
       bullets: [
@@ -642,6 +648,16 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
       question: "¿Envían la mesa a todo Chile?",
       answer:
         "Sí. Fabricamos en Chillán y coordinamos el despacho según la comuna. El costo de envío se confirma al cotizar.",
+    },
+    {
+      question: "¿Qué medida de mesa de comedor sirve para 6 personas?",
+      answer:
+        "Para un comedor de 6 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa una mesa de 160×90 cm o una redonda de Ø120 cm. Si ninguna ficha del catálogo cabe en tu comedor, fabricamos la mesa con el largo o el diámetro que necesitas. La altura habitual de una mesa de comedor es 75 cm.",
+    },
+    {
+      question: "¿Qué medida sirve para 8 personas?",
+      answer:
+        "Para 6 a 8 personas, la [guía de medidas de mesa de comedor](/guias/medidas-mesa-comedor) usa 200×100 cm o Ø140 cm. La [Mesa de comedor Trípode](/products/mesa-comedor-tripode) de 220×100×75 cm dice que es ideal para 6 a 8 comensales. Una medida especial se cotiza: el precio no está en esta página.",
     },
   ],
   relatedLinks: [

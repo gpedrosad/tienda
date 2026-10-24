@@ -141,7 +141,7 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
                       : "mt-5 text-base md:text-lg text-ink/80 leading-relaxed max-w-3xl"
                   }
                 >
-                  {config.heroParagraph}
+                  <InlineLinkedText text={config.heroParagraph} />
                 </p>
 
                 {visibleBadges.length > 0 ? (
@@ -315,7 +315,9 @@ export default function ServiceLandingPage({ config }: ServiceLandingPageProps) 
 
         <section className="max-w-6xl mx-auto px-4 py-14 md:py-16">
           <h2 className="font-display text-3xl md:text-4xl tracking-tight font-semibold">{config.sectionTitle}</h2>
-          <p className="mt-5 text-ink/80 leading-relaxed max-w-4xl">{config.sectionParagraph}</p>
+          <p className="mt-5 text-ink/80 leading-relaxed max-w-4xl">
+            <InlineLinkedText text={config.sectionParagraph} />
+          </p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
             {config.featureCards.map((card) => (

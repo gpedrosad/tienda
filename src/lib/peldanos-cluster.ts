@@ -418,7 +418,7 @@ export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
 
 export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/escaleras-de-madera",
-  updatedAt: "2026-10-20",
+  updatedAt: "2026-10-24",
   breadcrumbLabel: "Escaleras de madera",
   breadcrumbParent: peldanosParent,
   pageTitle: "Escaleras de Madera: Huellas a Medida | Chile",
@@ -460,7 +460,7 @@ export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
   gallery,
   sectionTitle: "Qué pieza corresponde a una escalera de madera",
   sectionParagraph:
-    "La huella es la tabla horizontal. La contrahuella es la pieza vertical entre un peldaño y el siguiente, y no se asume incluida. La estructura —madera de soporte, metal o losa— la resuelve la obra. Si la escalera ya es de hormigón y solo quieres cubrirla, ese caso está en peldaños para escalera de concreto.",
+    "La huella es la tabla horizontal. La contrahuella es la pieza vertical entre un peldaño y el siguiente, y no se asume incluida. La estructura —madera de soporte, metal o losa— la resuelve la obra. Si la escalera ya es de hormigón y solo quieres cubrirla, ese caso está en [peldaños para escalera de concreto](/peldanos-escalera-concreto). Si ya tienes claro el corte, la cotización directa está en [peldaños a medida](/peldanos-a-medida). [La guía de medidas](/guias/medidas-peldanos-escalera) explica la huella y la contrahuella como referencia general.",
   featureCards: [
     {
       title: "Escalera recta",

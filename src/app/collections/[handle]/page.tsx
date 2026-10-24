@@ -7,6 +7,7 @@ import Chip, { chipRowClassName } from "@/app/components/ui/Chip";
 import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
+import { InlineLinkedText, plainTextFromInlineLinks } from "@/lib/inline-links";
 import {
   getCategoryByHandle,
   getCategoryOptions,
@@ -155,7 +156,16 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
             ),
           ]
         : []),
-      ...(collection.faqs?.length ? [buildFaqPageSchema(collection.faqs)] : []),
+      ...(collection.faqs?.length
+        ? [
+            buildFaqPageSchema(
+              collection.faqs.map((item) => ({
+                question: item.question,
+                answer: plainTextFromInlineLinks(item.answer),
+              })),
+            ),
+          ]
+        : []),
     ],
   };
 
@@ -277,7 +287,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 key={paragraph.slice(0, 40)}
                 className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base"
               >
-                {paragraph}
+                <InlineLinkedText text={paragraph} />
               </p>
             ))}
           </div>
@@ -307,7 +317,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                     </span>
                   </summary>
                   <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                    {item.answer}
+                    <InlineLinkedText text={item.answer} />
                   </p>
                 </details>
               ))}
