@@ -189,7 +189,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Una puerta interior sirve como entrada de la casa?",
       answer:
-        "No la cotizamos igual. La entrada principal es uso exterior: cambia madera y acabado. Cotízala en [puertas de entrada y exteriores](/puertas-exteriores) y no prometemos resistencia a la intemperie sin ver el vano.",
+        "No la cotizamos igual. La entrada principal es uso exterior: cambia madera y acabado. Cotízala en puertas de entrada y exteriores y no prometemos resistencia a la intemperie sin ver el vano.",
     },
     {
       question: "¿Puedo pedir la hoja con vidrio o con paneles?",
@@ -199,17 +199,17 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen la puerta interior corredera?",
       answer:
-        "La referencia publicada de hoja que corre es de interior, en madera y vidrio. Ese caso está en [puertas correderas](/puertas-correderas). El riel cuenta como herraje y no se asume incluido.",
+        "La referencia publicada de hoja que corre es de interior, en madera y vidrio. Ese caso está en puertas correderas. El riel cuenta como herraje y no se asume incluido.",
     },
     {
       question: "¿Qué madera usan en una puerta interior?",
       answer:
-        "Madera nativa seca en cámara, maderas nobles del sur de Chile. No publicamos la especie en un listado: se confirma al cotizar. El detalle está en [puertas de madera nativa](/puertas-madera-nativa).",
+        "Madera nativa seca en cámara, maderas nobles del sur de Chile. No publicamos la especie en un listado: se confirma al cotizar. El detalle está en puertas de madera nativa.",
     },
     {
       question: "¿Cómo mido antes de escribir?",
       answer:
-        "Ancho del vano arriba, al medio y abajo (quédate con la medida más chica) y alto a ambos lados. La [guía de medidas y madera para puertas](/guias/medidas-y-madera-puertas) ordena esas medidas y las hojas que se ven seguido en Chile. Esas medidas no son un catálogo.",
+        "Ancho del vano arriba, al medio y abajo (quédate con la medida más chica) y alto a ambos lados. La guía de medidas y madera para puertas ordena esas medidas y las hojas que se ven seguido en Chile. Esas medidas no son un catálogo.",
     },
     {
       question: "¿Puedo reemplazar solo la hoja de una puerta interior?",
@@ -389,12 +389,12 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué madera proponen para exterior?",
       answer:
-        "Madera nativa seca en cámara. No publicamos la especie antes de cotizar: depende del vano y del uso. Más detalle en [puertas de madera nativa](/puertas-madera-nativa).",
+        "Madera nativa seca en cámara. No publicamos la especie antes de cotizar: depende del vano y del uso. Más detalle en puertas de madera nativa.",
     },
     {
       question: "¿Sirve la misma puerta para un dormitorio?",
       answer:
-        "No se propone igual. El dormitorio es interior. Cotízalo en [puertas interiores](/puertas-interiores). Las medidas habituales de hoja están en la [guía de puertas](/guias/medidas-y-madera-puertas).",
+        "No se propone igual. El dormitorio es interior. Cotízalo en puertas interiores. Las medidas habituales de hoja están en la guía de puertas.",
     },
     {
       question: "¿Hacen puerta de entrada de una sola hoja?",
@@ -547,7 +547,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Hacen una corredera para la entrada de la casa?",
       answer:
-        "La referencia es de interior. Una entrada es uso exterior y cambia madera y acabado. No prometemos intemperie sin ver el vano. Si ese es tu caso, parte por [puertas de entrada](/puertas-exteriores) y dinos que la hoja corre.",
+        "La referencia es de interior. Una entrada es uso exterior y cambia madera y acabado. No prometemos intemperie sin ver el vano. Si ese es tu caso, parte por puertas de entrada y dinos que la hoja corre.",
     },
     {
       question: "¿Puedo pedir una puerta tipo granero?",
@@ -557,12 +557,12 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Qué madera lleva la corredera?",
       answer:
-        "Madera nativa seca en cámara. La especie se confirma al cotizar, no sale de la foto. Más detalle en [puertas de madera nativa](/puertas-madera-nativa).",
+        "Madera nativa seca en cámara. La especie se confirma al cotizar, no sale de la foto. Más detalle en puertas de madera nativa.",
     },
     {
       question: "¿Cómo mido un vano para puerta corredera?",
       answer:
-        "Igual que cualquier hoja: ancho arriba, al medio y abajo (usa el menor) y alto a ambos lados, más el espesor. La [guía de medidas](/guias/medidas-y-madera-puertas) lo deja por escrito. Esas medidas habituales no reemplazan tu vano.",
+        "Igual que cualquier hoja: ancho arriba, al medio y abajo (usa el menor) y alto a ambos lados, más el espesor. La guía de medidas lo deja por escrito. Esas medidas habituales no reemplazan tu vano.",
     },
     {
       question: "¿Fabrican puerta corredera de madera y vidrio?",
@@ -592,7 +592,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
 
 export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-madera-nativa",
-  updatedAt: "2026-10-21",
+  updatedAt: "2026-10-24",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -717,7 +717,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿La puerta es de madera maciza?",
       answer:
-        "En puertas no usamos esa frase. Publicamos madera nativa seca en cámara, sin listado de especies. Los muebles descritos como madera maciza están en [muebles a medida](/muebles-a-medida).",
+        "En puertas no usamos esa frase. Publicamos madera nativa seca en cámara, sin listado de especies. Los muebles descritos como madera maciza están en muebles a medida.",
     },
     {
       question: "¿La misma madera sirve para interior y exterior?",
@@ -732,7 +732,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Dónde veo medidas antes de elegir madera?",
       answer:
-        "En la [guía de medidas y madera para puertas](/guias/medidas-y-madera-puertas). La tabla es una referencia habitual en Chile, no el catálogo del taller. La hoja se fabrica a tu vano.",
+        "En la guía de medidas y madera para puertas. La tabla es una referencia habitual en Chile, no el catálogo del taller. La hoja se fabrica a tu vano.",
     },
   ],
   relatedLinks: relatedExcept("/puertas-madera-nativa"),

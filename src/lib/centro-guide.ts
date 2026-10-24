@@ -96,12 +96,12 @@ export const medidasMesaCentroGuideConfig: GuideConfig = {
     {
       question: "¿Puedo pedir otra medida?",
       answer:
-        "Sí. Escribe por WhatsApp el largo del sofá, la altura del asiento y el espacio que quieres dejar. Si ninguna ficha calza, cotizamos la pieza. Las opciones con foto están en [mesas de centro](/mesas-de-centro).",
+        "Sí. Escribe por WhatsApp el largo del sofá, la altura del asiento y el espacio que quieres dejar. Si ninguna ficha calza, cotizamos la pieza. Las opciones con foto están en mesas de centro.",
     },
     {
       question: "¿Qué mesa ratona del catálogo mide cerca de 100 cm?",
       answer:
-        "Hairpin mide 100 cm de largo, 50 cm de fondo y 45 cm de alto. La Trípode ratona mide 100 cm de largo, 60 cm de fondo y 40 cm de alto. Roma mide 120 × 60 × 45 cm y Ferrara centro 110 × 60 × 45 cm. Las fichas están en [mesas de centro](/mesas-de-centro).",
+        "Hairpin mide 100 cm de largo, 50 cm de fondo y 45 cm de alto. La Trípode ratona mide 100 cm de largo, 60 cm de fondo y 40 cm de alto. Roma mide 120 × 60 × 45 cm y Ferrara centro 110 × 60 × 45 cm. Las fichas están en mesas de centro.",
     },
   ],
   relatedLinks: [

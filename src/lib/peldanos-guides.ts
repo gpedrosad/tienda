@@ -156,7 +156,7 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
     {
       question: "¿El descanso de la escalera se mide como una huella?",
       answer:
-        "Si el proyecto trae un descanso, mide cada tramo por separado. El tablero del descanso no es una huella y no se asume en el pedido de [escaleras de madera](/escaleras-de-madera).",
+        "Si el proyecto trae un descanso, mide cada tramo por separado. El tablero del descanso no es una huella y no se asume en el pedido de escaleras de madera.",
     },
   ],
   relatedLinks: [

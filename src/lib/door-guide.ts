@@ -119,7 +119,7 @@ export const medidasMaderaPuertasGuideConfig: GuideConfig = {
     {
       question: "¿Dónde cotizo después de medir?",
       answer:
-        "Por WhatsApp, desde [puertas a medida](/puertas-a-medida) o desde la página del tipo de puerta. Lleva alto, ancho, espesor, uso, comuna y una foto. Marco, herrajes e instalación no se asumen incluidos.",
+        "Por WhatsApp, desde puertas a medida o desde la página del tipo de puerta. Lleva alto, ancho, espesor, uso, comuna y una foto. Marco, herrajes e instalación no se asumen incluidos.",
     },
     {
       question: "¿Fabrican la puerta de 80 × 200 cm?",

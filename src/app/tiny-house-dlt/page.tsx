@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import JsonLd from "@/app/components/JsonLd";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { absoluteUrl, buildBreadcrumbSchema, buildFaqPageSchema, SITE_NAME, SITE_URL } from "@/lib/seo";
 import Quote, { QuoteButton } from "./Quote";
 import HouseSimulator from "./HouseSimulator";
@@ -88,7 +89,7 @@ export default function TinyHousePage() {
 
       <section id="cotizar" className="dlt-quote" aria-labelledby="dlt-quote-title"><div className="dlt-wrap dlt-quote-grid"><div><p className="dlt-kicker">Empecemos con tu idea</p><h2 id="dlt-quote-title">Cotiza tu<br />tiny house en DLT.</h2><p>No necesitas tener todos los planos listos. Cuéntanos lo que imaginas y te ayudamos a definir el siguiente paso.</p><p className="dlt-contact">Atención directa de Idea Madera<br />Chillán, Chile · <a href="tel:+56995497838" data-placement="tiny_house_phone">+56 9 9549 7838</a></p></div><Quote /></div></section>
 
-      <section id="preguntas" className="dlt-wrap dlt-section dlt-faq" aria-labelledby="dlt-faq-title"><h2 id="dlt-faq-title">Antes de construir,<br />resolvamos tus dudas.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+      <section id="preguntas" className="dlt-wrap dlt-section dlt-faq" aria-labelledby="dlt-faq-title"><h2 id="dlt-faq-title">Antes de construir,<br />resolvamos tus dudas.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faqAnswerText(faq.answer)}</p></details>)}</div></section>
 
       <nav className="dlt-wrap dlt-related" aria-label="Complementa tu proyecto"><p>También hacemos el interior.</p><Link href="/muebles-a-medida">Muebles a medida ↗</Link><Link href="/cubiertas-a-medida">Cubiertas de madera ↗</Link><Link href="/puertas-a-medida">Puertas a medida ↗</Link><Link href="/quienes-somos">Conoce Idea Madera ↗</Link></nav>
     </main>

@@ -7,7 +7,8 @@ import Chip, { chipRowClassName } from "@/app/components/ui/Chip";
 import ProductCard, { CATALOG_GRID_SIZES } from "@/app/components/ProductCard";
 import WhatsappButton from "@/app/components/WhatsAppButton";
 import { products } from "@/data/products";
-import { InlineLinkedText, plainTextFromInlineLinks } from "@/lib/inline-links";
+import { faqAnswerText } from "@/lib/inline-link-text";
+import { InlineLinkedText } from "@/lib/inline-links";
 import {
   getCategoryByHandle,
   getCategoryOptions,
@@ -158,12 +159,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         : []),
       ...(collection.faqs?.length
         ? [
-            buildFaqPageSchema(
-              collection.faqs.map((item) => ({
-                question: item.question,
-                answer: plainTextFromInlineLinks(item.answer),
-              })),
-            ),
+            buildFaqPageSchema(collection.faqs),
           ]
         : []),
     ],
@@ -317,7 +313,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                     </span>
                   </summary>
                   <p className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
-                    <InlineLinkedText text={item.answer} />
+                    {faqAnswerText(item.answer)}
                   </p>
                 </details>
               ))}

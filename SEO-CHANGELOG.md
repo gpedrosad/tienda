@@ -1,5 +1,53 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-24 — Lote 25
+
+El FAQ visible y el FAQPage vuelven a salir de la misma respuesta, en texto plano. En las páginas donde la respuesta llevaba un enlace, el `<a>` partía la frase y el string del JSON-LD no estaba seguido en el HTML. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas, sin precios nuevos, sin medidas de modelo que la ficha no publique.
+
+### 1. FAQ y schema, misma frase
+
+`faqAnswerText` aplana el markdown y es lo que pinta el párrafo del FAQ y lo que va a `acceptedAnswer.text`. El cuerpo (hero, secciones, guías de colección) sigue pudiendo llevar enlaces. En las respuestas, el enlace se quedó en el texto de la etiqueta: las mismas palabras que ya mostraba la página. El destino sigue enlazado en el cuerpo o en «También te puede interesar» cuando ya estaba.
+
+Las cuatro preguntas del encargo quedan así, idénticas en pantalla y en el schema:
+
+- `/puertas-a-medida` — «¿Dónde veo cada tipo de puerta?» y «¿Dónde reviso medidas habituales antes de cotizar?».
+- `/puertas-exteriores` — «¿Sirve la misma puerta para un dormitorio?».
+- `/puertas-madera-nativa` — «¿Dónde veo medidas antes de elegir madera?».
+
+El mismo arreglo en el resto de FAQ que tenía markdown: interiores, correderas, vidrio, cubiertas, molduras, muebles Chillán, muebles a medida, mesas de comedor a medida, peldaños flotantes, escaleras de madera, colección de mesas, y las guías de puertas, mesa de centro, peldaños y mesón de quincho. Home, kit, fichas, mesas de centro y tiny house no tenían markdown en el FAQ: el texto no cambia.
+
+### 2. /collections/sillas
+
+Intro con «sillas de comedor de madera» (Milán Lenga, lenga, fabricada en Chile) y «sillas artesanales hechas en Chillán» para la Kentucky, dicha como silla de descanso reclinada, de listones y terminación artesanal, no de comedor. El H2 de la guía de la colección enlaza `/guias/elegir-sillas-madera-comedor` y `/comedores-nordicos`. Dos FAQ: la Kentucky no es de comedor; la ficha de la Milán no publica altura de asiento (la referencia 45-48 cm con mesa de 75 cm no es la medida del modelo). Title y H1 iguales. `updatedAt` `2026-10-24`.
+
+### 3. /guias/elegir-sillas-madera-comedor
+
+El apartado de altura ya existía (asiento 45-48 cm, mesa 75 cm, 27-30 cm entre ambos). El H2 pasa a «Medidas de una silla de comedor: altura de asiento y mesa» y suma que Milán y Kentucky no publican alto, ancho ni profundidad, y que Kentucky no es de comedor. Title igual. `updatedAt` `2026-10-24`.
+
+### 4. /comedores-nordicos
+
+Párrafo bajo «Cómo armar tu comedor nórdico» y FAQ «¿Cómo armo un juego de comedor nórdico?». La frase nombra la Mesa Nórdica (160 × 90 × 75 cm), la Silla Milán Lenga, la Banca Capri, la Banca Griega, la Niza y la Bolonia (200 × 100 × 75 cm). El párrafo enlaza esas fichas. La FAQ repite el mismo texto, sin enlaces, para que el schema coincida. La Kentucky queda fuera: es de descanso y no está en esta selección. Title igual. `lastmod` `2026-10-24`.
+
+### 5. Peldaños
+
+`/peldanos-a-medida`: el párrafo principal conserva «peldaños para escaleras» y suma «Los peldaños de madera se cortan…». `/escaleras-de-madera`: el párrafo de «Qué pieza corresponde…» dice «los peldaños de madera que pisas» y «Si buscas peldaños para escaleras». Title y H1 iguales. Las dos ya tenían `updatedAt` `2026-10-24`.
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` sigue en 131. `lastmod` `2026-10-24` en las URLs de arriba y, por el FAQ sin enlace dentro de la respuesta, también en `/puertas-de-madera-con-vidrio`, `/peldanos-flotantes`, `/muebles-a-medida` y `/guias/madera-para-meson-quincho` (antes 22, 17, 17 y 23 oct). Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` de ninguna página. H1 de sillas, de la guía de sillas y de comedores nórdicos.
+- `/collections/veladores`.
+- Precios, plazos, especies nuevas, fotos. La altura 45-48 cm ya estaba en la guía y en la colección; no se presenta como medida de la Milán ni de la Kentucky.
+- WhatsApp, Pixel, GTM, GA4, CAPI, feed merchant, IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-24 — Lote 24
 
 Quince URLs. El encargo pide espesor en páginas que Search Console no ha rastreado, enlaces desde hubs que sí indexan, y un pase de FAQ o snippet en molduras, cubiertas, mesones, Chillán y el kit. Sin URLs nuevas. Sin precios, plazos, especies, tipos de vidrio ni fotos de cocina. Titles congelados (veladores, guía de medidas de comedor, Trípode ratona, puertas a medida, guía de sillas) sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993.

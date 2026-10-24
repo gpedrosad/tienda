@@ -4,6 +4,7 @@ Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
 ## 2026-10-24
 
+- **Lote 25:** el FAQ visible y el FAQPage usan el mismo texto plano (`faqAnswerText`), sin `<a>` dentro de la respuesta. Sillas: «sillas de comedor de madera» y Kentucky como descanso hecha en Chillán, con enlace a la guía y a comedores nórdicos. La guía de sillas nombra el apartado de medidas (45-48 cm / mesa 75 cm) y aclara que Milán y Kentucky no publican el asiento. Comedores nórdicos: juego mesa + sillas con fichas reales. Peldaños: «peldaños para escaleras» y «peldaños de madera» en el cuerpo. Titles sin cambio. Detalle: `SEO-CHANGELOG.md`.
 - **Lote 24:** contenido y FAQ en las siete URLs que el encargo marca como no rastreadas (interiores, correderas, exteriores, guía de puertas, guía de peldaños, mesas de comedor a medida, guía de mesa de centro). Enlaces de contenido, más arriba, desde `/puertas-a-medida`, `/peldanos-a-medida`, `/escaleras-de-madera` y `/collections/mesas`. FAQ de mesón de cocina en cubiertas, meta y FAQ de guardapolvo en molduras, «mueblerías en Chillán» en el hero, FAQ de techo en el kit. Foto ya publicada de la Hairpin en la guía de mesa de centro. Titles congelados sin cambio. `updatedAt` 2026-10-24 en las URLs tocadas. Sitemap: 74 `<loc>`, `<image:loc>` 130 → 131. Detalle: `SEO-CHANGELOG.md`.
 
 ## 2026-10-23

@@ -23,6 +23,7 @@ import {
   SITE_URL,
   WARRANTY_MONTHS,
 } from "@/lib/seo";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { InlineLinkedText, plainTextFromInlineLinks } from "@/lib/inline-links";
 import { isDiningTableId, showsCoffeeTableGuide } from "@/lib/mesa-groups";
 import { galleryImagesForProduct } from "@/lib/product-gallery";
@@ -514,7 +515,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <span className="text-wood transition-transform group-open:rotate-180">⌄</span>
                 </summary>
                 <p className="mt-3 max-w-3xl text-sm md:text-base leading-relaxed text-ink-muted">
-                  {item.answer}
+                  {faqAnswerText(item.answer)}
                 </p>
               </details>
             ))}

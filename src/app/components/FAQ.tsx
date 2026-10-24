@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Reveal from "@/app/components/Reveal";
 import WhatsAppCTA from "@/app/components/ui/WhatsAppCTA";
 import { buildGeneralWhatsAppMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { homeFaqItems } from "@/lib/seo";
 
 const faqWhatsAppUrl = buildWhatsAppUrl(
@@ -63,7 +64,7 @@ const FAQItem = ({ question }: { question: (typeof homeFaqItems)[0] }) => {
       >
         <div ref={contentRef} className="pb-6 pr-12">
           <p className="text-sm md:text-base text-ink/80 leading-relaxed">
-            {question.answer}
+            {faqAnswerText(question.answer)}
           </p>
         </div>
       </div>

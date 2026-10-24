@@ -1,4 +1,5 @@
 import { FOUNDING_YEAR_LABEL } from "@/lib/founding";
+import { faqAnswerText } from "@/lib/inline-link-text";
 import { DEFAULT_SITE_URL } from "@/lib/whatsapp";
 
 export const SITE_NAME = "Idea Madera";
@@ -231,7 +232,7 @@ export function buildFaqPageSchema(items: Array<{ question: string; answer: stri
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: faqAnswerText(item.answer),
       },
     })),
   };
