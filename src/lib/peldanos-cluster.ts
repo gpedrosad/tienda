@@ -260,7 +260,7 @@ export const peldanosChillanLandingConfig: ServiceLandingConfig = {
 
 export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-escalera-concreto",
-  updatedAt: "2026-10-16",
+  updatedAt: "2026-10-25",
   breadcrumbLabel: "Escalera de concreto",
   breadcrumbParent: peldanosParent,
   pageTitle: "Peldaños para Escalera de Concreto | Idea Madera",
@@ -276,7 +276,7 @@ export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
   eyebrow: "Huellas para una escalera que ya existe",
   h1: "Peldaños de madera para escalera de concreto",
   heroParagraph:
-    "Si la escalera de concreto u hormigón ya está construida, fabricamos las huellas de madera que revisten la pisada. La losa sigue siendo la estructura: nosotros cortamos la pieza de madera al largo, al fondo y al espesor de tu escalera. No reparamos el hormigón y no asumimos el montaje, salvo que lo confirmemos al cotizar.",
+    "Si la escalera de concreto u hormigón ya está construida, fabricamos huellas de madera para escalera de concreto: la pieza que reviste la pisada. La losa sigue siendo la estructura: nosotros cortamos la pieza de madera al largo, al fondo y al espesor de tu escalera. No reparamos el hormigón y no asumimos el montaje, salvo que lo confirmemos al cotizar. La referencia de huella y contrahuella está en la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera); no sustituye la medida de tu escalera.",
   badges: ["Para escalera existente", "Huellas a medida", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar huellas para concreto",
   whatsappProductTitle: "Peldaños para escalera de concreto",

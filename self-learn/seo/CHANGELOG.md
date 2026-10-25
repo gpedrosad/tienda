@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-25
+
+- **Lote 26:** respuesta directa al inicio de `/guias/medidas-peldanos-escalera` (25-30 cm, 15-18 cm, 2 contrahuellas + huella ≈ 63 cm, banda 60-64 cm) y FAQ «¿Cuánto mide una contrahuella?». Ficha Trípode ratona: «mesa ratona» / mesa de centro en el cuerpo, con enlace a `/mesas-de-centro` y a la guía de medidas; title igual. Guía de comedor: 75 cm al inicio y FAQ de que 85 cm de alto es barra o mesón alto, no comedor; title igual. «Mesones de madera» en hero y H2 de `/cubiertas-a-medida`, enlace «mesón para quincho» a la guía; la guía nombra mesones de madera al enlazar cubiertas. `/peldanos-escalera-concreto`: «huellas de madera para escalera de concreto» con enlace a la guía de medidas. `updatedAt` 2026-10-25 en esas seis. Titles sin cambio. Sitemap: 74 `<loc>`, `<image:loc>` 131. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-24
 
 - **Lote 25:** el FAQ visible y el FAQPage usan el mismo texto plano (`faqAnswerText`), sin `<a>` dentro de la respuesta. Sillas: «sillas de comedor de madera» y Kentucky como descanso hecha en Chillán, con enlace a la guía y a comedores nórdicos. La guía de sillas nombra el apartado de medidas (45-48 cm / mesa 75 cm) y aclara que Milán y Kentucky no publican el asiento. Comedores nórdicos: juego mesa + sillas con fichas reales. Peldaños: «peldaños para escaleras» y «peldaños de madera» en el cuerpo. Titles sin cambio. Detalle: `SEO-CHANGELOG.md`.

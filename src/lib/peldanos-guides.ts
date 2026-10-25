@@ -30,7 +30,7 @@ const clusterAndWorkshop = [
 
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-25",
   pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
   pageDescription:
     "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
@@ -44,7 +44,7 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
   eyebrow: "Guía de medidas",
   h1: "Cómo medir la huella y la contrahuella",
   intro:
-    "La huella es la superficie horizontal donde apoyas el pie y la contrahuella es la altura vertical entre un peldaño y el siguiente. Como referencia general de confort en una vivienda, la huella suele quedar cerca de 25 a 30 cm, la contrahuella cerca de 15 a 18 cm, y la relación 2 × contrahuella + huella cerca de 60 a 64 cm. Idea Madera no impone esas cifras: cortamos la huella de madera al largo, al fondo y al espesor que cotizas.",
+    "Como referencia general de confort, la huella (donde apoyas el pie) suele quedar cerca de 25 a 30 cm y la contrahuella (la altura entre peldaños) cerca de 15 a 18 cm. Dos contrahuellas más una huella deben caer cerca de 63 cm, dentro de una banda cómoda de 60 a 64 cm. Idea Madera no impone esas cifras: cortamos la huella de madera al largo, al fondo y al espesor que cotizas.",
   heroImage: {
     src: "/images/peldanos/peldanos-madera-a-medida-taller.webp",
     alt: "Peldaños de madera clara a medida recién cepillados en el taller",
@@ -118,6 +118,11 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
     },
   ],
   faqs: [
+    {
+      question: "¿Cuánto mide una contrahuella?",
+      answer:
+        "Como referencia general de confort, la contrahuella queda cerca de 15 a 18 cm. Dos contrahuellas más una huella deben caer cerca de 63 cm, en una banda de 60 a 64 cm. No es una norma que el taller imponga ni la ordenanza de tu comuna: fabricamos la medida que cotizas.",
+    },
     {
       question: "¿Cuál es una medida correcta de huella y contrahuella?",
       answer:
