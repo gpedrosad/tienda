@@ -314,7 +314,7 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  updatedAt: "2026-10-18",
+  updatedAt: "2026-10-25",
   pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
   pageDescription:
     "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
@@ -331,7 +331,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
   eyebrow: "Guía práctica",
   h1: "Cómo elegir las medidas de tu mesa de comedor",
   intro:
-    "La mesa de comedor es el centro de reunión de la casa. Elegir el tamaño correcto asegura que todos coman cómodos y que el espacio fluya sin apreturas. Esta guía te ayuda a calcular las medidas ideales según la cantidad de personas y el espacio disponible.",
+    "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Una superficie de 85 cm de alto corresponde a una barra o un mesón alto, no a un comedor: con un asiento de 45-48 cm queda alta para comer. El largo, el ancho y la circulación se calculan más abajo, según cuántas personas se sientan.",
   updatedDate: "2026-10-05",
   leadSectionIndex: 1,
   featuredProductIds: ["mesa-nordica", "mesa-comedor-niza", "mesa-comedor-cantabria"],
@@ -367,6 +367,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
       title: "Altura estándar de mesa de comedor y sillas",
       content: [
         "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie de la mesa. Esta altura permite sentarse cómodamente con las piernas en ángulo de 90° y los pies apoyados en el suelo.",
+        "Una superficie de 85 cm de alto no es la de un comedor: es altura de barra o de mesón alto. Con un asiento de 45-48 cm, esa altura deja la mesa alta para comer. Más abajo, 180 × 85 cm es un ejemplo de largo por ancho para un comedor estrecho, no una altura.",
         "La altura del asiento de las sillas debe ser de 45-48 cm, dejando una distancia de 27-30 cm entre el asiento y la superficie de la mesa. Esta separación da espacio suficiente para las piernas sin que las rodillas choquen con la estructura.",
         "Si tus sillas actuales tienen el asiento más bajo (por ejemplo, 42-44 cm), sentirás que la mesa queda alta. Si las sillas son muy altas (más de 50 cm), tendrás que agacharte para comer. Por eso es importante verificar la altura del asiento de las sillas antes de comprar una mesa, o viceversa.",
         "Para mesas de 10 personas o más (240-300 cm de largo), considera el ancho de 100 cm para dar mayor comodidad y permitir que los comensales en los extremos tengan suficiente espacio para los codos.",
@@ -405,6 +406,11 @@ export const medidasMesaGuideConfig: GuideConfig = {
       question: "¿Qué altura tiene una mesa de comedor?",
       answer:
         "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Las sillas deben tener asientos de 45-48 cm de altura, dejando 27-30 cm de espacio entre el asiento y la mesa para las piernas.",
+    },
+    {
+      question: "¿85 cm es la altura de una mesa de comedor?",
+      answer:
+        "No. La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Una superficie de 85 cm de alto es altura de barra o de mesón alto, no de comedor. Con un asiento de 45-48 cm, esa altura deja la mesa alta para comer. En esta guía, 180 × 85 cm es un ejemplo de largo por ancho, no de altura.",
     },
     {
       question: "¿Qué medidas tiene un comedor para 10 personas?",

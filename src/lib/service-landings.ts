@@ -501,7 +501,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-25",
   pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
     "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
@@ -522,7 +522,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   eyebrow: "Cubiertas de madera a medida",
   h1: "Cubiertas y tablones de madera a tu medida",
   heroParagraph:
-    "Fabricamos cubiertas y tablones a medida en Chillán: mesones de cocina, barras, mesones para quincho y proyectos comerciales. Lenga austral o pino premium, secos en cámara. Para cotizar necesitamos largo, ancho, uso y comuna. El acabado se confirma en la cotización; no prometemos resistencia al calor o a la intemperie sin ver el uso real.",
+    "Fabricamos cubiertas y tablones a medida en Chillán: mesones de madera para cocina, barras, quincho y proyectos comerciales. Lenga austral o pino premium, secos en cámara. Para cotizar necesitamos largo, ancho, uso y comuna. El acabado se confirma en la cotización; no prometemos resistencia al calor o a la intemperie sin ver el uso real.",
   badges: ["Taller en Chillán", "Lenga austral y pino premium", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar cubiertas por WhatsApp",
   whatsappProductTitle: "Cubiertas a medida",
@@ -536,9 +536,9 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
     { title: "Madera seca en cámara", description: "Lenga austral y pino premium seleccionado." },
     { title: "Proyectos comerciales y hogar", description: "Barras, mesones, quinchos y salones de eventos." },
   ],
-  sectionTitle: "Mesones para quincho y cubiertas para cada uso",
+  sectionTitle: "Mesones de madera para quincho y cubiertas para cada uso",
   sectionParagraph:
-    "Fabricamos mesones de madera para quincho, barras, cubiertas de cocina y proyectos comerciales. Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Si buscas un mesón para quincho, lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. También producimos cubiertas para barras, mesones para restaurant, mesones de cocina y salones de eventos. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación.",
+    "Fabricamos mesones de madera para quincho, barras, cubiertas de cocina y proyectos comerciales. Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Si buscas un [mesón para quincho](/guias/madera-para-meson-quincho), lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. También producimos cubiertas para barras, mesones para restaurant, mesones de cocina y salones de eventos. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación.",
   featureCards: [
     {
       title: "Mesones para quinchos",

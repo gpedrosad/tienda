@@ -2,7 +2,7 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const maderaMesonQuinchoGuideConfig: GuideConfig = {
   canonicalPath: "/guias/madera-para-meson-quincho",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-25",
   pageTitle: "Madera para Mesón de Quincho | Lenga y Pino",
   pageDescription:
     "Madera para un mesón de quincho: lenga austral o pino premium, secos en cámara. Bajo techo o al aire cambia el acabado. Cotiza la cubierta por WhatsApp.",
@@ -23,7 +23,7 @@ export const maderaMesonQuinchoGuideConfig: GuideConfig = {
       title: "Las maderas que trabajamos",
       content: [
         "Para cubiertas y mesones trabajamos dos maderas: lenga austral y pino premium, seleccionadas y secas en cámara. No hay otra especie publicada en esa línea.",
-        "La seca en cámara suelta agua antes de trabajar la pieza, así que después se mueve menos. Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. El detalle de la línea está en [cubiertas a medida](/cubiertas-a-medida).",
+        "La seca en cámara suelta agua antes de trabajar la pieza, así que después se mueve menos. Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. El detalle de estos mesones de madera está en [cubiertas a medida](/cubiertas-a-medida).",
       ],
     },
     {
@@ -84,7 +84,7 @@ export const maderaMesonQuinchoGuideConfig: GuideConfig = {
     {
       question: "¿Usan la misma madera para un mesón de cocina?",
       answer:
-        "Sí. Fabricamos el tablero: mesones para quincho, barras, mesones de cocina, mesones para restaurant y salones de eventos. Para cubiertas y mesones trabajamos dos maderas: lenga austral y pino premium, seleccionadas y secas en cámara. Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. No publicamos un largo estándar de mesón. Manda el largo y el ancho del tuyo y cuéntanos que es de cocina. El detalle de la línea está en cubiertas a medida.",
+        "Sí. Fabricamos el tablero: mesones para quincho, barras, mesones de cocina, mesones para restaurant y salones de eventos. Para cubiertas y mesones trabajamos dos maderas: lenga austral y pino premium, seleccionadas y secas en cámara. Cuál de las dos conviene se cierra en la cotización, según el uso y el lugar. No publicamos un largo estándar de mesón. Manda el largo y el ancho del tuyo y cuéntanos que es de cocina. El detalle de estos mesones de madera está en cubiertas a medida.",
     },
   ],
   relatedLinks: [

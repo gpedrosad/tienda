@@ -607,18 +607,18 @@ export const products: Product[] = [
   },
   {
     id: "mesa-tripode-ratona",
-    updatedAt: "2026-10-17",
+    updatedAt: "2026-10-25",
     name: "Mesa ratona trípode",
     price: 399990,
     category: "Mesas",
     imageUrl: "/images/mesa-tripode-ratona-vista-1.jpg",
     shortPitch:
-      "Mesa trípode de madera estilo ratona para living: patas inclinadas, 100 × 60 × 40 cm. Diseño orgánico.",
+      "Mesa ratona trípode de madera maciza para el living: mesa de centro baja, patas inclinadas, 100 × 60 × 40 cm.",
     description:
-      "Mesa trípode de madera en formato ratona (baja) para living. El diseño trípode tiene tres patas inclinadas que dan estabilidad y un toque orgánico. Mide 100 × 60 × 40 cm, vale $399.990 y va frente al sofá. Las patas inclinadas dejan espacio para las piernas y hacen que la mesa se vea liviana visualmente. Si buscas más opciones de mesas ratonas de distintos estilos (Roma, Ferrara, Hairpin, Bali, Seúl, Taipei), revisa nuestra colección completa de mesas ratonas de madera. Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
+      "Esta mesa ratona es una mesa de centro trípode para el living: tres patas inclinadas, madera maciza y barniz natural. Mide 100 × 60 × 40 cm y vale $399.990. Va frente al sofá; las patas dejan espacio para las piernas y la pieza se ve liviana. Otras opciones están en [mesas de centro](/mesas-de-centro). El largo, el fondo y la altura de una mesa de centro se explican en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
     features: [
       "Mesa trípode de madera maciza",
-      "Formato ratona / mesa de centro baja",
+      "Mesa ratona y mesa de centro baja",
       "Patas inclinadas estilo trípode orgánico",
       "100 × 60 × 40 cm",
       "Fabricación en Chillán",

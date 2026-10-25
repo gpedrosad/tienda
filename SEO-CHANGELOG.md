@@ -1,5 +1,51 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-25 — Lote 26
+
+Datos del encargo (Search Console, no un pull nuevo de este entorno): 28 días al 24 oct, 268 clics / 13.940 impresiones, posición 8,7. En 7 días, 84 clics contra 69 la semana anterior. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas, sin precios nuevos, sin medidas de modelo que la ficha no publique. Las FAQ nuevas van en texto plano: el mismo string en el párrafo y en el FAQPage.
+
+### 1. /guias/medidas-peldanos-escalera
+
+La intro ya tenía 25 a 30 cm, 15 a 18 cm y la banda de 60 a 64 cm. Ahora abre con esas mismas cifras y con los 63 cm que ya estaban en «Referencia general de confort»: dos contrahuellas más una huella cerca de 63 cm, dentro de 60 a 64 cm. El taller no impone la cifra. FAQ nueva, la primera: «¿Cuánto mide una contrahuella?», con 15 a 18 cm, 63 cm y 60 a 64 cm, sin enlace dentro de la respuesta. Title, meta y H1 iguales. `updatedAt` `2026-10-25` (`updatedDate` sigue en 2026-10-17, así que en pantalla dice «Actualizado: 25 de octubre de 2026»).
+
+`/peldanos-a-medida` y `/escaleras-de-madera` ya estaban enlazadas en el cuerpo y en «También te puede interesar». No se duplicaron.
+
+### 2. /products/mesa-tripode-ratona
+
+Title igual: `Mesa Ratona Trípode 100×60×40 cm | Living`. Meta igual. H1 igual (`Mesa ratona trípode`). El pitch y la descripción dicen que es una mesa ratona y una mesa de centro trípode. Medidas que la ficha ya publicaba: 100 × 60 × 40 cm, madera maciza, barniz natural, $399.990. La descripción enlaza [mesas de centro](/mesas-de-centro) y la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). El enlace suelto que la ficha ya pintaba hacia esa guía, para las mesas de centro con medidas, se mantiene. `updatedAt` `2026-10-25`.
+
+### 3. /guias/medidas-mesa-comedor
+
+Title igual: `Medidas de Mesa de Comedor | Personas y Altura 75 cm`. Meta y H1 iguales. La intro no decía la altura. Ahora abre con la cifra que la guía ya usaba: 75 cm desde el piso hasta la superficie. Una superficie de 85 cm de alto se explica como barra o mesón alto, no como comedor, con el asiento de 45-48 cm que la guía ya publicaba. En «Altura estándar de mesa de comedor y sillas» se agrega el mismo dato y se aclara que el 180 × 85 cm de más abajo es largo por ancho, no altura. FAQ nueva: «¿85 cm es la altura de una mesa de comedor?». Las frases viejas de 75 cm, 45-48 cm y 27-30 cm no se reescribieron. `updatedAt` `2026-10-25`.
+
+### 4. /cubiertas-a-medida y /guias/madera-para-meson-quincho
+
+En cubiertas, el hero dice «mesones de madera» y el H2 pasa a «Mesones de madera para quincho y cubiertas para cada uso». En el párrafo de ese H2, «mesón para quincho» enlaza la guía. Title, meta y H1 iguales.
+
+La guía ya enlazaba cubiertas. La frase del cuerpo queda «El detalle de estos mesones de madera está en cubiertas a medida», con ancla «cubiertas a medida». La FAQ de mesón de cocina repite esa frase en texto plano, sin `<a>`. Title y meta de la guía iguales. `updatedAt` `2026-10-25` en las dos.
+
+Otros enlaces que ya estaban y se mantienen: desde cubiertas, «mesón de madera para quincho» y «mesones de madera para cocina» hacia la guía, más la tarjeta «Madera para mesón de quincho». Desde la guía, «cotizas en cubiertas a medida» y la tarjeta «Cubiertas a medida».
+
+### 5. /peldanos-escalera-concreto
+
+El hero dice «huellas de madera para escalera de concreto» y enlaza la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera). No se agregan medidas. Title, meta y H1 iguales. `updatedAt` `2026-10-25` (antes 2026-10-16). La tarjeta de relacionados hacia la guía ya estaba.
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` sigue en 131. `lastmod` `2026-10-25` solo en las seis URLs de arriba. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` de ninguna página. Meta description de estas seis. H1 de la guía de peldaños, de la guía de comedor, de cubiertas, de la guía de quincho, de la ficha y de peldaños de concreto.
+- `/collections/veladores`.
+- Precios, plazos, especies, espesores, fotos. El 85 cm de alto no es una medida de catálogo: en el catálogo, 85 cm es el alto del Arrimo Griego, y no se cita. Las mesas de comedor con alto publicado siguen en 75 cm.
+- WhatsApp (textos de mensaje y botones), Pixel, GTM, GA4, CAPI, el generador del feed merchant e IndexNow. La descripción del feed de la Trípode ratona sale de `product.description`: al cambiar el cuerpo de la ficha, el texto de ese ítem en `/feed/google.xml` sigue el cuerpo nuevo. No se editó `merchant-feed.ts`.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-24 — Lote 25
 
 El FAQ visible y el FAQPage vuelven a salir de la misma respuesta, en texto plano. En las páginas donde la respuesta llevaba un enlace, el `<a>` partía la frase y el string del JSON-LD no estaba seguido en el HTML. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas, sin precios nuevos, sin medidas de modelo que la ficha no publique.
