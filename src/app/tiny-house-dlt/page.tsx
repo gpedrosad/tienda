@@ -67,7 +67,6 @@ export default function TinyHousePage() {
             width={1536}
             height={1024}
             sizes="(max-width: 800px) 100vw, 720px"
-            quality={88}
           />
           <figcaption>Montaje en terreno. Fotografía de obra de Idea Madera, versión de mayor definición.</figcaption>
         </figure>

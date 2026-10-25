@@ -120,6 +120,7 @@ export default function Footer() {
                   width={100}
                   height={100}
                   sizes="64px"
+                  unoptimized
                   className="h-14 w-14 object-contain md:h-16 md:w-16"
                 />
               </Link>

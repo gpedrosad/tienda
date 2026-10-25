@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "cdn.shopify.com",
       },
     ],
-    formats: ["image/avif", "image/webp"],
+    // Menos variantes = menos transformaciones en Vercel (formato × ancho × calidad).
+    formats: ["image/webp"],
+    deviceSizes: [640, 828, 1080, 1200, 1920],
+    imageSizes: [64, 96, 128, 256, 384],
+    qualities: [40, 75],
     minimumCacheTTL: 2678400,
   },
   experimental: {

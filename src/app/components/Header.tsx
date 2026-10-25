@@ -109,6 +109,7 @@ export default function Header() {
                 alt="Idea Madera"
                 fill
                 sizes="86px"
+                unoptimized
                 className="object-contain object-center brightness-0 invert"
                 priority
               />
