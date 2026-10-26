@@ -446,6 +446,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </Link>
                 </p>
               ) : null}
+              {product.id === "silla-milan-lenga" ? (
+                <p className="mt-3 text-sm leading-relaxed text-ink/80">
+                  La Milán es de comedor. En el catálogo de{" "}
+                  <Link
+                    href="/collections/sillas"
+                    className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+                  >
+                    sillas de madera
+                  </Link>{" "}
+                  también está la Kentucky, que es de descanso y no de comedor.
+                </p>
+              ) : null}
             </div>
 
             {specRows.length > 0 && (

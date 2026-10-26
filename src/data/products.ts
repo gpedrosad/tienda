@@ -291,7 +291,7 @@ export const products: Product[] = [
   },
   {
     id: "silla-milan-lenga",
-    updatedAt: "2026-10-13",
+    updatedAt: "2026-10-26",
     name: "Silla Milán Lenga",
     price: 199000,
     category: "Sillas",

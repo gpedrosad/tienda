@@ -4,7 +4,7 @@ export const doorGuidePath = "/guias/medidas-y-madera-puertas";
 
 export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   canonicalPath: doorGuidePath,
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-26",
   pageTitle: "Medidas y Madera para Puertas | Idea Madera",
   pageDescription:
     "Medidas habituales de puertas en Chile y cómo elegir la madera según interior o exterior. La hoja se fabrica a tu vano. Cotiza por WhatsApp.",
@@ -90,7 +90,7 @@ export const medidasMaderaPuertasGuideConfig: GuideConfig = {
     {
       title: "Qué página abrir según la puerta",
       content: [
-        "Si la hoja es de dormitorio, baño, cocina u oficina, sigue en [puertas interiores](/puertas-interiores). Si es la entrada de la casa, sigue en [puertas de entrada y exteriores](/puertas-exteriores). Si la hoja corre, la referencia de interior en madera y vidrio está en [puertas correderas](/puertas-correderas); el riel no se asume incluido.",
+        "Si la hoja es de dormitorio, baño, cocina u oficina, sigue en [puertas interiores](/puertas-interiores). Si es la entrada de la casa, sigue en [puertas de entrada y exteriores](/puertas-exteriores). Si la hoja corre, la referencia de interior en madera y vidrio está en [puertas correderas](/puertas-correderas); el riel no se asume incluido. Si abre con bisagras y el diseño lleva vidrio, sigue en [puertas de madera con vidrio](/puertas-de-madera-con-vidrio): no hay un modelo publicado ni un tipo de vidrio en catálogo.",
         "La cotización general sigue en [puertas a medida](/puertas-a-medida). Si el proyecto también lleva mesas, cubiertas u otras piezas, entra a [muebles a medida](/muebles-a-medida).",
       ],
     },

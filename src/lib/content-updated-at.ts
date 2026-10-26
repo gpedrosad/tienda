@@ -59,9 +59,9 @@ const PAGE_FILE_UPDATED_AT: Record<string, string> = {
   "/": "2026-10-17",
   "/ofertas": "2026-10-17",
   "/guias": "2026-10-17",
-  "/kit-pergola": "2026-10-24",
+  "/kit-pergola": "2026-10-26",
   "/tiny-house-dlt": "2026-10-17",
-  "/comedores-nordicos": "2026-10-24",
+  "/comedores-nordicos": "2026-10-26",
   "/mesas-de-centro": "2026-10-18",
 };
 

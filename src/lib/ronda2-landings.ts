@@ -10,7 +10,7 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-26",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -29,7 +29,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   eyebrow: "Puertas con vidrio",
   h1: "Puertas de madera con vidrio a medida",
   heroParagraph:
-    "Fabricamos la hoja de madera cuando el diseño lleva vidrio: paños, luces o una repartición que nos muestres en una foto. No hay un modelo publicado ni un tipo de vidrio en catálogo. Interior o entrada cambia la madera y el acabado. Marco, herrajes, vidrio e instalación no se asumen incluidos: se confirman si los pides al cotizar.",
+    "Fabricamos puertas de madera con vidrio a medida: la hoja, cuando el diseño lleva paños, luces o una repartición que nos muestres en una foto. No hay un modelo publicado ni un tipo de vidrio en catálogo. Interior o entrada cambia la madera y el acabado. Marco, herrajes, vidrio e instalación no se asumen incluidos: se confirman si los pides al cotizar.",
   badges: ["Hoja a medida", "Vidrio según referencia", "Taller en Chillán"],
   whatsappButtonLabel: "Cotizar puerta con vidrio",
   whatsappProductTitle: "Puertas de madera con vidrio",
@@ -58,7 +58,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     width: 1200,
     height: 1600,
   },
-  galleryTitle: "Referencias con vidrio, no un catálogo",
+  galleryTitle: "Puertas de madera con vidrio: referencias del taller, no un catálogo",
   galleryIntro:
     "Las fotos son obras del taller. Sirven para conversar la repartición del vidrio. No tienen precio ni un vidrio asociado.",
   gallery: [

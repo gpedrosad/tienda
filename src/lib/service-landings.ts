@@ -694,7 +694,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-26",
   pageTitle: "Molduras de Madera a Medida | Chile",
   pageDescription:
     "Molduras de madera a medida: cornisas, guardapolvos y marcos de vanos. Taller en Chillán, por metro lineal. Cotiza el perfil por WhatsApp.",
@@ -735,7 +735,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Molduras de madera para cada terminación",
   sectionParagraph:
-    "Las molduras definen el detalle de un espacio: cornisas, guardapolvos, marcos, zócalos y perfiles decorativos. En Idea Madera fabricamos molduras de madera a medida para que el acabado coincida con tu arquitectura, no al revés. También resolvemos pedidos por metro lineal o por tramos cortados a largo.",
+    "Las molduras definen el detalle de un espacio. Las cornisas de madera para techo van en el encuentro del muro con el cielo. Los perfiles de madera para marcos terminan puertas, ventanas y vanos. También hacemos guardapolvos, zócalos y perfiles decorativos. En Idea Madera fabricamos molduras de madera a medida para que el acabado coincida con tu arquitectura, no al revés. Los pedidos se resuelven por metro lineal o por tramos cortados a largo.",
   featureCards: [
     {
       title: "Muros y zócalos",
