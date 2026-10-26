@@ -317,10 +317,10 @@ export default function KitPergolaPage() {
               Kit de uniones metálicas para pérgola 3×3, sin maderas
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-canvas/80 md:text-lg">
-              Construye tu propia pérgola de madera con este kit de uniones metálicas y herrajes
-              pensado para madera de 3×3 pulgadas (75×75 mm). Incluye bases, codos, tornillos y
-              tarugos para armar 1 módulo sobre suelo. Armado simple, módulos combinables y dos
-              tipos de base. No incluye maderas; cotiza por WhatsApp en Chile.
+              Este es un kit para pérgola de madera: trae las uniones para pérgola y las bases
+              metálicas para madera de 3×3 pulgadas (75×75 mm), y la madera la pones tú. Los
+              soportes anclan 1 módulo sobre suelo, con base para atornillar o para cementar.
+              Incluye bases, codos, tornillos y tarugos. No incluye maderas, techo ni la instalación.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">

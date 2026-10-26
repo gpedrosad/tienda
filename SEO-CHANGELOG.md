@@ -1,5 +1,60 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-26 — Lote 27
+
+Datos del encargo (Search Console, no un pull nuevo de este entorno): 28 días al 25 oct, 266 clics / 14.503 impresiones, CTR 1,83%, posición 8,6. En 7 días, 79 clics / 5.123 impresiones contra 73 / 3.694 la semana anterior. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página ya decía. No se agregó una FAQ con enlace dentro de la respuesta.
+
+### 1. Enlaces a /collections/sillas
+
+La colección no se editó: title, H1 e intro del lote 25 quedan igual. La Kentucky sigue dicha como silla de descanso, no de comedor.
+
+`/guias/elegir-sillas-madera-comedor` ya enlazaba la colección en el cuerpo («sillas de madera para comedor» hacia «colección de sillas»). No se duplicó. `updatedAt` sigue en `2026-10-24`.
+
+Un enlace nuevo por página, en el cuerpo y fuera del FAQ:
+
+- `/comedores-nordicos` — ancla «sillas de madera para comedor». La frase dice que la Milán es de comedor y la Kentucky de descanso. `lastmod` `2026-10-26`.
+- `/products/silla-milan-lenga` — ancla «sillas de madera», bajo la descripción. La descripción del catálogo no cambia, así el texto del feed de esa ficha tampoco. `updatedAt` `2026-10-26`.
+- `/collections/mesas` — ancla «sillas artesanales», en la guía de la colección: la Kentucky es de descanso y no va en la mesa. Title, meta y H1 iguales. `updatedAt` `2026-10-26`.
+
+### 2. /puertas-de-madera-con-vidrio
+
+La primera frase del hero pasa a «Fabricamos puertas de madera con vidrio a medida». Sigue igual lo que ya afirmaba: sin modelo publicado, sin tipo de vidrio en catálogo, y marco, herrajes, vidrio e instalación no incluidos. El H2 de la galería queda «Puertas de madera con vidrio: referencias del taller, no un catálogo». Title, meta y H1 iguales. `updatedAt` `2026-10-26`.
+
+Enlaces nuevos en el cuerpo, ancla «puertas de madera con vidrio», sin tocar el FAQ:
+
+- `/puertas-interiores` — hoja que abre con bisagras y lleva vidrio.
+- `/puertas-exteriores` — las dos referencias con vidrio, no la de montante y dintel.
+- `/guias/medidas-y-madera-puertas` — en «Qué página abrir según la puerta», con la misma salvedad de modelo y tipo de vidrio.
+
+`/puertas-a-medida` ya tenía en el cuerpo la ancla «puertas de madera con vidrio». No se duplicó y no se editó.
+
+### 3. /molduras-a-medida
+
+El párrafo bajo «Molduras de madera para cada terminación» nombra «cornisas de madera para techo» en el encuentro del muro con el cielo, y «perfiles de madera para marcos» en puertas, ventanas y vanos. Sigue el metro lineal y los guardapolvos que la página ya publicaba. Title, meta y H1 iguales. `updatedAt` `2026-10-26`.
+
+No se agregó «¿Hacen cornisas de madera para techo?». Ya está «¿Fabrican cornisas de madera para techo?», en texto plano e igual en el FAQPage, con a medida, metro lineal o tramos, y cotización con perfil, largo y cantidad. Una segunda pregunta diría lo mismo.
+
+### 4. /kit-pergola
+
+El primer párrafo bajo el H1 abre con la frase citable: es un kit para pérgola de madera, trae las uniones para pérgola y las bases metálicas para madera 3×3 (75×75 mm), y la madera la pones tú. En el mismo párrafo, los soportes anclan 1 módulo, con base para atornillar o para cementar, y no incluye maderas, techo ni instalación. Esas piezas ya estaban en la página. La FAQ «¿El kit incluye las maderas?» no se tocó. Title, meta y H1 iguales. `lastmod` `2026-10-26`.
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` sigue en 131. `lastmod` `2026-10-26` solo en las URLs de arriba cuyo texto cambió. Veladores sigue en `2026-10-16`. La guía de sillas sigue en `2026-10-24`. `/puertas-a-medida` sigue en `2026-10-24`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de sillas, de la ficha Milán, de puertas con vidrio, de molduras y del kit.
+- `/collections/veladores` y `/collections/sillas` (title, H1, intro y cuerpo).
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas de modelo, materiales, especies, tipos de vidrio, plazos, instalación y fotos.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, feed merchant e IndexNow. La descripción de la Milán en el catálogo no cambió.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-25 — Lote 26
 
 Datos del encargo (Search Console, no un pull nuevo de este entorno): 28 días al 24 oct, 268 clics / 13.940 impresiones, posición 8,7. En 7 días, 84 clics contra 69 la semana anterior. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas, sin precios nuevos, sin medidas de modelo que la ficha no publique. Las FAQ nuevas van en texto plano: el mismo string en el párrafo y en el FAQPage.

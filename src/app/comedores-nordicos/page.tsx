@@ -311,6 +311,11 @@ export default function ComedoresNordicosPage() {
               guía de sillas de comedor
             </Link>{" "}
             donde explicamos alturas, anchos y cuántas sillas se recomiendan según el largo de tu mesa.
+            El catálogo de{" "}
+            <Link href="/collections/sillas" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
+              sillas de madera para comedor
+            </Link>{" "}
+            distingue la Milán Lenga, de comedor, de la Kentucky, que es de descanso.
           </p>
         </section>
 

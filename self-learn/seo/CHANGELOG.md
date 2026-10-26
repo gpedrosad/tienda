@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-26
+
+- **Lote 27:** un enlace nuevo a `/collections/sillas` en el cuerpo de comedores nórdicos («sillas de madera para comedor»), la ficha Milán («sillas de madera») y `/collections/mesas` («sillas artesanales»). La guía de sillas ya enlazaba la colección y no se duplicó. La colección de sillas no se editó. Puertas con vidrio: la primera frase dice «puertas de madera con vidrio a medida» y el H2 de la galería nombra las referencias. Enlace con esa ancla desde interiores, exteriores y la guía de puertas. `/puertas-a-medida` ya la tenía. Molduras: «cornisas de madera para techo» y «perfiles de madera para marcos» en el párrafo del H2; la FAQ «¿Fabrican cornisas de madera para techo?» ya existía. Kit: el primer párrafo dice que es un kit para pérgola de madera, con uniones y bases para 75×75 mm, y que la madera la pones tú. Titles sin cambio. `updatedAt` 2026-10-26 solo en las URLs editadas. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-25
 
 - **Lote 26:** respuesta directa al inicio de `/guias/medidas-peldanos-escalera` (25-30 cm, 15-18 cm, 2 contrahuellas + huella ≈ 63 cm, banda 60-64 cm) y FAQ «¿Cuánto mide una contrahuella?». Ficha Trípode ratona: «mesa ratona» / mesa de centro en el cuerpo, con enlace a `/mesas-de-centro` y a la guía de medidas; title igual. Guía de comedor: 75 cm al inicio y FAQ de que 85 cm de alto es barra o mesón alto, no comedor; title igual. «Mesones de madera» en hero y H2 de `/cubiertas-a-medida`, enlace «mesón para quincho» a la guía; la guía nombra mesones de madera al enlazar cubiertas. `/peldanos-escalera-concreto`: «huellas de madera para escalera de concreto» con enlace a la guía de medidas. `updatedAt` 2026-10-25 en esas seis. Titles sin cambio. Sitemap: 74 `<loc>`, `<image:loc>` 131. Detalle: `SEO-CHANGELOG.md`.
