@@ -1,5 +1,50 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-27 — Lote 28
+
+Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 28 días al 26 oct, 267 clics / 15.287 impresiones, CTR 1,75%, posición 8,5. En 7 días (20–26 oct), 68 clics / 5.488 impresiones, CTR 1,24%, posición 8,9, contra 80 / 3.836, CTR 2,09%, posición 8,3 la semana 13–19 oct. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página o el catálogo ya publicaban. La FAQ que se ajustó sigue en texto plano, el mismo string en el párrafo y en el FAQPage, sin enlace dentro de la respuesta.
+
+### 1. /mesas-de-centro
+
+Title, meta, H1, hero y el botón de WhatsApp del hero iguales. La ficha `/products/mesa-tripode-ratona` no se editó: «mesa ratona» queda en esta página.
+
+Después de «Tamaño de la mesa ratona según el largo del sofá» hay un H2 nuevo, «Medidas de las mesas ratonas de madera del catálogo». La frase recuerda la regla que la página ya daba: largo entre la mitad y dos tercios del sofá, altura 40-50 cm. La lista nombra las cuatro mesas con foto de esta página y sus medidas de `src/data/products.ts` (`dimensions`, largo × ancho × alto):
+
+- Mesa ratona trípode, 100 × 60 × 40 cm, enlace a `/products/mesa-tripode-ratona`.
+- Mesa de centro Roma, 120 × 60 × 45 cm, enlace a `/products/mesa-centro-roma`.
+- Mesa Centro Ferrara, 110 × 60 × 45 cm, enlace a `/products/mesa-centro-ferrara`. La descripción de Ferrara no repite la cifra; sale de `dimensions`.
+- Mesa de centro Hairpin, 100 × 50 × 45 cm, enlace a `/products/mesa-centro-hairpin`.
+
+Sin precios en ese bloque. Bali, Seúl y Taipei no tienen las tres medidas en el catálogo y no se listan.
+
+La FAQ «¿Qué modelos de mesa ratona tienen disponibles?» nombra esas mismas cuatro cifras, en texto plano y sin enlaces, y cierra igual: otro diseño o medida se cotiza a medida por WhatsApp. No se agregó una FAQ nueva. `lastmod` `2026-10-27`.
+
+### 2. /guias/elegir-madera-peldanos
+
+Title, meta y H1 iguales. La intro abre con que la guía es para elegir la madera para escaleras interiores, en peldaños y escalones. Sigue lo que ya decía: lenga austral y pino premium secos en cámara, la especie se confirma al cotizar, y no hay una recomendación cerrada.
+
+El H2 «Interior, y exterior solo si lo dices» pasa a «Madera para escalera interior, y exterior solo si lo dices».
+
+La FAQ «¿Qué madera recomiendan para peldaños?» pasa a «¿Qué madera recomiendan para peldaños y escalones de escalera?». La respuesta suma el matiz que el cuerpo ya tenía: el pino es más liviano y toma bien el barniz; la lenga es más dura y más pesada. No dice que una especie sea la mejor. No se agregó una FAQ duplicada. `updatedAt` `2026-10-27` (`updatedDate` sigue en 2026-10-17, así que en pantalla dice «Actualizado: 27 de octubre de 2026» y el Article usa ese `dateModified`).
+
+### Sitemap
+
+74 `<loc>`. `<image:loc>` sigue en 131. `lastmod` `2026-10-27` solo en `/mesas-de-centro` y `/guias/elegir-madera-peldanos`. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de mesas de centro y de la guía de madera para peldaños.
+- `/collections/veladores`. `/guias/medidas-mesa-comedor`, `/collections/sillas`, `/comedores-nordicos`, `/puertas-de-madera-con-vidrio`, `/kit-pergola`, `/molduras-a-medida`, la home y `/products/mesa-tripode-ratona`.
+- Páginas editadas entre el 24 y el 26 de octubre, que se están midiendo.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios nuevos, materiales distintos a los que la página ya dice, especies nuevas, tipos de vidrio, plazos, instalación y fotos.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-26 — Lote 27
 
 Datos del encargo (Search Console, no un pull nuevo de este entorno): 28 días al 25 oct, 266 clics / 14.503 impresiones, CTR 1,83%, posición 8,6. En 7 días, 79 clics / 5.123 impresiones contra 73 / 3.694 la semana anterior. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página ya decía. No se agregó una FAQ con enlace dentro de la respuesta.

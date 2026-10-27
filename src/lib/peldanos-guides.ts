@@ -184,7 +184,7 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
 
 export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-madera-peldanos",
-  updatedAt: "2026-10-22",
+  updatedAt: "2026-10-27",
   pageTitle: "Cómo Elegir Madera para Peldaños | Idea Madera",
   pageDescription:
     "Criterios para peldaños: tránsito, espesor y terminación. Lenga austral o pino premium se confirman al cotizar. Escríbenos por WhatsApp.",
@@ -198,7 +198,7 @@ export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   eyebrow: "Guía de madera",
   h1: "Cómo elegir la madera de un peldaño",
   intro:
-    "En una huella de escalera pesan el tránsito, el espesor y la terminación. En el taller de Chillán trabajamos lenga austral y pino premium, secos en cámara. Cuál de las dos va en tus peldaños se confirma al cotizar, según el uso y el acabado que buscas.",
+    "Esta guía es para elegir la madera para escaleras interiores, en peldaños y escalones. En una huella pesan el tránsito, el espesor y la terminación. En el taller de Chillán trabajamos lenga austral y pino premium, secos en cámara. Cuál de las dos va en tus peldaños se confirma al cotizar, según el uso y el acabado que buscas. No hay una recomendación cerrada.",
   heroImage: {
     src: "/images/peldanos/peldanos-gruesos-madera-maciza.webp",
     alt: "Peldaños gruesos de madera maciza apilados en el taller",
@@ -242,7 +242,7 @@ export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
       ],
     },
     {
-      title: "Interior, y exterior solo si lo dices",
+      title: "Madera para escalera interior, y exterior solo si lo dices",
       content: [
         "Las escaleras de las fotos son de interior, con huella barnizada. Esta guía está pensada para ese uso. Una escalera a la intemperie pide otra conversación: no prometemos resistencia al sol o a la lluvia sin conocer el proyecto, el mismo criterio que usamos cuando una cubierta queda expuesta.",
         "El pasamanos no ayuda a elegir la madera de la huella, y además no es una línea del taller. Si lo estás buscando junto con la escalera, míralo en [escaleras de madera](/escaleras-de-madera): ahí queda dicho que la baranda no se asume incluida.",
@@ -265,9 +265,9 @@ export const elegirMaderaPeldanosGuideConfig: GuideConfig = {
   ],
   faqs: [
     {
-      question: "¿Qué madera recomiendan para peldaños?",
+      question: "¿Qué madera recomiendan para peldaños y escalones de escalera?",
       answer:
-        "Depende del tránsito y de la terminación. En el taller trabajamos lenga austral y pino premium, secos en cámara. La especie del peldaño se confirma al cotizar; no publicamos una sola recomendación cerrada.",
+        "Depende del tránsito y de la terminación. En el taller trabajamos lenga austral y pino premium, secos en cámara. El pino es más liviano y toma bien el barniz; la lenga es más dura y más pesada. Eso no alcanza para elegir solo: la especie del peldaño se confirma al cotizar y no publicamos una sola recomendación cerrada.",
     },
     {
       question: "¿Los peldaños son de madera maciza?",

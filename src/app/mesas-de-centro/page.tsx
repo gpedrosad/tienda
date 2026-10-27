@@ -64,7 +64,7 @@ const faqItems = [
   {
     question: "¿Qué modelos de mesa ratona tienen disponibles?",
     answer:
-      "Tenemos Trípode (patas inclinadas), Roma (diseño rectangular), Ferrara (estilo moderno) y Hairpin (patas metálicas). Cada modelo tiene fotos, medidas y precio en esta página. Si buscas otro diseño o medida, lo cotizamos a medida por WhatsApp.",
+      "Tenemos la Trípode de 100 × 60 × 40 cm (patas inclinadas), la Roma de 120 × 60 × 45 cm (diseño rectangular), la Ferrara de 110 × 60 × 45 cm (estilo moderno) y la Hairpin de 100 × 50 × 45 cm (patas metálicas). Cada modelo tiene fotos, medidas y precio en esta página. Si buscas otro diseño o medida, lo cotizamos a medida por WhatsApp.",
   },
   {
     question: "¿De qué madera son las mesas ratonas?",
@@ -240,7 +240,54 @@ export default function MesasDeCentroPage() {
               y calidez natural. Elige un estilo que complemente tu living: líneas rectas para espacios
               modernos, patas trípode para un toque orgánico, o hairpin para un look mid-century.
             </p>
-            
+
+            <h2 className="font-display mt-10 text-2xl tracking-tight md:text-3xl font-semibold">
+              Medidas de las mesas ratonas de madera del catálogo
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base">
+              La regla de arriba no cambia: el largo queda entre la mitad y dos tercios del sofá, y la
+              altura útil sigue en 40-50 cm. Estas son las cuatro mesas ratonas de madera que esta página
+              muestra, en largo × ancho × alto.
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-muted md:text-base">
+              <li>
+                <Link
+                  href="/products/mesa-tripode-ratona"
+                  className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+                >
+                  Mesa ratona trípode
+                </Link>
+                : 100 × 60 × 40 cm.
+              </li>
+              <li>
+                <Link
+                  href="/products/mesa-centro-roma"
+                  className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+                >
+                  Mesa de centro Roma
+                </Link>
+                : 120 × 60 × 45 cm.
+              </li>
+              <li>
+                <Link
+                  href="/products/mesa-centro-ferrara"
+                  className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+                >
+                  Mesa Centro Ferrara
+                </Link>
+                : 110 × 60 × 45 cm.
+              </li>
+              <li>
+                <Link
+                  href="/products/mesa-centro-hairpin"
+                  className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood"
+                >
+                  Mesa de centro Hairpin
+                </Link>
+                : 100 × 50 × 45 cm.
+              </li>
+            </ul>
+
             <h2 className="font-display mt-10 text-2xl tracking-tight md:text-3xl font-semibold">
               Cómo cotizar una mesa ratona a medida
             </h2>
