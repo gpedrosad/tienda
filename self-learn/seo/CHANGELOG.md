@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-27
+
+- **Lote 28:** `/mesas-de-centro` lista las medidas del catálogo (Trípode 100 × 60 × 40, Roma 120 × 60 × 45, Ferrara 110 × 60 × 45, Hairpin 100 × 50 × 45) bajo «Medidas de las mesas ratonas de madera del catálogo», con enlace a cada ficha. La FAQ de modelos nombra esas cifras, sin enlace. Title, meta, H1, hero y WhatsApp iguales. La ficha Trípode no se editó. `/guias/elegir-madera-peldanos`: la intro abre con madera para escaleras interiores; el H2 nombra la escalera interior; la FAQ pasa a «¿Qué madera recomiendan para peldaños y escalones de escalera?» con el matiz de pino y lenga que el cuerpo ya tenía. `updatedAt` 2026-10-27 solo en esas dos. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-26
 
 - **Lote 27:** un enlace nuevo a `/collections/sillas` en el cuerpo de comedores nórdicos («sillas de madera para comedor»), la ficha Milán («sillas de madera») y `/collections/mesas` («sillas artesanales»). La guía de sillas ya enlazaba la colección y no se duplicó. La colección de sillas no se editó. Puertas con vidrio: la primera frase dice «puertas de madera con vidrio a medida» y el H2 de la galería nombra las referencias. Enlace con esa ancla desde interiores, exteriores y la guía de puertas. `/puertas-a-medida` ya la tenía. Molduras: «cornisas de madera para techo» y «perfiles de madera para marcos» en el párrafo del H2; la FAQ «¿Fabrican cornisas de madera para techo?» ya existía. Kit: el primer párrafo dice que es un kit para pérgola de madera, con uniones y bases para 75×75 mm, y que la madera la pones tú. Titles sin cambio. `updatedAt` 2026-10-26 solo en las URLs editadas. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
