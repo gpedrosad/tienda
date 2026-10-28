@@ -5,7 +5,7 @@
 - **Sitemap vivo:** 74 URLs (`src/app/sitemap.ts`, GSC 2026-10-17, 0 errores) · GSC lista solo www
 - **Landings de servicio:** peldaños (`/peldanos-a-medida`, Chillán, concreto, escaleras de madera, **flotantes**), cubiertas, molduras, puertas (interiores, entrada, correderas, nativa, **vidrio**, **locales**), **muebles-chillan**, **muebles-de-cocina-chillan**, **mesas-de-comedor-a-medida**, kit-pergola, quiénes somos, contacto
 - **Catálogo indexable:** 29/55 productos (con `imageUrl`)
-- **Última tanda código:** 2026-10-27 (lote 28: medidas de las mesas ratonas en `/mesas-de-centro`; madera para escalera interior en `/guias/elegir-madera-peldanos`) → [CHANGELOG.md](./CHANGELOG.md). Sitemap sigue en 74 URLs. El commit de imágenes `0426b8d` no se tocó.
+- **Última tanda código:** 2026-10-28 (lote 29: footer global en `/kit-pergola`; enlace a la guía de mesa de centro desde la de comedor; puertas de dormitorio en `/puertas-interiores`; escalones en el H2 de `/peldanos-a-medida`) → [CHANGELOG.md](./CHANGELOG.md). Sitemap sigue en 74 URLs. El commit de imágenes `0426b8d` no se tocó.
 - **Última medición GSC:** 2026-10-17 → `docs/gsc-informe-2026-10-17.md` (20 sep→17 oct, serie hasta 15 oct: 224 clics · 10.076 imp · CTR 2,22% · pos. 9,0 · no marca 1,29%). Es **línea base** de los lotes 11–17. Revisión: `docs/seo-revision-2026-10-17.md`. Anterior: 2026-09-06 (201 · 9.698 · 2,07% · 9,6). Histórico ago: [EVAL.md](./EVAL.md)
 - **Titles congelados hasta ~5 nov:** veladores, guía medidas comedor, mesa-tripode-ratona, puertas-a-medida, guía sillas. `silla-kentucky` se corrigió el 2026-10-18 (no es de comedor: silla de descanso) → medir desde ~1 nov
 - **Backlog:** [NEXT.md](./NEXT.md)

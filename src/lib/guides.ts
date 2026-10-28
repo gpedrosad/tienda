@@ -314,7 +314,7 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  updatedAt: "2026-10-25",
+  updatedAt: "2026-10-28",
   pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
   pageDescription:
     "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
@@ -393,6 +393,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
       content: [
         "Si tu comedor tiene medidas especiales, una mesa a medida puede aprovechar mejor el espacio. Envíanos las medidas del comedor (largo, ancho y ubicación de puertas) y te proponemos un tamaño óptimo.",
         "También podemos fabricar mesas más largas o más angostas según tu necesidad: por ejemplo, 180 × 85 cm para un comedor estrecho, o 220 × 100 cm si recibes seguido.",
+        "Las medidas de la mesa de centro o mesa ratona están en otra guía: [medidas de la mesa de centro](/guias/medidas-mesa-de-centro).",
       ],
     },
   ],

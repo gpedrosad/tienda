@@ -241,7 +241,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-28",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
@@ -279,9 +279,9 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
     width: 738,
     height: 1210,
   },
-  galleryTitle: "Peldaños de madera en obra y en taller",
+  galleryTitle: "Peldaños y escalones de madera en obra y en taller",
   galleryIntro:
-    "Referencias reales de huellas fabricadas. La estructura de la escalera y el montaje no se asumen incluidos, salvo que lo confirmemos al cotizar.",
+    "Referencias reales de huellas y escalones fabricados. La estructura de la escalera y el montaje no se asumen incluidos, salvo que lo confirmemos al cotizar.",
   gallery: [
     {
       src: "/images/peldanos/peldanos-flotantes-instalados.webp",
