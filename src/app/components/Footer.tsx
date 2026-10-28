@@ -105,7 +105,7 @@ const footerContactUrl = buildWhatsAppUrl(
   ])
 );
 
-export default function Footer() {
+export default function Footer({ creditsAnchor = true }: { creditsAnchor?: boolean }) {
   return (
     <footer className="bg-ink text-white">
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10">
@@ -163,7 +163,7 @@ export default function Footer() {
         </div>
 
         <div
-          id="footer-creditos"
+          id={creditsAnchor ? "footer-creditos" : undefined}
           className="flex flex-col gap-5 border-t border-white/10 py-6 md:flex-row md:items-center md:justify-between"
         >
           <div className="flex gap-3">

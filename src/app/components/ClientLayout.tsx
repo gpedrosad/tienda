@@ -32,7 +32,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       </noscript>
 
       {isStandalone ? (
-        children
+        <>
+          {children}
+          {/* La página trae su propio header. El ancla del sticky ya está en el cuerpo. */}
+          <Footer creditsAnchor={false} />
+        </>
       ) : (
         <>
           <Header />

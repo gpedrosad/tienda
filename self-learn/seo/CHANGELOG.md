@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-28
+
+- **Lote 29:** `/kit-pergola` pasa a renderizar el `Footer` global (antes `ClientLayout` la dejaba suelta, sin `<footer>`). Sin header global, sin cambio de copy, title, meta, schema ni botones de WhatsApp. `lastmod` sigue en 2026-10-26. `/guias/medidas-mesa-comedor`: una frase al final del cuerpo enlaza «medidas de la mesa de centro» a `/guias/medidas-mesa-de-centro`. `/puertas-interiores`: H3 «Puertas de dormitorio, baño o cocina» y el párrafo de piezas nombra las puertas de dormitorio. `/peldanos-a-medida`: H2 «Peldaños y escalones de madera en obra y en taller» y la intro de la galería nombra escalones. `updatedAt` 2026-10-28 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-27
 
 - **Lote 28:** `/mesas-de-centro` lista las medidas del catálogo (Trípode 100 × 60 × 40, Roma 120 × 60 × 45, Ferrara 110 × 60 × 45, Hairpin 100 × 50 × 45) bajo «Medidas de las mesas ratonas de madera del catálogo», con enlace a cada ficha. La FAQ de modelos nombra esas cifras, sin enlace. Title, meta, H1, hero y WhatsApp iguales. La ficha Trípode no se editó. `/guias/elegir-madera-peldanos`: la intro abre con madera para escaleras interiores; el H2 nombra la escalera interior; la FAQ pasa a «¿Qué madera recomiendan para peldaños y escalones de escalera?» con el matiz de pino y lenga que el cuerpo ya tenía. `updatedAt` 2026-10-27 solo en esas dos. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.

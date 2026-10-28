@@ -70,7 +70,7 @@ const tallerFamiliar = {
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-interiores",
-  updatedAt: "2026-10-26",
+  updatedAt: "2026-10-28",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -120,10 +120,10 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   },
   sectionTitle: "Qué puerta interior cotizamos",
   sectionParagraph:
-    "Una puerta interior separa piezas de la casa o de un local: dormitorio, baño, cocina u oficina. La fabricamos como hoja a medida, con las medidas de tu vano. Si la puerta da a la calle o es la entrada principal, cotízala como exterior: madera y acabado cambian, y no prometemos intemperie sin ver el vano.",
+    "Una puerta interior separa piezas de la casa o de un local. Sirve para las puertas de dormitorio y para las de otras piezas de la casa: baño, cocina u oficina. La fabricamos como hoja a medida, con las medidas de tu vano. Si la puerta da a la calle o es la entrada principal, cotízala como exterior: madera y acabado cambian, y no prometemos intemperie sin ver el vano.",
   featureCards: [
     {
-      title: "Dormitorio, baño o cocina",
+      title: "Puertas de dormitorio, baño o cocina",
       description: "El baño y la cocina tienen más humedad que un dormitorio. Dilo al cotizar.",
     },
     {

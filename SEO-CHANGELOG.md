@@ -1,5 +1,49 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-28 — Lote 29
+
+Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 28 días al 27 oct, 276 clics / 16.120 impresiones, CTR 1,71%, posición 8,4. En 7 días (21–27 oct), 73 clics / 5.950 impresiones, posición 8,5, contra 79 clics / 3.983 impresiones la semana previa. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo en el cuerpo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página ya decía. No se agregó una FAQ.
+
+### 1. /kit-pergola
+
+Title, meta, H1, hero, schema y los botones de WhatsApp de la página iguales. El copy no se tocó.
+
+La página no pintaba el `<footer>` global porque `ClientLayout` la trata como ruta suelta (`STANDALONE_PATHS`): el layout omite header y footer, y la página trae su propio header oscuro. Ahora el mismo `Footer` del resto del sitio se renderiza debajo del contenido. El header global no se agrega, para no duplicar el header propio ni mover el hero. El ancla `footer-creditos` sigue en el párrafo final de la página, así el botón sticky de WhatsApp se esconde en el mismo punto; el footer de esta ruta no repite ese id. `lastmod` sigue en `2026-10-26`.
+
+### 2. /guias/medidas-mesa-comedor
+
+Title, meta, H1 e intro iguales. El párrafo de los 85 cm de alto no se tocó.
+
+Al final de «Mesas a medida para espacios únicos» hay una frase: las medidas de la mesa de centro o mesa ratona están en otra guía, con enlace a `/guias/medidas-mesa-de-centro` y ancla «medidas de la mesa de centro». `updatedAt` `2026-10-28` (`updatedDate` sigue en 2026-10-05, así que en pantalla dice «Actualizado: 28 de octubre de 2026» y el Article usa ese `dateModified`).
+
+### 3. /puertas-interiores
+
+Title, meta y H1 iguales. El H3 «Dormitorio, baño o cocina» pasa a «Puertas de dormitorio, baño o cocina». El párrafo «Una puerta interior separa piezas…» dice que sirve para las puertas de dormitorio y para las de otras piezas de la casa: baño, cocina u oficina. Sigue la hoja a medida y la salvedad de la entrada. No se agregó una FAQ. `updatedAt` `2026-10-28`.
+
+### 4. /peldanos-a-medida
+
+Title, meta, H1 e intro iguales. La intro ya dice «peldaños para escaleras».
+
+La galería muestra huellas y peldaños (flotantes, en obra y en el taller). El H2 «Peldaños de madera en obra y en taller» pasa a «Peldaños y escalones de madera en obra y en taller». La frase de debajo nombra «huellas y escalones fabricados» y deja igual que la estructura y el montaje no se asumen incluidos. No se agregó una FAQ ni un enlace nuevo. `updatedAt` `2026-10-28`.
+
+### Sitemap
+
+74 `<loc>`. `lastmod` `2026-10-28` solo en `/guias/medidas-mesa-comedor`, `/puertas-interiores` y `/peldanos-a-medida`. `/kit-pergola` sigue en `2026-10-26`. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de la guía de comedor, de puertas interiores, de peldaños y del kit.
+- `/collections/veladores`.
+- Páginas editadas el 25, 26 o 27 de octubre que se están midiendo, salvo el layout del kit (sin cambio de copy): cubiertas, la guía del mesón de quincho, comedores nórdicos, molduras, `/collections/mesas`, mesas de centro, la guía de madera para peldaños, la ficha Trípode y puertas con vidrio.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas, materiales, especies, plazos, instalación y fotos.
+- WhatsApp (textos y botones de cada página), Pixel, GTM, GA4, CAPI, feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-27 — Lote 28
 
 Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 28 días al 26 oct, 267 clics / 15.287 impresiones, CTR 1,75%, posición 8,5. En 7 días (20–26 oct), 68 clics / 5.488 impresiones, CTR 1,24%, posición 8,9, contra 80 / 3.836, CTR 2,09%, posición 8,3 la semana 13–19 oct. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página o el catálogo ya publicaban. La FAQ que se ajustó sigue en texto plano, el mismo string en el párrafo y en el FAQPage, sin enlace dentro de la respuesta.
