@@ -1,5 +1,45 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-29 — Lote 30
+
+Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 28 días al 28 oct, 288 clics / 16.976 impresiones, CTR 1,70%, posición 8,4. En 7 días (22–28 oct), 78 clics / 6.465 impresiones, posición 8,6, contra 80 clics / 4.048 impresiones la semana previa. El 28 oct fue el mejor día en clics desde el 19: 18 clics / 1.112 impresiones. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas. Las tres páginas no se editaban desde el 24 de octubre o antes. No se agregó una FAQ. El único texto nuevo nombra la bodega interior, que la página ya cotizaba.
+
+### 1. /puertas-correderas
+
+Title, meta y H1 iguales. 28 días: 76 impresiones, 0 clics, posición 8,7.
+
+El H2 «Qué es la referencia corredera» pasa a «Qué es la referencia de puerta corredera de madera». El H3 «Interior en la foto» pasa a «Corredera de madera de interior en la foto». El párrafo de debajo del H3 no cambia: la referencia es interior y, si el vano es de entrada, la madera y el acabado cambian. No se agregó una FAQ. `updatedAt` `2026-10-29`.
+
+### 2. /mesas-de-comedor-a-medida
+
+Title, meta y H1 iguales. 28 días: 39 impresiones, posición 10,6.
+
+El H2 «Cómo cotizar la mesa a medida» pasa a «Cómo cotizar una mesa de comedor a medida». Los tres pasos de debajo no cambian. No se agregó una FAQ. `updatedAt` `2026-10-29`.
+
+### 3. /puertas-para-locales
+
+Title, meta y H1 iguales. 28 días: 35 impresiones, posición 11,5.
+
+El H3 «Oficina o pieza interior» pasa a «Oficina, bodega o pieza interior». La frase «Una hoja de oficina, consulta o backoffice se cotiza como interior» nombra también la bodega interior: «Una hoja de oficina, consulta, backoffice o bodega interior se cotiza como interior». El resto sigue igual: puede ser lisa, con paneles o con vidrio si mandas la referencia. No se agregó una FAQ. `updatedAt` `2026-10-29`.
+
+### Sitemap
+
+74 `<loc>`. `lastmod` `2026-10-29` solo en `/puertas-correderas`, `/mesas-de-comedor-a-medida` y `/puertas-para-locales`. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de correderas, de mesas de comedor a medida y de puertas para locales.
+- `/collections/veladores`.
+- Páginas editadas entre el 25 y el 28 de octubre que se están midiendo: cubiertas, la guía del mesón de quincho, comedores nórdicos, molduras, `/collections/mesas`, `/collections/sillas`, mesas de centro, las guías de peldaños, las guías de medidas de mesa, la ficha Trípode, el kit pérgola, puertas con vidrio, puertas interiores y peldaños a medida.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas, materiales, especies, plazos, instalación y fotos.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-28 — Lote 29
 
 Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 28 días al 27 oct, 276 clics / 16.120 impresiones, CTR 1,71%, posición 8,4. En 7 días (21–27 oct), 73 clics / 5.950 impresiones, posición 8,5, contra 79 clics / 3.983 impresiones la semana previa. Titles congelados, sin cambio. `/collections/veladores` no se editó ni se enlazó de nuevo en el cuerpo. La antigüedad sigue en 1993. Sin URLs nuevas. Las frases nuevas salen de lo que la página ya decía. No se agregó una FAQ.

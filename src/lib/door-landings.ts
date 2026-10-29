@@ -424,7 +424,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-correderas",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-29",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -471,12 +471,12 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
     width: 956,
     height: 1268,
   },
-  sectionTitle: "Qué es la referencia corredera",
+  sectionTitle: "Qué es la referencia de puerta corredera de madera",
   sectionParagraph:
     "La foto muestra una hoja corredera de madera y vidrio, de interior. Sirve para conversar el diseño, no para elegir un código de producto. Si tu vano, tu vidrio o tu mano de apertura son distintos, partimos de tus medidas. La fábrica de cualquier otra hoja sigue en puertas a medida.",
   featureCards: [
     {
-      title: "Interior en la foto",
+      title: "Corredera de madera de interior en la foto",
       description: "La referencia es interior. Si el vano es de entrada, la madera y el acabado cambian.",
     },
     {

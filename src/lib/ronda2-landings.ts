@@ -180,7 +180,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
 
 export const puertasLocalesLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-para-locales",
-  updatedAt: "2026-10-21",
+  updatedAt: "2026-10-29",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -235,9 +235,9 @@ export const puertasLocalesLandingConfig: ServiceLandingConfig = {
     "El taller hace la hoja a medida para hogares y también para negocios: locales, oficinas y bodegas. Esta página es ese segundo caso. Si la puerta es de una casa, parte en puertas interiores o en puertas de entrada, según el vano.",
   featureCards: [
     {
-      title: "Oficina o pieza interior",
+      title: "Oficina, bodega o pieza interior",
       description:
-        "Una hoja de oficina, consulta o backoffice se cotiza como interior. Puede ser lisa, con paneles o con vidrio si mandas la referencia.",
+        "Una hoja de oficina, consulta, backoffice o bodega interior se cotiza como interior. Puede ser lisa, con paneles o con vidrio si mandas la referencia.",
     },
     {
       title: "Acceso del local",
@@ -491,7 +491,7 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
 
 export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/mesas-de-comedor-a-medida",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-29",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Muebles a medida", path: "/muebles-a-medida" },
@@ -603,7 +603,7 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
       ],
     },
   ],
-  stepsTitle: "Cómo cotizar la mesa a medida",
+  stepsTitle: "Cómo cotizar una mesa de comedor a medida",
   steps: [
     {
       title: "Mide el comedor",
