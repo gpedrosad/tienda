@@ -592,7 +592,7 @@ export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
 
 export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-madera-nativa",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-30",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -641,7 +641,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
     caption:
       "Las referencias del taller muestran hojas dobles, y el vano real manda. La especie se confirma al cotizar, no sale de la foto.",
   },
-  sectionTitle: "Qué madera publicamos para una puerta",
+  sectionTitle: "Qué madera publicamos para las puertas de madera nativa",
   sectionParagraph:
     "En puertas, el material publicado es madera nativa seca en cámara: maderas nobles del sur de Chile, seleccionadas. El secado en cámara es el dato que damos para estabilidad. El nombre de la especie no está en la ficha: sale en la propuesta, cuando vemos si la hoja es interior o exterior.",
   featureCards: [
@@ -650,7 +650,7 @@ export const puertasMaderaNativaLandingConfig: ServiceLandingConfig = {
       description: "Maderas nobles del sur, nativas. No copiamos la madera de una silla o de una cubierta.",
     },
     {
-      title: "Según el uso",
+      title: "Interior o exterior",
       description: "Dormitorio, baño, cocina o entrada no piden lo mismo. El uso va en el mensaje.",
     },
     {

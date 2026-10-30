@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-30
+
+- **Lote 31:** `/guias/elegir-sillas-madera-comedor`: H2 «Medidas de una silla de comedor de madera: altura de asiento y mesa»; cifras de debajo iguales. `/muebles-de-cocina-chillan`: H2 «Muebles de cocina a medida en Chillán»; el párrafo no cambia. `/puertas-madera-nativa`: H2 «Qué madera publicamos para las puertas de madera nativa» y H3 «Interior o exterior». `updatedAt` 2026-10-30 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-29
 
 - **Lote 30:** `/puertas-correderas`: H2 «Qué es la referencia de puerta corredera de madera» y H3 «Corredera de madera de interior en la foto». `/mesas-de-comedor-a-medida`: H2 «Cómo cotizar una mesa de comedor a medida»; los pasos no cambian. `/puertas-para-locales`: H3 «Oficina, bodega o pieza interior» y la frase nombra la bodega interior. `updatedAt` 2026-10-29 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
