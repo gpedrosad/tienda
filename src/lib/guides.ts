@@ -599,7 +599,7 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-30",
   pageTitle: "Sillas de Madera para Comedor | Altura, Ancho y Cantidad",
   pageDescription:
     "Sillas de madera para comedor: asiento de 45 a 48 cm con mesas de 75 cm, y cuántas caben según el largo. Revisa la colección o cotiza por WhatsApp.",
@@ -618,7 +618,7 @@ export const elegirSillasGuideConfig: GuideConfig = {
   updatedDate: "2026-10-15",
   sections: [
     {
-      title: "Medidas de una silla de comedor: altura de asiento y mesa",
+      title: "Medidas de una silla de comedor de madera: altura de asiento y mesa",
       content: [
         "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Para que las piernas queden en ángulo de 90° y los pies apoyen bien, el asiento de la silla debe estar entre 45 y 48 cm de alto.",
         "La distancia entre el asiento y la superficie de la mesa debe ser de 27-30 cm. Eso da espacio para las piernas sin que las rodillas choquen con la estructura de la mesa.",
