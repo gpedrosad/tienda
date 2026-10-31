@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-10-31
+
+- **Lote 32:** `/muebles-chillan`: H2 «Fábrica de muebles en Chillán para cada espacio del hogar». El hero ya decía «taller y fábrica de muebles en Chillán» y no se reescribió; «sitiales de madera» enlaza `/collections/sitiales` y el párrafo de la sección enlaza «futón de madera» a `/collections/futon`. `/collections/sitiales`: H1 «Sitiales de madera» e intro con Hank Nogal y Hank Negro. `/collections/futon`: H1 «Futones de madera» e intro con el Futón Noruega. Titles y metas iguales. `updatedAt` 2026-10-31 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-30
 
 - **Lote 31:** `/guias/elegir-sillas-madera-comedor`: H2 «Medidas de una silla de comedor de madera: altura de asiento y mesa»; cifras de debajo iguales. `/muebles-de-cocina-chillan`: H2 «Muebles de cocina a medida en Chillán»; el párrafo no cambia. `/puertas-madera-nativa`: H2 «Qué madera publicamos para las puertas de madera nativa» y H3 «Interior o exterior». `updatedAt` 2026-10-30 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.

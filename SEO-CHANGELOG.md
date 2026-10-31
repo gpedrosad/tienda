@@ -1,5 +1,55 @@
 # SEO Changelog — Idea Madera
 
+## 2026-10-31 — Lote 32
+
+Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 90 días al 30 oct, 740 clics / 36.687 impresiones, posición 9,3. En 7 días (24–30 oct), 94 clics / 7.421 impresiones, posición 8,4, contra 80 clics / 4.656 impresiones, posición 8,9 la semana previa. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log`, `/muebles-chillan` no se editaba desde el 24 de octubre (Lote 24; el bloque de config no cambia desde el Lote 25, el mismo día). `/collections/sitiales` seguía en `updatedAt` 2026-08-02 y `/collections/futon` en 2026-06-24. No se agregó una FAQ.
+
+### 1. /muebles-chillan
+
+Title, meta y H1 iguales. 90 días: 80 clics / 1.622 impresiones, posición 8,5. En 7 días: 10 clics / 211 impresiones, posición 6,7, contra 4 clics / 135 impresiones, posición 8,3.
+
+Ningún H2 ni H3 decía «fábrica de muebles en Chillán». El H2 más cercano al taller es el de la sección de espacios. «Mueblería en Chillán para cada espacio del hogar» pasa a «Fábrica de muebles en Chillán para cada espacio del hogar». El primer párrafo útil ya cerraba con «es taller y fábrica de muebles en Chillán» y no se reescribió por eso. En esa misma frase, «sitiales» pasa a un enlace «sitiales de madera» hacia `/collections/sitiales`. En el párrafo de debajo del H2, la lista del catálogo suma el «futón de madera» con enlace a `/collections/futon`. El resto del párrafo no cambia: sigue «Somos fábrica de muebles en Chillán» y los enlaces a cubiertas, puertas, peldaños, molduras y muebles a medida. No se agregó una FAQ. `updatedAt` `2026-10-31`.
+
+### 2. /collections/sitiales
+
+`metadataTitle` y la meta description iguales. El H1 «Sitiales» pasa a «Sitiales de madera». La colección no tenía `intro` ni H2 propio: el texto bajo el H1 era la primera frase de la meta. Ahora hay un intro de tres frases, solo con lo que muestran las fichas con foto (Sitial Hank Nogal y Sitial Hank Negro) y el uso de living, comedor y espacios de estar que la description ya decía. El Hank Nogal queda como madera nogal para living, hall o espacios de descanso. El Hank Negro queda como sillón individual de madera maciza con barniz negro, para living, sala de lectura, oficina o dormitorio principal. La tercera frase enlaza «muebles a medida» y «mueblería en Chillán» para cotizar. El Sillón Lombardo no tiene foto y no se nombra. No se agregó una FAQ ni un H2 de guía. `updatedAt` `2026-10-31`.
+
+### 3. /collections/futon
+
+`metadataTitle` y la meta description iguales. El H1 «Futones» pasa a «Futones de madera». Tampoco tenía intro ni H2. El intro nombra el único modelo con foto, el Futón Noruega: estructura de madera maciza y diseño nórdico inspirado, para living o dormitorio de visitas, con asiento extra y posibilidad de descanso. La terminación y las medidas se cotizan, como ya decía la ficha. La tercera frase enlaza las mismas dos páginas para cotizar. No se agregó una FAQ ni un H2 de guía. `updatedAt` `2026-10-31`.
+
+Los enlaces del intro se pintan con `InlineLinkedText`, el mismo marcado que ya usan los párrafos de guía de otras colecciones. Las intros de mesas, sillas y veladores no traen enlaces, así que su texto no cambia.
+
+### 4. Enlaces internos
+
+Solo se agregaron. `/collections/sitiales` recibe «sitiales de madera» desde el hero de `/muebles-chillan`. `/collections/futon` recibe «futón de madera» desde el párrafo de esa misma página. Las fichas ya enlazaban su colección por el breadcrumb; no se editaron. No se tocó una página congelada para estos enlaces.
+
+### 5. Informe, sin editar
+
+`/collections/mesas` (17,3 → 23,8 en 7 días, 250 impresiones) y `/comedores-nordicos` (13,5 → 16,8) no se editaron. El canonical de mesas es `/collections/mesas`, sin `?page=`. La página no pagina: `?page=1` responde 308 a la URL limpia; `?page=2` o más no se redirige, pero la página ignora el parámetro y el canonical sigue limpio. No hay una segunda plantilla de mesas. La colección se editó el 26 de octubre (enlace a sillas), dentro de esta ventana de 7 días. La consulta amplia «mesa» (3.100 impresiones, posición 6,5 en 90 días) y «mesas» (353 impresiones, posición 18,1) mueven el promedio con poca muestra.
+
+`/comedores-nordicos` tiene canonical propio. `/products/mesa-nordica` se distingue en el texto: es la mesa de 160 × 90 cm y enlaza el conjunto. Esa ficha rankea bien para «mesa nordica» (posición 2,9) y mal para «comedores nordicos» (posición 45), porque el cuerpo nombra el conjunto. El hub también lista el Futón Noruega entre las piezas nórdicas. No es un canonical cruzado.
+
+Después del 5 de noviembre, con un pull nuevo: en mesas, separar «mesa», «mesas» y «mesas de comedor» antes de tocar el title, y pedir recrawl de la URL limpia si `?page=1` sigue con impresiones. En comedores nórdicos, no juntar las dos URLs. Si el hub sigue perdiendo «comedores nórdicos» y la ficha sigue en una posición mala para esa consulta, dejar la consulta del conjunto solo en el enlace que la ficha ya tiene, y medir el title del hub recién entonces. Titles congelados hasta esa fecha.
+
+### Sitemap
+
+74 `<loc>`. `lastmod` `2026-10-31` solo en `/muebles-chillan`, `/collections/sitiales` y `/collections/futon`. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de `/muebles-chillan`.
+- `/collections/veladores` (`updatedAt` `2026-10-16`).
+- Páginas editadas después del 24 de octubre que se están midiendo: `/collections/mesas`, `/collections/sillas`, comedores nórdicos, molduras, cubiertas, mesas de centro, kit pérgola, puertas a medida, exteriores, interiores, con vidrio, correderas, para locales, madera nativa, mesas de comedor a medida, muebles de cocina en Chillán, escaleras de madera, peldaños a medida, peldaños flotantes, las guías de peldaños, mesas, sillas, quincho y puertas, `/products/mesa-tripode-ratona`, `/products/mesa-centro-roma` y la home.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas, materiales, especies, plazos, instalación, envíos y fotos. El Sillón Lombardo sigue fuera del texto porque no tiene foto.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-30 — Lote 31
 
 Datos del encargo (Search Console, pull del encargo, no un pull nuevo de este entorno): 28 días al 29 oct, 290 clics / 17.834 impresiones, CTR 1,63%, posición 8,4. En 7 días (23–29 oct), 80 clics / 6.915 impresiones, posición 8,4, contra 79 clics / 4.268 impresiones la semana previa. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log` por bloque, la guía de sillas y la página de madera nativa no se editaban desde el 24 de octubre, y muebles de cocina desde el 23. Nada de esas tres entre el 25 y el 29. No se agregó una FAQ. El texto de debajo de cada encabezado no cambia.

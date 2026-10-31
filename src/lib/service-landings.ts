@@ -1603,7 +1603,7 @@ export const mueblesCocinaChillanLandingConfig: ServiceLandingConfig = {
 
 export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/muebles-chillan",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-10-31",
   pageTitle: "Mueblería en Chillán | Fábrica de Muebles de Madera",
   pageDescription:
     "Mueblería y fábrica de muebles en Chillán: mesas, sillas, bancas de madera maciza y piezas a medida. Cotiza por WhatsApp con envío a todo Chile.",
@@ -1618,7 +1618,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   eyebrow: "Mueblería y Fábrica en Chillán",
   h1: "Mueblería en Chillán: Fábrica de muebles de madera",
   heroParagraph:
-    `Si buscas mueblerías en Chillán, este es el taller: fábrica y mueblería en Chillán ${SINCE_FOUNDING}, con fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y sitiales del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta [muebles a medida](/muebles-a-medida) en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.`,
+    `Si buscas mueblerías en Chillán, este es el taller: fábrica y mueblería en Chillán ${SINCE_FOUNDING}, con fabricación propia de muebles de madera maciza, venta directa y cotización por WhatsApp. Mesas, sillas, bancas, veladores y [sitiales de madera](/collections/sitiales) del catálogo; también proyectos a medida como cubiertas, puertas y peldaños (consulta [muebles a medida](/muebles-a-medida) en madera). Si estás en Ñuble puedes coordinar medidas y despacho local; si estás en otra región, el catálogo y el envío siguen siendo los mismos. No es una sucursal de vitrina: es taller y fábrica de muebles en Chillán.`,
   badges: ["Fábrica en Chillán", SINCE_FOUNDING_LABEL, "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar muebles por WhatsApp",
   whatsappProductTitle: "Muebles Chillán",
@@ -1647,9 +1647,9 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
     width: 1920,
     height: 1920,
   },
-  sectionTitle: "Mueblería en Chillán para cada espacio del hogar",
+  sectionTitle: "Fábrica de muebles en Chillán para cada espacio del hogar",
   sectionParagraph:
-    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores y muebles de living del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas ([cubiertas](/cubiertas-a-medida), [puertas](/puertas-a-medida), [peldaños](/peldanos-a-medida), [molduras](/molduras-a-medida)), visita nuestra página de [muebles a medida](/muebles-a-medida) en madera.",
+    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores, muebles de living y el [futón de madera](/collections/futon) del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas ([cubiertas](/cubiertas-a-medida), [puertas](/puertas-a-medida), [peldaños](/peldanos-a-medida), [molduras](/molduras-a-medida)), visita nuestra página de [muebles a medida](/muebles-a-medida) en madera.",
   featureCards: [
     {
       title: "Comedor",
