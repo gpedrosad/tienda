@@ -193,7 +193,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                 {collection.h1}
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted md:text-base">
-                {introLead}
+                <InlineLinkedText text={introLead} />
               </p>
             </div>
           </div>
@@ -267,7 +267,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       {introRest ? (
         <section className="border-t border-line">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
-            <p className="text-sm leading-relaxed text-ink-muted md:text-base">{introRest}</p>
+            <p className="text-sm leading-relaxed text-ink-muted md:text-base">
+              <InlineLinkedText text={introRest} />
+            </p>
           </div>
         </section>
       ) : null}

@@ -270,11 +270,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
     ],
   },
   sitiales: {
-    updatedAt: "2026-08-02",
-    h1: "Sitiales",
+    updatedAt: "2026-10-31",
+    h1: "Sitiales de madera",
     metadataTitle: "Sitiales y Sillones de Madera | Living Chile",
     description:
       "Sitiales y sillones de madera para living, comedor y espacios de estar. Estructura sólida, fabricación chilena y cotización directa por WhatsApp.",
+    intro:
+      "Los sitiales de madera de este catálogo son el Sitial Hank Nogal y el Sitial Hank Negro, para living, comedor y espacios de estar. El Hank Nogal es de madera nogal, para living, hall o espacios de descanso, y el Hank Negro es un sillón individual de madera maciza con barniz negro, para living, sala de lectura, oficina o dormitorio principal. Para cotizar, revisa [muebles a medida](/muebles-a-medida) o la [mueblería en Chillán](/muebles-chillan).",
   },
   percheros: {
     updatedAt: "2026-06-24",
@@ -291,11 +293,13 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Pisos y asientos altos de madera para barras de cocina. Fabricación en Chile. Cotiza por WhatsApp con envío nacional.",
   },
   futon: {
-    updatedAt: "2026-06-24",
-    h1: "Futones",
+    updatedAt: "2026-10-31",
+    h1: "Futones de madera",
     metadataTitle: "Futones de Madera para Living y Dormitorio",
     description:
       "Futones con estructura de madera para living o dormitorio de visitas. Diseño funcional con estética cálida. Cotiza medidas y terminación por WhatsApp.",
+    intro:
+      "El futón de madera de este catálogo es el Futón Noruega: estructura de madera maciza y diseño nórdico inspirado, para living o dormitorio de visitas. Aporta asiento extra y posibilidad de descanso, y la terminación y las medidas se cotizan. Para cotizar, revisa [muebles a medida](/muebles-a-medida) o la [mueblería en Chillán](/muebles-chillan).",
   },
 };
 
