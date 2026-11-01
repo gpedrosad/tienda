@@ -30,7 +30,7 @@ const clusterAndWorkshop = [
 
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
-  updatedAt: "2026-10-25",
+  updatedAt: "2026-11-01",
   pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
   pageDescription:
     "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
@@ -57,9 +57,9 @@ export const medidasPeldanosGuideConfig: GuideConfig = {
   serviceType: "Huellas de madera según las medidas del proyecto",
   sections: [
     {
-      title: "Huella, contrahuella y peldaño",
+      title: "Huella y contrahuella: qué son y cómo se miden",
       content: [
-        "En el pedido del taller, el peldaño es la pieza donde se pisa y la huella es su cara horizontal. La contrahuella cierra el frente, en vertical. En [peldaños a medida](/peldanos-a-medida) fabricamos la huella. La contrahuella no viene incluida: si la necesitas, la pides en el mismo mensaje.",
+        "La huella es la superficie de apoyo del peldaño, la cara horizontal donde apoyas el pie, y como referencia de confort el fondo queda cerca de 25 a 30 cm. La contrahuella es la altura entre peldaños, cerca de 15 a 18 cm, y cierra el frente en vertical. En [peldaños a medida](/peldanos-a-medida) fabricamos la huella; la contrahuella no viene incluida y, si la necesitas, la pides en el mismo mensaje.",
         "Dos palabras del pedido se prestan a confusión. El largo del peldaño es el ancho de la escalera, de muro a muro o de zanca a zanca. El ancho o fondo es la profundidad de la pisada, lo que el pie recorre hacia adelante. Cuando escribas por WhatsApp, usa las dos cifras con su nombre.",
       ],
       bullets: [
