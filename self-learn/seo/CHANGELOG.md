@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-11-01
+
+- **Lote 33:** `/guias/medidas-peldanos-escalera`: H2 «Huella y contrahuella: qué son y cómo se miden» y el primer párrafo define huella (superficie de apoyo, 25 a 30 cm) y contrahuella (altura entre peldaños, 15 a 18 cm) con cifras que la guía ya tenía. La FAQ «¿Cuánto mide una contrahuella?» ya existía y no se duplicó. El enlace a `/peldanos-a-medida` ya estaba. `/products/mesa-tripode-ratona`: la descripción dice «mesa ratona de madera»; el enlace a `/mesas-de-centro` ya estaba. Title y meta iguales. `/peldanos-a-medida` no se editó (última edición 2026-10-28). `updatedAt` 2026-11-01 solo en la guía y en la ficha. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-10-31
 
 - **Lote 32:** `/muebles-chillan`: H2 «Fábrica de muebles en Chillán para cada espacio del hogar». El hero ya decía «taller y fábrica de muebles en Chillán» y no se reescribió; «sitiales de madera» enlaza `/collections/sitiales` y el párrafo de la sección enlaza «futón de madera» a `/collections/futon`. `/collections/sitiales`: H1 «Sitiales de madera» e intro con Hank Nogal y Hank Negro. `/collections/futon`: H1 «Futones de madera» e intro con el Futón Noruega. Titles y metas iguales. `updatedAt` 2026-10-31 solo en esas tres. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.

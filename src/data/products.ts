@@ -607,7 +607,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-tripode-ratona",
-    updatedAt: "2026-10-25",
+    updatedAt: "2026-11-01",
     name: "Mesa ratona trípode",
     price: 399990,
     category: "Mesas",
@@ -615,7 +615,7 @@ export const products: Product[] = [
     shortPitch:
       "Mesa ratona trípode de madera maciza para el living: mesa de centro baja, patas inclinadas, 100 × 60 × 40 cm.",
     description:
-      "Esta mesa ratona es una mesa de centro trípode para el living: tres patas inclinadas, madera maciza y barniz natural. Mide 100 × 60 × 40 cm y vale $399.990. Va frente al sofá; las patas dejan espacio para las piernas y la pieza se ve liviana. Otras opciones están en [mesas de centro](/mesas-de-centro). El largo, el fondo y la altura de una mesa de centro se explican en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
+      "Esta mesa ratona de madera es una mesa de centro trípode para el living: tres patas inclinadas, madera maciza y barniz natural. Mide 100 × 60 × 40 cm y vale $399.990. Va frente al sofá; las patas dejan espacio para las piernas y la pieza se ve liviana. Otras opciones están en [mesas de centro](/mesas-de-centro). El largo, el fondo y la altura de una mesa de centro se explican en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
     features: [
       "Mesa trípode de madera maciza",
       "Mesa ratona y mesa de centro baja",

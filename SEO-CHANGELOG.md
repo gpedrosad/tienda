@@ -1,5 +1,63 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-01 — Lote 33
+
+Datos del encargo (Search Console, pull del encargo, no un pull nuevo de este entorno): 90 días 3 ago→31 oct, 746 clics / 38.563 impresiones, posición 9,2. En 7 días (25–31 oct), 88 clics / 7.130 impresiones, posición 8,4, contra 84 clics / 4.965 impresiones, posición 8,9 la semana previa. El 31 oct aún incompleto. Titles congelados, sin cambio. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log` por bloque, la guía de medidas de peldaños no cambia de texto desde el 25 de octubre (el commit del 27 oct solo tocó la otra guía del mismo archivo, `/guias/elegir-madera-peldanos`). La ficha Trípode ratona no cambia de texto desde el 25 de octubre (el commit del 26 oct en `products.ts` solo movió el `updatedAt` de la Silla Milán). `/peldanos-a-medida` se editó el 28 de octubre y no se tocó.
+
+### 1. /guias/medidas-peldanos-escalera
+
+Title, meta y H1 iguales. 7 días: 5 clics / 1.096 impresiones, posición 5,0, contra 0 clics / 55 impresiones. 90 días: 5 clics / 1.151 impresiones.
+
+El H2 «Huella, contrahuella y peldaño» pasa a «Huella y contrahuella: qué son y cómo se miden». El primer párrafo de ese H2 abre con la definición y las cifras que la guía ya publicaba: la huella es la superficie de apoyo del peldaño (la cara horizontal donde apoyas el pie) y el fondo queda cerca de 25 a 30 cm; la contrahuella es la altura entre peldaños, cerca de 15 a 18 cm, y cierra el frente en vertical. La misma frase sigue diciendo que en peldaños a medida se fabrica la huella y que la contrahuella no viene incluida. El enlace a `/peldanos-a-medida` ya estaba en ese párrafo, en «De la medida a la cotización» y en «También te puede interesar»; no se duplicó. El segundo párrafo, las viñetas, la tabla y la intro no cambian. La intro ya abría con 25 a 30 cm, 15 a 18 cm, 63 cm y la banda de 60 a 64 cm.
+
+La FAQ «¿Cuánto mide una contrahuella?» ya existía desde el Lote 26, con 15 a 18 cm, 63 cm y 60 a 64 cm, sin enlace dentro de la respuesta. No se agregó otra. `updatedAt` `2026-11-01` (`updatedDate` sigue en `2026-10-17`, así que en pantalla dice «Actualizado: 1 de noviembre de 2026» y el Article usa ese `dateModified`).
+
+### 2. /peldanos-a-medida — no se editó
+
+Title, meta y H1 iguales. 90 días: 36 clics / 1.105 impresiones, posición 9,4. Última edición de contenido: 28 de octubre (Lote 29, `updatedAt` `2026-10-28`). El archivo `service-landings.ts` también se tocó el 30 y el 31 de octubre, en otras landings del mismo archivo. Queda fuera de este lote.
+
+El texto ya cubre lo que pedía el encargo, así que no hace falta reabrirlo cuando se descongelen los títulos solo por estas consultas. El párrafo bajo «Peldaños de madera a medida para cada espacio» ya dice «peldaños para escaleras» y «Los peldaños de madera se cortan». El H2 de la galería es «Peldaños y escalones de madera en obra y en taller». Ya enlaza la guía de medidas, `/escaleras-de-madera` y `/peldanos-flotantes` en el cuerpo y en «También te puede interesar».
+
+### 3. /products/mesa-tripode-ratona
+
+Title igual: `Mesa Ratona Trípode 100×60×40 cm | Living`. Meta igual. H1 igual (`Mesa ratona trípode`). El pitch no cambia.
+
+La descripción visible no decía «mesa ratona de madera» seguido. La primera frase pasa de «Esta mesa ratona es una mesa de centro trípode…» a «Esta mesa ratona de madera es una mesa de centro trípode…». El resto de la frase ya decía madera maciza, barniz natural, tres patas inclinadas, 100 × 60 × 40 cm y $399.990. El enlace a [mesas de centro](/mesas-de-centro) ya estaba en esa descripción; no se editó `/mesas-de-centro`. El enlace suelto a la guía de medidas de mesa de centro se mantiene. `updatedAt` `2026-11-01`.
+
+`merchant-feed.ts` no se editó. El ítem de esta ficha en `/feed/google.xml` toma `product.description`, así que el texto de ese ítem sigue el cuerpo nuevo.
+
+### 4. Informe, sin editar
+
+`/escaleras-de-madera` bajó de 4 clics / 134 impresiones a 1 clic / 110 impresiones en 7 días. No hay un fallo técnico nuevo. El canonical es la propia URL. El title y la meta no cambian desde el 16 de octubre (`Escaleras de Madera: Huellas a Medida | Chile`; la meta dice que se fabrican las huellas, no la estructura ni el montaje). El cuerpo se editó el 24 de octubre, antes de esta ventana. La misma foto de escalera barnizada también está en `/peldanos-a-medida`. La guía de huella y contrahuella, en esta semana, tiene 1.096 impresiones en posición 5,0: las consultas informativas de medida pueden estar saliendo en la guía y no en esta landing. La baja es de 3 clics y 24 impresiones, con el 31 oct incompleto. Cuando se descongelen los títulos, no reescribir el title para prometer una escalera armada: el taller publica huellas. Si en el pull del 5 de noviembre la página sigue perdiendo «escaleras de madera» y la guía se queda con las consultas de medida, dejar la medida en la guía y medir el title de la landing recién entonces.
+
+`/cubiertas-a-medida` bajó de 9 a 6 clics. El title y la meta no cambian desde el 6 de octubre (`Mesones para Quincho y Cubiertas de Madera a Medida`). El canonical es la propia URL. El 25 de octubre el hero y un H2 pasaron a nombrar «mesones de madera» y a enlazar la guía del quincho: eso cae el primer día de esta ventana de 7 días. No hay un segundo template ni un `noindex`. Tres clics, con el 31 oct incompleto, no alcanzan para cambiar el title antes del corte. En el pull del 5 de noviembre, separar «cubiertas» de «mesón de quincho» antes de mover el title. Si «cubiertas a medida» perdió el clic y «mesón» lo ganó, el title puede volver a abrir con cubiertas; si no, dejarlo.
+
+`/collections/mesas` sigue en posición 23,6 en 7 días (en el Lote 32, la ventana anterior daba 23,8). El canonical es `/collections/mesas`. `?page=1` responde 308 a la URL limpia; `?page=2` o más no se redirige, la página ignora el parámetro y el canonical sigue limpio. El title vigente, con la marca, es `Mesas de Comedor de Madera y Ratonas | Chile | Idea Madera` (58). No se editó en este lote. El cuerpo se tocó el 26 de octubre (enlace a sillas), dentro de la ventana. La consulta amplia «mesa» / «mesas» sigue empujando el promedio, como quedó anotado en el Lote 32. Después del 5 de noviembre, separar «mesa», «mesas» y «mesas de comedor» antes de tocar el title, y pedir recrawl de la URL limpia si `?page=1` sigue con impresiones.
+
+Propuesta para cuando se descongelen los títulos (~5 nov), sin implementarla:
+
+- `/kit-pergola`. Hoy el title absoluto es `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` (55) y la meta (142) abre con «Kit de uniones metálicas y bases para pérgola de madera 3×3». «kit pergola» tiene 448 impresiones, posición 6,3 y 7 clics; «kit para pergola» 94 impresiones y 0 clics; «uniones para pergolas» 38 impresiones y 0 clics. El H1 y el primer párrafo ya dicen «kit para pérgola» y «uniones para pérgola», y que la madera no viene. Title propuesto, también absoluto y sin marca extra: `Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas` (48). Meta propuesta: `Kit para pérgola: uniones para pérgolas y bases metálicas 3×3 (75×75 mm), sin maderas. Atornillar o cementar. Cotiza por WhatsApp.` (130). Sigue diciendo que no trae maderas y que la sección es 75×75 mm, que la página ya publica.
+
+- `/puertas-a-medida`. Hoy el title es `Puertas de Madera a Medida | Fábrica en Chillán` (47) y la meta (144) ya abre con «Fábrica de puertas de madera a medida en Chillán». «puertas a medida» tiene 324 impresiones, posición 10,3 y 9 clics; «fabrica de puertas de madera a medida» 77 impresiones, posición 9,6 y 0 clics. El H1 ya es «Fábrica de puertas de madera a medida en Chillán». Title propuesto: `Fábrica de Puertas de Madera a Medida | Chillán` (47). Meta: dejar la vigente. Ya nombra la fábrica, el vano y el envío a Chile; cambiarla no agrega un dato que la página no diga. El plan del 17 oct mantiene el title si el CTR de la página queda en 2% o más: revisar ese umbral en el pull del 5 de noviembre antes de aplicar el cambio.
+
+### Sitemap
+
+74 `<loc>`. `lastmod` `2026-11-01` solo en `/guias/medidas-peldanos-escalera` y `/products/mesa-tripode-ratona`. Veladores sigue en `2026-10-16`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de la guía de peldaños, de peldaños a medida y de la ficha.
+- `/peldanos-a-medida` (editada el 28 de octubre).
+- Páginas editadas del 26 al 31 de octubre, y lo tocado en los Lotes 29–32: `/collections/mesas`, comedores nórdicos, molduras, mesas de centro, la guía de medidas de comedor, la guía de sillas, sitiales, futón, `/muebles-chillan`, y el resto que esos lotes listan. La home.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas, materiales, especies, plazos, instalación, envíos, normas y fotos. La fórmula de dos contrahuellas más una huella ya estaba en la guía y no se reescribió.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, el generador del feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-10-31 — Lote 32
 
 Datos del encargo (Search Console, pull de hoy, no un pull nuevo de este entorno): 90 días al 30 oct, 740 clics / 36.687 impresiones, posición 9,3. En 7 días (24–30 oct), 94 clics / 7.421 impresiones, posición 8,4, contra 80 clics / 4.656 impresiones, posición 8,9 la semana previa. Titles congelados, sin cambio. `/collections/veladores` no se editó. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log`, `/muebles-chillan` no se editaba desde el 24 de octubre (Lote 24; el bloque de config no cambia desde el Lote 25, el mismo día). `/collections/sitiales` seguía en `updatedAt` 2026-08-02 y `/collections/futon` en 2026-06-24. No se agregó una FAQ.
