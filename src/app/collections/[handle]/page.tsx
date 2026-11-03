@@ -274,6 +274,28 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         </section>
       ) : null}
 
+      {collection.textSections && collection.textSections.length > 0 && !collection.isEmpty ? (
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+            {collection.textSections.map((section) => (
+              <div key={section.title} className="mt-10 first:mt-0">
+                <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">
+                  {section.title}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    className="mt-4 text-sm leading-relaxed text-ink-muted md:text-base"
+                  >
+                    <InlineLinkedText text={paragraph} />
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {collection.guideTitle && collection.guideParagraphs && !collection.isEmpty ? (
         <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">

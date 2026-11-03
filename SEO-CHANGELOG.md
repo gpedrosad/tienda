@@ -1,5 +1,89 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-03 — Lote 34
+
+Datos del encargo (Search Console, pull del encargo, no un pull nuevo de este entorno): 90 días 4 ago→1 nov, 751 clics / 38.054 impresiones, posición 9,3. En 7 días (26 oct–1 nov), 94 clics / 7.211 impresiones, posición 8,3, contra 79 clics / 5.133 impresiones, posición 9,0 la semana previa (19–25 oct). Titles congelados, sin cambio. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log -L` del bloque, `/collections/veladores` no cambia de texto desde el 16 de octubre (el commit del 17 oct solo agregó `updatedAt`). `/puertas-de-madera-con-vidrio` y `/puertas-exteriores` no cambian desde el 26 de octubre. `/guias/medidas-mesa-comedor` y `/puertas-interiores` se editaron el 28 de octubre y no se tocaron.
+
+### 1. /collections/veladores
+
+Title, meta y H1 iguales. El title absoluto sigue en `Veladores de Madera para Dormitorio | Chillán | Idea Madera` (59). La meta sigue en 147 caracteres y abre con «Veladores de madera para dormitorio». 7 días de la página: 1 clic / 277 impresiones, contra 2 clics / 232 impresiones. «veladores de madera»: 7 días 0 clics / 147 impresiones, posición 3,7 (90 días 2 clics / 1.739 impresiones, posición 4,7). También «veladores para dormitorio» 30 impresiones, posición 4,3; «veladores de madera para dormitorios» 28 impresiones, posición 6,9; «medidas velador» 28 impresiones, posición 18; «altura velador» 15 impresiones, posición 8,8; «velador de madera» 23 impresiones, posición 26,5.
+
+No hay un fallo técnico en la colección. El canonical es `/collections/veladores`. El listado es HTML de servidor: la única ficha con foto es el Velador Cubo, con `alt` de nombre, material y ancho. El ItemList nombra esa ficha y su URL; no publica precio ni `availability` (el Offer está en la ficha, con precio 270000 CLP y `https://schema.org/InStock`). El Velador Tokio no tiene foto ni medidas y no entra al listado ni al sitemap.
+
+El cuerpo no decía las medidas del catálogo. Bajo el listado hay dos H2 nuevos. «Veladores de madera para dormitorio» nombra el Velador Cubo (madera maciza, barniz natural, dormitorio) y enlaza la ficha, [mesas de madera](/collections/mesas) y [muebles a medida](/muebles-a-medida). «Medidas de un velador» dice solo lo que está en `products.ts`: 45 cm de ancho, 45 cm de fondo y 50 cm de alto, y aclara que no es una altura estándar del taller. El H2 y la guía de «cómo elegir» no se reescribieron: siguen con el rango 50-70 cm que la página ya publicaba. No se agregó una FAQ. `updatedAt` `2026-11-03`.
+
+### 2. /guias/medidas-mesa-comedor — no se editó
+
+Title, meta y H1 iguales. El title absoluto sigue en `Medidas de Mesa de Comedor | Personas y Altura 75 cm` (52): cabe sin agregar la marca. 7 días: 1 clic / 1.405 impresiones, posición 7,5, contra 6 clics / 1.285 impresiones, posición 8,5 la semana previa. «altura mesa comedor» 43 impresiones, posición 11,9; «medidas mesa comedor 6 personas» 12 impresiones, posición 6,4; «altura de una mesa de comedor» 9 impresiones, posición 9,2.
+
+Última edición de contenido: 28 de octubre (Lote 29, una frase al final que enlaza la guía de mesa de centro). `updatedAt` sigue en `2026-10-28`. Queda fuera de este lote.
+
+No hay un fallo técnico nuevo. El canonical es la propia URL. El Article tiene headline, autor, publisher y fechas (`datePublished` 2026-10-05, `dateModified` 2026-10-28) y el BreadcrumbList tiene Inicio, Guías y la guía. Esta guía no tiene foto propia, así que el Article no inventa `image`; Open Graph sigue con el logo, como antes. No hay `noindex` ni un segundo template.
+
+La misma frase «La altura estándar de una mesa de comedor es 75 cm» está también al inicio de «Medidas de una silla de comedor de madera» en `/guias/elegir-sillas-madera-comedor`. Esa guía tiene canonical propio y, en este pull, «altura mesa comedor» con 14 impresiones, posición 11,9: la misma posición, con menos impresiones. El enlace a esta guía ya está en «También te puede interesar» de la guía de sillas; el párrafo de la altura no lleva el enlace. No es un canonical cruzado. La guía de sillas se editó el 30 de octubre y tampoco se tocó.
+
+La semana sube en impresiones (1.285 → 1.405) y mejora la posición (8,5 → 7,5) mientras bajan los clics (6 → 1). Eso es CTR, no una caída de indexación. El title ya abre con medidas, personas y altura 75 cm, y sigue congelado.
+
+Propuesta para ~5 nov, sin implementarla: no mover «altura mesa comedor» fuera de esta guía. Cuando la guía de sillas salga de su ventana, dejar los 75 cm ahí solo como referencia del asiento (45-48 cm y 27-30 cm) y enlazar la definición a esta guía desde ese párrafo, sin duplicar la frase de apertura. El title de esta guía no se reescribe hasta ver el pull del 5 de noviembre: si el CTR sigue en un clic con más de mil impresiones, recién entonces mirar el snippet, no el canonical.
+
+### 3. /puertas-de-madera-con-vidrio
+
+Title, meta y H1 iguales. 7 días: 8 clics / 222 impresiones, posición 8,5. 90 días: 12 clics / 483 impresiones. «puerta de madera con vidrio» 66 impresiones, posición 10,0, 0 clics; «puertas de madera con vidrio» 46 impresiones, posición 9,5; «puerta madera con vidrio» 27 impresiones, posición 9,2; «puerta con vidrio arriba» 7 impresiones, posición 7,3.
+
+La intro decía «puertas de madera con vidrio» en plural. La primera frase pasa a «Fabricamos la puerta de madera con vidrio a medida» y el resto no cambia: hoja, paños, luces o repartición, sin modelo publicado ni tipo de vidrio, y marco, herrajes, vidrio e instalación que no se asumen incluidos. El H2 «Cuándo pedir la hoja con vidrio» pasa a «Cuándo pedir una puerta de madera con vidrio». El párrafo de debajo no cambia. El H2 de la galería ya decía «Puertas de madera con vidrio» y no se tocó.
+
+Los enlaces a [puertas a medida](/puertas-a-medida), [puertas interiores](/puertas-interiores) y [puertas de entrada](/puertas-exteriores) ya estaban en «Qué enviar para cotizar el vidrio en la hoja» y en «También te puede interesar». No se duplicaron. `updatedAt` `2026-11-03`.
+
+### 4. /puertas-exteriores
+
+Title, meta y H1 iguales. 7 días: 0 clics / 76 impresiones, posición 6,5.
+
+La frase que mandaba el dormitorio a interiores pasa de «Para una puerta de dormitorio, baño o cocina usa puertas interiores» a «Si buscas puertas para dormitorios, baño o cocina, son puertas de madera interior: se cotizan en puertas interiores». Sigue el enlace a [puertas a medida](/puertas-a-medida). El enlace a [puertas de madera con vidrio](/puertas-de-madera-con-vidrio) ya estaba en el párrafo de las referencias y no se duplicó. `updatedAt` `2026-11-03`.
+
+### 5. /puertas-interiores — no se editó
+
+Title, meta y H1 iguales. 7 días: 2 clics / 145 impresiones, posición 11,8. «puertas de madera interior» 11 impresiones, posición 13; «puertas para dormitorios» 11 impresiones, posición 18,7.
+
+Última edición de contenido: 28 de octubre (Lote 29). El H3 ya es «Puertas de dormitorio, baño o cocina» y el párrafo dice «puertas de dormitorio». No dice, seguidas, «puertas de madera interior» ni «puertas para dormitorios». Ya enlaza exteriores y puertas con vidrio. Queda fuera de este lote. Cuando cumpla la ventana, una frase en ese párrafo puede usar las dos consultas, del mismo modo que exteriores, sin tocar title, meta ni H1.
+
+### 6. Técnico, sin cambio de código
+
+Las nueve guías (`/guias/cuidado-muebles-madera`, medidas de mesa de comedor, medidas de mesa de centro, cotizar muebles, elegir sillas, madera para mesón de quincho, medidas de peldaños, elegir madera de peldaños y medidas y madera de puertas) publican Article y BreadcrumbList. El Article tiene headline, descripción, autor y publisher; `datePublished` y `dateModified` salen de `updatedDate` / `updatedAt`. El BreadcrumbList tiene tres ítems (Inicio, Guías, la guía) con URL absoluta en www. La foto entra al Article solo cuando la guía ya tiene `heroImage`. Cuatro guías no tienen foto propia (cuidado, medidas de comedor, cotizar, sillas) y el quincho tampoco: no se les puso el logo como si fuera la foto del artículo. El índice `/guias` es un listado: tiene BreadcrumbList y no Article.
+
+Ninguna URL del sitemap apunta su canonical a otra ficha. Colecciones, fichas con foto, landings y guías usan la misma ruta que el `<loc>`. Tiny house publica el canonical absoluto de `/tiny-house-dlt`, que es la misma URL. No había un error que corregir.
+
+### 7. Informe, sin editar
+
+Propuesta para cuando se descongelen los títulos (~5 nov), sin implementarla. Se mantienen las del Lote 33, con los números de este pull.
+
+- `/kit-pergola`. Hoy el title absoluto es `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` (55) y la meta (142) abre con «Kit de uniones metálicas y bases para pérgola de madera 3×3». «kit pergola» tiene 451 impresiones, posición 6,4 y 7 clics; «kit pergola madera» 161 impresiones, posición 7,3 y 1 clic; «kit para pergola» 93 impresiones, posición 7,5 y 0 clics; «uniones para pergolas» 39 impresiones, posición 8,7 y 0 clics. Página en 7 días: 5 clics / 293 impresiones. El H1 y el primer párrafo ya dicen que es un kit para pérgola de madera y que la madera no viene. Title propuesto, también absoluto y sin marca extra: `Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas` (48). Meta propuesta, ajustada para no soltar «de madera» ahora que esa consulta tiene 161 impresiones: `Kit para pérgola de madera: uniones para pérgolas y bases 3×3 (75×75 mm), sin maderas. Atornillar o cementar. Cotiza por WhatsApp.` (130). Sigue diciendo que no trae maderas y que la sección es 75×75 mm.
+
+- `/puertas-a-medida`. Hoy el title es `Puertas de Madera a Medida | Fábrica en Chillán` (47) y la meta (144) ya abre con «Fábrica de puertas de madera a medida en Chillán». «puertas a medida» tiene 325 impresiones, posición 10,2 y 9 clics; «fabrica de puertas de madera a medida» 79 impresiones, posición 9,5 y 0 clics; «puertas de madera a medida» 43 impresiones. Página en 7 días: 9 clics / 262 impresiones, posición 7,2. El H1 ya es «Fábrica de puertas de madera a medida en Chillán». Title propuesto: `Fábrica de Puertas de Madera a Medida | Chillán` (47). Meta: dejar la vigente. En esta ventana la página va 9/262, por encima del 2% que el plan del 17 oct usa para no mover el title: revisar ese umbral en el pull del 5 de noviembre antes de aplicarlo. «puertas de madera a medida» ya está en el title vigente y en el propuesto.
+
+- `/collections/veladores`. El title vigente ya abre con «Veladores de Madera» y nombra el dormitorio y Chillán (59 con la marca). La consulta principal está en posición 3,7 con 0 clics: el problema de esta semana es el clic, no la ausencia de la frase en el title. Title propuesto: dejar el vigente. Meta propuesta, para cuando se pueda, con la medida real del único modelo publicado y sin el rango 50-70 cm: `Veladores de madera para dormitorio. El Velador Cubo mide 45×45×50 cm. Cotiza otra medida por WhatsApp, con envío a Chile.` (122).
+
+`/molduras-a-medida` no se editó. Última edición de contenido: 26 de octubre (Lote 27). El cuerpo ya dice «cornisas de madera para techo» y «molduras de madera»; la FAQ «¿Fabrican cornisas de madera para techo?» ya existe. «cornisas de madera» tiene 58 impresiones, posición 9,9 y 0 clics; «molduras de madera» 223 impresiones, posición 10,5. El title vigente es `Molduras de Madera a Medida | Chile` (35, más la marca). Candidata de title después del 5 de noviembre, no de otro párrafo: la consulta grande sigue siendo molduras, y cornisas ya está en la meta y en el cuerpo.
+
+`/guias/medidas-mesa-de-centro` no se editó. `updatedAt` `2026-10-24`. En 7 días: 0 clics / 322 impresiones, posición 7,2. El title ya es `Medidas de Mesa de Centro y Mesa Ratona | Living`. Es una guía nueva en esa muestra: no reescribir el title hasta el pull del 5 de noviembre. La landing `/mesas-de-centro` se editó el 27 de octubre y tampoco se tocó.
+
+### Sitemap
+
+74 `<loc>`. `lastmod` `2026-11-03` solo en `/collections/veladores`, `/puertas-de-madera-con-vidrio` y `/puertas-exteriores`. La guía de medidas de mesa de comedor sigue en `2026-10-28`. Puertas interiores sigue en `2026-10-28`.
+
+### No se tocó
+
+- `<title>` y meta description de ninguna página. H1 de veladores, de puertas con vidrio, de exteriores, de interiores y de la guía de comedor.
+- `/guias/medidas-mesa-comedor` y `/puertas-interiores` (editadas el 28 de octubre).
+- Home, `/guias/medidas-peldanos-escalera`, `/products/mesa-tripode-ratona` y lo tocado en los Lotes 29–33: kit pérgola (footer), puertas correderas, mesas de comedor a medida, puertas para locales, sillas, cocina, madera nativa, muebles-chillan, sitiales, futón, `/collections/mesas`, comedores nórdicos, molduras, mesas de centro, las guías de sillas y de mesa de centro, peldaños a medida.
+- El commit `0426b8d` (WebP, anchos y calidades en `next.config`). `next.config` no se editó.
+- Precios, medidas nuevas, materiales, especies, plazos, instalación, envíos, normas y fotos. Las cifras 45 × 45 × 50 cm ya estaban en el Velador Cubo.
+- WhatsApp (textos y botones), Pixel, GTM, GA4, CAPI, el generador del feed merchant e IndexNow.
+- `foundingDate` sigue en 1993.
+
+### Build
+
+`npm run lint`, `npx tsc --noEmit` y `npm run build` en este lote. No hay token de Search Console en este entorno: no se corrió `gsc:report`.
+
 ## 2026-11-01 — Lote 33
 
 Datos del encargo (Search Console, pull del encargo, no un pull nuevo de este entorno): 90 días 3 ago→31 oct, 746 clics / 38.563 impresiones, posición 9,2. En 7 días (25–31 oct), 88 clics / 7.130 impresiones, posición 8,4, contra 84 clics / 4.965 impresiones, posición 8,9 la semana previa. El 31 oct aún incompleto. Titles congelados, sin cambio. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log` por bloque, la guía de medidas de peldaños no cambia de texto desde el 25 de octubre (el commit del 27 oct solo tocó la otra guía del mismo archivo, `/guias/elegir-madera-peldanos`). La ficha Trípode ratona no cambia de texto desde el 25 de octubre (el commit del 26 oct en `products.ts` solo movió el `updatedAt` de la Silla Milán). `/peldanos-a-medida` se editó el 28 de octubre y no se tocó.
