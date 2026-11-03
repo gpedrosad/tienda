@@ -9,6 +9,11 @@ export type CollectionRelatedLink = {
   description: string;
 };
 
+export type CollectionTextSection = {
+  title: string;
+  paragraphs: string[];
+};
+
 export type CollectionSeo = {
   /** Fecha ISO de la última edición del texto de la colección. */
   updatedAt?: string;
@@ -18,6 +23,8 @@ export type CollectionSeo = {
   intro?: string;
   guideTitle?: string;
   guideParagraphs?: string[];
+  /** Bloques con H2 bajo el listado. El texto admite enlaces [ancla](/ruta). */
+  textSections?: CollectionTextSection[];
   faqs?: CollectionFaq[];
   relatedLinks?: CollectionRelatedLink[];
   whatsappTitle?: string;
@@ -206,7 +213,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
-    updatedAt: "2026-10-16",
+    updatedAt: "2026-11-03",
     h1: "Veladores de madera para dormitorio",
     metadataTitle: "Veladores de Madera para Dormitorio | Chillán",
     description:
@@ -218,6 +225,21 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "La altura del velador debe permitir alcanzar cómodamente desde la cama: lo ideal es que quede a la misma altura del colchón o hasta 10 cm más arriba. Para una cama de 60 cm de alto, un velador de 50-70 cm funciona bien. Si la cama tiene colchón más grueso, suma esos centímetros.",
       "El ancho y la profundidad dependen del espacio disponible. Si el velador va entre la cama y la pared, deja al menos 10-15 cm de pasillo. Si tienes espacio limitado, un velador angosto de 30-35 cm de ancho es suficiente para apoyar lámpara, celular y un vaso de agua. Si tienes más espacio, un velador de 40-50 cm da mayor superficie útil.",
       "Los veladores de madera maciza son duraderos y fáciles de mantener. Cotiza por WhatsApp si necesitas un velador con medidas especiales o una terminación específica.",
+    ],
+    textSections: [
+      {
+        title: "Veladores de madera para dormitorio",
+        paragraphs: [
+          "En este listado, el velador de madera con foto es el [Velador Cubo](/products/velador-cubo): una mesita de noche de madera maciza, con barniz natural, para el dormitorio. Si esa medida no te calza, se cotiza el mueble a medida.",
+          "Las mesas de comedor y de living están en [mesas de madera](/collections/mesas). Otras piezas, en [muebles a medida](/muebles-a-medida).",
+        ],
+      },
+      {
+        title: "Medidas de un velador",
+        paragraphs: [
+          "El [Velador Cubo](/products/velador-cubo) mide 45 cm de ancho, 45 cm de fondo y 50 cm de alto. Es la única ficha de velador con foto y con esas tres medidas. No es una altura estándar del taller: si necesitas otro alto, otro ancho o otro fondo, se cotiza.",
+        ],
+      },
     ],
     faqs: [
       {

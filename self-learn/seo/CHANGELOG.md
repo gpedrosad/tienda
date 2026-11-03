@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-11-03
+
+- **Lote 34:** `/collections/veladores`: H2 «Veladores de madera para dormitorio» y H2 «Medidas de un velador» con el Velador Cubo (45 × 45 × 50 cm, la única ficha con foto y medidas). `/puertas-de-madera-con-vidrio`: la intro y un H2 dicen «puerta de madera con vidrio»; los enlaces a interiores, exteriores y puertas a medida ya estaban. `/puertas-exteriores`: la frase del dormitorio nombra «puertas para dormitorios» y «puertas de madera interior». Titles y metas iguales. `/guias/medidas-mesa-comedor` y `/puertas-interiores` no se editaron (28 oct). `updatedAt` 2026-11-03 solo en las tres páginas editadas. Sitemap sigue en 74 URLs. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-11-01
 
 - **Lote 33:** `/guias/medidas-peldanos-escalera`: H2 «Huella y contrahuella: qué son y cómo se miden» y el primer párrafo define huella (superficie de apoyo, 25 a 30 cm) y contrahuella (altura entre peldaños, 15 a 18 cm) con cifras que la guía ya tenía. La FAQ «¿Cuánto mide una contrahuella?» ya existía y no se duplicó. El enlace a `/peldanos-a-medida` ya estaba. `/products/mesa-tripode-ratona`: la descripción dice «mesa ratona de madera»; el enlace a `/mesas-de-centro` ya estaba. Title y meta iguales. `/peldanos-a-medida` no se editó (última edición 2026-10-28). `updatedAt` 2026-11-01 solo en la guía y en la ficha. Veladores sigue en 2026-10-16. Detalle: `SEO-CHANGELOG.md`.

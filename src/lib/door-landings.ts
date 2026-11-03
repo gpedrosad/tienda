@@ -244,7 +244,7 @@ export const puertasInterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasExterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-exteriores",
-  updatedAt: "2026-10-26",
+  updatedAt: "2026-11-03",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -354,7 +354,7 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
       paragraphs: [
         "En el taller hay tres referencias de entrada: una puerta doble de madera con vidrios en fachada, una puerta doble de madera con vidrios en un muro de piedra, y una puerta doble con montante y dintel. Son obras, no modelos a la venta. Las dos con vidrio se ven en [puertas de madera con vidrio](/puertas-de-madera-con-vidrio): no hay un modelo publicado ni un tipo de vidrio en catálogo, y marco, herrajes, vidrio e instalación no se asumen incluidos.",
         "Si tu vano es de una sola hoja, cotízalo igual: manda las medidas y una foto. No forzamos el diseño de la foto si tu hueco es distinto.",
-        "Para una puerta de dormitorio, baño o cocina usa [puertas interiores](/puertas-interiores). La fábrica general está en [puertas a medida](/puertas-a-medida).",
+        "Si buscas puertas para dormitorios, baño o cocina, son puertas de madera interior: se cotizan en [puertas interiores](/puertas-interiores). La fábrica general está en [puertas a medida](/puertas-a-medida).",
       ],
     },
     {

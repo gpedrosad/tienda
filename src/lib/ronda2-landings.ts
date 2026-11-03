@@ -10,7 +10,7 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
-  updatedAt: "2026-10-26",
+  updatedAt: "2026-11-03",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -29,7 +29,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   eyebrow: "Puertas con vidrio",
   h1: "Puertas de madera con vidrio a medida",
   heroParagraph:
-    "Fabricamos puertas de madera con vidrio a medida: la hoja, cuando el diseño lleva paños, luces o una repartición que nos muestres en una foto. No hay un modelo publicado ni un tipo de vidrio en catálogo. Interior o entrada cambia la madera y el acabado. Marco, herrajes, vidrio e instalación no se asumen incluidos: se confirman si los pides al cotizar.",
+    "Fabricamos la puerta de madera con vidrio a medida: la hoja, cuando el diseño lleva paños, luces o una repartición que nos muestres en una foto. No hay un modelo publicado ni un tipo de vidrio en catálogo. Interior o entrada cambia la madera y el acabado. Marco, herrajes, vidrio e instalación no se asumen incluidos: se confirman si los pides al cotizar.",
   badges: ["Hoja a medida", "Vidrio según referencia", "Taller en Chillán"],
   whatsappButtonLabel: "Cotizar puerta con vidrio",
   whatsappProductTitle: "Puertas de madera con vidrio",
@@ -75,7 +75,7 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
       height: 760,
     },
   ],
-  sectionTitle: "Cuándo pedir la hoja con vidrio",
+  sectionTitle: "Cuándo pedir una puerta de madera con vidrio",
   sectionParagraph:
     "El vidrio entra cuando quieres luz en un pasillo, en la entrada o en una oficina, o cuando la referencia que te gusta ya lo trae. Esta página es para la hoja que abre con bisagras. Si la hoja corre, el caso está en puertas correderas: esa referencia también lleva vidrio, y el riel no se asume incluido.",
   featureCards: [
