@@ -56,11 +56,11 @@ export const FALLBACK_UPDATED_AT = "2026-06-15";
  * producto o colección.
  */
 const PAGE_FILE_UPDATED_AT: Record<string, string> = {
-  "/": "2026-10-17",
+  "/": "2026-11-04",
   "/ofertas": "2026-10-17",
   "/guias": "2026-10-17",
-  "/kit-pergola": "2026-10-26",
-  "/tiny-house-dlt": "2026-10-17",
+  "/kit-pergola": "2026-11-04",
+  "/tiny-house-dlt": "2026-11-04",
   "/comedores-nordicos": "2026-10-26",
   "/mesas-de-centro": "2026-10-27",
 };

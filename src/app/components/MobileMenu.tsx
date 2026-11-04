@@ -248,6 +248,17 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 </Link>
               </li>
 
+              <li {...revealClass(350)}>
+                <Link
+                  href="/tiny-house-dlt"
+                  onClick={onClose}
+                  aria-current={isActive("/tiny-house-dlt") ? "page" : undefined}
+                  className={itemClass}
+                >
+                  Tiny house
+                </Link>
+              </li>
+
               <li {...revealClass(380)}>
                 <WhatsAppAnchor
                   href={contactUrl}

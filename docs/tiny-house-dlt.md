@@ -5,9 +5,10 @@ Ruta: `/tiny-house-dlt`. Canónico: `https://www.ideamadera.cl/tiny-house-dlt`.
 ## Contenido y conversión
 
 - Viviendas compactas en DLT, madera renovable, prefabricación y montaje.
-- Proyecto Refugio como antecedente de Idea Madera; no se presenta como modelo de tiny house disponible ni se extrapolan plazos.
+- Title `Tiny House de Madera en Chile | Prefabricada | Idea Madera`. H1 `Tiny house de madera en Chile`. El DLT queda en el subtítulo. No se usa «llave en mano»: la página no lo ofrece.
+- Proyecto Refugio como antecedente de Idea Madera; no se presenta como modelo de tiny house disponible ni se extrapolan plazos. No hay página de planos ni modelos.
 - Cotización por WhatsApp con comuna, superficie y uso opcionales. Los datos ingresados se incorporan al enlace, no a los eventos de medición. El usuario revisa y envía el mensaje.
-- Siete preguntas frecuentes; enlaces a muebles, puertas, cubiertas y quiénes somos.
+- Diez preguntas frecuentes, las mismas en pantalla y en FAQPage. Sin precios. Enlaces a muebles, puertas, cubiertas y quiénes somos.
 - Entrada en sitemap y enlace desde el footer compartido.
 - Metadata propia, Open Graph, Twitter, Service, BreadcrumbList y FAQPage. No se prometen resultados enriquecidos ni posiciones de búsqueda.
 

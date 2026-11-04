@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { buildWhatsAppUrl, trackWhatsAppClick } from "@/lib/whatsapp";
 import { landingPath } from "./content";
 
-const defaultMessage = "Hola Idea Madera, quiero cotizar una tiny house en DLT. Me gustaría revisar diseño, precio y plazos para mi proyecto.";
+const defaultMessage = "Hola Idea Madera, quiero cotizar una tiny house de madera en DLT. Me gustaría revisar diseño, precio y plazos para mi proyecto.";
 const track = (placement: "inline" | "banner") => {
   void trackWhatsAppClick({ productTitle: "Tiny house en DLT", productId: "tiny-house-dlt", placement });
 };

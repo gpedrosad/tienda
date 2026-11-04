@@ -241,7 +241,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-04",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
   pageDescription:
@@ -449,7 +449,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       paragraphs: [
         "Esta página es la cotización general de huellas de madera a medida, con despacho a todo Chile. El pedido sigue siendo la pieza donde se pisa: largo, ancho, espesor y cantidad.",
         "Si estás en Chillán o Ñuble y quieres coordinar con el taller, usa [peldaños de madera a medida en Chillán](/peldanos-madera-chillan). Si la escalera de concreto u hormigón ya está hecha y solo falta la madera de la pisada, usa [peldaños para escalera de concreto](/peldanos-escalera-concreto). Si buscas una escalera de madera y necesitas saber qué pieza fabricamos, usa [escaleras de madera](/escaleras-de-madera). Si la huella va separada del muro, sobre metal, usa [peldaños flotantes](/peldanos-flotantes): la estructura no está incluida.",
-        "Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella) y la [guía para elegir madera](/guias/elegir-madera-peldanos). Otros proyectos del taller, como cubiertas o muebles, parten en [muebles a medida](/muebles-a-medida).",
+        "Antes de escribir, puedes revisar la [guía de medidas de peldaños](/guias/medidas-peldanos-escalera) (huella y contrahuella) y la [guía para elegir madera](/guias/elegir-madera-peldanos). Otros proyectos del taller, como cubiertas o muebles, parten en [muebles a medida](/muebles-a-medida). Una vivienda compacta se cotiza en la [tiny house de madera](/tiny-house-dlt).",
       ],
     },
   ],
@@ -501,7 +501,7 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  updatedAt: "2026-10-25",
+  updatedAt: "2026-11-04",
   pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
   pageDescription:
     "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
@@ -538,7 +538,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Mesones de madera para quincho y cubiertas para cada uso",
   sectionParagraph:
-    "Fabricamos mesones de madera para quincho, barras, cubiertas de cocina y proyectos comerciales. Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Si buscas un [mesón para quincho](/guias/madera-para-meson-quincho), lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. También producimos cubiertas para barras, mesones para restaurant, mesones de cocina y salones de eventos. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación.",
+    "Fabricamos mesones de madera para quincho, barras, cubiertas de cocina y proyectos comerciales. Nos ajustamos a tus medidas y hacemos que cada detalle funcione. Si buscas un [mesón para quincho](/guias/madera-para-meson-quincho), lo fabricamos como cubierta a medida: tablero de madera según el largo y el ancho de tu espacio. También producimos cubiertas para barras, mesones para restaurant, mesones de cocina y salones de eventos. Cada proyecto cuenta con un trato personalizado para elegir la mejor opción de madera y terminación. Si lo que buscas es una vivienda compacta, cotízala en la página de [tiny house de madera](/tiny-house-dlt).",
   featureCards: [
     {
       title: "Mesones para quinchos",
@@ -914,7 +914,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-11-04",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -1155,7 +1155,7 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       paragraphs: [
         "Esta página es la cotización general: hoja a medida, desde el taller en Chillán, para hogar o negocio. Si ya sabes el uso, entra a la página de ese tipo y escribe desde ahí.",
         "Las [puertas interiores](/puertas-interiores) son de dormitorio, baño, cocina u oficina. Las [puertas de entrada](/puertas-exteriores) son la entrada principal: ahí el uso es exterior y cambian madera y acabado. Las [puertas correderas](/puertas-correderas) parten de la referencia de interior en madera y vidrio. Las [puertas de madera con vidrio](/puertas-de-madera-con-vidrio) son la hoja con paños, distinta de la corredera. Las [puertas para locales](/puertas-para-locales) cubren oficina, bodega o acceso de un negocio. Las [puertas de madera nativa](/puertas-madera-nativa) explican el material publicado: madera nativa seca en cámara.",
-        "Antes de escribir, puedes mirar la [guía de medidas y madera](/guias/medidas-y-madera-puertas). Si además necesitas mesas, cubiertas u otras piezas, el encargo sigue en [muebles a medida](/muebles-a-medida).",
+        "Antes de escribir, puedes mirar la [guía de medidas y madera](/guias/medidas-y-madera-puertas). Si además necesitas mesas, cubiertas u otras piezas, el encargo sigue en [muebles a medida](/muebles-a-medida). Una vivienda compacta se cotiza en la [tiny house de madera](/tiny-house-dlt).",
       ],
     },
     {
@@ -1366,7 +1366,7 @@ export const quienesSomosLandingConfig: ServiceLandingConfig = {
 
 export const contactoLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/contacto",
-  updatedAt: "2026-10-05",
+  updatedAt: "2026-11-04",
   pageTitle: "Contacto | Cotiza por WhatsApp",
   pageDescription:
     "Contáctanos para cotizar muebles de madera o piezas a medida. WhatsApp +56 9 9549 7838, hola@ideamadera.cl. Envíos a todo Chile.",
@@ -1394,7 +1394,7 @@ export const contactoLandingConfig: ServiceLandingConfig = {
   ],
   sectionTitle: "Estamos para ayudarte",
   sectionParagraph:
-    "Ya sea que busques un producto del catálogo, cubiertas a medida, puertas, peldaños o un mueble personalizado, contáctanos con tus medidas, comuna y referencias. Coordinamos fabricación y envío a todo Chile.",
+    "Ya sea que busques un producto del catálogo, cubiertas a medida, puertas, peldaños, una [tiny house de madera](/tiny-house-dlt) o un mueble personalizado, contáctanos con tus medidas, comuna y referencias. Coordinamos fabricación y envío a todo Chile.",
   featureCards: [
     {
       title: "Cotizar productos del catálogo",

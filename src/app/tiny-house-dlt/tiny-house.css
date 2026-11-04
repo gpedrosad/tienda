@@ -9,7 +9,7 @@
 .dlt-hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; padding-block: 24px 64px; }
 .dlt-kicker { font-size: 13px; color: #d4a017; margin-bottom: 24px; }
 .dlt-hero h1 { font-size: clamp(2.6rem, 4.6vw, 4.8rem); line-height: 1.04; letter-spacing: -.035em; font-weight: 500; }
-.dlt-hero h1 span { color: #bcbcbc; }
+.dlt-hero-sub { color: #bcbcbc; font-size: clamp(1.35rem, 2.2vw, 1.85rem); line-height: 1.25; letter-spacing: -.02em; margin-top: 14px; max-width: 16ch; font-weight: 500; }
 .dlt-intro { max-width: 48ch; color: #ccc; font-size: 18px; line-height: 1.65; margin-top: 28px; }
 .dlt-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 32px; }
 .dlt-button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; background: #d4a017; color: #111; font-weight: 650; font-size: 16px; padding: 17px 23px; min-height: 54px; border-radius: 5px; transition: background-color 180ms ease; }
@@ -27,6 +27,10 @@
 .dlt-section-nav a:last-child { margin-left: auto; color: #d4a017; }
 .dlt-section { padding-block: clamp(64px, 8vw, 112px); }
 .dlt-page h2 { font-size: clamp(2rem, 3.4vw, 3.3rem); line-height: 1.1; letter-spacing: -.025em; font-weight: 500; }
+.dlt-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 56px 8%; scroll-margin-top: 5.5rem; }
+.dlt-guide article { border-top: 1px solid #3a3a3a; padding-top: 22px; scroll-margin-top: 5.5rem; }
+.dlt-page .dlt-guide h2 { font-size: clamp(1.65rem, 2.5vw, 2.2rem); }
+.dlt-guide p { color: #bcbcbc; line-height: 1.7; margin-top: 16px; max-width: 62ch; }
 .dlt-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
 .dlt-section-intro > p { color: #bcbcbc; font-size: 18px; line-height: 1.7; margin-block: 26px 14px; max-width: 44ch; }
 .dlt-benefit-list article { padding-block: 25px; border-top: 1px solid #3a3a3a; }
@@ -116,7 +120,7 @@
 @media (max-width: 1000px) { .dlt-wrap { width: calc(100% - 48px); } .dlt-hero h1 { font-size: 3rem; } .dlt-process-heading { align-items: flex-start; } .dlt-steps { gap: 24px; } }
 @media (max-width: 800px) {
   .dlt-page { padding-top: 4rem; }
-  .dlt-hero, .dlt-benefits, .dlt-project-grid, .dlt-project-build, .dlt-quote-grid, .dlt-faq { grid-template-columns: 1fr; gap: 36px; }
+  .dlt-hero, .dlt-benefits, .dlt-project-grid, .dlt-project-build, .dlt-quote-grid, .dlt-faq, .dlt-guide { grid-template-columns: 1fr; gap: 36px; }
   .dlt-hero { padding-top: 12px; padding-bottom: 36px; }
   .dlt-hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); max-width: 18ch; }
   .dlt-hero-photo img { min-height: 0; height: auto; max-height: 480px; aspect-ratio: 1.4; }
