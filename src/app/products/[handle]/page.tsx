@@ -9,6 +9,7 @@ import RelatedProducts from "@/app/components/RelatedProducts";
 import SocialProof from "@/app/components/SocialProof";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 import WhatsAppInlineCTA from "@/app/components/WhatsAppInlineCTA";
+import { ProductPriceBlock, RepisaJ60Provider } from "@/app/components/RepisaJ60Quote";
 import JsonLd from "@/app/components/JsonLd";
 import { products, type Product } from "@/data/products";
 import { hasProductImage, productImageAlt, slugifyCategory } from "@/lib/catalog";
@@ -285,6 +286,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   ];
 
   return (
+    <RepisaJ60Provider product={product} origin={origin}>
     <>
       <JsonLd data={structuredData} />
 
@@ -329,10 +331,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     <p className="mt-1.5 text-sm text-ink-muted">{heroSpecLine}</p>
                   ) : null}
 
-                  <p className="mt-2 font-display text-3xl md:mt-6 md:text-4xl font-semibold tracking-tight text-ink">
-                    {priceLabel}
-                  </p>
-                  <p className="mt-1 text-xs text-ink-muted">IVA incluido</p>
+                  <ProductPriceBlock product={product} priceLabel={priceLabel} />
 
                   <div className="mt-2 md:mt-7">
                     <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_auto]">
@@ -570,5 +569,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         watchSelector="#product-hero-cta, #product-closing-cta"
       />
     </>
+    </RepisaJ60Provider>
   );
 }

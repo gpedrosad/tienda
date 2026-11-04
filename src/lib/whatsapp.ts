@@ -27,10 +27,18 @@ export function buildProductWhatsAppMessage(product: Product, origin = getDefaul
   const cleanOrigin = origin.replace(/\/$/, "");
   const productPath = getProductPath(product);
 
+  const amount = formatCLP(product.price);
+  const priceLine =
+    product.priceNote === "desde"
+      ? `Precio referencia: desde ${amount}`
+      : product.priceNote
+        ? `Precio referencia: ${amount} ${product.priceNote}`
+        : `Precio referencia: ${amount}`;
+
   return [
     "Hola Idea Madera",
     `Me interesa cotizar: ${product.name}`,
-    `Precio referencia: ${formatCLP(product.price)}`,
+    priceLine,
     `Link: ${cleanOrigin}${productPath}`,
     "",
     "Cantidad:",
