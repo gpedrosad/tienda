@@ -8,6 +8,7 @@ export const CATEGORY_PRIORITY = [
   "Veladores",
   "Sitiales",
   "Repisas",
+  "Separadores",
   "Escritorios",
   "Percheros",
   "Pisos",

@@ -1,6 +1,6 @@
 import type { Product } from "@/data/products";
 import { getVisibleProducts } from "@/lib/catalog";
-import { COFFEE_TABLE_WITH_SIZES, DINING_TABLE_IDS } from "@/lib/mesa-groups";
+import { COFFEE_TABLE_IDS, DINING_TABLE_IDS } from "@/lib/mesa-groups";
 import { galleryImagesForProduct } from "@/lib/product-gallery";
 import { absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { getProductPath } from "@/lib/whatsapp";
@@ -19,6 +19,7 @@ const GOOGLE_CATEGORY_BY_CATEGORY: Record<string, string> = {
   Racks: "Furniture > Entertainment Centers & TV Stands",
   Escritorios: "Furniture > Office Furniture > Desks",
   Repisas: "Furniture > Shelving",
+  Separadores: "Furniture > Room Dividers",
   Futon: "Furniture > Futons",
   Sitiales: "Furniture > Chairs > Arm Chairs, Recliners & Sleeper Chairs",
   Pisos: "Furniture > Chairs > Table & Bar Stools",
@@ -29,7 +30,7 @@ const MAX_ADDITIONAL_IMAGES = 10;
 function googleProductCategory(product: Product) {
   if (product.category === "Mesas") {
     if (DINING_TABLE_IDS.has(product.id)) return "Furniture > Tables > Kitchen & Dining Room Tables";
-    if (COFFEE_TABLE_WITH_SIZES.has(product.id)) return "Furniture > Tables > Accent Tables > Coffee Tables";
+    if (COFFEE_TABLE_IDS.has(product.id)) return "Furniture > Tables > Accent Tables > Coffee Tables";
     return "Furniture > Tables";
   }
   return GOOGLE_CATEGORY_BY_CATEGORY[product.category];

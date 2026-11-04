@@ -98,8 +98,14 @@ export default function ProductCard({
             {/* Precio elegante */}
             <div className="pt-0.5">
               <p className="font-display text-xl md:text-2xl font-semibold text-ink tracking-tight">
+              {product.priceNote === "desde" ? (
+                <span className="mr-1 align-middle text-sm font-normal text-ink-muted">desde</span>
+              ) : null}
               {formatCLP(product.price)}
             </p>
+            {product.priceNote && product.priceNote !== "desde" ? (
+              <p className="text-xs text-ink-muted">{product.priceNote}</p>
+            ) : null}
           </div>
         </div>
       </Link>

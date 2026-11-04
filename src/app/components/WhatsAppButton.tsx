@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { buttonClasses } from "@/app/components/ui/Button";
+import { useProductQuote } from "@/app/components/RepisaJ60Quote";
 import { buildWhatsAppUrl, formatCLP, trackWhatsAppClick } from "@/lib/whatsapp";
 
 interface WhatsappButtonProps {
@@ -30,11 +31,15 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   alwaysVisible = false,
   watchSelector,
 }) => {
+  const quote = useProductQuote();
+  const price = quote?.active ? quote.price : productPrice;
+  const messageText = quote?.active ? quote.message : prefilledMessage;
+  const blocked = Boolean(quote?.active && !quote.valid);
   const [isPastHero, setIsPastHero] = useState(alwaysVisible);
   const [isOverFooter, setIsOverFooter] = useState(false);
   const isVisible = (alwaysVisible || isPastHero) && !isOverFooter;
-  const numericPrice = typeof productPrice === "number" ? formatCLP(productPrice) : undefined;
-  const displayPrice = priceLabel ?? numericPrice;
+  const numericPrice = typeof price === "number" ? formatCLP(price) : undefined;
+  const displayPrice = blocked ? "Elige el largo" : (priceLabel && !quote?.active ? priceLabel : numericPrice);
 
   useEffect(() => {
     if (alwaysVisible) {
@@ -81,18 +86,20 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   }, []);
 
   const handleWhatsappClick = useCallback(() => {
+    if (blocked) return;
+
     void trackWhatsAppClick({
       productTitle,
       productId,
-      productPrice,
+      productPrice: price,
       placement: "sticky",
     }).catch((err) => {
       console.error("Error enviando conversión a Facebook:", err);
     });
 
-    const url = buildWhatsAppUrl(prefilledMessage ?? `Hola, quiero cotizar el producto ${productTitle}`);
+    const url = buildWhatsAppUrl(messageText ?? `Hola, quiero cotizar el producto ${productTitle}`);
     window.open(url, "_blank");
-  }, [prefilledMessage, productId, productPrice, productTitle]);
+  }, [blocked, messageText, price, productId, productTitle]);
 
   return (
     <div
@@ -131,11 +138,12 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
           <button
             type="button"
             onClick={handleWhatsappClick}
+            disabled={blocked}
             data-fb-disable-auto-event-tracking="true"
             className={buttonClasses({
               variant: "whatsapp",
               fullWidthMobile: false,
-              className: "shrink-0",
+              className: `shrink-0 ${blocked ? "cursor-not-allowed opacity-60" : ""}`,
             })}
           >
             <AiOutlineWhatsApp size={20} aria-hidden="true" />
@@ -144,16 +152,17 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
         </div>
         {numericPrice ? (
           <div className="flex items-center justify-between gap-3 rounded-full border border-line bg-white/95 py-2 pl-5 pr-2 shadow-2xl shadow-ink/10 backdrop-blur lg:hidden">
-            <p className="min-w-0 truncate text-sm font-medium text-ink">{numericPrice}</p>
+            <p className="min-w-0 truncate text-sm font-medium text-ink">{blocked ? "Elige el largo" : numericPrice}</p>
             <button
               type="button"
               onClick={handleWhatsappClick}
+              disabled={blocked}
               data-fb-disable-auto-event-tracking="true"
               className={buttonClasses({
                 variant: "whatsapp",
                 size: "sm",
                 fullWidthMobile: false,
-                className: "shrink-0 whitespace-nowrap",
+                className: `shrink-0 whitespace-nowrap ${blocked ? "cursor-not-allowed opacity-60" : ""}`,
               })}
             >
               <AiOutlineWhatsApp size={20} aria-hidden="true" />
@@ -164,11 +173,12 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({
           <button
             type="button"
             onClick={handleWhatsappClick}
+            disabled={blocked}
             data-fb-disable-auto-event-tracking="true"
             className={buttonClasses({
               variant: "whatsapp",
               fullWidthMobile: false,
-              className: "w-full lg:hidden",
+              className: `w-full lg:hidden ${blocked ? "cursor-not-allowed opacity-60" : ""}`,
             })}
           >
             <AiOutlineWhatsApp size={20} aria-hidden="true" />

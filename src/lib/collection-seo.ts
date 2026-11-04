@@ -213,7 +213,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
-    updatedAt: "2026-11-03",
+    updatedAt: "2026-11-04",
     h1: "Veladores de madera para dormitorio",
     metadataTitle: "Veladores de Madera para Dormitorio | Chillán",
     description:
@@ -230,14 +230,14 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       {
         title: "Veladores de madera para dormitorio",
         paragraphs: [
-          "En este listado, el velador de madera con foto es el [Velador Cubo](/products/velador-cubo): una mesita de noche de madera maciza, con barniz natural, para el dormitorio. Si esa medida no te calza, se cotiza el mueble a medida.",
+          "En este listado, los veladores de madera con foto son el [Velador Cubo](/products/velador-cubo) y el [Velador Lenga Austral con cajón](/products/velador-lenga-austral). El Cubo es una mesita de noche de madera maciza, con barniz natural. El Lenga Austral es de lenga maciza, con cajón y repisa abierta; sus medidas son las del plano, de referencia. Si ninguna calza, se cotiza el mueble a medida.",
           "Las mesas de comedor y de living están en [mesas de madera](/collections/mesas). Otras piezas, en [muebles a medida](/muebles-a-medida).",
         ],
       },
       {
         title: "Medidas de un velador",
         paragraphs: [
-          "El [Velador Cubo](/products/velador-cubo) mide 45 cm de ancho, 45 cm de fondo y 50 cm de alto. Es la única ficha de velador con foto y con esas tres medidas. No es una altura estándar del taller: si necesitas otro alto, otro ancho o otro fondo, se cotiza.",
+          "El [Velador Cubo](/products/velador-cubo) mide 45 cm de ancho, 45 cm de fondo y 50 cm de alto. El [Velador Lenga Austral con cajón](/products/velador-lenga-austral) publica 55 × 38 × 46 cm como medidas de referencia del plano, a validar en el taller. No son una altura estándar única: si necesitas otro alto, otro ancho u otro fondo, se cotiza.",
         ],
       },
     ],
@@ -322,6 +322,46 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Futones con estructura de madera para living o dormitorio de visitas. Diseño funcional con estética cálida. Cotiza medidas y terminación por WhatsApp.",
     intro:
       "El futón de madera de este catálogo es el Futón Noruega: estructura de madera maciza y diseño nórdico inspirado, para living o dormitorio de visitas. Aporta asiento extra y posibilidad de descanso, y la terminación y las medidas se cotizan. Para cotizar, revisa [muebles a medida](/muebles-a-medida) o la [mueblería en Chillán](/muebles-chillan).",
+  },
+  repisas: {
+    updatedAt: "2026-11-04",
+    h1: "Repisas de madera",
+    metadataTitle: "Repisas de Madera para Muro",
+    description:
+      "Repisa J60 Small de pino natural con labio frontal, para libros y cuadros. Desde $69.990 el tramo de 60 cm. Elige el largo en la ficha y cotiza por WhatsApp.",
+    intro:
+      "La repisa con foto de este catálogo es la Repisa J60 Small: pino natural, perfil en L y labio frontal para apoyar libros, cuadros y fotos de frente. El tramo de 60 cm sale desde $69.990. En la ficha se elige 60, 90 o 120 cm, o un largo a medida entre 40 y 200 cm. Las medidas del plano son de referencia. La capacidad de carga se confirma al cotizar.",
+    whatsappTitle: "Repisas de madera",
+    whatsappLines: [
+      "Vengo desde la colección de repisas.",
+      "Quiero cotizar la Repisa J60 Small. El precio de lista es desde $69.990, según el largo.",
+    ],
+  },
+  separadores: {
+    updatedAt: "2026-11-04",
+    h1: "Separadores de ambientes de listones",
+    metadataTitle: "Separadores de Ambientes de Listones",
+    description:
+      "Separador de ambientes de listones de madera, de piso a cielo. $149.990 por metro lineal, alto hasta 2,6 m. La instalación se cotiza aparte.",
+    intro:
+      "El separador de ambientes de listones divide el living, la entrada o la oficina sin cerrarlos: listones verticales de madera sólida, de piso a cielo, que dejan pasar la luz y el aire. El precio es $149.990 por metro lineal de ancho. El alto llega hasta 2,6 m. La instalación se cotiza aparte y no está incluida en ese valor. Se fabrica a medida, en tono roble natural o nogal.",
+    faqs: [
+      {
+        question: "¿El precio del separador es por el mueble completo?",
+        answer:
+          "No. Los $149.990 son por metro lineal de ancho. El alto llega hasta 2,6 m. La instalación se cotiza aparte.",
+      },
+      {
+        question: "¿Hasta qué alto se fabrica?",
+        answer:
+          "Hasta 2,6 m, de piso a cielo. El ancho se define según tu vano y se cobra por metro lineal. La sección del listón y la separación se confirman al cotizar.",
+      },
+    ],
+    whatsappTitle: "Separadores de ambientes",
+    whatsappLines: [
+      "Vengo desde la colección de separadores.",
+      "Quiero cotizar un separador de listones. El precio de lista es por metro lineal y la instalación va aparte.",
+    ],
   },
 };
 

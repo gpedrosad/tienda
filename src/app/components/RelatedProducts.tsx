@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProductCard, { RELATED_GRID_SIZES } from "@/app/components/ProductCard";
 import { products, type Product } from "@/data/products";
 import { getVisibleProducts, slugifyCategory } from "@/lib/catalog";
-import { COFFEE_TABLE_WITH_SIZES, DINING_TABLE_IDS } from "@/lib/mesa-groups";
+import { COFFEE_TABLE_IDS, DINING_TABLE_IDS } from "@/lib/mesa-groups";
 
 /** Sillas que no son de comedor: no se combinan con mesas de comedor. */
 const NON_DINING_CHAIR_IDS = new Set(["silla-kentucky"]);
@@ -16,12 +16,12 @@ interface RelatedProductsProps {
 function selectRelated(current: Product | undefined, category: string) {
   const visible = getVisibleProducts(products).filter((product) => product.id !== current?.id);
 
-  if (current && COFFEE_TABLE_WITH_SIZES.has(current.id)) {
+  if (current && COFFEE_TABLE_IDS.has(current.id)) {
     return {
       title: "También te puede interesar",
       subtitle: "Otras mesas de centro, por si buscas otra medida o terminación.",
       href: "/mesas-de-centro",
-      products: visible.filter((product) => COFFEE_TABLE_WITH_SIZES.has(product.id)),
+      products: visible.filter((product) => COFFEE_TABLE_IDS.has(product.id)),
     };
   }
 

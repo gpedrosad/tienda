@@ -30,10 +30,19 @@ export const COFFEE_TABLE_WITH_SIZES = new Set([
   "mesa-tripode-ratona",
 ]);
 
+/** Mesas de centro redondas Nido Cruz. El diámetro y el alto no están publicados. */
+export const NIDO_CRUZ_TABLE_IDS = new Set([
+  "set-mesas-centro-nido-cruz",
+  "mesa-centro-nido-cruz-grande",
+  "mesa-centro-nido-cruz-chica",
+]);
+
+export const COFFEE_TABLE_IDS = new Set([...COFFEE_TABLE_WITH_SIZES, ...NIDO_CRUZ_TABLE_IDS]);
+
 export function isDiningTableId(id: string) {
   return DINING_TABLE_IDS.has(id);
 }
 
 export function showsCoffeeTableGuide(id: string) {
-  return COFFEE_TABLE_WITH_SIZES.has(id);
+  return COFFEE_TABLE_IDS.has(id);
 }

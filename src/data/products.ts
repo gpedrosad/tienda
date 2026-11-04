@@ -12,7 +12,7 @@
  *   id: "producto-unico-id",
  *   name: "Nombre del Producto",
  *   price: 99990,
- *   category: "Mesas" | "Sillas" | "Veladores" | "Racks" | "Repisas" | "Percheros" | "Bancas" | "Sitiales" | "Escritorios" | "Futon",
+ *   category: "Mesas" | "Sillas" | "Veladores" | "Racks" | "Repisas" | "Separadores" | "Percheros" | "Bancas" | "Sitiales" | "Escritorios" | "Futon",
  *   description: "Descripción breve del producto", // Opcional
  *   imageUrl: "/ruta/a/imagen.jpg", // Opcional
  *   handle: "producto-unico-id", // Opcional, URL amigable si difiere del id
@@ -58,6 +58,10 @@ export interface Product {
   productionDays?: number;
   inStock?: boolean;
   stockNote?: string;
+  /** Aclaración del precio de lista, por ejemplo "desde" o "por metro lineal". */
+  priceNote?: string;
+  /** Frase visible bajo el precio en la ficha. */
+  priceDetail?: string;
   seoTitle?: string;
   seoDescription?: string;
   /** Fecha ISO de la última edición de esta ficha. El sitemap la usa como lastmod. */
@@ -915,5 +919,150 @@ export const products: Product[] = [
     name: "Mesa de centro Seúl",
     price: 369990,
     category: "Mesas",
+  },
+  {
+    id: "set-mesas-centro-nido-cruz",
+    updatedAt: "2026-11-04",
+    name: "Set Mesas de Centro Redondas Nido Cruz",
+    price: 419990,
+    category: "Mesas",
+    imageUrl: "/images/mesas-nido-cruz-1.webp",
+    shortPitch:
+      "Set de dos mesas de centro redondas anidables, en madera tono roble y base en cruz.",
+    description:
+      "El set Nido Cruz reúne dos mesas de centro redondas de madera tono roble, con base en cruz de paneles y cubierta de canto grueso. La mesa chica se corre bajo la grande o se usa sola junto al sofá. El set vale $419.990. También se venden por separado la [mesa grande](/products/mesa-centro-nido-cruz-grande) ($269.990) y la [mesa chica](/products/mesa-centro-nido-cruz-chica) ($189.990). La especie de la madera, la terminación, el diámetro y el alto se confirman al cotizar. Fabricación en Chillán. Otras mesas bajas están en [mesas de centro](/mesas-de-centro).",
+    features: [
+      "Set de dos mesas redondas anidables",
+      "Base en cruz de paneles de madera",
+      "Cubierta de canto grueso y veta visible",
+      "Madera tono roble, para living",
+    ],
+    material: "Madera tono roble",
+    productionDays: 15,
+    seoTitle: "Set Mesas de Centro Redondas Nido Cruz",
+    seoDescription:
+      "Set de dos mesas de centro redondas anidables, madera tono roble y base en cruz. $419.990. Fabricadas en Chillán. Cotiza por WhatsApp.",
+  },
+  {
+    id: "mesa-centro-nido-cruz-grande",
+    updatedAt: "2026-11-04",
+    name: "Mesa de Centro Nido Cruz Grande",
+    price: 269990,
+    category: "Mesas",
+    imageUrl: "/images/mesas-nido-cruz-grande.webp",
+    shortPitch: "Mesa de centro redonda grande del set Nido Cruz: madera tono roble y base en cruz.",
+    description:
+      "La mesa grande del Nido Cruz es la pieza alta del par anidable: cubierta redonda de canto grueso, base en cruz y madera tono roble. Vale $269.990. La [mesa chica](/products/mesa-centro-nido-cruz-chica) se corre debajo o se compra sola, y el [set completo](/products/set-mesas-centro-nido-cruz) sale $419.990. El diámetro, el alto, la especie y la terminación se confirman al cotizar. Fabricación en Chillán. Mira el resto en [mesas de centro](/mesas-de-centro).",
+    features: [
+      "Mesa de centro redonda, la grande del par",
+      "Base en cruz de paneles de madera",
+      "Cubierta de canto grueso y veta visible",
+      "Se anida con la mesa chica",
+    ],
+    material: "Madera tono roble",
+    productionDays: 15,
+    seoTitle: "Mesa de Centro Nido Cruz Grande",
+    seoDescription:
+      "Mesa de centro redonda Nido Cruz, la grande del set anidable. Madera tono roble y base en cruz. $269.990. Cotiza por WhatsApp.",
+  },
+  {
+    id: "mesa-centro-nido-cruz-chica",
+    updatedAt: "2026-11-04",
+    name: "Mesa de Centro Nido Cruz Chica",
+    price: 189990,
+    category: "Mesas",
+    imageUrl: "/images/mesas-nido-cruz-chica.webp",
+    shortPitch: "Mesa de centro redonda chica del set Nido Cruz. También sirve como mesa auxiliar junto al sofá.",
+    description:
+      "La mesa chica del Nido Cruz es la pieza baja del par anidable: cubierta redonda de canto grueso, base en cruz y madera tono roble. Vale $189.990. Se corre bajo la [mesa grande](/products/mesa-centro-nido-cruz-grande) o se usa sola junto al sofá. El [set completo](/products/set-mesas-centro-nido-cruz) sale $419.990. El diámetro, el alto, la especie y la terminación se confirman al cotizar. Fabricación en Chillán. Mira el resto en [mesas de centro](/mesas-de-centro).",
+    features: [
+      "Mesa de centro redonda, la chica del par",
+      "También se usa como mesa auxiliar",
+      "Base en cruz de paneles de madera",
+      "Se anida bajo la mesa grande",
+    ],
+    material: "Madera tono roble",
+    productionDays: 15,
+    seoTitle: "Mesa de Centro Nido Cruz Chica",
+    seoDescription:
+      "Mesa de centro redonda Nido Cruz, la chica del set. Sirve como auxiliar junto al sofá. $189.990. Cotiza por WhatsApp.",
+  },
+  {
+    id: "separador-ambientes-listones",
+    updatedAt: "2026-11-04",
+    name: "Separador de ambientes de listones",
+    price: 149990,
+    priceNote: "por metro lineal",
+    priceDetail:
+      "El precio es por metro lineal de ancho. El alto llega hasta 2,6 m. La instalación se cotiza aparte.",
+    category: "Separadores",
+    imageUrl: "/images/separador-listones-1.webp",
+    shortPitch:
+      "Listones verticales de madera sólida, de piso a cielo. $149.990 por metro lineal; la instalación va aparte.",
+    description:
+      "Divide sin cerrar. Listones verticales de madera sólida, de piso a cielo, que separan living, entrada u oficina y dejan pasar la luz, el aire y la vista. El precio es $149.990 por metro lineal de ancho. El alto llega hasta 2,6 m. La instalación se cotiza aparte y no está incluida. Se fabrica a medida, en tono roble natural o nogal. La sección del listón y la separación entre ellos se confirman según el vano. Limpieza con paño seco o apenas húmedo. Fabricación en Chillán.",
+    features: [
+      "Precio por metro lineal de ancho",
+      "Alto hasta 2,6 m, de piso a cielo",
+      "Madera sólida en tono natural o nogal",
+      "La instalación se cotiza aparte",
+    ],
+    material: "Madera sólida",
+    finish: "Tono roble natural o nogal",
+    productionDays: 15,
+    seoTitle: "Separador de Ambientes de Listones",
+    seoDescription:
+      "Separador de ambientes de listones de madera, de piso a cielo. $149.990 por metro lineal, alto hasta 2,6 m. Instalación aparte. Cotiza por WhatsApp.",
+  },
+  {
+    id: "velador-lenga-austral",
+    updatedAt: "2026-11-04",
+    name: "Velador Lenga Austral con cajón",
+    price: 289990,
+    category: "Veladores",
+    imageUrl: "/images/velador-lenga-austral-1.webp",
+    shortPitch:
+      "Velador de lenga austral maciza con cajón y repisa abierta. Medidas de referencia 55 × 38 × 46 cm.",
+    description:
+      "Velador de lenga austral maciza, la madera nativa del sur de Chile. Líneas simples: cubierta gruesa, un cajón con frente limpio y tirador rebajado oculto, y una repisa abierta abajo. Terminación con aceite natural mate. Las medidas son las del plano, de referencia, y se validan en el taller antes de fabricar: 55 cm de ancho, 38 cm de fondo y 46 cm de alto. En ese plano la cubierta y los laterales figuran en 3 cm, el frente del cajón en 13,5 cm y el alto libre sobre la repisa en 21 cm. Vale $289.990. Fabricación en Chillán. Otra mesita de noche del catálogo es el [Velador Cubo](/products/velador-cubo).",
+    features: [
+      "Lenga austral maciza",
+      "Cajón con tirador rebajado oculto",
+      "Repisa abierta bajo el cajón",
+      "Aceite natural mate",
+    ],
+    dimensions: { width: "55 cm", depth: "38 cm", height: "46 cm" },
+    material: "Lenga austral maciza",
+    finish: "Aceite natural mate",
+    productionDays: 15,
+    seoTitle: "Velador Lenga Austral con Cajón",
+    seoDescription:
+      "Velador de lenga austral maciza con cajón y repisa abierta. Aceite natural. Referencia 55×38×46 cm. $289.990. Cotiza por WhatsApp.",
+  },
+  {
+    id: "repisa-j60",
+    updatedAt: "2026-11-04",
+    name: "Repisa J60 Small",
+    price: 69990,
+    priceNote: "desde",
+    category: "Repisas",
+    imageUrl: "/images/repisa-j60-1.webp",
+    shortPitch:
+      "Repisa delgada de pino natural con labio frontal, para libros y cuadros. Desde $69.990 el tramo de 60 cm.",
+    description:
+      "La Repisa J60 Small pone los cuentos y los cuadros de frente. Es de pino natural, con perfil en L y labio frontal, para dormitorio, pasillo o living. El tramo de 60 cm sale desde $69.990. En esta ficha eliges 60, 90 o 120 cm, o un largo a medida entre 40 y 200 cm, y el precio se calcula al momento. Las medidas del plano son de referencia para el tramo de 60 cm: largo 60 cm, fondo 10 cm, respaldo 8 cm, labio frontal 3 cm y espesor 1,5 cm. El canal útil de ese plano es de unos 7 cm. Sirve para libros, cuadros livianos y decoración. La capacidad de carga no está publicada y se confirma al cotizar, porque también depende del muro y de la fijación. La fijación y si la instalación va incluida se confirman al cotizar. Otros tonos se consultan. Fabricación en Chillán.",
+    features: [
+      "Labio frontal para libros y cuadros de frente",
+      "Pino natural con acabado mate",
+      "Largos de 60, 90 y 120 cm, o a medida",
+      "Medidas de referencia del plano de 60 cm",
+    ],
+    dimensions: { width: "60 cm", depth: "10 cm", height: "8 cm" },
+    material: "Pino natural",
+    finish: "Acabado mate",
+    productionDays: 15,
+    seoTitle: "Repisa J60 Small para Libros y Cuadros",
+    seoDescription:
+      "Repisa J60 Small de pino natural con labio frontal, para libros y cuadros. Desde $69.990 el tramo de 60 cm. Elige el largo en la ficha.",
   },
 ];
