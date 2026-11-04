@@ -694,10 +694,10 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const moldurasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/molduras-a-medida",
-  updatedAt: "2026-10-26",
-  pageTitle: "Molduras de Madera a Medida | Chile",
+  updatedAt: "2026-11-04",
+  pageTitle: "Molduras y Cornisas de Madera a Medida | Chile",
   pageDescription:
-    "Molduras de madera a medida: cornisas, guardapolvos y marcos de vanos. Taller en Chillán, por metro lineal. Cotiza el perfil por WhatsApp.",
+    "Molduras y cornisas de madera a medida para interiores: guardapolvos, zócalos y marcos de vanos. Taller en Chillán, por metro lineal. Envíos a todo Chile.",
   keywords: [
     "molduras de madera a medida",
     "molduras madera chile",
@@ -708,7 +708,7 @@ export const moldurasLandingConfig: ServiceLandingConfig = {
     "cotizar molduras madera",
   ],
   eyebrow: "Molduras de madera a medida",
-  h1: "Molduras de madera a medida para tu proyecto",
+  h1: "Molduras y cornisas de madera a medida para tu proyecto",
   heroParagraph:
     "Fabricamos molduras y perfiles de madera a medida desde Chillán para muros, techos, vanos y terminaciones interiores. Para cotizar bien necesitamos el perfil (foto de frente o de la sección), el largo y la cantidad. No hay un catálogo de perfiles publicado en esta página: partimos de tu referencia.",
   badges: ["Taller en Chillán", "Perfiles a medida", "Envíos a todo Chile"],

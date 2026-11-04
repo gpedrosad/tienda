@@ -1,5 +1,21 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-04 — Lote 35 (CTR)
+
+Search Console (sc-domain:ideamadera.cl), pull de hoy. 90d (2026-08-05..2026-11-02): 768 clics / 39.105 impr / pos 9,2. 7d (2026-10-27..2026-11-02): 106 clics / 7.395 impr / pos 8,3, contra 68 / 5.524 / pos 8,9 en los 7d previos (2026-10-20..2026-10-26). Bloque de clics bajos: tres páginas con muchas impresiones y CTR bajo. Ninguna se editó en los últimos 7 días. No se tocó `/tiny-house-dlt` ni el menú (PR #28). Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1793823927-2QFyhoFOI0XGbKBq23DH), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-18.
+
+### `/guias/medidas-mesa-comedor`
+
+Antes, 7d: 1 clic / 1.380 impr / pos 7,6. 90d: 13 / 4.329 / pos 8,1. Consultas 7d: «altura mesa comedor» 0/43 pos 12,1; «medidas mesa comedor 6 personas» 0/14 pos 7,6. Title `Medidas de Mesa de Comedor | Personas y Altura 75 cm` → `Medidas Mesa de Comedor: Altura 75 cm y 6 Personas`. Meta → «Altura estándar de una mesa de comedor: 75 cm, con asiento de silla de 45-48 cm. Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm. Tabla y circulación.» (cifras que ya estaban en la tabla de la guía). H1 igual. Enlace interno a la [guía de sillas de comedor](/guias/elegir-sillas-madera-comedor) al final del párrafo de la altura del asiento. `updatedAt` 2026-11-04.
+
+### `/molduras-a-medida`
+
+Antes, 7d: 9 clics / 667 impr / pos 9,2. 90d: 42 / 1.290. Consultas 7d: «molduras de madera» 2/250 pos 10,3; «cornisas de madera» 0/75 pos 10,1. Title `Molduras de Madera a Medida | Chile` → `Molduras y Cornisas de Madera a Medida | Chile`. Meta → «Molduras y cornisas de madera a medida para interiores: guardapolvos, zócalos y marcos de vanos. Taller en Chillán, por metro lineal. Envíos a todo Chile.» H1 `Molduras de madera a medida para tu proyecto` → `Molduras y cornisas de madera a medida para tu proyecto`. `updatedAt` 2026-11-04.
+
+### `/guias/medidas-mesa-de-centro`
+
+Antes, 7d: 0 clics / 366 impr / pos 7,3. Consultas 7d: «mesa ratona» 0/23 pos 6,3; «medidas mesa de centro» 0/21 pos 10,1. Title `Medidas de Mesa de Centro y Mesa Ratona | Living` → `Medidas Mesa de Centro y Mesa Ratona: Largo y Alto`. Meta → «Cuánto debe medir una mesa ratona o mesa de centro: largo entre la mitad y dos tercios del sofá, y superficie cerca de la altura del asiento.» (la regla que ya da la guía; sin cm nuevos). H1 → `Cómo elegir las medidas de una mesa de centro o mesa ratona`. `updatedAt` 2026-11-04.
+
 ## 2026-11-04 — Tiny house de madera
 
 Datos del encargo (Search Console, no un pull nuevo de este entorno). Página única `/tiny-house-dlt`. 28 días: 24 impresiones, 0 clics, posición 9.0. 90 días: 39 impresiones, 0 clics, posición 7.4. Query tiny en 90 días: «tiny house madera», 1 impresión, posición 4. Registro: `CTR-TRACKING.md`.
