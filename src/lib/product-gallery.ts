@@ -143,7 +143,6 @@ export const productImagesById: Record<string, string[]> = {
     "/images/separador-listones-5.webp",
     "/images/separador-listones-6.webp",
     "/images/separador-listones-7.webp",
-    "/images/separador-listones-8.webp",
   ],
   "velador-lenga-austral": [
     "/images/velador-lenga-austral-1.webp",
