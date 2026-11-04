@@ -314,10 +314,10 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  updatedAt: "2026-10-28",
-  pageTitle: "Medidas de Mesa de Comedor | Personas y Altura 75 cm",
+  updatedAt: "2026-11-04",
+  pageTitle: "Medidas Mesa de Comedor: Altura 75 cm y 6 Personas",
   pageDescription:
-    "¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.",
+    "Altura estándar de una mesa de comedor: 75 cm, con asiento de silla de 45-48 cm. Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm. Tabla y circulación.",
   keywords: [
     "medidas mesa comedor",
     "tamaño mesa comedor",
@@ -368,7 +368,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
       content: [
         "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie de la mesa. Esta altura permite sentarse cómodamente con las piernas en ángulo de 90° y los pies apoyados en el suelo.",
         "Una superficie de 85 cm de alto no es la de un comedor: es altura de barra o de mesón alto. Con un asiento de 45-48 cm, esa altura deja la mesa alta para comer. Más abajo, 180 × 85 cm es un ejemplo de largo por ancho para un comedor estrecho, no una altura.",
-        "La altura del asiento de las sillas debe ser de 45-48 cm, dejando una distancia de 27-30 cm entre el asiento y la superficie de la mesa. Esta separación da espacio suficiente para las piernas sin que las rodillas choquen con la estructura.",
+        "La altura del asiento de las sillas debe ser de 45-48 cm, dejando una distancia de 27-30 cm entre el asiento y la superficie de la mesa. Esta separación da espacio suficiente para las piernas sin que las rodillas choquen con la estructura. Para elegir el modelo, mira la [guía de sillas de comedor](/guias/elegir-sillas-madera-comedor).",
         "Si tus sillas actuales tienen el asiento más bajo (por ejemplo, 42-44 cm), sentirás que la mesa queda alta. Si las sillas son muy altas (más de 50 cm), tendrás que agacharte para comer. Por eso es importante verificar la altura del asiento de las sillas antes de comprar una mesa, o viceversa.",
         "Para mesas de 10 personas o más (240-300 cm de largo), considera el ancho de 100 cm para dar mayor comodidad y permitir que los comensales en los extremos tengan suficiente espacio para los codos.",
         "Si tienes dudas sobre si tus sillas actuales son compatibles con una mesa de 75 cm, mide la altura del asiento de la silla. Si está entre 45 y 48 cm, funcionará bien. Si la diferencia es mayor a 30 cm (por ejemplo, silla de 40 cm con mesa de 75 cm), sentirás incomodidad al comer.",

@@ -2,10 +2,10 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const medidasMesaCentroGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-de-centro",
-  updatedAt: "2026-10-24",
-  pageTitle: "Medidas de Mesa de Centro y Mesa Ratona | Living",
+  updatedAt: "2026-11-04",
+  pageTitle: "Medidas Mesa de Centro y Mesa Ratona: Largo y Alto",
   pageDescription:
-    "Cómo elegir el tamaño de una mesa de centro o mesa ratona según el sofá: largo, altura del asiento y paso. Medidas del catálogo. Cotiza por WhatsApp.",
+    "Cuánto debe medir una mesa ratona o mesa de centro: largo entre la mitad y dos tercios del sofá, y superficie cerca de la altura del asiento.",
   keywords: [
     "medidas mesa de centro",
     "medidas mesa ratona",
@@ -14,7 +14,7 @@ export const medidasMesaCentroGuideConfig: GuideConfig = {
     "mesa ratona para sofá",
   ],
   eyebrow: "Guía práctica",
-  h1: "Cómo elegir las medidas de una mesa de centro",
+  h1: "Cómo elegir las medidas de una mesa de centro o mesa ratona",
   intro:
     "La mesa de centro va frente al sofá. En Chile y en Argentina también se le dice mesa ratona: es el mismo mueble. Esta guía sirve para mirar el largo respecto al sofá, la altura respecto al asiento y el espacio para caminar. Al final están solo las medidas que el catálogo publica.",
   heroImage: {

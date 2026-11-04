@@ -17,3 +17,37 @@ Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del
   - FAQ y FAQPage: 7 → 10. Precio sin cifras (depende del tamaño y las terminaciones, cotiza por WhatsApp). Permisos sin trámite inventado. Qué incluye, según el alcance que la página ya describía. Plazos solo en los términos que ya estaban (sin días).
   - Enlaces: ítem «Tiny house» en el menú principal (escritorio y móvil) y en el pie. Ancla «tiny house de madera» en la home. Enlace desde cubiertas, puertas, peldaños, kit pérgola y contacto. Sigue en el sitemap.
 - **Qué no se hizo, por falta de dato en la landing:** página `/tiny-house-planos-modelos` (no hay planos ni modelos a la venta; Proyecto Refugio y el 3D se declaran como antecedente y geometría conceptual). Bloque de precios, valor por m², «desde $X», kit vs llave en mano, Offer y landings por ciudad.
+
+## 2026-11-04 · `/guias/medidas-mesa-comedor` — Lote 35 (aplicado)
+
+- **URL:** https://www.ideamadera.cl/guias/medidas-mesa-comedor
+- **Queries objetivo:** altura mesa comedor; medidas mesa comedor 6 personas
+- **Antes:** 7d (2026-10-27..11-02) 1 clic / 1.380 impr / CTR 0,07 % / pos 7,6; 90d (08-05..11-02) 13/4.329 pos 8,1; «altura mesa comedor» 7d 0/43 pos 12,1; «medidas mesa comedor 6 personas» 0/14 pos 7,6
+- **Title:** `Medidas de Mesa de Comedor | Personas y Altura 75 cm` → `Medidas Mesa de Comedor: Altura 75 cm y 6 Personas`
+- **Meta:** «¿Qué medidas debe tener tu mesa de comedor? Guía con tabla de referencia según personas, altura ideal (75 cm) y espacio de circulación. Cotiza a medida.» → «Altura estándar de una mesa de comedor: 75 cm, con asiento de silla de 45-48 cm. Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm. Tabla y circulación.»
+- **H1:** Cómo elegir las medidas de tu mesa de comedor (sin cambio)
+- **Enlaces:** + enlace a /guias/elegir-sillas-madera-comedor
+- **Medir el:** 2026-11-18 (7d y 14d posteriores vs. el «antes»)
+- **Resultado:** (pendiente)
+
+## 2026-11-04 · `/molduras-a-medida` — Lote 35 (aplicado)
+
+- **URL:** https://www.ideamadera.cl/molduras-a-medida
+- **Queries objetivo:** molduras de madera; cornisas de madera
+- **Antes:** 7d 9 clics / 667 impr / CTR 1,35 % / pos 9,2; 90d 42/1.290; «molduras de madera» 7d 2/250 pos 10,3; «cornisas de madera» 0/75 pos 10,1
+- **Title:** `Molduras de Madera a Medida | Chile` → `Molduras y Cornisas de Madera a Medida | Chile`
+- **Meta:** «Molduras de madera a medida: cornisas, guardapolvos y marcos de vanos. Taller en Chillán, por metro lineal. Cotiza el perfil por WhatsApp.» → «Molduras y cornisas de madera a medida para interiores: guardapolvos, zócalos y marcos de vanos. Taller en Chillán, por metro lineal. Envíos a todo Chile.»
+- **H1:** Molduras de madera a medida para tu proyecto → Molduras y cornisas de madera a medida para tu proyecto
+- **Medir el:** 2026-11-18 (7d y 14d posteriores vs. el «antes»)
+- **Resultado:** (pendiente)
+
+## 2026-11-04 · `/guias/medidas-mesa-de-centro` — Lote 35 (aplicado)
+
+- **URL:** https://www.ideamadera.cl/guias/medidas-mesa-de-centro
+- **Queries objetivo:** mesa ratona; medidas mesa de centro
+- **Antes:** 7d 0 clics / 366 impr / CTR 0 % / pos 7,3; «mesa ratona» 7d 0/23 pos 6,3; «medidas mesa de centro» 0/21 pos 10,1
+- **Title:** `Medidas de Mesa de Centro y Mesa Ratona | Living` → `Medidas Mesa de Centro y Mesa Ratona: Largo y Alto`
+- **Meta:** «Cómo elegir el tamaño de una mesa de centro o mesa ratona según el sofá: largo, altura del asiento y paso. Medidas del catálogo. Cotiza por WhatsApp.» → «Cuánto debe medir una mesa ratona o mesa de centro: largo entre la mitad y dos tercios del sofá, y superficie cerca de la altura del asiento.»
+- **H1:** Cómo elegir las medidas de una mesa de centro → … de una mesa de centro o mesa ratona
+- **Medir el:** 2026-11-18 (7d y 14d posteriores vs. el «antes»)
+- **Resultado:** (pendiente)
