@@ -1,5 +1,25 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-04 — Tiny house de madera
+
+Datos del encargo (Search Console, no un pull nuevo de este entorno). Página única `/tiny-house-dlt`. 28 días: 24 impresiones, 0 clics, posición 9.0. 90 días: 39 impresiones, 0 clics, posición 7.4. Query tiny en 90 días: «tiny house madera», 1 impresión, posición 4. Registro: `CTR-TRACKING.md`.
+
+### `/tiny-house-dlt`
+
+Title absoluto: `Tiny House en DLT en Chile | Cotiza por WhatsApp` → `Tiny House de Madera en Chile | Prefabricada | Idea Madera` (58). «Llave en mano» queda fuera: la landing no describe kit ni entrega llave en mano. Meta (154): tiny house de madera prefabricada, Chile, paneles DLT, taller en Chillán, antecedente en Las Trancas, cotiza por WhatsApp. Sin precio ni m².
+
+H1: `Tiny house de madera en Chile`. El DLT pasa al subtítulo «En DLT. Tu refugio empieza en la madera.» El primer párrafo define la vivienda compacta, la prefabricación en Chillán y el CTA de WhatsApp.
+
+H2 nuevos, solo con frases que la página ya tenía: «Qué es una tiny house», «Tiny house de madera, y en qué se diferencia del CLT», «¿Con ruedas o sobre fundación?» (no hay modelo con ruedas ni fundación estándar; se consulta) y «Cómo cotizar tu tiny house». Proyecto Refugio sigue como antecedente, no como modelo. El simulador 3D sigue marcado como geometría conceptual.
+
+FAQ visible y FAQPage, las mismas diez respuestas en texto plano: qué es, cuánto cuesta (tamaño y terminaciones, sin cifras, WhatsApp), permiso (sin trámite inventado), qué incluye, ruedas o fundación, plazos (el texto que ya estaba, sin días), madera renovable, clima frío, DLT vs CLT, cotizar desde otra región. Service sin Offer. Canonical sigue en `/tiny-house-dlt`. Sigue en el sitemap. `updatedAt` `2026-11-04`.
+
+No se creó `/tiny-house-planos-modelos`. No hay planos, medidas de catálogo ni modelos a la venta en la landing.
+
+### Enlaces, sin tocar titles ajenos
+
+Menú principal de escritorio y móvil: «Tiny house» → `/tiny-house-dlt`. El pie cambia la etiqueta «Tiny house en DLT» por «Tiny house» (misma URL). Home: ancla «tiny house de madera» en el párrafo del taller. Misma ancla, en una frase, desde `/cubiertas-a-medida`, `/puertas-a-medida`, `/peldanos-a-medida`, `/kit-pergola` y `/contacto`. Titles de esas páginas iguales. `updatedAt` `2026-11-04` solo en home, kit, tiny house, cubiertas, puertas, peldaños y contacto. Veladores, Pixel y el resto de titles no se tocaron.
+
 ## 2026-11-03 — Lote 34
 
 Datos del encargo (Search Console, pull del encargo, no un pull nuevo de este entorno): 90 días 4 ago→1 nov, 751 clics / 38.054 impresiones, posición 9,3. En 7 días (26 oct–1 nov), 94 clics / 7.211 impresiones, posición 8,3, contra 79 clics / 5.133 impresiones, posición 9,0 la semana previa (19–25 oct). Titles congelados, sin cambio. La antigüedad sigue en 1993. Sin URLs nuevas. Con `git log -L` del bloque, `/collections/veladores` no cambia de texto desde el 16 de octubre (el commit del 17 oct solo agregó `updatedAt`). `/puertas-de-madera-con-vidrio` y `/puertas-exteriores` no cambian desde el 26 de octubre. `/guias/medidas-mesa-comedor` y `/puertas-interiores` se editaron el 28 de octubre y no se tocaron.

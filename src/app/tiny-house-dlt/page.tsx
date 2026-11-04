@@ -7,11 +7,11 @@ import { absoluteUrl, buildBreadcrumbSchema, buildFaqPageSchema, SITE_NAME, SITE
 import Quote, { QuoteButton } from "./Quote";
 import HouseSimulator from "./HouseSimulator";
 import DltBenefits from "./DltBenefits";
-import { faqs, landingPath, referenceUrl } from "./content";
+import { faqs, guideSections, landingPath, referenceUrl } from "./content";
 import "./tiny-house.css";
 
-const title = "Tiny House en DLT en Chile | Cotiza por WhatsApp";
-const description = "Tiny house en DLT desde Chillán: paneles de madera prefabricados. Cotiza metros y comuna por WhatsApp. Experiencia en Proyecto Refugio, Las Trancas.";
+const title = "Tiny House de Madera en Chile | Prefabricada | Idea Madera";
+const description = "Tiny house de madera prefabricada en Chile. Paneles DLT desde el taller en Chillán, antecedente en Las Trancas. Cuéntanos tu comuna y cotiza por WhatsApp.";
 const socialImage = { url: absoluteUrl("/images/tiny-house-dlt-madera.webp"), width: 1000, height: 675, alt: "Panel de madera DLT en taller, publicado en el reportaje de Proyecto Refugio" };
 
 export const metadata: Metadata = {
@@ -26,23 +26,24 @@ export default function TinyHousePage() {
   return (
     <main className="dlt-page">
       <JsonLd data={[
-        buildBreadcrumbSchema([{ name: "Inicio", path: "/" }, { name: "Tiny house en DLT", path: landingPath }]),
+        buildBreadcrumbSchema([{ name: "Inicio", path: "/" }, { name: "Tiny house de madera", path: landingPath }]),
         buildFaqPageSchema(faqs),
         {
           "@context": "https://schema.org", "@type": "Service", "@id": `${absoluteUrl(landingPath)}#service`,
-          name: "Tiny house en DLT a medida", serviceType: "Proyectos de viviendas compactas en madera DLT",
+          name: "Tiny house de madera a medida", serviceType: "Proyectos de viviendas compactas en madera DLT",
           description, url: absoluteUrl(landingPath), image: socialImage.url,
           provider: { "@id": `${SITE_URL}/#organization` }, areaServed: { "@type": "Country", name: "Chile" },
         },
       ]} />
 
       <div className="dlt-wrap">
-        <nav aria-label="Ruta de navegación" className="dlt-breadcrumb"><Link href="/">Inicio</Link><span aria-hidden="true">/</span><span aria-current="page">Tiny house en DLT</span></nav>
+        <nav aria-label="Ruta de navegación" className="dlt-breadcrumb"><Link href="/">Inicio</Link><span aria-hidden="true">/</span><span aria-current="page">Tiny house de madera</span></nav>
         <section className="dlt-hero" aria-labelledby="dlt-title">
           <div className="dlt-hero-copy">
             <p className="dlt-kicker">Idea Madera · Construcción en madera</p>
-            <h1 id="dlt-title">Tiny house en DLT.<br /><span>Tu refugio empieza en la madera.</span></h1>
-            <p className="dlt-intro">Una vivienda compacta, con madera renovable y paneles prefabricados para un montaje rápido. Llevamos nuestra experiencia en DLT desde Chillán a tu próximo proyecto.</p>
+            <h1 id="dlt-title">Tiny house de madera en Chile</h1>
+            <p className="dlt-hero-sub">En DLT. Tu refugio empieza en la madera.</p>
+            <p className="dlt-intro">Una tiny house de madera es una vivienda compacta. La fabricamos en Chillán con paneles prefabricados de madera maciza (DLT) y la cotizas por WhatsApp con tu comuna y los metros aproximados.</p>
             <div className="dlt-actions"><QuoteButton /><a className="dlt-text-link" href="#proyecto-refugio">Conoce Proyecto Refugio <span aria-hidden="true">↓</span></a></div>
           </div>
           <figure className="dlt-hero-photo">
@@ -50,8 +51,17 @@ export default function TinyHousePage() {
             <figcaption>Madera real. Experiencia construida.<br /><span>Fotografía: Jorge Calderón · Publicada en <a href={referenceUrl} target="_blank" rel="noopener noreferrer">Madera21 ↗</a></span></figcaption>
           </figure>
         </section>
-        <nav className="dlt-section-nav" aria-label="En esta página"><a href="#ventajas">Por qué DLT</a><a href="#proyecto-refugio">Nuestra experiencia</a><a href="#obra">Obra real</a><a href="#proceso">Tu proyecto</a><a href="#preguntas">Preguntas frecuentes</a><a href="#cotizar">Cotizar <span aria-hidden="true">↗</span></a></nav>
+        <nav className="dlt-section-nav" aria-label="En esta página"><a href="#que-es">Qué es</a><a href="#ventajas">Por qué DLT</a><a href="#proyecto-refugio">Nuestra experiencia</a><a href="#obra">Obra real</a><a href="#proceso">Tu proyecto</a><a href="#preguntas">Preguntas frecuentes</a><a href="#cotizar">Cotizar <span aria-hidden="true">↗</span></a></nav>
       </div>
+
+      <section className="dlt-wrap dlt-section dlt-guide" aria-label="Qué es y cómo cotizar una tiny house de madera">
+        {guideSections.map((section) => (
+          <article key={section.id} id={section.id}>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </article>
+        ))}
+      </section>
 
       <DltBenefits />
 
@@ -86,7 +96,7 @@ export default function TinyHousePage() {
         <div className="dlt-scope"><h3>¿Qué determina el precio de una tiny house?</h3><p>Además de los metros cuadrados, influyen el diseño, las fundaciones, instalaciones, aislación, ventanas y accesibilidad del terreno. Al cotizar, revisaremos el alcance de cada partida para que puedas comparar propuestas con la misma información.</p></div>
       </section>
 
-      <section id="cotizar" className="dlt-quote" aria-labelledby="dlt-quote-title"><div className="dlt-wrap dlt-quote-grid"><div><p className="dlt-kicker">Empecemos con tu idea</p><h2 id="dlt-quote-title">Cotiza tu<br />tiny house en DLT.</h2><p>No necesitas tener todos los planos listos. Cuéntanos lo que imaginas y te ayudamos a definir el siguiente paso.</p><p className="dlt-contact">Atención directa de Idea Madera<br />Chillán, Chile · <a href="tel:+56995497838" data-placement="tiny_house_phone">+56 9 9549 7838</a></p></div><Quote /></div></section>
+      <section id="cotizar" className="dlt-quote" aria-labelledby="dlt-quote-title"><div className="dlt-wrap dlt-quote-grid"><div><p className="dlt-kicker">Empecemos con tu idea</p><h2 id="dlt-quote-title">Cotiza tu<br />tiny house de madera.</h2><p>No necesitas tener todos los planos listos. La propuesta se plantea en DLT, desde el taller en Chillán. Cuéntanos lo que imaginas y te ayudamos a definir el siguiente paso.</p><p className="dlt-contact">Atención directa de Idea Madera<br />Chillán, Chile · <a href="tel:+56995497838" data-placement="tiny_house_phone">+56 9 9549 7838</a></p></div><Quote /></div></section>
 
       <section id="preguntas" className="dlt-wrap dlt-section dlt-faq" aria-labelledby="dlt-faq-title"><h2 id="dlt-faq-title">Antes de construir,<br />resolvamos tus dudas.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faqAnswerText(faq.answer)}</p></details>)}</div></section>
 

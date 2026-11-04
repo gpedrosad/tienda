@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-11-04
+
+- **Tiny house:** `/tiny-house-dlt` deja el foco «DLT» en el subtítulo. Title `Tiny House de Madera en Chile | Prefabricada | Idea Madera` (sin «llave en mano»: la página no lo ofrece). H1 `Tiny house de madera en Chile`. Cuatro H2 con texto que ya estaba (qué es, madera vs CLT, ruedas o fundación como «consúltanos», cómo cotizar). FAQ y FAQPage de 7 a 10, precio sin cifras. Menú «Tiny house». Ancla «tiny house de madera» en la home y enlaces desde cubiertas, puertas, peldaños, kit pérgola y contacto. Sin `/tiny-house-planos-modelos` (no hay planos ni modelos publicados). `updatedAt` 2026-11-04 en las URLs tocadas. Métricas de partida y detalle: `CTR-TRACKING.md`.
+
 ## 2026-11-03
 
 - **Lote 34:** `/collections/veladores`: H2 «Veladores de madera para dormitorio» y H2 «Medidas de un velador» con el Velador Cubo (45 × 45 × 50 cm, la única ficha con foto y medidas). `/puertas-de-madera-con-vidrio`: la intro y un H2 dicen «puerta de madera con vidrio»; los enlaces a interiores, exteriores y puertas a medida ya estaban. `/puertas-exteriores`: la frase del dormitorio nombra «puertas para dormitorios» y «puertas de madera interior». Titles y metas iguales. `/guias/medidas-mesa-comedor` y `/puertas-interiores` no se editaron (28 oct). `updatedAt` 2026-11-03 solo en las tres páginas editadas. Sitemap sigue en 74 URLs. Detalle: `SEO-CHANGELOG.md`.

@@ -199,7 +199,10 @@ export default function HomePage() {
             </Link>{" "}y{" "}
             <Link href="/mesas-de-centro" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
               mesas ratonas
-            </Link>{" "}para el living.
+            </Link>{" "}para el living. Si buscas una vivienda compacta fabricada en el mismo taller, cotiza una{" "}
+            <Link href="/tiny-house-dlt" className="text-ink underline decoration-wood/40 underline-offset-4 hover:decoration-wood">
+              tiny house de madera
+            </Link>.
           </p>
         </div>
       </section>

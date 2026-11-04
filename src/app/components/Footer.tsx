@@ -19,7 +19,7 @@ const shopLinks: FooterLink[] = [
   { href: ALL_PRODUCTS_COLLECTION_PATH, label: 'Productos' },
   { href: '/ofertas', label: 'Destacados' },
   { href: '/kit-pergola', label: 'Kit pérgola' },
-  { href: '/tiny-house-dlt', label: 'Tiny house en DLT' },
+  { href: '/tiny-house-dlt', label: 'Tiny house' },
 ];
 
 const customMadeLinks: FooterLink[] = [

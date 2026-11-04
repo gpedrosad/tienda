@@ -606,6 +606,9 @@ export default function KitPergolaPage() {
               <Link href="/cubiertas-a-medida" className="hover:text-white">
                 Cubiertas a medida
               </Link>
+              <Link href="/tiny-house-dlt" className="hover:text-white">
+                Tiny house de madera
+              </Link>
               <Link href="/contacto" className="hover:text-white">
                 Contacto
               </Link>

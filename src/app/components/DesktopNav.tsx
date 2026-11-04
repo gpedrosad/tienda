@@ -23,6 +23,7 @@ const navItems: Array<
   { label: "Destacados", href: "/ofertas" },
   { label: "A medida", id: "medida", links: customMadeNavLinks },
   { label: "Kit pérgola", href: KIT_PERGOLA_PATH },
+  { label: "Tiny house", href: "/tiny-house-dlt" },
   { label: "Contacto", href: "/contacto" },
 ];
 

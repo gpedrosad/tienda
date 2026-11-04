@@ -8,6 +8,7 @@ Leer **solo** el archivo de la tarea. No cargar informes GSC largos salvo métri
 | Reglas (no romper) | [RULES.md](./RULES.md) |
 | Snapshot GSC + estado técnico | [STATE.md](./STATE.md) |
 | Qué se cambió y cuándo | [CHANGELOG.md](./CHANGELOG.md) |
+| CTR de una URL (antes / qué cambió) | [../../CTR-TRACKING.md](../../CTR-TRACKING.md) |
 | Reevaluar post-intervención | [EVAL.md](./EVAL.md) |
 | Backlog / qué hacer después | [NEXT.md](./NEXT.md) |
 | Plan aumentar CTR | [CTR-PLAN.md](./CTR-PLAN.md) |
