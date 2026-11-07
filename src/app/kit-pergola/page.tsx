@@ -14,9 +14,9 @@ import {
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const canonicalPath = "/kit-pergola";
-const pageTitle = "Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas";
+const pageTitle = "Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas";
 const pageDescription =
-  "Kit de uniones metálicas y bases para pérgola de madera 3×3 (75×75 mm), sin maderas. Soportes para atornillar o cementar. Cotiza por WhatsApp.";
+  "Kit para pérgola de madera: uniones para pérgolas y bases 3×3 (75×75 mm), sin maderas. Atornillar o cementar. Cotiza por WhatsApp.";
 
 const keywords = [
   "kit pérgola",
