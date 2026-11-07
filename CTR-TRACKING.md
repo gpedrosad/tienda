@@ -2,6 +2,31 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-07 · Lote 36 (aplicado)
+
+### `/kit-pergola`
+
+- **URL:** https://www.ideamadera.cl/kit-pergola
+- **Queries objetivo:** kit pergola; kit pergola madera; kit para pergola; uniones para pergolas
+- **Antes:** 90d (pull 2026-11-07, last_day 2026-11-06) 27 clics / 1.244 impr / CTR 2,17 % / pos 7,2; 7d 10/409 pos 7,5
+- **Title:** `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` → `Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas`
+- **Meta:** `Kit de uniones metálicas y bases para pérgola de madera 3×3 (75×75 mm), sin maderas. Soportes para atornillar o cementar. Cotiza por WhatsApp.` → `Kit para pérgola de madera: uniones para pérgolas y bases 3×3 (75×75 mm), sin maderas. Atornillar o cementar. Cotiza por WhatsApp.`
+- **H1:** sin cambio
+- **Medir el:** 2026-11-21
+- **Resultado:** (pendiente)
+
+### `/guias/elegir-sillas-madera-comedor`
+
+- **URL:** https://www.ideamadera.cl/guias/elegir-sillas-madera-comedor
+- **Queries objetivo:** sillas de madera para comedor; medida de silla; (dejar «altura mesa comedor» a /guias/medidas-mesa-comedor)
+- **Antes:** 90d 1 clic / 640 impr / CTR 0,16 % / pos 9,4; cannib «altura mesa comedor» 0/23 pos 12,4
+- **Title:** `Sillas de Madera para Comedor | Altura, Ancho y Cantidad` → `Sillas de Madera para Comedor: Medidas y Cantidad`
+- **Meta:** hacia medidas de asiento 45-48 cm y cantidad según largo (sin abrir con altura de mesa)
+- **H1:** sin cambio
+- **Cannib:** enlace markdown en el párrafo de 75 cm → `/guias/medidas-mesa-comedor` como definición primaria
+- **Medir el:** 2026-11-21
+- **Resultado:** (pendiente)
+
 ## 2026-11-04 · `/tiny-house-dlt`
 
 - **URL:** https://www.ideamadera.cl/tiny-house-dlt

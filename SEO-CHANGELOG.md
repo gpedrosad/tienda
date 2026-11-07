@@ -1,5 +1,21 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-07 — Lote 36 (CTR)
+
+Search Console (sc-domain:ideamadera.cl), pull 2026-11-07. 90d: 798 clics / 43.641 impr / CTR 1,83 % / pos 8,9. 7d (2026-10-31..2026-11-06): 102 / 8.494 / CTR 1,2 % / pos 7,8, contra 93 / 7.162 / pos 8,2 en prev7. Congeladas Lote 35: medidas-mesa-comedor, molduras-a-medida, medidas-mesa-de-centro, tiny-house-dlt y body recientes. Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1794054411-B8s2LF55Gj3qfGokJGvy), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-21. Sin página nueva. GA4 omitido (reauth).
+
+### `/kit-pergola`
+
+Antes, 90d: 27 / 1.244 / CTR 2,17 % / pos 7,2. Title `Kit de Uniones Metálicas para Pérgola 3×3 | Sin Maderas` → `Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas` (propuesta Lote 33/34). Meta → «Kit para pérgola de madera: uniones para pérgolas y bases 3×3 (75×75 mm), sin maderas. Atornillar o cementar. Cotiza por WhatsApp.» H1 igual.
+
+### `/guias/elegir-sillas-madera-comedor`
+
+Antes, 90d: 1 / 640 / CTR 0,16 % / pos 9,4. Title `Sillas de Madera para Comedor | Altura, Ancho y Cantidad` → `Sillas de Madera para Comedor: Medidas y Cantidad`. Meta hacia medidas de asiento 45-48 cm (sin abrir con altura de mesa). H1 igual. Canibalización «altura mesa comedor»: el párrafo de 75 cm enlaza a [/guias/medidas-mesa-comedor](/guias/medidas-mesa-comedor) como primaria. `updatedAt` 2026-11-07.
+
+### No aplicados
+
+`/comedores-nordicos` (title ya alineado; sin win claro). Páginas congeladas: solo propuesta. Contenido gap: skip.
+
 ## 2026-11-04 — Lote 35 (CTR)
 
 Search Console (sc-domain:ideamadera.cl), pull de hoy. 90d (2026-08-05..2026-11-02): 768 clics / 39.105 impr / pos 9,2. 7d (2026-10-27..2026-11-02): 106 clics / 7.395 impr / pos 8,3, contra 68 / 5.524 / pos 8,9 en los 7d previos (2026-10-20..2026-10-26). Bloque de clics bajos: tres páginas con muchas impresiones y CTR bajo. Ninguna se editó en los últimos 7 días. No se tocó `/tiny-house-dlt` ni el menú (PR #28). Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1793823927-2QFyhoFOI0XGbKBq23DH), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-18.
