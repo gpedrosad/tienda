@@ -243,9 +243,9 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
   updatedAt: "2026-11-04",
   breadcrumbLabel: "Peldaños a medida",
-  pageTitle: "Peldaños de Madera para Escalera a Medida | Chile",
+  pageTitle: "Peldaños para Escaleras: Huellas de Madera a Medida",
   pageDescription:
-    "Peldaños y huellas de madera para escalera a medida. Cotiza largo, ancho, espesor y cantidad por WhatsApp. Envíos a todo Chile.",
+    "Huellas de madera a medida para escaleras nuevas o remodelaciones. Cotiza con largo, ancho, espesor y cantidad por WhatsApp. Envíos a todo Chile.",
   keywords: [
     "peldaños a medida",
     "peldaños de madera a medida",
@@ -502,9 +502,9 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
   updatedAt: "2026-11-04",
-  pageTitle: "Mesones para Quincho y Cubiertas de Madera a Medida",
+  pageTitle: "Mesones y Cubiertas de Madera a Medida para Quincho",
   pageDescription:
-    "Mesones para quincho, barras y cubiertas de madera a medida. Lenga austral, pino premium. Cotiza tu mesón de quincho por WhatsApp con envío a todo Chile.",
+    "Mesones y cubiertas de madera a medida para quincho, cocina o barra, en lenga austral o pino premium. Cotiza por WhatsApp; envíos a todo Chile.",
   keywords: [
     "mesones para quinchos",
     "mesones para quincho",
@@ -919,9 +919,9 @@ export const puertasLandingConfig: ServiceLandingConfig = {
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
   ],
-  pageTitle: "Puertas de Madera a Medida | Fábrica en Chillán",
+  pageTitle: "Fábrica de Puertas de Madera a Medida en Chillán",
   pageDescription:
-    "Fábrica de puertas de madera a medida en Chillán: interior o exterior, según tu vano. Envía alto, ancho y foto por WhatsApp. Envío a todo Chile.",
+    "Taller familiar en Chillán, interior o exterior según tu vano. Envía alto, ancho y foto por WhatsApp; marco e instalación se confirman aparte.",
   keywords: [
     "puertas de madera a medida",
     "puertas a medida",
