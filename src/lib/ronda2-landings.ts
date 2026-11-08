@@ -16,9 +16,9 @@ export const puertasVidrioLandingConfig: ServiceLandingConfig = {
     { name: "Puertas a medida", path: "/puertas-a-medida" },
     { name: "Puertas con vidrio", path: "/puertas-de-madera-con-vidrio" },
   ],
-  pageTitle: "Puertas de Madera con Vidrio a Medida | Chile",
+  pageTitle: "Puerta de Madera con Vidrio a Medida | Taller en Chillán",
   pageDescription:
-    "Puertas de madera con vidrio a medida en Chillán. Cotiza la hoja por WhatsApp con el vano y una foto. El vidrio se confirma. Envío a Chile.",
+    "Hoja de madera con vidrio a medida para interior o entrada. Envía vano y foto de la repartición por WhatsApp; el vidrio se confirma al cotizar.",
   keywords: [
     "puertas de madera con vidrio",
     "puertas vidriadas de madera",

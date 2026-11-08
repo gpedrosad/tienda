@@ -6,6 +6,10 @@ Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del
 
 Tres snippets (guía de huella y contrahuella, colección de veladores, guía de medidas de puertas). Title y meta nuevos; H1 igual. Registro con URL, query, métricas de antes y el antes/después: [docs/seo/ctr-tracking.md](docs/seo/ctr-tracking.md). Medir el 2026-11-22.
 
+## 2026-11-08 · CTR test Opus 5.5 · batch 2
+
+Cinco snippets: comedores nórdicos, puertas con vidrio, cubiertas, puertas a medida y peldaños a medida. Title y meta nuevos; H1 igual. Registro: [docs/seo/ctr-tracking.md](docs/seo/ctr-tracking.md). Medir el 2026-11-22.
+
 ## 2026-11-07 · Lote 36 (aplicado)
 
 ### `/kit-pergola`
