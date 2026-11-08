@@ -5,9 +5,9 @@ export const doorGuidePath = "/guias/medidas-y-madera-puertas";
 export const medidasMaderaPuertasGuideConfig: GuideConfig = {
   canonicalPath: doorGuidePath,
   updatedAt: "2026-10-26",
-  pageTitle: "Medidas y Madera para Puertas | Idea Madera",
+  pageTitle: "Medidas de puertas en Chile y qué madera usar | Idea Madera",
   pageDescription:
-    "Medidas habituales de puertas en Chile y cómo elegir la madera según interior o exterior. La hoja se fabrica a tu vano. Cotiza por WhatsApp.",
+    "Hojas de 70, 75, 80 y 90 × 200 cm se ven seguido en Chile. Cómo medir el vano y elegir madera para interior o exterior. Cotiza a medida.",
   keywords: [
     "medidas estándar de puertas",
     "medidas de puertas de madera",

@@ -31,9 +31,9 @@ const clusterAndWorkshop = [
 export const medidasPeldanosGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-peldanos-escalera",
   updatedAt: "2026-11-01",
-  pageTitle: "Medidas de Peldaños: Huella y Contrahuella | Idea Madera",
+  pageTitle: "Huella y contrahuella: medidas de referencia | Idea Madera",
   pageDescription:
-    "Cómo medir la huella y la contrahuella de un peldaño. Referencia general de confort (2 contrahuellas + huella). Cotiza por WhatsApp.",
+    "Huella cerca de 25 a 30 cm y contrahuella de 15 a 18 cm, como referencia de confort. 2 contrahuellas + huella: cerca de 63 cm. Cómo medirlas.",
   keywords: [
     "medidas de peldaños",
     "huella y contrahuella",
