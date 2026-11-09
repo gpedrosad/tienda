@@ -424,15 +424,15 @@ export const puertasExterioresLandingConfig: ServiceLandingConfig = {
 
 export const puertasCorrederasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-correderas",
-  updatedAt: "2026-10-29",
+  updatedAt: "2026-11-09",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
     { name: "Puertas correderas", path: "/puertas-correderas" },
   ],
-  pageTitle: "Puertas Correderas de Madera a Medida | Chillán",
+  pageTitle: "Puertas Correderas y Corredizas de Madera a Medida | Chillán",
   pageDescription:
-    "Puertas correderas de madera a medida en Chillán. Referencia de interior con vidrio. Cotiza la hoja por WhatsApp. Herrajes aparte.",
+    "Puertas correderas y corredizas de madera a medida en Chillán. Referencia de interior con vidrio. Cotiza la hoja por WhatsApp. Herrajes aparte.",
   keywords: [
     "puertas correderas de madera",
     "puerta corredera madera y vidrio",

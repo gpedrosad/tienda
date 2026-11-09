@@ -2,6 +2,29 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-09 · Lote 37 (aplicado)
+
+### `/products/silla-kentucky`
+
+- **URL:** https://www.ideamadera.cl/products/silla-kentucky
+- **Query objetivo:** silla kentucky; sillas kentucky
+- **Antes:** 28d (10-12..11-08) 1 clic / 171 impr / CTR 0,58 % / pos 2,0; 7d 0/48; «silla kentucky» 0/66 pos 1,0
+- **Title:** `Silla Kentucky de madera | Silla de descanso | Idea Madera` → `Silla Kentucky de madera reclinada | Idea Madera`
+- **Meta / H1:** sin cambio
+- **Medir el:** 2026-11-23
+- **Resultado:** (pendiente)
+
+### `/puertas-correderas`
+
+- **URL:** https://www.ideamadera.cl/puertas-correderas
+- **Queries objetivo:** corredera de madera; puertas corredizas de madera; puerta corredera de madera
+- **Antes:** 28d 2 clics / 268 impr / CTR 0,75 % / pos 7,6; 7d 2/117 vs prev7 0/124
+- **Title:** `Puertas Correderas de Madera a Medida | Chillán` → `Puertas Correderas y Corredizas de Madera a Medida | Chillán`
+- **Meta:** «Puertas correderas de madera a medida en Chillán. …» → «Puertas correderas y corredizas de madera a medida en Chillán. Referencia de interior con vidrio. Cotiza la hoja por WhatsApp. Herrajes aparte.»
+- **H1:** sin cambio
+- **Medir el:** 2026-11-23
+- **Resultado:** (pendiente)
+
 ## 2026-11-08 · CTR test Opus 5.5
 
 Tres snippets (guía de huella y contrahuella, colección de veladores, guía de medidas de puertas). Title y meta nuevos; H1 igual. Registro con URL, query, métricas de antes y el antes/después: [docs/seo/ctr-tracking.md](docs/seo/ctr-tracking.md). Medir el 2026-11-22.
