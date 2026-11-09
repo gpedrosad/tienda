@@ -123,7 +123,7 @@ export const products: Product[] = [
   },
   {
     id: "silla-kentucky",
-    updatedAt: "2026-10-18",
+    updatedAt: "2026-11-09",
     name: "Silla Kentucky",
     price: 279000,
     category: "Sillas",
@@ -141,7 +141,7 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural o negro",
     productionDays: 15,
-    seoTitle: "Silla Kentucky de madera | Silla de descanso",
+    seoTitle: "Silla Kentucky de madera reclinada",
     seoDescription:
       "Silla Kentucky de madera maciza, reclinada y de listones, $279.000. Fabricada en Chillán; retiro en taller o envío a todo Chile. Cotiza por WhatsApp.",
   },

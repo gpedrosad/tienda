@@ -1,5 +1,25 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-09 — Lote 37 (CTR)
+
+Search Console (sc-domain:ideamadera.cl), pull 2026-11-09, último día 2026-11-08. 90d (08-11..11-08): 814 clics / 45.086 impr / CTR 1,81 % / pos 9,0. 28d (10-12..11-08): 357 / 25.100 / CTR 1,42 % / pos 8,2. 7d (11-02..11-08): 111 / 9.062 / CTR 1,22 % / pos 7,8, contra 94 / 7.211 / CTR 1,30 % / pos 8,3 en prev7. Congeladas: test Opus 11-08 (8 páginas, medir 11-22), Lote 36 (11-21), Lote 35 (11-18). Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1794227300-cKCtg3ld3jnOjINmCEPR), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-23. Sin página nueva. GA4 omitido (conector pide reautenticación).
+
+### `/products/silla-kentucky`
+
+Antes, 28d: 1 / 171 / CTR 0,58 % / pos 2,0; consulta «silla kentucky» 0 / 66 / pos 1,0. Title `Silla Kentucky de madera | Silla de descanso | Idea Madera` → `Silla Kentucky de madera reclinada | Idea Madera` (el sufijo lo agrega el template). Meta y H1 iguales. `updatedAt` 2026-11-09.
+
+### `/puertas-correderas`
+
+Antes, 28d: 2 / 268 / CTR 0,75 % / pos 7,6; «corredera de madera» 0/19 pos 9,9, «puertas corredizas de madera» 0/10 pos 10,0. Title `Puertas Correderas de Madera a Medida | Chillán` → `Puertas Correderas y Corredizas de Madera a Medida | Chillán`. Meta suma «y corredizas» (sin datos nuevos). H1 igual. `updatedAt` 2026-11-09.
+
+### No aplicados / propuestas
+
+- `/escaleras-de-madera`: sin win claro (la página aclara que solo se fabrican huellas).
+- `/guias/medidas-mesa-comedor` (congelada hasta 2026-11-18): propuesta de title/H1 hacia «altura mesa comedor» y dejar «medidas mesa de centro» a `/guias/medidas-mesa-de-centro`. Aplicar desde 2026-11-18 si sigue bajo.
+- `/comedores-nordicos` (test Opus, hasta 2026-11-22): alinear con «comedores nordicos» solo después de medir.
+- Contenido: «medidas velador» (40 impr, mejor pos 18,5) queda como idea de guía para después del test Opus de `/collections/veladores` (2026-11-22), para no ensuciar la medición.
+- Canibalización «muebles chillan»: primaria `/muebles-chillan`; el home ya la enlaza. Sin cambios hoy. «mesa ratona» sigue con `/mesas-de-centro` como primaria.
+
 ## 2026-11-07 — Lote 36 (CTR)
 
 Search Console (sc-domain:ideamadera.cl), pull 2026-11-07. 90d: 798 clics / 43.641 impr / CTR 1,83 % / pos 8,9. 7d (2026-10-31..2026-11-06): 102 / 8.494 / CTR 1,2 % / pos 7,8, contra 93 / 7.162 / pos 8,2 en prev7. Congeladas Lote 35: medidas-mesa-comedor, molduras-a-medida, medidas-mesa-de-centro, tiny-house-dlt y body recientes. Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1794054411-B8s2LF55Gj3qfGokJGvy), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-21. Sin página nueva. GA4 omitido (reauth).
