@@ -220,6 +220,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const origin = SITE_URL;
   const productId = getProductId(product);
+  const productH1 = product.h1 ?? product.name;
   const productPath = getProductPath(product);
   const canonicalUrl = `${origin}${productPath}`;
   const galleryImages = getGalleryImages(product);
@@ -252,7 +253,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const productSchema = {
     "@type": "Product",
-    name: product.name,
+    name: productH1,
     ...(allProductImages.length > 0 ? { image: allProductImages } : {}),
     description: plainTextFromInlineLinks(productDescription),
     sku: productId,
@@ -272,7 +273,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       buildBreadcrumbSchema([
         { name: "Inicio", path: "/" },
         { name: product.category, path: categoryPath },
-        { name: product.name, path: productPath },
+        { name: productH1, path: productPath },
       ]),
       buildFaqPageSchema(productFaqItems),
     ],
@@ -307,7 +308,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-ink">{product.name}</li>
+                <li className="text-ink">{productH1}</li>
               </ol>
             </nav>
 
@@ -325,7 +326,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <div className="order-2 lg:sticky lg:top-24">
                 <div className="rounded-3xl border border-line bg-white p-4 shadow-sm md:p-8">
                   <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-ink">
-                    {product.name}
+                    {productH1}
                   </h1>
                   {heroSpecLine ? (
                     <p className="mt-1.5 text-sm text-ink-muted">{heroSpecLine}</p>

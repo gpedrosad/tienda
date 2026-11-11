@@ -64,6 +64,8 @@ export interface Product {
   priceDetail?: string;
   seoTitle?: string;
   seoDescription?: string;
+  /** H1 de la ficha. Si falta, la página usa `name` (el nombre de catálogo). */
+  h1?: string;
   /** Fecha ISO de la última edición de esta ficha. El sitemap la usa como lastmod. */
   updatedAt?: string;
 }
@@ -498,15 +500,16 @@ export const products: Product[] = [
   },
   {
     id: "mesa-centro-roma",
-    updatedAt: "2026-10-17",
+    updatedAt: "2026-11-10",
     name: "Mesa de centro Roma",
+    h1: "Mesa de centro Roma de madera",
     price: 359990,
     category: "Mesas",
     imageUrl: "/images/mesa-centro-roma-main.jpg",
     shortPitch:
-      "Mesa de centro Roma de madera para living: 120 × 60 × 45 cm, formato ratona frente al sofá.",
+      "Mesa de centro Roma de madera maciza para el living: 120 × 60 × 45 cm, barniz natural, frente al sofá. No es la mesa de comedor Roma.",
     description:
-      "La Mesa de Centro Roma es una mesa ratona de madera maciza para living, fabricada en Chillán con medidas 120 × 60 × 45 cm. Pieza baja ideal para colocar frente al sofá, con barniz natural que resalta la calidez de la madera. Distinta de las mesas de comedor Roma. Complementa con otras mesas de centro en madera o explora la colección completa de mesas. Cotiza terminación y despacho por WhatsApp.",
+      "La mesa de centro Roma es una mesa ratona de madera maciza para el living, fabricada en Chillán, de 120 × 60 × 45 cm. Pieza baja frente al sofá, con barniz natural. No es la mesa de comedor Roma. Las otras mesas ratonas están en [mesas de centro](/mesas-de-centro). Cotiza terminación y despacho por WhatsApp.",
     features: [
       "Mesa de centro / ratona para living",
       "120 × 60 × 45 cm",
@@ -517,9 +520,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Centro Roma 120×60 cm | Ratona Madera Living",
+    seoTitle: "Mesa de Centro Roma de Madera | 120×60×45",
     seoDescription:
-      "Mesa de centro Roma en madera maciza, 120 × 60 × 45 cm para living. Mesa ratona con barniz natural. Desde $359.990, cotiza por WhatsApp.",
+      "Mesa de centro Roma de madera maciza, 120×60×45 cm, para el living. No es la mesa de comedor Roma. Desde $359.990. Cotiza por WhatsApp.",
   },
   {
     id: "mesa-frida-redonda",
@@ -611,15 +614,16 @@ export const products: Product[] = [
   },
   {
     id: "mesa-tripode-ratona",
-    updatedAt: "2026-11-01",
+    updatedAt: "2026-11-10",
     name: "Mesa ratona trípode",
+    h1: "Mesa trípode ratona de madera",
     price: 399990,
     category: "Mesas",
     imageUrl: "/images/mesa-tripode-ratona-vista-1.jpg",
     shortPitch:
-      "Mesa ratona trípode de madera maciza para el living: mesa de centro baja, patas inclinadas, 100 × 60 × 40 cm.",
+      "Mesa trípode ratona de madera maciza para el living: patas inclinadas, 100 × 60 × 40 cm y barniz natural. Fabricada en Chillán.",
     description:
-      "Esta mesa ratona de madera es una mesa de centro trípode para el living: tres patas inclinadas, madera maciza y barniz natural. Mide 100 × 60 × 40 cm y vale $399.990. Va frente al sofá; las patas dejan espacio para las piernas y la pieza se ve liviana. Otras opciones están en [mesas de centro](/mesas-de-centro). El largo, el fondo y la altura de una mesa de centro se explican en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
+      "Esta mesa trípode ratona es una mesa de centro de madera maciza para el living: tres patas inclinadas y barniz natural. Mide 100 × 60 × 40 cm y vale $399.990. Va frente al sofá; las patas dejan espacio para las piernas y la pieza se ve liviana. Las mesas ratonas del catálogo están en [mesas de centro](/mesas-de-centro). El largo, el fondo y la altura se explican en la [guía de medidas de mesa de centro](/guias/medidas-mesa-de-centro). Fabricada en Chillán; cotiza terminación y despacho por WhatsApp.",
     features: [
       "Mesa trípode de madera maciza",
       "Mesa ratona y mesa de centro baja",
@@ -631,9 +635,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Ratona Trípode 100×60×40 cm | Living",
+    seoTitle: "Mesa Trípode Ratona de Madera | 100×60×40",
     seoDescription:
-      "Mesa ratona Trípode en madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. Desde $399.990, cotiza por WhatsApp con envío a todo Chile.",
+      "Mesa trípode ratona de madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. $399.990. Cotiza por WhatsApp, envío a todo Chile.",
   },
   {
     id: "mesa-comedor-tripode-negra",

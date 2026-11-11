@@ -1,5 +1,29 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-10 — Lote 38 (CTR)
+
+Search Console del brief 2026-11-10 (último día completo 2026-11-09). 90d (08-12..11-09): 827 clics / 46.021 impr / CTR 1,80 % / pos 8,9. 28d (10-13..11-09): 362 / 26.095 / CTR 1,39 % / pos 8,3. 7d (11-03..11-09): 108 / 9.340 / CTR 1,16 % / pos 7,8, contra 106 / 7.395 / CTR 1,43 % / pos 8,3 en prev7. Congeladas y no editadas: test Opus (hasta 2026-11-22), Lote 37 (hasta 2026-11-23), Lote 36 (hasta 2026-11-21), Lote 35 y tiny house (hasta 2026-11-18), `/mesas-de-centro` (hasta 2026-11-11). Sin página nueva: el brief marca los gaps de contenido como problemas de posición en URLs que ya existen. Registro: `CTR-TRACKING.md`. Medir el 2026-11-24. GA4 omitido (el brief dice que el conector pide reautenticación).
+
+### `/escaleras-de-madera`
+
+Antes (bloque de oportunidades del brief): 10 clics / 597 impr / CTR 1,68 % / pos 8,0. 7d 3/258 vs prev7 2/174. Consulta «escalera de madera» 0/59 pos 10,3. Title `Escaleras de Madera: Huellas a Medida | Chile` → `Escalera de Madera: Huellas a Medida | Idea Madera` (50). Meta → «Escalera de madera a medida: fabricamos las huellas, no la estructura ni el montaje. Cotiza por WhatsApp. Taller en Chillán, envío a todo Chile.» (144). H1 `Escaleras de madera: fabricamos las huellas` → `Escalera de madera: huellas a medida`. El primer párrafo abre con «escalera de madera» y la huella, y enlaza [peldaños a medida](/peldanos-a-medida). Sigue diciendo que no hay escalera armada, zancas ni pasamanos. `updatedAt` 2026-11-10.
+
+### `/products/mesa-tripode-ratona`
+
+Antes: 0 / 117 / CTR 0 % / pos 5,8. 7d 0/17 vs prev7 0/23. En esta URL, «mesa ratona» 0/40 pos 8,2. La primaria de «mesa ratona» sigue siendo [/mesas-de-centro](/mesas-de-centro) (congelada hasta 2026-11-11); el title pasa a nombrar el modelo. Title renderizado `Mesa Ratona Trípode 100×60×40 cm | Living | Idea Madera` → `Mesa Trípode Ratona de Madera | 100×60×40 | Idea Madera` (55). Meta con $399.990, 100×60×40 cm, patas inclinadas y barniz natural (137). H1 `Mesa ratona trípode` → `Mesa trípode ratona de madera` (el nombre de catálogo no cambia, así las tarjetas de la landing congelada siguen igual). El pitch y el primer párrafo de la ficha abren con el modelo y mantienen el enlace a mesas de centro. `updatedAt` 2026-11-10.
+
+### `/products/mesa-centro-roma`
+
+Antes: 0 / 69 / CTR 0 % / pos 4,8. 7d 0/13 vs prev7 0/29. Consulta «mesa de centro roma» 0/3 pos 2,0. Title guardado `Mesa Centro Roma 120×60 cm | Ratona Madera Living`; el que se renderizaba, por el tope de 60, era `Mesa Centro Roma 120×60 cm | Ratona Madera | Idea Madera` (56). Ahora `Mesa de Centro Roma de Madera | 120×60×45 | Idea Madera` (55). Meta con 120×60×45 cm, la aclaración de que no es la mesa de comedor Roma y desde $359.990 (135). H1 `Mesa de centro Roma` → `Mesa de centro Roma de madera`. El pitch repite medida, barniz natural y esa aclaración. La descripción enlaza [mesas de centro](/mesas-de-centro). `updatedAt` 2026-11-10.
+
+### Enlaces
+
+`/peldanos-a-medida` ya enlazaba `/escaleras-de-madera`. `/mesas-de-centro` ya enlazaba las dos fichas. Esas dos hubs siguen congeladas y no se editaron. En `/guias` (última edición de texto 2026-10-17) hay tres enlaces nuevos, bajo «Páginas del taller que citan estas guías», hacia las tres URLs. Title, meta y H1 del índice no cambian. `lastmod` de `/guias`: 2026-11-10. No había rutas estáticas del sitemap sin ningún enlace interno.
+
+### No aplicados
+
+Sin página nueva. «comedores nordicos», «medidas de mesas de comedor», «medida de silla», «velador madera» y el resto del bloque de gaps ya tienen URL; el brief los trata como posición, no como contenido faltante. `/guias/cotizar-muebles-a-medida` y `/guias/elegir-madera-peldanos` quedan para otro lote: este cierra en las tres de mayor potencial.
+
 ## 2026-11-09 — Lote 37 (CTR)
 
 Search Console (sc-domain:ideamadera.cl), pull 2026-11-09, último día 2026-11-08. 90d (08-11..11-08): 814 clics / 45.086 impr / CTR 1,81 % / pos 9,0. 28d (10-12..11-08): 357 / 25.100 / CTR 1,42 % / pos 8,2. 7d (11-02..11-08): 111 / 9.062 / CTR 1,22 % / pos 7,8, contra 94 / 7.211 / CTR 1,30 % / pos 8,3 en prev7. Congeladas: test Opus 11-08 (8 páginas, medir 11-22), Lote 36 (11-21), Lote 35 (11-18). Copy: DeepSeek V4.1 Flash vía OpenRouter (gen-1794227300-cKCtg3ld3jnOjINmCEPR), revisado y aplicado por Grok Bot. Registro: `CTR-TRACKING.md`. Medir el 2026-11-23. Sin página nueva. GA4 omitido (conector pide reautenticación).
