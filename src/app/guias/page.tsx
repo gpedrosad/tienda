@@ -159,6 +159,52 @@ export default function GuiasPage() {
           </div>
         </section>
 
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+            <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">
+              Páginas del taller que citan estas guías
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-muted md:text-base">
+              La escalera de madera y las mesas de centro del catálogo, con el mismo dato que publica cada ficha.
+            </p>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Link
+                href="/escaleras-de-madera"
+                className="group rounded-2xl border border-line bg-white p-6 transition-all hover:border-wood/40 hover:shadow-sm"
+              >
+                <h3 className="font-display text-xl tracking-tight text-ink group-hover:text-wood font-medium">
+                  Escalera de madera: huellas a medida
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                  La huella maciza de la escalera, cortada a medida en Chillán. Sin estructura ni pasamanos.
+                </p>
+              </Link>
+              <Link
+                href="/products/mesa-tripode-ratona"
+                className="group rounded-2xl border border-line bg-white p-6 transition-all hover:border-wood/40 hover:shadow-sm"
+              >
+                <h3 className="font-display text-xl tracking-tight text-ink group-hover:text-wood font-medium">
+                  Mesa trípode ratona de madera
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                  Madera maciza, patas inclinadas y barniz natural. Mide 100 × 60 × 40 cm.
+                </p>
+              </Link>
+              <Link
+                href="/products/mesa-centro-roma"
+                className="group rounded-2xl border border-line bg-white p-6 transition-all hover:border-wood/40 hover:shadow-sm"
+              >
+                <h3 className="font-display text-xl tracking-tight text-ink group-hover:text-wood font-medium">
+                  Mesa de centro Roma de madera
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                  Madera maciza para el living, 120 × 60 × 45 cm. No es la mesa de comedor Roma.
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="border-t border-line bg-canvas">
           <div className="mx-auto max-w-4xl px-4 py-12 text-center md:py-16">
             <h2 className="font-display text-2xl tracking-tight text-ink md:text-3xl font-semibold">

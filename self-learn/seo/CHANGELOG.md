@@ -2,6 +2,10 @@
 
 Formato: `YYYY-MM-DD` · qué · cómo. Una viñeta por cambio.
 
+## 2026-11-10
+
+- **Lote 38:** title, meta, H1 y snippet de `/escaleras-de-madera`, `/products/mesa-tripode-ratona` y `/products/mesa-centro-roma` (brief 2026-11-10; baselines en `CTR-TRACKING.md`). «mesa ratona» sigue en `/mesas-de-centro`. Enlaces nuevos solo en `/guias`. Sin página nueva. Medir el 2026-11-24. Detalle: `SEO-CHANGELOG.md`.
+
 ## 2026-11-04
 
 - **Tiny house:** `/tiny-house-dlt` deja el foco «DLT» en el subtítulo. Title `Tiny House de Madera en Chile | Prefabricada | Idea Madera` (sin «llave en mano»: la página no lo ofrece). H1 `Tiny house de madera en Chile`. Cuatro H2 con texto que ya estaba (qué es, madera vs CLT, ruedas o fundación como «consúltanos», cómo cotizar). FAQ y FAQPage de 7 a 10, precio sin cifras. Menú «Tiny house». Ancla «tiny house de madera» en la home y enlaces desde cubiertas, puertas, peldaños, kit pérgola y contacto. Sin `/tiny-house-planos-modelos` (no hay planos ni modelos publicados). `updatedAt` 2026-11-04 en las URLs tocadas. Métricas de partida y detalle: `CTR-TRACKING.md`.

@@ -2,6 +2,47 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-10 · Lote 38 (aplicado)
+
+### `/escaleras-de-madera`
+
+- **URL:** https://www.ideamadera.cl/escaleras-de-madera
+- **Query objetivo:** escalera de madera
+- **Antes:** brief 2026-11-10, bloque de oportunidades: 10 clics / 597 impr / CTR 1,68 % / pos 8,0; 7d 3/258 vs prev7 2/174; «escalera de madera» 0/59 pos 10,3
+- **Title:** `Escaleras de Madera: Huellas a Medida | Chile` → `Escalera de Madera: Huellas a Medida | Idea Madera`
+- **Meta:** `Fabricamos las huellas de madera de tu escalera, no la estructura ni el montaje. Cotiza peldaños a medida por WhatsApp. Envío a todo Chile.` → `Escalera de madera a medida: fabricamos las huellas, no la estructura ni el montaje. Cotiza por WhatsApp. Taller en Chillán, envío a todo Chile.`
+- **H1:** Escaleras de madera: fabricamos las huellas → Escalera de madera: huellas a medida
+- **Snippet:** el primer párrafo abre con «La escalera de madera que fabricamos es la huella» y enlaza `/peldanos-a-medida`. Sigue sin escalera armada, zancas ni pasamanos.
+- **Enlaces:** el hub `/peldanos-a-medida` ya la enlazaba (congelado, sin edición). Nueva ficha en `/guias`.
+- **Medir el:** 2026-11-24
+- **Resultado:** (pendiente)
+
+### `/products/mesa-tripode-ratona`
+
+- **URL:** https://www.ideamadera.cl/products/mesa-tripode-ratona
+- **Query objetivo:** mesa trípode ratona (el modelo). «mesa ratona» sigue con primaria `/mesas-de-centro`, congelada hasta 2026-11-11.
+- **Antes:** brief 2026-11-10: 0 clics / 117 impr / CTR 0 % / pos 5,8; 7d 0/17 vs prev7 0/23; en esta URL «mesa ratona» 0/40 pos 8,2
+- **Title:** `Mesa Ratona Trípode 100×60×40 cm | Living | Idea Madera` → `Mesa Trípode Ratona de Madera | 100×60×40 | Idea Madera`
+- **Meta:** `Mesa ratona Trípode en madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. Desde $399.990, cotiza por WhatsApp con envío a todo Chile.` → `Mesa trípode ratona de madera maciza, 100×60×40 cm, patas inclinadas y barniz natural. $399.990. Cotiza por WhatsApp, envío a todo Chile.`
+- **H1:** Mesa ratona trípode → Mesa trípode ratona de madera
+- **Snippet:** pitch «Mesa trípode ratona de madera maciza para el living: patas inclinadas, 100 × 60 × 40 cm y barniz natural. Fabricada en Chillán.»
+- **Enlaces:** `/mesas-de-centro` ya enlazaba la ficha (congelada, sin edición). La descripción mantiene el enlace al hub y a la guía de medidas. Nueva ficha en `/guias`. El nombre de catálogo no cambia.
+- **Medir el:** 2026-11-24
+- **Resultado:** (pendiente)
+
+### `/products/mesa-centro-roma`
+
+- **URL:** https://www.ideamadera.cl/products/mesa-centro-roma
+- **Query objetivo:** mesa de centro roma
+- **Antes:** brief 2026-11-10: 0 clics / 69 impr / CTR 0 % / pos 4,8; 7d 0/13 vs prev7 0/29; «mesa de centro roma» 0/3 pos 2,0
+- **Title:** renderizado `Mesa Centro Roma 120×60 cm | Ratona Madera | Idea Madera` (el `seoTitle` guardado era `Mesa Centro Roma 120×60 cm | Ratona Madera Living` y el tope de 60 recortaba «Living») → `Mesa de Centro Roma de Madera | 120×60×45 | Idea Madera`
+- **Meta:** `Mesa de centro Roma en madera maciza, 120 × 60 × 45 cm para living. Mesa ratona con barniz natural. Desde $359.990, cotiza por WhatsApp.` → `Mesa de centro Roma de madera maciza, 120×60×45 cm, para el living. No es la mesa de comedor Roma. Desde $359.990. Cotiza por WhatsApp.`
+- **H1:** Mesa de centro Roma → Mesa de centro Roma de madera
+- **Snippet:** pitch con 120 × 60 × 45 cm, barniz natural y la aclaración de que no es la mesa de comedor Roma.
+- **Enlaces:** `/mesas-de-centro` ya enlazaba la ficha. La descripción ahora también enlaza ese hub. Nueva ficha en `/guias`. El nombre de catálogo no cambia.
+- **Medir el:** 2026-11-24
+- **Resultado:** (pendiente)
+
 ## 2026-11-09 · Lote 37 (aplicado)
 
 ### `/products/silla-kentucky`

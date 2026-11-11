@@ -418,13 +418,14 @@ export const peldanosConcretoLandingConfig: ServiceLandingConfig = {
 
 export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/escaleras-de-madera",
-  updatedAt: "2026-10-24",
+  updatedAt: "2026-11-10",
   breadcrumbLabel: "Escaleras de madera",
   breadcrumbParent: peldanosParent,
-  pageTitle: "Escaleras de Madera: Huellas a Medida | Chile",
+  pageTitle: "Escalera de Madera: Huellas a Medida | Idea Madera",
   pageDescription:
-    "Fabricamos las huellas de madera de tu escalera, no la estructura ni el montaje. Cotiza peldaños a medida por WhatsApp. Envío a todo Chile.",
+    "Escalera de madera a medida: fabricamos las huellas, no la estructura ni el montaje. Cotiza por WhatsApp. Taller en Chillán, envío a todo Chile.",
   keywords: [
+    "escalera de madera",
     "escaleras de madera",
     "escaleras de madera a medida",
     "huellas para escalera de madera",
@@ -432,9 +433,9 @@ export const escalerasMaderaLandingConfig: ServiceLandingConfig = {
     "escalera de madera a medida chile",
   ],
   eyebrow: "La parte de madera de la escalera",
-  h1: "Escaleras de madera: fabricamos las huellas",
+  h1: "Escalera de madera: huellas a medida",
   heroParagraph:
-    "Una escalera de madera, en este taller, significa las huellas: la pieza maciza donde se apoya el pie. No vendemos la escalera armada, ni las zancas, ni el pasamanos. Si ya tienes claro el corte, la cotización directa está en peldaños a medida. Aquí explicamos qué entra cuando buscas una escalera de madera y qué tienes que encargar en otro lado.",
+    "La escalera de madera que fabricamos es la huella: la tabla maciza donde se apoya el pie, cortada a medida en Chillán. No vendemos la escalera armada, ni las zancas, ni el pasamanos. Si ya tienes claro el corte, la cotización directa está en [peldaños a medida](/peldanos-a-medida). Aquí explicamos qué entra cuando buscas una escalera de madera y qué tienes que encargar en otro lado.",
   badges: ["Huellas de madera maciza", "A medida", "Envíos a todo Chile"],
   whatsappButtonLabel: "Cotizar huellas de la escalera",
   whatsappProductTitle: "Huellas para escalera de madera",
