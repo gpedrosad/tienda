@@ -62,7 +62,7 @@ const PAGE_FILE_UPDATED_AT: Record<string, string> = {
   "/kit-pergola": "2026-11-04",
   "/tiny-house-dlt": "2026-11-04",
   "/comedores-nordicos": "2026-10-26",
-  "/mesas-de-centro": "2026-11-04",
+  "/mesas-de-centro": "2026-11-13",
 };
 
 const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDate?: string }> = [

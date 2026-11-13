@@ -2,10 +2,10 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const maderaMesonQuinchoGuideConfig: GuideConfig = {
   canonicalPath: "/guias/madera-para-meson-quincho",
-  updatedAt: "2026-10-25",
-  pageTitle: "Madera para Mesón de Quincho | Lenga y Pino",
+  updatedAt: "2026-11-13",
+  pageTitle: "Madera para Quincho: Mesón en Lenga o Pino",
   pageDescription:
-    "Madera para un mesón de quincho: lenga austral o pino premium, secos en cámara. Bajo techo o al aire cambia el acabado. Cotiza la cubierta por WhatsApp.",
+    "Madera para quincho: tu mesón en lenga austral o pino premium, secos en cámara. Bajo techo o al aire cambia el acabado. Cotiza la cubierta por WhatsApp.",
   keywords: [
     "madera para meson",
     "madera para mesón de quincho",
