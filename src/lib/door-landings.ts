@@ -70,15 +70,15 @@ const tallerFamiliar = {
 
 export const puertasInterioresLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-interiores",
-  updatedAt: "2026-10-28",
+  updatedAt: "2026-11-13",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
     { name: "Puertas interiores", path: "/puertas-interiores" },
   ],
-  pageTitle: "Puertas Interiores de Madera a Medida | Chillán",
+  pageTitle: "Puertas Interiores de Madera a Medida para Dormitorio",
   pageDescription:
-    "Puertas interiores de madera a medida en Chillán: dormitorio, baño o cocina. Cotiza la hoja por WhatsApp con alto, ancho y foto. Envío a todo Chile.",
+    "Puertas interiores de madera a medida para dormitorio, baño o cocina, en Chillán. Cotiza la hoja por WhatsApp con alto, ancho y foto. Envío a todo Chile.",
   keywords: [
     "puertas interiores de madera",
     "puertas interiores a medida",

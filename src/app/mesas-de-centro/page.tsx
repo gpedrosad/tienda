@@ -18,9 +18,9 @@ import {
 import { buildWhatsAppUrl, getProductPath } from "@/lib/whatsapp";
 
 const canonicalPath = "/mesas-de-centro";
-const pageTitle = "Mesas Ratonas de Madera y Mesa Ratona | Living Chile";
+const pageTitle = "Mesa Ratona de Madera para Living | Chillán";
 const pageDescription =
-  "Mesa ratona y mesas ratonas de madera: altura 40-50 cm ideal para sofá. Trípode, Roma, Ferrara, Hairpin. Fabricación en Chile. Cotiza por WhatsApp.";
+  "Mesa ratona o ratonera de madera para living, altura 40-50 cm ideal para sofá: Trípode, Roma, Ferrara, Hairpin. Fabricación en Chile. Cotiza por WhatsApp.";
 
 const MESA_CENTRO_IDS = [
   "set-mesas-centro-nido-cruz",

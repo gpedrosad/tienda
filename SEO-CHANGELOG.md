@@ -1,5 +1,27 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-13 — Lote 39 (CTR)
+
+Search Console (último día 2026-11-12). 90d: 846 clics / 48.337 impr / CTR 1.75 % / pos 8.9. 7d (2026-11-06..2026-11-12): 107 clics / 8.873 impr / CTR 1.21 % / pos 8.3 vs prev7 (2026-10-30..2026-11-05): 106 clics / 8.278 impr / CTR 1.28 % / pos 7.9. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22) y todo lo editado el 11-04/11-07/11-09/11-10 (ver freeze del run). GA4: conector pide reautenticación. PageSpeed: HTTP 429 (cuota). Medir el 2026-11-27.
+
+### `/mesas-de-centro`
+
+Antes — 28d (2026-10-16..2026-11-12): 1 clics / 379 impr / CTR 0.26 % / pos 6.1; 7d 0/115 vs prev7 1/129. Consultas: «mesa ratona» 1 clics/146 impr, pos 5.0; «mesa ratonera» 0 clics/22 impr, pos 4.2; «mesa ratona de madera» 0 clics/21 impr, pos 4.3; «mesas para living» 0 clics/11 impr, pos 2.5.
+Consulta objetivo: «mesa ratona». Title `Mesas Ratonas de Madera y Mesa Ratona | Living Chile` → `Mesa Ratona de Madera para Living | Chillán`. Meta → «Mesa ratona o ratonera de madera para living, altura 40-50 cm ideal para sofá: Trípode, Roma, Ferrara, Hairpin. Fabricación en Chile. Cotiza por WhatsApp.». H1: igual. Motivo: Title más natural (43 car., deja margen para sufijo de marca) con «mesa ratona de madera» y «living» exactos. La meta suma «ratonera» y mantiene altura, modelos y WhatsApp tal cual. H1 no está en el fragmento.
+Aplicado 2026-11-13. Medir 2026-11-27 (14 d).
+
+### `/puertas-interiores`
+
+Antes — 28d (2026-10-16..2026-11-12): 2 clics / 525 impr / CTR 0.38 % / pos 11.1; 7d 0/241 vs prev7 0/164. Consultas: «puertas interiores» 1 clics/45 impr, pos 11.4; «puertas para dormitorios» 0 clics/26 impr, pos 16.0; «puertas de madera interior» 0 clics/23 impr, pos 13.6; «puerta de dormitorio» 0 clics/21 impr, pos 15.7.
+Consulta objetivo: «puertas interiores». Title `Puertas Interiores de Madera a Medida | Chillán` → `Puertas Interiores de Madera a Medida para Dormitorio` (Grok Bot mantuvo «a Medida» al revisar). Meta → «Puertas interiores de madera a medida para dormitorio, baño o cocina, en Chillán. Cotiza la hoja por WhatsApp con alto, ancho y foto. Envío a todo Chile.». H1: igual. Motivo: Las consultas de dormitorio suman ~93 impr. y no aparecían en el title. Se suman a «puertas interiores de madera» exacto (44 car.). La meta conserva todos los datos y el H1 ya es correcto.
+Aplicado 2026-11-13. Medir 2026-11-27 (14 d).
+
+### `/guias/madera-para-meson-quincho`
+
+Antes — 28d (2026-10-16..2026-11-12): 1 clics / 94 impr / CTR 1.06 % / pos 6.3; 7d 0/25 vs prev7 1/15. Consultas: «madera para quincho» 0 clics/8 impr, pos 5.6; «madera para meson» 0 clics/3 impr, pos 10.3; «cincho» 0 clics/1 impr, pos 2.0; «cubierta de cocina» 0 clics/1 impr, pos 5.0.
+Consulta objetivo: «madera para quincho». Title `Madera para Mesón de Quincho | Lenga y Pino` → `Madera para Quincho: Mesón en Lenga o Pino`. Meta → «Madera para quincho: tu mesón en lenga austral o pino premium, secos en cámara. Bajo techo o al aire cambia el acabado. Cotiza la cubierta por WhatsApp.». H1: igual. Motivo: Abre title y meta con la consulta principal exacta «madera para quincho» (42 car.) sin cambiar maderas, secado ni acabado. El H1 ya responde la pregunta.
+Aplicado 2026-11-13. Medir 2026-11-27 (14 d).
+
 ## 2026-11-10 — Lote 38 (CTR)
 
 Search Console del brief 2026-11-10 (último día completo 2026-11-09). 90d (08-12..11-09): 827 clics / 46.021 impr / CTR 1,80 % / pos 8,9. 28d (10-13..11-09): 362 / 26.095 / CTR 1,39 % / pos 8,3. 7d (11-03..11-09): 108 / 9.340 / CTR 1,16 % / pos 7,8, contra 106 / 7.395 / CTR 1,43 % / pos 8,3 en prev7. Congeladas y no editadas: test Opus (hasta 2026-11-22), Lote 37 (hasta 2026-11-23), Lote 36 (hasta 2026-11-21), Lote 35 y tiny house (hasta 2026-11-18), `/mesas-de-centro` (hasta 2026-11-11). Sin página nueva: el brief marca los gaps de contenido como problemas de posición en URLs que ya existen. Registro: `CTR-TRACKING.md`. Medir el 2026-11-24. GA4 omitido (el brief dice que el conector pide reautenticación).
