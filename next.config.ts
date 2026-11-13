@@ -124,14 +124,20 @@ const nextConfig: NextConfig = {
         destination: "/cubiertas-a-medida",
         permanent: true,
       },
+      // Molduras: página retirada (2026-11-13) → muebles a medida
+      {
+        source: "/molduras-a-medida",
+        destination: "/muebles-a-medida",
+        permanent: true,
+      },
       {
         source: "/molduras",
-        destination: "/molduras-a-medida",
+        destination: "/muebles-a-medida",
         permanent: true,
       },
       {
         source: "/pages/molduras",
-        destination: "/molduras-a-medida",
+        destination: "/muebles-a-medida",
         permanent: true,
       },
       {

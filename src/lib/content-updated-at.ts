@@ -32,7 +32,6 @@ import {
 import {
   contactoLandingConfig,
   cubiertasLandingConfig,
-  moldurasLandingConfig,
   mueblesAMedidaLandingConfig,
   mueblesChillanLandingConfig,
   mueblesCocinaChillanLandingConfig,
@@ -68,7 +67,6 @@ const PAGE_FILE_UPDATED_AT: Record<string, string> = {
 const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDate?: string }> = [
   peldanosLandingConfig,
   cubiertasLandingConfig,
-  moldurasLandingConfig,
   puertasLandingConfig,
   quienesSomosLandingConfig,
   contactoLandingConfig,

@@ -23,7 +23,6 @@ const INDEX_URLS = [
   "https://www.ideamadera.cl/",
   "https://www.ideamadera.cl/peldanos-a-medida",
   "https://www.ideamadera.cl/cubiertas-a-medida",
-  "https://www.ideamadera.cl/molduras-a-medida",
   "https://www.ideamadera.cl/muebles-chillan",
   "https://www.ideamadera.cl/muebles-de-cocina-chillan",
   "https://www.ideamadera.cl/puertas-a-medida",

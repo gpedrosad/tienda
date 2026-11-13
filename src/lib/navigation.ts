@@ -13,7 +13,6 @@ export const customMadeNavLinks = [
   { label: "Puertas", href: "/puertas-a-medida" },
   { label: "Peldaños", href: "/peldanos-a-medida" },
   { label: "Cubiertas", href: "/cubiertas-a-medida" },
-  { label: "Molduras", href: "/molduras-a-medida" },
   { label: "Muebles de cocina", href: "/muebles-de-cocina-chillan" },
 ];
 

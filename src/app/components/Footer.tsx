@@ -27,7 +27,6 @@ const customMadeLinks: FooterLink[] = [
   { href: '/muebles-de-cocina-chillan', label: 'Muebles de cocina' },
   { href: '/mesas-de-comedor-a-medida', label: 'Mesas de comedor a medida' },
   { href: '/cubiertas-a-medida', label: 'Cubiertas a medida' },
-  { href: '/molduras-a-medida', label: 'Molduras a medida' },
   { href: '/puertas-a-medida', label: 'Puertas a medida' },
   { href: '/peldanos-a-medida', label: 'Peldaños a medida' },
 ];

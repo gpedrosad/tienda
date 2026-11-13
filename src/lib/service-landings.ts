@@ -692,226 +692,6 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
   serviceType: "Fabricación de cubiertas y tablones de madera",
 };
 
-export const moldurasLandingConfig: ServiceLandingConfig = {
-  canonicalPath: "/molduras-a-medida",
-  updatedAt: "2026-11-04",
-  pageTitle: "Molduras y Cornisas de Madera a Medida | Chile",
-  pageDescription:
-    "Molduras y cornisas de madera a medida para interiores: guardapolvos, zócalos y marcos de vanos. Taller en Chillán, por metro lineal. Envíos a todo Chile.",
-  keywords: [
-    "molduras de madera a medida",
-    "molduras madera chile",
-    "molduras a medida chillan",
-    "molduras para muro",
-    "molduras para techo",
-    "perfiles de madera a medida",
-    "cotizar molduras madera",
-  ],
-  eyebrow: "Molduras de madera a medida",
-  h1: "Molduras y cornisas de madera a medida para tu proyecto",
-  heroParagraph:
-    "Fabricamos molduras y perfiles de madera a medida desde Chillán para muros, techos, vanos y terminaciones interiores. Para cotizar bien necesitamos el perfil (foto de frente o de la sección), el largo y la cantidad. No hay un catálogo de perfiles publicado en esta página: partimos de tu referencia.",
-  badges: ["Taller en Chillán", "Perfiles a medida", "Envíos a todo Chile"],
-  whatsappButtonLabel: "Cotizar molduras por WhatsApp",
-  whatsappProductTitle: "Molduras a medida",
-  whatsappLines: [
-    "Vengo desde la página de molduras a medida.",
-    "Quiero cotizar molduras de madera para mi proyecto.",
-    "Puedo enviar largo, perfil/referencia, cantidad, comuna y foto o croquis.",
-  ],
-  heroHighlights: [
-    {
-      title: "Medidas y perfiles exactos",
-      description: "Fabricamos según largo, sección y diseño que necesites.",
-    },
-    {
-      title: "Terminación prolija",
-      description: "Acabados listos para pintar, barnizar o instalar según el proyecto.",
-    },
-    {
-      title: "Hogar y obra",
-      description: "Atendemos particulares, arquitectos, constructoras y diseñadores.",
-    },
-  ],
-  sectionTitle: "Molduras de madera para cada terminación",
-  sectionParagraph:
-    "Las molduras definen el detalle de un espacio. Las cornisas de madera para techo van en el encuentro del muro con el cielo. Los perfiles de madera para marcos terminan puertas, ventanas y vanos. También hacemos guardapolvos, zócalos y perfiles decorativos. En Idea Madera fabricamos molduras de madera a medida para que el acabado coincida con tu arquitectura, no al revés. Los pedidos se resuelven por metro lineal o por tramos cortados a largo.",
-  featureCards: [
-    {
-      title: "Muros y zócalos",
-      description: "Guardapolvos, zócalos y molduras de muro para remates limpios y duraderos.",
-    },
-    {
-      title: "Techos y cornisas",
-      description: "Perfiles para encuentro muro-cielo, cornisas y detalles de altura.",
-    },
-    {
-      title: "Marcos y vanos",
-      description: "Molduras para puertas, ventanas y terminaciones de vanos a medida.",
-    },
-  ],
-  stepsTitle: "Cómo cotizar tus molduras a medida",
-  steps: [
-    {
-      title: "Envía medidas y referencia",
-      description: "Comparte largo, sección o perfil, cantidad y una foto o croquis del detalle.",
-    },
-    {
-      title: "Definimos madera y acabado",
-      description: "Te orientamos en madera y terminación según uso interior y estilo del proyecto.",
-    },
-    {
-      title: "Recibes cotización y plazos",
-      description: "Te respondemos por WhatsApp con precio referencial, fabricación y opciones de despacho.",
-    },
-  ],
-  bottomHighlights: [
-    {
-      title: "Fabricación en Chillán",
-      description: "Producción propia con control de calidad en cada perfil y tramo.",
-    },
-    {
-      title: "Envíos a todo Chile",
-      description: "Coordinamos despacho según comuna o región al momento de cotizar.",
-    },
-  ],
-  faqItems: [
-    {
-      question: "¿Fabrican molduras de madera a medida?",
-      answer:
-        "Sí. Fabricamos molduras y perfiles según las medidas, sección y diseño de tu proyecto, desde Chillán con envío a todo Chile.",
-    },
-    {
-      question: "¿Qué tipo de molduras hacen?",
-      answer:
-        "Trabajamos molduras para muros, zócalos, techos, cornisas, marcos de vanos y perfiles decorativos personalizados según referencia o croquis.",
-    },
-    {
-      question: "¿Qué información necesitan para cotizar?",
-      answer:
-        "Idealmente largo, sección o perfil, cantidad, comuna y una foto o croquis. Si no tienes el perfil exacto, te ayudamos a definir una opción.",
-    },
-    {
-      question: "¿Hacen molduras para obras y particulares?",
-      answer:
-        "Sí. Atendemos particulares, arquitectos, diseñadores y constructoras con pedidos unitarios o por metro lineal.",
-    },
-    {
-      question: "¿Envían molduras a todo Chile?",
-      answer:
-        "Sí, coordinamos envíos a todo Chile. Al cotizar te indicamos opciones y tiempos según tu ubicación.",
-    },
-    {
-      question: "¿Tienen un catálogo de perfiles?",
-      answer:
-        "No publicamos un catálogo fijo. Envía una foto del perfil o de la sección (idealmente con una regla) y el largo. Si no tienes el corte exacto, te ayudamos a definir una opción según el uso.",
-    },
-    {
-      question: "¿Qué es una moldura de guardapolvo?",
-      answer:
-        "El guardapolvo es una moldura que corre en el encuentro entre el muro y el piso, protegiendo la base del muro y tapando la unión. Se usa en toda la habitación para dar un remate limpio. Cotiza por metro lineal o por tramos cortados según tu proyecto.",
-    },
-    {
-      question: "¿Para qué sirve una cornisa de madera?",
-      answer:
-        "La cornisa es una moldura que se instala en el encuentro entre el muro y el cielo (techo), aportando un detalle arquitectónico y ocultando imperfecciones en la unión. Puede ser lisa o con perfil decorativo según el estilo del proyecto.",
-    },
-    {
-      question: "¿Qué terminación recomiendan para molduras de interior?",
-      answer:
-        "Para interiores, las molduras se pueden entregar crudas (listas para pintar) o con barniz. La elección depende del resto de las terminaciones del proyecto y del color que busques. Te orientamos según tu caso al cotizar.",
-    },
-    {
-      question: "¿Puedo pedir molduras con perfil personalizado?",
-      answer:
-        "Sí. Envianos una foto del perfil o de la sección que necesitas, junto con una referencia de medida (regla o cinta). Si no tienes el corte exacto, podemos ayudarte a definir un perfil similar según el uso (zócalo, cornisa, marco).",
-    },
-    {
-      question: "¿Las molduras de madera necesitan mantenimiento?",
-      answer:
-        "Molduras de interior con barniz o pintura no requieren mantenimiento regular. Si quedan en zonas de alta humedad (baños, cocinas), es recomendable usar sellador apropiado y revisar la ventilación del espacio.",
-    },
-    {
-      question: "¿Fabrican cornisas de madera para techo?",
-      answer:
-        "Sí. Las cornisas están entre las molduras de madera a medida que fabricamos: van en techos, en el encuentro del muro con el cielo. También hacemos molduras para muros y terminaciones interiores. Para cotizar necesitamos el perfil (foto de frente o de la sección), el largo y la cantidad, por metro lineal o por tramos. Para cornisas, mide el contorno del cielo en el mismo sentido.",
-    },
-    {
-      question: "¿Hacen perfiles de madera para marcos de puertas o ventanas?",
-      answer:
-        "Sí. Hacemos molduras y perfiles para marcos de puertas, ventanas y terminaciones de vanos a medida. Para cotizar envía el perfil (foto de frente o de la sección), el largo y la cantidad. La instalación no se asume incluida. La hoja se cotiza en puertas a medida.",
-    },
-    {
-      question: "¿Fabrican guardapolvos o zócalos de madera a medida?",
-      answer:
-        "Sí. El guardapolvo (o zócalo) corre en la base del muro protegiendo la unión con el piso. Trabajamos molduras para muros, zócalos, techos, cornisas, marcos de vanos y perfiles decorativos. Cotizamos por tramo o por metro lineal: largo, sección o perfil, cantidad y una foto. Si vas a instalar guardapolvo, mide el perímetro de la habitación descontando anchos de puertas.",
-    },
-  ],
-  extraSections: [
-    {
-      title: "Perfil, largo y terminación",
-      paragraphs: [
-        "Cotizamos por tramo o por metro lineal. Lo que más acelera la respuesta es el perfil: una foto de frente y, si puedes, de la sección (el corte) con una regla o una medida escrita.",
-        "Indica si va en muro, techo o vano, y si la quieres cruda, lista para pintar o con barniz. La instalación no se asume incluida.",
-      ],
-      bullets: [
-        "Foto del perfil o de la sección con escala",
-        "Largo (cm o metros) y cantidad",
-        "Uso: muro, techo, marco o vano",
-        "Comuna de despacho",
-      ],
-    },
-    {
-      title: "Tipos de molduras de madera más comunes",
-      paragraphs: [
-        "Las molduras de madera se clasifican según su ubicación y función en el espacio. El guardapolvo (o zócalo) corre en la base del muro protegiendo la unión con el piso. Las cornisas rematan el encuentro del muro con el cielo, aportando altura visual y ocultando imperfecciones. Las molduras de marco se usan en puertas y ventanas para terminar el vano con detalle.",
-        "También existen molduras decorativas para dividir paños de muro, crear panelados o enmarcar espejos. Cada tipo puede tener perfiles lisos o con relieves según el estilo arquitectónico del proyecto.",
-      ],
-    },
-    {
-      title: "Cómo medir molduras para cotizar",
-      paragraphs: [
-        "Para cotizar molduras de madera necesitas el largo total (suma de todos los tramos), el perfil o sección (foto del corte con regla), y la cantidad de piezas o metros lineales. Si vas a instalar guardapolvo, mide el perímetro de la habitación descontando anchos de puertas. Para cornisas, mide el contorno del cielo en el mismo sentido.",
-        "Si tienes una moldura existente que quieres replicar, saca una foto de frente y otra del corte lateral con una regla. Indica también si necesitas esquinas ingleteadas (corte a 45°) o si prefieres piezas rectas sin corte.",
-      ],
-    },
-  ],
-  relatedLinks: [
-    {
-      href: "/guias/cotizar-muebles-a-medida",
-      title: "Cómo cotizar a medida",
-      description: "Guía para cotizar proyectos personalizados por WhatsApp.",
-    },
-    {
-      href: "/kit-pergola",
-      title: "Kit pérgola",
-      description: "Uniones metálicas para pérgola modular 3×3 pulgadas.",
-    },
-    {
-      href: "/peldanos-a-medida",
-      title: "Peldaños a medida",
-      description: "Huellas de escalera según largo, ancho y espesor.",
-    },
-    {
-      href: "/puertas-a-medida",
-      title: "Puertas a medida",
-      description: "Hojas de madera según vano. Cotiza con medidas y foto.",
-    },
-    {
-      href: "/cubiertas-a-medida",
-      title: "Cubiertas a medida",
-      description: "Mesones y tablones para quincho, barra o cocina.",
-    },
-  ],
-  ctaTitle: "Cotiza hoy tus molduras de madera",
-  ctaParagraph:
-    "Escríbenos por WhatsApp con medidas y una referencia visual. Mientras más detalle compartas, más precisa será la cotización.",
-  ctaBullets: sharedCtaBullets,
-  schemaType: "Service",
-  serviceName: "Molduras de madera a medida",
-  serviceType: "Fabricación de molduras y perfiles de madera",
-};
-
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
   updatedAt: "2026-11-04",
@@ -1217,11 +997,6 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       href: "/guias/cotizar-muebles-a-medida",
       title: "Cómo cotizar a medida",
       description: "Guía para cotizar proyectos personalizados por WhatsApp.",
-    },
-    {
-      href: "/molduras-a-medida",
-      title: "Molduras a medida",
-      description: "Perfiles para muros, techos y vanos.",
     },
     {
       href: "/cubiertas-a-medida",
@@ -1649,7 +1424,7 @@ export const mueblesChillanLandingConfig: ServiceLandingConfig = {
   },
   sectionTitle: "Fábrica de muebles en Chillán para cada espacio del hogar",
   sectionParagraph:
-    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores, muebles de living y el [futón de madera](/collections/futon) del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas ([cubiertas](/cubiertas-a-medida), [puertas](/puertas-a-medida), [peldaños](/peldanos-a-medida), [molduras](/molduras-a-medida)), visita nuestra página de [muebles a medida](/muebles-a-medida) en madera.",
+    "Si buscas una mueblería en Chillán con madera maciza y terminación prolija, aquí encuentras mesas de comedor, sillas, bancas, veladores, muebles de living y el [futón de madera](/collections/futon) del catálogo. Somos fábrica de muebles en Chillán: trabajamos para hogares de Ñuble y enviamos al resto de Chile con la misma calidad y atención. Para proyectos personalizados con medidas específicas ([cubiertas](/cubiertas-a-medida), [puertas](/puertas-a-medida), [peldaños](/peldanos-a-medida), molduras), visita nuestra página de [muebles a medida](/muebles-a-medida) en madera.",
   featureCards: [
     {
       title: "Comedor",
@@ -1905,7 +1680,7 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
     {
       question: "¿Puedo ver los otros servicios en detalle?",
       answer:
-        "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida, molduras a medida y muebles de cocina en Chillán. Si buscas mesas, sillas o bancas de catálogo, visita muebles Chillán.",
+        "Sí. Cada línea tiene su propia página: cubiertas a medida, puertas a medida, peldaños a medida y muebles de cocina en Chillán. Las molduras se cotizan desde esta página. Si buscas mesas, sillas o bancas de catálogo, visita muebles Chillán.",
     },
     {
       question: "¿Cuál es la diferencia entre muebles a medida y la mueblería en Chillán?",
@@ -1945,11 +1720,6 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
       description: "Peldaños a medida en largo, ancho y espesor.",
     },
     {
-      href: "/molduras-a-medida",
-      title: "Molduras y perfiles",
-      description: "Molduras de madera personalizadas para muros y techos.",
-    },
-    {
       href: "/muebles-de-cocina-chillan",
       title: "Muebles de cocina",
       description: "Mesones, islas y piezas de cocina en madera.",
@@ -1983,7 +1753,6 @@ export const serviceLandingPaths = [
   peldanosLandingConfig.canonicalPath,
   ...peldanosClusterPaths,
   cubiertasLandingConfig.canonicalPath,
-  moldurasLandingConfig.canonicalPath,
   puertasLandingConfig.canonicalPath,
   mueblesCocinaChillanLandingConfig.canonicalPath,
   mueblesChillanLandingConfig.canonicalPath,

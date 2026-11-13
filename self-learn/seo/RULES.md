@@ -31,7 +31,7 @@
 ## Landings de servicio
 
 - Modelo de referencia: `/peldanos-a-medida` (mejor CTR de contenido).
-- Cubiertas / molduras / puertas / muebles-chillan / muebles-de-cocina-chillan / quiénes somos / contacto: mismo componente `ServiceLandingPage`.
+- Cubiertas / puertas / muebles-chillan / muebles-de-cocina-chillan / quiénes somos / contacto: mismo componente `ServiceLandingPage`.
 - Incluir Chillán + envío Chile cuando sea natural (queries locales).
 
 ## Redirects
@@ -51,3 +51,7 @@
 - Escritura sitemaps: `gsc:sitemap` (token write separado).
 - Si `invalid_grant` → re-auth correspondiente.
 - La API **no** solicita indexación; `gsc:inspect` solo lee cobertura y último crawl. Recrawl forzado: UI GSC.
+
+## Molduras retirada (2026-11-13)
+
+- `/molduras-a-medida` eliminada. `/molduras-a-medida`, `/molduras` y `/pages/molduras` → 301 a `/muebles-a-medida`. No recrear sin pedido explícito.

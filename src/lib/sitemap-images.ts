@@ -35,7 +35,6 @@ import type { ServiceLandingConfig } from "@/lib/service-landings";
 import {
   contactoLandingConfig,
   cubiertasLandingConfig,
-  moldurasLandingConfig,
   mueblesAMedidaLandingConfig,
   mueblesChillanLandingConfig,
   mueblesCocinaChillanLandingConfig,
@@ -50,7 +49,6 @@ const KIT_PERGOLA_IMAGES = ["/images/kit-pergola-instalada.png", "/images/kit-pe
 const landingConfigs: ServiceLandingConfig[] = [
   peldanosLandingConfig,
   cubiertasLandingConfig,
-  moldurasLandingConfig,
   puertasLandingConfig,
   quienesSomosLandingConfig,
   contactoLandingConfig,

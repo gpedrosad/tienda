@@ -66,10 +66,6 @@ const PRIORITY_URLS = [
     expectedTitle: "Puertas de Madera a Medida | Cotiza en Chile | Idea Madera",
   },
   {
-    url: `${LIVE_ORIGIN}/molduras-a-medida`,
-    expectedTitle: "Molduras de Madera a Medida | Chile | Idea Madera",
-  },
-  {
     url: `${LIVE_ORIGIN}/peldanos-a-medida`,
     expectedTitle: "Peldaños a Medida en Madera | Cotiza por WhatsApp | Idea Madera",
   },
