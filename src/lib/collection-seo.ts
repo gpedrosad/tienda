@@ -301,11 +301,11 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Los sitiales de madera de este catálogo son el Sitial Hank Nogal y el Sitial Hank Negro, para living, comedor y espacios de estar. El Hank Nogal es de madera nogal, para living, hall o espacios de descanso, y el Hank Negro es un sillón individual de madera maciza con barniz negro, para living, sala de lectura, oficina o dormitorio principal. Para cotizar, revisa [muebles a medida](/muebles-a-medida) o la [mueblería en Chillán](/muebles-chillan).",
   },
   percheros: {
-    updatedAt: "2026-06-24",
+    updatedAt: "2026-11-15",
     h1: "Percheros de madera",
-    metadataTitle: "Percheros de Madera para Hogar",
+    metadataTitle: "Percheros de Madera Artesanales para Recibidor",
     description:
-      "Percheros de madera para recibidor y dormitorio. Diseño funcional con terminación artesanal. Cotiza por WhatsApp con envíos a todo Chile.",
+      "Percheros de madera artesanales para recibidor y dormitorio: modelos Verona y Sofía desde $149.990. Cotiza por WhatsApp con envío a todo Chile.",
   },
   pisos: {
     updatedAt: "2026-10-05",
