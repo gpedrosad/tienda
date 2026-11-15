@@ -2,6 +2,30 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-15 — Lote 40 (CTR): CTR de percheros, mesa redonda trípode y guía de cotizar
+
+Search Console (último día 2026-11-14). 90d: 852 clics / 49.598 impr / CTR 1.72 % / pos 8.9. 7d (2026-11-08..2026-11-14): 104 clics / 8.876 impr / CTR 1.17 % / pos 8.3 vs prev7 (2026-11-01..2026-11-07): 103 clics / 8.820 impr / CTR 1.17 % / pos 7.8. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22), lotes 11-04/11-07/11-09/11-10 y lo editado el 11-13 (hasta 2026-11-20). GA4: conector sigue pidiendo reautenticación. PageSpeed: HTTP 429 (cuota). Medir el 2026-11-29.
+
+### `/collections/percheros`
+
+Antes — 28d (2026-10-18..2026-11-14): 2 clics / 164 impr / CTR 1.22 % / pos 5.1; 7d 1/130 vs prev7 0/18. Consultas: «percheros de madera» 0 clics/67 impr, pos 3.5; «perchero de madera» 0 clics/20 impr, pos 2.1; «perchero madera» 0 clics/19 impr, pos 2.3; «percheros de madera artesanales» 0 clics/14 impr, pos 9.9.
+Consulta objetivo: «percheros de madera». Title `Percheros de Madera para Hogar | Idea Madera` → `Percheros de Madera Artesanales para Recibidor | Idea Madera`. Meta → «Percheros de madera artesanales para recibidor y dormitorio: modelos Verona y Sofía desde $149.990. Cotiza por WhatsApp con envío a todo Chile.». H1: igual. Motivo: Suma «artesanales» y «recibidor», que aparecen en las consultas reales, y agrega al meta los modelos y el precio real desde $149.990 para destacar en posiciones 2-4 sin clics.
+Aplicado 2026-11-15. Medir 2026-11-29 (14 d).
+
+### `/products/mesa-comedor-tripode-redonda`
+
+Antes — 28d (2026-10-18..2026-11-14): 1 clics / 108 impr / CTR 0.93 % / pos 5.5; 7d 1/32 vs prev7 0/31. Consultas: «mesa comedor redonda madera» 0 clics/4 impr, pos 6.5; «mesa redonda 140» 0 clics/3 impr, pos 9.7; «mesa redonda 140 cm» 0 clics/3 impr, pos 2.7; «mesa tripode» 0 clics/3 impr, pos 1.0.
+Consulta objetivo: «mesa comedor redonda madera». Title `Mesa Comedor Trípode Redonda Ø140 cm | Madera Maciza` → `Mesa de Comedor Redonda de Madera 140 cm | Trípode`. Meta → «Mesa redonda de comedor en madera maciza, Ø140 × 75 cm, patas trípode y barniz natural. Para 6-8 personas. Desde $729.900, cotiza por WhatsApp.». H1: igual. Motivo: Ordena el title según las consultas «mesa de comedor madera redonda», «mesa redonda 140 cm» y «mesa tripode», usa «140 cm» sin Ø para que coincida con la búsqueda y mantiene medidas y precio reales.
+Aplicado 2026-11-15. Medir 2026-11-29 (14 d).
+
+### `/guias/cotizar-muebles-a-medida`
+
+Antes — 28d (2026-10-18..2026-11-14): 0 clics / 94 impr / CTR 0.00 % / pos 6.3; 7d 0/10 vs prev7 0/12. Consultas: (anonimizadas).
+Consulta objetivo: «cotizar muebles a medida». Title `Cómo Cotizar un Mueble a Medida por WhatsApp | Idea Madera` → `Cotizar Muebles a Medida: Qué Datos Enviar | Idea Madera`. Meta → «Guía para cotizar muebles a medida por WhatsApp: qué información enviar y cómo describir tu proyecto para recibir una propuesta clara en pocas horas.». H1: igual. Motivo: Sin consultas visibles: el title se alinea con la keyword principal en plural y con el beneficio concreto de la guía, y el meta incluye «propuesta clara en pocas horas», dato que ya está en la intro.
+Aplicado 2026-11-15. Medir 2026-11-29 (14 d).
+
+Precios citados ($149.990 Verona, $729.900 Trípode redonda) salen de `src/data/products.ts`.
+
 ## 2026-11-13 — Lote 39 (CTR)
 
 Search Console (último día 2026-11-12). 90d: 846 clics / 48.337 impr / CTR 1.75 % / pos 8.9. 7d (2026-11-06..2026-11-12): 107 clics / 8.873 impr / CTR 1.21 % / pos 8.3 vs prev7 (2026-10-30..2026-11-05): 106 clics / 8.278 impr / CTR 1.28 % / pos 7.9. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22) y todo lo editado el 11-04/11-07/11-09/11-10 (ver freeze del run). GA4: conector pide reautenticación. PageSpeed: HTTP 429 (cuota). Medir el 2026-11-27.

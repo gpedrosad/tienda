@@ -272,7 +272,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-tripode-redonda",
-    updatedAt: "2026-10-17",
+    updatedAt: "2026-11-15",
     name: "Mesa de comedor Tripode redonda",
     price: 729900,
     category: "Mesas",
@@ -291,9 +291,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa Comedor Trípode Redonda Ø140 cm | Madera Maciza",
+    seoTitle: "Mesa de Comedor Redonda de Madera 140 cm | Trípode",
     seoDescription:
-      "Mesa de comedor Trípode redonda en madera maciza, Ø140 cm con barniz natural. Formato circular para 6-8 personas. Desde $729.900, cotiza por WhatsApp.",
+      "Mesa redonda de comedor en madera maciza, Ø140 × 75 cm, patas trípode y barniz natural. Para 6-8 personas. Desde $729.900, cotiza por WhatsApp.",
   },
   {
     id: "silla-milan-lenga",

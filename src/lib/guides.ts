@@ -483,10 +483,10 @@ export const medidasMesaGuideConfig: GuideConfig = {
 
 export const cotizarMueblesGuideConfig: GuideConfig = {
   canonicalPath: "/guias/cotizar-muebles-a-medida",
-  updatedAt: "2026-10-07",
-  pageTitle: "Cómo Cotizar un Mueble a Medida por WhatsApp | Idea Madera",
+  updatedAt: "2026-11-15",
+  pageTitle: "Cotizar Muebles a Medida: Qué Datos Enviar | Idea Madera",
   pageDescription:
-    "Guía rápida para cotizar muebles de madera a medida: qué información enviar, cómo describir tu proyecto y qué esperar en la respuesta.",
+    "Guía para cotizar muebles a medida por WhatsApp: qué información enviar y cómo describir tu proyecto para recibir una propuesta clara en pocas horas.",
   keywords: [
     "cotizar muebles a medida",
     "cómo pedir muebles a medida",
