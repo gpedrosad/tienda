@@ -547,7 +547,7 @@ export const products: Product[] = [
   },
   {
     id: "velador-cubo",
-    updatedAt: "2026-06-15",
+    updatedAt: "2026-11-17",
     name: "Velador Cubo",
     price: 270000,
     category: "Veladores",
@@ -565,6 +565,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
+    seoTitle: "Velador de Madera para Dormitorio Moderno | Cubo 45×45 cm",
+    seoDescription:
+      "Velador de madera maciza para dormitorio moderno, medidas 45×45×50 cm y barniz natural. Desde $270.000. Cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "arrimo-griego",
@@ -710,7 +713,7 @@ export const products: Product[] = [
   },
   {
     id: "mesa-comedor-cantabria",
-    updatedAt: "2026-10-17",
+    updatedAt: "2026-11-17",
     name: "Mesa Comedor Madera Modelo Cantabria",
     price: 999000,
     category: "Mesas",
@@ -729,9 +732,9 @@ export const products: Product[] = [
     material: "Madera maciza",
     finish: "Barniz natural",
     productionDays: 15,
-    seoTitle: "Mesa de Comedor Cantabria 240×110 cm | Gran Formato",
+    seoTitle: "Mesa Comedor 240 cm Larga de Madera Maciza | Cantabria",
     seoDescription:
-      "Mesa de comedor Cantabria, gran formato 240×110×75 cm, madera maciza y barniz natural. Más larga que Roma y Trípode. Desde $999.000, cotiza por WhatsApp.",
+      "Mesa comedor 240×110×75 cm en madera maciza con barniz natural, más larga que Roma y Trípode. Desde $999.000, cotiza por WhatsApp con envío a todo Chile.",
   },
   {
     id: "mesa-comedor-redonda-novara",

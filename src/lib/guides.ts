@@ -205,10 +205,10 @@ export const guidePaths = [
 
 export const cuidadoMueblesGuideConfig: GuideConfig = {
   canonicalPath: "/guias/cuidado-muebles-madera",
-  updatedAt: "2026-10-05",
-  pageTitle: "Cuidado y Mantención de Muebles de Madera Maciza | Chile",
+  updatedAt: "2026-11-17",
+  pageTitle: "Cómo Cuidar una Mesa y Muebles de Madera | Guía Práctica",
   pageDescription:
-    "Guía práctica para cuidar y mantener muebles de madera maciza en Chile: limpieza, barniz, manchas y protección para que duren años.",
+    "Cómo cuidar una mesa de madera y tus muebles de madera maciza: limpieza, barniz, manchas y protección. Guía práctica para que duren años.",
   keywords: [
     "cuidado muebles de madera",
     "mantención madera maciza",
