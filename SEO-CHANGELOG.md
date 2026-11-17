@@ -1,5 +1,36 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-17 — Lote 41 (CTR): CTR de velador Cubo, guía de cuidado de muebles y mesa Cantabria
+
+Search Console (último día 2026-11-16). 90d: 869 clics / 51.279 impr / CTR 1.69 % / pos 8.8. 7d (2026-11-10..2026-11-16): 102 clics / 8.871 impr / CTR 1.15 % / pos 8.1 vs prev7 (2026-11-03..2026-11-09): 108 clics / 9.340 impr / CTR 1.16 % / pos 7.8. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22), lotes 11-04 (hasta 11-18), 11-07 (11-21), 11-09/11-10 (11-23/24), 11-13 (11-20) y 11-15 (11-22). GA4: conector sigue pidiendo reautenticación. PageSpeed: HTTP 429. Medir el 2026-12-01.
+
+### `/products/velador-cubo`
+
+Antes — 28d (2026-10-20..2026-11-16): 0 clics / 48 impr / CTR 0.00 % / pos 4.5; 7d 0/39 vs prev7 0/8. Consultas: «veladores de madera para dormitorios» 0 clics/23 impr, pos 2.2; «medidas velador» 0 clics/2 impr, pos 41.0; «habitación» 0 clics/1 impr, pos 1.0; «medidas de velador de cama» 0 clics/1 impr, pos 2.0.
+Consulta objetivo: «veladores de madera para dormitorios». Title `Velador Cubo de Madera para Dormitorio | Idea Madera` → `Velador de Madera para Dormitorio Moderno | Cubo 45×45 cm`. Meta → «Velador de madera maciza para dormitorio moderno, medidas 45×45×50 cm y barniz natural. Desde $270.000. Cotiza por WhatsApp con envío a todo Chile.». H1: igual. Motivo: Abre con la consulta principal (pos 2.2, 23 impr) y suma «moderno» y las medidas reales, que responden a las consultas de medidas y de velador moderno.
+Aplicado 2026-11-17. Medir 2026-12-01 (14 d).
+
+### `/guias/cuidado-muebles-madera`
+
+Antes — 28d (2026-10-20..2026-11-16): 1 clics / 81 impr / CTR 1.23 % / pos 5.3; 7d 0/18 vs prev7 0/17. Consultas: «como cuidar una mesa de madera» 0 clics/1 impr, pos 11.0; «cuidado de muebles» 0 clics/1 impr, pos 6.0; «encerada» 0 clics/1 impr, pos 1.0.
+Consulta objetivo: «como cuidar una mesa de madera». Title `Cuidado y Mantención de Muebles de Madera Maciza | Chile` → `Cómo Cuidar una Mesa y Muebles de Madera | Guía Práctica`. Meta → «Cómo cuidar una mesa de madera y tus muebles de madera maciza: limpieza, barniz, manchas y protección. Guía práctica para que duren años.». H1: igual. Motivo: Usa la formulación «cómo cuidar» de las búsquedas reales y nombra la mesa explícitamente para captar la intención de cuidado de muebles.
+Aplicado 2026-11-17. Medir 2026-12-01 (14 d).
+
+### `/products/mesa-comedor-cantabria`
+
+Antes — 28d (2026-10-20..2026-11-16): 0 clics / 33 impr / CTR 0.00 % / pos 4.4; 7d 0/17 vs prev7 0/7. Consultas: «mesa comedor 240» 0 clics/9 impr, pos 3.0; «búscalo en la web» 0 clics/1 impr, pos 2.0; «mesa 240» 0 clics/1 impr, pos 2.0; «mesas largas de madera» 0 clics/1 impr, pos 2.0.
+Consulta objetivo: «mesa comedor 240». Title `Mesa de Comedor Cantabria 240×110 cm | Gran Formato` → `Mesa Comedor 240 cm Larga de Madera Maciza | Cantabria`. Meta → «Mesa comedor 240×110×75 cm en madera maciza con barniz natural, más larga que Roma y Trípode. Desde $999.000, cotiza por WhatsApp con envío a todo Chile.». H1: igual. Motivo: Pone al inicio la consulta exacta «mesa comedor 240» (9 impr, pos 3) y agrega «larga de madera» por la consulta «mesas largas de madera».
+Aplicado 2026-11-17. Medir 2026-12-01 (14 d).
+
+
+### Medición vencida: Lote 34 (2026-11-03, medir 11-17)
+
+- `/collections/veladores` (Lote 34): antes 2026-10-20..2026-11-02 2/483 CTR 0.41 % pos 7.3 → después 2026-11-03..2026-11-16 5/680 CTR 0.74 % pos 7.6. Mejora, pero la página entró al test Opus del 11-08: se evalúa con el test el 2026-11-22.
+- `/puertas-de-madera-con-vidrio` (Lote 34): antes 2026-10-20..2026-11-02 11/457 CTR 2.41 % pos 8.9 → después 2026-11-03..2026-11-16 7/505 CTR 1.39 % pos 7.3. Baja el CTR con mejor posición; también está en el test Opus 11-08 (title/meta), así que la ventana mezcla los dos cambios. No se revierte hoy: se decide con el test el 2026-11-22.
+- `/puertas-exteriores` (Lote 34): antes 2026-10-20..2026-11-02 0/100 CTR 0.0 % pos 7.2 → después 2026-11-03..2026-11-16 5/147 CTR 3.4 % pos 9.1. Mejora (0 → 5 clics). Se mantiene.
+
+Precios citados ($270.000 velador Cubo, $999.000 Cantabria) y medidas salen de `src/data/products.ts`. En fichas, `documentTitle()` recorta la segunda parte del seoTitle y agrega « | Idea Madera»: titles live esperados «Velador de Madera para Dormitorio Moderno | Idea Madera» y «Mesa Comedor 240 cm Larga de Madera Maciza | Idea Madera».
+
 ## 2026-11-15 — Lote 40 (CTR): CTR de percheros, mesa redonda trípode y guía de cotizar
 
 Search Console (último día 2026-11-14). 90d: 852 clics / 49.598 impr / CTR 1.72 % / pos 8.9. 7d (2026-11-08..2026-11-14): 104 clics / 8.876 impr / CTR 1.17 % / pos 8.3 vs prev7 (2026-11-01..2026-11-07): 103 clics / 8.820 impr / CTR 1.17 % / pos 7.8. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22), lotes 11-04/11-07/11-09/11-10 y lo editado el 11-13 (hasta 2026-11-20). GA4: conector sigue pidiendo reautenticación. PageSpeed: HTTP 429 (cuota). Medir el 2026-11-29.
