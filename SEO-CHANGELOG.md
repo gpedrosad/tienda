@@ -1,5 +1,22 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-19 — Lote 42 (CTR): guía de medidas de mesa de comedor
+
+Search Console (último día 2026-11-18). 90d: 890 clics / 53.059 impr / CTR 1.68 % / pos 8.8. 7d (2026-11-12..2026-11-18): 105 clics / 8.991 impr / CTR 1.17 % / pos 7.8 vs prev7 (2026-11-05..2026-11-11): 108 / 9.073 / 1.19 % / 8.1. Modelo: claude-sonnet-5-5.
+
+### `/guias/medidas-mesa-comedor`
+
+Antes — 28d (2026-10-22..2026-11-18): 18 clics / 5.898 impr / CTR 0.31 % / pos 6.8; 7d 5/1.230 vs prev7 7/1.731. Consultas: «altura mesa comedor» 0/129 pos 14.1; «altura de mesa comedor» 0/62 pos 20.6; «medidas mesa comedor 6 personas» 0/28 pos 7.6; «cuanto mide una mesa de comedor» 0/21 pos 5.4. «medidas mesa de centro» (0/96, pos 38.4) queda para `/guias/medidas-mesa-de-centro` (canibalización).
+Title `Medidas Mesa de Comedor: Altura 75 cm y 6 Personas` → `Altura mesa comedor: 75 cm y cuánto mide para 6 personas`. Meta → «Cuánto mide una mesa de comedor: la altura estándar es 75 cm (silla de 45-48 cm). Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm.» H1 → «Cuánto mide una mesa de comedor: altura y tamaño según personas». Sin datos nuevos: solo se reordenan los ya publicados.
+Aplicado 2026-11-19. Medir 2026-12-03 (14 d).
+
+### Mediciones vencidas (2026-11-18), antes 2026-10-21..11-03 → después 2026-11-04..11-17
+- `/guias/medidas-mesa-comedor`: 6/2.826, CTR 0,21 %, pos 7,6 → 12/3.059, CTR 0,39 %, pos 6,1. Mejora leve; sigue bajo, por eso este lote.
+- `/guias/medidas-mesa-de-centro`: 0/438, pos 7,2 → 0/593, pos 7,7. Sin clics; no se toca (consultas genéricas, impresiones suben).
+- `/tiny-house-dlt`: 0/8, pos 13,5 → 0/16, pos 4,6. Muy pocas impresiones.
+- `/molduras-a-medida`: retirada el 2026-11-13 (301 a `/muebles-a-medida`), sin medición.
+
+
 ## 2026-11-17 — Lote 41 (CTR): CTR de velador Cubo, guía de cuidado de muebles y mesa Cantabria
 
 Search Console (último día 2026-11-16). 90d: 869 clics / 51.279 impr / CTR 1.69 % / pos 8.8. 7d (2026-11-10..2026-11-16): 102 clics / 8.871 impr / CTR 1.15 % / pos 8.1 vs prev7 (2026-11-03..2026-11-09): 108 clics / 9.340 impr / CTR 1.16 % / pos 7.8. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (hasta 2026-11-22), lotes 11-04 (hasta 11-18), 11-07 (11-21), 11-09/11-10 (11-23/24), 11-13 (11-20) y 11-15 (11-22). GA4: conector sigue pidiendo reautenticación. PageSpeed: HTTP 429. Medir el 2026-12-01.

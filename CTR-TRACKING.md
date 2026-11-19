@@ -225,3 +225,15 @@ Cinco snippets: comedores nórdicos, puertas con vidrio, cubiertas, puertas a me
 - **H1:** Cómo elegir las medidas de una mesa de centro → … de una mesa de centro o mesa ratona
 - **Medir el:** 2026-11-18 (7d y 14d posteriores vs. el «antes»)
 - **Resultado:** (pendiente)
+
+## 2026-11-19 · `/guias/medidas-mesa-comedor` — Lote 42 (aplicado, claude-sonnet-5-5)
+
+- **URL:** https://www.ideamadera.cl/guias/medidas-mesa-comedor
+- **Queries objetivo:** altura mesa comedor; cuánto mide una mesa de comedor
+- **Antes:** 28d (2026-10-22..11-18) 18 clics / 5.898 impr / CTR 0,31 % / pos 6,8; «altura mesa comedor» 0/129 pos 14,1
+- **Title:** `Medidas Mesa de Comedor: Altura 75 cm y 6 Personas` → `Altura mesa comedor: 75 cm y cuánto mide para 6 personas`
+- **Meta:** abre con «Cuánto mide una mesa de comedor: la altura estándar es 75 cm…»
+- **H1:** Cómo elegir las medidas de tu mesa de comedor → Cuánto mide una mesa de comedor: altura y tamaño según personas
+- **Medir el:** 2026-12-03
+- **Resultado:** (pendiente)
+- **Medición 2026-11-18 de Lote 35:** medidas-mesa-comedor 0,21 % → 0,39 % (pos 7,6 → 6,1); medidas-mesa-de-centro 0 clics (pos 7,2 → 7,7); tiny-house-dlt 0/16 (pos 4,6).
