@@ -599,10 +599,10 @@ export const cotizarMueblesGuideConfig: GuideConfig = {
 
 export const elegirSillasGuideConfig: GuideConfig = {
   canonicalPath: "/guias/elegir-sillas-madera-comedor",
-  updatedAt: "2026-11-07",
-  pageTitle: "Sillas de Madera para Comedor: Medidas y Cantidad",
+  updatedAt: "2026-11-21",
+  pageTitle: "Medidas de Sillas de Comedor de Madera y Cuántas Poner",
   pageDescription:
-    "Sillas de madera para comedor: medidas de asiento 45-48 cm y cuántas caben según el largo de la mesa. Revisa la colección o cotiza por WhatsApp.",
+    "Cuánto mide una silla de comedor: asiento de 45-48 cm y cuántas sillas caben según el largo de la mesa. Revisa la colección o cotiza por WhatsApp.",
   keywords: [
     "sillas de madera para comedor",
     "cómo elegir sillas de comedor",

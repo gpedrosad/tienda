@@ -1,5 +1,35 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-21 — Lote 43 (CTR): CTR de guía mesa de centro, kit pérgola y guía de sillas
+
+Search Console (último día 2026-11-20). 90d: 914 clics / 55.011 impr / CTR 1.66 % / pos 8.7. 7d (2026-11-14..2026-11-20): 115 clics / 9.135 impr / CTR 1.26 % / pos 7.5 vs prev7 (2026-11-07..2026-11-13): 103 clics / 8.830 impr / CTR 1.17 % / pos 8.4. Copy: claude-sonnet-5-5 vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (se mide desde 2026-11-22) y lotes 11-09 en adelante. GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-05.
+
+### `/guias/medidas-mesa-de-centro`
+
+Antes — 28d (2026-10-24..2026-11-20): 1 clics / 1145 impr / CTR 0.09 % / pos 7.6; 7d 1/253 vs prev7 0/298. Consultas: «medidas mesa de centro» 0 clics/86 impr, pos 12.6; «mesa ratona» 0 clics/31 impr, pos 6.9; «altura mesa ratona» 0 clics/26 impr, pos 9.1; «altura de mesa ratona» 0 clics/14 impr, pos 8.5.
+Consulta objetivo: «medidas mesa de centro». Title `Medidas Mesa de Centro y Mesa Ratona: Largo y Alto` → `Medidas Mesa de Centro: Cuánto Debe Medir y Qué Altura`. Meta → «¿Cuánto debe medir una mesa de centro o mesa ratona? El largo va entre la mitad y dos tercios del sofá; la altura, cerca de la del asiento.». H1: igual. Motivo: El title apunta a «medidas mesa de centro» y «cuánto mide una mesa de centro», y deja «mesa ratona» a la colección. La meta responde en forma de pregunta con los datos que ya existían (largo y altura).
+Modelo: claude-sonnet-5-5. Aplicado 2026-11-21. Medir 2026-12-05 (14 d).
+
+### `/kit-pergola`
+
+Antes — 28d (2026-10-24..2026-11-20): 28 clics / 1650 impr / CTR 1.70 % / pos 7.1; 7d 4/461 vs prev7 8/480. Consultas: «kit pergola» 2 clics/145 impr, pos 6.8; «kit de herraje para pergola» 1 clics/39 impr, pos 8.4; «kit pergola madera» 0 clics/38 impr, pos 5.7; «kit herraje pergola» 0 clics/34 impr, pos 7.4.
+Consulta objetivo: «kit pergola / kit de herraje para pergola / kit pergola madera». Title `Kit Pérgola 3×3 | Uniones Metálicas, Sin Maderas` → `Kit para Pérgola de Madera: Herrajes y Bases 3×3`. Meta → «Kit de herrajes para pérgola: uniones metálicas y bases para pérgolas 3×3 (75×75 mm). Sin maderas. Atornillar o cementar. Cotiza por WhatsApp.». H1: igual. Motivo: El cambio anterior bajó el CTR. Ahora el title abre con la frase de las consultas («kit para pérgola de madera», «herrajes», «bases») y «sin maderas» pasa a la meta, con los mismos datos de siempre.
+Modelo: claude-sonnet-5-5. Aplicado 2026-11-21. Medir 2026-12-05 (14 d).
+
+### `/guias/elegir-sillas-madera-comedor`
+
+Antes — 28d (2026-10-24..2026-11-20): 1 clics / 775 impr / CTR 0.13 % / pos 9.4; 7d 0/250 vs prev7 0/129. Consultas: «medida de silla» 0 clics/73 impr, pos 25.5; «altura mesa comedor» 0 clics/23 impr, pos 12.4; «altura de mesa comedor» 0 clics/12 impr, pos 13.7; «sillas de madera» 0 clics/11 impr, pos 14.7.
+Consulta objetivo: «medidas de sillas de comedor de madera / cuanto mide una silla de comedor». Title `Sillas de Madera para Comedor: Medidas y Cantidad` → `Medidas de Sillas de Comedor de Madera y Cuántas Poner`. Meta → «Cuánto mide una silla de comedor: asiento de 45-48 cm y cuántas sillas caben según el largo de la mesa. Revisa la colección o cotiza por WhatsApp.». H1: igual. Motivo: El enfoque anterior no funcionó. El title ahora abre con «medidas de sillas de comedor de madera» y la meta responde «cuánto mide una silla de comedor» con el dato existente de 45-48 cm.
+Modelo: claude-sonnet-5-5. Aplicado 2026-11-21. Medir 2026-12-05 (14 d).
+
+
+### Medición vencida (cambios 2026-11-07, medir 11-21)
+
+- `/kit-pergola` (cambio 11-07): antes 2026-10-24..2026-11-06 16/709 CTR 2.26 % pos 7.2 → después 2026-11-07..2026-11-20 12/941 CTR 1.28 % pos 7.1. Empeoró: reintento hoy con Sonnet.
+- `/guias/elegir-sillas-madera-comedor` (cambio 11-07): antes 2026-10-24..2026-11-06 1/396 CTR 0.25 % pos 10.3 → después 2026-11-07..2026-11-20 0/379 CTR 0.0 % pos 8.5. Empeoró (1 → 0 clics): reintento hoy con Sonnet.
+
+Sin datos nuevos: medidas (45-48 cm, 75×75 mm, proporciones del sofá) ya estaban en la página. «Mesa ratona» queda para /mesas-de-centro.
+
 ## 2026-11-19 — Lote 42 (CTR): guía de medidas de mesa de comedor
 
 Search Console (último día 2026-11-18). 90d: 890 clics / 53.059 impr / CTR 1.68 % / pos 8.8. 7d (2026-11-12..2026-11-18): 105 clics / 8.991 impr / CTR 1.17 % / pos 7.8 vs prev7 (2026-11-05..2026-11-11): 108 / 9.073 / 1.19 % / 8.1. Modelo: claude-sonnet-5-5.
