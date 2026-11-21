@@ -2,10 +2,10 @@ import type { GuideConfig } from "@/lib/guides";
 
 export const medidasMesaCentroGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-de-centro",
-  updatedAt: "2026-11-04",
-  pageTitle: "Medidas Mesa de Centro y Mesa Ratona: Largo y Alto",
+  updatedAt: "2026-11-21",
+  pageTitle: "Medidas Mesa de Centro: Cuánto Debe Medir y Qué Altura",
   pageDescription:
-    "Cuánto debe medir una mesa ratona o mesa de centro: largo entre la mitad y dos tercios del sofá, y superficie cerca de la altura del asiento.",
+    "¿Cuánto debe medir una mesa de centro o mesa ratona? El largo va entre la mitad y dos tercios del sofá; la altura, cerca de la del asiento.",
   keywords: [
     "medidas mesa de centro",
     "medidas mesa ratona",
