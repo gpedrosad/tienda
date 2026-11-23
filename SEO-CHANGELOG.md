@@ -1,5 +1,51 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-23 — Lote 44: retry guía peldaños y cubiertas (test Opus) + snippet de percheros
+
+Search Console (último día 2026-11-22). 90d: 926 clics / 56.987 impr / CTR 1.62 % / pos 8.7. 7d (2026-11-16..2026-11-22): 110 clics / 9.172 impr / CTR 1.2 % / pos 7.6 vs prev7 (2026-11-09..2026-11-15): 108 clics / 8.949 impr / CTR 1.21 % / pos 8.3. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: lotes 2026-11-21 (hasta 11-28), tienda #40 (hasta 11-26) y lotes 11-10 (hasta 11-24). GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-07.
+
+### `/guias/medidas-peldanos-escalera`
+
+Antes — 28d (2026-10-26..2026-11-22): 10 clics / 3635 impr / CTR 0.28 % / pos 5.2; 7d 1/783 vs prev7 2/884. Consultas: «huella y contrahuella» 0 clics/237 impr, pos 4.2; «contrahuella escalera» 1 clics/126 impr, pos 7.1; «huella y contrahuella escaleras» 0 clics/81 impr, pos 5.9; «contrahuella» 0 clics/76 impr, pos 7.7.
+Consulta objetivo: «huella y contrahuella / contrahuella escalera / cuanto mide una contrahuella». Title `Huella y contrahuella: medidas de referencia | Idea Madera` → `Huella y contrahuella de escalera: medidas | Idea Madera`. Meta → «¿Cuánto mide una contrahuella? Como referencia, 15 a 18 cm, con huella cerca de 25 a 30 cm (2 contrahuellas + huella: cerca de 63 cm). Cómo medirlas.». H1: igual. Motivo: El test bajó el CTR (0,31→0,18 %, muestra chica). No vuelvo al title anterior tal cual: propongo uno que suma 'escalera' (presente en 'contrahuella escalera', 'huella y contrahuella escalera(s)', 'huella escalera') y retoma 'medidas' del title previo al test. La meta abre con la pregunta literal 'cuánto mide una contrahuella' y conserva todas las cifras existentes; el H1 no se toca porque el fragmento está truncado.
+Modelo: claude-opus-5-5. Aplicado 2026-11-23. Medir 2026-12-07 (14 d).
+
+### `/cubiertas-a-medida`
+
+Antes — 28d (2026-10-26..2026-11-22): 16 clics / 1056 impr / CTR 1.52 % / pos 7.8; 7d 4/264 vs prev7 2/283. Consultas: «mesones de madera» 1 clics/66 impr, pos 9.1; «meson para quincho» 0 clics/49 impr, pos 7.1; «meson quincho» 0 clics/35 impr, pos 7.1; «mesones para quinchos» 0 clics/18 impr, pos 6.9.
+Consulta objetivo: «mesones de madera / meson para quincho». Title `Mesones y Cubiertas de Madera a Medida para Quincho` → `Mesones de Madera para Quincho y Cubiertas a Medida`. Meta → «Mesones de madera para quincho, cocina o barra, hechos a medida en lenga austral o pino premium. Cotiza tu mesón por WhatsApp con envío a todo Chile.». H1: igual. Motivo: El title pre-test, que abría con 'Mesones para Quincho', tenía mejor CTR (2,41 % vs 1,10 %). Vuelvo a esa estructura e incorporo la consulta principal 'mesones de madera'. La meta abre con 'mesones de madera para quincho' y mantiene maderas, cocina/barra, WhatsApp y envío a todo Chile.
+Modelo: claude-opus-5-5. Aplicado 2026-11-23. Medir 2026-12-07 (14 d).
+
+### `/collections/percheros`
+
+Antes — 28d (2026-10-26..2026-11-22): 3 clics / 757 impr / CTR 0.40 % / pos 2.7; 7d 1/514 vs prev7 1/212. Consultas: «percheros de madera» 0 clics/273 impr, pos 2.7; «perchero de madera» 0 clics/259 impr, pos 1.8; «perchero madera» 1 clics/132 impr, pos 2.5; «percheros madera» 0 clics/19 impr, pos 2.5.
+Consulta objetivo: «perchero de madera / percheros de madera». Title `Percheros de Madera Artesanales para Recibidor` → `Perchero de Madera Artesanal para Recibidor`. Meta → «Percheros de madera artesanales: modelos Verona y Sofía desde $149.990. Taller en Chillán desde 1993. Cotiza por WhatsApp; envío a todo Chile.». H1: igual. Motivo: La página está en posición 1,8–2,7 con casi 0 clics. El title pasa al singular exacto 'perchero de madera' (pos 1,8) y suma la marca. El plural 'percheros de madera' queda en la meta y el H1. La meta mantiene el precio existente tal cual y agrega como señal de confianza el taller en Chillán desde 1993, un dato del sitio.
+Modelo: claude-opus-5-5. Aplicado 2026-11-23. Medir 2026-12-07 (14 d).
+
+
+### Test CTR Opus 5.5 — medición 14 d (2026-11-23)
+
+Antes 2026-10-24..2026-11-06 vs después 2026-11-09..2026-11-22 (GSC dataState all; el 22/11 puede no estar final: provisional). Total del sitio (8 URLs): 64/5627 (CTR 1.14 %) → 67/6292 (CTR 1.06 %). Sin control A/B: no es causal. Las páginas se descongelan. Re-medición 28 d en la primera corrida desde 2026-12-06.
+
+| URL | Var. | Antes (clics/impr, CTR, pos) | Después | Veredicto |
+|---|---|---|---|---|
+| `/guias/medidas-peldanos-escalera` | A | 6/1951, 0.31 %, 5.1 | 3/1667, 0.18 %, 5.3 | sin cambio claro |
+| `/collections/veladores` | B | 3/721, 0.42 %, 6.2 | 5/471, 1.06 %, 8.9 | mejoró |
+| `/guias/medidas-y-madera-puertas` | A | 2/559, 0.36 %, 4.5 | 11/1791, 0.61 %, 4.8 | sin cambio claro |
+| `/comedores-nordicos` | A | 0/293, 0.00 %, 17.2 | 2/234, 0.85 %, 16.9 | sin datos suficientes |
+| `/puertas-de-madera-con-vidrio` | A | 10/438, 2.28 %, 8.1 | 8/513, 1.56 %, 7.6 | empeoró |
+| `/cubiertas-a-medida` | A | 13/540, 2.41 %, 7.9 | 6/547, 1.10 %, 7.8 | empeoró |
+| `/puertas-a-medida` | A | 15/527, 2.85 %, 7.4 | 18/472, 3.81 %, 6.9 | mejoró |
+| `/peldanos-a-medida` | A | 15/598, 2.51 %, 8.9 | 14/597, 2.35 %, 9.0 | sin cambio claro |
+
+Revertidas/reintentadas por el test: `/cubiertas-a-medida` (13/540 → 6/547, CTR 2,41 → 1,10 %) vuelve a la estructura «Mesones … para Quincho»; `/guias/medidas-peldanos-escalera` (6/1951 → 3/1667) reintento con «contrahuella escalera». En vigilancia sin cambio: `/puertas-de-madera-con-vidrio` (2,28 → 1,56 %), se re-mide a 28 d.
+
+### Medición vencida (cambios 2026-11-09, medir 11-23)
+
+- `/products/silla-kentucky` (cambio 11-09): antes 2026-10-27..2026-11-08 0/88 CTR 0.0 % pos 1.8 → después 2026-11-10..2026-11-22 2/80 CTR 2.5 % pos 1.6. Muestra chica (0 → 2 clics); se mantiene.
+- `/puertas-correderas` (cambio 11-09): antes 2026-10-27..2026-11-08 2/230 CTR 0.87 % pos 7.5 → después 2026-11-10..2026-11-22 2/212 CTR 0.94 % pos 8.8. Sin cambio claro (0,87 → 0,94 %); se mantiene.
+
+
 ## 2026-11-21 — Lote 43 (CTR): CTR de guía mesa de centro, kit pérgola y guía de sillas
 
 Search Console (último día 2026-11-20). 90d: 914 clics / 55.011 impr / CTR 1.66 % / pos 8.7. 7d (2026-11-14..2026-11-20): 115 clics / 9.135 impr / CTR 1.26 % / pos 7.5 vs prev7 (2026-11-07..2026-11-13): 103 clics / 8.830 impr / CTR 1.17 % / pos 8.4. Copy: claude-sonnet-5-5 vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: test Opus 11-08 (se mide desde 2026-11-22) y lotes 11-09 en adelante. GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-05.

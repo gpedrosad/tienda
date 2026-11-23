@@ -501,10 +501,10 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
 
 export const cubiertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/cubiertas-a-medida",
-  updatedAt: "2026-11-04",
-  pageTitle: "Mesones y Cubiertas de Madera a Medida para Quincho",
+  updatedAt: "2026-11-23",
+  pageTitle: "Mesones de Madera para Quincho y Cubiertas a Medida",
   pageDescription:
-    "Mesones y cubiertas de madera a medida para quincho, cocina o barra, en lenga austral o pino premium. Cotiza por WhatsApp; envíos a todo Chile.",
+    "Mesones de madera para quincho, cocina o barra, hechos a medida en lenga austral o pino premium. Cotiza tu mesón por WhatsApp con envío a todo Chile.",
   keywords: [
     "mesones para quinchos",
     "mesones para quincho",
