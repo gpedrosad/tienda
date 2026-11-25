@@ -2,6 +2,25 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-25 — Lote 45: retry CTR guía de medidas de puertas y puertas con vidrio (test Opus)
+
+Search Console (último día 2026-11-24). 90d: 957 clics / 59.816 impr / CTR 1.6 % / pos 8.5. 7d (2026-11-18..2026-11-24): 121 clics / 9.669 impr / CTR 1.25 % / pos 7.6 vs prev7 (2026-11-11..2026-11-17): 102 clics / 8.965 impr / CTR 1.14 % / pos 7.9. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Páginas cambiadas en los últimos 7 días no se tocaron (lotes 11-21 y 11-23 congelados). Medir 2026-12-09 (14 d). Test Opus 11-08: medición 14 d ya hecha el 2026-11-23; re-medición 28 d en la primera corrida desde 2026-12-06.
+
+### `/guias/medidas-y-madera-puertas`
+
+Antes — 28d (2026-10-28..2026-11-24): 14 clics / 2797 impr / CTR 0.50 % / pos 4.7; 7d 4/967 vs prev7 5/890. Consultas: «medidas de puertas» 0 clics/78 impr, pos 7.3; «medidas puertas» 0 clics/34 impr, pos 6.8; «ancho de una puerta» 0 clics/28 impr, pos 6.6; «medidas de puertas interiores» 0 clics/25 impr, pos 8.5.
+Consulta objetivo: «medidas de puertas». Title `Medidas de puertas en Chile y qué madera usar | Idea Madera` → `Medidas de puertas en Chile: 70 a 90 × 200 cm | Idea Madera`. Meta → «Medidas de puertas: hojas de 70, 75, 80 y 90 cm de ancho × 200 cm de alto se ven seguido en Chile. Cómo medir el vano y qué madera usar. Cotiza a medida.». H1: igual. Motivo: El test mejoró el CTR (0,36 % → 0,61 %), así que se mantiene la consulta exacta al inicio y se agrega la respuesta numérica que ya está en la página (70-90 × 200 cm). Las palabras ancho y alto en la meta cubren «ancho de una puerta» y «altura puerta».
+Modelo: claude-opus-5-5. Aplicado 2026-11-25. Medir 2026-12-09 (14 d).
+
+### `/puertas-de-madera-con-vidrio`
+
+Antes — 28d (2026-10-28..2026-11-24): 13 clics / 982 impr / CTR 1.32 % / pos 7.8; 7d 3/270 vs prev7 4/240. Consultas: «puerta de madera con vidrio» 0 clics/99 impr, pos 9.7; «puerta madera con vidrio» 0 clics/37 impr, pos 9.7; «puertas de madera con vidrio» 0 clics/35 impr, pos 9.1; «puertas de madera con vidrio para exterior» 0 clics/15 impr, pos 6.6.
+Consulta objetivo: «puerta de madera con vidrio». Title `Puerta de Madera con Vidrio a Medida | Taller en Chillán` → `Puertas de Madera con Vidrio a Medida | Interior y Entrada`. Meta → «Puertas de madera con vidrio a medida para interior o entrada. Envía vano y foto por WhatsApp; el vidrio se confirma al cotizar. Envío a todo Chile.». H1: igual. Motivo: El test bajó el CTR (2,28 % → 1,56 %), así que se vuelve al formato plural del title anterior. «Taller en Chillán», que suena local para búsquedas nacionales, se cambia por «Interior y Entrada» para cubrir «para exterior» y «puerta entrada con vidrio». La meta recupera «Envío a todo Chile».
+Modelo: claude-opus-5-5. Aplicado 2026-11-25. Medir 2026-12-09 (14 d).
+
+No aplicado: `/mesas-de-centro` — El último cambio es del 13/11, hace solo 12 días, y los últimos 7 días muestran recuperación (2/136 vs 0/125). El title ya apunta a «mesa ratona» y «living»; conviene esperar datos suficientes antes de volver a tocarlo, y la prioridad son puertas y peldaños.
+
+
 ## 2026-11-23 — Lote 44: retry guía peldaños y cubiertas (test Opus) + snippet de percheros
 
 Search Console (último día 2026-11-22). 90d: 926 clics / 56.987 impr / CTR 1.62 % / pos 8.7. 7d (2026-11-16..2026-11-22): 110 clics / 9.172 impr / CTR 1.2 % / pos 7.6 vs prev7 (2026-11-09..2026-11-15): 108 clics / 8.949 impr / CTR 1.21 % / pos 8.3. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Congeladas y no tocadas: lotes 2026-11-21 (hasta 11-28), tienda #40 (hasta 11-26) y lotes 11-10 (hasta 11-24). GA4: conector sigue pidiendo reautenticación. Medir el 2026-12-07.
