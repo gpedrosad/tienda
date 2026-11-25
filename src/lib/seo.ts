@@ -24,9 +24,8 @@ export type ReturnShippingFeesConfig =
   | { type: "customer_responsibility" }
   | { type: "customer_pays"; amountClp: number };
 
-// PENDIENTE: confirmar con Gonzalo quién paga el envío de la devolución y, si lo paga el cliente,
-// si hay un monto fijo en CLP. No cambiar este valor sin confirmación escrita del negocio.
-export const RETURN_SHIPPING_FEES: ReturnShippingFeesConfig = { type: "unconfirmed" };
+// Confirmado por el negocio (2026-11-24): el envío de la devolución lo paga el cliente según cotización, sin monto fijo.
+export const RETURN_SHIPPING_FEES: ReturnShippingFeesConfig = { type: "customer_responsibility" };
 
 // PENDIENTE: confirmar con Gonzalo si existe una tarifa de envío fija en CLP para todo Chile.
 // Hoy el envío se cotiza por comuna. Mientras sea null no se emite shippingRate.
