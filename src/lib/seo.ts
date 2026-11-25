@@ -8,6 +8,29 @@ export const SITE_LOCALE = "es_CL";
 export const DEFAULT_OG_IMAGE = "/og-default.jpg";
 export const SITE_PHONE = "+56995497838";
 export const MERCHANT_RETURN_DAYS = 30;
+/** Página pública con la política de cambios y devoluciones. Se usa como merchantReturnLink. */
+export const RETURN_POLICY_PATH = "/cambios-y-devoluciones";
+
+/**
+ * Quién paga el envío de una devolución.
+ * - "unconfirmed": no confirmado. El JSON-LD queda igual que antes (más itemCondition y merchantReturnLink) y la página no afirma quién paga.
+ * - "free": la devolución no tiene costo para el cliente (returnFees FreeReturn).
+ * - "customer_responsibility": el cliente gestiona y paga el envío, sin monto fijo (returnFees ReturnFeesCustomerResponsibility).
+ * - "customer_pays": el cliente paga un monto fijo en CLP (ReturnShippingFees + returnShippingFeesAmount). amountClp debe ser un entero mayor o igual a 0.
+ */
+export type ReturnShippingFeesConfig =
+  | { type: "unconfirmed" }
+  | { type: "free" }
+  | { type: "customer_responsibility" }
+  | { type: "customer_pays"; amountClp: number };
+
+// PENDIENTE: confirmar con Gonzalo quién paga el envío de la devolución y, si lo paga el cliente,
+// si hay un monto fijo en CLP. No cambiar este valor sin confirmación escrita del negocio.
+export const RETURN_SHIPPING_FEES: ReturnShippingFeesConfig = { type: "unconfirmed" };
+
+// PENDIENTE: confirmar con Gonzalo si existe una tarifa de envío fija en CLP para todo Chile.
+// Hoy el envío se cotiza por comuna. Mientras sea null no se emite shippingRate.
+export const SHIPPING_RATE_CLP: number | null = null;
 export const WARRANTY_MONTHS = 2;
 export const DEFAULT_PRODUCTION_DAYS = 15;
 export const DEFAULT_TRANSIT_DAYS = { min: 3, max: 10 } as const;
@@ -204,6 +227,7 @@ export function buildOrganizationSchema() {
     priceRange: "$$",
     currenciesAccepted: "CLP",
     paymentAccepted: "Transferencia, Tarjeta de crédito, Tarjeta de débito",
+    hasMerchantReturnPolicy: buildMerchantReturnPolicy(),
   };
 }
 
@@ -270,20 +294,63 @@ export function buildItemListSchema(
   };
 }
 
-export function buildMerchantReturnPolicy() {
-  return {
+/**
+ * Política de devoluciones (MerchantReturnPolicy) para ofertas y para la organización.
+ * Con RETURN_SHIPPING_FEES "unconfirmed" se mantiene returnFees ReturnShippingFees sin monto, igual que antes.
+ * No se inventa monto ni se decide quién paga: eso lo define RETURN_SHIPPING_FEES.
+ */
+export function buildMerchantReturnPolicy(fees: ReturnShippingFeesConfig = RETURN_SHIPPING_FEES) {
+  const base = {
     "@type": "MerchantReturnPolicy",
     applicableCountry: "CL",
     returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
     merchantReturnDays: MERCHANT_RETURN_DAYS,
     returnMethod: "https://schema.org/ReturnByMail",
-    returnFees: "https://schema.org/ReturnShippingFees",
+    // Texto publicado: solo productos en su estado original y sin uso.
+    itemCondition: "https://schema.org/NewCondition",
+    merchantReturnLink: absoluteUrl(RETURN_POLICY_PATH),
   };
+
+  switch (fees.type) {
+    case "free":
+      return { ...base, returnFees: "https://schema.org/FreeReturn" };
+    case "customer_responsibility":
+      return { ...base, returnFees: "https://schema.org/ReturnFeesCustomerResponsibility" };
+    case "customer_pays":
+      return {
+        ...base,
+        returnFees: "https://schema.org/ReturnShippingFees",
+        returnShippingFeesAmount: {
+          "@type": "MonetaryAmount",
+          value: fees.amountClp,
+          currency: "CLP",
+        },
+      };
+    case "unconfirmed":
+    default:
+      // Igual que antes del cambio. Search Console seguirá advirtiendo returnShippingFeesAmount hasta confirmar.
+      return { ...base, returnFees: "https://schema.org/ReturnShippingFees" };
+  }
 }
 
-export function buildShippingDetails(productionDays = DEFAULT_PRODUCTION_DAYS) {
+export function buildShippingDetails(
+  productionDays = DEFAULT_PRODUCTION_DAYS,
+  shippingRateClp: number | null = SHIPPING_RATE_CLP,
+) {
+  const hasShippingRate =
+    shippingRateClp !== null && Number.isFinite(shippingRateClp) && shippingRateClp >= 0;
+
   return {
     "@type": "OfferShippingDetails",
+    ...(hasShippingRate
+      ? {
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: shippingRateClp,
+            currency: "CLP",
+          },
+        }
+      : {}),
     shippingDestination: {
       "@type": "DefinedRegion",
       addressCountry: "CL",

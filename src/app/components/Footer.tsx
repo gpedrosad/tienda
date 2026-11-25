@@ -47,6 +47,7 @@ const companyLinks: FooterLink[] = [
   { href: '/muebles-chillan', label: 'Muebles en Chillán' },
   { href: '/guias', label: 'Guías' },
   { href: '/contacto', label: 'Contacto' },
+  { href: '/cambios-y-devoluciones', label: 'Cambios y devoluciones' },
 ];
 
 const linkClass =

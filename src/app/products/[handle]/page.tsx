@@ -21,6 +21,7 @@ import {
   documentTitle,
   SITE_NAME,
   DEFAULT_PRODUCTION_DAYS,
+  MERCHANT_RETURN_DAYS,
   SITE_URL,
   WARRANTY_MONTHS,
 } from "@/lib/seo";
@@ -282,7 +283,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const trustItems = [
     "Retiro en taller (Chillán) o envío a todo Chile",
     `Fabricación ${productionDays} días hábiles en total`,
-    "Cambios 30 días",
+    `Cambios ${MERCHANT_RETURN_DAYS} días`,
     "Pago tarjeta/transferencia",
   ];
 

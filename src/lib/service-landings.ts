@@ -4,7 +4,12 @@ import {
   absoluteUrl,
   clampMetaDescription,
   fitAbsoluteTitle,
+  MERCHANT_RETURN_DAYS,
+  RETURN_POLICY_PATH,
+  RETURN_SHIPPING_FEES,
   SITE_NAME,
+  WARRANTY_MONTHS,
+  type ReturnShippingFeesConfig,
 } from "@/lib/seo";
 import {
   FOUNDING_YEAR_LABEL,
@@ -63,7 +68,8 @@ export type ServiceLandingConfig = {
   ctaTitle: string;
   ctaParagraph: string;
   ctaBullets: string[];
-  schemaType: "Service" | "AboutPage" | "ContactPage";
+  /** "WebPage": páginas informativas (p. ej. políticas). Solo cambia el JSON-LD, no la UI. */
+  schemaType: "Service" | "AboutPage" | "ContactPage" | "WebPage";
   serviceName?: string;
   serviceType?: string;
   breadcrumbItems?: Array<{ name: string; path: string }>;
@@ -227,6 +233,16 @@ export function buildLandingSchemaGraph(config: ServiceLandingConfig) {
       name: config.pageTitle,
       description: config.pageDescription,
       url: absoluteUrl(config.canonicalPath),
+    });
+  }
+
+  if (config.schemaType === "WebPage") {
+    graph.unshift({
+      "@type": "WebPage",
+      name: config.pageTitle,
+      description: config.pageDescription,
+      url: absoluteUrl(config.canonicalPath),
+      inLanguage: "es-CL",
     });
   }
 
@@ -1749,6 +1765,153 @@ export const mueblesAMedidaLandingConfig: ServiceLandingConfig = {
   ],
 };
 
+const clpFormatter = new Intl.NumberFormat("es-CL", {
+  style: "currency",
+  currency: "CLP",
+  maximumFractionDigits: 0,
+});
+
+/** Texto visible sobre el envío de la devolución. Con "unconfirmed" no afirma quién paga. */
+export function returnShippingFeesSentence(fees: ReturnShippingFeesConfig = RETURN_SHIPPING_FEES) {
+  switch (fees.type) {
+    case "free":
+      return "El envío de la devolución no tiene costo para ti. Coordinamos la devolución por WhatsApp.";
+    case "customer_responsibility":
+      return "El envío de la devolución corre por cuenta del cliente. Coordinamos la devolución por WhatsApp.";
+    case "customer_pays":
+      return `El envío de la devolución tiene un costo de ${clpFormatter.format(fees.amountClp)} para el cliente. Coordinamos la devolución por WhatsApp.`;
+    case "unconfirmed":
+    default:
+      return "Coordinamos la devolución por WhatsApp.";
+  }
+}
+
+// Solo hechos ya publicados en el sitio (acordeón de ficha, FAQ del home, contacto).
+const RETURN_WINDOW_TEXT = `Puedes cambiar o devolver el producto en un plazo de ${MERCHANT_RETURN_DAYS} días, siempre que se encuentre en su estado original y sin uso. Se aplican condiciones y restricciones según el tipo de producto.`;
+const WARRANTY_TEXT = `Nuestros muebles tienen ${WARRANTY_MONTHS} meses de garantía contra defectos de fabricación desde la entrega del mueble. Si hay un inconveniente, te ayudamos a resolverlo.`;
+const DAMAGED_ON_ARRIVAL_TEXT =
+  "En caso de recibir un mueble dañado, te pedimos que nos contactes de inmediato para gestionar el reemplazo o la reparación, conforme a nuestras políticas de garantía.";
+const RETURN_SHIPPING_TEXT = returnShippingFeesSentence(RETURN_SHIPPING_FEES);
+const RETURN_CONTACT_TEXT = "WhatsApp al +56 9 9549 7838 o al correo hola@ideamadera.cl";
+
+export const cambiosDevolucionesLandingConfig: ServiceLandingConfig = {
+  canonicalPath: RETURN_POLICY_PATH,
+  pageTitle: `Cambios y devoluciones: ${MERCHANT_RETURN_DAYS} días | Idea Madera`,
+  pageDescription: `Cambia o devuelve tu compra en ${MERCHANT_RETURN_DAYS} días si está en su estado original y sin uso. Garantía de ${WARRANTY_MONTHS} meses contra defectos de fabricación. Coordina por WhatsApp.`,
+  keywords: [
+    "cambios y devoluciones idea madera",
+    "política de devoluciones muebles",
+    "garantía muebles de madera",
+  ],
+  eyebrow: "Cambios y devoluciones",
+  h1: "Política de cambios y devoluciones",
+  heroParagraph: RETURN_WINDOW_TEXT,
+  badges: [`Cambios ${MERCHANT_RETURN_DAYS} días`, `Garantía ${WARRANTY_MONTHS} meses`],
+  whatsappButtonLabel: "Escríbenos por WhatsApp",
+  whatsappProductTitle: "Cambios y devoluciones",
+  whatsappLines: [
+    "Vengo desde la página de cambios y devoluciones.",
+    "Quiero consultar por un cambio o devolución.",
+  ],
+  heroHighlights: [
+    {
+      title: `Plazo de ${MERCHANT_RETURN_DAYS} días`,
+      description: "Para cambiar o devolver el producto en su estado original y sin uso.",
+    },
+    {
+      title: `Garantía de ${WARRANTY_MONTHS} meses`,
+      description: "Contra defectos de fabricación desde la entrega del mueble.",
+    },
+    {
+      title: "Si llega dañado",
+      description: "Avísanos de inmediato para gestionar el reemplazo o la reparación.",
+    },
+  ],
+  sectionTitle: "Condiciones de cambio y devolución",
+  sectionParagraph:
+    "El cambio o la devolución aplica cuando el producto se encuentra en su estado original y sin uso. Se aplican condiciones y restricciones según el tipo de producto, por eso te pedimos escribirnos antes de enviar cualquier mueble.",
+  featureCards: [
+    {
+      title: "Estado original y sin uso",
+      description: `El producto debe estar en su estado original y sin uso, dentro del plazo de ${MERCHANT_RETURN_DAYS} días.`,
+    },
+    {
+      title: "Productos a medida",
+      description:
+        "Las condiciones y restricciones dependen del tipo de producto. Si tu mueble es a medida, consúltanos por WhatsApp antes de solicitar un cambio o devolución.",
+    },
+    {
+      title: "Envío de la devolución",
+      description: RETURN_SHIPPING_TEXT,
+    },
+  ],
+  stepsTitle: "Cómo solicitar un cambio o devolución",
+  steps: [
+    {
+      title: "Escríbenos",
+      description: `Contáctanos por ${RETURN_CONTACT_TEXT} dentro de los ${MERCHANT_RETURN_DAYS} días.`,
+    },
+    {
+      title: "Cuéntanos tu caso",
+      description:
+        "Indícanos qué producto compraste y si quieres cambiarlo o devolverlo. Revisamos las condiciones según el tipo de producto.",
+    },
+    {
+      title: "Coordinamos la devolución",
+      description: RETURN_SHIPPING_TEXT,
+    },
+  ],
+  extraSections: [
+    {
+      title: "Garantía contra defectos de fabricación",
+      paragraphs: [WARRANTY_TEXT],
+    },
+    {
+      title: "Si el producto llega dañado",
+      paragraphs: [DAMAGED_ON_ARRIVAL_TEXT],
+    },
+  ],
+  faqItems: [
+    {
+      question: "¿Cuál es el plazo para cambios y devoluciones?",
+      answer: RETURN_WINDOW_TEXT,
+    },
+    {
+      question: "¿Cómo se coordina el envío de la devolución?",
+      answer: `${RETURN_SHIPPING_TEXT} Escríbenos por ${RETURN_CONTACT_TEXT}.`,
+    },
+    {
+      question: "¿Puedo cambiar o devolver un mueble a medida?",
+      answer:
+        "Se aplican condiciones y restricciones según el tipo de producto. Para muebles a medida, escríbenos por WhatsApp y revisamos tu caso.",
+    },
+    {
+      question: "¿Qué garantía tienen los muebles?",
+      answer: WARRANTY_TEXT,
+    },
+    {
+      question: "¿Qué pasa si llega dañado?",
+      answer: DAMAGED_ON_ARRIVAL_TEXT,
+    },
+  ],
+  ctaTitle: "¿Necesitas un cambio o devolución?",
+  ctaParagraph:
+    "Escríbenos por WhatsApp con tu consulta y te orientamos sobre el cambio, la devolución o la garantía de tu mueble.",
+  ctaBullets: [
+    `Cambios y devoluciones en ${MERCHANT_RETURN_DAYS} días.`,
+    `Garantía de ${WARRANTY_MONTHS} meses contra defectos de fabricación.`,
+    "Atención directa por WhatsApp.",
+  ],
+  schemaType: "WebPage",
+  breadcrumbLabel: "Cambios y devoluciones",
+  contactDetails: {
+    phone: "+56 9 9549 7838",
+    email: "hola@ideamadera.cl",
+    address: "Boyén Sector 01, Chillán, Chile",
+    instagramHandle: "@ideamadera.cl",
+  },
+};
+
 export const serviceLandingPaths = [
   peldanosLandingConfig.canonicalPath,
   ...peldanosClusterPaths,
@@ -1759,4 +1922,5 @@ export const serviceLandingPaths = [
   mueblesAMedidaLandingConfig.canonicalPath,
   quienesSomosLandingConfig.canonicalPath,
   contactoLandingConfig.canonicalPath,
+  cambiosDevolucionesLandingConfig.canonicalPath,
 ] as const;

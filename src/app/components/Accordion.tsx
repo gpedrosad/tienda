@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { AiOutlineCar, AiOutlineCreditCard, AiOutlinePhone, AiOutlineSafety, AiOutlineUndo, AiOutlineSetting } from "react-icons/ai";
-import { DEFAULT_PRODUCTION_DAYS, WARRANTY_MONTHS } from "@/lib/seo";
+import { DEFAULT_PRODUCTION_DAYS, MERCHANT_RETURN_DAYS, WARRANTY_MONTHS } from "@/lib/seo";
 
 export default function Accordion({
   productionDays = DEFAULT_PRODUCTION_DAYS,
@@ -20,7 +20,7 @@ export default function Accordion({
     },
     {
       title: "Cambios y devoluciones",
-      content: "Puedes cambiar o devolver el producto en un plazo de 30 días, siempre que se encuentre en su estado original y sin uso. Se aplican condiciones y restricciones según el tipo de producto."
+      content: `Puedes cambiar o devolver el producto en un plazo de ${MERCHANT_RETURN_DAYS} días, siempre que se encuentre en su estado original y sin uso. Se aplican condiciones y restricciones según el tipo de producto.`
     },
     {
       title: "Garantía",
