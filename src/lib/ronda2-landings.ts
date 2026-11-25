@@ -10,15 +10,15 @@ const quoteBullets = [
 
 export const puertasVidrioLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-de-madera-con-vidrio",
-  updatedAt: "2026-11-03",
+  updatedAt: "2026-11-25",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
     { name: "Puertas con vidrio", path: "/puertas-de-madera-con-vidrio" },
   ],
-  pageTitle: "Puerta de Madera con Vidrio a Medida | Taller en Chillán",
+  pageTitle: "Puertas de Madera con Vidrio a Medida | Interior y Entrada",
   pageDescription:
-    "Hoja de madera con vidrio a medida para interior o entrada. Envía vano y foto de la repartición por WhatsApp; el vidrio se confirma al cotizar.",
+    "Puertas de madera con vidrio a medida para interior o entrada. Envía vano y foto por WhatsApp; el vidrio se confirma al cotizar. Envío a todo Chile.",
   keywords: [
     "puertas de madera con vidrio",
     "puertas vidriadas de madera",
