@@ -1,5 +1,31 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-26 — Contenido nuevo: guía de medidas de velador y refuerzo de peldaños a medida
+
+### `src/lib/velador-guide.ts` + `src/app/guias/medidas-velador/page.tsx`
+- Nueva guía informativa `/guias/medidas-velador` (`medidasVeladorGuideConfig`). Title: "Medidas de Velador: Qué Altura Debe Tener y Cuánto Mide"; H1: "Medidas de velador: qué altura, ancho y fondo elegir".
+- Queries reales (GSC 90 d al 25/11/2026): "medidas velador" 131 impr, pos 15,4 (hoy cae en `/collections/veladores`; 107 impr en los últimos 28 d); "altura velador" 33 impr, pos 9,3; "cuanto mide un velador" 13 impr, pos 5,5; "medida velador" 12 impr, pos 5,1.
+- Secciones: cuánto mide un velador (lead, `leadSectionIndex: 0`), altura respecto al colchón como referencia práctica (sin normas ni cifras genéricas), ancho y fondo según el espacio, tabla del catálogo (Velador Cubo 45×45×50 cm; Velador Lenga Austral con cajón 55×38×46 cm de referencia del plano) y qué medir para pedir a medida.
+- 7 FAQs alineadas a las queries. Sin precios. No apunta a "veladores de madera": enlaza a la colección con ese anchor.
+- relatedLinks: colección de veladores, Velador Cubo, Velador Lenga Austral, muebles a medida, guía de cotizar y guía de cuidado.
+
+### `src/app/guias/page.tsx`
+- Agregada la guía al índice `guides` con category "Dormitorio".
+
+### `src/lib/collection-seo.ts`
+- Bloque `veladores`: un enlace contextual a [guía de medidas de velador](/guias/medidas-velador) al final del párrafo "Medidas de un velador". Sin cambios en title/meta de la colección (sigue siendo la URL transaccional de "veladores de madera").
+
+### `src/lib/service-landings.ts` (`peldanosLandingConfig`, `/peldanos-a-medida`)
+- Contexto GSC 28 d: 1.160 impr, pos 8,9 (~3x vs ritmo previo). Queries: "peldaños para escaleras" 162 impr pos 10,8; "peldaños de madera" 48 pos 9,3; "peldaños de madera para escaleras" 34 pos 9,4; "peldaños de escalera" 26 pos 15,8; "peldaños" 24 pos 6,2; "peldaños de madera para escalera interior" 20 pos 9,4.
+- 2 extraSections nuevas: "Peldaños de madera para escalera interior" (descanso/giro, tránsito, terminación, medir cada grada en remodelación) y "Peldaños de escalera según el tipo de estructura" (concreto, flotante, escalera de madera), enlazando al cluster.
+- 4 FAQs nuevas sin duplicar las existentes: escalera interior, reemplazo de algunos peldaños, terminación, diferencia con peldaños flotantes (para ordenar la canibalización de "peldaños para escaleras"; primaria = `/peldanos-a-medida`).
+- `updatedAt` → "2026-11-26". pageTitle y pageDescription sin cambios (rutina CTR).
+
+### `src/lib/content-updated-at.ts` + `src/lib/sitemap-images.ts`
+- Registrada la guía nueva (lastmod e imagen en el sitemap); `/guias` y la colección `veladores` con fecha 2026-11-26.
+
+Medir: 2026-12-10 (14 d) y 2026-12-24 (28 d)
+
 ## 2026-11-25 — Lote 45: retry CTR guía de medidas de puertas y puertas con vidrio (test Opus)
 
 Search Console (último día 2026-11-24). 90d: 957 clics / 59.816 impr / CTR 1.6 % / pos 8.5. 7d (2026-11-18..2026-11-24): 121 clics / 9.669 impr / CTR 1.25 % / pos 7.6 vs prev7 (2026-11-11..2026-11-17): 102 clics / 8.965 impr / CTR 1.14 % / pos 7.9. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Páginas cambiadas en los últimos 7 días no se tocaron (lotes 11-21 y 11-23 congelados). Medir 2026-12-09 (14 d). Test Opus 11-08: medición 14 d ya hecha el 2026-11-23; re-medición 28 d en la primera corrida desde 2026-12-06.

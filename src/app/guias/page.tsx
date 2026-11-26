@@ -96,6 +96,13 @@ const guides = [
     href: "/guias/medidas-y-madera-puertas",
     category: "Puertas",
   },
+  {
+    title: "Medidas de velador y qué altura debe tener",
+    description:
+      "Altura respecto al colchón, ancho y fondo según el espacio junto a la cama, y las medidas del Velador Cubo y Lenga Austral.",
+    href: "/guias/medidas-velador",
+    category: "Dormitorio",
+  },
 ];
 
 export default function GuiasPage() {

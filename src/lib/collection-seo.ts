@@ -213,7 +213,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       "Bancas de madera maciza para comedor, recibidor y living. Diseños clásicos y contemporáneos fabricados en Chile. Cotiza medidas y terminación por WhatsApp.",
   },
   veladores: {
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-26",
     h1: "Veladores de madera para dormitorio",
     metadataTitle: "Veladores de madera: modelos y medidas",
     description:
@@ -237,7 +237,7 @@ export const collectionSeoByHandle: Record<string, CollectionSeo> = {
       {
         title: "Medidas de un velador",
         paragraphs: [
-          "El [Velador Cubo](/products/velador-cubo) mide 45 cm de ancho, 45 cm de fondo y 50 cm de alto. El [Velador Lenga Austral con cajón](/products/velador-lenga-austral) publica 55 × 38 × 46 cm como medidas de referencia del plano, a validar en el taller. No son una altura estándar única: si necesitas otro alto, otro ancho u otro fondo, se cotiza.",
+          "El [Velador Cubo](/products/velador-cubo) mide 45 cm de ancho, 45 cm de fondo y 50 cm de alto. El [Velador Lenga Austral con cajón](/products/velador-lenga-austral) publica 55 × 38 × 46 cm como medidas de referencia del plano, a validar en el taller. No son una altura estándar única: si necesitas otro alto, otro ancho u otro fondo, se cotiza. Para elegir el alto según tu colchón y el espacio junto a la cama, revisa la [guía de medidas de velador](/guias/medidas-velador).",
         ],
       },
     ],

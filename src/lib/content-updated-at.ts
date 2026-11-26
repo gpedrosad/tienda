@@ -1,4 +1,5 @@
 import { medidasMesaCentroGuideConfig } from "@/lib/centro-guide";
+import { medidasVeladorGuideConfig } from "@/lib/velador-guide";
 import { collectionSeoByHandle } from "@/lib/collection-seo";
 import { medidasMaderaPuertasGuideConfig } from "@/lib/door-guide";
 import {
@@ -57,7 +58,7 @@ export const FALLBACK_UPDATED_AT = "2026-06-15";
 const PAGE_FILE_UPDATED_AT: Record<string, string> = {
   "/": "2026-11-04",
   "/ofertas": "2026-10-17",
-  "/guias": "2026-11-10",
+  "/guias": "2026-11-26",
   "/kit-pergola": "2026-11-04",
   "/tiny-house-dlt": "2026-11-04",
   "/comedores-nordicos": "2026-10-26",
@@ -93,6 +94,7 @@ const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDa
   medidasMaderaPuertasGuideConfig,
   medidasPeldanosGuideConfig,
   elegirMaderaPeldanosGuideConfig,
+  medidasVeladorGuideConfig,
 ];
 
 const configUpdatedAt = new Map<string, string>();

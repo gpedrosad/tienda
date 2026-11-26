@@ -2,6 +2,7 @@ import { existsSync } from "fs";
 import path from "path";
 import type { Product } from "@/data/products";
 import { medidasMesaCentroGuideConfig } from "@/lib/centro-guide";
+import { medidasVeladorGuideConfig } from "@/lib/velador-guide";
 import { medidasMaderaPuertasGuideConfig } from "@/lib/door-guide";
 import {
   puertasCorrederasLandingConfig,
@@ -115,6 +116,7 @@ const guideConfigs: GuideConfig[] = [
   medidasMaderaPuertasGuideConfig,
   medidasPeldanosGuideConfig,
   elegirMaderaPeldanosGuideConfig,
+  medidasVeladorGuideConfig,
 ];
 
 for (const config of guideConfigs) {
