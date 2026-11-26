@@ -257,7 +257,7 @@ const sharedCtaBullets = [
 
 export const peldanosLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/peldanos-a-medida",
-  updatedAt: "2026-11-04",
+  updatedAt: "2026-11-26",
   breadcrumbLabel: "Peldaños a medida",
   pageTitle: "Peldaños para Escaleras: Huellas de Madera a Medida",
   pageDescription:
@@ -431,6 +431,26 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
       answer:
         "Sí. Fabricamos las huellas de madera a la medida de la escalera que ya existe. No modificamos el hormigón y el montaje no se asume incluido. El detalle está en la página de peldaños para escalera de concreto.",
     },
+    {
+      question: "¿Fabrican peldaños de madera para escalera interior?",
+      answer:
+        "Sí. Fabricamos huellas de madera para escaleras interiores, nuevas o en remodelación, según largo, ancho, espesor y cantidad. La estructura de la escalera no está incluida y el montaje no se asume incluido.",
+    },
+    {
+      question: "¿Puedo pedir solo algunos peldaños para reemplazar los de mi escalera?",
+      answer:
+        "Sí. Se cotiza según la cantidad que necesitas. Mide cada huella que vas a reemplazar (largo, ancho y espesor) y envía una foto de la escalera. Si quieres que se acerquen al tono de las que se quedan, la terminación se conversa al cotizar.",
+    },
+    {
+      question: "¿Los peldaños de madera vienen con terminación?",
+      answer:
+        "La terminación se define al cotizar según el estilo del proyecto: natural, oscura o en base a una referencia que nos envíes. Indica qué acabado buscas y si la escalera es de uso diario; si los prefieres sin terminación, dilo y te confirmamos.",
+    },
+    {
+      question: "¿Qué diferencia hay entre peldaños a medida y peldaños flotantes?",
+      answer:
+        "Esta página es la cotización general de huellas de madera para escaleras. Los peldaños flotantes son huellas que van sobre una estructura metálica, separadas del muro, en una escalera abierta; esa estructura no está incluida. El detalle está en la página de peldaños flotantes.",
+    },
   ],
   extraSections: [
     {
@@ -458,6 +478,30 @@ export const peldanosLandingConfig: ServiceLandingConfig = {
         "Largo, ancho y espesor (cm)",
         "Comuna de despacho",
         "Foto o plano de la escalera",
+      ],
+    },
+    {
+      title: "Peldaños de madera para escalera interior",
+      paragraphs: [
+        "En una escalera interior, los peldaños de madera suelen ser para una escalera nueva que espera sus huellas o para una remodelación donde las gradas actuales se reemplazan o se revisten. En ambos casos fabricamos la pieza donde se pisa, a la medida de la estructura que ya existe o que se está construyendo.",
+        "Antes de pedir, conviene mirar tres cosas: si todas las huellas miden lo mismo o cambian en un descanso o giro; el tránsito que tendrá la escalera, porque la escalera principal de la casa no es lo mismo que una que sube a un altillo; y la terminación, que se elige según el interior: natural, oscura o en base a una referencia.",
+        "Si es una remodelación, mide cada grada en vez de una sola: en escaleras ya construidas las medidas pueden variar de un peldaño a otro. Para preparar el pedido, revisa [cómo medir huella y contrahuella](/guias/medidas-peldanos-escalera) y [cómo elegir la madera de un peldaño](/guias/elegir-madera-peldanos).",
+      ],
+      bullets: [
+        "Escalera recta, con descanso o con giro",
+        "Medida de cada huella si no son todas iguales",
+        "Uso: escalera principal o de uso ocasional",
+        "Terminación: natural, oscura o según referencia",
+        "Foto de la escalera actual o plano",
+      ],
+    },
+    {
+      title: "Peldaños de escalera según el tipo de estructura",
+      paragraphs: [
+        "La huella de madera es la misma pieza en todos los casos, pero lo que conviene revisar antes de cotizar cambia según dónde va apoyada.",
+        "Sobre una escalera de concreto u hormigón ya hecha, la huella se ajusta a cada grada. Como las gradas hechas en obra no siempre quedan iguales, conviene medir cada una. El detalle está en [huellas de madera para escalera de concreto](/peldanos-escalera-concreto).",
+        "En una escalera flotante, la huella va sobre una estructura metálica, separada del muro, y queda a la vista por el canto y por debajo, así que la terminación y el espesor se conversan con más cuidado. La estructura no está incluida: lo explica la página de [peldaños flotantes de madera](/peldanos-flotantes).",
+        "Si todavía estás definiendo la escalera completa, en [escaleras de madera](/escaleras-de-madera) está qué parte fabricamos. En todos los casos el pedido son las huellas de madera: no la escalera armada, las zancas ni el pasamanos.",
       ],
     },
     {
