@@ -2,6 +2,25 @@
 
 Registro de cambios hechos para ganar el clic. Las métricas «antes» salen del encargo (Search Console), no de un pull nuevo de este entorno.
 
+## 2026-11-27 — Lote 46: CTR de la guía de medidas de mesa de comedor
+
+Search Console (último día 2026-11-26). 90d: 983 clics / 62.689 impr / CTR 1.57 % / pos 8.5. 7d (2026-11-20..2026-11-26): 130 clics / 10.319 impr / CTR 1.26 % / pos 7.7 vs prev7 (2026-11-13..2026-11-19): 111 clics / 9.043 impr / CTR 1.23 % / pos 7.7. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Páginas cambiadas en los últimos 7 días (11-21, 11-23, 11-25, contenido 11-26) no se tocaron. Medir 2026-12-11 (14 d). Test Opus 11-08: 14 d medido el 2026-11-23; re-medición 28 d desde 2026-12-06.
+
+### `/guias/medidas-mesa-comedor`
+
+Antes — 28d (2026-10-30..2026-11-26): 15 clics / 5549 impr / CTR 0.27 % / pos 6.8; 7d 1/1180 vs prev7 3/1228. Consultas: «altura mesa comedor» 0 clics/118 impr, pos 12.9; «medidas mesa de centro» 0 clics/87 impr, pos 37.5; «altura de mesa comedor» 0 clics/71 impr, pos 18.8; «medidas de mesas de comedor» 0 clics/71 impr, pos 32.4.
+Consulta objetivo: «altura mesa comedor / medidas mesa comedor / medidas mesa comedor 6 personas». Title `Altura mesa comedor: 75 cm y cuánto mide para 6 personas` → `Medidas mesa comedor: altura 75 cm y tamaño para 6 personas`. Meta → «Altura de una mesa de comedor: 75 cm estándar (silla de 45-48 cm). Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm. Largo y ancho según comensales.». H1: igual. Motivo: El title cubre la intención de tamaño («medidas mesa comedor», «mesa comedor 6 personas») y mantiene la de altura; la meta abre con la consulta exacta «altura de una mesa de comedor» y conserva las cifras existentes.
+Modelo: claude-opus-5-5. Aplicado 2026-11-27. Medir 2026-12-11 (14 d).
+
+No aplicado: `/collections/veladores` — Se editó el 26/11, así que casi todos los datos de 28d corresponden al title anterior. El title actual ya contiene «veladores de madera» al inicio y la meta conserva el precio existente. Hay que esperar datos del cambio antes de volver a tocarlo.
+
+### Medición 14 d del lote del 2026-11-13 (antes 31/10–12/11, después 14/11–26/11; sin control, no causal)
+
+- `/mesas-de-centro`: 1/239 (CTR 0.42 %, pos 4.6) → 2/259 (CTR 0.77 %, pos 5.4)
+- `/puertas-interiores`: 0/381 (CTR 0.0 %, pos 10.8) → 3/439 (CTR 0.68 %, pos 11.2)
+- `/guias/madera-para-meson-quincho`: 1/38 (CTR 2.63 %, pos 6.3) → 0/68 (CTR 0.0 %, pos 6.5)
+
+
 ## 2026-11-25 — Lote 45: retry CTR guía de medidas de puertas y puertas con vidrio (test Opus)
 
 Search Console (último día 2026-11-24). 90d: 957 clics / 59.816 impr / CTR 1.6 % / pos 8.5. 7d (2026-11-18..2026-11-24): 121 clics / 9.669 impr / CTR 1.25 % / pos 7.6 vs prev7 (2026-11-11..2026-11-17): 102 clics / 8.965 impr / CTR 1.14 % / pos 7.9. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Páginas cambiadas en los últimos 7 días no se tocaron (lotes 11-21 y 11-23 congelados). Medir 2026-12-09 (14 d). Test Opus 11-08: medición 14 d ya hecha el 2026-11-23; re-medición 28 d en la primera corrida desde 2026-12-06.
