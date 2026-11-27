@@ -314,10 +314,10 @@ export const cuidadoMueblesGuideConfig: GuideConfig = {
 
 export const medidasMesaGuideConfig: GuideConfig = {
   canonicalPath: "/guias/medidas-mesa-comedor",
-  updatedAt: "2026-11-19",
-  pageTitle: "Altura mesa comedor: 75 cm y cuánto mide para 6 personas",
+  updatedAt: "2026-11-27",
+  pageTitle: "Medidas mesa comedor: altura 75 cm y tamaño para 6 personas",
   pageDescription:
-    "Cuánto mide una mesa de comedor: la altura estándar es 75 cm (silla de 45-48 cm). Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm.",
+    "Altura de una mesa de comedor: 75 cm estándar (silla de 45-48 cm). Para 6 personas, 160 x 90 cm o redonda de Ø 120 cm. Largo y ancho según comensales.",
   keywords: [
     "medidas mesa comedor",
     "tamaño mesa comedor",
@@ -332,7 +332,7 @@ export const medidasMesaGuideConfig: GuideConfig = {
   h1: "Cuánto mide una mesa de comedor: altura y tamaño según personas",
   intro:
     "La altura estándar de una mesa de comedor es 75 cm desde el piso hasta la superficie. Una superficie de 85 cm de alto corresponde a una barra o un mesón alto, no a un comedor: con un asiento de 45-48 cm queda alta para comer. El largo, el ancho y la circulación se calculan más abajo, según cuántas personas se sientan.",
-  updatedDate: "2026-10-05",
+  updatedDate: "2026-11-27",
   leadSectionIndex: 1,
   featuredProductIds: ["mesa-nordica", "mesa-comedor-niza", "mesa-comedor-cantabria"],
   sections: [
