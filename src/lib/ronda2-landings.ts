@@ -491,7 +491,7 @@ export const peldanosFlotantesLandingConfig: ServiceLandingConfig = {
 
 export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/mesas-de-comedor-a-medida",
-  updatedAt: "2026-10-29",
+  updatedAt: "2026-11-28",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Muebles a medida", path: "/muebles-a-medida" },
@@ -695,6 +695,11 @@ export const mesasComedorAMedidaLandingConfig: ServiceLandingConfig = {
       href: "/guias/cotizar-muebles-a-medida",
       title: "Cómo cotizar a medida",
       description: "Qué datos enviar por WhatsApp en cualquier encargo.",
+    },
+    {
+      href: "/mesas-de-comedor",
+      title: "Modelos de mesas de comedor",
+      description: "Rectangulares y redondas del catálogo, en natural o negro, antes de pedir otra medida.",
     },
   ],
   ctaTitle: "Cotiza la mesa que cabe en tu comedor",

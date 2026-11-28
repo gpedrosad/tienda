@@ -1,5 +1,31 @@
 # SEO Changelog — Idea Madera
 
+## 2026-11-28 — Contenido nuevo: landing /mesas-de-comedor y boost de /puertas-a-medida
+
+### `src/app/mesas-de-comedor/page.tsx` (nueva)
+- Landing de catálogo solo de mesas de comedor (equivalente a /mesas-de-centro para ratonas). Title: "Mesas de Comedor de Madera | Fabricadas en Chillán"; H1 "Mesas de comedor de madera"; description sin precios.
+- Grilla con 12 modelos con imagen (Trípode, Trípode negra, Trípode redonda, Trípode redonda negra, Ferrara, Novara, Niza, Roma natural, Roma negra, Cantabria, Bolonia, Nórdica).
+- Secciones: rectangulares o redondas (solo medidas publicadas; Roma natural, Bolonia y Trípode negra sin medida), terminación natural o negra, ¿para cuántas personas? (remite a la guía sin copiar tablas), completa el comedor (sillas Milán Lenga, bancas, comedores nórdicos), ¿otra medida? (mesa a medida + guía), 8 FAQs, enlaces relacionados y CTA WhatsApp (`mesas_comedor_hero`, `mesas_comedor_cta`).
+- JSON-LD: BreadcrumbList, ItemList, FAQPage.
+- Queries objetivo (GSC 90 d, hoy rankean en /collections/mesas): "mesas de comedor" 140 impr pos 38,8; "mesa comedor" 126 pos 39,3; "mesa de comedor" 110 pos 40,3; "mesas de comedor de madera" 83 pos 22,3; "comedor madera" 53 pos 41,1; "mesa comedor madera" 36 pos 24,8; "mesas comedor" 30 pos 42,5; "mesas de madera para comedor" 18 pos 19,3; "mesa comedor madera maciza" 16 pos 12,5; "mesas de comedor de madera chile" 15 pos 18,1; "mesa comedor negra madera" 13 pos 11,1; "mesa comedor madera negra" 11 pos 8,8.
+- Anticanibalización: no apunta a medidas/altura (/guias/medidas-mesa-comedor), ni a "a medida" (/mesas-de-comedor-a-medida), ni a nórdico (/comedores-nordicos); los enlaza.
+
+### `src/lib/collection-seo.ts` (bloque mesas)
+- updatedAt del bloque mesas → 2026-11-28 (lastmod de /collections/mesas). `/mesas-de-comedor` registrada en `content-updated-at.ts` (2026-11-28); entra al sitemap automáticamente.
+- Enlace [mesas de comedor de madera](/mesas-de-comedor) en el primer guideParagraph y relatedLink "Mesas de comedor de madera" como primer elemento. Sin cambios en h1, metadataTitle, description ni intro.
+
+### `src/lib/ronda2-landings.ts` (mesasComedorAMedidaLandingConfig)
+- relatedLink nuevo a /mesas-de-comedor ("Modelos de mesas de comedor"); updatedAt → 2026-11-28. Sin cambios en pageTitle, pageDescription ni h1.
+
+### `src/lib/service-landings.ts` (puertasLandingConfig, /puertas-a-medida)
+- GSC 28 d: 970 impr, 31 clics, pos 7,0 (crece x1,44). Brecha: "fabricacion e instalacion de puertas de madera" 36 impr pos 24,8; "fabricacion e instalacion de puertas" 66 pos 9,8.
+- extraSection nueva "Fabricación e instalación de puertas de madera: qué cubre la cotización": la hoja a medida se fabrica en taller; marco, herrajes e instalación se confirman aparte (no se asumen incluidos, sin prometer instalación); flujo del pedido de WhatsApp a fabricación y despacho; enlaces a puertas interiores, puertas de entrada y guía de medidas y madera.
+- extraSection nueva "Puertas dobles y de dos hojas" (no existía equivalente).
+- 3 FAQs nuevas: "¿Son fábrica de puertas o revenden?" (apoya "fabrica de puertas de madera" 35 pos 8,1; "fábrica de puertas a medida" 39 pos 10,1), "¿Fabrican e instalan puertas de madera?", "¿Hacen puertas dobles a medida?".
+- updatedAt → 2026-11-28. Sin cambios en pageTitle, pageDescription ni h1.
+
+Medir: 2026-12-12 (14 d) y 2026-12-26 (28 d)
+
 ## 2026-11-27 — Lote 46: CTR de la guía de medidas de mesa de comedor
 
 Search Console (último día 2026-11-26). 90d: 983 clics / 62.689 impr / CTR 1.57 % / pos 8.5. 7d (2026-11-20..2026-11-26): 130 clics / 10.319 impr / CTR 1.26 % / pos 7.7 vs prev7 (2026-11-13..2026-11-19): 111 clics / 9.043 impr / CTR 1.23 % / pos 7.7. Copy: claude-opus-5-5 (effort high) vía API de Anthropic, revisado y aplicado por Grok Bot. Páginas cambiadas en los últimos 7 días (11-21, 11-23, 11-25, contenido 11-26) no se tocaron. Medir 2026-12-11 (14 d). Test Opus 11-08: 14 d medido el 2026-11-23; re-medición 28 d desde 2026-12-06.
