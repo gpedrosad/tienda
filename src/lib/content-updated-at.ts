@@ -63,6 +63,7 @@ const PAGE_FILE_UPDATED_AT: Record<string, string> = {
   "/tiny-house-dlt": "2026-11-04",
   "/comedores-nordicos": "2026-10-26",
   "/mesas-de-centro": "2026-11-13",
+  "/mesas-de-comedor": "2026-11-28",
 };
 
 const datedConfigs: Array<{ canonicalPath: string; updatedAt?: string; updatedDate?: string }> = [

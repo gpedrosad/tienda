@@ -754,7 +754,7 @@ export const cubiertasLandingConfig: ServiceLandingConfig = {
 
 export const puertasLandingConfig: ServiceLandingConfig = {
   canonicalPath: "/puertas-a-medida",
-  updatedAt: "2026-11-04",
+  updatedAt: "2026-11-28",
   breadcrumbItems: [
     { name: "Inicio", path: "/" },
     { name: "Puertas a medida", path: "/puertas-a-medida" },
@@ -959,8 +959,45 @@ export const puertasLandingConfig: ServiceLandingConfig = {
       answer:
         "No hay un listado de especies en esta página. Trabajamos maderas nobles del sur de Chile, nativas y secas en cámara. La especie se confirma al cotizar, porque interior o exterior cambia la madera y el acabado. El detalle está en puertas de madera nativa.",
     },
+    {
+      question: "¿Son fábrica de puertas o revenden?",
+      answer:
+        `Somos fábrica. Cada hoja se fabrica a medida en nuestro taller en Chillán ${SINCE_FOUNDING}, con madera nativa seca en cámara. No trabajamos con un catálogo de puertas fijas: partimos de tu vano y de tu referencia de diseño.`,
+    },
+    {
+      question: "¿Fabrican e instalan puertas de madera?",
+      answer:
+        "Fabricamos la hoja a medida en el taller. La instalación no se asume incluida: si la necesitas, indícalo al cotizar y se confirma aparte en la respuesta, igual que el marco y los herrajes.",
+    },
+    {
+      question: "¿Hacen puertas dobles a medida?",
+      answer:
+        "Sí. Una puerta doble o de dos hojas se cotiza igual que una de una hoja: alto y ancho del vano completo, espesor, uso interior o exterior, comuna y una foto del vano. Marco, herrajes e instalación se confirman aparte si los necesitas.",
+    },
   ],
   extraSections: [
+    {
+      title: "Fabricación e instalación de puertas de madera: qué cubre la cotización",
+      paragraphs: [
+        "Si buscas fabricación e instalación de puertas de madera, conviene saber qué hace el taller. Fabricamos la hoja de la puerta a medida en Chillán, para uso interior o exterior, en madera nativa seca en cámara: alto, ancho y espesor según tu vano, diseño según tu referencia (liso, con paneles o con vidrio) y terminación según el uso.",
+        "Marco, herrajes e instalación no se asumen incluidos. Si los necesitas, dilo en el mismo mensaje: se confirman aparte en la respuesta, según tu caso. Así la cotización deja claro qué fabrica el taller y qué se resuelve por separado.",
+        "Si es una puerta de dormitorio, baño o cocina, revisa [puertas interiores](/puertas-interiores); si es la entrada principal, [puertas de entrada](/puertas-exteriores). Las medidas habituales y la elección de madera están en la [guía de medidas y madera de puertas](/guias/medidas-y-madera-puertas).",
+      ],
+      bullets: [
+        "Nos escribes por WhatsApp con alto, ancho y espesor, uso interior o exterior, comuna y foto del vano",
+        "Indicas si además necesitas marco, herrajes o instalación",
+        "Definimos contigo diseño, madera y terminación",
+        "Recibes la propuesta con lo que sí incluye, precio y plazo de fabricación",
+        "La hoja se fabrica en el taller en Chillán y coordinamos el despacho a tu comuna",
+      ],
+    },
+    {
+      title: "Puertas dobles y de dos hojas",
+      paragraphs: [
+        "Una puerta doble se cotiza igual que una de una hoja. Envía el alto y el ancho del vano completo, el espesor, si es interior o exterior, tu comuna y una foto. Si tienes una referencia de cómo quieres las hojas (lisas, con paneles o con vidrio), súmala al mensaje.",
+        "Las fotos de esta página incluyen puertas dobles de madera con vidrios como referencia. Si la doble va en la entrada principal, revisa [puertas de entrada](/puertas-exteriores): ahí el uso es exterior y cambian madera y acabado. Marco, herrajes e instalación se confirman aparte.",
+      ],
+    },
     {
       title: "Qué fabricamos y qué cotizar",
       paragraphs: [
